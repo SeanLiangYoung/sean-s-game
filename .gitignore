@@ -1,0 +1,6 @@
+.godot/
+.tools/
+build/
+*.log
+.DS_Store
+.superpowers/

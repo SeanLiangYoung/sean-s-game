@@ -1,0 +1,20 @@
+config_version=5
+
+[application]
+config/name="灰烬行旅 · Ashbound"
+run/main_scene="res://game/main.tscn"
+
+[display]
+window/size/viewport_width=1440
+window/size/viewport_height=900
+window/size/window_width_override=1280
+window/size/window_height_override=800
+window/stretch/mode="canvas_items"
+
+[rendering]
+renderer/rendering_method="gl_compatibility"
+renderer/rendering_method.mobile="gl_compatibility"
+environment/defaults/default_clear_color=Color(0.06,0.08,0.10,1)
+
+[input_devices]
+pointing/emulate_mouse_from_touch=true
