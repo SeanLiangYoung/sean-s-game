@@ -31,30 +31,30 @@
 
 Files: game/rules.gd, tests/run.gd, project.godot.
 Interface: Rules.new(), start_battle(ids, difficulty), move_to(cell), attack(id), cast(id), rest(kind), finish_turn(), shrink(), outcome; dictionary units and axial Vector2i cells.
-- [ ] Write assertions for movement/AP, speed, HP/MP rest, deadline, displaced actors and hero death.
-- [ ] Run headless test runner and observe missing implementation fail.
-- [ ] Implement deterministic hex grid and combat, enemy pursuit and actions.
-- [ ] Run headless tests; all assertions pass.
+- [x] Write assertions for movement/AP, speed, HP/MP rest, deadline, displaced actors and hero death.
+- [x] Run headless test runner and observe missing implementation fail.
+- [x] Implement deterministic hex grid and combat, enemy pursuit and actions.
+- [x] Run headless tests; all assertions pass.
 
 ## Task 2: Expedition and persistence
 
 Files: game/campaign.gd, tests/run.gd.
 Interface: Campaign.new(), depart(), resolve_battle(rules, encounter), choose_reward(index), extract(indices), save_game(), load_game(snapshot).
-- [ ] Add failing assertions for reward uniqueness/single claim, permadeath, reserves, failed encounter lockout, persistent HP/MP, extraction cap and snapshot restoration.
-- [ ] Implement campaign transitions using the tactical module; local JSON saves with schema checks and atomic replacement.
-- [ ] Run complete rule suite.
+- [x] Add failing assertions for reward uniqueness/single claim, permadeath, reserves, failed encounter lockout, persistent HP/MP, extraction cap and snapshot restoration.
+- [x] Implement campaign transitions using the tactical module; local JSON saves with schema checks and atomic replacement.
+- [x] Run complete rule suite.
 
 ## Task 3: Playable presentation
 
 Files: game/main.gd, game/main.tscn, README.md, launch.command.
 Interface: main consumes Campaign and Rules, renders native 3D world and hex board, binds pointer selection and action buttons.
-- [ ] Add integration smoke tests covering departure through extraction and combat failure.
-- [ ] Build low-poly borderland, camp, three encounters and exit; world click-to-walk, camera, scene transition, roster, deployment, rest preview, timeline and combat log.
-- [ ] Build reward, extraction and game-over overlays, saved continuation and snapshot reload.
-- [ ] Headless import and launch smoke check; inspect rendered screenshot, fix visual issues.
-- [ ] Play and simulate expeditions; adjust test numbers if no meaningful tactical choices.
+- [x] Add integration smoke tests covering departure through extraction and combat failure.
+- [x] Build low-poly borderland, camp, three encounters and exit; world click-to-walk, camera, scene transition, roster, deployment, rest preview, timeline and combat log.
+- [x] Build reward, extraction and game-over overlays, saved continuation and snapshot reload.
+- [x] Headless import and launch smoke check; inspect rendered screenshot, fix visual issues.
+- [x] Play and simulate expeditions; adjust test numbers if no meaningful tactical choices.
 
 ## Completion
 
-- [ ] Run all tests and headless scene smoke test, review implementation, fix material findings.
-- [ ] Document controls and actual limitations; provide launcher and local game.
+- [x] Run all tests and headless scene smoke test, review implementation, fix material findings.
+- [x] Document controls and actual limitations; provide launcher and local game.

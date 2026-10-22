@@ -1,0 +1,233 @@
+extends RefCounted
+const Rules = preload("res://game/rules.gd")
+var save_path = "user://ashbound-save.json"
+const REWARDS = [
+ {"id":"ember","name":"余烬徽印","type":"relic","desc":"全队攻击与伤害战技 +4","color":"#ec9a5c"},
+ {"id":"spring","name":"旧世泉核","type":"relic","desc":"休息每点行动点恢复 7%","color":"#80c7b2"},
+ {"id":"lens","name":"测绘透镜","type":"relic","desc":"拾取时获得 30 银币；可带回收藏","color":"#97b7df"},
+ {"id":"silver","name":"佣金袋","type":"resource","desc":"获得 65 银币","color":"#dbbf78"},
+ {"id":"medicine","name":"战地药箱","type":"resource","desc":"获得 2 份补给，可在野外恢复队伍","color":"#80c7b2"},
+ {"id":"sword","name":"遗铁刃","type":"equipment","desc":"永久强化一名存活队员：攻击 +3","color":"#b4a1d1"}]
+var roster: Array = []
+var phase = "camp"
+var encounters: Array = ["open","open","open"]
+var relics: Array = []
+var collection: Array = []
+var choices: Array = []
+var silver = 40
+var supplies = 3
+var snapshot: Dictionary = {}
+var current_encounter = -1
+var expedition = 0
+var world_position = [0.0,5.0]
+var notice = "整备队伍，穿过灰潮边境。"
+var event_used = false
+var reward_seed = 71023
+var rng = RandomNumberGenerator.new()
+
+func _init(destination: String = "user://ashbound-save.json"):
+ save_path=destination
+ roster = Rules.new().default_party()
+ rng.seed = reward_seed
+
+func depart() -> bool:
+ if phase != "camp":return false
+ if not roster.any(func(u):return u.id=="hero" and u.hp>0):return false
+ for u in roster:
+  if u.hp > 0:
+   u.hp = u.max_hp
+   u.mp = u.max_mp
+ snapshot = to_data(false)
+ expedition += 1
+ phase = "world"
+ relics = []
+ choices = []
+ encounters = ["open","open","open"]
+ event_used = false
+ world_position = [0.0,5.0]
+ notice = "远征开始。血量与法力不会在战后恢复。"
+ save_game()
+ return true
+
+func make_battle(ids: Array, encounter: int):
+ if phase != "world" or encounter<0 or encounter>=3 or encounters[encounter] != "open":return null
+ if ids.is_empty() or ids.size()>5:return null
+ var chosen = []
+ for id in ids:
+  var matches = roster.filter(func(u):return u.id==id and u.hp>0)
+  if matches.is_empty() or chosen.any(func(u):return u.id==id):return null
+  chosen.append(matches[0])
+ current_encounter = encounter
+ phase = "battle"
+ var b = Rules.new()
+ b.start_battle(chosen,encounter,relics+collection)
+ return b
+
+func resolve_battle(b) -> bool:
+ if phase != "battle" or b.outcome == "" or current_encounter<0:return false
+ for u in roster:
+  for a in b.actors:
+   if u.id==a.id:
+    u.hp = a.hp
+    u.mp = a.mp
+ encounters[current_encounter] = "cleared" if b.outcome=="victory" else "failed"
+ if b.outcome == "gameover":
+  phase = "gameover"
+  notice = "团长阵亡。可读取远征前存档。"
+ elif b.outcome == "victory":
+  phase = "reward"
+  var available = REWARDS.duplicate(true)
+  choices = []
+  for i in range(3):
+   var index = rng.randi_range(0,available.size()-1)
+   choices.append(available.pop_at(index))
+  notice = "战斗胜利。选择一份战利品。"
+ else:
+  phase = "world"
+  notice = "出战队伍全灭。幸存留守者接续远征；该遭遇已无法重试。"
+ current_encounter = -1
+ save_game()
+ return true
+
+func choose_reward(index: int) -> bool:
+ if phase != "reward" or index<0 or index>=choices.size():return false
+ var reward = choices[index]
+ if reward.type == "relic":
+  relics.append(reward.id)
+  if reward.id == "lens":silver += 30
+ elif reward.id == "silver":silver += 65
+ elif reward.id == "medicine":supplies += 2
+ elif reward.type == "equipment":
+  for u in roster:
+   if u.hp > 0:
+    u.power += 3
+    break
+ notice = "获得 %s。继续深入，或前往北方渡口撤离。"%reward.name
+ choices = []
+ phase = "world"
+ save_game()
+ return true
+
+func extract(indices: Array) -> bool:
+ if phase != "world" or indices.size()>2:return false
+ var seen = []
+ for i in indices:
+  if i is not int or i<0 or i>=relics.size() or i in seen:return false
+  seen.append(i)
+ for i in indices:collection.append(relics[i])
+ var converted = (relics.size()-indices.size())*25
+ silver += converted
+ relics = []
+ phase = "camp"
+ notice = "远征结束：保留 %d 件宝物，其余兑换 %d 银币。幸存队员已休整。"%[indices.size(),converted]
+ for u in roster:
+  if u.hp>0:
+   u.hp = u.max_hp
+   u.mp = u.max_mp
+ save_game()
+ return true
+
+func use_supply() -> bool:
+ if phase != "world" or supplies<=0:return false
+ supplies -= 1
+ for u in roster:
+  if u.hp>0:
+   u.hp = mini(u.max_hp,u.hp+int(u.max_hp*0.3))
+   u.mp = mini(u.max_mp,u.mp+int(u.max_mp*0.3))
+ notice = "消耗 1 份补给，所有存活队员恢复 30% 生命与法力。"
+ save_game()
+ return true
+
+func visit_event() -> bool:
+ if phase != "world" or event_used:return false
+ event_used = true
+ supplies += 1
+ silver += 15
+ notice = "废弃驿站：你从旧医箱里找到 1 份补给与 15 银币。"
+ save_game()
+ return true
+
+func to_data(include_snapshot: bool = true) -> Dictionary:
+ var units = roster.duplicate(true)
+ for u in units:u.erase("cell")
+ var data = {"version":1,"roster":units,"phase":phase,"encounters":encounters.duplicate(),"relics":relics.duplicate(),"collection":collection.duplicate(),"silver":silver,"supplies":supplies,"expedition":expedition,"world_position":world_position.duplicate(),"event_used":event_used,"choices":choices.duplicate(true),"notice":notice,"rng_state":str(rng.state)}
+ if include_snapshot:data["snapshot"] = snapshot.duplicate(true)
+ return data
+
+func is_number(value) -> bool:
+ return (value is int or value is float) and is_finite(float(value))
+
+func load_data(data: Dictionary) -> bool:
+ if data.get("version",0) != 1:return false
+ if not data.get("roster") is Array or data.roster.is_empty() or data.roster.size()>10:return false
+ if not data.get("encounters") is Array or data.encounters.size()!=3:return false
+ if data.get("phase","") not in ["camp","world","reward","gameover"]:return false
+ var ids = []
+ var has_hero = false
+ for u in data.roster:
+  if not u is Dictionary:return false
+  for key in ["id","name","role","hp","max_hp","mp","max_mp","power","range","speed","side","ap"]:
+   if not u.has(key):return false
+  for key in ["hp","max_hp","mp","max_mp","power","range","speed","side","ap"]:
+   if not is_number(u[key]):return false
+  if not u.id is String or not u.name is String or not u.role is String:return false
+  if u.id in ids or u.max_hp<=0 or u.hp<0 or u.hp>u.max_hp or u.max_mp<0 or u.mp<0 or u.mp>u.max_mp:return false
+  ids.append(u.id)
+  if u.id=="hero":has_hero=true
+ if not has_hero:return false
+ for key in ["relics","collection","choices","world_position"]:
+  if not data.get(key) is Array:return false
+ if data.world_position.size()!=2:return false
+ for coordinate in data.world_position:
+  if not is_number(coordinate):return false
+ for encounter in data.encounters:
+  if encounter not in ["open","cleared","failed"]:return false
+ for key in ["silver","supplies","expedition"]:
+  if not is_number(data.get(key,0)) or data.get(key,0)<0:return false
+ if not data.get("snapshot",{}) is Dictionary:return false
+ for id in data.relics+data.collection:
+  if id not in ["ember","spring","lens"]:return false
+ for reward in data.choices:
+  if not reward is Dictionary or not REWARDS.any(func(r):return r==reward):return false
+ if data.phase=="reward" and data.choices.size()!=3:return false
+ roster = data.roster.duplicate(true)
+ for u in roster:u.cell = Vector2i.ZERO
+ phase = data.phase
+ encounters = data.encounters.duplicate()
+ relics = data.relics.duplicate()
+ collection = data.collection.duplicate()
+ choices = data.choices.duplicate(true)
+ silver = int(data.get("silver",0))
+ supplies = int(data.get("supplies",0))
+ expedition = int(data.get("expedition",0))
+ world_position = data.world_position.duplicate()
+ event_used = bool(data.get("event_used",false))
+ snapshot = data.get("snapshot",{}).duplicate(true)
+ notice = data.get("notice","")
+ rng.state = int(data.get("rng_state",str(reward_seed)))
+ current_encounter = -1
+ return true
+
+func save_game() -> bool:
+ # Battles are never checkpointed midway; reload returns to pre-battle world save.
+ if phase == "battle":return false
+ var file = FileAccess.open(save_path+".tmp",FileAccess.WRITE)
+ if file == null:return false
+ file.store_string(JSON.stringify(to_data()))
+ file.close()
+ return DirAccess.rename_absolute(save_path+".tmp",save_path)==OK
+
+func load_game() -> bool:
+ if not FileAccess.file_exists(save_path):return false
+ var data = JSON.parse_string(FileAccess.get_file_as_string(save_path))
+ if not data is Dictionary:return false
+ return load_data(data)
+
+func restore_snapshot() -> bool:
+ if snapshot.is_empty():return false
+ var previous = snapshot.duplicate(true)
+ if not load_data(previous):return false
+ snapshot = previous
+ notice = "已读取远征前存档。"
+ save_game()
+ return true

@@ -38,7 +38,7 @@ func _initialize():
  r.round_no = r.round_limit
  r.order_index = r.order.size()-1
  r.finish_turn()
- check(r.outcome == "defeat", "deadline causes defeat")
+ check(r.outcome == "gameover", "deadline kills deployed hero and ends game")
  check(r.actors.filter(func(a): return a.side == 0 and a.hp > 0).is_empty(), "timeout kills all deployed")
  r.start_battle(party.slice(1, 3), 0)
  r.radius = 1
