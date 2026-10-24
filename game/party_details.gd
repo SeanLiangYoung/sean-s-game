@@ -144,41 +144,4 @@ static func profession_page(host,parent: Control,unit: Dictionary):
   parent.add_child(entry)
 
 static func equipment_page(host,parent: Control,unit: Dictionary):
- host.show_relic_slot(parent,unit)
- parent.add_child(host.text_label("主手 / 副手 / 护甲 · 各1件 · 所有职业均可穿戴",17,host.TEAL))
- var editable=host.campaign.phase in ["camp","world"] and host.battle==null and unit.hp>0
- if not editable:parent.add_child(host.text_label("当前只能查看装备。",15,host.MUTED))
- var before=host.campaign.character_stats(unit.id)
- parent.add_child(host.text_label("当前："+stat_line(before),16))
- for slot in Jobs.SLOTS:
-  var slot_id=slot
-  var index=host.campaign.equipped_index(unit.id,slot)
-  parent.add_child(host.text_label(Jobs.SLOTS[slot]+"："+(Jobs.ITEMS[host.campaign.equipment[index].id].name if index>=0 else "空置"),18,host.GOLD))
-  if index>=0:
-   var remove=host.button("卸下当前"+Jobs.SLOTS[slot],func():
-    if host.campaign.unequip_item(unit.id,slot_id):host.refresh_ui();host.show_party_menu("装备",unit.id))
-   remove.disabled=not editable;parent.add_child(remove)
- if not host.campaign.trial_equipment_claimed:
-  var claim=host.button("领取职业试用装备（旧档一次）",func():
-   if host.campaign.claim_trial_equipment():host.show_party_menu("装备",unit.id))
-  claim.disabled=host.campaign.phase!="camp";parent.add_child(claim)
- host.detail_section(parent,"队伍装备库  /  %d 件"%host.campaign.equipment.size())
- if host.campaign.equipment.is_empty():parent.add_child(host.text_label("暂无装备，可从商店或战利品获得。",16))
- for i in host.campaign.equipment.size():
-  var index=i
-  var entry_data=host.campaign.equipment[i]
-  var item=Jobs.ITEMS[entry_data.id]
-  var owner="背包中"
-  for member in host.campaign.roster:
-   if member.id==entry_data.owner:owner=member.name+"装备中"
-  parent.add_child(host.text_label(item.name+" · "+owner,18,host.GOLD))
-  parent.add_child(host.text_label(Jobs.item_description(entry_data.id),15))
-  var preview=host.campaign.preview_equipment(i,unit.id)
-  parent.add_child(host.text_label(comparison(before,preview),15,host.MUTED))
-  var adaptation="；".join(preview.adaptation)
-  parent.add_child(host.text_label(adaptation if adaptation!="" else "无职业装备增益或惩罚",15,host.TEAL if preview.max_ap>=before.max_ap else host.RED))
-  if unit.profession=="hero" and item.slot=="mainhand":parent.add_child(host.text_label("穿戴后光环："+Jobs.aura_for(preview),15,host.TEAL))
-  var equip=host.button("已装备" if entry_data.owner==unit.id else (("装备此武器" if item.slot=="mainhand" else "装备此"+Jobs.SLOTS[item.slot]) if entry_data.owner=="" else "转交并装备"),func():
-   if host.campaign.equip_item(index,unit.id):host.refresh_ui();host.show_party_menu("装备",unit.id))
-  equip.disabled=not editable or entry_data.owner==unit.id
-  parent.add_child(equip)
+ preload("res://game/equipment_menu.gd").page(host,parent,unit)

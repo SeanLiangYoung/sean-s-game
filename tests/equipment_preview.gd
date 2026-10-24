@@ -37,7 +37,10 @@ func run():
  preview.handle_input(release)
  preview.handle_input(motion)
  check(preview.view_state()==state,"released drag no longer rotates")
- button(scene.modal,"装备此武器").pressed.emit()
+ scene.find_child("EquipmentSlot_mainhand",true,false).pressed.emit()
+ scene.find_child("EquipmentChoice_0",true,false).pressed.emit()
+ scene.find_child("EquipmentConfirmation",true,false).confirmed.emit()
+ await process_frame
  preview=scene.modal.find_child("EquipmentPreview",true,false)
  check(preview.pawn.get_meta("equipped_weapon","")=="sword","real equip callback updates preview immediately")
  check(preview.view_state()==state,"equip keeps camera angle and zoom")
@@ -45,7 +48,10 @@ func run():
  preview=scene.modal.find_child("EquipmentPreview",true,false)
  check(preview.pawn.find_child("EquippedOffhand",true,false)!=null and preview.pawn.find_child("EquippedArmor",true,false)!=null,"shield and plate appear")
  check(preview.view_state()==state,"armor change preserves view")
+ scene.find_child("EquipmentSlot_mainhand",true,false).pressed.emit()
  button(scene.modal,"卸下当前主手").pressed.emit()
+ scene.find_child("EquipmentConfirmation",true,false).confirmed.emit()
+ await process_frame
  preview=scene.modal.find_child("EquipmentPreview",true,false)
  check(preview.pawn.find_child("EquippedMainhand",true,false)==null,"unequip removes preview weapon")
  scene.show_party_menu("装备","medic")

@@ -40,7 +40,7 @@ func run():
  check("focus" in scene.campaign.roster[0].learned and scene.menu_tab=="技能","learning remains on skills page")
  scene.show_party_menu("装备","hero")
  content=texts(scene.modal)
- check("队伍装备库" in content and "当前技能" not in content,"equipment has its own page")
+ check("当前人物属性" in content and scene.modal.find_child("EquipmentSlots",true,false)!=null and "当前技能" not in content,"equipment has its own page")
  var roster_scroll=scene.modal.find_child("CharacterRosterScroll",true,false)
  var page_scroll=scene.modal.find_child("CharacterPageScroll",true,false)
  check(roster_scroll!=null and page_scroll!=null and roster_scroll!=page_scroll,"roster scrolls separately from page")
