@@ -23,3 +23,12 @@ Art test initially failed (missing factory), then passed after integration; now 
 Independent read-only review reported no blocking defects. Native Compatibility captures inspected for world, battle, warning and post-shrink terrain. Full suite expanded to 90 checks / 7 suites plus native scene smoke.
 Ruling: scenery outside the tactical field may have height; tactical picking and actor positions stay on the existing plane. Shared generated assets used across encounter types, with broken bridge as the main sample.
 Limits: procedural original art is an intermediate visual sample; no final rigged battle animations, no measured mobile performance, no assertion of matching reference game's production quality.
+
+## 2026-10-24 character and combat presentation
+- Researched official Quaternius and KayKit assets; imported four CC0 KayKit 1.0 GLB templates with 75 clips each, original license and checksums. Six party roles use the templates with appropriate weapons; enemy archer uses ranged model/motion.
+- Added locked anticipation/impact/recovery presentation for player and enemy commands, legal-path movement, melee/ranged/cast animations, projectiles, hit/death, HP/MP rest, actual floating deltas and restoration particles. Final results resolve after playback. Rules and save format remain intact.
+- Replaced solid ball tree crowns with instanced leaf geometry; native attack/rest screenshots inspected.
+- Ruling: complete CC0 cartoon pack is a provisional asset integration, not final natural-proportion art. This prioritizes working rigs and readable battle actions; cost is a more cartoon-like silhouette than the requested reference until new characters are selected.
+- Regression evidence: initial presentation test failed because timeline and skeletal animation were absent. Independent reviewer found a script indentation error, movement shrink feedback disappearing in its creation frame, and enemy archer using sword motion. Fixed syntax; added movement-recovery and enemy-archer regressions, observed three failures then green after fixes. Differentiated enemy material tint.
+- Final: python3 tests/verify.py — 109 checks in 8 suites, zero failures; native scene smoke passed. Native battle, attack and rest captures rendered without script errors.
+- Remaining: final natural-proportion character production, varied enemy art, sound, polished skill-specific choreography, mobile performance and release builds. No purchase, publication or asset claims of matching Zelda quality.

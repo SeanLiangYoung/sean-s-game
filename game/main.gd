@@ -3,6 +3,7 @@ const Campaign = preload("res://game/campaign.gd")
 const Rules = preload("res://game/rules.gd")
 const Art = preload("res://game/art.gd")
 var art=Art.new()
+var presentation=preload("res://game/combat_presentation.gd").new()
 const INK = Color("111c24")
 const GOLD = Color("d5b57a")
 const CREAM = Color("e4e5dc")
@@ -42,6 +43,8 @@ var location_names = ["断桥哨站","遗械坟场","灰巢营地","北岸渡口
 var location_desc = ["3 名敌人 · 首次交锋","4 名敌人 · 深入边境","5 名敌人 · 高风险","指定撤离点 · 结算宝物","一次性补给 · 搜索遗物"]
 
 func _ready():
+ add_child(presentation)
+ presentation.completed.connect(after_battle_action)
  var fallback=SystemFont.new()
  fallback.font_names=PackedStringArray(["PingFang SC","Noto Sans CJK SC","Microsoft YaHei"])
  game_font=fallback
@@ -269,7 +272,9 @@ func draw_battle():
   label3(u.name,Vector3(0,1.93,0),CREAM,23,root)
   box(Vector3(0,1.66,0),Vector3(0.85,0.06,0.05),Color("283536"),root)
   var width=0.85*float(u.hp)/u.max_hp
-  box(Vector3((width-0.85)/2,1.67,0.015),Vector3(maxf(0.01,width),0.065,0.06),RED if u.side==1 else TEAL,root)
+  var fill=box(Vector3((width-0.85)/2,1.67,0.015),Vector3(0.85,0.065,0.06),RED if u.side==1 else TEAL,root)
+  fill.name="HealthFill"
+  fill.scale.x=maxf(0.01,width/0.85)
   if not a.is_empty() and a.side==0 and u.side==1 and battle.hex_distance(a.cell,u.cell)<=a.range:
    label3("◆",Vector3(0,2.25,0),RED,22,root)
  update_camera()
@@ -467,6 +472,7 @@ func refresh_ui():
   for item in [["移动 · 1点/格","move"],["攻击 · 2点","attack"],["战技 · 3点 / 8蓝","skill"]]:
    var mode=item[1]
    var b=button(("● " if battle_mode==mode else "")+item[0],func():
+    if presentation.busy:return
     battle_mode=mode
     draw_battle()
     refresh_ui())
@@ -570,9 +576,46 @@ func begin_battle(index: int):
  refresh_ui()
 
 func player_rest(kind: String):
- if battle==null or battle.active().side!=0 or is_instance_valid(modal):return
- battle.rest(kind)
- after_battle_action()
+ if battle==null or battle.active().is_empty() or battle.active().side!=0 or is_instance_valid(modal):return
+ perform_battle_action("rest_"+kind)
+
+func perform_battle_action(action: String,target=null) -> bool:
+ if battle==null or presentation.busy or battle.outcome!="" or is_instance_valid(modal):return false
+ var actor=battle.active()
+ if actor.is_empty() or (action!="enemy" and actor.side!=0):return false
+ var before=battle.actors.duplicate(true)
+ var actor_id=actor.id
+ var previous=actor.duplicate(true)
+ var path: Array=[]
+ var enemy_paths={}
+ if action=="move":path=battle.path_to(actor.cell,target)
+ if action=="enemy":
+  for cell in battle.cells():enemy_paths[cell]=battle.path_to(actor.cell,cell)
+ var accepted=false
+ match action:
+  "move":accepted=battle.move_to(target)
+  "attack":accepted=battle.attack(target)
+  "skill":accepted=battle.cast(target)
+  "rest_hp":accepted=battle.rest("hp")
+  "rest_mp":accepted=battle.rest("mp")
+  "enemy":
+   var event_count=battle.events.size()
+   battle.enemy_step()
+   accepted=battle.events.size()!=event_count
+   action="rest_hp"
+   if actor.cell!=previous.cell:
+    action="move"
+    path=enemy_paths.get(actor.cell,[])
+   else:
+    for unit in battle.actors:
+     var old=before.filter(func(u):return u.id==unit.id)[0]
+     if unit.id!=actor_id and unit.hp<old.hp:action="attack";break
+ if not accepted:return false
+ presentation.start(self,before,battle.actors.duplicate(true),actor_id,action,path)
+ # Keep the old HUD values until the visible action lands; prevent every button callback.
+ for node in footer.find_children("*","Button",true,false):node.disabled=true
+ for node in sidebar.find_children("*","Button",true,false):node.disabled=true
+ return true
 
 func after_battle_action():
  draw_battle()
@@ -666,6 +709,7 @@ func new_game():
  refresh_ui()
 
 func show_surrender():
+ if presentation.busy:return
  open_modal("放弃本场战斗？","按超时失败处理：所有出战队员死亡；主角参战则游戏结束。")
  modal_body.add_child(button("确认放弃，出战者全部死亡",func():
   close_modal()
@@ -682,7 +726,7 @@ func ground_position(screen_pos: Vector2) -> Vector3:
  return origin+dir*(-origin.y/dir.y)
 
 func _unhandled_input(event):
- if is_instance_valid(modal):return
+ if is_instance_valid(modal) or presentation.busy:return
  if event is InputEventKey and event.pressed:
   if event.keycode==KEY_Q:camera_angle-=0.15;update_camera()
   if event.keycode==KEY_E:camera_angle+=0.15;update_camera()
@@ -719,26 +763,36 @@ func _unhandled_input(event):
    if nearest.x==999:return
    var target=battle.unit_at(nearest)
    var accepted=false
-   if battle_mode=="move":accepted=battle.move_to(nearest)
+   if battle_mode=="move":accepted=perform_battle_action("move",nearest)
    elif not target.is_empty():
-    if battle_mode=="attack":accepted=battle.attack(target.id)
-    else:accepted=battle.cast(target.id)
-   if accepted:after_battle_action()
-   else:status_label.text="无法执行：检查行动点、法力、射程与目标阵营。"
+    if battle_mode=="attack":accepted=perform_battle_action("attack",target.id)
+    else:accepted=perform_battle_action("skill",target.id)
+   if not accepted:status_label.text="无法执行：检查行动点、法力、射程与目标阵营。"
 
 func _process(delta):
  elapsed+=delta
+ if presentation.busy:
+  presentation.advance(delta)
+  return
  for i in range(pawn_nodes.size()):
   var pawn=pawn_nodes[i]
   if is_instance_valid(pawn):
    var body=pawn.get_node_or_null("Body")
-   if body!=null:body.position.y=sin(elapsed*2.1+i*0.8)*0.012
+   if body!=null and body.find_child("AnimationPlayer",true,false)==null:body.position.y=sin(elapsed*2.1+i*0.8)*0.012
  if battle==null and campaign.phase=="world" and world_party!=null and not is_instance_valid(modal):
   var delta_pos=world_target-world_party.position
   if delta_pos.length()>0.06:
+   if not world_party.get_meta("walking",false):
+    preload("res://game/character_visual.gd").play(world_party,"move")
+    world_party.set_meta("walking",true)
+   world_party.get_node("Body").rotation.y=atan2(delta_pos.x,delta_pos.z)
    world_party.position=world_party.position.move_toward(world_target,delta*4)
    campaign.world_position=[world_party.position.x,world_party.position.z]
-  elif pending_location>=0:
+  else:
+   if world_party.get_meta("walking",false):
+    preload("res://game/character_visual.gd").play(world_party,"idle")
+    world_party.set_meta("walking",false)
+  if delta_pos.length()<=0.06 and pending_location>=0:
    var index=pending_location
    pending_location=-1
    campaign.save_game()
@@ -747,8 +801,7 @@ func _process(delta):
   ai_clock+=delta
   if ai_clock>=0.6:
    ai_clock=0
-   battle.enemy_step()
-   after_battle_action()
+   perform_battle_action("enemy")
  if capture_mode!="" and not capture_done:
   capture_clock+=delta
   if capture_clock>2.5:

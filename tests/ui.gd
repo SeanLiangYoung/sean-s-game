@@ -27,6 +27,7 @@ func run():
  click.position=scene.camera.unproject_position(scene.cell_position(target))
  scene._unhandled_input(click)
  check(actor.cell==target and actor.ap==3,"projected board click moves actor and spends AP")
+ scene.presentation.advance(2)
  var enemy=scene.battle.actors.filter(func(u):return u.side==1)[0]
  enemy.cell=actor.cell+Vector2i(1,0)
  var enemy_hp=enemy.hp
@@ -34,6 +35,7 @@ func run():
  click.position=scene.camera.unproject_position(scene.cell_position(enemy.cell)+Vector3(0,1,0))
  scene._unhandled_input(click)
  check(enemy.hp<enemy_hp,"clicking enemy model selects its own tile")
+ scene.presentation.advance(2)
  scene.battle.round_no=scene.battle.round_limit
  scene.battle.order_index=scene.battle.order.size()-1
  scene.battle.finish_turn()

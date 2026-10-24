@@ -13,7 +13,7 @@ if not engine.exists():
 if not engine:
     sys.exit('Godot 4.7.2 is required.')
 checks = 0
-for suite in ('run', 'edges', 'campaign', 'integration', 'persistence', 'ui', 'art'):
+for suite in ('run', 'edges', 'campaign', 'integration', 'persistence', 'ui', 'art', 'presentation'):
     result = subprocess.run([str(engine), '--headless', '--path', str(root),
                              '--script', f'res://tests/{suite}.gd'],
                             text=True, stdout=subprocess.PIPE, stderr=subprocess.STDOUT, timeout=40)
@@ -28,4 +28,4 @@ smoke = subprocess.run([str(engine), '--headless', '--path', str(root), '--', '-
 print(smoke.stdout, end='')
 if smoke.returncode or 'SCENE_SMOKE_OK' not in smoke.stdout or 'ERROR:' in smoke.stdout:
     sys.exit(1)
-print(f'PASS: {checks} checks across 7 suites; native scene smoke passed.')
+print(f'PASS: {checks} checks across 8 suites; native scene smoke passed.')

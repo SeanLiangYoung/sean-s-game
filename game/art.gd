@@ -102,8 +102,39 @@ func tree(parent: Node3D,pos: Vector3,s: float=1.0):
  cone(root,Vector3(0,0.85,0),0.19,0.10,1.7,Color("75664c"),8)
  rod(root,Vector3(0,1.1,0),Vector3(-0.6,1.9,0.1),0.09,Color("75664c"))
  rod(root,Vector3(0,1.2,0),Vector3(0.65,1.8,-0.1),0.08,Color("75664c"))
- for entry in [[Vector3(0,2.3,0),Vector3(2.4,1.5,1.9),Color("5d8246")],[Vector3(-0.65,2,0.2),Vector3(1.6,1.25,1.6),Color("76914c")],[Vector3(0.65,2.15,0.05),Vector3(1.7,1.3,1.65),Color("648949")],[Vector3(0.1,2.75,0),Vector3(1.7,1,1.4),Color("8c9e56")]]:
-  ball(root,entry[0],entry[1],entry[2])
+ # Individual leaf clusters keep gaps and a soft outline instead of solid stone-like blobs.
+ var rng=RandomNumberGenerator.new()
+ rng.seed=int(absf(pos.x*1031+pos.z*791))+701
+ var leaf=SurfaceTool.new()
+ leaf.begin(Mesh.PRIMITIVE_TRIANGLES)
+ var points=[Vector3(0,0,-0.5),Vector3(-0.3,0,0),Vector3(0,0.08,0),Vector3(0.3,0,0),Vector3(0,0,0.5)]
+ for triangle in [[0,1,2],[0,2,3],[1,4,2],[2,4,3]]:
+  for index in triangle:
+   leaf.set_normal(Vector3.UP)
+   leaf.add_vertex(points[index])
+ var multi=MultiMesh.new()
+ multi.transform_format=MultiMesh.TRANSFORM_3D
+ multi.use_colors=true
+ multi.mesh=leaf.commit()
+ multi.instance_count=850
+ for i in range(multi.instance_count):
+  var angle=rng.randf()*TAU
+  var y=rng.randf_range(-1,1)
+  var radial=sqrt(1-y*y)*pow(rng.randf(),0.35)
+  var p=Vector3(cos(angle)*radial*1.35,2.25+y*0.85,sin(angle)*radial*1.15)
+  var size=rng.randf_range(0.24,0.42)
+  var basis=Basis.from_euler(Vector3(rng.randf_range(-0.8,0.8),rng.randf()*TAU,rng.randf_range(-0.7,0.7))).scaled(Vector3.ONE*size)
+  multi.set_instance_transform(i,Transform3D(basis,p))
+  multi.set_instance_color(i,Color("5b7f3e").lerp(Color("a5b965"),rng.randf()*0.6+maxf(y,0)*0.35))
+ var foliage=MultiMeshInstance3D.new()
+ foliage.name="LeafCanopy"
+ foliage.multimesh=multi
+ var material=StandardMaterial3D.new()
+ material.vertex_color_use_as_albedo=true
+ material.cull_mode=BaseMaterial3D.CULL_DISABLED
+ material.roughness=1
+ foliage.material_override=material
+ root.add_child(foliage)
  return root
 
 func rock(parent: Node3D,pos: Vector3,s: Vector3,color: Color=Color("a4a18a")):
@@ -330,62 +361,7 @@ func character(parent: Node3D,pos: Vector3,color: Color,kind: String,active: boo
  root.name="Character_"+kind
  parent.add_child(root)
  var enemy=kind.begins_with("enemy")
- var dark=Color("383d3a")
- var leather=Color("766044")
- var skin=Color("d2b58a")
- var steel=Color("a6b6b1")
- var body=Node3D.new()
- body.name="Body"
- root.add_child(body)
- # Boots, articulated legs and a layered tunic replace the chess-pawn silhouette.
- for side in [-1,1]:
-  var x=side*0.135
-  box(body,Vector3(x,0.12,0.02),Vector3(0.17,0.23,0.27),leather.darkened(0.2))
-  rod(body,Vector3(x,0.2,0),Vector3(x,0.57,0),0.075,dark)
- cone(body,Vector3(0,0.60,0),0.25,0.19,0.25,color.darkened(0.15),8)
- cone(body,Vector3(0,0.83,0),0.19,0.25,0.40,color,10)
- cone(body,Vector3(0,0.64,0),0.215,0.215,0.06,leather,10)
- box(body,Vector3(0,0.65,0.21),Vector3(0.075,0.065,0.03),Color("c5aa68"))
- rod(body,Vector3(-0.18,1.0,-0.02),Vector3(0.16,0.70,0.18),0.027,leather)
- ball(body,Vector3(0,1.21,0),Vector3(0.33,0.39,0.32),skin)
- # Hair cap, fringe and face direction remain readable from above.
- ball(body,Vector3(0,1.36,-0.025),Vector3(0.36,0.22,0.34),Color("554d3b") if kind!="medic" else Color("c5b995"))
- for side in [-1,1]:
-  box(body,Vector3(side*0.115,1.30,0.105),Vector3(0.08,0.15,0.08),Color("554d3b") if kind!="medic" else Color("c5b995"))
-  rod(body,Vector3(side*0.27,0.98,0),Vector3(side*0.32,0.73,0.02),0.082,color)
-  rod(body,Vector3(side*0.32,0.73,0.02),Vector3(side*0.3,0.61,0.13),0.06,leather)
-  ball(body,Vector3(side*0.3,0.61,0.13),Vector3(0.12,0.14,0.12),skin)
-  ball(body,Vector3(side*0.24,1.0,0),Vector3(0.23,0.14,0.23),steel if kind in ["hero","warden"] else color.lightened(0.08))
- box(body,Vector3(-0.07,1.23,0.15),Vector3(0.025,0.025,0.015),dark)
- box(body,Vector3(0.07,1.23,0.15),Vector3(0.025,0.025,0.015),dark)
- cloth(body,Vector3(0,0.86,-0.22),0.48,0.66,color.darkened(0.20))
- # Distinct job equipment, not just recolored uniforms.
- if kind in ["hero","blade"] or enemy:
-  var sword=box(body,Vector3(0.33,0.89,0.24),Vector3(0.065,0.64,0.045),steel)
-  sword.rotation_degrees.z=-16
-  box(body,Vector3(0.33,0.62,0.24),Vector3(0.22,0.045,0.08),Color("bc9d5e"))
-  if kind=="hero":
-   cone(body,Vector3(-0.34,0.79,0.07),0.21,0.21,0.06,Color("687d78"),12).rotation_degrees.z=90
-  elif kind=="blade":cloth(body,Vector3(0.22,1.06,-0.1),0.7,0.12,Color("b6a879"))
- elif kind=="ranger":
-  for j in range(7):
-   var theta=PI*(0.1+0.8*j/6.0)
-   var theta2=PI*(0.1+0.8*(j+1)/6.0)
-   rod(body,Vector3(-0.35,0.82+cos(theta)*0.4,sin(theta)*0.22),Vector3(-0.35,0.82+cos(theta2)*0.4,sin(theta2)*0.22),0.025,leather)
-  rod(body,Vector3(-0.35,0.45,0.07),Vector3(-0.35,1.20,0.07),0.009,Color("d3c8a9"))
-  cone(body,Vector3(0.13,0.95,-0.24),0.08,0.09,0.5,leather,8)
- elif kind=="medic":
-  rod(body,Vector3(0.36,0.03,0.13),Vector3(0.36,1.47,0.13),0.033,leather)
-  ball(body,Vector3(0.36,1.45,0.13),Vector3(0.18,0.22,0.18),Color("7ecaba"))
-  box(body,Vector3(-0.28,0.65,0.08),Vector3(0.16,0.22,0.20),Color("b5ab84"))
- elif kind=="engineer":
-  box(body,Vector3(0,0.85,-0.25),Vector3(0.34,0.45,0.24),leather)
-  for side in [-1,1]:cone(body,Vector3(side*0.10,1.25,0.15),0.075,0.075,0.045,Color("bf9e60"),12).rotation_degrees.x=90
-  box(body,Vector3(0.35,0.67,0.20),Vector3(0.12,0.10,0.6),dark)
- elif kind=="warden":
-  var shield=box(body,Vector3(-0.34,0.80,0.15),Vector3(0.11,0.65,0.46),steel)
-  shield.rotation_degrees.y=-12
-  box(body,Vector3(-0.40,0.80,0.15),Vector3(0.025,0.42,0.06),Color("be9b5d"))
+ preload("res://game/character_visual.gd").create(root,kind)
  if active:ring(root,Vector3(0,0.035,0),0.43,Color("e1c88c"),0.045,40)
  else:ring(root,Vector3(0,0.025,0),0.34,Color("ab6a53") if enemy else Color("6faaa0"),0.018,32)
  root.rotation_degrees.y=-15 if enemy else 20
