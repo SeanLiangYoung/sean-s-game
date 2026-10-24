@@ -3,6 +3,7 @@ const Campaign = preload("res://game/campaign.gd")
 const Rules = preload("res://game/rules.gd")
 const Art = preload("res://game/art.gd")
 var art=Art.new()
+var portraits=preload("res://game/portraits.gd").new()
 var presentation=preload("res://game/combat_presentation.gd").new()
 const INK = Color("111c24")
 const GOLD = Color("d5b57a")
@@ -32,7 +33,7 @@ var pending_location = -1
 var arrived_location = -1
 var selected_ids: Array = []
 var extraction_ids: Array = []
-var battle_mode = "move"
+var battle_mode = ""
 var ai_clock = 0.0
 var resolved = false
 var elapsed = 0.0
@@ -51,6 +52,7 @@ var location_names = ["断桥哨站","遗械坟场","灰巢营地","北岸渡口
 var location_desc = ["3 名敌人 · 首次交锋","4 名敌人 · 深入边境","5 名敌人 · 高风险","指定撤离点 · 结算宝物","一次性补给 · 搜索遗物"]
 
 func _ready():
+ add_child(portraits)
  add_child(presentation)
  presentation.completed.connect(after_battle_action)
  var fallback=SystemFont.new()
@@ -94,7 +96,7 @@ func _ready():
  if capture_mode != "":
   campaign.save_path="user://ashbound-capture.json"
   if capture_mode!="--capture-menu":campaign.depart()
-  if capture_mode == "--capture-battle":
+  if capture_mode in ["--capture-battle","--capture-actions"]:
    battle = campaign.make_battle(["hero","blade","ranger","medic","engineer"],0)
    battle.actors[1].hp = 36
   if capture_mode in ["--capture-shrink","--capture-tide"]:
@@ -274,6 +276,9 @@ func draw_battle():
   if not a.is_empty() and a.side==0 and battle.outcome=="" and battle_mode=="move":
    var path = battle.path_to(a.cell,cell)
    if not path.is_empty() and path.size()<=a.ap:col=Color("7b9b78")
+  if not a.is_empty() and a.side==0 and battle_mode in ["attack","skill","item"]:
+   var target=battle.unit_at(cell)
+   if target_allowed(target):col=TEAL if target.side==0 else RED
   if not a.is_empty() and a.cell==cell:col=Color("abac6e")
   cylinder(p+Vector3(0,-0.075,0),0.765,0.765,0.025,col,6)
   art.ring(scene_root,p+Vector3(0,-0.057,0),0.765,Color("62765b"),0.012)
@@ -390,7 +395,7 @@ func make_ui():
  var info=VBoxContainer.new()
  small.add_child(info)
  info.add_child(text_label("边境生存手册",17,GOLD))
- info.add_child(text_label("点击地面移动 · 点击地标交互\n固定视距 · Q / E 旋转视角",14,MUTED))
+ info.add_child(text_label("选择地点推进 · 战斗先选行动\nEsc 打开菜单 / 取消选择",14,MUTED))
  status_label=text_label("",17)
  status_label.add_theme_stylebox_override("normal",style(Color(0.06,0.10,0.13,0.85),Color.TRANSPARENT,7))
  status_label.position=Vector2(340,114)
@@ -431,29 +436,8 @@ func refresh_ui():
   sidebar.add_child(text_label("佣兵团 · %d / 10"%campaign.roster.filter(func(u):return u.hp>0).size(),23,GOLD))
   sidebar.add_child(text_label("最多 5 人出战，其余留守。\n阵亡永久失去；团长死亡则游戏结束。",14,MUTED))
   for u in campaign.roster:
-   var row=VBoxContainer.new()
-   sidebar.add_child(row)
    var character_id=u.id
-   var select=button(u.name+"  /  "+u.role,func():show_party_menu("角色",character_id))
-   select.alignment=HORIZONTAL_ALIGNMENT_LEFT
-   select.add_theme_font_size_override("font_size",16)
-   row.add_child(select)
-   row.add_child(text_label("生命 %d / %d   法力 %d / %d"%[u.hp,u.max_hp,u.mp,u.max_mp] if u.hp>0 else "已阵亡 · 无法出战",13,MUTED))
-   var hp=ProgressBar.new()
-   hp.custom_minimum_size.y=5
-   hp.max_value=u.max_hp
-   hp.value=u.hp
-   hp.show_percentage=false
-   var fill_style=style(TEAL,Color.TRANSPARENT,2)
-   var back_style=style(Color("293a41"),Color.TRANSPARENT,2)
-   for bar_style in [fill_style,back_style]:
-    bar_style.content_margin_left=0
-    bar_style.content_margin_right=0
-    bar_style.content_margin_top=0
-    bar_style.content_margin_bottom=0
-   hp.add_theme_stylebox_override("fill",fill_style)
-   hp.add_theme_stylebox_override("background",back_style)
-   row.add_child(hp)
+   sidebar.add_child(character_card(u,func():show_party_menu("角色",character_id)))
   separator(sidebar)
   sidebar.add_child(text_label("远征宝物  %d    永久收藏  %d"%[campaign.relics.size(),campaign.collection.size()],15,GOLD))
   for id in campaign.relics:
@@ -488,6 +472,10 @@ func refresh_ui():
   var a=battle.active()
   sidebar.add_child(text_label("独立战场",24,GOLD))
   sidebar.add_child(text_label(location_names[campaign.current_encounter] if campaign.current_encounter>=0 else "边境遭遇",16,MUTED))
+  var command_slot=VBoxContainer.new()
+  command_slot.name="ActionCommands"
+  command_slot.add_theme_constant_override("separation",7)
+  sidebar.add_child(command_slot)
   sidebar.add_child(text_label("行动顺序",16,GOLD))
   for j in range(battle.order.size()):
    var u=battle.actors[battle.order[j]]
@@ -504,27 +492,27 @@ func refresh_ui():
   var is_player=not a.is_empty() and a.side==0 and battle.outcome==""
   if not a.is_empty():
    status_label.text="%s  /  %s    生命 %d/%d    法力 %d/%d    行动点 %d/4"%[a.name,a.role,a.hp,a.max_hp,a.mp,a.max_mp,a.ap]
-  footer.add_child(text_label("选择行动，再点击格子或角色。青色格可移动，◆ 标记普通攻击射程内敌人。" if is_player else "敌方正在行动…",16,GOLD))
-  var row=HBoxContainer.new()
-  row.add_theme_constant_override("separation",9)
-  footer.add_child(row)
-  for item in [["移动 · 1点/格","move"],["攻击 · 2点","attack"],["战技 · 3点 / 8蓝","skill"]]:
-   var mode=item[1]
-   var b=button(("● " if battle_mode==mode else "")+item[0],func():
-    if presentation.busy:return
-    battle_mode=mode
-    draw_battle()
-    refresh_ui())
-   b.disabled=not is_player
-   row.add_child(b)
-  var hp=button("休息 · 回血 +%d"%battle.rest_amount("hp"),func():player_rest("hp"))
-  var mp=button("休息 · 回蓝 +%d"%battle.rest_amount("mp"),func():player_rest("mp"))
-  hp.disabled=not is_player
-  mp.disabled=not is_player
-  row.add_child(hp)
-  row.add_child(mp)
-  sidebar.add_child(text_label("战技：医者治疗友军，其余角色攻击敌人；射程 3 格。",13,TEAL))
+  render_action_menu(is_player)
   sidebar.add_child(button("放弃战斗…",show_surrender))
+
+func character_card(unit: Dictionary,action: Callable,selected: bool=false,status: String="") -> Button:
+ var state="已阵亡" if unit.hp<=0 else status
+ var title="%s\n%s"%[unit.name,unit.role]
+ if state!="":title+="  /  "+state
+ var card=button(title+"\n生命 %d/%d   法力 %d/%d"%[unit.hp,unit.max_hp,unit.mp,unit.max_mp],action,selected)
+ card.name="CharacterCard_"+unit.id
+ card.icon=portraits.portrait(unit.id)
+ card.expand_icon=true
+ card.clip_text=true
+ card.add_theme_constant_override("icon_max_width",64)
+ card.add_theme_constant_override("h_separation",12)
+ card.add_theme_font_size_override("font_size",14)
+ card.alignment=HORIZONTAL_ALIGNMENT_LEFT
+ card.custom_minimum_size=Vector2(220,88)
+ card.size_flags_horizontal=Control.SIZE_EXPAND_FILL
+ card.tooltip_text="%s · %s\n%s"%[unit.name,unit.role,"已阵亡 · 无法出战" if unit.hp<=0 else "点击查看或选择角色"]
+ if unit.hp<=0:card.modulate=Color("8d9399")
+ return card
 
 func close_modal():
  party_menu_open=false
@@ -598,14 +586,19 @@ func show_deploy(index: int):
 func render_deploy(index: int):
  open_modal("部署队伍  /  %s"%location_names[index],"选择 1—5 人。留守队员不会因本场战败死亡；团长可以留守。")
  modal_body.add_child(text_label(location_desc[index]+"   ·   10 回合期限   ·   灰潮收缩",16,RED))
+ var deployment_grid=GridContainer.new()
+ deployment_grid.columns=2
+ deployment_grid.add_theme_constant_override("h_separation",12)
+ deployment_grid.add_theme_constant_override("v_separation",10)
+ modal_body.add_child(deployment_grid)
  for u in campaign.roster:
   if u.hp<=0:continue
   var id=u.id
-  var b=button(("☑  " if id in selected_ids else "□  ")+"%s / %s    生命 %d/%d    法力 %d/%d"%[u.name,u.role,u.hp,u.max_hp,u.mp,u.max_mp],func():
+  var b=character_card(u,func():
    if id in selected_ids:selected_ids.erase(id)
    elif selected_ids.size()<5:selected_ids.append(id)
-   render_deploy(index))
-  modal_body.add_child(b)
+   render_deploy(index),id in selected_ids,"已出战" if id in selected_ids else "留守")
+  deployment_grid.add_child(b)
  var count=selected_ids.size()
  var start=button("出战 %d / 5 人  →"%count,func():begin_battle(index),true)
  start.disabled=count==0
@@ -621,7 +614,7 @@ func begin_battle(index: int):
  battle=b
  camera_zoom=16.5
  resolved=false
- battle_mode="move"
+ battle_mode=""
  close_modal()
  draw_battle()
  refresh_ui()
@@ -649,6 +642,11 @@ func perform_battle_action(action: String,target=null) -> bool:
   "skill":accepted=battle.cast(target)
   "rest_hp":accepted=battle.rest("hp")
   "rest_mp":accepted=battle.rest("mp")
+  "end":accepted=battle.end_action()
+  "item":
+   if campaign.supplies>0:
+    accepted=battle.use_medicine(target)
+    if accepted:campaign.supplies-=1
   "enemy":
    var event_count=battle.events.size()
    battle.enemy_step()
@@ -662,13 +660,14 @@ func perform_battle_action(action: String,target=null) -> bool:
      var old=before.filter(func(u):return u.id==unit.id)[0]
      if unit.id!=actor_id and unit.hp<old.hp:action="attack";break
  if not accepted:return false
- presentation.start(self,before,battle.actors.duplicate(true),actor_id,action,path)
+ presentation.start(self,before,battle.actors.duplicate(true),actor_id,action,path,str(target) if target is String else "")
  # Keep the old HUD values until the visible action lands; prevent every button callback.
  for node in footer.find_children("*","Button",true,false):node.disabled=true
  for node in sidebar.find_children("*","Button",true,false):node.disabled=true
  return true
 
 func after_battle_action():
+ battle_mode=""
  draw_battle()
  refresh_ui()
  ai_clock=0
@@ -916,6 +915,14 @@ func ground_position(screen_pos: Vector2) -> Vector3:
  return origin+dir*(-origin.y/dir.y)
 
 func _unhandled_input(event):
+ if event is InputEventKey and event.pressed and not event.echo and event.keycode==KEY_ESCAPE and battle!=null and battle_mode!="" and not is_instance_valid(modal):
+  cancel_action()
+  get_viewport().set_input_as_handled()
+  return
+ if event is InputEventMouseButton and event.pressed and event.button_index==MOUSE_BUTTON_RIGHT and battle!=null and not is_instance_valid(modal):
+  cancel_action()
+  get_viewport().set_input_as_handled()
+  return
  if event is InputEventKey and event.pressed and not event.echo and event.keycode==KEY_ESCAPE and not party_menu_open:
   if presentation.busy:return
   if menu_screen=="pause":close_modal()
@@ -947,7 +954,7 @@ func _unhandled_input(event):
    for cell in battle.cells():
     var distance=cell_position(cell).distance_to(p)
     if distance<best:nearest=cell;best=distance
-   if battle_mode in ["attack","skill"]:
+   if battle_mode in ["attack","skill","item"]:
     var model_distance=30.0
     for unit in battle.actors:
      if unit.hp<=0:continue
@@ -962,7 +969,7 @@ func _unhandled_input(event):
    if battle_mode=="move":accepted=perform_battle_action("move",nearest)
    elif not target.is_empty():
     if battle_mode=="attack":accepted=perform_battle_action("attack",target.id)
-    else:accepted=perform_battle_action("skill",target.id)
+    elif battle_mode in ["skill","item"]:accepted=perform_battle_action(battle_mode,target.id)
    if not accepted:status_label.text="无法执行：检查行动点、法力、射程与目标阵营。"
 
 func _process(delta):
@@ -1012,6 +1019,7 @@ func capture_image():
  if capture_mode=="--capture-menu":filename="menu"
  if capture_mode=="--capture-atlas":filename="atlas"
  if capture_mode=="--capture-route":filename="route"
+ if capture_mode=="--capture-actions":filename="actions"
  if capture_mode=="--capture-shrink":filename="shrink"
  if capture_mode=="--capture-tide":filename="tide"
  var path="res://artifacts/"+filename+".png"
@@ -1061,20 +1069,26 @@ func show_party_menu(tab: String="角色",character_id: String=""):
  columns.add_theme_constant_override("separation",24)
  modal_body.add_child(columns)
  var roster_list=VBoxContainer.new()
- roster_list.custom_minimum_size.x=220
+ roster_list.custom_minimum_size.x=320
  roster_list.add_theme_constant_override("separation",8)
  columns.add_child(roster_list)
  roster_list.add_child(text_label("队伍成员  /  %d 人"%campaign.roster.size(),16,GOLD))
  for member in campaign.roster:
   var id=member.id
   var current=menu_unit(id)
-  var entry=button(member.name+" · "+member.role+("  †" if current.hp<=0 else ""),func():show_party_menu(menu_tab,id),id==menu_character)
+  var entry=character_card(current,func():show_party_menu(menu_tab,id),id==menu_character)
   entry.add_theme_font_size_override("font_size",16)
   roster_list.add_child(entry)
  var details=VBoxContainer.new()
  details.size_flags_horizontal=Control.SIZE_EXPAND_FILL
  details.add_theme_constant_override("separation",10)
  columns.add_child(details)
+ var portrait=TextureRect.new()
+ portrait.texture=portraits.portrait(unit.id)
+ portrait.custom_minimum_size=Vector2(144,144)
+ portrait.expand_mode=TextureRect.EXPAND_IGNORE_SIZE
+ portrait.stretch_mode=TextureRect.STRETCH_KEEP_ASPECT_CENTERED
+ details.add_child(portrait)
  details.add_child(text_label(unit.name+"  /  "+unit.role,27,GOLD))
  details.add_child(text_label("已阵亡 · 无法出战" if unit.hp<=0 else ("正在战场 · 实时状态" if battle!=null and battle.find_actor(unit.id)!={} else "存活 · 可参与远征"),15,RED if unit.hp<=0 else TEAL))
  if tab=="角色":
@@ -1289,3 +1303,91 @@ func show_route_trade():
    modal_body.add_child(entry)
   modal_body.add_child(text_label("队伍档案 %d / 10"%campaign.roster.size(),16,MUTED))
  modal_body.add_child(button("继续旅途",close_modal))
+
+func select_action(mode: String):
+ if battle==null or presentation.busy or battle.outcome!="" or battle.active().is_empty() or battle.active().side!=0:return
+ battle_mode=mode
+ draw_battle()
+ refresh_ui()
+
+func cancel_action():
+ if presentation.busy:return
+ select_action("")
+
+func target_allowed(target: Dictionary) -> bool:
+ if battle==null or target.is_empty() or target.hp<=0:return false
+ var a=battle.active()
+ if a.is_empty():return false
+ var distance=battle.hex_distance(a.cell,target.cell)
+ if battle_mode=="attack":return target.side!=a.side and distance<=a.range
+ if battle_mode=="skill":return distance<=3 and target.side==(a.side if a.role=="行医者" else 1-a.side)
+ if battle_mode=="item":return target.side==0 and distance<=3 and (target.hp<target.max_hp or target.mp<target.max_mp)
+ return false
+
+func action_button(parent: Control,label_text: String,mode: String,reason: String=""):
+ var selected=battle_mode==mode or (mode=="skills" and battle_mode=="skill") or (mode=="items" and battle_mode=="item")
+ var entry=button(("▶ " if selected else "")+label_text,func():select_action(mode),selected)
+ entry.alignment=HORIZONTAL_ALIGNMENT_LEFT
+ entry.add_theme_font_size_override("font_size",16)
+ entry.disabled=reason!="" or presentation.busy
+ entry.tooltip_text=reason
+ if reason!="":entry.text+=" · "+reason
+ parent.add_child(entry)
+ return entry
+
+func render_action_menu(is_player: bool):
+ var slot=sidebar.get_node("ActionCommands")
+ var a=battle.active()
+ if a.is_empty():return
+ slot.add_child(text_label(a.name+" · "+a.role,23,GOLD))
+ slot.add_child(text_label("生命 %d/%d · 法力 %d/%d\n行动点 %d / 4"%[a.hp,a.max_hp,a.mp,a.max_mp,a.ap],16,CREAM))
+ var waiting="敌方行动中" if not is_player else ""
+ if presentation.busy:waiting="行动播放中"
+ var ap2=waiting if waiting!="" else ("需2行动点" if a.ap<2 else "")
+ var skill_reason=waiting if waiting!="" else ("需3行动点" if a.ap<3 else ("需8法力" if a.mp<8 else ""))
+ var item_reason=ap2 if ap2!="" else ("补给不足" if campaign.supplies<=0 else "")
+ if battle_mode in ["","move","attack","skill","item"]:
+  action_button(slot,"移动 · 1点/格","move",waiting if waiting!="" else ("行动点不足" if a.ap<1 else ""))
+  var attack_reason=ap2
+  if attack_reason=="" and not battle.actors.any(func(u):return u.hp>0 and u.side!=a.side and battle.hex_distance(a.cell,u.cell)<=a.range):attack_reason="无射程内敌人"
+  action_button(slot,"普通攻击 · 2点","attack",attack_reason)
+  action_button(slot,"技能 →","skills",waiting)
+  action_button(slot,"物品 →","items",waiting)
+  action_button(slot,"休息 →","rest",waiting)
+  var end=button("结束行动",func():perform_battle_action("end"))
+  end.disabled=waiting!=""
+  slot.add_child(end)
+ elif battle_mode=="skills":
+  var healing=a.role=="行医者"
+  var bonus=8 if "fury" in a.get("learned",[]) else 0
+  var amount=26+bonus if healing else a.power+14+bonus+(4 if "ember" in battle.bonuses else 0)
+  slot.add_child(text_label("选择技能",19,GOLD))
+  if skill_reason=="" and not battle.actors.any(func(u):return u.hp>0 and u.side==(a.side if healing else 1-a.side) and battle.hex_distance(a.cell,u.cell)<=3):skill_reason="无射程内目标"
+  action_button(slot,("治疗战技" if healing else "伤害战技")+" · 3点 / 8蓝","skill",skill_reason)
+  slot.add_child(text_label("恢复 %d 生命 · 友军 · 射程3"%amount if healing else "造成 %d 伤害 · 敌军 · 射程3"%amount,15,TEAL))
+  for id in a.get("learned",[]):
+   slot.add_child(text_label(Campaign.GOODS[id].name+"（被动）\n"+Campaign.GOODS[id].desc,14,TEAL))
+ elif battle_mode=="items":
+  slot.add_child(text_label("选择物品",19,GOLD))
+  if item_reason=="" and not battle.actors.any(func(u):return u.side==0 and u.hp>0 and battle.hex_distance(a.cell,u.cell)<=3 and (u.hp<u.max_hp or u.mp<u.max_mp)):item_reason="无须恢复的友军"
+  action_button(slot,"战地补给 ×%d · 2点"%campaign.supplies,"item",item_reason)
+  slot.add_child(text_label("消耗1份补给，为射程3内一名存活友军恢复30%生命与法力。",15,TEAL))
+ elif battle_mode=="rest":
+  slot.add_child(text_label("休息并结束行动",19,GOLD))
+  for kind in ["hp","mp"]:
+   var resource=kind
+   var gain=battle.rest_amount(kind)
+   var entry=button(("恢复生命" if kind=="hp" else "恢复法力")+" +%d"%gain,func():player_rest(resource))
+   entry.disabled=waiting!="" or gain<=0
+   if gain<=0:entry.text+=" · 已满"
+   slot.add_child(entry)
+  slot.add_child(text_label("消耗剩余全部行动点；恢复后轮到下一人。",14,MUTED))
+ if battle_mode!="":
+  var cancel=button("取消 / 返回 · Esc",cancel_action)
+  cancel.disabled=presentation.busy
+  slot.add_child(cancel)
+ separator(slot)
+ var hints={"":"请选择左侧角色指令。","move":"选择青色可达格移动 · 每格1行动点","attack":"选择红色格上的敌人 · 普通攻击消耗2行动点","skills":"从左侧选择技能，再选择目标。","skill":"选择高亮目标施放战技 · 3行动点 / 8法力","items":"从左侧选择物品，再选择友军。","item":"选择高亮友军使用补给 · 2行动点 / 1份补给","rest":"在左侧选择恢复生命或法力。"}
+ footer.add_child(text_label(hints.get(battle_mode,"") if is_player else "敌方正在行动，请等待。",21,GOLD))
+ footer.add_child(text_label("当前："+a.name+" · 行动点 %d/4 · 生命 %d/%d · 法力 %d/%d"%[a.ap,a.hp,a.max_hp,a.mp,a.max_mp],17))
+ if battle_mode!="":footer.add_child(text_label("Esc / 鼠标右键取消选择，不消耗资源。",15,MUTED))

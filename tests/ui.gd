@@ -17,6 +17,8 @@ func run():
  if scene.has_method("show_party_menu"):
   scene.show_party_menu("角色","medic")
   check(find_button(scene.modal,"白芷")!=null,"character selector reachable")
+  var portrait_card=find_button(scene.modal,"白芷")
+  check(portrait_card!=null and portrait_card.icon!=null,"party cards display character portraits")
   check(has_text(scene.modal,"恢复 26"),"medic skill details reflect rules")
   scene.show_party_menu("装备","hero")
   var equip=find_button(scene.modal,"装备此武器")
@@ -50,6 +52,13 @@ func run():
  await process_frame
  scene.show_deploy(0)
  check(scene.selected_ids.size()==5,"deployment defaults to five")
+ var deploy_card=find_button(scene.modal,"沈烬")
+ check(deploy_card!=null and deploy_card.icon!=null,"deployment displays portrait cards")
+ deploy_card.pressed.emit()
+ check(not "hero" in scene.selected_ids,"portrait card toggles deployment selection")
+ find_button(scene.modal,"沈烬").pressed.emit()
+ check("hero" in scene.selected_ids,"portrait card restores deployment selection")
+ scene.show_deploy(0)
  scene.begin_battle(0)
  check(scene.battle!=null and scene.campaign.phase=="battle","deployment starts scene battle")
  check(scene.footer.get_child_count()>0,"combat controls exist")
@@ -61,6 +70,7 @@ func run():
   battle_wheel.pressed=true
   scene._unhandled_input(battle_wheel)
  check(scene.camera.size==fixed_size,"battle ignores mouse wheel zoom")
+ scene.select_action("move")
  var actor=scene.battle.active()
  var target=actor.cell+Vector2i(0,1)
  var click=InputEventMouseButton.new()

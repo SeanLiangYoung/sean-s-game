@@ -15,6 +15,7 @@ func run():
   check(pawn.find_child("Skeleton3D",true,false)!=null,"humanoid rig exists: "+role)
   if not role.begins_with("enemy"):
    check(pawn.find_child("Wardrobe",true,false)!=null,"allied costume follows rig: "+role)
+  check(pawn.find_child("FaceDetails",true,false)!=null,"visible facial details bind to actual head: "+role)
   var player=pawn.find_child("AnimationPlayer",true,false)
   for action in ["idle","move","attack","skill","hit","death","rest_hp","rest_mp"]:
    player.stop()

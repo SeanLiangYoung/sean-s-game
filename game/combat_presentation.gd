@@ -12,6 +12,7 @@ var release_time=0.12
 var released=false
 var release_count=0
 var charge_root: Node3D
+var charge_ring: MeshInstance3D
 var host
 var before: Array=[]
 var after: Array=[]
@@ -27,7 +28,7 @@ var floats: Array=[]
 var rings: Array=[]
 var effects: Array=[]
 
-func start(owner_node,before_state: Array,after_state: Array,actor_id: String,action: String,move_path: Array=[]):
+func start(owner_node,before_state: Array,after_state: Array,actor_id: String,action: String,move_path: Array=[],target_id: String=""):
  host=owner_node
  before=before_state
  after=after_state
@@ -59,7 +60,8 @@ func start(owner_node,before_state: Array,after_state: Array,actor_id: String,ac
   if mode=="skill":begin_charge()
   for u in after:
    var prior=find_unit(before,u.id)
-   if not prior.is_empty() and u.id!=source_id and (u.hp!=prior.hp or u.mp!=prior.mp):
+   var chosen=u.id==target_id if target_id!="" else (u.id!=source_id and (u.hp!=prior.get("hp",u.hp) or u.mp!=prior.get("mp",u.mp)))
+   if not prior.is_empty() and chosen:
     face(source,host.cell_position(prior.cell))
     if action=="skill" or (action=="attack" and style in ["arrow","magic"]):
      projectile_target=host.cell_position(prior.cell)+Vector3(0,0.8,0)
@@ -92,8 +94,10 @@ func advance(delta: float):
   release_count+=1
   if mode=="skill" and source!=null:Visual.play(source,"skill")
   if is_instance_valid(charge_root):charge_root.visible=false
+  if is_instance_valid(charge_ring):charge_ring.visible=false
  if is_instance_valid(charge_root) and not released:
   var intensity=clampf(clock/release_time,0,1)
+  if is_instance_valid(charge_ring):charge_ring.scale=Vector3.ONE*(1+intensity*0.3)
   for i in range(charge_root.get_child_count()):
    var orb=charge_root.get_child(i)
    var angle=TAU*i/charge_root.get_child_count()+clock*4.0
@@ -143,6 +147,7 @@ func advance(delta: float):
   floats.clear();rings.clear();effects.clear()
   projectile=null
   charge_root=null
+  charge_ring=null
   completed.emit()
 
 func impact():
@@ -270,6 +275,8 @@ func begin_charge():
  add_child(charge_root)
  charge_root.position=start_pos+Vector3(0,0.88,0)
  var color=Color("a9dec4") if style=="heal" else (Color("ddc795") if style in ["arrow","slash"] else Color("a3cbd5"))
+ charge_ring=host.art.ring(self,start_pos+Vector3(0,0.04,0),0.34,Color(color,0.65),0.025,48)
+ charge_ring.material_override.transparency=BaseMaterial3D.TRANSPARENCY_ALPHA
  for i in range(7):
-  var orb=glow(Vector3.ZERO,color,0.025)
+  var orb=glow(Vector3.ZERO,color,0.04)
   orb.reparent(charge_root,false)

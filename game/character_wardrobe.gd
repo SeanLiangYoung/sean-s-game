@@ -31,10 +31,11 @@ static func attach(model: Node3D,role: String):
    detail(attachment,inverse,Vector3(-0.48,1.29,-0.36),Vector3(0.27,0.10,0.08),Color("b7a37c"))
  # Small facial geometry follows the head bone, not the torso/camera.
  var head=skeleton.find_bone("Head")
+ if head<0:head=skeleton.find_bone("Head_2")
  if head<0:return
  var face=BoneAttachment3D.new()
  face.name="FaceDetails"
- face.bone_name="Head"
+ face.bone_name=skeleton.get_bone_name(head)
  skeleton.add_child(face)
  var head_rest=skeleton.get_bone_global_rest(head)
  var face_inverse=head_rest.affine_inverse()

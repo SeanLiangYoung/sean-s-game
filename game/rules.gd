@@ -268,3 +268,23 @@ func enemy_step():
    move_to(path[steps-1])
    return
  rest("hp")
+
+func use_medicine(id: String) -> bool:
+ if not can_act() or active().side!=0 or active().ap<2:return false
+ var a=active()
+ var target=find_actor(id)
+ if target.is_empty() or target.side!=0 or target.hp<=0:return false
+ if hex_distance(a.cell,target.cell)>3:return false
+ if target.hp==target.max_hp and target.mp==target.max_mp:return false
+ a.ap-=2
+ target.hp=mini(target.max_hp,target.hp+int(target.max_hp*0.3))
+ target.mp=mini(target.max_mp,target.mp+int(target.max_mp*0.3))
+ events.append("%s 为 %s 使用补给：恢复30%%生命与法力"%[a.name,target.name])
+ after_action()
+ return true
+
+func end_action() -> bool:
+ if not can_act() or active().side!=0:return false
+ events.append("%s 结束行动"%active().name)
+ finish_turn()
+ return true

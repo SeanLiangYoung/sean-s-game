@@ -111,6 +111,37 @@ func run():
   check(bow_player.current_animation=="Bow_Shoot","release transitions to shooting")
   scene.presentation.advance(2)
   check(not scene.presentation.busy and scene.presentation.impact_count==1,"coarse skill frames finish with exactly one impact")
+  scene.begin_battle(0)
+  actor=scene.battle.find_actor("blade")
+  actor.cell=Vector2i(0,0)
+  actor.ap=3
+  enemy=scene.battle.find_actor("enemy0")
+  enemy.cell=Vector2i(1,0)
+  scene.battle.find_actor("hero").cell=Vector2i(4,0)
+  scene.battle.order=[scene.battle.actors.find(actor)]
+  scene.battle.order_index=0
+  scene.battle.round_no=3
+  scene.battle.obstacles=[]
+  scene.draw_battle()
+  scene.perform_battle_action("skill",enemy.id)
+  check(scene.presentation.projectile_target.is_equal_approx(scene.cell_position(Vector2i(1,0))+Vector3(0,0.8,0)),"skill targets chosen enemy even when shrink damages another actor")
+  scene.presentation.advance(3)
+  scene.begin_battle(0)
+  actor=scene.battle.find_actor("medic")
+  actor.cell=Vector2i(0,0)
+  var patient=scene.battle.find_actor("hero")
+  patient.cell=Vector2i(1,0)
+  patient.hp=patient.max_hp-30
+  scene.battle.order=[scene.battle.actors.find(actor)]
+  scene.battle.order_index=0
+  scene.draw_battle()
+  scene.perform_battle_action("skill",patient.id)
+  check(scene.presentation.style=="heal" and not scene.presentation.projectile.visible,"healing charges with a hidden green projectile")
+  scene.presentation.advance(0.7)
+  check(scene.presentation.release_count==1 and scene.presentation.impact_count==0,"healing releases before recovery feedback")
+  scene.presentation.advance(0.4)
+  check(scene.presentation.impact_count==1 and scene.presentation.floats[0].node.text.begins_with("+"),"healing impact displays actual positive recovery")
+  scene.presentation.advance(3)
  scene.queue_free()
  await process_frame
  print("CHECKS: ",checks," FAILURES: ",failures)
