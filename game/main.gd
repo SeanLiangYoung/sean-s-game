@@ -28,6 +28,8 @@ var footer: VBoxContainer
 var top_label: Label
 var status_label: Label
 var modal: PanelContainer
+var page_back: Button
+var page_back_action: Callable
 var modal_body: VBoxContainer
 var camera: Camera3D
 var world_party: Node3D
@@ -534,25 +536,46 @@ func close_modal():
   ui.remove_child(shade)
   shade.queue_free()
  modal=null
+ page_back=null
+ page_back_action=Callable()
  menu_screen=""
 
 func open_modal(title: String,subtitle: String):
  close_modal()
  var shade=ColorRect.new()
- shade.color=Color(0.02,0.04,0.06,0.83)
+ shade.color=Color("111c24")
  shade.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
  ui.add_child(shade)
- modal=panel(shade,Vector2(380,150),Vector2(830,580))
+ modal=panel(shade,Vector2.ZERO,Vector2.ZERO)
+ modal.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
+ modal.add_theme_stylebox_override("panel",style(INK,Color.TRANSPARENT,0))
+ var page_frame=VBoxContainer.new()
+ modal.add_child(page_frame)
  var scroll=ScrollContainer.new()
+ scroll.size_flags_vertical=Control.SIZE_EXPAND_FILL
  scroll.horizontal_scroll_mode=ScrollContainer.SCROLL_MODE_DISABLED
- modal.add_child(scroll)
+ page_frame.add_child(scroll)
  modal_body=VBoxContainer.new()
  modal_body.size_flags_horizontal=Control.SIZE_EXPAND_FILL
  modal_body.add_theme_constant_override("separation",14)
  scroll.add_child(modal_body)
+ page_back_action=close_modal
+ page_back=button("‹ 返回",navigate_back)
+ page_back.name="PageBack"
+ page_back.size_flags_horizontal=Control.SIZE_SHRINK_BEGIN
+ page_frame.add_child(page_back)
+ page_frame.move_child(page_back,0)
  modal_body.add_child(text_label(title,29,GOLD))
  modal_body.add_child(text_label(subtitle,17,MUTED))
  separator(modal_body)
+
+func navigate_back():
+ if is_instance_valid(page_back) and not page_back.disabled and page_back_action.is_valid():
+  page_back_action.call()
+
+func set_page_back(action: Callable):
+ page_back_action=action
+ page_back.disabled=not action.is_valid()
 
 func depart():
  if campaign.phase=="camp":
@@ -703,6 +726,7 @@ func after_battle_action():
   elif result=="gameover":show_gameover()
   else:
    open_modal("出战队伍覆灭","仅有留守队员生还。该遭遇已失守，本次远征无法再次挑战。")
+   set_page_back(Callable())
    for u in battle.actors:
     if u.side==0:modal_body.add_child(text_label("† "+u.name,19,RED))
    modal_body.add_child(button("由幸存者继续远征",return_world,true))
@@ -717,6 +741,7 @@ func return_world():
 
 func show_reward():
  open_modal("战斗胜利  /  战利品三选一","宝物在远征中立即生效。安全撤离时最多带回两件，其余换成银币。")
+ set_page_back(Callable())
  for i in range(campaign.choices.size()):
   var index=i
   var reward=campaign.choices[i]
@@ -756,6 +781,7 @@ func render_extract():
 
 func show_gameover():
  open_modal("行旅止于此  /  团长阵亡","没有获救，也没有死亡豁免。这段远征已经结束。")
+ set_page_back(Callable())
  modal_body.add_child(text_label("你可以读取远征前的存档，重新规划路线与出战队伍。",20))
  modal_body.add_child(button("读取远征前存档",restore,true))
  modal_body.add_child(button("重新开始游戏",new_game))
@@ -795,8 +821,7 @@ func show_main_menu(message: String=""):
  session_started=false
  open_modal("灰烬行旅", "A S H B O U N D   /   穿越灰潮，带同伴归来")
  menu_screen="main"
- modal.position=Vector2(460,180)
- modal.size=Vector2(520,540)
+ set_page_back(Callable())
  set_game_hud_visible(false)
  var saved=saved_campaign()
  var summary="暂无存档 · 开始一段新的旅途"
@@ -821,6 +846,7 @@ func request_new_game():
   return
  open_modal("开始新的旅途？","新游戏将覆盖当前存档，包括队伍、装备与远征进度。")
  menu_screen="new"
+ set_page_back(show_main_menu)
  modal_body.add_child(button("确认开始 · 覆盖存档",new_game,true))
  modal_body.add_child(button("取消 · 返回主菜单",show_main_menu))
 
@@ -869,6 +895,7 @@ func manual_save():
 func request_main_menu():
  open_modal("返回主菜单？", "本场战斗进度不会保存；继续游戏将回到开战前。" if battle!=null else "返回前会保存当前旅途进度。")
  menu_screen="return"
+ set_page_back(show_pause_menu)
  modal_body.add_child(button("确认返回主菜单",return_to_main_menu,true))
  modal_body.add_child(button("取消 · 返回旅途菜单",show_pause_menu))
 
@@ -893,12 +920,13 @@ func show_settings(from_main: bool):
  modal_body.add_child(fullscreen)
  var settings_status=text_label("地图使用固定视距，无需缩放。",17,MUTED)
  modal_body.add_child(settings_status)
- modal_body.add_child(button("返回",func():
+ set_page_back(func():
   if not save_settings():
    settings_status.text="设置保存失败，请检查本地存储空间。"
    return
   if from_main:show_main_menu()
-  else:show_pause_menu()))
+  else:show_pause_menu())
+ modal_body.add_child(button("返回",navigate_back))
 
 func load_settings():
  var config=ConfigFile.new()
@@ -947,14 +975,10 @@ func _unhandled_input(event):
   cancel_action()
   get_viewport().set_input_as_handled()
   return
- if event is InputEventKey and event.pressed and not event.echo and event.keycode==KEY_ESCAPE and not party_menu_open:
+ if event is InputEventKey and event.pressed and not event.echo and event.keycode==KEY_ESCAPE:
   if presentation.busy:return
-  if menu_screen=="pause":close_modal()
-  elif not is_instance_valid(modal):show_pause_menu()
-  get_viewport().set_input_as_handled()
-  return
- if party_menu_open and event is InputEventKey and event.pressed and event.keycode==KEY_ESCAPE:
-  close_modal()
+  if is_instance_valid(modal):navigate_back()
+  else:show_pause_menu()
   get_viewport().set_input_as_handled()
   return
  if is_instance_valid(modal) or presentation.busy:return
@@ -1072,13 +1096,10 @@ func show_party_menu(tab: String="详情",character_id: String=""):
  menu_character=unit.id
  open_modal("佣兵团档案", "选择同伴 · 查看详情 · 整理装备与技能")
  party_menu_open=true
- modal.position=Vector2(190,55)
- modal.size=Vector2(1060,790)
- var original_scroll=modal.get_child(0)
- modal.remove_child(original_scroll)
- var frame=VBoxContainer.new()
+ var frame=modal.get_child(0)
+ var original_scroll=frame.get_child(1)
+ frame.remove_child(original_scroll)
  frame.add_theme_constant_override("separation",10)
- modal.add_child(frame)
  for heading in modal_body.get_children():
   modal_body.remove_child(heading)
   frame.add_child(heading)

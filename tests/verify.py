@@ -13,7 +13,7 @@ if not engine.exists():
 if not engine:
     sys.exit('Godot 4.7.2 is required.')
 checks = 0
-suites = ('run', 'edges', 'campaign', 'integration', 'persistence', 'ui', 'menu', 'art', 'presentation', 'characters', 'equipment', 'routes', 'atlas', 'actions', 'professions', 'profession_combat', 'profession_ui', 'equipment_visual', 'equipment_appearance_ui', 'equipment_shapes', 'character_pages', 'equipment_preview')
+suites = ('fullscreen_pages', 'run', 'edges', 'campaign', 'integration', 'persistence', 'ui', 'menu', 'art', 'presentation', 'characters', 'equipment', 'routes', 'atlas', 'actions', 'professions', 'profession_combat', 'profession_ui', 'equipment_visual', 'equipment_appearance_ui', 'equipment_shapes', 'character_pages', 'equipment_preview')
 for suite in suites:
     result = subprocess.run([str(engine), '--headless', '--path', str(root),
                              '--script', f'res://tests/{suite}.gd'],
