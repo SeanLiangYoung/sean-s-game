@@ -44,4 +44,5 @@ func _draw():
    draw_arc(node_position(n),36,0,TAU,48,Color("263c37"),3,true)
  draw_rect(Rect2(22,22,1396,856),Color("c1ac78"),false,2)
 func node_position(n: Dictionary) -> Vector2:
- return Vector2(260+n.depth*195,420+(n.lane*2-1)*115)
+ var last_depth=route.nodes[-1].depth if route!=null and not route.nodes.is_empty() else 4
+ return Vector2(140+n.depth*(880.0/maxi(1,last_depth)),420+(n.lane*2-1)*115)

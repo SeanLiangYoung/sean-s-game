@@ -7,12 +7,14 @@ func check(value: bool):
 func _init():
  var c=preload("res://game/campaign.gd").new("user://routes-test.json")
  check(c.start_region("border"))
+ c.route.setup("border");c.encounters=["open","open","open"]
  check(c.route.available()==["0a","0b"])
  check(not c.route.visible_nodes().any(func(n):return n.depth>2))
  check(c.enter_route("0b"))
  check(not c.enter_route("0a"))
+ c.silver=c.GOODS.sword.price-1
  check(not c.buy("sword"))
- check(c.silver==40)
+ check(c.silver==c.GOODS.sword.price-1)
  c.silver=500
  check(c.buy("sword"))
  check(not c.buy("sword"))
@@ -46,6 +48,7 @@ func _init():
  check(rules.rest_amount("hp")==22)
  var blocked=preload("res://game/campaign.gd").new("user://routes-blocked.json")
  check(blocked.start_region("border"))
+ blocked.route.setup("border");blocked.encounters=["open","open","open"]
  check(not blocked.extract([]))
  check(blocked.enter_route("0a"))
  check(not blocked.enter_route("1a"))

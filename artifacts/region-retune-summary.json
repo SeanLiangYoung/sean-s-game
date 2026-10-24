@@ -1,0 +1,2872 @@
+{
+  "games": 4032,
+  "paired_scenarios": 2016,
+  "baseline_reports": [
+    {
+      "report": "region-retune-baseline.json",
+      "cases": 768,
+      "valid": true
+    },
+    {
+      "report": "region-retune-baseline-holdout.json",
+      "cases": 768,
+      "valid": true
+    },
+    {
+      "report": "region-variants-baseline.json",
+      "cases": 240,
+      "valid": true
+    },
+    {
+      "report": "region-variants-baseline-holdout.json",
+      "cases": 240,
+      "valid": true
+    }
+  ],
+  "first_pass_reports": [
+    {
+      "report": "region-retune-final.json",
+      "cases": 768,
+      "valid": true
+    },
+    {
+      "report": "region-retune-final-holdout.json",
+      "cases": 768,
+      "valid": true
+    },
+    {
+      "report": "region-variants-final.json",
+      "cases": 240,
+      "valid": true
+    },
+    {
+      "report": "region-variants-final-holdout.json",
+      "cases": 240,
+      "valid": true
+    }
+  ],
+  "personal_delta_reports": [
+    {
+      "report": "region-personal-final.json",
+      "cases": 120,
+      "valid": true
+    },
+    {
+      "report": "region-personal-final-holdout.json",
+      "cases": 120,
+      "valid": true
+    }
+  ],
+  "execution_accounting": {
+    "baseline_executed": 2016,
+    "first_pass_executed": 2016,
+    "personal_delta_executed": 240,
+    "unchanged_final_reused": 1776
+  },
+  "overall": {
+    "baseline": {
+      "cases": 2016,
+      "wins": 1782,
+      "win_rate": 0.8839285714285714,
+      "deaths": 1104,
+      "rounds": 7762,
+      "win_mean_hp": 259.76374859708193,
+      "win_mean_mp": 51.11167227833894,
+      "win_mean_rounds": 4.039842873176206,
+      "healing_observed": 138235,
+      "cleanses": 1085
+    },
+    "final": {
+      "cases": 2016,
+      "wins": 1769,
+      "win_rate": 0.8774801587301587,
+      "deaths": 1226,
+      "rounds": 7755,
+      "win_mean_hp": 253.31147540983608,
+      "win_mean_mp": 50.05992085924251,
+      "win_mean_rounds": 4.044657998869417,
+      "healing_observed": 132994,
+      "cleanses": 1091
+    }
+  },
+  "groups": {
+    "region": {
+      "border": {
+        "baseline": {
+          "cases": 336,
+          "wins": 302,
+          "win_rate": 0.8988095238095238,
+          "deaths": 142,
+          "rounds": 1190,
+          "win_mean_hp": 267.341059602649,
+          "win_mean_mp": 50.973509933774835,
+          "win_mean_rounds": 3.672185430463576,
+          "healing_observed": 21205,
+          "cleanses": 97
+        },
+        "final": {
+          "cases": 336,
+          "wins": 298,
+          "win_rate": 0.8869047619047619,
+          "deaths": 161,
+          "rounds": 1192,
+          "win_mean_hp": 260.5536912751678,
+          "win_mean_mp": 51.11073825503356,
+          "win_mean_rounds": 3.697986577181208,
+          "healing_observed": 19999,
+          "cleanses": 100
+        }
+      },
+      "frost": {
+        "baseline": {
+          "cases": 336,
+          "wins": 298,
+          "win_rate": 0.8869047619047619,
+          "deaths": 159,
+          "rounds": 1348,
+          "win_mean_hp": 262.8523489932886,
+          "win_mean_mp": 51.79865771812081,
+          "win_mean_rounds": 4.221476510067114,
+          "healing_observed": 22327,
+          "cleanses": 228
+        },
+        "final": {
+          "cases": 336,
+          "wins": 297,
+          "win_rate": 0.8839285714285714,
+          "deaths": 187,
+          "rounds": 1359,
+          "win_mean_hp": 255.92929292929293,
+          "win_mean_mp": 50.60942760942761,
+          "win_mean_rounds": 4.255892255892256,
+          "healing_observed": 22298,
+          "cleanses": 234
+        }
+      },
+      "marsh": {
+        "baseline": {
+          "cases": 336,
+          "wins": 282,
+          "win_rate": 0.8392857142857143,
+          "deaths": 211,
+          "rounds": 1269,
+          "win_mean_hp": 254.12056737588654,
+          "win_mean_mp": 50.780141843971634,
+          "win_mean_rounds": 4.0,
+          "healing_observed": 22919,
+          "cleanses": 442
+        },
+        "final": {
+          "cases": 336,
+          "wins": 287,
+          "win_rate": 0.8541666666666666,
+          "deaths": 222,
+          "rounds": 1273,
+          "win_mean_hp": 246.70034843205576,
+          "win_mean_mp": 48.47386759581882,
+          "win_mean_rounds": 4.003484320557491,
+          "healing_observed": 22018,
+          "cleanses": 443
+        }
+      },
+      "ruins": {
+        "baseline": {
+          "cases": 336,
+          "wins": 305,
+          "win_rate": 0.9077380952380952,
+          "deaths": 152,
+          "rounds": 1336,
+          "win_mean_hp": 263.2,
+          "win_mean_mp": 47.40327868852459,
+          "win_mean_rounds": 4.150819672131147,
+          "healing_observed": 22541,
+          "cleanses": 93
+        },
+        "final": {
+          "cases": 336,
+          "wins": 299,
+          "win_rate": 0.8898809523809523,
+          "deaths": 169,
+          "rounds": 1349,
+          "win_mean_hp": 259.7123745819398,
+          "win_mean_mp": 45.551839464882946,
+          "win_mean_rounds": 4.197324414715719,
+          "healing_observed": 22521,
+          "cleanses": 91
+        }
+      },
+      "waste": {
+        "baseline": {
+          "cases": 336,
+          "wins": 298,
+          "win_rate": 0.8869047619047619,
+          "deaths": 239,
+          "rounds": 1275,
+          "win_mean_hp": 252.95637583892616,
+          "win_mean_mp": 52.01677852348993,
+          "win_mean_rounds": 3.9630872483221475,
+          "healing_observed": 23492,
+          "cleanses": 102
+        },
+        "final": {
+          "cases": 336,
+          "wins": 292,
+          "win_rate": 0.8690476190476191,
+          "deaths": 263,
+          "rounds": 1247,
+          "win_mean_hp": 245.82191780821918,
+          "win_mean_mp": 52.31506849315068,
+          "win_mean_rounds": 3.8972602739726026,
+          "healing_observed": 21416,
+          "cleanses": 99
+        }
+      },
+      "wood": {
+        "baseline": {
+          "cases": 336,
+          "wins": 297,
+          "win_rate": 0.8839285714285714,
+          "deaths": 201,
+          "rounds": 1344,
+          "win_mean_hp": 257.61952861952864,
+          "win_mean_mp": 53.77777777777778,
+          "win_mean_rounds": 4.232323232323233,
+          "healing_observed": 25751,
+          "cleanses": 123
+        },
+        "final": {
+          "cases": 336,
+          "wins": 296,
+          "win_rate": 0.8809523809523809,
+          "deaths": 224,
+          "rounds": 1335,
+          "win_mean_hp": 250.72635135135135,
+          "win_mean_mp": 52.317567567567565,
+          "win_mean_rounds": 4.212837837837838,
+          "healing_observed": 24742,
+          "cleanses": 124
+        }
+      }
+    },
+    "build": {
+      "arcane": {
+        "baseline": {
+          "cases": 96,
+          "wins": 80,
+          "win_rate": 0.8333333333333334,
+          "deaths": 56,
+          "rounds": 297,
+          "win_mean_hp": 230.9625,
+          "win_mean_mp": 69.5375,
+          "win_mean_rounds": 3.4125,
+          "healing_observed": 3896,
+          "cleanses": 68
+        },
+        "final": {
+          "cases": 96,
+          "wins": 80,
+          "win_rate": 0.8333333333333334,
+          "deaths": 58,
+          "rounds": 298,
+          "win_mean_hp": 232.2625,
+          "win_mean_mp": 68.95,
+          "win_mean_rounds": 3.3875,
+          "healing_observed": 3950,
+          "cleanses": 68
+        }
+      },
+      "blood": {
+        "baseline": {
+          "cases": 240,
+          "wins": 187,
+          "win_rate": 0.7791666666666667,
+          "deaths": 176,
+          "rounds": 959,
+          "win_mean_hp": 259.28877005347596,
+          "win_mean_mp": 45.35294117647059,
+          "win_mean_rounds": 4.390374331550802,
+          "healing_observed": 24193,
+          "cleanses": 183
+        },
+        "final": {
+          "cases": 240,
+          "wins": 191,
+          "win_rate": 0.7958333333333333,
+          "deaths": 184,
+          "rounds": 979,
+          "win_mean_hp": 256.12041884816756,
+          "win_mean_mp": 45.17277486910995,
+          "win_mean_rounds": 4.445026178010472,
+          "healing_observed": 23529,
+          "cleanses": 178
+        }
+      },
+      "command": {
+        "baseline": {
+          "cases": 96,
+          "wins": 72,
+          "win_rate": 0.75,
+          "deaths": 74,
+          "rounds": 317,
+          "win_mean_hp": 237.06944444444446,
+          "win_mean_mp": 52.77777777777778,
+          "win_mean_rounds": 3.8055555555555554,
+          "healing_observed": 5007,
+          "cleanses": 69
+        },
+        "final": {
+          "cases": 96,
+          "wins": 72,
+          "win_rate": 0.75,
+          "deaths": 74,
+          "rounds": 319,
+          "win_mean_hp": 236.06944444444446,
+          "win_mean_mp": 53.56944444444444,
+          "win_mean_rounds": 3.8333333333333335,
+          "healing_observed": 4880,
+          "cleanses": 68
+        }
+      },
+      "control": {
+        "baseline": {
+          "cases": 96,
+          "wins": 62,
+          "win_rate": 0.6458333333333334,
+          "deaths": 104,
+          "rounds": 355,
+          "win_mean_hp": 222.93548387096774,
+          "win_mean_mp": 47.225806451612904,
+          "win_mean_rounds": 4.241935483870968,
+          "healing_observed": 4730,
+          "cleanses": 78
+        },
+        "final": {
+          "cases": 96,
+          "wins": 62,
+          "win_rate": 0.6458333333333334,
+          "deaths": 104,
+          "rounds": 355,
+          "win_mean_hp": 222.41935483870967,
+          "win_mean_mp": 47.29032258064516,
+          "win_mean_rounds": 4.258064516129032,
+          "healing_observed": 4674,
+          "cleanses": 78
+        }
+      },
+      "cross_arcane_pilgrim": {
+        "baseline": {
+          "cases": 144,
+          "wins": 138,
+          "win_rate": 0.9583333333333334,
+          "deaths": 105,
+          "rounds": 593,
+          "win_mean_hp": 259.42753623188406,
+          "win_mean_mp": 72.6086956521739,
+          "win_mean_rounds": 4.13768115942029,
+          "healing_observed": 13786,
+          "cleanses": 86
+        },
+        "final": {
+          "cases": 144,
+          "wins": 137,
+          "win_rate": 0.9513888888888888,
+          "deaths": 107,
+          "rounds": 596,
+          "win_mean_hp": 259.51824817518246,
+          "win_mean_mp": 72.38686131386861,
+          "win_mean_rounds": 4.160583941605839,
+          "healing_observed": 13777,
+          "cleanses": 81
+        }
+      },
+      "cross_blood_ward": {
+        "baseline": {
+          "cases": 240,
+          "wins": 237,
+          "win_rate": 0.9875,
+          "deaths": 171,
+          "rounds": 1155,
+          "win_mean_hp": 252.1476793248945,
+          "win_mean_mp": 44.32067510548523,
+          "win_mean_rounds": 4.793248945147679,
+          "healing_observed": 22977,
+          "cleanses": 107
+        },
+        "final": {
+          "cases": 240,
+          "wins": 237,
+          "win_rate": 0.9875,
+          "deaths": 199,
+          "rounds": 1158,
+          "win_mean_hp": 238.45569620253164,
+          "win_mean_mp": 41.18565400843882,
+          "win_mean_rounds": 4.814345991561181,
+          "healing_observed": 21125,
+          "cleanses": 116
+        }
+      },
+      "cross_blood_ward_assault": {
+        "baseline": {
+          "cases": 240,
+          "wins": 236,
+          "win_rate": 0.9833333333333333,
+          "deaths": 48,
+          "rounds": 908,
+          "win_mean_hp": 287.0042372881356,
+          "win_mean_mp": 51.228813559322035,
+          "win_mean_rounds": 3.7966101694915255,
+          "healing_observed": 16269,
+          "cleanses": 69
+        },
+        "final": {
+          "cases": 240,
+          "wins": 223,
+          "win_rate": 0.9291666666666667,
+          "deaths": 112,
+          "rounds": 901,
+          "win_mean_hp": 266.695067264574,
+          "win_mean_mp": 48.08520179372197,
+          "win_mean_rounds": 3.8699551569506725,
+          "healing_observed": 16417,
+          "cleanses": 72
+        }
+      },
+      "cross_blood_ward_guard": {
+        "baseline": {
+          "cases": 240,
+          "wins": 238,
+          "win_rate": 0.9916666666666667,
+          "deaths": 40,
+          "rounds": 1043,
+          "win_mean_hp": 286.83613445378154,
+          "win_mean_mp": 43.760504201680675,
+          "win_mean_rounds": 4.352941176470588,
+          "healing_observed": 18390,
+          "cleanses": 82
+        },
+        "final": {
+          "cases": 240,
+          "wins": 231,
+          "win_rate": 0.9625,
+          "deaths": 63,
+          "rounds": 1022,
+          "win_mean_hp": 276.5541125541126,
+          "win_mean_mp": 42.78354978354978,
+          "win_mean_rounds": 4.294372294372295,
+          "healing_observed": 15726,
+          "cleanses": 80
+        }
+      },
+      "dusk": {
+        "baseline": {
+          "cases": 96,
+          "wins": 78,
+          "win_rate": 0.8125,
+          "deaths": 49,
+          "rounds": 272,
+          "win_mean_hp": 236.24358974358975,
+          "win_mean_mp": 58.0,
+          "win_mean_rounds": 3.1153846153846154,
+          "healing_observed": 2932,
+          "cleanses": 60
+        },
+        "final": {
+          "cases": 96,
+          "wins": 79,
+          "win_rate": 0.8229166666666666,
+          "deaths": 52,
+          "rounds": 278,
+          "win_mean_hp": 234.78481012658227,
+          "win_mean_mp": 57.21518987341772,
+          "win_mean_rounds": 3.1645569620253164,
+          "healing_observed": 3015,
+          "cleanses": 63
+        }
+      },
+      "engine": {
+        "baseline": {
+          "cases": 96,
+          "wins": 71,
+          "win_rate": 0.7395833333333334,
+          "deaths": 82,
+          "rounds": 294,
+          "win_mean_hp": 227.4788732394366,
+          "win_mean_mp": 52.2112676056338,
+          "win_mean_rounds": 3.4225352112676055,
+          "healing_observed": 3482,
+          "cleanses": 64
+        },
+        "final": {
+          "cases": 96,
+          "wins": 73,
+          "win_rate": 0.7604166666666666,
+          "deaths": 80,
+          "rounds": 296,
+          "win_mean_hp": 224.4931506849315,
+          "win_mean_mp": 50.945205479452056,
+          "win_mean_rounds": 3.4246575342465753,
+          "healing_observed": 3381,
+          "cleanses": 64
+        }
+      },
+      "hunt": {
+        "baseline": {
+          "cases": 96,
+          "wins": 83,
+          "win_rate": 0.8645833333333334,
+          "deaths": 64,
+          "rounds": 295,
+          "win_mean_hp": 234.55421686746988,
+          "win_mean_mp": 55.8433734939759,
+          "win_mean_rounds": 3.2289156626506026,
+          "healing_observed": 3759,
+          "cleanses": 53
+        },
+        "final": {
+          "cases": 96,
+          "wins": 84,
+          "win_rate": 0.875,
+          "deaths": 62,
+          "rounds": 298,
+          "win_mean_hp": 234.78571428571428,
+          "win_mean_mp": 55.05952380952381,
+          "win_mean_rounds": 3.25,
+          "healing_observed": 3804,
+          "cleanses": 54
+        }
+      },
+      "pilgrim": {
+        "baseline": {
+          "cases": 96,
+          "wins": 73,
+          "win_rate": 0.7604166666666666,
+          "deaths": 89,
+          "rounds": 402,
+          "win_mean_hp": 236.6986301369863,
+          "win_mean_mp": 45.36986301369863,
+          "win_mean_rounds": 4.63013698630137,
+          "healing_observed": 7839,
+          "cleanses": 109
+        },
+        "final": {
+          "cases": 96,
+          "wins": 71,
+          "win_rate": 0.7395833333333334,
+          "deaths": 89,
+          "rounds": 396,
+          "win_mean_hp": 241.35211267605635,
+          "win_mean_mp": 46.66197183098591,
+          "win_mean_rounds": 4.563380281690141,
+          "healing_observed": 7869,
+          "cleanses": 109
+        }
+      },
+      "ward": {
+        "baseline": {
+          "cases": 240,
+          "wins": 227,
+          "win_rate": 0.9458333333333333,
+          "deaths": 46,
+          "rounds": 872,
+          "win_mean_hp": 273.82819383259914,
+          "win_mean_mp": 48.90748898678414,
+          "win_mean_rounds": 3.6872246696035242,
+          "healing_observed": 10975,
+          "cleanses": 57
+        },
+        "final": {
+          "cases": 240,
+          "wins": 229,
+          "win_rate": 0.9541666666666667,
+          "deaths": 42,
+          "rounds": 859,
+          "win_mean_hp": 273.3711790393013,
+          "win_mean_mp": 48.74235807860262,
+          "win_mean_rounds": 3.6331877729257642,
+          "healing_observed": 10847,
+          "cleanses": 60
+        }
+      }
+    },
+    "cohort": {
+      "core": {
+        "baseline": {
+          "cases": 1152,
+          "wins": 956,
+          "win_rate": 0.8298611111111112,
+          "deaths": 750,
+          "rounds": 4094,
+          "win_mean_hp": 243.3776150627615,
+          "win_mean_mp": 50.57217573221757,
+          "win_mean_rounds": 3.833682008368201,
+          "healing_observed": 63318,
+          "cleanses": 692
+        },
+        "final": {
+          "cases": 1152,
+          "wins": 944,
+          "win_rate": 0.8194444444444444,
+          "deaths": 816,
+          "rounds": 4092,
+          "win_mean_hp": 238.8114406779661,
+          "win_mean_mp": 50.40042372881356,
+          "win_mean_rounds": 3.832627118644068,
+          "healing_observed": 60151,
+          "cleanses": 698
+        }
+      },
+      "focus": {
+        "baseline": {
+          "cases": 864,
+          "wins": 826,
+          "win_rate": 0.9560185185185185,
+          "deaths": 354,
+          "rounds": 3668,
+          "win_mean_hp": 278.728813559322,
+          "win_mean_mp": 51.73607748184019,
+          "win_mean_rounds": 4.278450363196126,
+          "healing_observed": 74917,
+          "cleanses": 393
+        },
+        "final": {
+          "cases": 864,
+          "wins": 825,
+          "win_rate": 0.9548611111111112,
+          "deaths": 410,
+          "rounds": 3663,
+          "win_mean_hp": 269.9030303030303,
+          "win_mean_mp": 49.67030303030303,
+          "win_mean_rounds": 4.287272727272727,
+          "healing_observed": 72843,
+          "cleanses": 393
+        }
+      }
+    },
+    "resource": {
+      "depleted": {
+        "baseline": {
+          "cases": 1008,
+          "wins": 782,
+          "win_rate": 0.7757936507936508,
+          "deaths": 919,
+          "rounds": 4170,
+          "win_mean_hp": 223.45012787723786,
+          "win_mean_mp": 25.39002557544757,
+          "win_mean_rounds": 4.634271099744246,
+          "healing_observed": 105495,
+          "cleanses": 255
+        },
+        "final": {
+          "cases": 1008,
+          "wins": 769,
+          "win_rate": 0.7628968253968254,
+          "deaths": 1022,
+          "rounds": 4161,
+          "win_mean_hp": 211.57607282184657,
+          "win_mean_mp": 23.607282184655396,
+          "win_mean_rounds": 4.652795838751626,
+          "healing_observed": 99648,
+          "cleanses": 239
+        }
+      },
+      "full": {
+        "baseline": {
+          "cases": 1008,
+          "wins": 1000,
+          "win_rate": 0.9920634920634921,
+          "deaths": 185,
+          "rounds": 3592,
+          "win_mean_hp": 288.161,
+          "win_mean_mp": 71.226,
+          "win_mean_rounds": 3.575,
+          "healing_observed": 32740,
+          "cleanses": 830
+        },
+        "final": {
+          "cases": 1008,
+          "wins": 1000,
+          "win_rate": 0.9920634920634921,
+          "deaths": 204,
+          "rounds": 3594,
+          "win_mean_hp": 285.406,
+          "win_mean_mp": 70.402,
+          "win_mean_rounds": 3.577,
+          "healing_observed": 33346,
+          "cleanses": 852
+        }
+      }
+    },
+    "captain": {
+      "default": {
+        "baseline": {
+          "cases": 1152,
+          "wins": 956,
+          "win_rate": 0.8298611111111112,
+          "deaths": 750,
+          "rounds": 4094,
+          "win_mean_hp": 243.3776150627615,
+          "win_mean_mp": 50.57217573221757,
+          "win_mean_rounds": 3.833682008368201,
+          "healing_observed": 63318,
+          "cleanses": 692
+        },
+        "final": {
+          "cases": 1152,
+          "wins": 944,
+          "win_rate": 0.8194444444444444,
+          "deaths": 816,
+          "rounds": 4092,
+          "win_mean_hp": 238.8114406779661,
+          "win_mean_mp": 50.40042372881356,
+          "win_mean_rounds": 3.832627118644068,
+          "healing_observed": 60151,
+          "cleanses": 698
+        }
+      },
+      "lu": {
+        "baseline": {
+          "cases": 288,
+          "wins": 277,
+          "win_rate": 0.9618055555555556,
+          "deaths": 124,
+          "rounds": 1230,
+          "win_mean_hp": 277.2346570397112,
+          "win_mean_mp": 51.101083032490976,
+          "win_mean_rounds": 4.303249097472924,
+          "healing_observed": 25636,
+          "cleanses": 133
+        },
+        "final": {
+          "cases": 288,
+          "wins": 276,
+          "win_rate": 0.9583333333333334,
+          "deaths": 144,
+          "rounds": 1229,
+          "win_mean_hp": 267.6050724637681,
+          "win_mean_mp": 49.94927536231884,
+          "win_mean_rounds": 4.311594202898551,
+          "healing_observed": 24740,
+          "cleanses": 128
+        }
+      },
+      "shen": {
+        "baseline": {
+          "cases": 288,
+          "wins": 274,
+          "win_rate": 0.9513888888888888,
+          "deaths": 123,
+          "rounds": 1221,
+          "win_mean_hp": 277.8029197080292,
+          "win_mean_mp": 51.31021897810219,
+          "win_mean_rounds": 4.266423357664234,
+          "healing_observed": 24856,
+          "cleanses": 139
+        },
+        "final": {
+          "cases": 288,
+          "wins": 276,
+          "win_rate": 0.9583333333333334,
+          "deaths": 133,
+          "rounds": 1225,
+          "win_mean_hp": 270.4963768115942,
+          "win_mean_mp": 49.51086956521739,
+          "win_mean_rounds": 4.300724637681159,
+          "healing_observed": 24126,
+          "cleanses": 142
+        }
+      },
+      "wen": {
+        "baseline": {
+          "cases": 288,
+          "wins": 275,
+          "win_rate": 0.9548611111111112,
+          "deaths": 107,
+          "rounds": 1217,
+          "win_mean_hp": 281.15636363636366,
+          "win_mean_mp": 52.8,
+          "win_mean_rounds": 4.265454545454546,
+          "healing_observed": 24425,
+          "cleanses": 121
+        },
+        "final": {
+          "cases": 288,
+          "wins": 273,
+          "win_rate": 0.9479166666666666,
+          "deaths": 133,
+          "rounds": 1209,
+          "win_mean_hp": 271.6263736263736,
+          "win_mean_mp": 49.54945054945055,
+          "win_mean_rounds": 4.249084249084249,
+          "healing_observed": 23977,
+          "cleanses": 123
+        }
+      }
+    }
+  },
+  "region_builds": {
+    "border": {
+      "arcane": {
+        "baseline": {
+          "cases": 16,
+          "wins": 13,
+          "win_rate": 0.8125,
+          "deaths": 6,
+          "rounds": 43,
+          "win_mean_hp": 241.46153846153845,
+          "win_mean_mp": 72.92307692307692,
+          "win_mean_rounds": 3.0,
+          "healing_observed": 505,
+          "cleanses": 10
+        },
+        "final": {
+          "cases": 16,
+          "wins": 13,
+          "win_rate": 0.8125,
+          "deaths": 6,
+          "rounds": 43,
+          "win_mean_hp": 242.69230769230768,
+          "win_mean_mp": 72.6923076923077,
+          "win_mean_rounds": 3.0,
+          "healing_observed": 505,
+          "cleanses": 10
+        }
+      },
+      "blood": {
+        "baseline": {
+          "cases": 40,
+          "wins": 32,
+          "win_rate": 0.8,
+          "deaths": 27,
+          "rounds": 145,
+          "win_mean_hp": 263.34375,
+          "win_mean_mp": 45.5625,
+          "win_mean_rounds": 4.03125,
+          "healing_observed": 3847,
+          "cleanses": 21
+        },
+        "final": {
+          "cases": 40,
+          "wins": 32,
+          "win_rate": 0.8,
+          "deaths": 27,
+          "rounds": 146,
+          "win_mean_hp": 262.5625,
+          "win_mean_mp": 45.15625,
+          "win_mean_rounds": 4.03125,
+          "healing_observed": 3724,
+          "cleanses": 21
+        }
+      },
+      "command": {
+        "baseline": {
+          "cases": 16,
+          "wins": 15,
+          "win_rate": 0.9375,
+          "deaths": 8,
+          "rounds": 55,
+          "win_mean_hp": 236.73333333333332,
+          "win_mean_mp": 47.666666666666664,
+          "win_mean_rounds": 3.533333333333333,
+          "healing_observed": 876,
+          "cleanses": 11
+        },
+        "final": {
+          "cases": 16,
+          "wins": 15,
+          "win_rate": 0.9375,
+          "deaths": 8,
+          "rounds": 55,
+          "win_mean_hp": 238.8,
+          "win_mean_mp": 47.666666666666664,
+          "win_mean_rounds": 3.533333333333333,
+          "healing_observed": 876,
+          "cleanses": 11
+        }
+      },
+      "control": {
+        "baseline": {
+          "cases": 16,
+          "wins": 12,
+          "win_rate": 0.75,
+          "deaths": 10,
+          "rounds": 56,
+          "win_mean_hp": 241.16666666666666,
+          "win_mean_mp": 47.5,
+          "win_mean_rounds": 3.6666666666666665,
+          "healing_observed": 688,
+          "cleanses": 11
+        },
+        "final": {
+          "cases": 16,
+          "wins": 12,
+          "win_rate": 0.75,
+          "deaths": 10,
+          "rounds": 56,
+          "win_mean_hp": 241.16666666666666,
+          "win_mean_mp": 47.5,
+          "win_mean_rounds": 3.6666666666666665,
+          "healing_observed": 688,
+          "cleanses": 11
+        }
+      },
+      "cross_arcane_pilgrim": {
+        "baseline": {
+          "cases": 24,
+          "wins": 19,
+          "win_rate": 0.7916666666666666,
+          "deaths": 20,
+          "rounds": 86,
+          "win_mean_hp": 267.2631578947368,
+          "win_mean_mp": 77.6842105263158,
+          "win_mean_rounds": 3.6842105263157894,
+          "healing_observed": 2271,
+          "cleanses": 2
+        },
+        "final": {
+          "cases": 24,
+          "wins": 19,
+          "win_rate": 0.7916666666666666,
+          "deaths": 19,
+          "rounds": 86,
+          "win_mean_hp": 266.7894736842105,
+          "win_mean_mp": 77.42105263157895,
+          "win_mean_rounds": 3.6842105263157894,
+          "healing_observed": 2166,
+          "cleanses": 2
+        }
+      },
+      "cross_blood_ward": {
+        "baseline": {
+          "cases": 40,
+          "wins": 39,
+          "win_rate": 0.975,
+          "deaths": 30,
+          "rounds": 174,
+          "win_mean_hp": 250.64102564102564,
+          "win_mean_mp": 42.794871794871796,
+          "win_mean_rounds": 4.410256410256411,
+          "healing_observed": 3536,
+          "cleanses": 1
+        },
+        "final": {
+          "cases": 40,
+          "wins": 40,
+          "win_rate": 1.0,
+          "deaths": 37,
+          "rounds": 182,
+          "win_mean_hp": 236.075,
+          "win_mean_mp": 42.0,
+          "win_mean_rounds": 4.55,
+          "healing_observed": 3091,
+          "cleanses": 4
+        }
+      },
+      "cross_blood_ward_assault": {
+        "baseline": {
+          "cases": 40,
+          "wins": 40,
+          "win_rate": 1.0,
+          "deaths": 5,
+          "rounds": 135,
+          "win_mean_hp": 292.525,
+          "win_mean_mp": 48.6,
+          "win_mean_rounds": 3.375,
+          "healing_observed": 2517,
+          "cleanses": 0
+        },
+        "final": {
+          "cases": 40,
+          "wins": 34,
+          "win_rate": 0.85,
+          "deaths": 18,
+          "rounds": 127,
+          "win_mean_hp": 273.7647058823529,
+          "win_mean_mp": 52.529411764705884,
+          "win_mean_rounds": 3.3529411764705883,
+          "healing_observed": 2400,
+          "cleanses": 0
+        }
+      },
+      "cross_blood_ward_guard": {
+        "baseline": {
+          "cases": 40,
+          "wins": 40,
+          "win_rate": 1.0,
+          "deaths": 2,
+          "rounds": 160,
+          "win_mean_hp": 301.1,
+          "win_mean_mp": 45.275,
+          "win_mean_rounds": 4.0,
+          "healing_observed": 2513,
+          "cleanses": 3
+        },
+        "final": {
+          "cases": 40,
+          "wins": 40,
+          "win_rate": 1.0,
+          "deaths": 4,
+          "rounds": 159,
+          "win_mean_hp": 285.325,
+          "win_mean_mp": 45.45,
+          "win_mean_rounds": 3.975,
+          "healing_observed": 2066,
+          "cleanses": 1
+        }
+      },
+      "dusk": {
+        "baseline": {
+          "cases": 16,
+          "wins": 11,
+          "win_rate": 0.6875,
+          "deaths": 7,
+          "rounds": 41,
+          "win_mean_hp": 263.0,
+          "win_mean_mp": 66.0909090909091,
+          "win_mean_rounds": 2.6363636363636362,
+          "healing_observed": 505,
+          "cleanses": 7
+        },
+        "final": {
+          "cases": 16,
+          "wins": 11,
+          "win_rate": 0.6875,
+          "deaths": 7,
+          "rounds": 42,
+          "win_mean_hp": 263.90909090909093,
+          "win_mean_mp": 66.81818181818181,
+          "win_mean_rounds": 2.727272727272727,
+          "healing_observed": 507,
+          "cleanses": 8
+        }
+      },
+      "engine": {
+        "baseline": {
+          "cases": 16,
+          "wins": 11,
+          "win_rate": 0.6875,
+          "deaths": 10,
+          "rounds": 47,
+          "win_mean_hp": 254.36363636363637,
+          "win_mean_mp": 55.45454545454545,
+          "win_mean_rounds": 3.1818181818181817,
+          "healing_observed": 623,
+          "cleanses": 9
+        },
+        "final": {
+          "cases": 16,
+          "wins": 12,
+          "win_rate": 0.75,
+          "deaths": 8,
+          "rounds": 47,
+          "win_mean_hp": 251.25,
+          "win_mean_mp": 52.166666666666664,
+          "win_mean_rounds": 3.1666666666666665,
+          "healing_observed": 601,
+          "cleanses": 9
+        }
+      },
+      "hunt": {
+        "baseline": {
+          "cases": 16,
+          "wins": 16,
+          "win_rate": 1.0,
+          "deaths": 3,
+          "rounds": 48,
+          "win_mean_hp": 237.625,
+          "win_mean_mp": 52.75,
+          "win_mean_rounds": 3.0,
+          "healing_observed": 558,
+          "cleanses": 6
+        },
+        "final": {
+          "cases": 16,
+          "wins": 16,
+          "win_rate": 1.0,
+          "deaths": 3,
+          "rounds": 49,
+          "win_mean_hp": 239.6875,
+          "win_mean_mp": 52.9375,
+          "win_mean_rounds": 3.0625,
+          "healing_observed": 550,
+          "cleanses": 6
+        }
+      },
+      "pilgrim": {
+        "baseline": {
+          "cases": 16,
+          "wins": 14,
+          "win_rate": 0.875,
+          "deaths": 11,
+          "rounds": 66,
+          "win_mean_hp": 261.14285714285717,
+          "win_mean_mp": 44.785714285714285,
+          "win_mean_rounds": 4.357142857142857,
+          "healing_observed": 1438,
+          "cleanses": 15
+        },
+        "final": {
+          "cases": 16,
+          "wins": 14,
+          "win_rate": 0.875,
+          "deaths": 11,
+          "rounds": 66,
+          "win_mean_hp": 260.14285714285717,
+          "win_mean_mp": 44.642857142857146,
+          "win_mean_rounds": 4.357142857142857,
+          "healing_observed": 1434,
+          "cleanses": 15
+        }
+      },
+      "ward": {
+        "baseline": {
+          "cases": 40,
+          "wins": 40,
+          "win_rate": 1.0,
+          "deaths": 3,
+          "rounds": 134,
+          "win_mean_hp": 274.475,
+          "win_mean_mp": 49.875,
+          "win_mean_rounds": 3.35,
+          "healing_observed": 1328,
+          "cleanses": 1
+        },
+        "final": {
+          "cases": 40,
+          "wins": 40,
+          "win_rate": 1.0,
+          "deaths": 3,
+          "rounds": 134,
+          "win_mean_hp": 274.6,
+          "win_mean_mp": 49.2,
+          "win_mean_rounds": 3.35,
+          "healing_observed": 1391,
+          "cleanses": 2
+        }
+      }
+    },
+    "frost": {
+      "arcane": {
+        "baseline": {
+          "cases": 16,
+          "wins": 13,
+          "win_rate": 0.8125,
+          "deaths": 10,
+          "rounds": 50,
+          "win_mean_hp": 230.6153846153846,
+          "win_mean_mp": 73.76923076923077,
+          "win_mean_rounds": 3.3846153846153846,
+          "healing_observed": 513,
+          "cleanses": 12
+        },
+        "final": {
+          "cases": 16,
+          "wins": 13,
+          "win_rate": 0.8125,
+          "deaths": 10,
+          "rounds": 50,
+          "win_mean_hp": 228.23076923076923,
+          "win_mean_mp": 73.76923076923077,
+          "win_mean_rounds": 3.3846153846153846,
+          "healing_observed": 513,
+          "cleanses": 12
+        }
+      },
+      "blood": {
+        "baseline": {
+          "cases": 40,
+          "wins": 32,
+          "win_rate": 0.8,
+          "deaths": 22,
+          "rounds": 161,
+          "win_mean_hp": 263.3125,
+          "win_mean_mp": 44.34375,
+          "win_mean_rounds": 4.46875,
+          "healing_observed": 3731,
+          "cleanses": 31
+        },
+        "final": {
+          "cases": 40,
+          "wins": 32,
+          "win_rate": 0.8,
+          "deaths": 26,
+          "rounds": 169,
+          "win_mean_hp": 263.84375,
+          "win_mean_mp": 45.625,
+          "win_mean_rounds": 4.625,
+          "healing_observed": 3674,
+          "cleanses": 29
+        }
+      },
+      "command": {
+        "baseline": {
+          "cases": 16,
+          "wins": 11,
+          "win_rate": 0.6875,
+          "deaths": 10,
+          "rounds": 48,
+          "win_mean_hp": 254.8181818181818,
+          "win_mean_mp": 56.81818181818182,
+          "win_mean_rounds": 3.727272727272727,
+          "healing_observed": 723,
+          "cleanses": 10
+        },
+        "final": {
+          "cases": 16,
+          "wins": 11,
+          "win_rate": 0.6875,
+          "deaths": 11,
+          "rounds": 49,
+          "win_mean_hp": 254.27272727272728,
+          "win_mean_mp": 56.81818181818182,
+          "win_mean_rounds": 3.727272727272727,
+          "healing_observed": 741,
+          "cleanses": 10
+        }
+      },
+      "control": {
+        "baseline": {
+          "cases": 16,
+          "wins": 9,
+          "win_rate": 0.5625,
+          "deaths": 18,
+          "rounds": 57,
+          "win_mean_hp": 246.0,
+          "win_mean_mp": 53.333333333333336,
+          "win_mean_rounds": 4.222222222222222,
+          "healing_observed": 712,
+          "cleanses": 15
+        },
+        "final": {
+          "cases": 16,
+          "wins": 9,
+          "win_rate": 0.5625,
+          "deaths": 18,
+          "rounds": 56,
+          "win_mean_hp": 244.88888888888889,
+          "win_mean_mp": 53.333333333333336,
+          "win_mean_rounds": 4.222222222222222,
+          "healing_observed": 684,
+          "cleanses": 15
+        }
+      },
+      "cross_arcane_pilgrim": {
+        "baseline": {
+          "cases": 24,
+          "wins": 24,
+          "win_rate": 1.0,
+          "deaths": 10,
+          "rounds": 100,
+          "win_mean_hp": 272.5,
+          "win_mean_mp": 68.45833333333333,
+          "win_mean_rounds": 4.166666666666667,
+          "healing_observed": 2519,
+          "cleanses": 31
+        },
+        "final": {
+          "cases": 24,
+          "wins": 24,
+          "win_rate": 1.0,
+          "deaths": 10,
+          "rounds": 100,
+          "win_mean_hp": 269.75,
+          "win_mean_mp": 68.04166666666667,
+          "win_mean_rounds": 4.166666666666667,
+          "healing_observed": 2527,
+          "cleanses": 31
+        }
+      },
+      "cross_blood_ward": {
+        "baseline": {
+          "cases": 40,
+          "wins": 39,
+          "win_rate": 0.975,
+          "deaths": 28,
+          "rounds": 211,
+          "win_mean_hp": 249.76923076923077,
+          "win_mean_mp": 46.30769230769231,
+          "win_mean_rounds": 5.17948717948718,
+          "healing_observed": 4345,
+          "cleanses": 23
+        },
+        "final": {
+          "cases": 40,
+          "wins": 39,
+          "win_rate": 0.975,
+          "deaths": 40,
+          "rounds": 212,
+          "win_mean_hp": 233.0,
+          "win_mean_mp": 41.35897435897436,
+          "win_mean_rounds": 5.230769230769231,
+          "healing_observed": 4156,
+          "cleanses": 28
+        }
+      },
+      "cross_blood_ward_assault": {
+        "baseline": {
+          "cases": 40,
+          "wins": 40,
+          "win_rate": 1.0,
+          "deaths": 5,
+          "rounds": 161,
+          "win_mean_hp": 289.1,
+          "win_mean_mp": 53.15,
+          "win_mean_rounds": 4.025,
+          "healing_observed": 2418,
+          "cleanses": 20
+        },
+        "final": {
+          "cases": 40,
+          "wins": 39,
+          "win_rate": 0.975,
+          "deaths": 13,
+          "rounds": 164,
+          "win_mean_hp": 270.8205128205128,
+          "win_mean_mp": 50.43589743589744,
+          "win_mean_rounds": 4.153846153846154,
+          "healing_observed": 2990,
+          "cleanses": 14
+        }
+      },
+      "cross_blood_ward_guard": {
+        "baseline": {
+          "cases": 40,
+          "wins": 40,
+          "win_rate": 1.0,
+          "deaths": 6,
+          "rounds": 182,
+          "win_mean_hp": 285.4,
+          "win_mean_mp": 44.725,
+          "win_mean_rounds": 4.55,
+          "healing_observed": 2758,
+          "cleanses": 22
+        },
+        "final": {
+          "cases": 40,
+          "wins": 40,
+          "win_rate": 1.0,
+          "deaths": 8,
+          "rounds": 181,
+          "win_mean_hp": 272.85,
+          "win_mean_mp": 42.95,
+          "win_mean_rounds": 4.525,
+          "healing_observed": 2415,
+          "cleanses": 24
+        }
+      },
+      "dusk": {
+        "baseline": {
+          "cases": 16,
+          "wins": 14,
+          "win_rate": 0.875,
+          "deaths": 9,
+          "rounds": 49,
+          "win_mean_hp": 228.14285714285714,
+          "win_mean_mp": 56.42857142857143,
+          "win_mean_rounds": 3.357142857142857,
+          "healing_observed": 440,
+          "cleanses": 12
+        },
+        "final": {
+          "cases": 16,
+          "wins": 14,
+          "win_rate": 0.875,
+          "deaths": 9,
+          "rounds": 51,
+          "win_mean_hp": 226.14285714285714,
+          "win_mean_mp": 56.357142857142854,
+          "win_mean_rounds": 3.5,
+          "healing_observed": 476,
+          "cleanses": 14
+        }
+      },
+      "engine": {
+        "baseline": {
+          "cases": 16,
+          "wins": 13,
+          "win_rate": 0.8125,
+          "deaths": 12,
+          "rounds": 51,
+          "win_mean_hp": 227.53846153846155,
+          "win_mean_mp": 51.92307692307692,
+          "win_mean_rounds": 3.5384615384615383,
+          "healing_observed": 568,
+          "cleanses": 8
+        },
+        "final": {
+          "cases": 16,
+          "wins": 12,
+          "win_rate": 0.75,
+          "deaths": 14,
+          "rounds": 49,
+          "win_mean_hp": 229.16666666666666,
+          "win_mean_mp": 55.083333333333336,
+          "win_mean_rounds": 3.4166666666666665,
+          "healing_observed": 512,
+          "cleanses": 8
+        }
+      },
+      "hunt": {
+        "baseline": {
+          "cases": 16,
+          "wins": 12,
+          "win_rate": 0.75,
+          "deaths": 12,
+          "rounds": 51,
+          "win_mean_hp": 246.66666666666666,
+          "win_mean_mp": 63.416666666666664,
+          "win_mean_rounds": 3.5,
+          "healing_observed": 657,
+          "cleanses": 8
+        },
+        "final": {
+          "cases": 16,
+          "wins": 13,
+          "win_rate": 0.8125,
+          "deaths": 11,
+          "rounds": 53,
+          "win_mean_hp": 240.6153846153846,
+          "win_mean_mp": 59.84615384615385,
+          "win_mean_rounds": 3.5384615384615383,
+          "healing_observed": 677,
+          "cleanses": 8
+        }
+      },
+      "pilgrim": {
+        "baseline": {
+          "cases": 16,
+          "wins": 12,
+          "win_rate": 0.75,
+          "deaths": 12,
+          "rounds": 72,
+          "win_mean_hp": 248.0,
+          "win_mean_mp": 49.333333333333336,
+          "win_mean_rounds": 5.0,
+          "healing_observed": 1266,
+          "cleanses": 19
+        },
+        "final": {
+          "cases": 16,
+          "wins": 12,
+          "win_rate": 0.75,
+          "deaths": 13,
+          "rounds": 72,
+          "win_mean_hp": 245.16666666666666,
+          "win_mean_mp": 50.166666666666664,
+          "win_mean_rounds": 5.0,
+          "healing_observed": 1237,
+          "cleanses": 23
+        }
+      },
+      "ward": {
+        "baseline": {
+          "cases": 40,
+          "wins": 39,
+          "win_rate": 0.975,
+          "deaths": 5,
+          "rounds": 155,
+          "win_mean_hp": 270.2564102564103,
+          "win_mean_mp": 45.41025641025641,
+          "win_mean_rounds": 3.8974358974358974,
+          "healing_observed": 1677,
+          "cleanses": 17
+        },
+        "final": {
+          "cases": 40,
+          "wins": 39,
+          "win_rate": 0.975,
+          "deaths": 4,
+          "rounds": 153,
+          "win_mean_hp": 271.20512820512823,
+          "win_mean_mp": 44.76923076923077,
+          "win_mean_rounds": 3.8461538461538463,
+          "healing_observed": 1696,
+          "cleanses": 18
+        }
+      }
+    },
+    "marsh": {
+      "arcane": {
+        "baseline": {
+          "cases": 16,
+          "wins": 12,
+          "win_rate": 0.75,
+          "deaths": 10,
+          "rounds": 45,
+          "win_mean_hp": 233.08333333333334,
+          "win_mean_mp": 68.25,
+          "win_mean_rounds": 3.25,
+          "healing_observed": 574,
+          "cleanses": 16
+        },
+        "final": {
+          "cases": 16,
+          "wins": 12,
+          "win_rate": 0.75,
+          "deaths": 12,
+          "rounds": 46,
+          "win_mean_hp": 236.58333333333334,
+          "win_mean_mp": 65.66666666666667,
+          "win_mean_rounds": 3.0833333333333335,
+          "healing_observed": 580,
+          "cleanses": 15
+        }
+      },
+      "blood": {
+        "baseline": {
+          "cases": 40,
+          "wins": 31,
+          "win_rate": 0.775,
+          "deaths": 24,
+          "rounds": 158,
+          "win_mean_hp": 261.0,
+          "win_mean_mp": 41.16129032258065,
+          "win_mean_rounds": 4.387096774193548,
+          "healing_observed": 4342,
+          "cleanses": 78
+        },
+        "final": {
+          "cases": 40,
+          "wins": 35,
+          "win_rate": 0.875,
+          "deaths": 31,
+          "rounds": 172,
+          "win_mean_hp": 242.4857142857143,
+          "win_mean_mp": 41.17142857142857,
+          "win_mean_rounds": 4.571428571428571,
+          "healing_observed": 4144,
+          "cleanses": 74
+        }
+      },
+      "command": {
+        "baseline": {
+          "cases": 16,
+          "wins": 11,
+          "win_rate": 0.6875,
+          "deaths": 14,
+          "rounds": 51,
+          "win_mean_hp": 232.8181818181818,
+          "win_mean_mp": 51.09090909090909,
+          "win_mean_rounds": 3.727272727272727,
+          "healing_observed": 818,
+          "cleanses": 21
+        },
+        "final": {
+          "cases": 16,
+          "wins": 11,
+          "win_rate": 0.6875,
+          "deaths": 13,
+          "rounds": 52,
+          "win_mean_hp": 230.72727272727272,
+          "win_mean_mp": 55.63636363636363,
+          "win_mean_rounds": 3.909090909090909,
+          "healing_observed": 749,
+          "cleanses": 20
+        }
+      },
+      "control": {
+        "baseline": {
+          "cases": 16,
+          "wins": 9,
+          "win_rate": 0.5625,
+          "deaths": 21,
+          "rounds": 58,
+          "win_mean_hp": 211.22222222222223,
+          "win_mean_mp": 53.333333333333336,
+          "win_mean_rounds": 4.222222222222222,
+          "healing_observed": 738,
+          "cleanses": 16
+        },
+        "final": {
+          "cases": 16,
+          "wins": 9,
+          "win_rate": 0.5625,
+          "deaths": 21,
+          "rounds": 58,
+          "win_mean_hp": 202.22222222222223,
+          "win_mean_mp": 51.77777777777778,
+          "win_mean_rounds": 4.222222222222222,
+          "healing_observed": 665,
+          "cleanses": 17
+        }
+      },
+      "cross_arcane_pilgrim": {
+        "baseline": {
+          "cases": 24,
+          "wins": 24,
+          "win_rate": 1.0,
+          "deaths": 14,
+          "rounds": 100,
+          "win_mean_hp": 248.58333333333334,
+          "win_mean_mp": 72.0,
+          "win_mean_rounds": 4.166666666666667,
+          "healing_observed": 2077,
+          "cleanses": 45
+        },
+        "final": {
+          "cases": 24,
+          "wins": 24,
+          "win_rate": 1.0,
+          "deaths": 13,
+          "rounds": 97,
+          "win_mean_hp": 251.04166666666666,
+          "win_mean_mp": 70.16666666666667,
+          "win_mean_rounds": 4.041666666666667,
+          "healing_observed": 1963,
+          "cleanses": 39
+        }
+      },
+      "cross_blood_ward": {
+        "baseline": {
+          "cases": 40,
+          "wins": 39,
+          "win_rate": 0.975,
+          "deaths": 28,
+          "rounds": 189,
+          "win_mean_hp": 253.43589743589743,
+          "win_mean_mp": 46.43589743589744,
+          "win_mean_rounds": 4.641025641025641,
+          "healing_observed": 3638,
+          "cleanses": 75
+        },
+        "final": {
+          "cases": 40,
+          "wins": 39,
+          "win_rate": 0.975,
+          "deaths": 21,
+          "rounds": 178,
+          "win_mean_hp": 249.48717948717947,
+          "win_mean_mp": 38.56410256410256,
+          "win_mean_rounds": 4.487179487179487,
+          "healing_observed": 3575,
+          "cleanses": 77
+        }
+      },
+      "cross_blood_ward_assault": {
+        "baseline": {
+          "cases": 40,
+          "wins": 37,
+          "win_rate": 0.925,
+          "deaths": 13,
+          "rounds": 153,
+          "win_mean_hp": 285.13513513513516,
+          "win_mean_mp": 47.108108108108105,
+          "win_mean_rounds": 3.864864864864865,
+          "healing_observed": 3025,
+          "cleanses": 48
+        },
+        "final": {
+          "cases": 40,
+          "wins": 36,
+          "win_rate": 0.9,
+          "deaths": 21,
+          "rounds": 151,
+          "win_mean_hp": 257.3611111111111,
+          "win_mean_mp": 41.19444444444444,
+          "win_mean_rounds": 3.9444444444444446,
+          "healing_observed": 2876,
+          "cleanses": 55
+        }
+      },
+      "cross_blood_ward_guard": {
+        "baseline": {
+          "cases": 40,
+          "wins": 38,
+          "win_rate": 0.95,
+          "deaths": 13,
+          "rounds": 170,
+          "win_mean_hp": 270.5,
+          "win_mean_mp": 41.078947368421055,
+          "win_mean_rounds": 4.2894736842105265,
+          "healing_observed": 3170,
+          "cleanses": 46
+        },
+        "final": {
+          "cases": 40,
+          "wins": 36,
+          "win_rate": 0.9,
+          "deaths": 18,
+          "rounds": 169,
+          "win_mean_hp": 262.02777777777777,
+          "win_mean_mp": 40.72222222222222,
+          "win_mean_rounds": 4.277777777777778,
+          "healing_observed": 2862,
+          "cleanses": 47
+        }
+      },
+      "dusk": {
+        "baseline": {
+          "cases": 16,
+          "wins": 12,
+          "win_rate": 0.75,
+          "deaths": 9,
+          "rounds": 43,
+          "win_mean_hp": 232.66666666666666,
+          "win_mean_mp": 60.166666666666664,
+          "win_mean_rounds": 3.1666666666666665,
+          "healing_observed": 431,
+          "cleanses": 13
+        },
+        "final": {
+          "cases": 16,
+          "wins": 13,
+          "win_rate": 0.8125,
+          "deaths": 11,
+          "rounds": 46,
+          "win_mean_hp": 227.84615384615384,
+          "win_mean_mp": 55.15384615384615,
+          "win_mean_rounds": 3.230769230769231,
+          "healing_observed": 476,
+          "cleanses": 14
+        }
+      },
+      "engine": {
+        "baseline": {
+          "cases": 16,
+          "wins": 11,
+          "win_rate": 0.6875,
+          "deaths": 14,
+          "rounds": 47,
+          "win_mean_hp": 235.27272727272728,
+          "win_mean_mp": 53.18181818181818,
+          "win_mean_rounds": 3.272727272727273,
+          "healing_observed": 665,
+          "cleanses": 16
+        },
+        "final": {
+          "cases": 16,
+          "wins": 13,
+          "win_rate": 0.8125,
+          "deaths": 12,
+          "rounds": 51,
+          "win_mean_hp": 213.92307692307693,
+          "win_mean_mp": 47.23076923076923,
+          "win_mean_rounds": 3.4615384615384617,
+          "healing_observed": 642,
+          "cleanses": 16
+        }
+      },
+      "hunt": {
+        "baseline": {
+          "cases": 16,
+          "wins": 14,
+          "win_rate": 0.875,
+          "deaths": 13,
+          "rounds": 50,
+          "win_mean_hp": 223.64285714285714,
+          "win_mean_mp": 56.285714285714285,
+          "win_mean_rounds": 3.142857142857143,
+          "healing_observed": 546,
+          "cleanses": 11
+        },
+        "final": {
+          "cases": 16,
+          "wins": 14,
+          "win_rate": 0.875,
+          "deaths": 13,
+          "rounds": 49,
+          "win_mean_hp": 225.57142857142858,
+          "win_mean_mp": 54.57142857142857,
+          "win_mean_rounds": 3.0714285714285716,
+          "healing_observed": 547,
+          "cleanses": 12
+        }
+      },
+      "pilgrim": {
+        "baseline": {
+          "cases": 16,
+          "wins": 12,
+          "win_rate": 0.75,
+          "deaths": 19,
+          "rounds": 64,
+          "win_mean_hp": 222.75,
+          "win_mean_mp": 52.0,
+          "win_mean_rounds": 4.416666666666667,
+          "healing_observed": 1040,
+          "cleanses": 25
+        },
+        "final": {
+          "cases": 16,
+          "wins": 11,
+          "win_rate": 0.6875,
+          "deaths": 20,
+          "rounds": 61,
+          "win_mean_hp": 233.0909090909091,
+          "win_mean_mp": 53.72727272727273,
+          "win_mean_rounds": 4.2727272727272725,
+          "healing_observed": 1069,
+          "cleanses": 25
+        }
+      },
+      "ward": {
+        "baseline": {
+          "cases": 40,
+          "wins": 32,
+          "win_rate": 0.8,
+          "deaths": 19,
+          "rounds": 141,
+          "win_mean_hp": 264.03125,
+          "win_mean_mp": 50.65625,
+          "win_mean_rounds": 3.625,
+          "healing_observed": 1855,
+          "cleanses": 32
+        },
+        "final": {
+          "cases": 40,
+          "wins": 34,
+          "win_rate": 0.85,
+          "deaths": 16,
+          "rounds": 143,
+          "win_mean_hp": 270.61764705882354,
+          "win_mean_mp": 52.411764705882355,
+          "win_mean_rounds": 3.7058823529411766,
+          "healing_observed": 1870,
+          "cleanses": 32
+        }
+      }
+    },
+    "ruins": {
+      "arcane": {
+        "baseline": {
+          "cases": 16,
+          "wins": 14,
+          "win_rate": 0.875,
+          "deaths": 8,
+          "rounds": 55,
+          "win_mean_hp": 234.42857142857142,
+          "win_mean_mp": 69.0,
+          "win_mean_rounds": 3.7142857142857144,
+          "healing_observed": 767,
+          "cleanses": 10
+        },
+        "final": {
+          "cases": 16,
+          "wins": 14,
+          "win_rate": 0.875,
+          "deaths": 8,
+          "rounds": 55,
+          "win_mean_hp": 238.85714285714286,
+          "win_mean_mp": 67.5,
+          "win_mean_rounds": 3.7142857142857144,
+          "healing_observed": 815,
+          "cleanses": 11
+        }
+      },
+      "blood": {
+        "baseline": {
+          "cases": 40,
+          "wins": 30,
+          "win_rate": 0.75,
+          "deaths": 23,
+          "rounds": 165,
+          "win_mean_hp": 263.2,
+          "win_mean_mp": 42.9,
+          "win_mean_rounds": 4.533333333333333,
+          "healing_observed": 3914,
+          "cleanses": 16
+        },
+        "final": {
+          "cases": 40,
+          "wins": 30,
+          "win_rate": 0.75,
+          "deaths": 22,
+          "rounds": 164,
+          "win_mean_hp": 266.1666666666667,
+          "win_mean_mp": 41.2,
+          "win_mean_rounds": 4.5,
+          "healing_observed": 3797,
+          "cleanses": 17
+        }
+      },
+      "command": {
+        "baseline": {
+          "cases": 16,
+          "wins": 13,
+          "win_rate": 0.8125,
+          "deaths": 11,
+          "rounds": 57,
+          "win_mean_hp": 235.53846153846155,
+          "win_mean_mp": 49.07692307692308,
+          "win_mean_rounds": 4.076923076923077,
+          "healing_observed": 836,
+          "cleanses": 6
+        },
+        "final": {
+          "cases": 16,
+          "wins": 13,
+          "win_rate": 0.8125,
+          "deaths": 10,
+          "rounds": 56,
+          "win_mean_hp": 234.30769230769232,
+          "win_mean_mp": 49.23076923076923,
+          "win_mean_rounds": 4.0,
+          "healing_observed": 788,
+          "cleanses": 6
+        }
+      },
+      "control": {
+        "baseline": {
+          "cases": 16,
+          "wins": 10,
+          "win_rate": 0.625,
+          "deaths": 18,
+          "rounds": 64,
+          "win_mean_hp": 219.3,
+          "win_mean_mp": 39.3,
+          "win_mean_rounds": 4.6,
+          "healing_observed": 911,
+          "cleanses": 9
+        },
+        "final": {
+          "cases": 16,
+          "wins": 10,
+          "win_rate": 0.625,
+          "deaths": 18,
+          "rounds": 65,
+          "win_mean_hp": 223.0,
+          "win_mean_mp": 39.2,
+          "win_mean_rounds": 4.7,
+          "healing_observed": 944,
+          "cleanses": 9
+        }
+      },
+      "cross_arcane_pilgrim": {
+        "baseline": {
+          "cases": 24,
+          "wins": 24,
+          "win_rate": 1.0,
+          "deaths": 13,
+          "rounds": 106,
+          "win_mean_hp": 270.5,
+          "win_mean_mp": 67.83333333333333,
+          "win_mean_rounds": 4.416666666666667,
+          "healing_observed": 2585,
+          "cleanses": 2
+        },
+        "final": {
+          "cases": 24,
+          "wins": 23,
+          "win_rate": 0.9583333333333334,
+          "deaths": 17,
+          "rounds": 113,
+          "win_mean_hp": 270.8695652173913,
+          "win_mean_mp": 70.26086956521739,
+          "win_mean_rounds": 4.739130434782608,
+          "healing_observed": 2744,
+          "cleanses": 3
+        }
+      },
+      "cross_blood_ward": {
+        "baseline": {
+          "cases": 40,
+          "wins": 40,
+          "win_rate": 1.0,
+          "deaths": 24,
+          "rounds": 194,
+          "win_mean_hp": 255.0,
+          "win_mean_mp": 39.3,
+          "win_mean_rounds": 4.85,
+          "healing_observed": 3463,
+          "cleanses": 1
+        },
+        "final": {
+          "cases": 40,
+          "wins": 39,
+          "win_rate": 0.975,
+          "deaths": 28,
+          "rounds": 202,
+          "win_mean_hp": 246.71794871794873,
+          "win_mean_mp": 37.256410256410255,
+          "win_mean_rounds": 5.0256410256410255,
+          "healing_observed": 3491,
+          "cleanses": 1
+        }
+      },
+      "cross_blood_ward_assault": {
+        "baseline": {
+          "cases": 40,
+          "wins": 40,
+          "win_rate": 1.0,
+          "deaths": 1,
+          "rounds": 152,
+          "win_mean_hp": 300.525,
+          "win_mean_mp": 50.475,
+          "win_mean_rounds": 3.8,
+          "healing_observed": 2422,
+          "cleanses": 0
+        },
+        "final": {
+          "cases": 40,
+          "wins": 38,
+          "win_rate": 0.95,
+          "deaths": 11,
+          "rounds": 154,
+          "win_mean_hp": 280.3157894736842,
+          "win_mean_mp": 42.94736842105263,
+          "win_mean_rounds": 3.9473684210526314,
+          "healing_observed": 2616,
+          "cleanses": 0
+        }
+      },
+      "cross_blood_ward_guard": {
+        "baseline": {
+          "cases": 40,
+          "wins": 40,
+          "win_rate": 1.0,
+          "deaths": 3,
+          "rounds": 176,
+          "win_mean_hp": 293.425,
+          "win_mean_mp": 40.625,
+          "win_mean_rounds": 4.4,
+          "healing_observed": 3009,
+          "cleanses": 2
+        },
+        "final": {
+          "cases": 40,
+          "wins": 39,
+          "win_rate": 0.975,
+          "deaths": 7,
+          "rounds": 177,
+          "win_mean_hp": 285.2307692307692,
+          "win_mean_mp": 36.666666666666664,
+          "win_mean_rounds": 4.410256410256411,
+          "healing_observed": 2566,
+          "cleanses": 1
+        }
+      },
+      "dusk": {
+        "baseline": {
+          "cases": 16,
+          "wins": 14,
+          "win_rate": 0.875,
+          "deaths": 7,
+          "rounds": 45,
+          "win_mean_hp": 237.21428571428572,
+          "win_mean_mp": 53.714285714285715,
+          "win_mean_rounds": 3.0714285714285716,
+          "healing_observed": 446,
+          "cleanses": 9
+        },
+        "final": {
+          "cases": 16,
+          "wins": 14,
+          "win_rate": 0.875,
+          "deaths": 8,
+          "rounds": 45,
+          "win_mean_hp": 235.0,
+          "win_mean_mp": 53.285714285714285,
+          "win_mean_rounds": 3.0714285714285716,
+          "healing_observed": 446,
+          "cleanses": 8
+        }
+      },
+      "engine": {
+        "baseline": {
+          "cases": 16,
+          "wins": 13,
+          "win_rate": 0.8125,
+          "deaths": 14,
+          "rounds": 52,
+          "win_mean_hp": 212.3846153846154,
+          "win_mean_mp": 45.23076923076923,
+          "win_mean_rounds": 3.6153846153846154,
+          "healing_observed": 534,
+          "cleanses": 10
+        },
+        "final": {
+          "cases": 16,
+          "wins": 13,
+          "win_rate": 0.8125,
+          "deaths": 14,
+          "rounds": 52,
+          "win_mean_hp": 215.07692307692307,
+          "win_mean_mp": 43.76923076923077,
+          "win_mean_rounds": 3.6153846153846154,
+          "healing_observed": 534,
+          "cleanses": 10
+        }
+      },
+      "hunt": {
+        "baseline": {
+          "cases": 16,
+          "wins": 13,
+          "win_rate": 0.8125,
+          "deaths": 14,
+          "rounds": 48,
+          "win_mean_hp": 234.69230769230768,
+          "win_mean_mp": 53.30769230769231,
+          "win_mean_rounds": 3.3076923076923075,
+          "healing_observed": 648,
+          "cleanses": 8
+        },
+        "final": {
+          "cases": 16,
+          "wins": 13,
+          "win_rate": 0.8125,
+          "deaths": 13,
+          "rounds": 49,
+          "win_mean_hp": 235.53846153846155,
+          "win_mean_mp": 53.0,
+          "win_mean_rounds": 3.3846153846153846,
+          "healing_observed": 680,
+          "cleanses": 8
+        }
+      },
+      "pilgrim": {
+        "baseline": {
+          "cases": 16,
+          "wins": 14,
+          "win_rate": 0.875,
+          "deaths": 14,
+          "rounds": 75,
+          "win_mean_hp": 221.57142857142858,
+          "win_mean_mp": 39.92857142857143,
+          "win_mean_rounds": 5.071428571428571,
+          "healing_observed": 1283,
+          "cleanses": 19
+        },
+        "final": {
+          "cases": 16,
+          "wins": 13,
+          "win_rate": 0.8125,
+          "deaths": 12,
+          "rounds": 71,
+          "win_mean_hp": 241.6153846153846,
+          "win_mean_mp": 43.69230769230769,
+          "win_mean_rounds": 4.769230769230769,
+          "healing_observed": 1324,
+          "cleanses": 16
+        }
+      },
+      "ward": {
+        "baseline": {
+          "cases": 40,
+          "wins": 40,
+          "win_rate": 1.0,
+          "deaths": 2,
+          "rounds": 147,
+          "win_mean_hp": 278.95,
+          "win_mean_mp": 43.45,
+          "win_mean_rounds": 3.675,
+          "healing_observed": 1723,
+          "cleanses": 1
+        },
+        "final": {
+          "cases": 40,
+          "wins": 40,
+          "win_rate": 1.0,
+          "deaths": 1,
+          "rounds": 146,
+          "win_mean_hp": 278.3,
+          "win_mean_mp": 42.6,
+          "win_mean_rounds": 3.65,
+          "healing_observed": 1776,
+          "cleanses": 1
+        }
+      }
+    },
+    "waste": {
+      "arcane": {
+        "baseline": {
+          "cases": 16,
+          "wins": 14,
+          "win_rate": 0.875,
+          "deaths": 12,
+          "rounds": 52,
+          "win_mean_hp": 224.57142857142858,
+          "win_mean_mp": 66.5,
+          "win_mean_rounds": 3.5,
+          "healing_observed": 702,
+          "cleanses": 7
+        },
+        "final": {
+          "cases": 16,
+          "wins": 14,
+          "win_rate": 0.875,
+          "deaths": 12,
+          "rounds": 52,
+          "win_mean_hp": 225.64285714285714,
+          "win_mean_mp": 67.07142857142857,
+          "win_mean_rounds": 3.5,
+          "healing_observed": 702,
+          "cleanses": 7
+        }
+      },
+      "blood": {
+        "baseline": {
+          "cases": 40,
+          "wins": 30,
+          "win_rate": 0.75,
+          "deaths": 43,
+          "rounds": 148,
+          "win_mean_hp": 252.4,
+          "win_mean_mp": 49.766666666666666,
+          "win_mean_rounds": 4.0,
+          "healing_observed": 3676,
+          "cleanses": 22
+        },
+        "final": {
+          "cases": 40,
+          "wins": 30,
+          "win_rate": 0.75,
+          "deaths": 43,
+          "rounds": 148,
+          "win_mean_hp": 250.43333333333334,
+          "win_mean_mp": 49.333333333333336,
+          "win_mean_rounds": 4.0,
+          "healing_observed": 3608,
+          "cleanses": 22
+        }
+      },
+      "command": {
+        "baseline": {
+          "cases": 16,
+          "wins": 11,
+          "win_rate": 0.6875,
+          "deaths": 14,
+          "rounds": 52,
+          "win_mean_hp": 242.0,
+          "win_mean_mp": 59.09090909090909,
+          "win_mean_rounds": 3.727272727272727,
+          "healing_observed": 934,
+          "cleanses": 9
+        },
+        "final": {
+          "cases": 16,
+          "wins": 11,
+          "win_rate": 0.6875,
+          "deaths": 15,
+          "rounds": 53,
+          "win_mean_hp": 238.9090909090909,
+          "win_mean_mp": 59.0,
+          "win_mean_rounds": 3.8181818181818183,
+          "healing_observed": 927,
+          "cleanses": 9
+        }
+      },
+      "control": {
+        "baseline": {
+          "cases": 16,
+          "wins": 11,
+          "win_rate": 0.6875,
+          "deaths": 17,
+          "rounds": 58,
+          "win_mean_hp": 201.1818181818182,
+          "win_mean_mp": 41.90909090909091,
+          "win_mean_rounds": 4.181818181818182,
+          "healing_observed": 761,
+          "cleanses": 14
+        },
+        "final": {
+          "cases": 16,
+          "wins": 11,
+          "win_rate": 0.6875,
+          "deaths": 17,
+          "rounds": 58,
+          "win_mean_hp": 203.1818181818182,
+          "win_mean_mp": 43.63636363636363,
+          "win_mean_rounds": 4.181818181818182,
+          "healing_observed": 773,
+          "cleanses": 13
+        }
+      },
+      "cross_arcane_pilgrim": {
+        "baseline": {
+          "cases": 24,
+          "wins": 23,
+          "win_rate": 0.9583333333333334,
+          "deaths": 31,
+          "rounds": 100,
+          "win_mean_hp": 238.08695652173913,
+          "win_mean_mp": 73.0,
+          "win_mean_rounds": 4.086956521739131,
+          "healing_observed": 1959,
+          "cleanses": 5
+        },
+        "final": {
+          "cases": 24,
+          "wins": 23,
+          "win_rate": 0.9583333333333334,
+          "deaths": 31,
+          "rounds": 99,
+          "win_mean_hp": 238.08695652173913,
+          "win_mean_mp": 72.56521739130434,
+          "win_mean_rounds": 4.043478260869565,
+          "healing_observed": 1965,
+          "cleanses": 5
+        }
+      },
+      "cross_blood_ward": {
+        "baseline": {
+          "cases": 40,
+          "wins": 40,
+          "win_rate": 1.0,
+          "deaths": 37,
+          "rounds": 194,
+          "win_mean_hp": 242.775,
+          "win_mean_mp": 42.55,
+          "win_mean_rounds": 4.85,
+          "healing_observed": 4147,
+          "cleanses": 2
+        },
+        "final": {
+          "cases": 40,
+          "wins": 40,
+          "win_rate": 1.0,
+          "deaths": 40,
+          "rounds": 185,
+          "win_mean_hp": 226.575,
+          "win_mean_mp": 41.8,
+          "win_mean_rounds": 4.625,
+          "healing_observed": 3185,
+          "cleanses": 1
+        }
+      },
+      "cross_blood_ward_assault": {
+        "baseline": {
+          "cases": 40,
+          "wins": 40,
+          "win_rate": 1.0,
+          "deaths": 14,
+          "rounds": 150,
+          "win_mean_hp": 272.625,
+          "win_mean_mp": 51.975,
+          "win_mean_rounds": 3.75,
+          "healing_observed": 2796,
+          "cleanses": 0
+        },
+        "final": {
+          "cases": 40,
+          "wins": 37,
+          "win_rate": 0.925,
+          "deaths": 30,
+          "rounds": 147,
+          "win_mean_hp": 253.27027027027026,
+          "win_mean_mp": 52.75675675675676,
+          "win_mean_rounds": 3.7837837837837838,
+          "healing_observed": 2480,
+          "cleanses": 0
+        }
+      },
+      "cross_blood_ward_guard": {
+        "baseline": {
+          "cases": 40,
+          "wins": 40,
+          "win_rate": 1.0,
+          "deaths": 11,
+          "rounds": 171,
+          "win_mean_hp": 285.1,
+          "win_mean_mp": 46.5,
+          "win_mean_rounds": 4.275,
+          "healing_observed": 3330,
+          "cleanses": 3
+        },
+        "final": {
+          "cases": 40,
+          "wins": 37,
+          "win_rate": 0.925,
+          "deaths": 16,
+          "rounds": 159,
+          "win_mean_hp": 276.97297297297297,
+          "win_mean_mp": 48.0,
+          "win_mean_rounds": 4.081081081081081,
+          "healing_observed": 2705,
+          "cleanses": 2
+        }
+      },
+      "dusk": {
+        "baseline": {
+          "cases": 16,
+          "wins": 13,
+          "win_rate": 0.8125,
+          "deaths": 8,
+          "rounds": 43,
+          "win_mean_hp": 242.53846153846155,
+          "win_mean_mp": 55.38461538461539,
+          "win_mean_rounds": 2.8461538461538463,
+          "healing_observed": 583,
+          "cleanses": 8
+        },
+        "final": {
+          "cases": 16,
+          "wins": 13,
+          "win_rate": 0.8125,
+          "deaths": 8,
+          "rounds": 43,
+          "win_mean_hp": 242.53846153846155,
+          "win_mean_mp": 55.38461538461539,
+          "win_mean_rounds": 2.8461538461538463,
+          "healing_observed": 583,
+          "cleanses": 8
+        }
+      },
+      "engine": {
+        "baseline": {
+          "cases": 16,
+          "wins": 12,
+          "win_rate": 0.75,
+          "deaths": 17,
+          "rounds": 51,
+          "win_mean_hp": 210.5,
+          "win_mean_mp": 53.916666666666664,
+          "win_mean_rounds": 3.5833333333333335,
+          "healing_observed": 437,
+          "cleanses": 10
+        },
+        "final": {
+          "cases": 16,
+          "wins": 12,
+          "win_rate": 0.75,
+          "deaths": 17,
+          "rounds": 51,
+          "win_mean_hp": 210.5,
+          "win_mean_mp": 53.916666666666664,
+          "win_mean_rounds": 3.5833333333333335,
+          "healing_observed": 437,
+          "cleanses": 10
+        }
+      },
+      "hunt": {
+        "baseline": {
+          "cases": 16,
+          "wins": 15,
+          "win_rate": 0.9375,
+          "deaths": 10,
+          "rounds": 47,
+          "win_mean_hp": 234.6,
+          "win_mean_mp": 50.86666666666667,
+          "win_mean_rounds": 3.066666666666667,
+          "healing_observed": 701,
+          "cleanses": 7
+        },
+        "final": {
+          "cases": 16,
+          "wins": 15,
+          "win_rate": 0.9375,
+          "deaths": 10,
+          "rounds": 47,
+          "win_mean_hp": 234.6,
+          "win_mean_mp": 50.86666666666667,
+          "win_mean_rounds": 3.066666666666667,
+          "healing_observed": 701,
+          "cleanses": 7
+        }
+      },
+      "pilgrim": {
+        "baseline": {
+          "cases": 16,
+          "wins": 10,
+          "win_rate": 0.625,
+          "deaths": 16,
+          "rounds": 62,
+          "win_mean_hp": 240.3,
+          "win_mean_mp": 43.6,
+          "win_mean_rounds": 4.5,
+          "healing_observed": 1401,
+          "cleanses": 14
+        },
+        "final": {
+          "cases": 16,
+          "wins": 10,
+          "win_rate": 0.625,
+          "deaths": 16,
+          "rounds": 62,
+          "win_mean_hp": 240.3,
+          "win_mean_mp": 43.6,
+          "win_mean_rounds": 4.5,
+          "healing_observed": 1401,
+          "cleanses": 14
+        }
+      },
+      "ward": {
+        "baseline": {
+          "cases": 40,
+          "wins": 39,
+          "win_rate": 0.975,
+          "deaths": 9,
+          "rounds": 147,
+          "win_mean_hp": 274.1794871794872,
+          "win_mean_mp": 53.333333333333336,
+          "win_mean_rounds": 3.717948717948718,
+          "healing_observed": 2065,
+          "cleanses": 1
+        },
+        "final": {
+          "cases": 40,
+          "wins": 39,
+          "win_rate": 0.975,
+          "deaths": 8,
+          "rounds": 143,
+          "win_mean_hp": 268.87179487179486,
+          "win_mean_mp": 53.666666666666664,
+          "win_mean_rounds": 3.6153846153846154,
+          "healing_observed": 1949,
+          "cleanses": 1
+        }
+      }
+    },
+    "wood": {
+      "arcane": {
+        "baseline": {
+          "cases": 16,
+          "wins": 14,
+          "win_rate": 0.875,
+          "deaths": 10,
+          "rounds": 52,
+          "win_mean_hp": 222.64285714285714,
+          "win_mean_mp": 67.14285714285714,
+          "win_mean_rounds": 3.5714285714285716,
+          "healing_observed": 835,
+          "cleanses": 13
+        },
+        "final": {
+          "cases": 16,
+          "wins": 14,
+          "win_rate": 0.875,
+          "deaths": 10,
+          "rounds": 52,
+          "win_mean_hp": 222.64285714285714,
+          "win_mean_mp": 67.14285714285714,
+          "win_mean_rounds": 3.5714285714285716,
+          "healing_observed": 835,
+          "cleanses": 13
+        }
+      },
+      "blood": {
+        "baseline": {
+          "cases": 40,
+          "wins": 32,
+          "win_rate": 0.8,
+          "deaths": 37,
+          "rounds": 182,
+          "win_mean_hp": 252.34375,
+          "win_mean_mp": 48.375,
+          "win_mean_rounds": 4.90625,
+          "healing_observed": 4683,
+          "cleanses": 15
+        },
+        "final": {
+          "cases": 40,
+          "wins": 32,
+          "win_rate": 0.8,
+          "deaths": 35,
+          "rounds": 180,
+          "win_mean_hp": 252.78125,
+          "win_mean_mp": 48.9375,
+          "win_mean_rounds": 4.90625,
+          "healing_observed": 4582,
+          "cleanses": 15
+        }
+      },
+      "command": {
+        "baseline": {
+          "cases": 16,
+          "wins": 11,
+          "win_rate": 0.6875,
+          "deaths": 17,
+          "rounds": 54,
+          "win_mean_hp": 220.9090909090909,
+          "win_mean_mp": 55.45454545454545,
+          "win_mean_rounds": 4.090909090909091,
+          "healing_observed": 820,
+          "cleanses": 12
+        },
+        "final": {
+          "cases": 16,
+          "wins": 11,
+          "win_rate": 0.6875,
+          "deaths": 17,
+          "rounds": 54,
+          "win_mean_hp": 218.72727272727272,
+          "win_mean_mp": 56.0,
+          "win_mean_rounds": 4.090909090909091,
+          "healing_observed": 799,
+          "cleanses": 12
+        }
+      },
+      "control": {
+        "baseline": {
+          "cases": 16,
+          "wins": 11,
+          "win_rate": 0.6875,
+          "deaths": 20,
+          "rounds": 62,
+          "win_mean_hp": 218.8181818181818,
+          "win_mean_mp": 49.45454545454545,
+          "win_mean_rounds": 4.636363636363637,
+          "healing_observed": 920,
+          "cleanses": 13
+        },
+        "final": {
+          "cases": 16,
+          "wins": 11,
+          "win_rate": 0.6875,
+          "deaths": 20,
+          "rounds": 62,
+          "win_mean_hp": 218.8181818181818,
+          "win_mean_mp": 49.45454545454545,
+          "win_mean_rounds": 4.636363636363637,
+          "healing_observed": 920,
+          "cleanses": 13
+        }
+      },
+      "cross_arcane_pilgrim": {
+        "baseline": {
+          "cases": 24,
+          "wins": 24,
+          "win_rate": 1.0,
+          "deaths": 17,
+          "rounds": 101,
+          "win_mean_hp": 260.375,
+          "win_mean_mp": 77.75,
+          "win_mean_rounds": 4.208333333333333,
+          "healing_observed": 2375,
+          "cleanses": 1
+        },
+        "final": {
+          "cases": 24,
+          "wins": 24,
+          "win_rate": 1.0,
+          "deaths": 17,
+          "rounds": 101,
+          "win_mean_hp": 261.6666666666667,
+          "win_mean_mp": 76.83333333333333,
+          "win_mean_rounds": 4.208333333333333,
+          "healing_observed": 2412,
+          "cleanses": 1
+        }
+      },
+      "cross_blood_ward": {
+        "baseline": {
+          "cases": 40,
+          "wins": 40,
+          "win_rate": 1.0,
+          "deaths": 24,
+          "rounds": 193,
+          "win_mean_hp": 261.2,
+          "win_mean_mp": 48.6,
+          "win_mean_rounds": 4.825,
+          "healing_observed": 3848,
+          "cleanses": 5
+        },
+        "final": {
+          "cases": 40,
+          "wins": 40,
+          "win_rate": 1.0,
+          "deaths": 33,
+          "rounds": 199,
+          "win_mean_hp": 239.225,
+          "win_mean_mp": 45.975,
+          "win_mean_rounds": 4.975,
+          "healing_observed": 3627,
+          "cleanses": 5
+        }
+      },
+      "cross_blood_ward_assault": {
+        "baseline": {
+          "cases": 40,
+          "wins": 39,
+          "win_rate": 0.975,
+          "deaths": 10,
+          "rounds": 157,
+          "win_mean_hp": 281.84615384615387,
+          "win_mean_mp": 55.87179487179487,
+          "win_mean_rounds": 3.9743589743589745,
+          "healing_observed": 3091,
+          "cleanses": 1
+        },
+        "final": {
+          "cases": 40,
+          "wins": 39,
+          "win_rate": 0.975,
+          "deaths": 19,
+          "rounds": 158,
+          "win_mean_hp": 264.4871794871795,
+          "win_mean_mp": 48.794871794871796,
+          "win_mean_rounds": 3.9743589743589745,
+          "healing_observed": 3055,
+          "cleanses": 3
+        }
+      },
+      "cross_blood_ward_guard": {
+        "baseline": {
+          "cases": 40,
+          "wins": 40,
+          "win_rate": 1.0,
+          "deaths": 5,
+          "rounds": 184,
+          "win_mean_hp": 284.675,
+          "win_mean_mp": 44.225,
+          "win_mean_rounds": 4.6,
+          "healing_observed": 3610,
+          "cleanses": 6
+        },
+        "final": {
+          "cases": 40,
+          "wins": 39,
+          "win_rate": 0.975,
+          "deaths": 10,
+          "rounds": 177,
+          "win_mean_hp": 275.6923076923077,
+          "win_mean_mp": 42.94871794871795,
+          "win_mean_rounds": 4.487179487179487,
+          "healing_observed": 3112,
+          "cleanses": 5
+        }
+      },
+      "dusk": {
+        "baseline": {
+          "cases": 16,
+          "wins": 14,
+          "win_rate": 0.875,
+          "deaths": 9,
+          "rounds": 51,
+          "win_mean_hp": 219.57142857142858,
+          "win_mean_mp": 58.07142857142857,
+          "win_mean_rounds": 3.5,
+          "healing_observed": 527,
+          "cleanses": 11
+        },
+        "final": {
+          "cases": 16,
+          "wins": 14,
+          "win_rate": 0.875,
+          "deaths": 9,
+          "rounds": 51,
+          "win_mean_hp": 219.57142857142858,
+          "win_mean_mp": 58.07142857142857,
+          "win_mean_rounds": 3.5,
+          "healing_observed": 527,
+          "cleanses": 11
+        }
+      },
+      "engine": {
+        "baseline": {
+          "cases": 16,
+          "wins": 11,
+          "win_rate": 0.6875,
+          "deaths": 15,
+          "rounds": 46,
+          "win_mean_hp": 229.0909090909091,
+          "win_mean_mp": 54.72727272727273,
+          "win_mean_rounds": 3.272727272727273,
+          "healing_observed": 655,
+          "cleanses": 11
+        },
+        "final": {
+          "cases": 16,
+          "wins": 11,
+          "win_rate": 0.6875,
+          "deaths": 15,
+          "rounds": 46,
+          "win_mean_hp": 229.0909090909091,
+          "win_mean_mp": 54.72727272727273,
+          "win_mean_rounds": 3.272727272727273,
+          "healing_observed": 655,
+          "cleanses": 11
+        }
+      },
+      "hunt": {
+        "baseline": {
+          "cases": 16,
+          "wins": 13,
+          "win_rate": 0.8125,
+          "deaths": 12,
+          "rounds": 51,
+          "win_mean_hp": 231.15384615384616,
+          "win_mean_mp": 60.46153846153846,
+          "win_mean_rounds": 3.4615384615384617,
+          "healing_observed": 649,
+          "cleanses": 13
+        },
+        "final": {
+          "cases": 16,
+          "wins": 13,
+          "win_rate": 0.8125,
+          "deaths": 12,
+          "rounds": 51,
+          "win_mean_hp": 232.30769230769232,
+          "win_mean_mp": 60.30769230769231,
+          "win_mean_rounds": 3.4615384615384617,
+          "healing_observed": 649,
+          "cleanses": 13
+        }
+      },
+      "pilgrim": {
+        "baseline": {
+          "cases": 16,
+          "wins": 11,
+          "win_rate": 0.6875,
+          "deaths": 17,
+          "rounds": 63,
+          "win_mean_hp": 224.45454545454547,
+          "win_mean_mp": 43.09090909090909,
+          "win_mean_rounds": 4.363636363636363,
+          "healing_observed": 1411,
+          "cleanses": 17
+        },
+        "final": {
+          "cases": 16,
+          "wins": 11,
+          "win_rate": 0.6875,
+          "deaths": 17,
+          "rounds": 64,
+          "win_mean_hp": 222.1818181818182,
+          "win_mean_mp": 44.63636363636363,
+          "win_mean_rounds": 4.454545454545454,
+          "healing_observed": 1404,
+          "cleanses": 16
+        }
+      },
+      "ward": {
+        "baseline": {
+          "cases": 40,
+          "wins": 37,
+          "win_rate": 0.925,
+          "deaths": 8,
+          "rounds": 148,
+          "win_mean_hp": 279.4594594594595,
+          "win_mean_mp": 51.270270270270274,
+          "win_mean_rounds": 3.864864864864865,
+          "healing_observed": 2327,
+          "cleanses": 5
+        },
+        "final": {
+          "cases": 40,
+          "wins": 37,
+          "win_rate": 0.925,
+          "deaths": 10,
+          "rounds": 140,
+          "win_mean_hp": 276.27027027027026,
+          "win_mean_mp": 50.513513513513516,
+          "win_mean_rounds": 3.6486486486486487,
+          "healing_observed": 2165,
+          "cleanses": 6
+        }
+      }
+    }
+  },
+  "region_player_win_deltas": {
+    "marsh": 5,
+    "frost": -1,
+    "ruins": -6
+  },
+  "regional_direction_gate_pass": true,
+  "blood_ward_final": {
+    "cases": 720,
+    "wins": 691,
+    "win_rate": 0.9597222222222223,
+    "deaths": 374,
+    "rounds": 3081,
+    "win_mean_hp": 260.3053545586107,
+    "win_mean_mp": 43.94645441389291,
+    "win_mean_rounds": 4.33574529667149,
+    "healing_observed": 53268,
+    "cleanses": 268
+  },
+  "paired_reversals": {
+    "earlier_win_now_loss": 35,
+    "earlier_loss_now_win": 22
+  },
+  "measurement": "Win HP/MP/rounds exclude defeats; healing_observed is net positive HP change across actions, not attributed healing.",
+  "limits": "Normal overall difficulty, fixed two funded policies, core and focus budgets differ, deterministic stratified cases; no claim of all item permutations or human win rates."
+}
