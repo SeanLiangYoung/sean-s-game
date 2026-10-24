@@ -1,0 +1,264 @@
+{
+  "date": "2026-10-25",
+  "timezone": "Asia/Shanghai",
+  "region": "border",
+  "seed_start": 2026102500,
+  "seed_end": 2026103499,
+  "policy": "historical border calibration: fresh default Shen starter party; seven fixed starting gear assignments; prefer battles then supplies; resource rewards only; heal below 70% HP or 50% MP; real Rules.auto_action; no training/shopping/relics/retries or achievement bonuses; defeat boss AND extract to clear",
+  "source_hashes": {
+    "achievement_celebration.gd": "0a0782079de2c1cc3f24df30dc1f530082a7085e8a3b205abb9dd7753c3f8bef",
+    "achievements.gd": "37e26a36f5816565e6d8e9ae565fcc1982ae290c02c7c9f090fbc320806186ca",
+    "art.gd": "1b1094cd02ccc2dfe0b67029ad5d0b0cb0b264f20ad03f92cfe7a5623598f58d",
+    "atlas.gd": "78ee63ee223bb7cb7a6405a144f42e6cc9119408bb4161fa04e0cd82425ee987",
+    "battlefield.gd": "5cb2473e1c2a806c2c279ceb0ff6afa5149c0917c67d22317f1ebeea8048712c",
+    "boss_effects.gd": "8b3ef6e67c2823517e1504941aa683eff443d014513be8ababaffaa74eaed3d1",
+    "boss_visual.gd": "be9f52d3e24e5ac0b7fffad29ce2d3d3ddbd77d6d7c8ee40a8e274eb10ab4ff7",
+    "campaign.gd": "4c90891121102ded5efbc184740a1314b292f2199a5fe6182675b5bc182cf47d",
+    "character_visual.gd": "a03beebd110101b8543a0d917c8bfeea1c2a328507bd93e84287311b1d0b24ce",
+    "character_wardrobe.gd": "b4a2b452b0d802d7fb85a573ea4a75213acce64b4bfabedda3bb0717280e3e95",
+    "characters.gd": "763386bf9b4d94116549da5830d9c86392096aa018a08a6c088072084d97b6a5",
+    "combat_presentation.gd": "d5e811cc79a7e36ee70960c71c098a6352d1027bb27bd569baf2ffe47cad7a3d",
+    "enemy_ai.gd": "ce41e7be15fbeb981db42774511053d10c2392784f7cf723b5d9f9ba51589ac5",
+    "enemy_skills.gd": "d7f6ee815052e4fddd3c6d5a00c69b6841f5ec031f8110b50c6decd84f6e0337",
+    "equipment_menu.gd": "32002957a31da806a6710965275e574ceaa9f96d96f6af962650305773c07576",
+    "equipment_preview.gd": "dff75fb27bc23b9d1860ff2ab3ea47a7593927a9153327e6c2582b6ecb42e229",
+    "equipment_shapes.gd": "0f00d83d207de72d7378fc03c38779a7090e15a3a63a2881928498f742e0d7e1",
+    "equipment_visual.gd": "020e67c863a79ba4ffee27196ef860fbcbc0092c12c1ba74e4aefc8d43fd43af",
+    "main.gd": "1bc2337bb9525d2d5583271cbd26f210d1fd954fef733b814977255ad7ece2ff",
+    "party_details.gd": "e6b1714d5ef0662f036d32a20cf21b01515208ae2e6f5b261dfe9155a1ff48af",
+    "portraits.gd": "2f139514305eea70c52c48d9e7a4e056cb547df314da481aa7c8d8de6fb14330",
+    "professions.gd": "93cd937b3794cd2fa7ec4544bb92b15af195a47f0d8a43b48bf1ebe8efd589ac",
+    "region_art.gd": "462cbb9dd4409cbe0af6267542ea6a5313ad3069a916cc325136674b450ba8be",
+    "region_combat.gd": "57cd8eae6898d1104e439156aa7e192e942acb759840f968b1db4af9061c1fe2",
+    "regions.gd": "93e4fb5af476998cf586e50a029f4f76870ddbd4d76b314daa047e331d2ece9e",
+    "relic_expansion.gd": "841f5ffb1e523eb8ff4423ede6930fd20e96102a075b85548c928e865bfbb061",
+    "relics.gd": "ca05691b5ec9a95a31867e4a7a34b206979184634b1f89b55f1779a6c10336ca",
+    "route.gd": "119f75b3e108722b1381f5bf0ddc559d4edb56dc2b0904ac402de228330e0842",
+    "rules.gd": "2cfa068f7088aeda8906e5d512599d5e7e5ccb7d8f13c42c751bc936cfb2b5e5",
+    "skill_tree.gd": "208f3579a7fdd4c5732a5f62c8a61a8bcd069758cabfe9bc3270df8667c7cdc8",
+    "talents.gd": "ec1a374d7111d6e9a7051ad62a9da358b7d2a6830aac2f10170492fea9bad961"
+  },
+  "policy_hashes": {
+    "simulate_auto_runs.gd": "77eb963a2505b70e2cca38df6a2e294f35d312beefe03281336fe1fa8ff1112a",
+    "simulate_difficulty_rates.gd": "7a0b00461cd304aff0c0d73e7b4af6e6805d44c50860e7d702c41cf12d9ccd49"
+  },
+  "live_source_hashes": {
+    "equipment_preview.gd": "dff75fb27bc23b9d1860ff2ab3ea47a7593927a9153327e6c2582b6ecb42e229",
+    "professions.gd": "93cd937b3794cd2fa7ec4544bb92b15af195a47f0d8a43b48bf1ebe8efd589ac",
+    "art.gd": "1b1094cd02ccc2dfe0b67029ad5d0b0cb0b264f20ad03f92cfe7a5623598f58d",
+    "campaign.gd": "4c90891121102ded5efbc184740a1314b292f2199a5fe6182675b5bc182cf47d",
+    "boss_visual.gd": "be9f52d3e24e5ac0b7fffad29ce2d3d3ddbd77d6d7c8ee40a8e274eb10ab4ff7",
+    "region_combat.gd": "57cd8eae6898d1104e439156aa7e192e942acb759840f968b1db4af9061c1fe2",
+    "combat_presentation.gd": "d5e811cc79a7e36ee70960c71c098a6352d1027bb27bd569baf2ffe47cad7a3d",
+    "relic_expansion.gd": "61fa79214a3eedf2c0d20eb74553385ce73ab7631d1986245bd1768962770567",
+    "skill_tree.gd": "208f3579a7fdd4c5732a5f62c8a61a8bcd069758cabfe9bc3270df8667c7cdc8",
+    "battlefield.gd": "5cb2473e1c2a806c2c279ceb0ff6afa5149c0917c67d22317f1ebeea8048712c",
+    "characters.gd": "763386bf9b4d94116549da5830d9c86392096aa018a08a6c088072084d97b6a5",
+    "achievements.gd": "37e26a36f5816565e6d8e9ae565fcc1982ae290c02c7c9f090fbc320806186ca",
+    "atlas.gd": "78ee63ee223bb7cb7a6405a144f42e6cc9119408bb4161fa04e0cd82425ee987",
+    "main.gd": "1bc2337bb9525d2d5583271cbd26f210d1fd954fef733b814977255ad7ece2ff",
+    "character_wardrobe.gd": "b4a2b452b0d802d7fb85a573ea4a75213acce64b4bfabedda3bb0717280e3e95",
+    "equipment_visual.gd": "020e67c863a79ba4ffee27196ef860fbcbc0092c12c1ba74e4aefc8d43fd43af",
+    "character_visual.gd": "a03beebd110101b8543a0d917c8bfeea1c2a328507bd93e84287311b1d0b24ce",
+    "enemy_ai.gd": "b91d89f48dcd1523383914960b87438c757eea8ce74a16ad063d7d7ad6dc829d",
+    "enemy_skills.gd": "33d4a67a936cc2e2766a79b62200a21873401dd3c7f9493c1aeee4005a6cad1a",
+    "party_details.gd": "e6b1714d5ef0662f036d32a20cf21b01515208ae2e6f5b261dfe9155a1ff48af",
+    "boss_effects.gd": "8b3ef6e67c2823517e1504941aa683eff443d014513be8ababaffaa74eaed3d1",
+    "region_art.gd": "462cbb9dd4409cbe0af6267542ea6a5313ad3069a916cc325136674b450ba8be",
+    "relics.gd": "ca05691b5ec9a95a31867e4a7a34b206979184634b1f89b55f1779a6c10336ca",
+    "talents.gd": "ec1a374d7111d6e9a7051ad62a9da358b7d2a6830aac2f10170492fea9bad961",
+    "portraits.gd": "2f139514305eea70c52c48d9e7a4e056cb547df314da481aa7c8d8de6fb14330",
+    "rules.gd": "2cfa068f7088aeda8906e5d512599d5e7e5ccb7d8f13c42c751bc936cfb2b5e5",
+    "equipment_menu.gd": "32002957a31da806a6710965275e574ceaa9f96d96f6af962650305773c07576",
+    "achievement_celebration.gd": "0a0782079de2c1cc3f24df30dc1f530082a7085e8a3b205abb9dd7753c3f8bef",
+    "equipment_shapes.gd": "0f00d83d207de72d7378fc03c38779a7090e15a3a63a2881928498f742e0d7e1",
+    "regions.gd": "53cd20ae5880b8eba4858f0735421af072a46f36e5dc5bd644c3a8a0d65805ee",
+    "route.gd": "119f75b3e108722b1381f5bf0ddc559d4edb56dc2b0904ac402de228330e0842"
+  },
+  "source_scope_review": [
+    {
+      "file": "enemy_ai.gd",
+      "scope": "仅修改暮雾沼泽的团长优先级；灰潮边境的优先级不变",
+      "snapshot_sha256": "ce41e7be15fbeb981db42774511053d10c2392784f7cf723b5d9f9ba51589ac5",
+      "live_sha256": "b91d89f48dcd1523383914960b87438c757eea8ce74a16ad063d7d7ad6dc829d"
+    },
+    {
+      "file": "enemy_skills.gd",
+      "scope": "仅给遗城汲能技能补充护盾全挡时耗蓝逻辑和说明；边境敌人不使用汲能技能，其他效果的零伤害分支保持原语义",
+      "snapshot_sha256": "d7f6ee815052e4fddd3c6d5a00c69b6841f5ec031f8110b50c6decd84f6e0337",
+      "live_sha256": "33d4a67a936cc2e2766a79b62200a21873401dd3c7f9493c1aeee4005a6cad1a"
+    },
+    {
+      "file": "regions.gd",
+      "scope": "仅修改星陨遗城的说明文案，边境定义与机制不变",
+      "snapshot_sha256": "93e4fb5af476998cf586e50a029f4f76870ddbd4d76b314daa047e331d2ece9e",
+      "live_sha256": "53cd20ae5880b8eba4858f0735421af072a46f36e5dc5bd644c3a8a0d65805ee"
+    },
+    {
+      "file": "relic_expansion.gd",
+      "scope": "仅调整血契与守誓遗物共鸣，本策略不选择或携带遗物，奖励抽取使用的家族键与物品池不变",
+      "snapshot_sha256": "841f5ffb1e523eb8ff4423ede6930fd20e96102a075b85548c928e865bfbb061",
+      "live_sha256": "61fa79214a3eedf2c0d20eb74553385ce73ab7631d1986245bd1768962770567"
+    }
+  ],
+  "gameplay_changed_by_this_study": false,
+  "real_save_and_reference_parity_runs": 10,
+  "same_route_seed_in_all_difficulties": true,
+  "rows": [
+    {
+      "difficulty": 0,
+      "name": "普通",
+      "runs": 1000,
+      "clears": 382,
+      "rate": 0.382,
+      "target": 0.5,
+      "difference_percentage_points": -11.799999999999999,
+      "wilson_95_lower": 0.35239145536552613,
+      "wilson_95_upper": 0.4125116596370649,
+      "target_inside_interval": false,
+      "assessment": "低于目标",
+      "failure_threat": {
+        "elite": 209,
+        "boss": 405,
+        "normal": 4
+      },
+      "failure_depth": {
+        "4": 103,
+        "6": 201,
+        "5": 176,
+        "7": 134,
+        "2": 2,
+        "0": 2
+      },
+      "boss_reached": 787,
+      "boss_won": 382,
+      "first_battle_failures": 2,
+      "battles": 3707,
+      "battle_wins": 3089,
+      "mean_battle_rounds": 2.7294308065821418,
+      "invalid_actions_or_limits": 0
+    },
+    {
+      "difficulty": 1,
+      "name": "困难",
+      "runs": 1000,
+      "clears": 127,
+      "rate": 0.127,
+      "target": 0.25,
+      "difference_percentage_points": -12.3,
+      "wilson_95_lower": 0.10778000925843848,
+      "wilson_95_upper": 0.14907475257178568,
+      "target_inside_interval": false,
+      "assessment": "低于目标",
+      "failure_threat": {
+        "elite": 452,
+        "boss": 388,
+        "normal": 33
+      },
+      "failure_depth": {
+        "4": 319,
+        "5": 343,
+        "6": 154,
+        "7": 24,
+        "2": 21,
+        "0": 12
+      },
+      "boss_reached": 515,
+      "boss_won": 127,
+      "first_battle_failures": 12,
+      "battles": 3296,
+      "battle_wins": 2423,
+      "mean_battle_rounds": 2.7885315533980584,
+      "invalid_actions_or_limits": 0
+    },
+    {
+      "difficulty": 2,
+      "name": "噩梦",
+      "runs": 1000,
+      "clears": 17,
+      "rate": 0.017,
+      "target": 0.1,
+      "difference_percentage_points": -8.3,
+      "wilson_95_lower": 0.010640689856816328,
+      "wilson_95_upper": 0.027055958840229925,
+      "target_inside_interval": false,
+      "assessment": "低于目标",
+      "failure_threat": {
+        "elite": 490,
+        "boss": 273,
+        "normal": 220
+      },
+      "failure_depth": {
+        "4": 472,
+        "5": 269,
+        "0": 70,
+        "2": 150,
+        "6": 22
+      },
+      "boss_reached": 290,
+      "boss_won": 17,
+      "first_battle_failures": 70,
+      "battles": 2750,
+      "battle_wins": 1767,
+      "mean_battle_rounds": 2.7905454545454544,
+      "invalid_actions_or_limits": 0
+    },
+    {
+      "difficulty": 3,
+      "name": "我想找死",
+      "runs": 1000,
+      "clears": 0,
+      "rate": 0.0,
+      "target": 0.01,
+      "difference_percentage_points": -1.0,
+      "wilson_95_lower": 0.0,
+      "wilson_95_upper": 0.0038267584855551234,
+      "target_inside_interval": false,
+      "assessment": "低于目标",
+      "failure_threat": {
+        "normal": 898,
+        "elite": 71,
+        "boss": 31
+      },
+      "failure_depth": {
+        "2": 602,
+        "0": 296,
+        "4": 71,
+        "5": 31
+      },
+      "boss_reached": 31,
+      "boss_won": 0,
+      "first_battle_failures": 296,
+      "battles": 1806,
+      "battle_wins": 806,
+      "mean_battle_rounds": 2.874307862679956,
+      "invalid_actions_or_limits": 0
+    }
+  ],
+  "paired_transitions": [
+    {
+      "from": "普通",
+      "to": "困难",
+      "both_clear": 119,
+      "only_lower_clear": 263,
+      "only_higher_clear": 8,
+      "both_fail": 610
+    },
+    {
+      "from": "困难",
+      "to": "噩梦",
+      "both_clear": 16,
+      "only_lower_clear": 111,
+      "only_higher_clear": 1,
+      "both_fail": 872
+    },
+    {
+      "from": "噩梦",
+      "to": "我想找死",
+      "both_clear": 0,
+      "only_lower_clear": 17,
+      "only_higher_clear": 0,
+      "both_fail": 983
+    }
+  ]
+}

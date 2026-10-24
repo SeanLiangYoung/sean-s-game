@@ -1,0 +1,5148 @@
+{
+  "clears": 52,
+  "failures": 48,
+  "policy": "fresh starter party; battles then supplies; resource rewards; heal below 70% HP or 50% MP",
+  "region": "border",
+  "results": [
+    {
+      "battles": [
+        {
+          "depth": 0,
+          "error": "",
+          "outcome": "victory",
+          "party_hp": 303,
+          "rounds": 2,
+          "steps": 13,
+          "supplies_remaining": 3,
+          "survivors": 5,
+          "threat": "normal"
+        },
+        {
+          "depth": 2,
+          "error": "",
+          "outcome": "victory",
+          "party_hp": 284,
+          "rounds": 2,
+          "steps": 20,
+          "supplies_remaining": 4,
+          "survivors": 5,
+          "threat": "normal"
+        },
+        {
+          "depth": 4,
+          "error": "",
+          "outcome": "gameover",
+          "party_hp": 232,
+          "rounds": 1,
+          "steps": 15,
+          "supplies_remaining": 6,
+          "survivors": 4,
+          "threat": "elite"
+        }
+      ],
+      "cleared": false,
+      "failure": "gameover",
+      "region": "border",
+      "run": 1,
+      "seed": 2026102500
+    },
+    {
+      "battles": [
+        {
+          "depth": 0,
+          "error": "",
+          "outcome": "victory",
+          "party_hp": 277,
+          "rounds": 2,
+          "steps": 20,
+          "supplies_remaining": 3,
+          "survivors": 5,
+          "threat": "normal"
+        },
+        {
+          "depth": 2,
+          "error": "",
+          "outcome": "victory",
+          "party_hp": 285,
+          "rounds": 2,
+          "steps": 22,
+          "supplies_remaining": 2,
+          "survivors": 5,
+          "threat": "normal"
+        },
+        {
+          "depth": 4,
+          "error": "",
+          "outcome": "victory",
+          "party_hp": 94,
+          "rounds": 4,
+          "steps": 43,
+          "supplies_remaining": 5,
+          "survivors": 3,
+          "threat": "elite"
+        },
+        {
+          "depth": 6,
+          "error": "",
+          "outcome": "gameover",
+          "party_hp": 61,
+          "rounds": 2,
+          "steps": 26,
+          "supplies_remaining": 4,
+          "survivors": 2,
+          "threat": "boss"
+        }
+      ],
+      "cleared": false,
+      "failure": "gameover",
+      "region": "border",
+      "run": 2,
+      "seed": 2026102501
+    },
+    {
+      "battles": [
+        {
+          "depth": 0,
+          "error": "",
+          "outcome": "victory",
+          "party_hp": 251,
+          "rounds": 2,
+          "steps": 20,
+          "supplies_remaining": 3,
+          "survivors": 5,
+          "threat": "normal"
+        },
+        {
+          "depth": 2,
+          "error": "",
+          "outcome": "victory",
+          "party_hp": 256,
+          "rounds": 2,
+          "steps": 21,
+          "supplies_remaining": 5,
+          "survivors": 5,
+          "threat": "normal"
+        },
+        {
+          "depth": 5,
+          "error": "",
+          "outcome": "victory",
+          "party_hp": 225,
+          "rounds": 3,
+          "steps": 45,
+          "supplies_remaining": 9,
+          "survivors": 5,
+          "threat": "boss"
+        }
+      ],
+      "cleared": true,
+      "failure": "",
+      "region": "border",
+      "run": 3,
+      "seed": 2026102502
+    },
+    {
+      "battles": [
+        {
+          "depth": 0,
+          "error": "",
+          "outcome": "victory",
+          "party_hp": 282,
+          "rounds": 2,
+          "steps": 19,
+          "supplies_remaining": 3,
+          "survivors": 5,
+          "threat": "normal"
+        },
+        {
+          "depth": 2,
+          "error": "",
+          "outcome": "victory",
+          "party_hp": 237,
+          "rounds": 2,
+          "steps": 18,
+          "supplies_remaining": 4,
+          "survivors": 5,
+          "threat": "normal"
+        },
+        {
+          "depth": 5,
+          "error": "",
+          "outcome": "victory",
+          "party_hp": 154,
+          "rounds": 3,
+          "steps": 46,
+          "supplies_remaining": 8,
+          "survivors": 4,
+          "threat": "boss"
+        }
+      ],
+      "cleared": true,
+      "failure": "",
+      "region": "border",
+      "run": 4,
+      "seed": 2026102503
+    },
+    {
+      "battles": [
+        {
+          "depth": 0,
+          "error": "",
+          "outcome": "victory",
+          "party_hp": 283,
+          "rounds": 2,
+          "steps": 19,
+          "supplies_remaining": 3,
+          "survivors": 5,
+          "threat": "normal"
+        },
+        {
+          "depth": 2,
+          "error": "",
+          "outcome": "victory",
+          "party_hp": 276,
+          "rounds": 2,
+          "steps": 21,
+          "supplies_remaining": 5,
+          "survivors": 5,
+          "threat": "normal"
+        },
+        {
+          "depth": 4,
+          "error": "",
+          "outcome": "victory",
+          "party_hp": 236,
+          "rounds": 2,
+          "steps": 27,
+          "supplies_remaining": 5,
+          "survivors": 5,
+          "threat": "elite"
+        },
+        {
+          "depth": 6,
+          "error": "",
+          "outcome": "victory",
+          "party_hp": 175,
+          "rounds": 3,
+          "steps": 50,
+          "supplies_remaining": 5,
+          "survivors": 5,
+          "threat": "boss"
+        }
+      ],
+      "cleared": true,
+      "failure": "",
+      "region": "border",
+      "run": 5,
+      "seed": 2026102504
+    },
+    {
+      "battles": [
+        {
+          "depth": 0,
+          "error": "",
+          "outcome": "victory",
+          "party_hp": 256,
+          "rounds": 2,
+          "steps": 20,
+          "supplies_remaining": 3,
+          "survivors": 5,
+          "threat": "normal"
+        },
+        {
+          "depth": 2,
+          "error": "",
+          "outcome": "victory",
+          "party_hp": 237,
+          "rounds": 2,
+          "steps": 21,
+          "supplies_remaining": 2,
+          "survivors": 5,
+          "threat": "normal"
+        },
+        {
+          "depth": 4,
+          "error": "",
+          "outcome": "victory",
+          "party_hp": 209,
+          "rounds": 3,
+          "steps": 31,
+          "supplies_remaining": 5,
+          "survivors": 5,
+          "threat": "elite"
+        },
+        {
+          "depth": 6,
+          "error": "",
+          "outcome": "victory",
+          "party_hp": 95,
+          "rounds": 4,
+          "steps": 57,
+          "supplies_remaining": 8,
+          "survivors": 3,
+          "threat": "boss"
+        }
+      ],
+      "cleared": true,
+      "failure": "",
+      "region": "border",
+      "run": 6,
+      "seed": 2026102505
+    },
+    {
+      "battles": [
+        {
+          "depth": 0,
+          "error": "",
+          "outcome": "victory",
+          "party_hp": 273,
+          "rounds": 2,
+          "steps": 20,
+          "supplies_remaining": 3,
+          "survivors": 5,
+          "threat": "normal"
+        },
+        {
+          "depth": 2,
+          "error": "",
+          "outcome": "victory",
+          "party_hp": 227,
+          "rounds": 3,
+          "steps": 29,
+          "supplies_remaining": 4,
+          "survivors": 4,
+          "threat": "normal"
+        },
+        {
+          "depth": 5,
+          "error": "",
+          "outcome": "victory",
+          "party_hp": 87,
+          "rounds": 4,
+          "steps": 49,
+          "supplies_remaining": 7,
+          "survivors": 3,
+          "threat": "boss"
+        }
+      ],
+      "cleared": true,
+      "failure": "",
+      "region": "border",
+      "run": 7,
+      "seed": 2026102506
+    },
+    {
+      "battles": [
+        {
+          "depth": 0,
+          "error": "",
+          "outcome": "victory",
+          "party_hp": 253,
+          "rounds": 2,
+          "steps": 20,
+          "supplies_remaining": 3,
+          "survivors": 5,
+          "threat": "normal"
+        },
+        {
+          "depth": 2,
+          "error": "",
+          "outcome": "victory",
+          "party_hp": 280,
+          "rounds": 2,
+          "steps": 16,
+          "supplies_remaining": 3,
+          "survivors": 5,
+          "threat": "normal"
+        },
+        {
+          "depth": 4,
+          "error": "",
+          "outcome": "victory",
+          "party_hp": 234,
+          "rounds": 3,
+          "steps": 38,
+          "supplies_remaining": 6,
+          "survivors": 4,
+          "threat": "elite"
+        },
+        {
+          "depth": 5,
+          "error": "",
+          "outcome": "victory",
+          "party_hp": 138,
+          "rounds": 3,
+          "steps": 36,
+          "supplies_remaining": 6,
+          "survivors": 4,
+          "threat": "elite"
+        },
+        {
+          "depth": 7,
+          "error": "",
+          "outcome": "gameover",
+          "party_hp": 172,
+          "rounds": 2,
+          "steps": 23,
+          "supplies_remaining": 5,
+          "survivors": 3,
+          "threat": "boss"
+        }
+      ],
+      "cleared": false,
+      "failure": "gameover",
+      "region": "border",
+      "run": 8,
+      "seed": 2026102507
+    },
+    {
+      "battles": [
+        {
+          "depth": 0,
+          "error": "",
+          "outcome": "victory",
+          "party_hp": 291,
+          "rounds": 2,
+          "steps": 21,
+          "supplies_remaining": 3,
+          "survivors": 5,
+          "threat": "normal"
+        },
+        {
+          "depth": 2,
+          "error": "",
+          "outcome": "victory",
+          "party_hp": 254,
+          "rounds": 2,
+          "steps": 16,
+          "supplies_remaining": 4,
+          "survivors": 4,
+          "threat": "normal"
+        },
+        {
+          "depth": 4,
+          "error": "",
+          "outcome": "victory",
+          "party_hp": 113,
+          "rounds": 3,
+          "steps": 33,
+          "supplies_remaining": 5,
+          "survivors": 4,
+          "threat": "elite"
+        },
+        {
+          "depth": 5,
+          "error": "",
+          "outcome": "victory",
+          "party_hp": 109,
+          "rounds": 3,
+          "steps": 37,
+          "supplies_remaining": 2,
+          "survivors": 3,
+          "threat": "elite"
+        },
+        {
+          "depth": 7,
+          "error": "",
+          "outcome": "gameover",
+          "party_hp": 52,
+          "rounds": 3,
+          "steps": 40,
+          "supplies_remaining": 2,
+          "survivors": 1,
+          "threat": "boss"
+        }
+      ],
+      "cleared": false,
+      "failure": "gameover",
+      "region": "border",
+      "run": 9,
+      "seed": 2026102508
+    },
+    {
+      "battles": [
+        {
+          "depth": 0,
+          "error": "",
+          "outcome": "victory",
+          "party_hp": 262,
+          "rounds": 2,
+          "steps": 20,
+          "supplies_remaining": 3,
+          "survivors": 5,
+          "threat": "normal"
+        },
+        {
+          "depth": 2,
+          "error": "",
+          "outcome": "victory",
+          "party_hp": 264,
+          "rounds": 2,
+          "steps": 19,
+          "supplies_remaining": 1,
+          "survivors": 5,
+          "threat": "normal"
+        },
+        {
+          "depth": 5,
+          "error": "",
+          "outcome": "victory",
+          "party_hp": 202,
+          "rounds": 3,
+          "steps": 41,
+          "supplies_remaining": 4,
+          "survivors": 4,
+          "threat": "boss"
+        }
+      ],
+      "cleared": true,
+      "failure": "",
+      "region": "border",
+      "run": 10,
+      "seed": 2026102509
+    },
+    {
+      "battles": [
+        {
+          "depth": 0,
+          "error": "",
+          "outcome": "victory",
+          "party_hp": 269,
+          "rounds": 2,
+          "steps": 20,
+          "supplies_remaining": 3,
+          "survivors": 5,
+          "threat": "normal"
+        },
+        {
+          "depth": 2,
+          "error": "",
+          "outcome": "victory",
+          "party_hp": 253,
+          "rounds": 2,
+          "steps": 23,
+          "supplies_remaining": 2,
+          "survivors": 5,
+          "threat": "normal"
+        },
+        {
+          "depth": 4,
+          "error": "",
+          "outcome": "victory",
+          "party_hp": 192,
+          "rounds": 3,
+          "steps": 38,
+          "supplies_remaining": 3,
+          "survivors": 4,
+          "threat": "elite"
+        },
+        {
+          "depth": 6,
+          "error": "",
+          "outcome": "victory",
+          "party_hp": 102,
+          "rounds": 4,
+          "steps": 46,
+          "supplies_remaining": 3,
+          "survivors": 4,
+          "threat": "boss"
+        }
+      ],
+      "cleared": true,
+      "failure": "",
+      "region": "border",
+      "run": 11,
+      "seed": 2026102510
+    },
+    {
+      "battles": [
+        {
+          "depth": 0,
+          "error": "",
+          "outcome": "victory",
+          "party_hp": 254,
+          "rounds": 2,
+          "steps": 21,
+          "supplies_remaining": 3,
+          "survivors": 4,
+          "threat": "normal"
+        },
+        {
+          "depth": 2,
+          "error": "",
+          "outcome": "victory",
+          "party_hp": 200,
+          "rounds": 2,
+          "steps": 18,
+          "supplies_remaining": 5,
+          "survivors": 3,
+          "threat": "normal"
+        },
+        {
+          "depth": 4,
+          "error": "",
+          "outcome": "gameover",
+          "party_hp": 87,
+          "rounds": 2,
+          "steps": 27,
+          "supplies_remaining": 5,
+          "survivors": 2,
+          "threat": "elite"
+        }
+      ],
+      "cleared": false,
+      "failure": "gameover",
+      "region": "border",
+      "run": 12,
+      "seed": 2026102511
+    },
+    {
+      "battles": [
+        {
+          "depth": 0,
+          "error": "",
+          "outcome": "victory",
+          "party_hp": 285,
+          "rounds": 2,
+          "steps": 22,
+          "supplies_remaining": 3,
+          "survivors": 5,
+          "threat": "normal"
+        },
+        {
+          "depth": 2,
+          "error": "",
+          "outcome": "victory",
+          "party_hp": 256,
+          "rounds": 2,
+          "steps": 16,
+          "supplies_remaining": 5,
+          "survivors": 5,
+          "threat": "normal"
+        },
+        {
+          "depth": 4,
+          "error": "",
+          "outcome": "victory",
+          "party_hp": 217,
+          "rounds": 3,
+          "steps": 33,
+          "supplies_remaining": 8,
+          "survivors": 5,
+          "threat": "elite"
+        },
+        {
+          "depth": 6,
+          "error": "",
+          "outcome": "victory",
+          "party_hp": 98,
+          "rounds": 5,
+          "steps": 63,
+          "supplies_remaining": 8,
+          "survivors": 3,
+          "threat": "boss"
+        }
+      ],
+      "cleared": true,
+      "failure": "",
+      "region": "border",
+      "run": 13,
+      "seed": 2026102512
+    },
+    {
+      "battles": [
+        {
+          "depth": 0,
+          "error": "",
+          "outcome": "victory",
+          "party_hp": 287,
+          "rounds": 2,
+          "steps": 18,
+          "supplies_remaining": 3,
+          "survivors": 5,
+          "threat": "normal"
+        },
+        {
+          "depth": 2,
+          "error": "",
+          "outcome": "victory",
+          "party_hp": 242,
+          "rounds": 2,
+          "steps": 21,
+          "supplies_remaining": 3,
+          "survivors": 5,
+          "threat": "normal"
+        },
+        {
+          "depth": 4,
+          "error": "",
+          "outcome": "victory",
+          "party_hp": 210,
+          "rounds": 3,
+          "steps": 35,
+          "supplies_remaining": 4,
+          "survivors": 4,
+          "threat": "elite"
+        },
+        {
+          "depth": 5,
+          "error": "",
+          "outcome": "victory",
+          "party_hp": 69,
+          "rounds": 4,
+          "steps": 39,
+          "supplies_remaining": 2,
+          "survivors": 3,
+          "threat": "elite"
+        },
+        {
+          "depth": 7,
+          "error": "",
+          "outcome": "gameover",
+          "party_hp": 0,
+          "rounds": 3,
+          "steps": 35,
+          "supplies_remaining": 2,
+          "survivors": 0,
+          "threat": "boss"
+        }
+      ],
+      "cleared": false,
+      "failure": "gameover",
+      "region": "border",
+      "run": 14,
+      "seed": 2026102513
+    },
+    {
+      "battles": [
+        {
+          "depth": 0,
+          "error": "",
+          "outcome": "victory",
+          "party_hp": 265,
+          "rounds": 2,
+          "steps": 21,
+          "supplies_remaining": 3,
+          "survivors": 5,
+          "threat": "normal"
+        },
+        {
+          "depth": 2,
+          "error": "",
+          "outcome": "victory",
+          "party_hp": 248,
+          "rounds": 2,
+          "steps": 16,
+          "supplies_remaining": 6,
+          "survivors": 5,
+          "threat": "normal"
+        },
+        {
+          "depth": 5,
+          "error": "",
+          "outcome": "victory",
+          "party_hp": 184,
+          "rounds": 4,
+          "steps": 49,
+          "supplies_remaining": 10,
+          "survivors": 5,
+          "threat": "boss"
+        }
+      ],
+      "cleared": true,
+      "failure": "",
+      "region": "border",
+      "run": 15,
+      "seed": 2026102514
+    },
+    {
+      "battles": [
+        {
+          "depth": 0,
+          "error": "",
+          "outcome": "victory",
+          "party_hp": 264,
+          "rounds": 2,
+          "steps": 22,
+          "supplies_remaining": 3,
+          "survivors": 5,
+          "threat": "normal"
+        },
+        {
+          "depth": 2,
+          "error": "",
+          "outcome": "victory",
+          "party_hp": 290,
+          "rounds": 2,
+          "steps": 18,
+          "supplies_remaining": 4,
+          "survivors": 5,
+          "threat": "normal"
+        },
+        {
+          "depth": 4,
+          "error": "",
+          "outcome": "victory",
+          "party_hp": 217,
+          "rounds": 3,
+          "steps": 39,
+          "supplies_remaining": 7,
+          "survivors": 5,
+          "threat": "elite"
+        },
+        {
+          "depth": 5,
+          "error": "",
+          "outcome": "victory",
+          "party_hp": 170,
+          "rounds": 3,
+          "steps": 39,
+          "supplies_remaining": 5,
+          "survivors": 5,
+          "threat": "elite"
+        },
+        {
+          "depth": 7,
+          "error": "",
+          "outcome": "victory",
+          "party_hp": 195,
+          "rounds": 4,
+          "steps": 54,
+          "supplies_remaining": 4,
+          "survivors": 4,
+          "threat": "boss"
+        }
+      ],
+      "cleared": true,
+      "failure": "",
+      "region": "border",
+      "run": 16,
+      "seed": 2026102515
+    },
+    {
+      "battles": [
+        {
+          "depth": 0,
+          "error": "",
+          "outcome": "victory",
+          "party_hp": 253,
+          "rounds": 2,
+          "steps": 22,
+          "supplies_remaining": 3,
+          "survivors": 5,
+          "threat": "normal"
+        },
+        {
+          "depth": 2,
+          "error": "",
+          "outcome": "victory",
+          "party_hp": 264,
+          "rounds": 2,
+          "steps": 20,
+          "supplies_remaining": 5,
+          "survivors": 5,
+          "threat": "normal"
+        },
+        {
+          "depth": 4,
+          "error": "",
+          "outcome": "victory",
+          "party_hp": 214,
+          "rounds": 3,
+          "steps": 44,
+          "supplies_remaining": 6,
+          "survivors": 4,
+          "threat": "elite"
+        },
+        {
+          "depth": 6,
+          "error": "",
+          "outcome": "gameover",
+          "party_hp": 136,
+          "rounds": 2,
+          "steps": 33,
+          "supplies_remaining": 9,
+          "survivors": 3,
+          "threat": "boss"
+        }
+      ],
+      "cleared": false,
+      "failure": "gameover",
+      "region": "border",
+      "run": 17,
+      "seed": 2026102516
+    },
+    {
+      "battles": [
+        {
+          "depth": 0,
+          "error": "",
+          "outcome": "victory",
+          "party_hp": 288,
+          "rounds": 2,
+          "steps": 19,
+          "supplies_remaining": 3,
+          "survivors": 5,
+          "threat": "normal"
+        },
+        {
+          "depth": 2,
+          "error": "",
+          "outcome": "victory",
+          "party_hp": 282,
+          "rounds": 2,
+          "steps": 17,
+          "supplies_remaining": 4,
+          "survivors": 5,
+          "threat": "normal"
+        },
+        {
+          "depth": 4,
+          "error": "",
+          "outcome": "victory",
+          "party_hp": 241,
+          "rounds": 3,
+          "steps": 33,
+          "supplies_remaining": 4,
+          "survivors": 5,
+          "threat": "elite"
+        },
+        {
+          "depth": 5,
+          "error": "",
+          "outcome": "victory",
+          "party_hp": 191,
+          "rounds": 3,
+          "steps": 36,
+          "supplies_remaining": 4,
+          "survivors": 4,
+          "threat": "elite"
+        },
+        {
+          "depth": 7,
+          "error": "",
+          "outcome": "victory",
+          "party_hp": 168,
+          "rounds": 4,
+          "steps": 49,
+          "supplies_remaining": 5,
+          "survivors": 4,
+          "threat": "boss"
+        }
+      ],
+      "cleared": true,
+      "failure": "",
+      "region": "border",
+      "run": 18,
+      "seed": 2026102517
+    },
+    {
+      "battles": [
+        {
+          "depth": 0,
+          "error": "",
+          "outcome": "victory",
+          "party_hp": 279,
+          "rounds": 2,
+          "steps": 24,
+          "supplies_remaining": 3,
+          "survivors": 5,
+          "threat": "normal"
+        },
+        {
+          "depth": 2,
+          "error": "",
+          "outcome": "victory",
+          "party_hp": 271,
+          "rounds": 2,
+          "steps": 21,
+          "supplies_remaining": 6,
+          "survivors": 5,
+          "threat": "normal"
+        },
+        {
+          "depth": 5,
+          "error": "",
+          "outcome": "gameover",
+          "party_hp": 183,
+          "rounds": 2,
+          "steps": 33,
+          "supplies_remaining": 9,
+          "survivors": 4,
+          "threat": "boss"
+        }
+      ],
+      "cleared": false,
+      "failure": "gameover",
+      "region": "border",
+      "run": 19,
+      "seed": 2026102518
+    },
+    {
+      "battles": [
+        {
+          "depth": 0,
+          "error": "",
+          "outcome": "victory",
+          "party_hp": 259,
+          "rounds": 2,
+          "steps": 20,
+          "supplies_remaining": 3,
+          "survivors": 5,
+          "threat": "normal"
+        },
+        {
+          "depth": 2,
+          "error": "",
+          "outcome": "victory",
+          "party_hp": 250,
+          "rounds": 2,
+          "steps": 23,
+          "supplies_remaining": 2,
+          "survivors": 5,
+          "threat": "normal"
+        },
+        {
+          "depth": 4,
+          "error": "",
+          "outcome": "victory",
+          "party_hp": 156,
+          "rounds": 3,
+          "steps": 40,
+          "supplies_remaining": 2,
+          "survivors": 4,
+          "threat": "elite"
+        },
+        {
+          "depth": 6,
+          "error": "",
+          "outcome": "gameover",
+          "party_hp": 68,
+          "rounds": 4,
+          "steps": 47,
+          "supplies_remaining": 4,
+          "survivors": 1,
+          "threat": "boss"
+        }
+      ],
+      "cleared": false,
+      "failure": "gameover",
+      "region": "border",
+      "run": 20,
+      "seed": 2026102519
+    },
+    {
+      "battles": [
+        {
+          "depth": 0,
+          "error": "",
+          "outcome": "victory",
+          "party_hp": 277,
+          "rounds": 2,
+          "steps": 21,
+          "supplies_remaining": 3,
+          "survivors": 5,
+          "threat": "normal"
+        },
+        {
+          "depth": 2,
+          "error": "",
+          "outcome": "victory",
+          "party_hp": 243,
+          "rounds": 2,
+          "steps": 20,
+          "supplies_remaining": 3,
+          "survivors": 5,
+          "threat": "normal"
+        },
+        {
+          "depth": 5,
+          "error": "",
+          "outcome": "victory",
+          "party_hp": 226,
+          "rounds": 3,
+          "steps": 36,
+          "supplies_remaining": 7,
+          "survivors": 4,
+          "threat": "boss"
+        }
+      ],
+      "cleared": true,
+      "failure": "",
+      "region": "border",
+      "run": 21,
+      "seed": 2026102520
+    },
+    {
+      "battles": [
+        {
+          "depth": 0,
+          "error": "",
+          "outcome": "victory",
+          "party_hp": 260,
+          "rounds": 3,
+          "steps": 31,
+          "supplies_remaining": 3,
+          "survivors": 5,
+          "threat": "normal"
+        },
+        {
+          "depth": 2,
+          "error": "",
+          "outcome": "victory",
+          "party_hp": 283,
+          "rounds": 2,
+          "steps": 17,
+          "supplies_remaining": 3,
+          "survivors": 5,
+          "threat": "normal"
+        },
+        {
+          "depth": 5,
+          "error": "",
+          "outcome": "gameover",
+          "party_hp": 221,
+          "rounds": 2,
+          "steps": 30,
+          "supplies_remaining": 8,
+          "survivors": 4,
+          "threat": "boss"
+        }
+      ],
+      "cleared": false,
+      "failure": "gameover",
+      "region": "border",
+      "run": 22,
+      "seed": 2026102521
+    },
+    {
+      "battles": [
+        {
+          "depth": 0,
+          "error": "",
+          "outcome": "victory",
+          "party_hp": 255,
+          "rounds": 2,
+          "steps": 19,
+          "supplies_remaining": 3,
+          "survivors": 5,
+          "threat": "normal"
+        },
+        {
+          "depth": 2,
+          "error": "",
+          "outcome": "victory",
+          "party_hp": 287,
+          "rounds": 2,
+          "steps": 18,
+          "supplies_remaining": 1,
+          "survivors": 5,
+          "threat": "normal"
+        },
+        {
+          "depth": 5,
+          "error": "",
+          "outcome": "victory",
+          "party_hp": 182,
+          "rounds": 4,
+          "steps": 49,
+          "supplies_remaining": 4,
+          "survivors": 5,
+          "threat": "boss"
+        }
+      ],
+      "cleared": true,
+      "failure": "",
+      "region": "border",
+      "run": 23,
+      "seed": 2026102522
+    },
+    {
+      "battles": [
+        {
+          "depth": 0,
+          "error": "",
+          "outcome": "victory",
+          "party_hp": 237,
+          "rounds": 3,
+          "steps": 20,
+          "supplies_remaining": 3,
+          "survivors": 4,
+          "threat": "normal"
+        },
+        {
+          "depth": 2,
+          "error": "",
+          "outcome": "victory",
+          "party_hp": 218,
+          "rounds": 2,
+          "steps": 17,
+          "supplies_remaining": 4,
+          "survivors": 4,
+          "threat": "normal"
+        },
+        {
+          "depth": 4,
+          "error": "",
+          "outcome": "victory",
+          "party_hp": 78,
+          "rounds": 3,
+          "steps": 34,
+          "supplies_remaining": 5,
+          "survivors": 4,
+          "threat": "elite"
+        },
+        {
+          "depth": 5,
+          "error": "",
+          "outcome": "victory",
+          "party_hp": 134,
+          "rounds": 3,
+          "steps": 34,
+          "supplies_remaining": 2,
+          "survivors": 3,
+          "threat": "elite"
+        },
+        {
+          "depth": 7,
+          "error": "",
+          "outcome": "gameover",
+          "party_hp": 120,
+          "rounds": 2,
+          "steps": 21,
+          "supplies_remaining": 4,
+          "survivors": 2,
+          "threat": "boss"
+        }
+      ],
+      "cleared": false,
+      "failure": "gameover",
+      "region": "border",
+      "run": 24,
+      "seed": 2026102523
+    },
+    {
+      "battles": [
+        {
+          "depth": 0,
+          "error": "",
+          "outcome": "victory",
+          "party_hp": 282,
+          "rounds": 3,
+          "steps": 28,
+          "supplies_remaining": 3,
+          "survivors": 5,
+          "threat": "normal"
+        },
+        {
+          "depth": 2,
+          "error": "",
+          "outcome": "victory",
+          "party_hp": 280,
+          "rounds": 2,
+          "steps": 16,
+          "supplies_remaining": 4,
+          "survivors": 5,
+          "threat": "normal"
+        },
+        {
+          "depth": 5,
+          "error": "",
+          "outcome": "victory",
+          "party_hp": 145,
+          "rounds": 3,
+          "steps": 42,
+          "supplies_remaining": 6,
+          "survivors": 4,
+          "threat": "boss"
+        }
+      ],
+      "cleared": true,
+      "failure": "",
+      "region": "border",
+      "run": 25,
+      "seed": 2026102524
+    },
+    {
+      "battles": [
+        {
+          "depth": 0,
+          "error": "",
+          "outcome": "victory",
+          "party_hp": 291,
+          "rounds": 2,
+          "steps": 17,
+          "supplies_remaining": 3,
+          "survivors": 5,
+          "threat": "normal"
+        },
+        {
+          "depth": 2,
+          "error": "",
+          "outcome": "victory",
+          "party_hp": 274,
+          "rounds": 2,
+          "steps": 22,
+          "supplies_remaining": 4,
+          "survivors": 5,
+          "threat": "normal"
+        },
+        {
+          "depth": 4,
+          "error": "",
+          "outcome": "victory",
+          "party_hp": 188,
+          "rounds": 3,
+          "steps": 39,
+          "supplies_remaining": 7,
+          "survivors": 5,
+          "threat": "elite"
+        },
+        {
+          "depth": 6,
+          "error": "",
+          "outcome": "gameover",
+          "party_hp": 26,
+          "rounds": 4,
+          "steps": 52,
+          "supplies_remaining": 9,
+          "survivors": 1,
+          "threat": "boss"
+        }
+      ],
+      "cleared": false,
+      "failure": "gameover",
+      "region": "border",
+      "run": 26,
+      "seed": 2026102525
+    },
+    {
+      "battles": [
+        {
+          "depth": 0,
+          "error": "",
+          "outcome": "victory",
+          "party_hp": 290,
+          "rounds": 2,
+          "steps": 20,
+          "supplies_remaining": 3,
+          "survivors": 5,
+          "threat": "normal"
+        },
+        {
+          "depth": 2,
+          "error": "",
+          "outcome": "victory",
+          "party_hp": 284,
+          "rounds": 2,
+          "steps": 19,
+          "supplies_remaining": 4,
+          "survivors": 5,
+          "threat": "normal"
+        },
+        {
+          "depth": 4,
+          "error": "",
+          "outcome": "victory",
+          "party_hp": 203,
+          "rounds": 3,
+          "steps": 37,
+          "supplies_remaining": 5,
+          "survivors": 4,
+          "threat": "elite"
+        },
+        {
+          "depth": 6,
+          "error": "",
+          "outcome": "gameover",
+          "party_hp": 120,
+          "rounds": 2,
+          "steps": 30,
+          "supplies_remaining": 8,
+          "survivors": 2,
+          "threat": "boss"
+        }
+      ],
+      "cleared": false,
+      "failure": "gameover",
+      "region": "border",
+      "run": 27,
+      "seed": 2026102526
+    },
+    {
+      "battles": [
+        {
+          "depth": 0,
+          "error": "",
+          "outcome": "victory",
+          "party_hp": 251,
+          "rounds": 2,
+          "steps": 20,
+          "supplies_remaining": 3,
+          "survivors": 5,
+          "threat": "normal"
+        },
+        {
+          "depth": 2,
+          "error": "",
+          "outcome": "victory",
+          "party_hp": 289,
+          "rounds": 2,
+          "steps": 13,
+          "supplies_remaining": 5,
+          "survivors": 5,
+          "threat": "normal"
+        },
+        {
+          "depth": 4,
+          "error": "",
+          "outcome": "victory",
+          "party_hp": 180,
+          "rounds": 3,
+          "steps": 38,
+          "supplies_remaining": 8,
+          "survivors": 5,
+          "threat": "elite"
+        },
+        {
+          "depth": 5,
+          "error": "",
+          "outcome": "victory",
+          "party_hp": 194,
+          "rounds": 3,
+          "steps": 33,
+          "supplies_remaining": 7,
+          "survivors": 5,
+          "threat": "elite"
+        },
+        {
+          "depth": 7,
+          "error": "",
+          "outcome": "victory",
+          "party_hp": 80,
+          "rounds": 4,
+          "steps": 55,
+          "supplies_remaining": 7,
+          "survivors": 3,
+          "threat": "boss"
+        }
+      ],
+      "cleared": true,
+      "failure": "",
+      "region": "border",
+      "run": 28,
+      "seed": 2026102527
+    },
+    {
+      "battles": [
+        {
+          "depth": 0,
+          "error": "",
+          "outcome": "victory",
+          "party_hp": 266,
+          "rounds": 2,
+          "steps": 20,
+          "supplies_remaining": 3,
+          "survivors": 5,
+          "threat": "normal"
+        },
+        {
+          "depth": 2,
+          "error": "",
+          "outcome": "victory",
+          "party_hp": 286,
+          "rounds": 2,
+          "steps": 21,
+          "supplies_remaining": 6,
+          "survivors": 5,
+          "threat": "normal"
+        },
+        {
+          "depth": 5,
+          "error": "",
+          "outcome": "victory",
+          "party_hp": 209,
+          "rounds": 3,
+          "steps": 45,
+          "supplies_remaining": 10,
+          "survivors": 5,
+          "threat": "boss"
+        }
+      ],
+      "cleared": true,
+      "failure": "",
+      "region": "border",
+      "run": 29,
+      "seed": 2026102528
+    },
+    {
+      "battles": [
+        {
+          "depth": 0,
+          "error": "",
+          "outcome": "victory",
+          "party_hp": 284,
+          "rounds": 2,
+          "steps": 19,
+          "supplies_remaining": 3,
+          "survivors": 5,
+          "threat": "normal"
+        },
+        {
+          "depth": 2,
+          "error": "",
+          "outcome": "victory",
+          "party_hp": 266,
+          "rounds": 2,
+          "steps": 21,
+          "supplies_remaining": 5,
+          "survivors": 5,
+          "threat": "normal"
+        },
+        {
+          "depth": 5,
+          "error": "",
+          "outcome": "victory",
+          "party_hp": 210,
+          "rounds": 4,
+          "steps": 49,
+          "supplies_remaining": 7,
+          "survivors": 4,
+          "threat": "boss"
+        }
+      ],
+      "cleared": true,
+      "failure": "",
+      "region": "border",
+      "run": 30,
+      "seed": 2026102529
+    },
+    {
+      "battles": [
+        {
+          "depth": 0,
+          "error": "",
+          "outcome": "victory",
+          "party_hp": 294,
+          "rounds": 2,
+          "steps": 20,
+          "supplies_remaining": 3,
+          "survivors": 5,
+          "threat": "normal"
+        },
+        {
+          "depth": 2,
+          "error": "",
+          "outcome": "victory",
+          "party_hp": 260,
+          "rounds": 2,
+          "steps": 21,
+          "supplies_remaining": 2,
+          "survivors": 5,
+          "threat": "normal"
+        },
+        {
+          "depth": 4,
+          "error": "",
+          "outcome": "victory",
+          "party_hp": 171,
+          "rounds": 3,
+          "steps": 39,
+          "supplies_remaining": 2,
+          "survivors": 4,
+          "threat": "elite"
+        },
+        {
+          "depth": 6,
+          "error": "",
+          "outcome": "gameover",
+          "party_hp": 153,
+          "rounds": 2,
+          "steps": 24,
+          "supplies_remaining": 1,
+          "survivors": 3,
+          "threat": "boss"
+        }
+      ],
+      "cleared": false,
+      "failure": "gameover",
+      "region": "border",
+      "run": 31,
+      "seed": 2026102530
+    },
+    {
+      "battles": [
+        {
+          "depth": 0,
+          "error": "",
+          "outcome": "victory",
+          "party_hp": 264,
+          "rounds": 2,
+          "steps": 21,
+          "supplies_remaining": 3,
+          "survivors": 5,
+          "threat": "normal"
+        },
+        {
+          "depth": 2,
+          "error": "",
+          "outcome": "victory",
+          "party_hp": 244,
+          "rounds": 2,
+          "steps": 20,
+          "supplies_remaining": 3,
+          "survivors": 5,
+          "threat": "normal"
+        },
+        {
+          "depth": 5,
+          "error": "",
+          "outcome": "gameover",
+          "party_hp": 204,
+          "rounds": 2,
+          "steps": 29,
+          "supplies_remaining": 6,
+          "survivors": 4,
+          "threat": "boss"
+        }
+      ],
+      "cleared": false,
+      "failure": "gameover",
+      "region": "border",
+      "run": 32,
+      "seed": 2026102531
+    },
+    {
+      "battles": [
+        {
+          "depth": 0,
+          "error": "",
+          "outcome": "victory",
+          "party_hp": 277,
+          "rounds": 2,
+          "steps": 21,
+          "supplies_remaining": 3,
+          "survivors": 5,
+          "threat": "normal"
+        },
+        {
+          "depth": 2,
+          "error": "",
+          "outcome": "victory",
+          "party_hp": 287,
+          "rounds": 2,
+          "steps": 19,
+          "supplies_remaining": 6,
+          "survivors": 5,
+          "threat": "normal"
+        },
+        {
+          "depth": 4,
+          "error": "",
+          "outcome": "victory",
+          "party_hp": 230,
+          "rounds": 3,
+          "steps": 34,
+          "supplies_remaining": 7,
+          "survivors": 5,
+          "threat": "elite"
+        },
+        {
+          "depth": 5,
+          "error": "",
+          "outcome": "victory",
+          "party_hp": 261,
+          "rounds": 3,
+          "steps": 35,
+          "supplies_remaining": 5,
+          "survivors": 5,
+          "threat": "elite"
+        },
+        {
+          "depth": 7,
+          "error": "",
+          "outcome": "victory",
+          "party_hp": 138,
+          "rounds": 5,
+          "steps": 64,
+          "supplies_remaining": 6,
+          "survivors": 4,
+          "threat": "boss"
+        }
+      ],
+      "cleared": true,
+      "failure": "",
+      "region": "border",
+      "run": 33,
+      "seed": 2026102532
+    },
+    {
+      "battles": [
+        {
+          "depth": 0,
+          "error": "",
+          "outcome": "victory",
+          "party_hp": 283,
+          "rounds": 2,
+          "steps": 18,
+          "supplies_remaining": 3,
+          "survivors": 5,
+          "threat": "normal"
+        },
+        {
+          "depth": 2,
+          "error": "",
+          "outcome": "victory",
+          "party_hp": 255,
+          "rounds": 2,
+          "steps": 20,
+          "supplies_remaining": 2,
+          "survivors": 5,
+          "threat": "normal"
+        },
+        {
+          "depth": 5,
+          "error": "",
+          "outcome": "victory",
+          "party_hp": 228,
+          "rounds": 3,
+          "steps": 42,
+          "supplies_remaining": 5,
+          "survivors": 5,
+          "threat": "boss"
+        }
+      ],
+      "cleared": true,
+      "failure": "",
+      "region": "border",
+      "run": 34,
+      "seed": 2026102533
+    },
+    {
+      "battles": [
+        {
+          "depth": 0,
+          "error": "",
+          "outcome": "victory",
+          "party_hp": 264,
+          "rounds": 2,
+          "steps": 23,
+          "supplies_remaining": 3,
+          "survivors": 5,
+          "threat": "normal"
+        },
+        {
+          "depth": 2,
+          "error": "",
+          "outcome": "victory",
+          "party_hp": 243,
+          "rounds": 2,
+          "steps": 19,
+          "supplies_remaining": 6,
+          "survivors": 5,
+          "threat": "normal"
+        },
+        {
+          "depth": 5,
+          "error": "",
+          "outcome": "victory",
+          "party_hp": 163,
+          "rounds": 4,
+          "steps": 55,
+          "supplies_remaining": 10,
+          "survivors": 4,
+          "threat": "boss"
+        }
+      ],
+      "cleared": true,
+      "failure": "",
+      "region": "border",
+      "run": 35,
+      "seed": 2026102534
+    },
+    {
+      "battles": [
+        {
+          "depth": 0,
+          "error": "",
+          "outcome": "victory",
+          "party_hp": 273,
+          "rounds": 2,
+          "steps": 20,
+          "supplies_remaining": 3,
+          "survivors": 5,
+          "threat": "normal"
+        },
+        {
+          "depth": 2,
+          "error": "",
+          "outcome": "victory",
+          "party_hp": 284,
+          "rounds": 3,
+          "steps": 28,
+          "supplies_remaining": 2,
+          "survivors": 5,
+          "threat": "normal"
+        },
+        {
+          "depth": 4,
+          "error": "",
+          "outcome": "victory",
+          "party_hp": 182,
+          "rounds": 3,
+          "steps": 36,
+          "supplies_remaining": 3,
+          "survivors": 5,
+          "threat": "elite"
+        },
+        {
+          "depth": 6,
+          "error": "",
+          "outcome": "gameover",
+          "party_hp": 182,
+          "rounds": 3,
+          "steps": 42,
+          "supplies_remaining": 3,
+          "survivors": 4,
+          "threat": "boss"
+        }
+      ],
+      "cleared": false,
+      "failure": "gameover",
+      "region": "border",
+      "run": 36,
+      "seed": 2026102535
+    },
+    {
+      "battles": [
+        {
+          "depth": 0,
+          "error": "",
+          "outcome": "victory",
+          "party_hp": 276,
+          "rounds": 2,
+          "steps": 17,
+          "supplies_remaining": 3,
+          "survivors": 5,
+          "threat": "normal"
+        },
+        {
+          "depth": 2,
+          "error": "",
+          "outcome": "victory",
+          "party_hp": 263,
+          "rounds": 2,
+          "steps": 21,
+          "supplies_remaining": 3,
+          "survivors": 5,
+          "threat": "normal"
+        },
+        {
+          "depth": 4,
+          "error": "",
+          "outcome": "victory",
+          "party_hp": 179,
+          "rounds": 4,
+          "steps": 36,
+          "supplies_remaining": 3,
+          "survivors": 3,
+          "threat": "elite"
+        },
+        {
+          "depth": 6,
+          "error": "",
+          "outcome": "gameover",
+          "party_hp": 6,
+          "rounds": 4,
+          "steps": 61,
+          "supplies_remaining": 6,
+          "survivors": 1,
+          "threat": "boss"
+        }
+      ],
+      "cleared": false,
+      "failure": "gameover",
+      "region": "border",
+      "run": 37,
+      "seed": 2026102536
+    },
+    {
+      "battles": [
+        {
+          "depth": 0,
+          "error": "",
+          "outcome": "victory",
+          "party_hp": 312,
+          "rounds": 2,
+          "steps": 16,
+          "supplies_remaining": 3,
+          "survivors": 5,
+          "threat": "normal"
+        },
+        {
+          "depth": 2,
+          "error": "",
+          "outcome": "victory",
+          "party_hp": 289,
+          "rounds": 2,
+          "steps": 20,
+          "supplies_remaining": 6,
+          "survivors": 5,
+          "threat": "normal"
+        },
+        {
+          "depth": 4,
+          "error": "",
+          "outcome": "victory",
+          "party_hp": 190,
+          "rounds": 3,
+          "steps": 39,
+          "supplies_remaining": 9,
+          "survivors": 4,
+          "threat": "elite"
+        },
+        {
+          "depth": 6,
+          "error": "",
+          "outcome": "victory",
+          "party_hp": 158,
+          "rounds": 4,
+          "steps": 49,
+          "supplies_remaining": 9,
+          "survivors": 3,
+          "threat": "boss"
+        }
+      ],
+      "cleared": true,
+      "failure": "",
+      "region": "border",
+      "run": 38,
+      "seed": 2026102537
+    },
+    {
+      "battles": [
+        {
+          "depth": 0,
+          "error": "",
+          "outcome": "victory",
+          "party_hp": 251,
+          "rounds": 2,
+          "steps": 20,
+          "supplies_remaining": 3,
+          "survivors": 5,
+          "threat": "normal"
+        },
+        {
+          "depth": 2,
+          "error": "",
+          "outcome": "victory",
+          "party_hp": 274,
+          "rounds": 2,
+          "steps": 18,
+          "supplies_remaining": 5,
+          "survivors": 5,
+          "threat": "normal"
+        },
+        {
+          "depth": 4,
+          "error": "",
+          "outcome": "victory",
+          "party_hp": 181,
+          "rounds": 3,
+          "steps": 36,
+          "supplies_remaining": 8,
+          "survivors": 4,
+          "threat": "elite"
+        },
+        {
+          "depth": 5,
+          "error": "",
+          "outcome": "gameover",
+          "party_hp": 120,
+          "rounds": 2,
+          "steps": 25,
+          "supplies_remaining": 6,
+          "survivors": 3,
+          "threat": "elite"
+        }
+      ],
+      "cleared": false,
+      "failure": "gameover",
+      "region": "border",
+      "run": 39,
+      "seed": 2026102538
+    },
+    {
+      "battles": [
+        {
+          "depth": 0,
+          "error": "",
+          "outcome": "victory",
+          "party_hp": 267,
+          "rounds": 2,
+          "steps": 19,
+          "supplies_remaining": 3,
+          "survivors": 5,
+          "threat": "normal"
+        },
+        {
+          "depth": 2,
+          "error": "",
+          "outcome": "victory",
+          "party_hp": 265,
+          "rounds": 2,
+          "steps": 20,
+          "supplies_remaining": 4,
+          "survivors": 5,
+          "threat": "normal"
+        },
+        {
+          "depth": 4,
+          "error": "",
+          "outcome": "gameover",
+          "party_hp": 178,
+          "rounds": 2,
+          "steps": 34,
+          "supplies_remaining": 4,
+          "survivors": 3,
+          "threat": "elite"
+        }
+      ],
+      "cleared": false,
+      "failure": "gameover",
+      "region": "border",
+      "run": 40,
+      "seed": 2026102539
+    },
+    {
+      "battles": [
+        {
+          "depth": 0,
+          "error": "",
+          "outcome": "victory",
+          "party_hp": 281,
+          "rounds": 2,
+          "steps": 17,
+          "supplies_remaining": 3,
+          "survivors": 5,
+          "threat": "normal"
+        },
+        {
+          "depth": 2,
+          "error": "",
+          "outcome": "victory",
+          "party_hp": 294,
+          "rounds": 2,
+          "steps": 18,
+          "supplies_remaining": 4,
+          "survivors": 5,
+          "threat": "normal"
+        },
+        {
+          "depth": 4,
+          "error": "",
+          "outcome": "victory",
+          "party_hp": 192,
+          "rounds": 3,
+          "steps": 39,
+          "supplies_remaining": 5,
+          "survivors": 4,
+          "threat": "elite"
+        },
+        {
+          "depth": 6,
+          "error": "",
+          "outcome": "gameover",
+          "party_hp": 0,
+          "rounds": 5,
+          "steps": 65,
+          "supplies_remaining": 8,
+          "survivors": 0,
+          "threat": "boss"
+        }
+      ],
+      "cleared": false,
+      "failure": "gameover",
+      "region": "border",
+      "run": 41,
+      "seed": 2026102540
+    },
+    {
+      "battles": [
+        {
+          "depth": 0,
+          "error": "",
+          "outcome": "victory",
+          "party_hp": 268,
+          "rounds": 2,
+          "steps": 21,
+          "supplies_remaining": 3,
+          "survivors": 5,
+          "threat": "normal"
+        },
+        {
+          "depth": 2,
+          "error": "",
+          "outcome": "victory",
+          "party_hp": 276,
+          "rounds": 2,
+          "steps": 20,
+          "supplies_remaining": 2,
+          "survivors": 5,
+          "threat": "normal"
+        },
+        {
+          "depth": 4,
+          "error": "",
+          "outcome": "victory",
+          "party_hp": 221,
+          "rounds": 3,
+          "steps": 32,
+          "supplies_remaining": 5,
+          "survivors": 5,
+          "threat": "elite"
+        },
+        {
+          "depth": 6,
+          "error": "",
+          "outcome": "victory",
+          "party_hp": 138,
+          "rounds": 4,
+          "steps": 53,
+          "supplies_remaining": 5,
+          "survivors": 4,
+          "threat": "boss"
+        }
+      ],
+      "cleared": true,
+      "failure": "",
+      "region": "border",
+      "run": 42,
+      "seed": 2026102541
+    },
+    {
+      "battles": [
+        {
+          "depth": 0,
+          "error": "",
+          "outcome": "victory",
+          "party_hp": 275,
+          "rounds": 2,
+          "steps": 20,
+          "supplies_remaining": 3,
+          "survivors": 5,
+          "threat": "normal"
+        },
+        {
+          "depth": 2,
+          "error": "",
+          "outcome": "victory",
+          "party_hp": 268,
+          "rounds": 2,
+          "steps": 18,
+          "supplies_remaining": 3,
+          "survivors": 5,
+          "threat": "normal"
+        },
+        {
+          "depth": 4,
+          "error": "",
+          "outcome": "victory",
+          "party_hp": 202,
+          "rounds": 3,
+          "steps": 33,
+          "supplies_remaining": 4,
+          "survivors": 4,
+          "threat": "elite"
+        },
+        {
+          "depth": 6,
+          "error": "",
+          "outcome": "victory",
+          "party_hp": 130,
+          "rounds": 4,
+          "steps": 54,
+          "supplies_remaining": 7,
+          "survivors": 3,
+          "threat": "boss"
+        }
+      ],
+      "cleared": true,
+      "failure": "",
+      "region": "border",
+      "run": 43,
+      "seed": 2026102542
+    },
+    {
+      "battles": [
+        {
+          "depth": 0,
+          "error": "",
+          "outcome": "victory",
+          "party_hp": 302,
+          "rounds": 2,
+          "steps": 14,
+          "supplies_remaining": 3,
+          "survivors": 5,
+          "threat": "normal"
+        },
+        {
+          "depth": 2,
+          "error": "",
+          "outcome": "victory",
+          "party_hp": 282,
+          "rounds": 2,
+          "steps": 21,
+          "supplies_remaining": 4,
+          "survivors": 5,
+          "threat": "normal"
+        },
+        {
+          "depth": 4,
+          "error": "",
+          "outcome": "victory",
+          "party_hp": 238,
+          "rounds": 3,
+          "steps": 32,
+          "supplies_remaining": 5,
+          "survivors": 5,
+          "threat": "elite"
+        },
+        {
+          "depth": 5,
+          "error": "",
+          "outcome": "gameover",
+          "party_hp": 214,
+          "rounds": 2,
+          "steps": 28,
+          "supplies_remaining": 4,
+          "survivors": 4,
+          "threat": "elite"
+        }
+      ],
+      "cleared": false,
+      "failure": "gameover",
+      "region": "border",
+      "run": 44,
+      "seed": 2026102543
+    },
+    {
+      "battles": [
+        {
+          "depth": 0,
+          "error": "",
+          "outcome": "victory",
+          "party_hp": 271,
+          "rounds": 2,
+          "steps": 16,
+          "supplies_remaining": 3,
+          "survivors": 5,
+          "threat": "normal"
+        },
+        {
+          "depth": 2,
+          "error": "",
+          "outcome": "victory",
+          "party_hp": 284,
+          "rounds": 2,
+          "steps": 17,
+          "supplies_remaining": 2,
+          "survivors": 5,
+          "threat": "normal"
+        },
+        {
+          "depth": 5,
+          "error": "",
+          "outcome": "victory",
+          "party_hp": 234,
+          "rounds": 4,
+          "steps": 51,
+          "supplies_remaining": 6,
+          "survivors": 5,
+          "threat": "boss"
+        }
+      ],
+      "cleared": true,
+      "failure": "",
+      "region": "border",
+      "run": 45,
+      "seed": 2026102544
+    },
+    {
+      "battles": [
+        {
+          "depth": 0,
+          "error": "",
+          "outcome": "victory",
+          "party_hp": 303,
+          "rounds": 2,
+          "steps": 19,
+          "supplies_remaining": 3,
+          "survivors": 5,
+          "threat": "normal"
+        },
+        {
+          "depth": 2,
+          "error": "",
+          "outcome": "victory",
+          "party_hp": 264,
+          "rounds": 2,
+          "steps": 21,
+          "supplies_remaining": 7,
+          "survivors": 5,
+          "threat": "normal"
+        },
+        {
+          "depth": 5,
+          "error": "",
+          "outcome": "victory",
+          "party_hp": 223,
+          "rounds": 4,
+          "steps": 46,
+          "supplies_remaining": 9,
+          "survivors": 5,
+          "threat": "boss"
+        }
+      ],
+      "cleared": true,
+      "failure": "",
+      "region": "border",
+      "run": 46,
+      "seed": 2026102545
+    },
+    {
+      "battles": [
+        {
+          "depth": 0,
+          "error": "",
+          "outcome": "victory",
+          "party_hp": 269,
+          "rounds": 2,
+          "steps": 16,
+          "supplies_remaining": 3,
+          "survivors": 5,
+          "threat": "normal"
+        },
+        {
+          "depth": 2,
+          "error": "",
+          "outcome": "victory",
+          "party_hp": 259,
+          "rounds": 2,
+          "steps": 21,
+          "supplies_remaining": 2,
+          "survivors": 5,
+          "threat": "normal"
+        },
+        {
+          "depth": 4,
+          "error": "",
+          "outcome": "victory",
+          "party_hp": 203,
+          "rounds": 3,
+          "steps": 36,
+          "supplies_remaining": 3,
+          "survivors": 4,
+          "threat": "elite"
+        },
+        {
+          "depth": 5,
+          "error": "",
+          "outcome": "victory",
+          "party_hp": 179,
+          "rounds": 3,
+          "steps": 33,
+          "supplies_remaining": 0,
+          "survivors": 3,
+          "threat": "elite"
+        },
+        {
+          "depth": 7,
+          "error": "",
+          "outcome": "gameover",
+          "party_hp": 0,
+          "rounds": 4,
+          "steps": 46,
+          "supplies_remaining": 2,
+          "survivors": 0,
+          "threat": "boss"
+        }
+      ],
+      "cleared": false,
+      "failure": "gameover",
+      "region": "border",
+      "run": 47,
+      "seed": 2026102546
+    },
+    {
+      "battles": [
+        {
+          "depth": 0,
+          "error": "",
+          "outcome": "victory",
+          "party_hp": 292,
+          "rounds": 2,
+          "steps": 20,
+          "supplies_remaining": 3,
+          "survivors": 5,
+          "threat": "normal"
+        },
+        {
+          "depth": 2,
+          "error": "",
+          "outcome": "victory",
+          "party_hp": 253,
+          "rounds": 2,
+          "steps": 23,
+          "supplies_remaining": 6,
+          "survivors": 5,
+          "threat": "normal"
+        },
+        {
+          "depth": 4,
+          "error": "",
+          "outcome": "victory",
+          "party_hp": 210,
+          "rounds": 3,
+          "steps": 36,
+          "supplies_remaining": 6,
+          "survivors": 4,
+          "threat": "elite"
+        },
+        {
+          "depth": 6,
+          "error": "",
+          "outcome": "gameover",
+          "party_hp": 39,
+          "rounds": 4,
+          "steps": 60,
+          "supplies_remaining": 8,
+          "survivors": 1,
+          "threat": "boss"
+        }
+      ],
+      "cleared": false,
+      "failure": "gameover",
+      "region": "border",
+      "run": 48,
+      "seed": 2026102547
+    },
+    {
+      "battles": [
+        {
+          "depth": 0,
+          "error": "",
+          "outcome": "victory",
+          "party_hp": 273,
+          "rounds": 2,
+          "steps": 19,
+          "supplies_remaining": 3,
+          "survivors": 5,
+          "threat": "normal"
+        },
+        {
+          "depth": 2,
+          "error": "",
+          "outcome": "victory",
+          "party_hp": 253,
+          "rounds": 2,
+          "steps": 21,
+          "supplies_remaining": 4,
+          "survivors": 5,
+          "threat": "normal"
+        },
+        {
+          "depth": 4,
+          "error": "",
+          "outcome": "victory",
+          "party_hp": 144,
+          "rounds": 3,
+          "steps": 37,
+          "supplies_remaining": 4,
+          "survivors": 4,
+          "threat": "elite"
+        },
+        {
+          "depth": 5,
+          "error": "",
+          "outcome": "victory",
+          "party_hp": 74,
+          "rounds": 4,
+          "steps": 43,
+          "supplies_remaining": 4,
+          "survivors": 3,
+          "threat": "elite"
+        },
+        {
+          "depth": 7,
+          "error": "",
+          "outcome": "gameover",
+          "party_hp": 106,
+          "rounds": 1,
+          "steps": 11,
+          "supplies_remaining": 4,
+          "survivors": 2,
+          "threat": "boss"
+        }
+      ],
+      "cleared": false,
+      "failure": "gameover",
+      "region": "border",
+      "run": 49,
+      "seed": 2026102548
+    },
+    {
+      "battles": [
+        {
+          "depth": 0,
+          "error": "",
+          "outcome": "victory",
+          "party_hp": 273,
+          "rounds": 2,
+          "steps": 21,
+          "supplies_remaining": 3,
+          "survivors": 5,
+          "threat": "normal"
+        },
+        {
+          "depth": 2,
+          "error": "",
+          "outcome": "victory",
+          "party_hp": 255,
+          "rounds": 2,
+          "steps": 19,
+          "supplies_remaining": 4,
+          "survivors": 5,
+          "threat": "normal"
+        },
+        {
+          "depth": 4,
+          "error": "",
+          "outcome": "victory",
+          "party_hp": 174,
+          "rounds": 3,
+          "steps": 37,
+          "supplies_remaining": 7,
+          "survivors": 4,
+          "threat": "elite"
+        },
+        {
+          "depth": 5,
+          "error": "",
+          "outcome": "victory",
+          "party_hp": 138,
+          "rounds": 3,
+          "steps": 32,
+          "supplies_remaining": 7,
+          "survivors": 3,
+          "threat": "elite"
+        },
+        {
+          "depth": 7,
+          "error": "",
+          "outcome": "gameover",
+          "party_hp": 0,
+          "rounds": 4,
+          "steps": 48,
+          "supplies_remaining": 9,
+          "survivors": 0,
+          "threat": "boss"
+        }
+      ],
+      "cleared": false,
+      "failure": "gameover",
+      "region": "border",
+      "run": 50,
+      "seed": 2026102549
+    },
+    {
+      "battles": [
+        {
+          "depth": 0,
+          "error": "",
+          "outcome": "victory",
+          "party_hp": 273,
+          "rounds": 2,
+          "steps": 23,
+          "supplies_remaining": 3,
+          "survivors": 5,
+          "threat": "normal"
+        },
+        {
+          "depth": 2,
+          "error": "",
+          "outcome": "victory",
+          "party_hp": 258,
+          "rounds": 2,
+          "steps": 22,
+          "supplies_remaining": 2,
+          "survivors": 5,
+          "threat": "normal"
+        },
+        {
+          "depth": 4,
+          "error": "",
+          "outcome": "victory",
+          "party_hp": 249,
+          "rounds": 2,
+          "steps": 23,
+          "supplies_remaining": 5,
+          "survivors": 5,
+          "threat": "elite"
+        },
+        {
+          "depth": 5,
+          "error": "",
+          "outcome": "victory",
+          "party_hp": 215,
+          "rounds": 3,
+          "steps": 36,
+          "supplies_remaining": 3,
+          "survivors": 5,
+          "threat": "elite"
+        },
+        {
+          "depth": 7,
+          "error": "",
+          "outcome": "victory",
+          "party_hp": 220,
+          "rounds": 3,
+          "steps": 43,
+          "supplies_remaining": 5,
+          "survivors": 5,
+          "threat": "boss"
+        }
+      ],
+      "cleared": true,
+      "failure": "",
+      "region": "border",
+      "run": 51,
+      "seed": 2026102550
+    },
+    {
+      "battles": [
+        {
+          "depth": 0,
+          "error": "",
+          "outcome": "victory",
+          "party_hp": 291,
+          "rounds": 2,
+          "steps": 18,
+          "supplies_remaining": 3,
+          "survivors": 5,
+          "threat": "normal"
+        },
+        {
+          "depth": 2,
+          "error": "",
+          "outcome": "victory",
+          "party_hp": 269,
+          "rounds": 2,
+          "steps": 18,
+          "supplies_remaining": 4,
+          "survivors": 5,
+          "threat": "normal"
+        },
+        {
+          "depth": 4,
+          "error": "",
+          "outcome": "victory",
+          "party_hp": 220,
+          "rounds": 3,
+          "steps": 32,
+          "supplies_remaining": 7,
+          "survivors": 4,
+          "threat": "elite"
+        },
+        {
+          "depth": 5,
+          "error": "",
+          "outcome": "victory",
+          "party_hp": 200,
+          "rounds": 3,
+          "steps": 27,
+          "supplies_remaining": 5,
+          "survivors": 3,
+          "threat": "elite"
+        },
+        {
+          "depth": 7,
+          "error": "",
+          "outcome": "gameover",
+          "party_hp": 30,
+          "rounds": 4,
+          "steps": 50,
+          "supplies_remaining": 5,
+          "survivors": 1,
+          "threat": "boss"
+        }
+      ],
+      "cleared": false,
+      "failure": "gameover",
+      "region": "border",
+      "run": 52,
+      "seed": 2026102551
+    },
+    {
+      "battles": [
+        {
+          "depth": 0,
+          "error": "",
+          "outcome": "victory",
+          "party_hp": 293,
+          "rounds": 2,
+          "steps": 23,
+          "supplies_remaining": 3,
+          "survivors": 5,
+          "threat": "normal"
+        },
+        {
+          "depth": 2,
+          "error": "",
+          "outcome": "victory",
+          "party_hp": 251,
+          "rounds": 2,
+          "steps": 21,
+          "supplies_remaining": 5,
+          "survivors": 5,
+          "threat": "normal"
+        },
+        {
+          "depth": 5,
+          "error": "",
+          "outcome": "victory",
+          "party_hp": 234,
+          "rounds": 3,
+          "steps": 42,
+          "supplies_remaining": 10,
+          "survivors": 5,
+          "threat": "boss"
+        }
+      ],
+      "cleared": true,
+      "failure": "",
+      "region": "border",
+      "run": 53,
+      "seed": 2026102552
+    },
+    {
+      "battles": [
+        {
+          "depth": 0,
+          "error": "",
+          "outcome": "victory",
+          "party_hp": 296,
+          "rounds": 2,
+          "steps": 23,
+          "supplies_remaining": 3,
+          "survivors": 5,
+          "threat": "normal"
+        },
+        {
+          "depth": 2,
+          "error": "",
+          "outcome": "victory",
+          "party_hp": 283,
+          "rounds": 2,
+          "steps": 18,
+          "supplies_remaining": 4,
+          "survivors": 5,
+          "threat": "normal"
+        },
+        {
+          "depth": 5,
+          "error": "",
+          "outcome": "victory",
+          "party_hp": 223,
+          "rounds": 3,
+          "steps": 43,
+          "supplies_remaining": 6,
+          "survivors": 4,
+          "threat": "boss"
+        }
+      ],
+      "cleared": true,
+      "failure": "",
+      "region": "border",
+      "run": 54,
+      "seed": 2026102553
+    },
+    {
+      "battles": [
+        {
+          "depth": 0,
+          "error": "",
+          "outcome": "victory",
+          "party_hp": 247,
+          "rounds": 2,
+          "steps": 19,
+          "supplies_remaining": 3,
+          "survivors": 5,
+          "threat": "normal"
+        },
+        {
+          "depth": 2,
+          "error": "",
+          "outcome": "victory",
+          "party_hp": 237,
+          "rounds": 2,
+          "steps": 22,
+          "supplies_remaining": 4,
+          "survivors": 5,
+          "threat": "normal"
+        },
+        {
+          "depth": 4,
+          "error": "",
+          "outcome": "victory",
+          "party_hp": 245,
+          "rounds": 3,
+          "steps": 32,
+          "supplies_remaining": 5,
+          "survivors": 5,
+          "threat": "elite"
+        },
+        {
+          "depth": 6,
+          "error": "",
+          "outcome": "victory",
+          "party_hp": 166,
+          "rounds": 4,
+          "steps": 52,
+          "supplies_remaining": 8,
+          "survivors": 4,
+          "threat": "boss"
+        }
+      ],
+      "cleared": true,
+      "failure": "",
+      "region": "border",
+      "run": 55,
+      "seed": 2026102554
+    },
+    {
+      "battles": [
+        {
+          "depth": 0,
+          "error": "",
+          "outcome": "victory",
+          "party_hp": 274,
+          "rounds": 2,
+          "steps": 20,
+          "supplies_remaining": 3,
+          "survivors": 5,
+          "threat": "normal"
+        },
+        {
+          "depth": 2,
+          "error": "",
+          "outcome": "victory",
+          "party_hp": 269,
+          "rounds": 2,
+          "steps": 22,
+          "supplies_remaining": 2,
+          "survivors": 5,
+          "threat": "normal"
+        },
+        {
+          "depth": 4,
+          "error": "",
+          "outcome": "victory",
+          "party_hp": 169,
+          "rounds": 3,
+          "steps": 35,
+          "supplies_remaining": 3,
+          "survivors": 4,
+          "threat": "elite"
+        },
+        {
+          "depth": 5,
+          "error": "",
+          "outcome": "victory",
+          "party_hp": 90,
+          "rounds": 4,
+          "steps": 37,
+          "supplies_remaining": 4,
+          "survivors": 3,
+          "threat": "elite"
+        },
+        {
+          "depth": 7,
+          "error": "",
+          "outcome": "gameover",
+          "party_hp": 36,
+          "rounds": 3,
+          "steps": 36,
+          "supplies_remaining": 4,
+          "survivors": 1,
+          "threat": "boss"
+        }
+      ],
+      "cleared": false,
+      "failure": "gameover",
+      "region": "border",
+      "run": 56,
+      "seed": 2026102555
+    },
+    {
+      "battles": [
+        {
+          "depth": 0,
+          "error": "",
+          "outcome": "victory",
+          "party_hp": 257,
+          "rounds": 2,
+          "steps": 21,
+          "supplies_remaining": 3,
+          "survivors": 5,
+          "threat": "normal"
+        },
+        {
+          "depth": 2,
+          "error": "",
+          "outcome": "victory",
+          "party_hp": 250,
+          "rounds": 2,
+          "steps": 16,
+          "supplies_remaining": 4,
+          "survivors": 5,
+          "threat": "normal"
+        },
+        {
+          "depth": 5,
+          "error": "",
+          "outcome": "victory",
+          "party_hp": 219,
+          "rounds": 3,
+          "steps": 37,
+          "supplies_remaining": 9,
+          "survivors": 4,
+          "threat": "boss"
+        }
+      ],
+      "cleared": true,
+      "failure": "",
+      "region": "border",
+      "run": 57,
+      "seed": 2026102556
+    },
+    {
+      "battles": [
+        {
+          "depth": 0,
+          "error": "",
+          "outcome": "victory",
+          "party_hp": 281,
+          "rounds": 2,
+          "steps": 22,
+          "supplies_remaining": 3,
+          "survivors": 5,
+          "threat": "normal"
+        },
+        {
+          "depth": 2,
+          "error": "",
+          "outcome": "victory",
+          "party_hp": 270,
+          "rounds": 2,
+          "steps": 20,
+          "supplies_remaining": 6,
+          "survivors": 5,
+          "threat": "normal"
+        },
+        {
+          "depth": 5,
+          "error": "",
+          "outcome": "victory",
+          "party_hp": 188,
+          "rounds": 3,
+          "steps": 49,
+          "supplies_remaining": 9,
+          "survivors": 5,
+          "threat": "boss"
+        }
+      ],
+      "cleared": true,
+      "failure": "",
+      "region": "border",
+      "run": 58,
+      "seed": 2026102557
+    },
+    {
+      "battles": [
+        {
+          "depth": 0,
+          "error": "",
+          "outcome": "victory",
+          "party_hp": 281,
+          "rounds": 2,
+          "steps": 18,
+          "supplies_remaining": 3,
+          "survivors": 5,
+          "threat": "normal"
+        },
+        {
+          "depth": 2,
+          "error": "",
+          "outcome": "victory",
+          "party_hp": 236,
+          "rounds": 2,
+          "steps": 26,
+          "supplies_remaining": 6,
+          "survivors": 5,
+          "threat": "normal"
+        },
+        {
+          "depth": 4,
+          "error": "",
+          "outcome": "victory",
+          "party_hp": 215,
+          "rounds": 3,
+          "steps": 33,
+          "supplies_remaining": 6,
+          "survivors": 4,
+          "threat": "elite"
+        },
+        {
+          "depth": 5,
+          "error": "",
+          "outcome": "victory",
+          "party_hp": 89,
+          "rounds": 4,
+          "steps": 40,
+          "supplies_remaining": 7,
+          "survivors": 3,
+          "threat": "elite"
+        },
+        {
+          "depth": 7,
+          "error": "",
+          "outcome": "victory",
+          "party_hp": 24,
+          "rounds": 6,
+          "steps": 63,
+          "supplies_remaining": 9,
+          "survivors": 1,
+          "threat": "boss"
+        }
+      ],
+      "cleared": true,
+      "failure": "",
+      "region": "border",
+      "run": 59,
+      "seed": 2026102558
+    },
+    {
+      "battles": [
+        {
+          "depth": 0,
+          "error": "",
+          "outcome": "victory",
+          "party_hp": 255,
+          "rounds": 2,
+          "steps": 20,
+          "supplies_remaining": 3,
+          "survivors": 5,
+          "threat": "normal"
+        },
+        {
+          "depth": 2,
+          "error": "",
+          "outcome": "victory",
+          "party_hp": 280,
+          "rounds": 2,
+          "steps": 24,
+          "supplies_remaining": 3,
+          "survivors": 5,
+          "threat": "normal"
+        },
+        {
+          "depth": 5,
+          "error": "",
+          "outcome": "victory",
+          "party_hp": 220,
+          "rounds": 3,
+          "steps": 50,
+          "supplies_remaining": 8,
+          "survivors": 5,
+          "threat": "boss"
+        }
+      ],
+      "cleared": true,
+      "failure": "",
+      "region": "border",
+      "run": 60,
+      "seed": 2026102559
+    },
+    {
+      "battles": [
+        {
+          "depth": 0,
+          "error": "",
+          "outcome": "victory",
+          "party_hp": 257,
+          "rounds": 2,
+          "steps": 20,
+          "supplies_remaining": 3,
+          "survivors": 5,
+          "threat": "normal"
+        },
+        {
+          "depth": 2,
+          "error": "",
+          "outcome": "victory",
+          "party_hp": 261,
+          "rounds": 2,
+          "steps": 16,
+          "supplies_remaining": 4,
+          "survivors": 5,
+          "threat": "normal"
+        },
+        {
+          "depth": 5,
+          "error": "",
+          "outcome": "victory",
+          "party_hp": 170,
+          "rounds": 4,
+          "steps": 46,
+          "supplies_remaining": 6,
+          "survivors": 3,
+          "threat": "boss"
+        }
+      ],
+      "cleared": true,
+      "failure": "",
+      "region": "border",
+      "run": 61,
+      "seed": 2026102560
+    },
+    {
+      "battles": [
+        {
+          "depth": 0,
+          "error": "",
+          "outcome": "victory",
+          "party_hp": 294,
+          "rounds": 2,
+          "steps": 21,
+          "supplies_remaining": 3,
+          "survivors": 5,
+          "threat": "normal"
+        },
+        {
+          "depth": 2,
+          "error": "",
+          "outcome": "victory",
+          "party_hp": 235,
+          "rounds": 2,
+          "steps": 18,
+          "supplies_remaining": 3,
+          "survivors": 5,
+          "threat": "normal"
+        },
+        {
+          "depth": 4,
+          "error": "",
+          "outcome": "victory",
+          "party_hp": 168,
+          "rounds": 3,
+          "steps": 34,
+          "supplies_remaining": 2,
+          "survivors": 4,
+          "threat": "elite"
+        },
+        {
+          "depth": 5,
+          "error": "",
+          "outcome": "victory",
+          "party_hp": 167,
+          "rounds": 3,
+          "steps": 31,
+          "supplies_remaining": 0,
+          "survivors": 4,
+          "threat": "elite"
+        },
+        {
+          "depth": 7,
+          "error": "",
+          "outcome": "victory",
+          "party_hp": 98,
+          "rounds": 4,
+          "steps": 50,
+          "supplies_remaining": 0,
+          "survivors": 3,
+          "threat": "boss"
+        }
+      ],
+      "cleared": true,
+      "failure": "",
+      "region": "border",
+      "run": 62,
+      "seed": 2026102561
+    },
+    {
+      "battles": [
+        {
+          "depth": 0,
+          "error": "",
+          "outcome": "victory",
+          "party_hp": 254,
+          "rounds": 2,
+          "steps": 20,
+          "supplies_remaining": 3,
+          "survivors": 5,
+          "threat": "normal"
+        },
+        {
+          "depth": 2,
+          "error": "",
+          "outcome": "victory",
+          "party_hp": 267,
+          "rounds": 2,
+          "steps": 18,
+          "supplies_remaining": 1,
+          "survivors": 5,
+          "threat": "normal"
+        },
+        {
+          "depth": 4,
+          "error": "",
+          "outcome": "victory",
+          "party_hp": 185,
+          "rounds": 3,
+          "steps": 39,
+          "supplies_remaining": 1,
+          "survivors": 4,
+          "threat": "elite"
+        },
+        {
+          "depth": 5,
+          "error": "",
+          "outcome": "gameover",
+          "party_hp": 163,
+          "rounds": 2,
+          "steps": 29,
+          "supplies_remaining": 1,
+          "survivors": 3,
+          "threat": "elite"
+        }
+      ],
+      "cleared": false,
+      "failure": "gameover",
+      "region": "border",
+      "run": 63,
+      "seed": 2026102562
+    },
+    {
+      "battles": [
+        {
+          "depth": 0,
+          "error": "",
+          "outcome": "victory",
+          "party_hp": 288,
+          "rounds": 2,
+          "steps": 19,
+          "supplies_remaining": 3,
+          "survivors": 5,
+          "threat": "normal"
+        },
+        {
+          "depth": 2,
+          "error": "",
+          "outcome": "victory",
+          "party_hp": 283,
+          "rounds": 2,
+          "steps": 18,
+          "supplies_remaining": 2,
+          "survivors": 5,
+          "threat": "normal"
+        },
+        {
+          "depth": 4,
+          "error": "",
+          "outcome": "victory",
+          "party_hp": 277,
+          "rounds": 2,
+          "steps": 28,
+          "supplies_remaining": 4,
+          "survivors": 5,
+          "threat": "elite"
+        },
+        {
+          "depth": 5,
+          "error": "",
+          "outcome": "victory",
+          "party_hp": 185,
+          "rounds": 3,
+          "steps": 42,
+          "supplies_remaining": 4,
+          "survivors": 4,
+          "threat": "elite"
+        },
+        {
+          "depth": 7,
+          "error": "",
+          "outcome": "gameover",
+          "party_hp": 136,
+          "rounds": 2,
+          "steps": 29,
+          "supplies_remaining": 4,
+          "survivors": 3,
+          "threat": "boss"
+        }
+      ],
+      "cleared": false,
+      "failure": "gameover",
+      "region": "border",
+      "run": 64,
+      "seed": 2026102563
+    },
+    {
+      "battles": [
+        {
+          "depth": 0,
+          "error": "",
+          "outcome": "victory",
+          "party_hp": 287,
+          "rounds": 2,
+          "steps": 20,
+          "supplies_remaining": 3,
+          "survivors": 5,
+          "threat": "normal"
+        },
+        {
+          "depth": 2,
+          "error": "",
+          "outcome": "victory",
+          "party_hp": 268,
+          "rounds": 2,
+          "steps": 21,
+          "supplies_remaining": 2,
+          "survivors": 5,
+          "threat": "normal"
+        },
+        {
+          "depth": 4,
+          "error": "",
+          "outcome": "victory",
+          "party_hp": 204,
+          "rounds": 3,
+          "steps": 29,
+          "supplies_remaining": 5,
+          "survivors": 5,
+          "threat": "elite"
+        },
+        {
+          "depth": 5,
+          "error": "",
+          "outcome": "victory",
+          "party_hp": 171,
+          "rounds": 3,
+          "steps": 44,
+          "supplies_remaining": 5,
+          "survivors": 4,
+          "threat": "elite"
+        },
+        {
+          "depth": 7,
+          "error": "",
+          "outcome": "victory",
+          "party_hp": 56,
+          "rounds": 6,
+          "steps": 64,
+          "supplies_remaining": 5,
+          "survivors": 2,
+          "threat": "boss"
+        }
+      ],
+      "cleared": true,
+      "failure": "",
+      "region": "border",
+      "run": 65,
+      "seed": 2026102564
+    },
+    {
+      "battles": [
+        {
+          "depth": 0,
+          "error": "",
+          "outcome": "victory",
+          "party_hp": 258,
+          "rounds": 2,
+          "steps": 20,
+          "supplies_remaining": 3,
+          "survivors": 5,
+          "threat": "normal"
+        },
+        {
+          "depth": 2,
+          "error": "",
+          "outcome": "victory",
+          "party_hp": 280,
+          "rounds": 2,
+          "steps": 19,
+          "supplies_remaining": 2,
+          "survivors": 5,
+          "threat": "normal"
+        },
+        {
+          "depth": 4,
+          "error": "",
+          "outcome": "gameover",
+          "party_hp": 208,
+          "rounds": 2,
+          "steps": 26,
+          "supplies_remaining": 5,
+          "survivors": 4,
+          "threat": "elite"
+        }
+      ],
+      "cleared": false,
+      "failure": "gameover",
+      "region": "border",
+      "run": 66,
+      "seed": 2026102565
+    },
+    {
+      "battles": [
+        {
+          "depth": 0,
+          "error": "",
+          "outcome": "victory",
+          "party_hp": 254,
+          "rounds": 3,
+          "steps": 30,
+          "supplies_remaining": 3,
+          "survivors": 4,
+          "threat": "normal"
+        },
+        {
+          "depth": 2,
+          "error": "",
+          "outcome": "victory",
+          "party_hp": 213,
+          "rounds": 2,
+          "steps": 18,
+          "supplies_remaining": 5,
+          "survivors": 4,
+          "threat": "normal"
+        },
+        {
+          "depth": 4,
+          "error": "",
+          "outcome": "victory",
+          "party_hp": 173,
+          "rounds": 3,
+          "steps": 34,
+          "supplies_remaining": 8,
+          "survivors": 4,
+          "threat": "elite"
+        },
+        {
+          "depth": 6,
+          "error": "",
+          "outcome": "gameover",
+          "party_hp": 86,
+          "rounds": 3,
+          "steps": 41,
+          "supplies_remaining": 10,
+          "survivors": 2,
+          "threat": "boss"
+        }
+      ],
+      "cleared": false,
+      "failure": "gameover",
+      "region": "border",
+      "run": 67,
+      "seed": 2026102566
+    },
+    {
+      "battles": [
+        {
+          "depth": 0,
+          "error": "",
+          "outcome": "victory",
+          "party_hp": 286,
+          "rounds": 2,
+          "steps": 19,
+          "supplies_remaining": 3,
+          "survivors": 5,
+          "threat": "normal"
+        },
+        {
+          "depth": 2,
+          "error": "",
+          "outcome": "victory",
+          "party_hp": 264,
+          "rounds": 2,
+          "steps": 20,
+          "supplies_remaining": 2,
+          "survivors": 5,
+          "threat": "normal"
+        },
+        {
+          "depth": 4,
+          "error": "",
+          "outcome": "victory",
+          "party_hp": 250,
+          "rounds": 2,
+          "steps": 31,
+          "supplies_remaining": 5,
+          "survivors": 5,
+          "threat": "elite"
+        },
+        {
+          "depth": 6,
+          "error": "",
+          "outcome": "gameover",
+          "party_hp": 78,
+          "rounds": 3,
+          "steps": 48,
+          "supplies_remaining": 7,
+          "survivors": 2,
+          "threat": "boss"
+        }
+      ],
+      "cleared": false,
+      "failure": "gameover",
+      "region": "border",
+      "run": 68,
+      "seed": 2026102567
+    },
+    {
+      "battles": [
+        {
+          "depth": 0,
+          "error": "",
+          "outcome": "victory",
+          "party_hp": 269,
+          "rounds": 2,
+          "steps": 16,
+          "supplies_remaining": 3,
+          "survivors": 5,
+          "threat": "normal"
+        },
+        {
+          "depth": 2,
+          "error": "",
+          "outcome": "victory",
+          "party_hp": 280,
+          "rounds": 3,
+          "steps": 29,
+          "supplies_remaining": 6,
+          "survivors": 5,
+          "threat": "normal"
+        },
+        {
+          "depth": 4,
+          "error": "",
+          "outcome": "victory",
+          "party_hp": 194,
+          "rounds": 3,
+          "steps": 32,
+          "supplies_remaining": 7,
+          "survivors": 4,
+          "threat": "elite"
+        },
+        {
+          "depth": 6,
+          "error": "",
+          "outcome": "gameover",
+          "party_hp": 168,
+          "rounds": 2,
+          "steps": 24,
+          "supplies_remaining": 8,
+          "survivors": 3,
+          "threat": "boss"
+        }
+      ],
+      "cleared": false,
+      "failure": "gameover",
+      "region": "border",
+      "run": 69,
+      "seed": 2026102568
+    },
+    {
+      "battles": [
+        {
+          "depth": 0,
+          "error": "",
+          "outcome": "victory",
+          "party_hp": 294,
+          "rounds": 2,
+          "steps": 20,
+          "supplies_remaining": 3,
+          "survivors": 5,
+          "threat": "normal"
+        },
+        {
+          "depth": 2,
+          "error": "",
+          "outcome": "victory",
+          "party_hp": 245,
+          "rounds": 2,
+          "steps": 25,
+          "supplies_remaining": 6,
+          "survivors": 5,
+          "threat": "normal"
+        },
+        {
+          "depth": 5,
+          "error": "",
+          "outcome": "victory",
+          "party_hp": 198,
+          "rounds": 3,
+          "steps": 44,
+          "supplies_remaining": 10,
+          "survivors": 4,
+          "threat": "boss"
+        }
+      ],
+      "cleared": true,
+      "failure": "",
+      "region": "border",
+      "run": 70,
+      "seed": 2026102569
+    },
+    {
+      "battles": [
+        {
+          "depth": 0,
+          "error": "",
+          "outcome": "victory",
+          "party_hp": 281,
+          "rounds": 2,
+          "steps": 16,
+          "supplies_remaining": 3,
+          "survivors": 5,
+          "threat": "normal"
+        },
+        {
+          "depth": 2,
+          "error": "",
+          "outcome": "victory",
+          "party_hp": 253,
+          "rounds": 3,
+          "steps": 33,
+          "supplies_remaining": 4,
+          "survivors": 5,
+          "threat": "normal"
+        },
+        {
+          "depth": 4,
+          "error": "",
+          "outcome": "victory",
+          "party_hp": 144,
+          "rounds": 4,
+          "steps": 40,
+          "supplies_remaining": 6,
+          "survivors": 3,
+          "threat": "elite"
+        },
+        {
+          "depth": 6,
+          "error": "",
+          "outcome": "gameover",
+          "party_hp": 36,
+          "rounds": 3,
+          "steps": 43,
+          "supplies_remaining": 9,
+          "survivors": 1,
+          "threat": "boss"
+        }
+      ],
+      "cleared": false,
+      "failure": "gameover",
+      "region": "border",
+      "run": 71,
+      "seed": 2026102570
+    },
+    {
+      "battles": [
+        {
+          "depth": 0,
+          "error": "",
+          "outcome": "victory",
+          "party_hp": 229,
+          "rounds": 3,
+          "steps": 24,
+          "supplies_remaining": 3,
+          "survivors": 5,
+          "threat": "normal"
+        },
+        {
+          "depth": 2,
+          "error": "",
+          "outcome": "victory",
+          "party_hp": 264,
+          "rounds": 2,
+          "steps": 19,
+          "supplies_remaining": 3,
+          "survivors": 5,
+          "threat": "normal"
+        },
+        {
+          "depth": 4,
+          "error": "",
+          "outcome": "victory",
+          "party_hp": 261,
+          "rounds": 3,
+          "steps": 32,
+          "supplies_remaining": 4,
+          "survivors": 5,
+          "threat": "elite"
+        },
+        {
+          "depth": 5,
+          "error": "",
+          "outcome": "gameover",
+          "party_hp": 193,
+          "rounds": 2,
+          "steps": 30,
+          "supplies_remaining": 2,
+          "survivors": 4,
+          "threat": "elite"
+        }
+      ],
+      "cleared": false,
+      "failure": "gameover",
+      "region": "border",
+      "run": 72,
+      "seed": 2026102571
+    },
+    {
+      "battles": [
+        {
+          "depth": 0,
+          "error": "",
+          "outcome": "victory",
+          "party_hp": 255,
+          "rounds": 2,
+          "steps": 21,
+          "supplies_remaining": 3,
+          "survivors": 5,
+          "threat": "normal"
+        },
+        {
+          "depth": 2,
+          "error": "",
+          "outcome": "victory",
+          "party_hp": 262,
+          "rounds": 2,
+          "steps": 18,
+          "supplies_remaining": 3,
+          "survivors": 5,
+          "threat": "normal"
+        },
+        {
+          "depth": 4,
+          "error": "",
+          "outcome": "victory",
+          "party_hp": 202,
+          "rounds": 3,
+          "steps": 36,
+          "supplies_remaining": 4,
+          "survivors": 5,
+          "threat": "elite"
+        },
+        {
+          "depth": 6,
+          "error": "",
+          "outcome": "victory",
+          "party_hp": 168,
+          "rounds": 3,
+          "steps": 45,
+          "supplies_remaining": 4,
+          "survivors": 5,
+          "threat": "boss"
+        }
+      ],
+      "cleared": true,
+      "failure": "",
+      "region": "border",
+      "run": 73,
+      "seed": 2026102572
+    },
+    {
+      "battles": [
+        {
+          "depth": 0,
+          "error": "",
+          "outcome": "victory",
+          "party_hp": 249,
+          "rounds": 2,
+          "steps": 18,
+          "supplies_remaining": 3,
+          "survivors": 5,
+          "threat": "normal"
+        },
+        {
+          "depth": 2,
+          "error": "",
+          "outcome": "victory",
+          "party_hp": 256,
+          "rounds": 2,
+          "steps": 23,
+          "supplies_remaining": 4,
+          "survivors": 5,
+          "threat": "normal"
+        },
+        {
+          "depth": 4,
+          "error": "",
+          "outcome": "gameover",
+          "party_hp": 232,
+          "rounds": 2,
+          "steps": 25,
+          "supplies_remaining": 6,
+          "survivors": 4,
+          "threat": "elite"
+        }
+      ],
+      "cleared": false,
+      "failure": "gameover",
+      "region": "border",
+      "run": 74,
+      "seed": 2026102573
+    },
+    {
+      "battles": [
+        {
+          "depth": 0,
+          "error": "",
+          "outcome": "victory",
+          "party_hp": 282,
+          "rounds": 2,
+          "steps": 23,
+          "supplies_remaining": 3,
+          "survivors": 5,
+          "threat": "normal"
+        },
+        {
+          "depth": 2,
+          "error": "",
+          "outcome": "victory",
+          "party_hp": 258,
+          "rounds": 3,
+          "steps": 29,
+          "supplies_remaining": 2,
+          "survivors": 5,
+          "threat": "normal"
+        },
+        {
+          "depth": 5,
+          "error": "",
+          "outcome": "victory",
+          "party_hp": 247,
+          "rounds": 3,
+          "steps": 48,
+          "supplies_remaining": 5,
+          "survivors": 5,
+          "threat": "boss"
+        }
+      ],
+      "cleared": true,
+      "failure": "",
+      "region": "border",
+      "run": 75,
+      "seed": 2026102574
+    },
+    {
+      "battles": [
+        {
+          "depth": 0,
+          "error": "",
+          "outcome": "victory",
+          "party_hp": 268,
+          "rounds": 2,
+          "steps": 19,
+          "supplies_remaining": 3,
+          "survivors": 5,
+          "threat": "normal"
+        },
+        {
+          "depth": 2,
+          "error": "",
+          "outcome": "victory",
+          "party_hp": 273,
+          "rounds": 2,
+          "steps": 20,
+          "supplies_remaining": 4,
+          "survivors": 5,
+          "threat": "normal"
+        },
+        {
+          "depth": 4,
+          "error": "",
+          "outcome": "victory",
+          "party_hp": 246,
+          "rounds": 3,
+          "steps": 37,
+          "supplies_remaining": 7,
+          "survivors": 5,
+          "threat": "elite"
+        },
+        {
+          "depth": 6,
+          "error": "",
+          "outcome": "victory",
+          "party_hp": 139,
+          "rounds": 4,
+          "steps": 57,
+          "supplies_remaining": 10,
+          "survivors": 4,
+          "threat": "boss"
+        }
+      ],
+      "cleared": true,
+      "failure": "",
+      "region": "border",
+      "run": 76,
+      "seed": 2026102575
+    },
+    {
+      "battles": [
+        {
+          "depth": 0,
+          "error": "",
+          "outcome": "victory",
+          "party_hp": 271,
+          "rounds": 2,
+          "steps": 18,
+          "supplies_remaining": 3,
+          "survivors": 5,
+          "threat": "normal"
+        },
+        {
+          "depth": 2,
+          "error": "",
+          "outcome": "victory",
+          "party_hp": 270,
+          "rounds": 2,
+          "steps": 19,
+          "supplies_remaining": 2,
+          "survivors": 5,
+          "threat": "normal"
+        },
+        {
+          "depth": 5,
+          "error": "",
+          "outcome": "victory",
+          "party_hp": 200,
+          "rounds": 3,
+          "steps": 46,
+          "supplies_remaining": 4,
+          "survivors": 5,
+          "threat": "boss"
+        }
+      ],
+      "cleared": true,
+      "failure": "",
+      "region": "border",
+      "run": 77,
+      "seed": 2026102576
+    },
+    {
+      "battles": [
+        {
+          "depth": 0,
+          "error": "",
+          "outcome": "victory",
+          "party_hp": 262,
+          "rounds": 2,
+          "steps": 19,
+          "supplies_remaining": 3,
+          "survivors": 5,
+          "threat": "normal"
+        },
+        {
+          "depth": 2,
+          "error": "",
+          "outcome": "victory",
+          "party_hp": 262,
+          "rounds": 2,
+          "steps": 15,
+          "supplies_remaining": 5,
+          "survivors": 5,
+          "threat": "normal"
+        },
+        {
+          "depth": 4,
+          "error": "",
+          "outcome": "victory",
+          "party_hp": 166,
+          "rounds": 3,
+          "steps": 41,
+          "supplies_remaining": 8,
+          "survivors": 4,
+          "threat": "elite"
+        },
+        {
+          "depth": 6,
+          "error": "",
+          "outcome": "gameover",
+          "party_hp": 174,
+          "rounds": 2,
+          "steps": 28,
+          "supplies_remaining": 8,
+          "survivors": 3,
+          "threat": "boss"
+        }
+      ],
+      "cleared": false,
+      "failure": "gameover",
+      "region": "border",
+      "run": 78,
+      "seed": 2026102577
+    },
+    {
+      "battles": [
+        {
+          "depth": 0,
+          "error": "",
+          "outcome": "victory",
+          "party_hp": 277,
+          "rounds": 2,
+          "steps": 19,
+          "supplies_remaining": 3,
+          "survivors": 5,
+          "threat": "normal"
+        },
+        {
+          "depth": 2,
+          "error": "",
+          "outcome": "victory",
+          "party_hp": 247,
+          "rounds": 2,
+          "steps": 19,
+          "supplies_remaining": 5,
+          "survivors": 5,
+          "threat": "normal"
+        },
+        {
+          "depth": 4,
+          "error": "",
+          "outcome": "victory",
+          "party_hp": 215,
+          "rounds": 3,
+          "steps": 39,
+          "supplies_remaining": 8,
+          "survivors": 4,
+          "threat": "elite"
+        },
+        {
+          "depth": 6,
+          "error": "",
+          "outcome": "gameover",
+          "party_hp": 129,
+          "rounds": 2,
+          "steps": 33,
+          "supplies_remaining": 11,
+          "survivors": 3,
+          "threat": "boss"
+        }
+      ],
+      "cleared": false,
+      "failure": "gameover",
+      "region": "border",
+      "run": 79,
+      "seed": 2026102578
+    },
+    {
+      "battles": [
+        {
+          "depth": 0,
+          "error": "",
+          "outcome": "victory",
+          "party_hp": 271,
+          "rounds": 2,
+          "steps": 16,
+          "supplies_remaining": 3,
+          "survivors": 5,
+          "threat": "normal"
+        },
+        {
+          "depth": 2,
+          "error": "",
+          "outcome": "victory",
+          "party_hp": 234,
+          "rounds": 2,
+          "steps": 18,
+          "supplies_remaining": 3,
+          "survivors": 5,
+          "threat": "normal"
+        },
+        {
+          "depth": 4,
+          "error": "",
+          "outcome": "victory",
+          "party_hp": 203,
+          "rounds": 3,
+          "steps": 31,
+          "supplies_remaining": 4,
+          "survivors": 5,
+          "threat": "elite"
+        },
+        {
+          "depth": 6,
+          "error": "",
+          "outcome": "gameover",
+          "party_hp": 174,
+          "rounds": 2,
+          "steps": 36,
+          "supplies_remaining": 6,
+          "survivors": 3,
+          "threat": "boss"
+        }
+      ],
+      "cleared": false,
+      "failure": "gameover",
+      "region": "border",
+      "run": 80,
+      "seed": 2026102579
+    },
+    {
+      "battles": [
+        {
+          "depth": 0,
+          "error": "",
+          "outcome": "victory",
+          "party_hp": 252,
+          "rounds": 2,
+          "steps": 22,
+          "supplies_remaining": 3,
+          "survivors": 5,
+          "threat": "normal"
+        },
+        {
+          "depth": 2,
+          "error": "",
+          "outcome": "victory",
+          "party_hp": 295,
+          "rounds": 3,
+          "steps": 31,
+          "supplies_remaining": 1,
+          "survivors": 5,
+          "threat": "normal"
+        },
+        {
+          "depth": 4,
+          "error": "",
+          "outcome": "victory",
+          "party_hp": 173,
+          "rounds": 3,
+          "steps": 36,
+          "supplies_remaining": 5,
+          "survivors": 4,
+          "threat": "elite"
+        },
+        {
+          "depth": 5,
+          "error": "",
+          "outcome": "gameover",
+          "party_hp": 52,
+          "rounds": 3,
+          "steps": 35,
+          "supplies_remaining": 3,
+          "survivors": 1,
+          "threat": "elite"
+        }
+      ],
+      "cleared": false,
+      "failure": "gameover",
+      "region": "border",
+      "run": 81,
+      "seed": 2026102580
+    },
+    {
+      "battles": [
+        {
+          "depth": 0,
+          "error": "",
+          "outcome": "victory",
+          "party_hp": 282,
+          "rounds": 2,
+          "steps": 17,
+          "supplies_remaining": 3,
+          "survivors": 5,
+          "threat": "normal"
+        },
+        {
+          "depth": 2,
+          "error": "",
+          "outcome": "victory",
+          "party_hp": 288,
+          "rounds": 2,
+          "steps": 19,
+          "supplies_remaining": 4,
+          "survivors": 5,
+          "threat": "normal"
+        },
+        {
+          "depth": 4,
+          "error": "",
+          "outcome": "victory",
+          "party_hp": 136,
+          "rounds": 3,
+          "steps": 41,
+          "supplies_remaining": 5,
+          "survivors": 5,
+          "threat": "elite"
+        },
+        {
+          "depth": 6,
+          "error": "",
+          "outcome": "victory",
+          "party_hp": 116,
+          "rounds": 4,
+          "steps": 63,
+          "supplies_remaining": 6,
+          "survivors": 4,
+          "threat": "boss"
+        }
+      ],
+      "cleared": true,
+      "failure": "",
+      "region": "border",
+      "run": 82,
+      "seed": 2026102581
+    },
+    {
+      "battles": [
+        {
+          "depth": 0,
+          "error": "",
+          "outcome": "victory",
+          "party_hp": 286,
+          "rounds": 2,
+          "steps": 25,
+          "supplies_remaining": 3,
+          "survivors": 5,
+          "threat": "normal"
+        },
+        {
+          "depth": 2,
+          "error": "",
+          "outcome": "victory",
+          "party_hp": 264,
+          "rounds": 2,
+          "steps": 20,
+          "supplies_remaining": 2,
+          "survivors": 5,
+          "threat": "normal"
+        },
+        {
+          "depth": 4,
+          "error": "",
+          "outcome": "gameover",
+          "party_hp": 208,
+          "rounds": 2,
+          "steps": 30,
+          "supplies_remaining": 5,
+          "survivors": 4,
+          "threat": "elite"
+        }
+      ],
+      "cleared": false,
+      "failure": "gameover",
+      "region": "border",
+      "run": 83,
+      "seed": 2026102582
+    },
+    {
+      "battles": [
+        {
+          "depth": 0,
+          "error": "",
+          "outcome": "victory",
+          "party_hp": 255,
+          "rounds": 2,
+          "steps": 21,
+          "supplies_remaining": 3,
+          "survivors": 5,
+          "threat": "normal"
+        },
+        {
+          "depth": 2,
+          "error": "",
+          "outcome": "victory",
+          "party_hp": 276,
+          "rounds": 2,
+          "steps": 19,
+          "supplies_remaining": 6,
+          "survivors": 5,
+          "threat": "normal"
+        },
+        {
+          "depth": 5,
+          "error": "",
+          "outcome": "victory",
+          "party_hp": 244,
+          "rounds": 3,
+          "steps": 33,
+          "supplies_remaining": 9,
+          "survivors": 5,
+          "threat": "boss"
+        }
+      ],
+      "cleared": true,
+      "failure": "",
+      "region": "border",
+      "run": 84,
+      "seed": 2026102583
+    },
+    {
+      "battles": [
+        {
+          "depth": 0,
+          "error": "",
+          "outcome": "victory",
+          "party_hp": 220,
+          "rounds": 3,
+          "steps": 30,
+          "supplies_remaining": 3,
+          "survivors": 5,
+          "threat": "normal"
+        },
+        {
+          "depth": 2,
+          "error": "",
+          "outcome": "victory",
+          "party_hp": 262,
+          "rounds": 2,
+          "steps": 25,
+          "supplies_remaining": 5,
+          "survivors": 5,
+          "threat": "normal"
+        },
+        {
+          "depth": 5,
+          "error": "",
+          "outcome": "victory",
+          "party_hp": 175,
+          "rounds": 4,
+          "steps": 54,
+          "supplies_remaining": 10,
+          "survivors": 4,
+          "threat": "boss"
+        }
+      ],
+      "cleared": true,
+      "failure": "",
+      "region": "border",
+      "run": 85,
+      "seed": 2026102584
+    },
+    {
+      "battles": [
+        {
+          "depth": 0,
+          "error": "",
+          "outcome": "victory",
+          "party_hp": 263,
+          "rounds": 2,
+          "steps": 23,
+          "supplies_remaining": 3,
+          "survivors": 5,
+          "threat": "normal"
+        },
+        {
+          "depth": 2,
+          "error": "",
+          "outcome": "victory",
+          "party_hp": 237,
+          "rounds": 2,
+          "steps": 20,
+          "supplies_remaining": 4,
+          "survivors": 5,
+          "threat": "normal"
+        },
+        {
+          "depth": 4,
+          "error": "",
+          "outcome": "victory",
+          "party_hp": 168,
+          "rounds": 3,
+          "steps": 29,
+          "supplies_remaining": 4,
+          "survivors": 5,
+          "threat": "elite"
+        },
+        {
+          "depth": 5,
+          "error": "",
+          "outcome": "victory",
+          "party_hp": 207,
+          "rounds": 3,
+          "steps": 31,
+          "supplies_remaining": 1,
+          "survivors": 4,
+          "threat": "elite"
+        },
+        {
+          "depth": 7,
+          "error": "",
+          "outcome": "victory",
+          "party_hp": 63,
+          "rounds": 5,
+          "steps": 56,
+          "supplies_remaining": 1,
+          "survivors": 3,
+          "threat": "boss"
+        }
+      ],
+      "cleared": true,
+      "failure": "",
+      "region": "border",
+      "run": 86,
+      "seed": 2026102585
+    },
+    {
+      "battles": [
+        {
+          "depth": 0,
+          "error": "",
+          "outcome": "victory",
+          "party_hp": 270,
+          "rounds": 2,
+          "steps": 21,
+          "supplies_remaining": 3,
+          "survivors": 5,
+          "threat": "normal"
+        },
+        {
+          "depth": 2,
+          "error": "",
+          "outcome": "victory",
+          "party_hp": 252,
+          "rounds": 2,
+          "steps": 20,
+          "supplies_remaining": 4,
+          "survivors": 5,
+          "threat": "normal"
+        },
+        {
+          "depth": 4,
+          "error": "",
+          "outcome": "gameover",
+          "party_hp": 174,
+          "rounds": 2,
+          "steps": 31,
+          "supplies_remaining": 7,
+          "survivors": 3,
+          "threat": "elite"
+        }
+      ],
+      "cleared": false,
+      "failure": "gameover",
+      "region": "border",
+      "run": 87,
+      "seed": 2026102586
+    },
+    {
+      "battles": [
+        {
+          "depth": 0,
+          "error": "",
+          "outcome": "victory",
+          "party_hp": 269,
+          "rounds": 2,
+          "steps": 17,
+          "supplies_remaining": 3,
+          "survivors": 5,
+          "threat": "normal"
+        },
+        {
+          "depth": 2,
+          "error": "",
+          "outcome": "victory",
+          "party_hp": 251,
+          "rounds": 2,
+          "steps": 26,
+          "supplies_remaining": 4,
+          "survivors": 5,
+          "threat": "normal"
+        },
+        {
+          "depth": 5,
+          "error": "",
+          "outcome": "victory",
+          "party_hp": 200,
+          "rounds": 3,
+          "steps": 37,
+          "supplies_remaining": 6,
+          "survivors": 5,
+          "threat": "boss"
+        }
+      ],
+      "cleared": true,
+      "failure": "",
+      "region": "border",
+      "run": 88,
+      "seed": 2026102587
+    },
+    {
+      "battles": [
+        {
+          "depth": 0,
+          "error": "",
+          "outcome": "victory",
+          "party_hp": 265,
+          "rounds": 2,
+          "steps": 18,
+          "supplies_remaining": 3,
+          "survivors": 5,
+          "threat": "normal"
+        },
+        {
+          "depth": 2,
+          "error": "",
+          "outcome": "victory",
+          "party_hp": 209,
+          "rounds": 3,
+          "steps": 26,
+          "supplies_remaining": 4,
+          "survivors": 5,
+          "threat": "normal"
+        },
+        {
+          "depth": 4,
+          "error": "",
+          "outcome": "victory",
+          "party_hp": 196,
+          "rounds": 3,
+          "steps": 41,
+          "supplies_remaining": 4,
+          "survivors": 4,
+          "threat": "elite"
+        },
+        {
+          "depth": 5,
+          "error": "",
+          "outcome": "victory",
+          "party_hp": 64,
+          "rounds": 4,
+          "steps": 38,
+          "supplies_remaining": 5,
+          "survivors": 2,
+          "threat": "elite"
+        },
+        {
+          "depth": 7,
+          "error": "",
+          "outcome": "gameover",
+          "party_hp": 0,
+          "rounds": 3,
+          "steps": 43,
+          "supplies_remaining": 7,
+          "survivors": 0,
+          "threat": "boss"
+        }
+      ],
+      "cleared": false,
+      "failure": "gameover",
+      "region": "border",
+      "run": 89,
+      "seed": 2026102588
+    },
+    {
+      "battles": [
+        {
+          "depth": 0,
+          "error": "",
+          "outcome": "victory",
+          "party_hp": 281,
+          "rounds": 2,
+          "steps": 17,
+          "supplies_remaining": 3,
+          "survivors": 5,
+          "threat": "normal"
+        },
+        {
+          "depth": 2,
+          "error": "",
+          "outcome": "victory",
+          "party_hp": 250,
+          "rounds": 2,
+          "steps": 20,
+          "supplies_remaining": 4,
+          "survivors": 5,
+          "threat": "normal"
+        },
+        {
+          "depth": 4,
+          "error": "",
+          "outcome": "victory",
+          "party_hp": 236,
+          "rounds": 3,
+          "steps": 28,
+          "supplies_remaining": 7,
+          "survivors": 5,
+          "threat": "elite"
+        },
+        {
+          "depth": 6,
+          "error": "",
+          "outcome": "victory",
+          "party_hp": 64,
+          "rounds": 5,
+          "steps": 57,
+          "supplies_remaining": 9,
+          "survivors": 2,
+          "threat": "boss"
+        }
+      ],
+      "cleared": true,
+      "failure": "",
+      "region": "border",
+      "run": 90,
+      "seed": 2026102589
+    },
+    {
+      "battles": [
+        {
+          "depth": 0,
+          "error": "",
+          "outcome": "victory",
+          "party_hp": 247,
+          "rounds": 2,
+          "steps": 20,
+          "supplies_remaining": 3,
+          "survivors": 5,
+          "threat": "normal"
+        },
+        {
+          "depth": 2,
+          "error": "",
+          "outcome": "victory",
+          "party_hp": 264,
+          "rounds": 2,
+          "steps": 17,
+          "supplies_remaining": 1,
+          "survivors": 5,
+          "threat": "normal"
+        },
+        {
+          "depth": 5,
+          "error": "",
+          "outcome": "victory",
+          "party_hp": 236,
+          "rounds": 3,
+          "steps": 43,
+          "supplies_remaining": 3,
+          "survivors": 5,
+          "threat": "boss"
+        }
+      ],
+      "cleared": true,
+      "failure": "",
+      "region": "border",
+      "run": 91,
+      "seed": 2026102590
+    },
+    {
+      "battles": [
+        {
+          "depth": 0,
+          "error": "",
+          "outcome": "victory",
+          "party_hp": 280,
+          "rounds": 2,
+          "steps": 21,
+          "supplies_remaining": 3,
+          "survivors": 5,
+          "threat": "normal"
+        },
+        {
+          "depth": 2,
+          "error": "",
+          "outcome": "victory",
+          "party_hp": 259,
+          "rounds": 2,
+          "steps": 20,
+          "supplies_remaining": 6,
+          "survivors": 5,
+          "threat": "normal"
+        },
+        {
+          "depth": 5,
+          "error": "",
+          "outcome": "victory",
+          "party_hp": 200,
+          "rounds": 4,
+          "steps": 47,
+          "supplies_remaining": 9,
+          "survivors": 4,
+          "threat": "boss"
+        }
+      ],
+      "cleared": true,
+      "failure": "",
+      "region": "border",
+      "run": 92,
+      "seed": 2026102591
+    },
+    {
+      "battles": [
+        {
+          "depth": 0,
+          "error": "",
+          "outcome": "victory",
+          "party_hp": 261,
+          "rounds": 2,
+          "steps": 21,
+          "supplies_remaining": 3,
+          "survivors": 5,
+          "threat": "normal"
+        },
+        {
+          "depth": 2,
+          "error": "",
+          "outcome": "victory",
+          "party_hp": 302,
+          "rounds": 2,
+          "steps": 20,
+          "supplies_remaining": 2,
+          "survivors": 5,
+          "threat": "normal"
+        },
+        {
+          "depth": 4,
+          "error": "",
+          "outcome": "victory",
+          "party_hp": 221,
+          "rounds": 3,
+          "steps": 37,
+          "supplies_remaining": 6,
+          "survivors": 4,
+          "threat": "elite"
+        },
+        {
+          "depth": 6,
+          "error": "",
+          "outcome": "gameover",
+          "party_hp": 37,
+          "rounds": 5,
+          "steps": 60,
+          "supplies_remaining": 6,
+          "survivors": 1,
+          "threat": "boss"
+        }
+      ],
+      "cleared": false,
+      "failure": "gameover",
+      "region": "border",
+      "run": 93,
+      "seed": 2026102592
+    },
+    {
+      "battles": [
+        {
+          "depth": 0,
+          "error": "",
+          "outcome": "victory",
+          "party_hp": 298,
+          "rounds": 2,
+          "steps": 23,
+          "supplies_remaining": 3,
+          "survivors": 5,
+          "threat": "normal"
+        },
+        {
+          "depth": 2,
+          "error": "",
+          "outcome": "victory",
+          "party_hp": 265,
+          "rounds": 2,
+          "steps": 20,
+          "supplies_remaining": 3,
+          "survivors": 5,
+          "threat": "normal"
+        },
+        {
+          "depth": 4,
+          "error": "",
+          "outcome": "victory",
+          "party_hp": 180,
+          "rounds": 3,
+          "steps": 37,
+          "supplies_remaining": 5,
+          "survivors": 4,
+          "threat": "elite"
+        },
+        {
+          "depth": 5,
+          "error": "",
+          "outcome": "victory",
+          "party_hp": 178,
+          "rounds": 3,
+          "steps": 37,
+          "supplies_remaining": 2,
+          "survivors": 4,
+          "threat": "elite"
+        },
+        {
+          "depth": 7,
+          "error": "",
+          "outcome": "gameover",
+          "party_hp": 55,
+          "rounds": 4,
+          "steps": 57,
+          "supplies_remaining": 4,
+          "survivors": 1,
+          "threat": "boss"
+        }
+      ],
+      "cleared": false,
+      "failure": "gameover",
+      "region": "border",
+      "run": 94,
+      "seed": 2026102593
+    },
+    {
+      "battles": [
+        {
+          "depth": 0,
+          "error": "",
+          "outcome": "victory",
+          "party_hp": 275,
+          "rounds": 2,
+          "steps": 25,
+          "supplies_remaining": 3,
+          "survivors": 5,
+          "threat": "normal"
+        },
+        {
+          "depth": 2,
+          "error": "",
+          "outcome": "victory",
+          "party_hp": 263,
+          "rounds": 2,
+          "steps": 19,
+          "supplies_remaining": 3,
+          "survivors": 5,
+          "threat": "normal"
+        },
+        {
+          "depth": 4,
+          "error": "",
+          "outcome": "victory",
+          "party_hp": 213,
+          "rounds": 3,
+          "steps": 33,
+          "supplies_remaining": 6,
+          "survivors": 5,
+          "threat": "elite"
+        },
+        {
+          "depth": 5,
+          "error": "",
+          "outcome": "victory",
+          "party_hp": 223,
+          "rounds": 3,
+          "steps": 31,
+          "supplies_remaining": 3,
+          "survivors": 5,
+          "threat": "elite"
+        },
+        {
+          "depth": 7,
+          "error": "",
+          "outcome": "victory",
+          "party_hp": 105,
+          "rounds": 4,
+          "steps": 49,
+          "supplies_remaining": 3,
+          "survivors": 3,
+          "threat": "boss"
+        }
+      ],
+      "cleared": true,
+      "failure": "",
+      "region": "border",
+      "run": 95,
+      "seed": 2026102594
+    },
+    {
+      "battles": [
+        {
+          "depth": 0,
+          "error": "",
+          "outcome": "victory",
+          "party_hp": 278,
+          "rounds": 2,
+          "steps": 24,
+          "supplies_remaining": 3,
+          "survivors": 5,
+          "threat": "normal"
+        },
+        {
+          "depth": 2,
+          "error": "",
+          "outcome": "victory",
+          "party_hp": 275,
+          "rounds": 2,
+          "steps": 28,
+          "supplies_remaining": 5,
+          "survivors": 5,
+          "threat": "normal"
+        },
+        {
+          "depth": 4,
+          "error": "",
+          "outcome": "victory",
+          "party_hp": 159,
+          "rounds": 3,
+          "steps": 36,
+          "supplies_remaining": 7,
+          "survivors": 3,
+          "threat": "elite"
+        },
+        {
+          "depth": 6,
+          "error": "",
+          "outcome": "gameover",
+          "party_hp": 113,
+          "rounds": 2,
+          "steps": 24,
+          "supplies_remaining": 8,
+          "survivors": 2,
+          "threat": "boss"
+        }
+      ],
+      "cleared": false,
+      "failure": "gameover",
+      "region": "border",
+      "run": 96,
+      "seed": 2026102595
+    },
+    {
+      "battles": [
+        {
+          "depth": 0,
+          "error": "",
+          "outcome": "victory",
+          "party_hp": 284,
+          "rounds": 2,
+          "steps": 15,
+          "supplies_remaining": 3,
+          "survivors": 5,
+          "threat": "normal"
+        },
+        {
+          "depth": 2,
+          "error": "",
+          "outcome": "victory",
+          "party_hp": 255,
+          "rounds": 2,
+          "steps": 22,
+          "supplies_remaining": 4,
+          "survivors": 5,
+          "threat": "normal"
+        },
+        {
+          "depth": 5,
+          "error": "",
+          "outcome": "victory",
+          "party_hp": 218,
+          "rounds": 3,
+          "steps": 45,
+          "supplies_remaining": 8,
+          "survivors": 4,
+          "threat": "boss"
+        }
+      ],
+      "cleared": true,
+      "failure": "",
+      "region": "border",
+      "run": 97,
+      "seed": 2026102596
+    },
+    {
+      "battles": [
+        {
+          "depth": 0,
+          "error": "",
+          "outcome": "victory",
+          "party_hp": 275,
+          "rounds": 2,
+          "steps": 21,
+          "supplies_remaining": 3,
+          "survivors": 5,
+          "threat": "normal"
+        },
+        {
+          "depth": 2,
+          "error": "",
+          "outcome": "victory",
+          "party_hp": 250,
+          "rounds": 2,
+          "steps": 19,
+          "supplies_remaining": 6,
+          "survivors": 4,
+          "threat": "normal"
+        },
+        {
+          "depth": 5,
+          "error": "",
+          "outcome": "victory",
+          "party_hp": 97,
+          "rounds": 5,
+          "steps": 52,
+          "supplies_remaining": 11,
+          "survivors": 3,
+          "threat": "boss"
+        }
+      ],
+      "cleared": true,
+      "failure": "",
+      "region": "border",
+      "run": 98,
+      "seed": 2026102597
+    },
+    {
+      "battles": [
+        {
+          "depth": 0,
+          "error": "",
+          "outcome": "victory",
+          "party_hp": 271,
+          "rounds": 2,
+          "steps": 19,
+          "supplies_remaining": 3,
+          "survivors": 5,
+          "threat": "normal"
+        },
+        {
+          "depth": 2,
+          "error": "",
+          "outcome": "victory",
+          "party_hp": 260,
+          "rounds": 2,
+          "steps": 22,
+          "supplies_remaining": 3,
+          "survivors": 5,
+          "threat": "normal"
+        },
+        {
+          "depth": 4,
+          "error": "",
+          "outcome": "victory",
+          "party_hp": 202,
+          "rounds": 3,
+          "steps": 34,
+          "supplies_remaining": 5,
+          "survivors": 4,
+          "threat": "elite"
+        },
+        {
+          "depth": 6,
+          "error": "",
+          "outcome": "gameover",
+          "party_hp": 54,
+          "rounds": 5,
+          "steps": 63,
+          "supplies_remaining": 7,
+          "survivors": 1,
+          "threat": "boss"
+        }
+      ],
+      "cleared": false,
+      "failure": "gameover",
+      "region": "border",
+      "run": 99,
+      "seed": 2026102598
+    },
+    {
+      "battles": [
+        {
+          "depth": 0,
+          "error": "",
+          "outcome": "victory",
+          "party_hp": 252,
+          "rounds": 2,
+          "steps": 26,
+          "supplies_remaining": 3,
+          "survivors": 5,
+          "threat": "normal"
+        },
+        {
+          "depth": 2,
+          "error": "",
+          "outcome": "victory",
+          "party_hp": 255,
+          "rounds": 2,
+          "steps": 21,
+          "supplies_remaining": 3,
+          "survivors": 5,
+          "threat": "normal"
+        },
+        {
+          "depth": 4,
+          "error": "",
+          "outcome": "victory",
+          "party_hp": 229,
+          "rounds": 3,
+          "steps": 33,
+          "supplies_remaining": 4,
+          "survivors": 5,
+          "threat": "elite"
+        },
+        {
+          "depth": 5,
+          "error": "",
+          "outcome": "victory",
+          "party_hp": 265,
+          "rounds": 2,
+          "steps": 23,
+          "supplies_remaining": 4,
+          "survivors": 5,
+          "threat": "elite"
+        },
+        {
+          "depth": 7,
+          "error": "",
+          "outcome": "gameover",
+          "party_hp": 193,
+          "rounds": 2,
+          "steps": 34,
+          "supplies_remaining": 7,
+          "survivors": 4,
+          "threat": "boss"
+        }
+      ],
+      "cleared": false,
+      "failure": "gameover",
+      "region": "border",
+      "run": 100,
+      "seed": 2026102599
+    }
+  ],
+  "runs": 100,
+  "seed_start": 2026102500,
+  "source_hashes": {
+    "art.gd": "1b1094cd02ccc2dfe0b67029ad5d0b0cb0b264f20ad03f92cfe7a5623598f58d",
+    "atlas.gd": "78ee63ee223bb7cb7a6405a144f42e6cc9119408bb4161fa04e0cd82425ee987",
+    "battlefield.gd": "5cb2473e1c2a806c2c279ceb0ff6afa5149c0917c67d22317f1ebeea8048712c",
+    "campaign.gd": "3bdddc3fb8582b528728a98fdb3c786f269244998ab27c94ea6ecef0b7074ad5",
+    "character_visual.gd": "a03beebd110101b8543a0d917c8bfeea1c2a328507bd93e84287311b1d0b24ce",
+    "character_wardrobe.gd": "b4a2b452b0d802d7fb85a573ea4a75213acce64b4bfabedda3bb0717280e3e95",
+    "combat_presentation.gd": "aad6726c6f018efe48eb0035451f25c294a0024d538ac4ec1efb47fa7e5b359d",
+    "equipment_menu.gd": "07e897e9f3efeae25585951b25d02af89f588cbab8921c2a6cdeb0df1fe8a70a",
+    "equipment_preview.gd": "dff75fb27bc23b9d1860ff2ab3ea47a7593927a9153327e6c2582b6ecb42e229",
+    "equipment_shapes.gd": "0f00d83d207de72d7378fc03c38779a7090e15a3a63a2881928498f742e0d7e1",
+    "equipment_visual.gd": "020e67c863a79ba4ffee27196ef860fbcbc0092c12c1ba74e4aefc8d43fd43af",
+    "main.gd": "3c8403b405dfc799ead32b214f6ed5c6f379923f4f41034a4b1db07c8c8242a4",
+    "party_details.gd": "8704d49768dd58a525c2191a51d4c59efcf8e99e53e6e8a8838afb39a3f4d2d2",
+    "portraits.gd": "2f139514305eea70c52c48d9e7a4e056cb547df314da481aa7c8d8de6fb14330",
+    "professions.gd": "93cd937b3794cd2fa7ec4544bb92b15af195a47f0d8a43b48bf1ebe8efd589ac",
+    "region_art.gd": "25a2b7e593cc5d10a8eb733a88edea4a40946c0c95a71750446c83c5e0ccf7e2",
+    "region_combat.gd": "f20206e0d807c55392d235e192e873d6b40b1d00e1c8073609d6c72638638166",
+    "regions.gd": "934a3f2b5beb169c1a06ae9917596ffe90a2526d0eddfb19a0cf9d2f08f17964",
+    "relic_expansion.gd": "bcab343f206c8e9d38b8c6836d3fba2e65e20af434ff78b8e8143c844f1f740d",
+    "relics.gd": "c5860272c05560b94af9a26a063b8991c7fca28a1583e93f2d2cdb93bf1cd323",
+    "route.gd": "119f75b3e108722b1381f5bf0ddc559d4edb56dc2b0904ac402de228330e0842",
+    "rules.gd": "e40eb9acf2639eed09b157eb97df3455fdaeb6dc12b14370256445d601ad6e6f",
+    "skill_tree.gd": "d7edf9672c62713d5b4ff199fc5099d54d5f69eaa8852a71a4ad31a5966ac584"
+  }
+}

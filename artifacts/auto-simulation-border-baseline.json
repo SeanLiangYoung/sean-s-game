@@ -1,0 +1,4092 @@
+{
+  "clears": 80,
+  "failures": 20,
+  "region": "border",
+  "results": [
+    {
+      "battles": [
+        {
+          "depth": 0,
+          "error": "",
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 20,
+          "threat": "normal"
+        },
+        {
+          "depth": 2,
+          "error": "",
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 19,
+          "threat": "normal"
+        },
+        {
+          "depth": 4,
+          "error": "",
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 29,
+          "threat": "elite"
+        },
+        {
+          "depth": 6,
+          "error": "",
+          "outcome": "victory",
+          "rounds": 3,
+          "steps": 40,
+          "threat": "boss"
+        }
+      ],
+      "cleared": true,
+      "failure": "",
+      "region": "border",
+      "run": 1,
+      "seed": 2026102500
+    },
+    {
+      "battles": [
+        {
+          "depth": 0,
+          "error": "",
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 18,
+          "threat": "normal"
+        },
+        {
+          "depth": 2,
+          "error": "",
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 19,
+          "threat": "normal"
+        },
+        {
+          "depth": 4,
+          "error": "",
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 28,
+          "threat": "elite"
+        },
+        {
+          "depth": 6,
+          "error": "",
+          "outcome": "gameover",
+          "rounds": 3,
+          "steps": 36,
+          "threat": "boss"
+        }
+      ],
+      "cleared": false,
+      "failure": "gameover",
+      "region": "border",
+      "run": 2,
+      "seed": 2026102501
+    },
+    {
+      "battles": [
+        {
+          "depth": 0,
+          "error": "",
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 18,
+          "threat": "normal"
+        },
+        {
+          "depth": 2,
+          "error": "",
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 19,
+          "threat": "normal"
+        },
+        {
+          "depth": 5,
+          "error": "",
+          "outcome": "victory",
+          "rounds": 3,
+          "steps": 37,
+          "threat": "boss"
+        }
+      ],
+      "cleared": true,
+      "failure": "",
+      "region": "border",
+      "run": 3,
+      "seed": 2026102502
+    },
+    {
+      "battles": [
+        {
+          "depth": 0,
+          "error": "",
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 19,
+          "threat": "normal"
+        },
+        {
+          "depth": 2,
+          "error": "",
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 18,
+          "threat": "normal"
+        },
+        {
+          "depth": 5,
+          "error": "",
+          "outcome": "victory",
+          "rounds": 3,
+          "steps": 31,
+          "threat": "boss"
+        }
+      ],
+      "cleared": true,
+      "failure": "",
+      "region": "border",
+      "run": 4,
+      "seed": 2026102503
+    },
+    {
+      "battles": [
+        {
+          "depth": 0,
+          "error": "",
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 19,
+          "threat": "normal"
+        },
+        {
+          "depth": 2,
+          "error": "",
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 18,
+          "threat": "normal"
+        },
+        {
+          "depth": 4,
+          "error": "",
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 29,
+          "threat": "elite"
+        },
+        {
+          "depth": 6,
+          "error": "",
+          "outcome": "victory",
+          "rounds": 3,
+          "steps": 35,
+          "threat": "boss"
+        }
+      ],
+      "cleared": true,
+      "failure": "",
+      "region": "border",
+      "run": 5,
+      "seed": 2026102504
+    },
+    {
+      "battles": [
+        {
+          "depth": 0,
+          "error": "",
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 19,
+          "threat": "normal"
+        },
+        {
+          "depth": 2,
+          "error": "",
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 19,
+          "threat": "normal"
+        },
+        {
+          "depth": 4,
+          "error": "",
+          "outcome": "victory",
+          "rounds": 3,
+          "steps": 31,
+          "threat": "elite"
+        },
+        {
+          "depth": 6,
+          "error": "",
+          "outcome": "victory",
+          "rounds": 3,
+          "steps": 36,
+          "threat": "boss"
+        }
+      ],
+      "cleared": true,
+      "failure": "",
+      "region": "border",
+      "run": 6,
+      "seed": 2026102505
+    },
+    {
+      "battles": [
+        {
+          "depth": 0,
+          "error": "",
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 17,
+          "threat": "normal"
+        },
+        {
+          "depth": 2,
+          "error": "",
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 20,
+          "threat": "normal"
+        },
+        {
+          "depth": 5,
+          "error": "",
+          "outcome": "victory",
+          "rounds": 3,
+          "steps": 32,
+          "threat": "boss"
+        }
+      ],
+      "cleared": true,
+      "failure": "",
+      "region": "border",
+      "run": 7,
+      "seed": 2026102506
+    },
+    {
+      "battles": [
+        {
+          "depth": 0,
+          "error": "",
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 20,
+          "threat": "normal"
+        },
+        {
+          "depth": 2,
+          "error": "",
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 20,
+          "threat": "normal"
+        },
+        {
+          "depth": 4,
+          "error": "",
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 30,
+          "threat": "elite"
+        },
+        {
+          "depth": 5,
+          "error": "",
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 27,
+          "threat": "elite"
+        },
+        {
+          "depth": 7,
+          "error": "",
+          "outcome": "victory",
+          "rounds": 3,
+          "steps": 38,
+          "threat": "boss"
+        }
+      ],
+      "cleared": true,
+      "failure": "",
+      "region": "border",
+      "run": 8,
+      "seed": 2026102507
+    },
+    {
+      "battles": [
+        {
+          "depth": 0,
+          "error": "",
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 18,
+          "threat": "normal"
+        },
+        {
+          "depth": 2,
+          "error": "",
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 19,
+          "threat": "normal"
+        },
+        {
+          "depth": 4,
+          "error": "",
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 30,
+          "threat": "elite"
+        },
+        {
+          "depth": 5,
+          "error": "",
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 28,
+          "threat": "elite"
+        },
+        {
+          "depth": 7,
+          "error": "",
+          "outcome": "victory",
+          "rounds": 4,
+          "steps": 41,
+          "threat": "boss"
+        }
+      ],
+      "cleared": true,
+      "failure": "",
+      "region": "border",
+      "run": 9,
+      "seed": 2026102508
+    },
+    {
+      "battles": [
+        {
+          "depth": 0,
+          "error": "",
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 18,
+          "threat": "normal"
+        },
+        {
+          "depth": 2,
+          "error": "",
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 18,
+          "threat": "normal"
+        },
+        {
+          "depth": 5,
+          "error": "",
+          "outcome": "victory",
+          "rounds": 3,
+          "steps": 33,
+          "threat": "boss"
+        }
+      ],
+      "cleared": true,
+      "failure": "",
+      "region": "border",
+      "run": 10,
+      "seed": 2026102509
+    },
+    {
+      "battles": [
+        {
+          "depth": 0,
+          "error": "",
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 18,
+          "threat": "normal"
+        },
+        {
+          "depth": 2,
+          "error": "",
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 19,
+          "threat": "normal"
+        },
+        {
+          "depth": 4,
+          "error": "",
+          "outcome": "victory",
+          "rounds": 3,
+          "steps": 32,
+          "threat": "elite"
+        },
+        {
+          "depth": 6,
+          "error": "",
+          "outcome": "victory",
+          "rounds": 5,
+          "steps": 41,
+          "threat": "boss"
+        }
+      ],
+      "cleared": true,
+      "failure": "",
+      "region": "border",
+      "run": 11,
+      "seed": 2026102510
+    },
+    {
+      "battles": [
+        {
+          "depth": 0,
+          "error": "",
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 19,
+          "threat": "normal"
+        },
+        {
+          "depth": 2,
+          "error": "",
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 20,
+          "threat": "normal"
+        },
+        {
+          "depth": 4,
+          "error": "",
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 27,
+          "threat": "elite"
+        },
+        {
+          "depth": 5,
+          "error": "",
+          "outcome": "victory",
+          "rounds": 3,
+          "steps": 34,
+          "threat": "elite"
+        },
+        {
+          "depth": 7,
+          "error": "",
+          "outcome": "victory",
+          "rounds": 3,
+          "steps": 38,
+          "threat": "boss"
+        }
+      ],
+      "cleared": true,
+      "failure": "",
+      "region": "border",
+      "run": 12,
+      "seed": 2026102511
+    },
+    {
+      "battles": [
+        {
+          "depth": 0,
+          "error": "",
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 19,
+          "threat": "normal"
+        },
+        {
+          "depth": 2,
+          "error": "",
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 19,
+          "threat": "normal"
+        },
+        {
+          "depth": 4,
+          "error": "",
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 28,
+          "threat": "elite"
+        },
+        {
+          "depth": 6,
+          "error": "",
+          "outcome": "victory",
+          "rounds": 3,
+          "steps": 37,
+          "threat": "boss"
+        }
+      ],
+      "cleared": true,
+      "failure": "",
+      "region": "border",
+      "run": 13,
+      "seed": 2026102512
+    },
+    {
+      "battles": [
+        {
+          "depth": 0,
+          "error": "",
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 19,
+          "threat": "normal"
+        },
+        {
+          "depth": 2,
+          "error": "",
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 18,
+          "threat": "normal"
+        },
+        {
+          "depth": 4,
+          "error": "",
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 27,
+          "threat": "elite"
+        },
+        {
+          "depth": 5,
+          "error": "",
+          "outcome": "victory",
+          "rounds": 3,
+          "steps": 34,
+          "threat": "elite"
+        },
+        {
+          "depth": 7,
+          "error": "",
+          "outcome": "victory",
+          "rounds": 3,
+          "steps": 36,
+          "threat": "boss"
+        }
+      ],
+      "cleared": true,
+      "failure": "",
+      "region": "border",
+      "run": 14,
+      "seed": 2026102513
+    },
+    {
+      "battles": [
+        {
+          "depth": 0,
+          "error": "",
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 16,
+          "threat": "normal"
+        },
+        {
+          "depth": 2,
+          "error": "",
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 19,
+          "threat": "normal"
+        },
+        {
+          "depth": 5,
+          "error": "",
+          "outcome": "victory",
+          "rounds": 3,
+          "steps": 34,
+          "threat": "boss"
+        }
+      ],
+      "cleared": true,
+      "failure": "",
+      "region": "border",
+      "run": 15,
+      "seed": 2026102514
+    },
+    {
+      "battles": [
+        {
+          "depth": 0,
+          "error": "",
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 16,
+          "threat": "normal"
+        },
+        {
+          "depth": 2,
+          "error": "",
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 17,
+          "threat": "normal"
+        },
+        {
+          "depth": 4,
+          "error": "",
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 30,
+          "threat": "elite"
+        },
+        {
+          "depth": 5,
+          "error": "",
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 30,
+          "threat": "elite"
+        },
+        {
+          "depth": 7,
+          "error": "",
+          "outcome": "victory",
+          "rounds": 3,
+          "steps": 43,
+          "threat": "boss"
+        }
+      ],
+      "cleared": true,
+      "failure": "",
+      "region": "border",
+      "run": 16,
+      "seed": 2026102515
+    },
+    {
+      "battles": [
+        {
+          "depth": 0,
+          "error": "",
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 16,
+          "threat": "normal"
+        },
+        {
+          "depth": 2,
+          "error": "",
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 19,
+          "threat": "normal"
+        },
+        {
+          "depth": 4,
+          "error": "",
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 26,
+          "threat": "elite"
+        },
+        {
+          "depth": 6,
+          "error": "",
+          "outcome": "gameover",
+          "rounds": 2,
+          "steps": 34,
+          "threat": "boss"
+        }
+      ],
+      "cleared": false,
+      "failure": "gameover",
+      "region": "border",
+      "run": 17,
+      "seed": 2026102516
+    },
+    {
+      "battles": [
+        {
+          "depth": 0,
+          "error": "",
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 19,
+          "threat": "normal"
+        },
+        {
+          "depth": 2,
+          "error": "",
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 18,
+          "threat": "normal"
+        },
+        {
+          "depth": 4,
+          "error": "",
+          "outcome": "victory",
+          "rounds": 3,
+          "steps": 32,
+          "threat": "elite"
+        },
+        {
+          "depth": 5,
+          "error": "",
+          "outcome": "victory",
+          "rounds": 3,
+          "steps": 34,
+          "threat": "elite"
+        },
+        {
+          "depth": 7,
+          "error": "",
+          "outcome": "gameover",
+          "rounds": 2,
+          "steps": 20,
+          "threat": "boss"
+        }
+      ],
+      "cleared": false,
+      "failure": "gameover",
+      "region": "border",
+      "run": 18,
+      "seed": 2026102517
+    },
+    {
+      "battles": [
+        {
+          "depth": 0,
+          "error": "",
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 16,
+          "threat": "normal"
+        },
+        {
+          "depth": 2,
+          "error": "",
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 16,
+          "threat": "normal"
+        },
+        {
+          "depth": 5,
+          "error": "",
+          "outcome": "victory",
+          "rounds": 3,
+          "steps": 32,
+          "threat": "boss"
+        }
+      ],
+      "cleared": true,
+      "failure": "",
+      "region": "border",
+      "run": 19,
+      "seed": 2026102518
+    },
+    {
+      "battles": [
+        {
+          "depth": 0,
+          "error": "",
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 19,
+          "threat": "normal"
+        },
+        {
+          "depth": 2,
+          "error": "",
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 19,
+          "threat": "normal"
+        },
+        {
+          "depth": 4,
+          "error": "",
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 24,
+          "threat": "elite"
+        },
+        {
+          "depth": 6,
+          "error": "",
+          "outcome": "victory",
+          "rounds": 3,
+          "steps": 38,
+          "threat": "boss"
+        }
+      ],
+      "cleared": true,
+      "failure": "",
+      "region": "border",
+      "run": 20,
+      "seed": 2026102519
+    },
+    {
+      "battles": [
+        {
+          "depth": 0,
+          "error": "",
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 19,
+          "threat": "normal"
+        },
+        {
+          "depth": 2,
+          "error": "",
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 22,
+          "threat": "normal"
+        },
+        {
+          "depth": 5,
+          "error": "",
+          "outcome": "victory",
+          "rounds": 3,
+          "steps": 31,
+          "threat": "boss"
+        }
+      ],
+      "cleared": true,
+      "failure": "",
+      "region": "border",
+      "run": 21,
+      "seed": 2026102520
+    },
+    {
+      "battles": [
+        {
+          "depth": 0,
+          "error": "",
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 19,
+          "threat": "normal"
+        },
+        {
+          "depth": 2,
+          "error": "",
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 16,
+          "threat": "normal"
+        },
+        {
+          "depth": 5,
+          "error": "",
+          "outcome": "victory",
+          "rounds": 3,
+          "steps": 34,
+          "threat": "boss"
+        }
+      ],
+      "cleared": true,
+      "failure": "",
+      "region": "border",
+      "run": 22,
+      "seed": 2026102521
+    },
+    {
+      "battles": [
+        {
+          "depth": 0,
+          "error": "",
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 19,
+          "threat": "normal"
+        },
+        {
+          "depth": 2,
+          "error": "",
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 19,
+          "threat": "normal"
+        },
+        {
+          "depth": 5,
+          "error": "",
+          "outcome": "victory",
+          "rounds": 3,
+          "steps": 37,
+          "threat": "boss"
+        }
+      ],
+      "cleared": true,
+      "failure": "",
+      "region": "border",
+      "run": 23,
+      "seed": 2026102522
+    },
+    {
+      "battles": [
+        {
+          "depth": 0,
+          "error": "",
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 19,
+          "threat": "normal"
+        },
+        {
+          "depth": 2,
+          "error": "",
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 19,
+          "threat": "normal"
+        },
+        {
+          "depth": 4,
+          "error": "",
+          "outcome": "victory",
+          "rounds": 3,
+          "steps": 32,
+          "threat": "elite"
+        },
+        {
+          "depth": 5,
+          "error": "",
+          "outcome": "victory",
+          "rounds": 3,
+          "steps": 32,
+          "threat": "elite"
+        },
+        {
+          "depth": 7,
+          "error": "",
+          "outcome": "gameover",
+          "rounds": 2,
+          "steps": 26,
+          "threat": "boss"
+        }
+      ],
+      "cleared": false,
+      "failure": "gameover",
+      "region": "border",
+      "run": 24,
+      "seed": 2026102523
+    },
+    {
+      "battles": [
+        {
+          "depth": 0,
+          "error": "",
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 18,
+          "threat": "normal"
+        },
+        {
+          "depth": 2,
+          "error": "",
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 16,
+          "threat": "normal"
+        },
+        {
+          "depth": 5,
+          "error": "",
+          "outcome": "victory",
+          "rounds": 3,
+          "steps": 31,
+          "threat": "boss"
+        }
+      ],
+      "cleared": true,
+      "failure": "",
+      "region": "border",
+      "run": 25,
+      "seed": 2026102524
+    },
+    {
+      "battles": [
+        {
+          "depth": 0,
+          "error": "",
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 19,
+          "threat": "normal"
+        },
+        {
+          "depth": 2,
+          "error": "",
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 19,
+          "threat": "normal"
+        },
+        {
+          "depth": 4,
+          "error": "",
+          "outcome": "victory",
+          "rounds": 3,
+          "steps": 33,
+          "threat": "elite"
+        },
+        {
+          "depth": 6,
+          "error": "",
+          "outcome": "victory",
+          "rounds": 3,
+          "steps": 35,
+          "threat": "boss"
+        }
+      ],
+      "cleared": true,
+      "failure": "",
+      "region": "border",
+      "run": 26,
+      "seed": 2026102525
+    },
+    {
+      "battles": [
+        {
+          "depth": 0,
+          "error": "",
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 16,
+          "threat": "normal"
+        },
+        {
+          "depth": 2,
+          "error": "",
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 19,
+          "threat": "normal"
+        },
+        {
+          "depth": 4,
+          "error": "",
+          "outcome": "victory",
+          "rounds": 3,
+          "steps": 35,
+          "threat": "elite"
+        },
+        {
+          "depth": 6,
+          "error": "",
+          "outcome": "victory",
+          "rounds": 3,
+          "steps": 38,
+          "threat": "boss"
+        }
+      ],
+      "cleared": true,
+      "failure": "",
+      "region": "border",
+      "run": 27,
+      "seed": 2026102526
+    },
+    {
+      "battles": [
+        {
+          "depth": 0,
+          "error": "",
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 19,
+          "threat": "normal"
+        },
+        {
+          "depth": 2,
+          "error": "",
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 20,
+          "threat": "normal"
+        },
+        {
+          "depth": 4,
+          "error": "",
+          "outcome": "victory",
+          "rounds": 3,
+          "steps": 32,
+          "threat": "elite"
+        },
+        {
+          "depth": 5,
+          "error": "",
+          "outcome": "victory",
+          "rounds": 3,
+          "steps": 34,
+          "threat": "elite"
+        },
+        {
+          "depth": 7,
+          "error": "",
+          "outcome": "gameover",
+          "rounds": 2,
+          "steps": 23,
+          "threat": "boss"
+        }
+      ],
+      "cleared": false,
+      "failure": "gameover",
+      "region": "border",
+      "run": 28,
+      "seed": 2026102527
+    },
+    {
+      "battles": [
+        {
+          "depth": 0,
+          "error": "",
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 18,
+          "threat": "normal"
+        },
+        {
+          "depth": 2,
+          "error": "",
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 22,
+          "threat": "normal"
+        },
+        {
+          "depth": 5,
+          "error": "",
+          "outcome": "victory",
+          "rounds": 3,
+          "steps": 31,
+          "threat": "boss"
+        }
+      ],
+      "cleared": true,
+      "failure": "",
+      "region": "border",
+      "run": 29,
+      "seed": 2026102528
+    },
+    {
+      "battles": [
+        {
+          "depth": 0,
+          "error": "",
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 19,
+          "threat": "normal"
+        },
+        {
+          "depth": 2,
+          "error": "",
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 19,
+          "threat": "normal"
+        },
+        {
+          "depth": 5,
+          "error": "",
+          "outcome": "victory",
+          "rounds": 3,
+          "steps": 34,
+          "threat": "boss"
+        }
+      ],
+      "cleared": true,
+      "failure": "",
+      "region": "border",
+      "run": 30,
+      "seed": 2026102529
+    },
+    {
+      "battles": [
+        {
+          "depth": 0,
+          "error": "",
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 19,
+          "threat": "normal"
+        },
+        {
+          "depth": 2,
+          "error": "",
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 19,
+          "threat": "normal"
+        },
+        {
+          "depth": 4,
+          "error": "",
+          "outcome": "victory",
+          "rounds": 3,
+          "steps": 33,
+          "threat": "elite"
+        },
+        {
+          "depth": 6,
+          "error": "",
+          "outcome": "gameover",
+          "rounds": 3,
+          "steps": 39,
+          "threat": "boss"
+        }
+      ],
+      "cleared": false,
+      "failure": "gameover",
+      "region": "border",
+      "run": 31,
+      "seed": 2026102530
+    },
+    {
+      "battles": [
+        {
+          "depth": 0,
+          "error": "",
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 20,
+          "threat": "normal"
+        },
+        {
+          "depth": 2,
+          "error": "",
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 16,
+          "threat": "normal"
+        },
+        {
+          "depth": 5,
+          "error": "",
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 27,
+          "threat": "boss"
+        }
+      ],
+      "cleared": true,
+      "failure": "",
+      "region": "border",
+      "run": 32,
+      "seed": 2026102531
+    },
+    {
+      "battles": [
+        {
+          "depth": 0,
+          "error": "",
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 16,
+          "threat": "normal"
+        },
+        {
+          "depth": 2,
+          "error": "",
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 19,
+          "threat": "normal"
+        },
+        {
+          "depth": 4,
+          "error": "",
+          "outcome": "victory",
+          "rounds": 3,
+          "steps": 35,
+          "threat": "elite"
+        },
+        {
+          "depth": 5,
+          "error": "",
+          "outcome": "victory",
+          "rounds": 4,
+          "steps": 41,
+          "threat": "elite"
+        },
+        {
+          "depth": 7,
+          "error": "",
+          "outcome": "gameover",
+          "rounds": 2,
+          "steps": 20,
+          "threat": "boss"
+        }
+      ],
+      "cleared": false,
+      "failure": "gameover",
+      "region": "border",
+      "run": 33,
+      "seed": 2026102532
+    },
+    {
+      "battles": [
+        {
+          "depth": 0,
+          "error": "",
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 16,
+          "threat": "normal"
+        },
+        {
+          "depth": 2,
+          "error": "",
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 19,
+          "threat": "normal"
+        },
+        {
+          "depth": 5,
+          "error": "",
+          "outcome": "victory",
+          "rounds": 3,
+          "steps": 34,
+          "threat": "boss"
+        }
+      ],
+      "cleared": true,
+      "failure": "",
+      "region": "border",
+      "run": 34,
+      "seed": 2026102533
+    },
+    {
+      "battles": [
+        {
+          "depth": 0,
+          "error": "",
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 20,
+          "threat": "normal"
+        },
+        {
+          "depth": 2,
+          "error": "",
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 19,
+          "threat": "normal"
+        },
+        {
+          "depth": 5,
+          "error": "",
+          "outcome": "victory",
+          "rounds": 3,
+          "steps": 32,
+          "threat": "boss"
+        }
+      ],
+      "cleared": true,
+      "failure": "",
+      "region": "border",
+      "run": 35,
+      "seed": 2026102534
+    },
+    {
+      "battles": [
+        {
+          "depth": 0,
+          "error": "",
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 19,
+          "threat": "normal"
+        },
+        {
+          "depth": 2,
+          "error": "",
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 19,
+          "threat": "normal"
+        },
+        {
+          "depth": 4,
+          "error": "",
+          "outcome": "victory",
+          "rounds": 3,
+          "steps": 35,
+          "threat": "elite"
+        },
+        {
+          "depth": 6,
+          "error": "",
+          "outcome": "victory",
+          "rounds": 3,
+          "steps": 37,
+          "threat": "boss"
+        }
+      ],
+      "cleared": true,
+      "failure": "",
+      "region": "border",
+      "run": 36,
+      "seed": 2026102535
+    },
+    {
+      "battles": [
+        {
+          "depth": 0,
+          "error": "",
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 20,
+          "threat": "normal"
+        },
+        {
+          "depth": 2,
+          "error": "",
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 19,
+          "threat": "normal"
+        },
+        {
+          "depth": 4,
+          "error": "",
+          "outcome": "victory",
+          "rounds": 3,
+          "steps": 30,
+          "threat": "elite"
+        },
+        {
+          "depth": 6,
+          "error": "",
+          "outcome": "victory",
+          "rounds": 4,
+          "steps": 40,
+          "threat": "boss"
+        }
+      ],
+      "cleared": true,
+      "failure": "",
+      "region": "border",
+      "run": 37,
+      "seed": 2026102536
+    },
+    {
+      "battles": [
+        {
+          "depth": 0,
+          "error": "",
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 18,
+          "threat": "normal"
+        },
+        {
+          "depth": 2,
+          "error": "",
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 16,
+          "threat": "normal"
+        },
+        {
+          "depth": 4,
+          "error": "",
+          "outcome": "victory",
+          "rounds": 3,
+          "steps": 33,
+          "threat": "elite"
+        },
+        {
+          "depth": 6,
+          "error": "",
+          "outcome": "gameover",
+          "rounds": 3,
+          "steps": 41,
+          "threat": "boss"
+        }
+      ],
+      "cleared": false,
+      "failure": "gameover",
+      "region": "border",
+      "run": 38,
+      "seed": 2026102537
+    },
+    {
+      "battles": [
+        {
+          "depth": 0,
+          "error": "",
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 19,
+          "threat": "normal"
+        },
+        {
+          "depth": 2,
+          "error": "",
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 17,
+          "threat": "normal"
+        },
+        {
+          "depth": 4,
+          "error": "",
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 27,
+          "threat": "elite"
+        },
+        {
+          "depth": 5,
+          "error": "",
+          "outcome": "victory",
+          "rounds": 3,
+          "steps": 32,
+          "threat": "elite"
+        },
+        {
+          "depth": 7,
+          "error": "",
+          "outcome": "victory",
+          "rounds": 3,
+          "steps": 36,
+          "threat": "boss"
+        }
+      ],
+      "cleared": true,
+      "failure": "",
+      "region": "border",
+      "run": 39,
+      "seed": 2026102538
+    },
+    {
+      "battles": [
+        {
+          "depth": 0,
+          "error": "",
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 19,
+          "threat": "normal"
+        },
+        {
+          "depth": 2,
+          "error": "",
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 18,
+          "threat": "normal"
+        },
+        {
+          "depth": 4,
+          "error": "",
+          "outcome": "victory",
+          "rounds": 3,
+          "steps": 34,
+          "threat": "elite"
+        },
+        {
+          "depth": 5,
+          "error": "",
+          "outcome": "victory",
+          "rounds": 3,
+          "steps": 35,
+          "threat": "elite"
+        },
+        {
+          "depth": 7,
+          "error": "",
+          "outcome": "gameover",
+          "rounds": 3,
+          "steps": 36,
+          "threat": "boss"
+        }
+      ],
+      "cleared": false,
+      "failure": "gameover",
+      "region": "border",
+      "run": 40,
+      "seed": 2026102539
+    },
+    {
+      "battles": [
+        {
+          "depth": 0,
+          "error": "",
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 17,
+          "threat": "normal"
+        },
+        {
+          "depth": 2,
+          "error": "",
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 19,
+          "threat": "normal"
+        },
+        {
+          "depth": 4,
+          "error": "",
+          "outcome": "victory",
+          "rounds": 3,
+          "steps": 30,
+          "threat": "elite"
+        },
+        {
+          "depth": 6,
+          "error": "",
+          "outcome": "victory",
+          "rounds": 3,
+          "steps": 34,
+          "threat": "boss"
+        }
+      ],
+      "cleared": true,
+      "failure": "",
+      "region": "border",
+      "run": 41,
+      "seed": 2026102540
+    },
+    {
+      "battles": [
+        {
+          "depth": 0,
+          "error": "",
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 18,
+          "threat": "normal"
+        },
+        {
+          "depth": 2,
+          "error": "",
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 19,
+          "threat": "normal"
+        },
+        {
+          "depth": 4,
+          "error": "",
+          "outcome": "victory",
+          "rounds": 3,
+          "steps": 34,
+          "threat": "elite"
+        },
+        {
+          "depth": 6,
+          "error": "",
+          "outcome": "victory",
+          "rounds": 3,
+          "steps": 32,
+          "threat": "boss"
+        }
+      ],
+      "cleared": true,
+      "failure": "",
+      "region": "border",
+      "run": 42,
+      "seed": 2026102541
+    },
+    {
+      "battles": [
+        {
+          "depth": 0,
+          "error": "",
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 19,
+          "threat": "normal"
+        },
+        {
+          "depth": 2,
+          "error": "",
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 18,
+          "threat": "normal"
+        },
+        {
+          "depth": 4,
+          "error": "",
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 29,
+          "threat": "elite"
+        },
+        {
+          "depth": 6,
+          "error": "",
+          "outcome": "victory",
+          "rounds": 3,
+          "steps": 39,
+          "threat": "boss"
+        }
+      ],
+      "cleared": true,
+      "failure": "",
+      "region": "border",
+      "run": 43,
+      "seed": 2026102542
+    },
+    {
+      "battles": [
+        {
+          "depth": 0,
+          "error": "",
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 19,
+          "threat": "normal"
+        },
+        {
+          "depth": 2,
+          "error": "",
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 19,
+          "threat": "normal"
+        },
+        {
+          "depth": 4,
+          "error": "",
+          "outcome": "victory",
+          "rounds": 3,
+          "steps": 30,
+          "threat": "elite"
+        },
+        {
+          "depth": 5,
+          "error": "",
+          "outcome": "victory",
+          "rounds": 3,
+          "steps": 33,
+          "threat": "elite"
+        },
+        {
+          "depth": 7,
+          "error": "",
+          "outcome": "victory",
+          "rounds": 3,
+          "steps": 38,
+          "threat": "boss"
+        }
+      ],
+      "cleared": true,
+      "failure": "",
+      "region": "border",
+      "run": 44,
+      "seed": 2026102543
+    },
+    {
+      "battles": [
+        {
+          "depth": 0,
+          "error": "",
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 19,
+          "threat": "normal"
+        },
+        {
+          "depth": 2,
+          "error": "",
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 19,
+          "threat": "normal"
+        },
+        {
+          "depth": 5,
+          "error": "",
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 29,
+          "threat": "boss"
+        }
+      ],
+      "cleared": true,
+      "failure": "",
+      "region": "border",
+      "run": 45,
+      "seed": 2026102544
+    },
+    {
+      "battles": [
+        {
+          "depth": 0,
+          "error": "",
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 23,
+          "threat": "normal"
+        },
+        {
+          "depth": 2,
+          "error": "",
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 18,
+          "threat": "normal"
+        },
+        {
+          "depth": 5,
+          "error": "",
+          "outcome": "victory",
+          "rounds": 3,
+          "steps": 34,
+          "threat": "boss"
+        }
+      ],
+      "cleared": true,
+      "failure": "",
+      "region": "border",
+      "run": 46,
+      "seed": 2026102545
+    },
+    {
+      "battles": [
+        {
+          "depth": 0,
+          "error": "",
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 19,
+          "threat": "normal"
+        },
+        {
+          "depth": 2,
+          "error": "",
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 18,
+          "threat": "normal"
+        },
+        {
+          "depth": 4,
+          "error": "",
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 29,
+          "threat": "elite"
+        },
+        {
+          "depth": 5,
+          "error": "",
+          "outcome": "victory",
+          "rounds": 3,
+          "steps": 34,
+          "threat": "elite"
+        },
+        {
+          "depth": 7,
+          "error": "",
+          "outcome": "victory",
+          "rounds": 4,
+          "steps": 39,
+          "threat": "boss"
+        }
+      ],
+      "cleared": true,
+      "failure": "",
+      "region": "border",
+      "run": 47,
+      "seed": 2026102546
+    },
+    {
+      "battles": [
+        {
+          "depth": 0,
+          "error": "",
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 19,
+          "threat": "normal"
+        },
+        {
+          "depth": 2,
+          "error": "",
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 19,
+          "threat": "normal"
+        },
+        {
+          "depth": 4,
+          "error": "",
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 30,
+          "threat": "elite"
+        },
+        {
+          "depth": 6,
+          "error": "",
+          "outcome": "gameover",
+          "rounds": 3,
+          "steps": 40,
+          "threat": "boss"
+        }
+      ],
+      "cleared": false,
+      "failure": "gameover",
+      "region": "border",
+      "run": 48,
+      "seed": 2026102547
+    },
+    {
+      "battles": [
+        {
+          "depth": 0,
+          "error": "",
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 16,
+          "threat": "normal"
+        },
+        {
+          "depth": 2,
+          "error": "",
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 18,
+          "threat": "normal"
+        },
+        {
+          "depth": 4,
+          "error": "",
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 28,
+          "threat": "elite"
+        },
+        {
+          "depth": 5,
+          "error": "",
+          "outcome": "victory",
+          "rounds": 3,
+          "steps": 32,
+          "threat": "elite"
+        },
+        {
+          "depth": 7,
+          "error": "",
+          "outcome": "gameover",
+          "rounds": 2,
+          "steps": 25,
+          "threat": "boss"
+        }
+      ],
+      "cleared": false,
+      "failure": "gameover",
+      "region": "border",
+      "run": 49,
+      "seed": 2026102548
+    },
+    {
+      "battles": [
+        {
+          "depth": 0,
+          "error": "",
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 19,
+          "threat": "normal"
+        },
+        {
+          "depth": 2,
+          "error": "",
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 17,
+          "threat": "normal"
+        },
+        {
+          "depth": 4,
+          "error": "",
+          "outcome": "victory",
+          "rounds": 3,
+          "steps": 34,
+          "threat": "elite"
+        },
+        {
+          "depth": 5,
+          "error": "",
+          "outcome": "gameover",
+          "rounds": 2,
+          "steps": 25,
+          "threat": "elite"
+        }
+      ],
+      "cleared": false,
+      "failure": "gameover",
+      "region": "border",
+      "run": 50,
+      "seed": 2026102549
+    },
+    {
+      "battles": [
+        {
+          "depth": 0,
+          "error": "",
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 19,
+          "threat": "normal"
+        },
+        {
+          "depth": 2,
+          "error": "",
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 19,
+          "threat": "normal"
+        },
+        {
+          "depth": 4,
+          "error": "",
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 28,
+          "threat": "elite"
+        },
+        {
+          "depth": 5,
+          "error": "",
+          "outcome": "victory",
+          "rounds": 3,
+          "steps": 35,
+          "threat": "elite"
+        },
+        {
+          "depth": 7,
+          "error": "",
+          "outcome": "gameover",
+          "rounds": 3,
+          "steps": 37,
+          "threat": "boss"
+        }
+      ],
+      "cleared": false,
+      "failure": "gameover",
+      "region": "border",
+      "run": 51,
+      "seed": 2026102550
+    },
+    {
+      "battles": [
+        {
+          "depth": 0,
+          "error": "",
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 19,
+          "threat": "normal"
+        },
+        {
+          "depth": 2,
+          "error": "",
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 19,
+          "threat": "normal"
+        },
+        {
+          "depth": 4,
+          "error": "",
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 30,
+          "threat": "elite"
+        },
+        {
+          "depth": 5,
+          "error": "",
+          "outcome": "victory",
+          "rounds": 3,
+          "steps": 29,
+          "threat": "elite"
+        },
+        {
+          "depth": 7,
+          "error": "",
+          "outcome": "gameover",
+          "rounds": 3,
+          "steps": 36,
+          "threat": "boss"
+        }
+      ],
+      "cleared": false,
+      "failure": "gameover",
+      "region": "border",
+      "run": 52,
+      "seed": 2026102551
+    },
+    {
+      "battles": [
+        {
+          "depth": 0,
+          "error": "",
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 19,
+          "threat": "normal"
+        },
+        {
+          "depth": 2,
+          "error": "",
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 19,
+          "threat": "normal"
+        },
+        {
+          "depth": 5,
+          "error": "",
+          "outcome": "victory",
+          "rounds": 3,
+          "steps": 29,
+          "threat": "boss"
+        }
+      ],
+      "cleared": true,
+      "failure": "",
+      "region": "border",
+      "run": 53,
+      "seed": 2026102552
+    },
+    {
+      "battles": [
+        {
+          "depth": 0,
+          "error": "",
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 18,
+          "threat": "normal"
+        },
+        {
+          "depth": 2,
+          "error": "",
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 20,
+          "threat": "normal"
+        },
+        {
+          "depth": 5,
+          "error": "",
+          "outcome": "victory",
+          "rounds": 3,
+          "steps": 35,
+          "threat": "boss"
+        }
+      ],
+      "cleared": true,
+      "failure": "",
+      "region": "border",
+      "run": 54,
+      "seed": 2026102553
+    },
+    {
+      "battles": [
+        {
+          "depth": 0,
+          "error": "",
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 16,
+          "threat": "normal"
+        },
+        {
+          "depth": 2,
+          "error": "",
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 16,
+          "threat": "normal"
+        },
+        {
+          "depth": 4,
+          "error": "",
+          "outcome": "victory",
+          "rounds": 3,
+          "steps": 34,
+          "threat": "elite"
+        },
+        {
+          "depth": 6,
+          "error": "",
+          "outcome": "gameover",
+          "rounds": 3,
+          "steps": 39,
+          "threat": "boss"
+        }
+      ],
+      "cleared": false,
+      "failure": "gameover",
+      "region": "border",
+      "run": 55,
+      "seed": 2026102554
+    },
+    {
+      "battles": [
+        {
+          "depth": 0,
+          "error": "",
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 18,
+          "threat": "normal"
+        },
+        {
+          "depth": 2,
+          "error": "",
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 19,
+          "threat": "normal"
+        },
+        {
+          "depth": 4,
+          "error": "",
+          "outcome": "victory",
+          "rounds": 3,
+          "steps": 35,
+          "threat": "elite"
+        },
+        {
+          "depth": 5,
+          "error": "",
+          "outcome": "victory",
+          "rounds": 3,
+          "steps": 32,
+          "threat": "elite"
+        },
+        {
+          "depth": 7,
+          "error": "",
+          "outcome": "victory",
+          "rounds": 3,
+          "steps": 37,
+          "threat": "boss"
+        }
+      ],
+      "cleared": true,
+      "failure": "",
+      "region": "border",
+      "run": 56,
+      "seed": 2026102555
+    },
+    {
+      "battles": [
+        {
+          "depth": 0,
+          "error": "",
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 18,
+          "threat": "normal"
+        },
+        {
+          "depth": 2,
+          "error": "",
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 19,
+          "threat": "normal"
+        },
+        {
+          "depth": 5,
+          "error": "",
+          "outcome": "victory",
+          "rounds": 3,
+          "steps": 34,
+          "threat": "boss"
+        }
+      ],
+      "cleared": true,
+      "failure": "",
+      "region": "border",
+      "run": 57,
+      "seed": 2026102556
+    },
+    {
+      "battles": [
+        {
+          "depth": 0,
+          "error": "",
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 18,
+          "threat": "normal"
+        },
+        {
+          "depth": 2,
+          "error": "",
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 19,
+          "threat": "normal"
+        },
+        {
+          "depth": 5,
+          "error": "",
+          "outcome": "victory",
+          "rounds": 3,
+          "steps": 30,
+          "threat": "boss"
+        }
+      ],
+      "cleared": true,
+      "failure": "",
+      "region": "border",
+      "run": 58,
+      "seed": 2026102557
+    },
+    {
+      "battles": [
+        {
+          "depth": 0,
+          "error": "",
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 18,
+          "threat": "normal"
+        },
+        {
+          "depth": 2,
+          "error": "",
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 20,
+          "threat": "normal"
+        },
+        {
+          "depth": 4,
+          "error": "",
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 27,
+          "threat": "elite"
+        },
+        {
+          "depth": 5,
+          "error": "",
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 24,
+          "threat": "elite"
+        },
+        {
+          "depth": 7,
+          "error": "",
+          "outcome": "victory",
+          "rounds": 3,
+          "steps": 40,
+          "threat": "boss"
+        }
+      ],
+      "cleared": true,
+      "failure": "",
+      "region": "border",
+      "run": 59,
+      "seed": 2026102558
+    },
+    {
+      "battles": [
+        {
+          "depth": 0,
+          "error": "",
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 16,
+          "threat": "normal"
+        },
+        {
+          "depth": 2,
+          "error": "",
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 19,
+          "threat": "normal"
+        },
+        {
+          "depth": 5,
+          "error": "",
+          "outcome": "victory",
+          "rounds": 3,
+          "steps": 34,
+          "threat": "boss"
+        }
+      ],
+      "cleared": true,
+      "failure": "",
+      "region": "border",
+      "run": 60,
+      "seed": 2026102559
+    },
+    {
+      "battles": [
+        {
+          "depth": 0,
+          "error": "",
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 19,
+          "threat": "normal"
+        },
+        {
+          "depth": 2,
+          "error": "",
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 19,
+          "threat": "normal"
+        },
+        {
+          "depth": 5,
+          "error": "",
+          "outcome": "victory",
+          "rounds": 3,
+          "steps": 33,
+          "threat": "boss"
+        }
+      ],
+      "cleared": true,
+      "failure": "",
+      "region": "border",
+      "run": 61,
+      "seed": 2026102560
+    },
+    {
+      "battles": [
+        {
+          "depth": 0,
+          "error": "",
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 21,
+          "threat": "normal"
+        },
+        {
+          "depth": 2,
+          "error": "",
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 23,
+          "threat": "normal"
+        },
+        {
+          "depth": 4,
+          "error": "",
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 29,
+          "threat": "elite"
+        },
+        {
+          "depth": 5,
+          "error": "",
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 31,
+          "threat": "elite"
+        },
+        {
+          "depth": 7,
+          "error": "",
+          "outcome": "victory",
+          "rounds": 3,
+          "steps": 38,
+          "threat": "boss"
+        }
+      ],
+      "cleared": true,
+      "failure": "",
+      "region": "border",
+      "run": 62,
+      "seed": 2026102561
+    },
+    {
+      "battles": [
+        {
+          "depth": 0,
+          "error": "",
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 19,
+          "threat": "normal"
+        },
+        {
+          "depth": 2,
+          "error": "",
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 23,
+          "threat": "normal"
+        },
+        {
+          "depth": 4,
+          "error": "",
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 29,
+          "threat": "elite"
+        },
+        {
+          "depth": 5,
+          "error": "",
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 27,
+          "threat": "elite"
+        },
+        {
+          "depth": 7,
+          "error": "",
+          "outcome": "victory",
+          "rounds": 3,
+          "steps": 36,
+          "threat": "boss"
+        }
+      ],
+      "cleared": true,
+      "failure": "",
+      "region": "border",
+      "run": 63,
+      "seed": 2026102562
+    },
+    {
+      "battles": [
+        {
+          "depth": 0,
+          "error": "",
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 19,
+          "threat": "normal"
+        },
+        {
+          "depth": 2,
+          "error": "",
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 19,
+          "threat": "normal"
+        },
+        {
+          "depth": 4,
+          "error": "",
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 31,
+          "threat": "elite"
+        },
+        {
+          "depth": 5,
+          "error": "",
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 26,
+          "threat": "elite"
+        },
+        {
+          "depth": 7,
+          "error": "",
+          "outcome": "victory",
+          "rounds": 4,
+          "steps": 40,
+          "threat": "boss"
+        }
+      ],
+      "cleared": true,
+      "failure": "",
+      "region": "border",
+      "run": 64,
+      "seed": 2026102563
+    },
+    {
+      "battles": [
+        {
+          "depth": 0,
+          "error": "",
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 19,
+          "threat": "normal"
+        },
+        {
+          "depth": 2,
+          "error": "",
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 18,
+          "threat": "normal"
+        },
+        {
+          "depth": 4,
+          "error": "",
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 26,
+          "threat": "elite"
+        },
+        {
+          "depth": 5,
+          "error": "",
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 28,
+          "threat": "elite"
+        },
+        {
+          "depth": 7,
+          "error": "",
+          "outcome": "victory",
+          "rounds": 3,
+          "steps": 31,
+          "threat": "boss"
+        }
+      ],
+      "cleared": true,
+      "failure": "",
+      "region": "border",
+      "run": 65,
+      "seed": 2026102564
+    },
+    {
+      "battles": [
+        {
+          "depth": 0,
+          "error": "",
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 19,
+          "threat": "normal"
+        },
+        {
+          "depth": 2,
+          "error": "",
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 19,
+          "threat": "normal"
+        },
+        {
+          "depth": 4,
+          "error": "",
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 28,
+          "threat": "elite"
+        },
+        {
+          "depth": 5,
+          "error": "",
+          "outcome": "victory",
+          "rounds": 3,
+          "steps": 33,
+          "threat": "elite"
+        },
+        {
+          "depth": 7,
+          "error": "",
+          "outcome": "gameover",
+          "rounds": 2,
+          "steps": 22,
+          "threat": "boss"
+        }
+      ],
+      "cleared": false,
+      "failure": "gameover",
+      "region": "border",
+      "run": 66,
+      "seed": 2026102565
+    },
+    {
+      "battles": [
+        {
+          "depth": 0,
+          "error": "",
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 19,
+          "threat": "normal"
+        },
+        {
+          "depth": 2,
+          "error": "",
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 19,
+          "threat": "normal"
+        },
+        {
+          "depth": 4,
+          "error": "",
+          "outcome": "victory",
+          "rounds": 3,
+          "steps": 33,
+          "threat": "elite"
+        },
+        {
+          "depth": 6,
+          "error": "",
+          "outcome": "gameover",
+          "rounds": 3,
+          "steps": 42,
+          "threat": "boss"
+        }
+      ],
+      "cleared": false,
+      "failure": "gameover",
+      "region": "border",
+      "run": 67,
+      "seed": 2026102566
+    },
+    {
+      "battles": [
+        {
+          "depth": 0,
+          "error": "",
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 19,
+          "threat": "normal"
+        },
+        {
+          "depth": 2,
+          "error": "",
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 19,
+          "threat": "normal"
+        },
+        {
+          "depth": 4,
+          "error": "",
+          "outcome": "victory",
+          "rounds": 3,
+          "steps": 34,
+          "threat": "elite"
+        },
+        {
+          "depth": 6,
+          "error": "",
+          "outcome": "victory",
+          "rounds": 3,
+          "steps": 31,
+          "threat": "boss"
+        }
+      ],
+      "cleared": true,
+      "failure": "",
+      "region": "border",
+      "run": 68,
+      "seed": 2026102567
+    },
+    {
+      "battles": [
+        {
+          "depth": 0,
+          "error": "",
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 17,
+          "threat": "normal"
+        },
+        {
+          "depth": 2,
+          "error": "",
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 19,
+          "threat": "normal"
+        },
+        {
+          "depth": 4,
+          "error": "",
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 29,
+          "threat": "elite"
+        },
+        {
+          "depth": 6,
+          "error": "",
+          "outcome": "victory",
+          "rounds": 3,
+          "steps": 34,
+          "threat": "boss"
+        }
+      ],
+      "cleared": true,
+      "failure": "",
+      "region": "border",
+      "run": 69,
+      "seed": 2026102568
+    },
+    {
+      "battles": [
+        {
+          "depth": 0,
+          "error": "",
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 16,
+          "threat": "normal"
+        },
+        {
+          "depth": 2,
+          "error": "",
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 19,
+          "threat": "normal"
+        },
+        {
+          "depth": 5,
+          "error": "",
+          "outcome": "victory",
+          "rounds": 3,
+          "steps": 31,
+          "threat": "boss"
+        }
+      ],
+      "cleared": true,
+      "failure": "",
+      "region": "border",
+      "run": 70,
+      "seed": 2026102569
+    },
+    {
+      "battles": [
+        {
+          "depth": 0,
+          "error": "",
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 19,
+          "threat": "normal"
+        },
+        {
+          "depth": 2,
+          "error": "",
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 16,
+          "threat": "normal"
+        },
+        {
+          "depth": 4,
+          "error": "",
+          "outcome": "victory",
+          "rounds": 3,
+          "steps": 30,
+          "threat": "elite"
+        },
+        {
+          "depth": 6,
+          "error": "",
+          "outcome": "victory",
+          "rounds": 3,
+          "steps": 35,
+          "threat": "boss"
+        }
+      ],
+      "cleared": true,
+      "failure": "",
+      "region": "border",
+      "run": 71,
+      "seed": 2026102570
+    },
+    {
+      "battles": [
+        {
+          "depth": 0,
+          "error": "",
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 19,
+          "threat": "normal"
+        },
+        {
+          "depth": 2,
+          "error": "",
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 18,
+          "threat": "normal"
+        },
+        {
+          "depth": 4,
+          "error": "",
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 28,
+          "threat": "elite"
+        },
+        {
+          "depth": 5,
+          "error": "",
+          "outcome": "victory",
+          "rounds": 3,
+          "steps": 31,
+          "threat": "elite"
+        },
+        {
+          "depth": 7,
+          "error": "",
+          "outcome": "victory",
+          "rounds": 3,
+          "steps": 33,
+          "threat": "boss"
+        }
+      ],
+      "cleared": true,
+      "failure": "",
+      "region": "border",
+      "run": 72,
+      "seed": 2026102571
+    },
+    {
+      "battles": [
+        {
+          "depth": 0,
+          "error": "",
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 16,
+          "threat": "normal"
+        },
+        {
+          "depth": 2,
+          "error": "",
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 20,
+          "threat": "normal"
+        },
+        {
+          "depth": 4,
+          "error": "",
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 27,
+          "threat": "elite"
+        },
+        {
+          "depth": 6,
+          "error": "",
+          "outcome": "victory",
+          "rounds": 3,
+          "steps": 31,
+          "threat": "boss"
+        }
+      ],
+      "cleared": true,
+      "failure": "",
+      "region": "border",
+      "run": 73,
+      "seed": 2026102572
+    },
+    {
+      "battles": [
+        {
+          "depth": 0,
+          "error": "",
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 19,
+          "threat": "normal"
+        },
+        {
+          "depth": 2,
+          "error": "",
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 19,
+          "threat": "normal"
+        },
+        {
+          "depth": 4,
+          "error": "",
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 28,
+          "threat": "elite"
+        },
+        {
+          "depth": 6,
+          "error": "",
+          "outcome": "gameover",
+          "rounds": 4,
+          "steps": 46,
+          "threat": "boss"
+        }
+      ],
+      "cleared": false,
+      "failure": "gameover",
+      "region": "border",
+      "run": 74,
+      "seed": 2026102573
+    },
+    {
+      "battles": [
+        {
+          "depth": 0,
+          "error": "",
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 19,
+          "threat": "normal"
+        },
+        {
+          "depth": 2,
+          "error": "",
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 18,
+          "threat": "normal"
+        },
+        {
+          "depth": 5,
+          "error": "",
+          "outcome": "victory",
+          "rounds": 3,
+          "steps": 37,
+          "threat": "boss"
+        }
+      ],
+      "cleared": true,
+      "failure": "",
+      "region": "border",
+      "run": 75,
+      "seed": 2026102574
+    },
+    {
+      "battles": [
+        {
+          "depth": 0,
+          "error": "",
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 19,
+          "threat": "normal"
+        },
+        {
+          "depth": 2,
+          "error": "",
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 19,
+          "threat": "normal"
+        },
+        {
+          "depth": 4,
+          "error": "",
+          "outcome": "victory",
+          "rounds": 3,
+          "steps": 31,
+          "threat": "elite"
+        },
+        {
+          "depth": 6,
+          "error": "",
+          "outcome": "victory",
+          "rounds": 3,
+          "steps": 36,
+          "threat": "boss"
+        }
+      ],
+      "cleared": true,
+      "failure": "",
+      "region": "border",
+      "run": 76,
+      "seed": 2026102575
+    },
+    {
+      "battles": [
+        {
+          "depth": 0,
+          "error": "",
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 17,
+          "threat": "normal"
+        },
+        {
+          "depth": 2,
+          "error": "",
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 18,
+          "threat": "normal"
+        },
+        {
+          "depth": 5,
+          "error": "",
+          "outcome": "victory",
+          "rounds": 3,
+          "steps": 33,
+          "threat": "boss"
+        }
+      ],
+      "cleared": true,
+      "failure": "",
+      "region": "border",
+      "run": 77,
+      "seed": 2026102576
+    },
+    {
+      "battles": [
+        {
+          "depth": 0,
+          "error": "",
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 16,
+          "threat": "normal"
+        },
+        {
+          "depth": 2,
+          "error": "",
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 19,
+          "threat": "normal"
+        },
+        {
+          "depth": 4,
+          "error": "",
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 28,
+          "threat": "elite"
+        },
+        {
+          "depth": 6,
+          "error": "",
+          "outcome": "victory",
+          "rounds": 3,
+          "steps": 35,
+          "threat": "boss"
+        }
+      ],
+      "cleared": true,
+      "failure": "",
+      "region": "border",
+      "run": 78,
+      "seed": 2026102577
+    },
+    {
+      "battles": [
+        {
+          "depth": 0,
+          "error": "",
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 19,
+          "threat": "normal"
+        },
+        {
+          "depth": 2,
+          "error": "",
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 19,
+          "threat": "normal"
+        },
+        {
+          "depth": 4,
+          "error": "",
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 28,
+          "threat": "elite"
+        },
+        {
+          "depth": 6,
+          "error": "",
+          "outcome": "victory",
+          "rounds": 3,
+          "steps": 42,
+          "threat": "boss"
+        }
+      ],
+      "cleared": true,
+      "failure": "",
+      "region": "border",
+      "run": 79,
+      "seed": 2026102578
+    },
+    {
+      "battles": [
+        {
+          "depth": 0,
+          "error": "",
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 19,
+          "threat": "normal"
+        },
+        {
+          "depth": 2,
+          "error": "",
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 20,
+          "threat": "normal"
+        },
+        {
+          "depth": 4,
+          "error": "",
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 26,
+          "threat": "elite"
+        },
+        {
+          "depth": 6,
+          "error": "",
+          "outcome": "victory",
+          "rounds": 4,
+          "steps": 38,
+          "threat": "boss"
+        }
+      ],
+      "cleared": true,
+      "failure": "",
+      "region": "border",
+      "run": 80,
+      "seed": 2026102579
+    },
+    {
+      "battles": [
+        {
+          "depth": 0,
+          "error": "",
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 19,
+          "threat": "normal"
+        },
+        {
+          "depth": 2,
+          "error": "",
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 18,
+          "threat": "normal"
+        },
+        {
+          "depth": 4,
+          "error": "",
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 28,
+          "threat": "elite"
+        },
+        {
+          "depth": 5,
+          "error": "",
+          "outcome": "victory",
+          "rounds": 3,
+          "steps": 32,
+          "threat": "elite"
+        },
+        {
+          "depth": 7,
+          "error": "",
+          "outcome": "victory",
+          "rounds": 3,
+          "steps": 40,
+          "threat": "boss"
+        }
+      ],
+      "cleared": true,
+      "failure": "",
+      "region": "border",
+      "run": 81,
+      "seed": 2026102580
+    },
+    {
+      "battles": [
+        {
+          "depth": 0,
+          "error": "",
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 18,
+          "threat": "normal"
+        },
+        {
+          "depth": 2,
+          "error": "",
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 18,
+          "threat": "normal"
+        },
+        {
+          "depth": 4,
+          "error": "",
+          "outcome": "victory",
+          "rounds": 3,
+          "steps": 34,
+          "threat": "elite"
+        },
+        {
+          "depth": 6,
+          "error": "",
+          "outcome": "victory",
+          "rounds": 4,
+          "steps": 47,
+          "threat": "boss"
+        }
+      ],
+      "cleared": true,
+      "failure": "",
+      "region": "border",
+      "run": 82,
+      "seed": 2026102581
+    },
+    {
+      "battles": [
+        {
+          "depth": 0,
+          "error": "",
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 16,
+          "threat": "normal"
+        },
+        {
+          "depth": 2,
+          "error": "",
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 22,
+          "threat": "normal"
+        },
+        {
+          "depth": 4,
+          "error": "",
+          "outcome": "victory",
+          "rounds": 3,
+          "steps": 32,
+          "threat": "elite"
+        },
+        {
+          "depth": 5,
+          "error": "",
+          "outcome": "victory",
+          "rounds": 3,
+          "steps": 31,
+          "threat": "elite"
+        },
+        {
+          "depth": 7,
+          "error": "",
+          "outcome": "victory",
+          "rounds": 4,
+          "steps": 33,
+          "threat": "boss"
+        }
+      ],
+      "cleared": true,
+      "failure": "",
+      "region": "border",
+      "run": 83,
+      "seed": 2026102582
+    },
+    {
+      "battles": [
+        {
+          "depth": 0,
+          "error": "",
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 19,
+          "threat": "normal"
+        },
+        {
+          "depth": 2,
+          "error": "",
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 19,
+          "threat": "normal"
+        },
+        {
+          "depth": 5,
+          "error": "",
+          "outcome": "victory",
+          "rounds": 3,
+          "steps": 33,
+          "threat": "boss"
+        }
+      ],
+      "cleared": true,
+      "failure": "",
+      "region": "border",
+      "run": 84,
+      "seed": 2026102583
+    },
+    {
+      "battles": [
+        {
+          "depth": 0,
+          "error": "",
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 20,
+          "threat": "normal"
+        },
+        {
+          "depth": 2,
+          "error": "",
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 20,
+          "threat": "normal"
+        },
+        {
+          "depth": 5,
+          "error": "",
+          "outcome": "victory",
+          "rounds": 3,
+          "steps": 32,
+          "threat": "boss"
+        }
+      ],
+      "cleared": true,
+      "failure": "",
+      "region": "border",
+      "run": 85,
+      "seed": 2026102584
+    },
+    {
+      "battles": [
+        {
+          "depth": 0,
+          "error": "",
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 19,
+          "threat": "normal"
+        },
+        {
+          "depth": 2,
+          "error": "",
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 18,
+          "threat": "normal"
+        },
+        {
+          "depth": 4,
+          "error": "",
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 27,
+          "threat": "elite"
+        },
+        {
+          "depth": 5,
+          "error": "",
+          "outcome": "victory",
+          "rounds": 3,
+          "steps": 34,
+          "threat": "elite"
+        },
+        {
+          "depth": 7,
+          "error": "",
+          "outcome": "victory",
+          "rounds": 4,
+          "steps": 38,
+          "threat": "boss"
+        }
+      ],
+      "cleared": true,
+      "failure": "",
+      "region": "border",
+      "run": 86,
+      "seed": 2026102585
+    },
+    {
+      "battles": [
+        {
+          "depth": 0,
+          "error": "",
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 18,
+          "threat": "normal"
+        },
+        {
+          "depth": 2,
+          "error": "",
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 20,
+          "threat": "normal"
+        },
+        {
+          "depth": 4,
+          "error": "",
+          "outcome": "victory",
+          "rounds": 3,
+          "steps": 34,
+          "threat": "elite"
+        },
+        {
+          "depth": 6,
+          "error": "",
+          "outcome": "gameover",
+          "rounds": 4,
+          "steps": 50,
+          "threat": "boss"
+        }
+      ],
+      "cleared": false,
+      "failure": "gameover",
+      "region": "border",
+      "run": 87,
+      "seed": 2026102586
+    },
+    {
+      "battles": [
+        {
+          "depth": 0,
+          "error": "",
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 20,
+          "threat": "normal"
+        },
+        {
+          "depth": 2,
+          "error": "",
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 19,
+          "threat": "normal"
+        },
+        {
+          "depth": 5,
+          "error": "",
+          "outcome": "victory",
+          "rounds": 3,
+          "steps": 31,
+          "threat": "boss"
+        }
+      ],
+      "cleared": true,
+      "failure": "",
+      "region": "border",
+      "run": 88,
+      "seed": 2026102587
+    },
+    {
+      "battles": [
+        {
+          "depth": 0,
+          "error": "",
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 18,
+          "threat": "normal"
+        },
+        {
+          "depth": 2,
+          "error": "",
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 17,
+          "threat": "normal"
+        },
+        {
+          "depth": 4,
+          "error": "",
+          "outcome": "victory",
+          "rounds": 3,
+          "steps": 32,
+          "threat": "elite"
+        },
+        {
+          "depth": 5,
+          "error": "",
+          "outcome": "victory",
+          "rounds": 3,
+          "steps": 32,
+          "threat": "elite"
+        },
+        {
+          "depth": 7,
+          "error": "",
+          "outcome": "gameover",
+          "rounds": 2,
+          "steps": 20,
+          "threat": "boss"
+        }
+      ],
+      "cleared": false,
+      "failure": "gameover",
+      "region": "border",
+      "run": 89,
+      "seed": 2026102588
+    },
+    {
+      "battles": [
+        {
+          "depth": 0,
+          "error": "",
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 16,
+          "threat": "normal"
+        },
+        {
+          "depth": 2,
+          "error": "",
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 19,
+          "threat": "normal"
+        },
+        {
+          "depth": 4,
+          "error": "",
+          "outcome": "victory",
+          "rounds": 3,
+          "steps": 32,
+          "threat": "elite"
+        },
+        {
+          "depth": 6,
+          "error": "",
+          "outcome": "victory",
+          "rounds": 4,
+          "steps": 40,
+          "threat": "boss"
+        }
+      ],
+      "cleared": true,
+      "failure": "",
+      "region": "border",
+      "run": 90,
+      "seed": 2026102589
+    },
+    {
+      "battles": [
+        {
+          "depth": 0,
+          "error": "",
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 20,
+          "threat": "normal"
+        },
+        {
+          "depth": 2,
+          "error": "",
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 19,
+          "threat": "normal"
+        },
+        {
+          "depth": 5,
+          "error": "",
+          "outcome": "victory",
+          "rounds": 3,
+          "steps": 31,
+          "threat": "boss"
+        }
+      ],
+      "cleared": true,
+      "failure": "",
+      "region": "border",
+      "run": 91,
+      "seed": 2026102590
+    },
+    {
+      "battles": [
+        {
+          "depth": 0,
+          "error": "",
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 19,
+          "threat": "normal"
+        },
+        {
+          "depth": 2,
+          "error": "",
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 16,
+          "threat": "normal"
+        },
+        {
+          "depth": 5,
+          "error": "",
+          "outcome": "victory",
+          "rounds": 3,
+          "steps": 34,
+          "threat": "boss"
+        }
+      ],
+      "cleared": true,
+      "failure": "",
+      "region": "border",
+      "run": 92,
+      "seed": 2026102591
+    },
+    {
+      "battles": [
+        {
+          "depth": 0,
+          "error": "",
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 19,
+          "threat": "normal"
+        },
+        {
+          "depth": 2,
+          "error": "",
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 19,
+          "threat": "normal"
+        },
+        {
+          "depth": 4,
+          "error": "",
+          "outcome": "victory",
+          "rounds": 3,
+          "steps": 32,
+          "threat": "elite"
+        },
+        {
+          "depth": 6,
+          "error": "",
+          "outcome": "victory",
+          "rounds": 3,
+          "steps": 35,
+          "threat": "boss"
+        }
+      ],
+      "cleared": true,
+      "failure": "",
+      "region": "border",
+      "run": 93,
+      "seed": 2026102592
+    },
+    {
+      "battles": [
+        {
+          "depth": 0,
+          "error": "",
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 19,
+          "threat": "normal"
+        },
+        {
+          "depth": 2,
+          "error": "",
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 18,
+          "threat": "normal"
+        },
+        {
+          "depth": 4,
+          "error": "",
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 27,
+          "threat": "elite"
+        },
+        {
+          "depth": 5,
+          "error": "",
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 25,
+          "threat": "elite"
+        },
+        {
+          "depth": 7,
+          "error": "",
+          "outcome": "victory",
+          "rounds": 3,
+          "steps": 35,
+          "threat": "boss"
+        }
+      ],
+      "cleared": true,
+      "failure": "",
+      "region": "border",
+      "run": 94,
+      "seed": 2026102593
+    },
+    {
+      "battles": [
+        {
+          "depth": 0,
+          "error": "",
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 19,
+          "threat": "normal"
+        },
+        {
+          "depth": 2,
+          "error": "",
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 18,
+          "threat": "normal"
+        },
+        {
+          "depth": 4,
+          "error": "",
+          "outcome": "victory",
+          "rounds": 3,
+          "steps": 32,
+          "threat": "elite"
+        },
+        {
+          "depth": 5,
+          "error": "",
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 26,
+          "threat": "elite"
+        },
+        {
+          "depth": 7,
+          "error": "",
+          "outcome": "victory",
+          "rounds": 3,
+          "steps": 33,
+          "threat": "boss"
+        }
+      ],
+      "cleared": true,
+      "failure": "",
+      "region": "border",
+      "run": 95,
+      "seed": 2026102594
+    },
+    {
+      "battles": [
+        {
+          "depth": 0,
+          "error": "",
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 19,
+          "threat": "normal"
+        },
+        {
+          "depth": 2,
+          "error": "",
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 19,
+          "threat": "normal"
+        },
+        {
+          "depth": 4,
+          "error": "",
+          "outcome": "victory",
+          "rounds": 3,
+          "steps": 35,
+          "threat": "elite"
+        },
+        {
+          "depth": 6,
+          "error": "",
+          "outcome": "victory",
+          "rounds": 3,
+          "steps": 40,
+          "threat": "boss"
+        }
+      ],
+      "cleared": true,
+      "failure": "",
+      "region": "border",
+      "run": 96,
+      "seed": 2026102595
+    },
+    {
+      "battles": [
+        {
+          "depth": 0,
+          "error": "",
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 19,
+          "threat": "normal"
+        },
+        {
+          "depth": 2,
+          "error": "",
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 19,
+          "threat": "normal"
+        },
+        {
+          "depth": 5,
+          "error": "",
+          "outcome": "victory",
+          "rounds": 3,
+          "steps": 32,
+          "threat": "boss"
+        }
+      ],
+      "cleared": true,
+      "failure": "",
+      "region": "border",
+      "run": 97,
+      "seed": 2026102596
+    },
+    {
+      "battles": [
+        {
+          "depth": 0,
+          "error": "",
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 18,
+          "threat": "normal"
+        },
+        {
+          "depth": 2,
+          "error": "",
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 19,
+          "threat": "normal"
+        },
+        {
+          "depth": 5,
+          "error": "",
+          "outcome": "victory",
+          "rounds": 3,
+          "steps": 34,
+          "threat": "boss"
+        }
+      ],
+      "cleared": true,
+      "failure": "",
+      "region": "border",
+      "run": 98,
+      "seed": 2026102597
+    },
+    {
+      "battles": [
+        {
+          "depth": 0,
+          "error": "",
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 19,
+          "threat": "normal"
+        },
+        {
+          "depth": 2,
+          "error": "",
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 16,
+          "threat": "normal"
+        },
+        {
+          "depth": 4,
+          "error": "",
+          "outcome": "victory",
+          "rounds": 3,
+          "steps": 32,
+          "threat": "elite"
+        },
+        {
+          "depth": 6,
+          "error": "",
+          "outcome": "victory",
+          "rounds": 3,
+          "steps": 41,
+          "threat": "boss"
+        }
+      ],
+      "cleared": true,
+      "failure": "",
+      "region": "border",
+      "run": 99,
+      "seed": 2026102598
+    },
+    {
+      "battles": [
+        {
+          "depth": 0,
+          "error": "",
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 20,
+          "threat": "normal"
+        },
+        {
+          "depth": 2,
+          "error": "",
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 19,
+          "threat": "normal"
+        },
+        {
+          "depth": 4,
+          "error": "",
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 30,
+          "threat": "elite"
+        },
+        {
+          "depth": 5,
+          "error": "",
+          "outcome": "victory",
+          "rounds": 3,
+          "steps": 34,
+          "threat": "elite"
+        },
+        {
+          "depth": 7,
+          "error": "",
+          "outcome": "victory",
+          "rounds": 3,
+          "steps": 38,
+          "threat": "boss"
+        }
+      ],
+      "cleared": true,
+      "failure": "",
+      "region": "border",
+      "run": 100,
+      "seed": 2026102599
+    }
+  ],
+  "runs": 100
+}
