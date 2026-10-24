@@ -22,6 +22,7 @@ var ui: Control
 var party_menu_open = false
 var menu_tab = "角色"
 var menu_character = "hero"
+var equipment_view_states: Dictionary = {}
 var sidebar: VBoxContainer
 var footer: VBoxContainer
 var top_label: Label
@@ -1091,7 +1092,7 @@ func show_party_menu(tab: String="详情",character_id: String=""):
   tabs.add_child(entry)
  var columns=HBoxContainer.new()
  columns.size_flags_vertical=Control.SIZE_EXPAND_FILL
- columns.add_theme_constant_override("separation",24)
+ columns.add_theme_constant_override("separation",16 if tab=="装备" else 24)
  frame.add_child(columns)
  var roster_scroll=ScrollContainer.new()
  roster_scroll.name="CharacterRosterScroll"
@@ -1109,6 +1110,13 @@ func show_party_menu(tab: String="详情",character_id: String=""):
   var entry=character_card(current,func():show_party_menu(menu_tab,id),id==menu_character)
   entry.add_theme_font_size_override("font_size",16)
   roster_list.add_child(entry)
+ if tab=="装备":
+  var preview=preload("res://game/equipment_preview.gd").new()
+  preview.font=game_font
+  columns.add_child(preview)
+  preview.show_character(unit.id,campaign.visual_profile(unit.id),equipment_view_states.get(unit.id,{}))
+  var preview_id=unit.id
+  preview.view_changed.connect(func(state):equipment_view_states[preview_id]=state)
  var right=VBoxContainer.new()
  right.size_flags_horizontal=Control.SIZE_EXPAND_FILL
  right.add_theme_constant_override("separation",12)
@@ -1118,7 +1126,7 @@ func show_party_menu(tab: String="详情",character_id: String=""):
  right.add_child(header)
  var portrait=TextureRect.new()
  portrait.texture=portraits.portrait(unit.id,campaign.visual_profile(unit.id))
- portrait.custom_minimum_size=Vector2(112,112)
+ portrait.custom_minimum_size=Vector2(80,80) if tab=="装备" else Vector2(112,112)
  portrait.expand_mode=TextureRect.EXPAND_IGNORE_SIZE
  portrait.stretch_mode=TextureRect.STRETCH_KEEP_ASPECT_CENTERED
  header.add_child(portrait)

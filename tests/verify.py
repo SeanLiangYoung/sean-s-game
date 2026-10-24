@@ -13,7 +13,7 @@ if not engine.exists():
 if not engine:
     sys.exit('Godot 4.7.2 is required.')
 checks = 0
-suites = ('run', 'edges', 'campaign', 'integration', 'persistence', 'ui', 'menu', 'art', 'presentation', 'characters', 'equipment', 'routes', 'atlas', 'actions', 'professions', 'profession_combat', 'profession_ui', 'equipment_visual', 'equipment_appearance_ui', 'equipment_shapes', 'character_pages')
+suites = ('run', 'edges', 'campaign', 'integration', 'persistence', 'ui', 'menu', 'art', 'presentation', 'characters', 'equipment', 'routes', 'atlas', 'actions', 'professions', 'profession_combat', 'profession_ui', 'equipment_visual', 'equipment_appearance_ui', 'equipment_shapes', 'character_pages', 'equipment_preview')
 for suite in suites:
     result = subprocess.run([str(engine), '--headless', '--path', str(root),
                              '--script', f'res://tests/{suite}.gd'],
@@ -36,4 +36,11 @@ match = re.search(r'CHECKS: (\d+) FAILURES: 0', render.stdout)
 if render.returncode or not match or 'ERROR:' in render.stdout:
     sys.exit(1)
 checks += int(match.group(1))
-print(f'PASS: {checks} checks across {len(suites)+1} suites; scene smoke and native appearance rendering passed.')
+preview_render = subprocess.run([str(engine), '--path', str(root), '--script', 'res://tests/equipment_preview_render.gd'],
+                                text=True, stdout=subprocess.PIPE, stderr=subprocess.STDOUT, timeout=40)
+print('[equipment_preview_render]\n' + preview_render.stdout, end='')
+match = re.search(r'CHECKS: (\d+) FAILURES: 0', preview_render.stdout)
+if preview_render.returncode or not match or 'ERROR:' in preview_render.stdout:
+    sys.exit(1)
+checks += int(match.group(1))
+print(f'PASS: {checks} checks across {len(suites)+2} suites; scene smoke and native appearance rendering passed.')
