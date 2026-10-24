@@ -1,4 +1,5 @@
 extends RefCounted
+const Characters=preload("res://game/characters.gd")
 const Jobs=preload("res://game/professions.gd")
 
 static func stat_line(stats: Dictionary) -> String:
@@ -21,14 +22,16 @@ static func skill_details(host,parent: Control,unit: Dictionary):
  host.detail_section(parent,"当前技能")
  for id in Jobs.skills_for(unit):
   var skill=Jobs.ALL_SKILLS[id]
-  parent.add_child(host.text_label(skill.name+" · %d点 / %d法力 · 射程%d"%[skill.ap,skill.mp+relic_rules.skill_relic_cost(unit,id),skill.range],17,host.TEAL))
+  parent.add_child(host.text_label(skill.name+" · %d点 / %d法力 · 射程%d"%[skill.ap,relic_rules.skill_mana_cost(unit,id),relic_rules.skill_range(unit,id)],17,host.TEAL))
   var description=Jobs.rank_description(unit,id)
-  if skill.get("base",id)=="heal":
+  if skill.effect=="heal":
    var stats=host.campaign.character_stats(unit.id)
-   var amount=26+Jobs.skill_bonus(unit,id)+stats.heal_bonus+(6 if unit.profession=="medic" else 0)+(8 if "fury" in unit.get("learned",[]) else 0)
+   var base=18 if skill.get("base",id)=="barrier" else 26
+   var amount=base+Jobs.skill_bonus(unit,id)+stats.heal_bonus+(6 if unit.profession=="medic" else 0)+(8 if "fury" in unit.get("learned",[]) else 0)
    amount+=int(relic_rules.relic_modifier(unit,"heal"))
    amount=int(floor(amount*maxf(0.0,1.0+relic_rules.relic_modifier(unit,"healing_pct")/100.0)))
-   description="恢复 %d 生命（基础26，已计入职业、装备及遗物增益与代价）"%amount
+   description="恢复 %d 生命（以自身为目标，已计入职业、装备及遗物，条件天赋另见人物详情；基础%d）"%[amount,base]
+   if skill.get("base",id)=="barrier":description+="；给予护盾吸收%d伤害"%[10+Jobs.skill_bonus(unit,id)+stats.shield_power+int(relic_rules.relic_modifier(unit,"shield_power"))]
   parent.add_child(host.text_label(description+"；每次个人行动限用一次",15,host.MUTED))
  for id in unit.get("learned",[]):
   if id in ["fury","focus"]:
@@ -46,46 +49,30 @@ static func role_page(host,parent: Control,unit: Dictionary):
  parent.add_child(host.text_label("职业专精："+Jobs.JOBS[unit.profession].specialty,16,host.TEAL))
  if not stats.get("adaptation",[]).is_empty():parent.add_child(host.text_label("装备适应性："+"；".join(stats.adaptation),16,host.GOLD))
  if unit.profession=="hero":aura_preview(host,parent,unit)
+ var character=Characters.definition(unit)
+ if not character.is_empty():
+  host.detail_section(parent,"专属天赋 · "+character.talent)
+  parent.add_child(host.text_label(character.effect,17,host.TEAL))
+  host.detail_section(parent,"人物背景 · "+character.title)
+  parent.add_child(host.text_label(character.story,17,host.MUTED))
+  parent.add_child(host.text_label("遗物搭配："+character.relics,16,host.GOLD))
+  if unit.profession!=character.job:parent.add_child(host.text_label("天赋随人物保留；指定技能需当前职业可用才会触发。",15,host.MUTED))
  host.detail_section(parent,"生效的遗物")
  host.show_relic_details(parent,true)
 
 static func skills_page(host,parent: Control,unit: Dictionary):
  parent.add_child(host.text_label("职业技能树 · 可用经验 %d"%unit.get("xp",0),22,host.GOLD))
- parent.add_child(host.text_label("战胜敌人后，上阵幸存者平分经验；击杀者每次额外获得15经验。解锁与强化均消耗经验，最高3级。",15,host.MUTED))
- parent.add_child(host.text_label("基础技能达到2级后，可选择任一进阶分支；两条分支都可学习。转职保留投入，主角可学习所有职业。",15,host.MUTED))
- var jobs=Jobs.JOBS.keys() if unit.profession=="hero" else [unit.profession]
- for job_id in jobs:
-  host.detail_section(parent,Jobs.JOBS[job_id].name+" · 技能树")
-  var root=Jobs.JOBS[job_id].skills[0]
-  var branches=Jobs.JOBS[job_id].skills
-  parent.add_child(host.text_label(Jobs.ALL_SKILLS[root].name+" 2级 → "+Jobs.ALL_SKILLS[branches[1]].name+" / "+Jobs.ALL_SKILLS[branches[2]].name,16,host.TEAL))
-  for skill_id in Jobs.JOBS[job_id].skills:
-   var id=skill_id
-   var skill=Jobs.ALL_SKILLS[id]
-   var rank=Jobs.skill_rank(unit,id)
-   var root_id=Jobs.prerequisite(id)
-   var title=("◆ 基础 · " if root_id=="" else "↳ 进阶 · ")+skill.name+" · "+("未解锁" if rank==0 else "%d / 3级"%rank)
-   parent.add_child(host.text_label(title,19,host.TEAL if rank>0 else host.MUTED))
-   parent.add_child(host.text_label("%d行动点 / %d法力 · 射程%d"%[skill.ap,skill.mp,skill.range],15,host.MUTED))
-   if rank>0:parent.add_child(host.text_label("当前："+Jobs.rank_description(unit,id),15))
-   if rank<3:parent.add_child(host.text_label(("解锁效果：" if rank==0 else "下一级：")+Jobs.rank_description(unit,id,rank+1),15,host.TEAL))
-   if root_id!="":parent.add_child(host.text_label("前置："+Jobs.ALL_SKILLS[root_id].name+" 2级",14,host.MUTED))
-   var reason=Jobs.training_reason(unit,id)
-   if host.battle!=null or host.campaign.phase not in ["camp","world"]:reason="当前阶段无法加点"
-   elif unit.hp<=0:reason="已阵亡，无法加点"
-   var label=("解锁" if rank==0 else "强化")+skill.name+" · %d经验"%Jobs.skill_cost(unit,id)
-   if rank>=3:label=skill.name+" · 已满级"
-   elif reason!="":label+=" · "+reason
-   var train=host.button(label,func():
-    if host.campaign.train_skill(unit.id,id):
-     host.refresh_ui();host.show_party_menu("技能",unit.id))
-   train.disabled=reason!=""
-   parent.add_child(train)
+ parent.add_child(host.text_label("点击节点查看、解锁或强化 · 基础2级开放进阶 · 最高3级 · 同职业共享树，等级独立",14,host.MUTED))
+ var tree=preload("res://game/skill_tree.gd").new()
+ parent.add_child(tree)
+ tree.setup(host,unit)
+ var builds={"hero":"秘法共鸣＋裂纹符核：强化战技；军心回响维持法力。","blade":"血契共鸣＋收割骨笛：残血增伤、吸血、击杀回蓝。","ranger":"追猎共鸣＋静观瞳石：标记后全队集火，击杀衔接行动。","medic":"生息共鸣＋护生石：治疗续航，灵泉引流支援队友。","engineer":"遗械共鸣＋缚潮齿轮：强化机关与首次命中。","warden":"守誓共鸣＋守誓铜铃：自动护盾、盾下增伤与援护。"}
+ parent.add_child(host.text_label("搭配思路："+builds.get(unit.profession,""),15,host.TEAL))
  skill_details(host,parent,unit)
  host.detail_section(parent,"技能书 · 为当前角色学习")
- parent.add_child(host.text_label("旧存档中的技能书仍可直接学习；职业技能书不再售卖，新增技能通过经验解锁。",15,host.MUTED))
+ parent.add_child(host.text_label("通用被动技能书可从商店与事件获得；职业技能通过经验解锁，旧书仍可学习。",15,host.MUTED))
  if host.campaign.books.is_empty():
-  parent.add_child(host.text_label("暂无旧技能书。职业技能请在上方使用经验解锁。",16,host.MUTED))
+  parent.add_child(host.text_label("暂无技能书。职业技能请在上方使用经验解锁。",16,host.MUTED))
  for i in host.campaign.books.size():
   var book_index=i
   var book_id=host.campaign.books[i]
@@ -104,19 +91,13 @@ static func skills_page(host,parent: Control,unit: Dictionary):
   parent.add_child(learn)
 
 static func aura_preview(host,parent: Control,unit: Dictionary):
- var stats=host.campaign.character_stats(unit.id)
- var state="上阵生效 · 留守不生效"
- if host.battle!=null:
-  var deployed=host.battle.find_actor(unit.id)
-  state="本场生效" if not deployed.is_empty() and deployed.hp>0 else "本场留守，不生效"
- elif unit.hp<=0:state="已阵亡，不生效"
- parent.add_child(host.text_label("主角光环 · "+Jobs.aura_for(stats)+"\n"+state,16,host.GOLD))
+ parent.add_child(host.text_label("团队能力来自全队遗物；个人遗物只影响佩戴者。装备只提供基础属性。",16,host.GOLD))
 
 static func profession_page(host,parent: Control,unit: Dictionary):
  parent.add_child(host.text_label("身份："+unit.identity+" · 当前职业："+unit.role,19,host.TEAL))
  parent.add_child(host.text_label(Jobs.JOBS[unit.profession].specialty,16))
  if unit.profession=="hero":
-  parent.add_child(host.text_label("沈烬专属职业 · 可学习、使用所有职业技能；不享受其他职业专精。",16,host.MUTED))
+  parent.add_child(host.text_label(unit.name+"的团长专属职业 · 可学习、使用所有职业技能；不享受其他职业专精。",16,host.MUTED))
   aura_preview(host,parent,unit)
   parent.add_child(host.button("查看主角技能 →",func():host.show_party_menu("技能",unit.id)))
   return
@@ -132,7 +113,7 @@ static func profession_page(host,parent: Control,unit: Dictionary):
   parent.add_child(host.text_label(job.specialty,15,host.TEAL))
   var candidate=unit.duplicate(true)
   candidate.profession=id
-  var after=Jobs.stats(candidate,host.campaign.equipment)
+  var after=host.campaign.stats_for(candidate,host.campaign.equipment)
   parent.add_child(host.text_label(comparison(before,after),15,host.MUTED))
   for skill_id in job.skills:
    var skill=Jobs.ALL_SKILLS[skill_id]
