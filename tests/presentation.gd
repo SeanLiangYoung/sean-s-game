@@ -11,6 +11,7 @@ func run():
  await process_frame
  await process_frame
  scene.campaign=load("res://game/campaign.gd").new("user://ashbound-presentation-tests.json")
+ scene.campaign.equip_item(2,"ranger")
  scene.campaign.depart()
  scene.show_deploy(0)
  scene.begin_battle(0)
@@ -67,6 +68,7 @@ func run():
  # A movement that spends the last AP can trigger shrinking and damage.
   scene.close_modal()
   scene.campaign=load("res://game/campaign.gd").new("user://ashbound-presentation-tests.json")
+  scene.campaign.equip_item(2,"ranger")
   scene.campaign.depart()
   scene.show_deploy(0)
   scene.begin_battle(0)
@@ -103,12 +105,12 @@ func run():
   scene.draw_battle()
   scene.perform_battle_action("skill",enemy.id)
   var bow_player=scene.presentation.source.find_child("AnimationPlayer",true,false)
-  check(bow_player.current_animation=="Bow_Draw","ranged skill draws bow before shooting")
+  check(bow_player.current_animation=="Equipment/Bow_Draw","ranged skill draws bow before shooting")
   check(not scene.presentation.projectile.visible,"skill projectile hidden before release")
   scene.presentation.advance(0.15)
   check(not scene.presentation.projectile.visible and scene.presentation.impact_count==0,"charge cannot show a projectile or impact early")
   scene.presentation.advance(0.6)
-  check(bow_player.current_animation=="Bow_Shoot","release transitions to shooting")
+  check(bow_player.current_animation=="Equipment/Bow_Shoot","release transitions to shooting")
   scene.presentation.advance(2)
   check(not scene.presentation.busy and scene.presentation.impact_count==1,"coarse skill frames finish with exactly one impact")
   scene.begin_battle(0)

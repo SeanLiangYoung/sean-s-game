@@ -355,13 +355,13 @@ func tide(parent: Node3D,radius: int,warning: bool):
  if warning:ring(root,Vector3(0,0.025,0),r,Color("d9a45e"),0.035,72)
  return root
 
-func character(parent: Node3D,pos: Vector3,color: Color,kind: String,active: bool) -> Node3D:
+func character(parent: Node3D,pos: Vector3,color: Color,kind: String,active: bool,profile: Dictionary={}) -> Node3D:
  var root=Node3D.new()
  root.position=pos
  root.name="Character_"+kind
  parent.add_child(root)
  var enemy=kind.begins_with("enemy")
- preload("res://game/character_visual.gd").create(root,kind)
+ preload("res://game/character_visual.gd").create(root,kind,profile)
  if active:ring(root,Vector3(0,0.035,0),0.43,Color("e1c88c"),0.045,40)
  else:ring(root,Vector3(0,0.025,0),0.34,Color("ab6a53") if enemy else Color("6faaa0"),0.018,32)
  root.rotation_degrees.y=-15 if enemy else 20

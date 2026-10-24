@@ -327,6 +327,15 @@ func restore_snapshot() -> bool:
  save_game()
  return true
 
+func visual_profile(character_id: String) -> Dictionary:
+ for unit in roster:
+  if unit.id!=character_id:continue
+  var profile={"appearance":unit.get("appearance",unit.id),"mainhand":"","offhand":"","armor":""}
+  for item in equipment:
+   if item.owner==character_id:profile[Professions.ITEMS[item.id].slot]=item.id
+  return profile
+ return {}
+
 func character_stats(character_id: String) -> Dictionary:
  for unit in roster:
   if unit.id==character_id:return Professions.stats(unit,equipment)

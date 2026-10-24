@@ -189,7 +189,7 @@ func clear_scene():
  world_party = null
 
 func make_pawn(pos: Vector3,color: Color,kind: String,active: bool = false) -> Node3D:
- var root=art.character(scene_root,pos,color,kind,active)
+ var root=art.character(scene_root,pos,color,kind,active,campaign.visual_profile(kind))
  pawn_nodes.append(root)
  return root
 
@@ -424,6 +424,8 @@ func separator(parent: Control):
  parent.add_child(h)
 
 func refresh_ui():
+ if battle==null and is_instance_valid(world_party):
+  preload("res://game/character_visual.gd").apply_loadout(world_party,campaign.visual_profile("hero"))
  refresh_atlas()
  empty_children(sidebar)
  empty_children(footer)
@@ -511,7 +513,7 @@ func character_card(unit: Dictionary,action: Callable,selected: bool=false,statu
  if state!="":title+="  /  "+state
  var card=button(title+"\n生命 %d/%d   法力 %d/%d"%[unit.hp,unit.max_hp,unit.mp,unit.max_mp],action,selected)
  card.name="CharacterCard_"+unit.id
- card.icon=portraits.portrait(unit.id)
+ card.icon=portraits.portrait(unit.id,campaign.visual_profile(unit.id))
  card.expand_icon=true
  card.clip_text=true
  card.add_theme_constant_override("icon_max_width",64)
@@ -1106,7 +1108,7 @@ func show_party_menu(tab: String="角色",character_id: String=""):
  details.add_theme_constant_override("separation",10)
  columns.add_child(details)
  var portrait=TextureRect.new()
- portrait.texture=portraits.portrait(unit.id)
+ portrait.texture=portraits.portrait(unit.id,campaign.visual_profile(unit.id))
  portrait.custom_minimum_size=Vector2(144,144)
  portrait.expand_mode=TextureRect.EXPAND_IGNORE_SIZE
  portrait.stretch_mode=TextureRect.STRETCH_KEEP_ASPECT_CENTERED
