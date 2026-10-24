@@ -20,16 +20,16 @@
 - World and battle UI retain existing click semantics.
 
 ## Task 1: Visual factory
-- [ ] Add failing art integration test: art factory produces scenery and actors without changing rule state.
-- [ ] Add game/art.gd plus terrain, vegetation, water and cloth shaders.
-- [ ] Build textured-color terrain, rocks, grass, trees, bridge and ruins; detailed articulated character meshes.
+- [x] Add failing art integration test: art factory produces scenery and actors without changing rule state.
+- [x] Add game/art.gd plus terrain, vegetation, water and cloth shaders.
+- [x] Build textured-color terrain, rocks, grass, trees, bridge and ruins; detailed articulated character meshes.
 
 ## Task 2: Integrate and animate
-- [ ] Replace battle slab with terrain scene, thin tactical overlays, procedural props and improved characters.
-- [ ] Share revised materials and vegetation with world; add wind, pennants and grey-tide boundary.
-- [ ] Verify picking, shrinking and repeated rebuilds with art/UI tests.
+- [x] Replace battle slab with terrain scene, thin tactical overlays, procedural props and improved characters.
+- [x] Share revised materials and vegetation with world; add wind, pennants and grey-tide boundary.
+- [x] Verify picking, shrinking and repeated rebuilds with art/UI tests.
 
 ## Task 3: Visual iteration and delivery
-- [ ] Run full suite, render native screenshots and inspect each.
-- [ ] Iterate lighting, composition and clarity against actual screenshots.
-- [ ] Update README and execution record; commit local work and open game.
+- [x] Run full suite, render native screenshots and inspect each.
+- [x] Iterate lighting, composition and clarity against actual screenshots.
+- [x] Update README and execution record; commit local work and open game.

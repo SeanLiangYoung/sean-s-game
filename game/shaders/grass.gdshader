@@ -11,5 +11,5 @@ void vertex(){
  VERTEX.x+=gust*wind_strength*UV.y*UV.y;
  VERTEX.z+=sin(TIME+w.x)*wind_strength*0.4*UV.y;
 }
-void fragment(){ALBEDO=mix(root_color.rgb,tip_color.rgb,height);ROUGHNESS=1.0;}
-void light(){float band=mix(0.5,1.0,smoothstep(0.0,0.5,dot(NORMAL,LIGHT)));DIFFUSE_LIGHT+=ALBEDO*LIGHT_COLOR*band*ATTENUATION;}
+void fragment(){ALBEDO=mix(root_color.rgb,tip_color.rgb,height)*0.72;ROUGHNESS=1.0;}
+void light(){float band=mix(0.5,1.0,smoothstep(0.0,0.5,dot(NORMAL,LIGHT)));DIFFUSE_LIGHT+=LIGHT_COLOR / PI*band*ATTENUATION;}

@@ -48,7 +48,7 @@ func _initialize():
   if difficulty==2:check(b.round_no>=4,"deep encounter lasts long enough to experience first shrink")
   c.resolve_battle(b)
   if c.phase=="reward":
-   c.choose_reward(0)
+   c.choose_reward(0,"hero")
    check(c.extract([]),"victory to extraction is playable")
    check(c.phase=="camp","complete loop reaches camp")
   print("SIM difficulty=",difficulty," outcome=",b.outcome," rounds=",b.round_no," actions=",actions)
