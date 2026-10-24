@@ -37,14 +37,33 @@ static func role_page(host,parent: Control,unit: Dictionary):
  parent.add_child(host.text_label("职业专精："+Jobs.JOBS[unit.profession].specialty,16,host.TEAL))
  if not stats.get("adaptation",[]).is_empty():parent.add_child(host.text_label("装备适应性："+"；".join(stats.adaptation),16,host.GOLD))
  if unit.profession=="hero":aura_preview(host,parent,unit)
- skill_details(host,parent,unit)
- host.detail_section(parent,"当前装备")
- for slot in Jobs.SLOTS:
-  var index=host.campaign.equipped_index(unit.id,slot)
-  parent.add_child(host.text_label(Jobs.SLOTS[slot]+"："+(Jobs.ITEMS[host.campaign.equipment[index].id].name if index>=0 else "空置"),16))
- parent.add_child(host.button("管理此角色装备 →",func():host.show_party_menu("装备",unit.id)))
  host.detail_section(parent,"生效的遗物")
  host.show_relic_details(parent,true)
+
+static func skills_page(host,parent: Control,unit: Dictionary):
+ parent.add_child(host.text_label("职业技能、已学技能与技能书",18,host.TEAL))
+ parent.add_child(host.text_label("普通职业使用当前职业对应的技能；通用被动始终生效。主角可学习和使用所有职业技能。",15,host.MUTED))
+ if unit.profession=="hero":aura_preview(host,parent,unit)
+ skill_details(host,parent,unit)
+ host.detail_section(parent,"技能书 · 为当前角色学习")
+ if host.campaign.books.is_empty():
+  parent.add_child(host.text_label("暂无技能书，可在远征商店购买。",16,host.MUTED))
+ for i in host.campaign.books.size():
+  var book_index=i
+  var book_id=host.campaign.books[i]
+  var good=host.Campaign.GOODS[book_id]
+  var reason=""
+  if host.battle!=null or host.campaign.phase not in ["camp","world"]:reason="当前阶段无法学习"
+  elif unit.hp<=0:reason="已阵亡，无法学习"
+  elif book_id in unit.get("learned",[]):reason="已学习"
+  elif not Jobs.can_learn(unit,book_id):reason="当前职业无法学习"
+  parent.add_child(host.text_label(good.name,18,host.GOLD))
+  parent.add_child(host.text_label(good.desc,15,host.MUTED))
+  var learn=host.button(good.name+" → "+unit.name+(" · "+reason if reason!="" else ""),func():
+   if host.campaign.learn_book(book_index,unit.id):
+    host.refresh_ui();host.show_party_menu("技能",unit.id))
+  learn.disabled=reason!=""
+  parent.add_child(learn)
 
 static func aura_preview(host,parent: Control,unit: Dictionary):
  var stats=host.campaign.character_stats(unit.id)
@@ -61,7 +80,7 @@ static func profession_page(host,parent: Control,unit: Dictionary):
  if unit.profession=="hero":
   parent.add_child(host.text_label("沈烬专属职业 · 可学习、使用所有职业技能；不享受其他职业专精。",16,host.MUTED))
   aura_preview(host,parent,unit)
-  skill_details(host,parent,unit)
+  parent.add_child(host.button("查看主角技能 →",func():host.show_party_menu("技能",unit.id)))
   return
  host.detail_section(parent,"营地转职")
  parent.add_child(host.text_label("免费转职；保留装备、已学技能和当前生命/法力。普通职业只使用当前职业技能，通用被动始终可用。",16,host.MUTED))

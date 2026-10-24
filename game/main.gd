@@ -1063,39 +1063,45 @@ func detail_section(parent: Control,title: String):
  separator(parent)
  parent.add_child(text_label(title,20,GOLD))
 
-func show_party_menu(tab: String="角色",character_id: String=""):
+func show_party_menu(tab: String="详情",character_id: String=""):
+ if tab=="角色":tab="详情"
  menu_tab=tab
  if character_id!="":menu_character=character_id
  var unit=menu_unit(menu_character)
  menu_character=unit.id
- open_modal("佣兵团档案", "整备行装 · 了解同伴 · 带着战利品归来")
+ open_modal("佣兵团档案", "选择同伴 · 查看详情 · 整理装备与技能")
  party_menu_open=true
  modal.position=Vector2(190,55)
  modal.size=Vector2(1060,790)
- var content_scroll=modal.get_child(0)
- modal.remove_child(content_scroll)
+ var original_scroll=modal.get_child(0)
+ modal.remove_child(original_scroll)
  var frame=VBoxContainer.new()
  frame.add_theme_constant_override("separation",10)
  modal.add_child(frame)
  for heading in modal_body.get_children():
   modal_body.remove_child(heading)
   frame.add_child(heading)
+ original_scroll.queue_free()
  var tabs=HBoxContainer.new()
  frame.add_child(tabs)
- content_scroll.size_flags_vertical=Control.SIZE_EXPAND_FILL
- frame.add_child(content_scroll)
- for section in ["角色","职业","装备","物品","遗物"]:
+ for section in ["详情","装备","技能","职业","物品","遗物"]:
   var target=section
   var entry=button(section,func():show_party_menu(target),section==tab)
   entry.size_flags_horizontal=Control.SIZE_EXPAND_FILL
   tabs.add_child(entry)
  var columns=HBoxContainer.new()
+ columns.size_flags_vertical=Control.SIZE_EXPAND_FILL
  columns.add_theme_constant_override("separation",24)
- modal_body.add_child(columns)
+ frame.add_child(columns)
+ var roster_scroll=ScrollContainer.new()
+ roster_scroll.name="CharacterRosterScroll"
+ roster_scroll.custom_minimum_size.x=320
+ roster_scroll.horizontal_scroll_mode=ScrollContainer.SCROLL_MODE_DISABLED
+ columns.add_child(roster_scroll)
  var roster_list=VBoxContainer.new()
- roster_list.custom_minimum_size.x=320
+ roster_list.size_flags_horizontal=Control.SIZE_EXPAND_FILL
  roster_list.add_theme_constant_override("separation",8)
- columns.add_child(roster_list)
+ roster_scroll.add_child(roster_list)
  roster_list.add_child(text_label("队伍成员  /  %d 人"%campaign.roster.size(),16,GOLD))
  for member in campaign.roster:
   var id=member.id
@@ -1103,21 +1109,40 @@ func show_party_menu(tab: String="角色",character_id: String=""):
   var entry=character_card(current,func():show_party_menu(menu_tab,id),id==menu_character)
   entry.add_theme_font_size_override("font_size",16)
   roster_list.add_child(entry)
+ var right=VBoxContainer.new()
+ right.size_flags_horizontal=Control.SIZE_EXPAND_FILL
+ right.add_theme_constant_override("separation",12)
+ columns.add_child(right)
+ var header=HBoxContainer.new()
+ header.add_theme_constant_override("separation",18)
+ right.add_child(header)
+ var portrait=TextureRect.new()
+ portrait.texture=portraits.portrait(unit.id,campaign.visual_profile(unit.id))
+ portrait.custom_minimum_size=Vector2(112,112)
+ portrait.expand_mode=TextureRect.EXPAND_IGNORE_SIZE
+ portrait.stretch_mode=TextureRect.STRETCH_KEEP_ASPECT_CENTERED
+ header.add_child(portrait)
+ var identity=VBoxContainer.new()
+ identity.size_flags_horizontal=Control.SIZE_EXPAND_FILL
+ identity.alignment=BoxContainer.ALIGNMENT_CENTER
+ header.add_child(identity)
+ identity.add_child(text_label(unit.name+"  /  "+unit.role,26,GOLD))
+ identity.add_child(text_label("身份："+unit.identity+" · "+tab,16,TEAL))
+ identity.add_child(text_label("已阵亡 · 无法出战" if unit.hp<=0 else ("正在战场 · 实时状态" if battle!=null and battle.find_actor(unit.id)!={} else "存活 · 可参与远征"),15,RED if unit.hp<=0 else MUTED))
+ var page_scroll=ScrollContainer.new()
+ page_scroll.name="CharacterPageScroll"
+ page_scroll.size_flags_vertical=Control.SIZE_EXPAND_FILL
+ page_scroll.horizontal_scroll_mode=ScrollContainer.SCROLL_MODE_DISABLED
+ right.add_child(page_scroll)
  var details=VBoxContainer.new()
  details.size_flags_horizontal=Control.SIZE_EXPAND_FILL
  details.add_theme_constant_override("separation",10)
- columns.add_child(details)
- var portrait=TextureRect.new()
- portrait.texture=portraits.portrait(unit.id,campaign.visual_profile(unit.id))
- portrait.custom_minimum_size=Vector2(144,144)
- portrait.expand_mode=TextureRect.EXPAND_IGNORE_SIZE
- portrait.stretch_mode=TextureRect.STRETCH_KEEP_ASPECT_CENTERED
- details.add_child(portrait)
- details.add_child(text_label(unit.name+"  /  "+unit.role,27,GOLD))
- details.add_child(text_label("已阵亡 · 无法出战" if unit.hp<=0 else ("正在战场 · 实时状态" if battle!=null and battle.find_actor(unit.id)!={} else "存活 · 可参与远征"),15,RED if unit.hp<=0 else TEAL))
- if tab=="角色":PartyDetails.role_page(self,details,unit)
- elif tab=="职业":PartyDetails.profession_page(self,details,unit)
+ page_scroll.add_child(details)
+ modal_body=details
+ if tab=="详情":PartyDetails.role_page(self,details,unit)
  elif tab=="装备":PartyDetails.equipment_page(self,details,unit)
+ elif tab=="技能":PartyDetails.skills_page(self,details,unit)
+ elif tab=="职业":PartyDetails.profession_page(self,details,unit)
  elif tab=="物品":
   detail_section(details,"队伍共享物品")
   details.add_child(text_label("银币  %d"%campaign.silver,22,GOLD))
@@ -1129,18 +1154,6 @@ func show_party_menu(tab: String="角色",character_id: String=""):
     show_party_menu("物品"))
   supply.disabled=campaign.phase!="world" or battle!=null or campaign.supplies<=0
   details.add_child(supply)
-  detail_section(details,"技能书 · 选择左侧角色后学习")
-  details.add_child(text_label("已学习："+"、".join(unit.get("learned",[]).map(func(id):return Jobs.SKILLS[id].name if Jobs.SKILLS.has(id) else Campaign.GOODS[id].name)),16,TEAL))
-  for i in range(campaign.books.size()):
-   var book_index=i
-   var book_id=campaign.books[i]
-   var learn=button(Campaign.GOODS[book_id].name+" → "+unit.name,func():
-    if campaign.learn_book(book_index,unit.id):
-     refresh_ui()
-     show_party_menu("物品"))
-   learn.disabled=battle!=null or unit.hp<=0 or book_id in unit.get("learned",[]) or not Jobs.can_learn(unit,book_id)
-   details.add_child(text_label(Campaign.GOODS[book_id].desc+(" · 当前职业无法学习" if not Jobs.can_learn(unit,book_id) else ""),15,MUTED))
-   details.add_child(learn)
  else:
   detail_section(details,"遗物与永久收藏")
   details.add_child(text_label("远征携带 %d 件 · 永久收藏 %d 件\n同类加成不叠加，全队共享。"%[campaign.relics.size(),campaign.collection.size()],17,MUTED))
@@ -1187,7 +1200,7 @@ func refresh_atlas():
  entries.add_child(text_label("佣兵团行囊",23,GOLD))
  entries.add_child(text_label("银币 %d · 补给 %d"%[campaign.silver,campaign.supplies],17))
  entries.add_child(button("队伍与装备",func():show_party_menu("角色")))
- entries.add_child(button("背包与技能书",func():show_party_menu("物品")))
+ entries.add_child(button("技能与技能书",func():show_party_menu("技能")))
  entries.add_child(button("保存与菜单",show_pause_menu))
  if campaign.phase=="camp":entries.add_child(button("选择远征",depart,true))
  var note=text_label(campaign.notice,18,CREAM)

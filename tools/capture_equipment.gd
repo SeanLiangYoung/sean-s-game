@@ -47,6 +47,16 @@ func run():
  for i in 12:await process_frame
  await RenderingServer.frame_post_draw
  root.get_texture().get_image().save_png("res://artifacts/equipment-dossier.png")
+ root.get_texture().get_image().save_png("res://artifacts/character-details.png")
+ scene.show_party_menu("装备","hero")
+ for i in 8:await process_frame
+ await RenderingServer.frame_post_draw
+ root.get_texture().get_image().save_png("res://artifacts/character-equipment.png")
+ scene.campaign.books=["focus","sniper"]
+ scene.show_party_menu("技能","medic")
+ for i in 8:await process_frame
+ await RenderingServer.frame_post_draw
+ root.get_texture().get_image().save_png("res://artifacts/character-skills.png")
  scene.close_modal();scene.campaign.depart();scene.selected_ids=["hero","medic","ranger","engineer","warden"];scene.begin_battle(0)
  for i in 12:await process_frame
  await RenderingServer.frame_post_draw

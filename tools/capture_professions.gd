@@ -13,7 +13,7 @@ func run():
  scene.show_party_menu("职业","medic")
  await capture("profession-retraining")
  scene.show_party_menu("装备","medic")
- var scroll=scene.modal.find_children("*","ScrollContainer",true,false)[0]
+ var scroll=scene.modal.find_child("CharacterPageScroll",true,false)
  for i in range(4):await process_frame
  scroll.scroll_vertical=int(scroll.get_v_scroll_bar().max_value)
  await capture("profession-equipment")

@@ -25,7 +25,7 @@ func run():
  scene.select_route_node("0b")
  check(is_instance_valid(scene.modal) and scene.campaign.at_node("shop"))
  check(scene.campaign.buy("focus"))
- scene.show_party_menu("物品","hero")
+ scene.show_party_menu("技能","hero")
  check(is_instance_valid(scene.modal))
  check(scene.campaign.learn_book(0,"hero"))
  scene.close_modal()

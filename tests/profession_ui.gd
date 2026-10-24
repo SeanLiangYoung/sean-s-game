@@ -24,7 +24,7 @@ func run():
  scene.show_party_menu("职业","hero")
  check("团长" in texts(scene.modal) and "主角" in texts(scene.modal),"identity and profession separate")
  check("光环" in texts(scene.modal),"hero aura preview")
- scene.show_party_menu("角色","engineer")
+ scene.show_party_menu("技能","engineer")
  check("布设机关" in texts(scene.modal) and "震荡弹" in texts(scene.modal),"profession skills in dossier")
  scene.close_modal();scene.campaign.depart();scene.selected_ids=["engineer","hero"];scene.begin_battle(0)
  check(scene.has_method("select_skill"),"skill selector exists")
