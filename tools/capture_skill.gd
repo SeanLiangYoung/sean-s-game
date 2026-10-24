@@ -10,6 +10,7 @@ func run():
  scene.campaign.depart()
  scene.show_deploy(0)
  scene.begin_battle(0)
+ scene.set_game_hud_visible(true)
  scene.ui.show()
  scene.set_process(false)
  var actor=scene.battle.find_actor("ranger")

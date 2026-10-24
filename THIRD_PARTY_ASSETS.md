@@ -27,3 +27,7 @@ Terrain, shader effects, UI and combat feedback code are project-authored.
 - This pack replaces the displayed KayKit lineup. KayKit files remain available as earlier prototype assets.
 - Rest animation uses the pack's PickUp recovery gesture (Cleric Spell1), with a temporary lowered posture and recovery effects; this pack has no dedicated sitting-rest clip.
 - Bases and animations remain stylized low-poly; this is an iterative prototype upgrade rather than final custom character production.
+
+## Original additions to character presentation
+
+Curved travel cloth, shoulder wraps, clasps, satchel details, head-bound facial details, material shaders, wind and staged skill effects are project-authored geometry/code. They are runtime additions; original Quaternius glTF and embedded source textures remain unchanged. Cloth motion is procedural with pinned tops, not physical cloth simulation.
