@@ -32,3 +32,13 @@ Limits: procedural original art is an intermediate visual sample; no final rigge
 - Regression evidence: initial presentation test failed because timeline and skeletal animation were absent. Independent reviewer found a script indentation error, movement shrink feedback disappearing in its creation frame, and enemy archer using sword motion. Fixed syntax; added movement-recovery and enemy-archer regressions, observed three failures then green after fixes. Differentiated enemy material tint.
 - Final: python3 tests/verify.py — 109 checks in 8 suites, zero failures; native scene smoke passed. Native battle, attack and rest captures rendered without script errors.
 - Remaining: final natural-proportion character production, varied enemy art, sound, polished skill-specific choreography, mobile performance and release builds. No purchase, publication or asset claims of matching Zelda quality.
+
+## 2026-10-24 natural-proportion lineup iteration
+- Ruling: use the complete Quaternius RPG Character Pack instead of bare Universal Base Characters. Existing fantasy clothing and native sword/dagger/bow/spell clips avoid a clothing/retargeting dependency. Cost: fewer distinct base models and a stylized low-poly finish; custom final models remain future work.
+- Imported original CC0 Warrior/Rogue/Ranger/Cleric glTF files from author's public linked Drive folder; recorded source, license and checksums. Replaced displayed lineup, kept earlier KayKit source assets.
+- Character suite initially showed 23 missing-backend/effect/archer failures; now all 122 checks pass. Logical animation API maps to imported native clips, including hit/death and pickup recovery gestures. Added temporary rest posture and role-specific slash, arrow, magic and healing projectiles. Lethal timeline now accommodates the entire new Death clip.
+- Ruling: rest uses a recovery gesture plus posture and particles because this source pack has no dedicated sitting clip. Cost: less literal resting choreography until custom or retargeted rest motion is added.
+- Native battle/attack/rest captures inspected for silhouette, materials, orientation, effects and labels. Adjusted diffuse/rim shading and forward-axis offset.
+- Discovered battle redraw reset user zoom. UI regression failed before fix, then passed; initialize camera zoom only at battle entry, preserve through actions and mode changes.
+- Independent reviewer found no blocking defects, verified a clean-cache import and 122 character checks; documentation synchronization completed.
+- Final verification: 233 checks in 9 suites passed, plus native scene smoke passed. Character models, effects and camera only; battle/save rules preserved.

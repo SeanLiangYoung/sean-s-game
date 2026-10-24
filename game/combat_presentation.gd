@@ -13,6 +13,7 @@ var before: Array=[]
 var after: Array=[]
 var source_id=""
 var mode=""
+var style="slash"
 var path: Array=[]
 var projectile: MeshInstance3D
 var projectile_target=Vector3.ZERO
@@ -39,18 +40,21 @@ func start(owner_node,before_state: Array,after_state: Array,actor_id: String,ac
   if not old.is_empty() and unit.hp<old.hp:consequences=true
  duration=move_duration+(1.0 if consequences else 0.0) if mode=="move" else (1.5 if mode.begins_with("rest") else 1.2)
  impact_time=move_duration if mode=="move" else 0.4
+ for unit in after:
+  var old=find_unit(before,unit.id)
+  if not old.is_empty() and old.hp>0 and unit.hp<=0:duration=maxf(duration,impact_time+1.25)
  source=pawn_for(source_id)
  if source!=null:
   start_pos=source.position
+  style=Visual.effect_style(source,action)
   Visual.play(source,mode)
   for u in after:
    var prior=find_unit(before,u.id)
    if not prior.is_empty() and u.id!=source_id and (u.hp!=prior.hp or u.mp!=prior.mp):
     face(source,host.cell_position(prior.cell))
-    var role=source.get_meta("role","")
-    if action=="skill" or (action=="attack" and role in ["ranger","engineer","medic","enemy2"]):
-     projectile=glow(start_pos+Vector3(0,0.85,0),Color("f5cf89") if action=="attack" else Color("c3a2ff"),0.09)
+    if action=="skill" or (action=="attack" and style in ["arrow","magic"]):
      projectile_target=host.cell_position(prior.cell)+Vector3(0,0.8,0)
+     projectile=make_projectile(start_pos+Vector3(0,0.85,0),projectile_target,style)
     break
  host.status_label.text={"attack":"攻击准备…","skill":"凝聚战技…","rest_hp":"休息 · 恢复生命…","rest_mp":"休息 · 恢复法力…","move":"移动中…"}.get(mode,"行动中…")
 
@@ -68,7 +72,7 @@ func face(pawn: Node3D,target: Vector3):
  var direction=target-pawn.position
  direction.y=0
  if direction.length_squared()>0.001:
-  pawn.get_node("Body").rotation.y=atan2(direction.x,direction.z)
+  pawn.get_node("Body").rotation.y=atan2(direction.x,direction.z)+pawn.get_meta("forward_offset",0.0)
 
 func advance(delta: float):
  if not busy:return
@@ -84,6 +88,11 @@ func advance(delta: float):
   var b=host.cell_position(path[index])
   source.position=a.lerp(b,clampf(progress-index,0,1))
   face(source,b)
+ elif source!=null and mode.begins_with("rest"):
+  var body=source.get_node("Body")
+  var settle=sin(clampf(clock/duration,0,1)*PI)
+  body.position.y=-0.08*settle
+  body.rotation.x=-0.10*settle
  elif source!=null and mode=="attack":
   # Small weight shift supports the skeletal strike without crossing occupied cells.
   var body=source.get_node("Body")
@@ -101,6 +110,9 @@ func advance(delta: float):
  for entry in effects:
   var n=entry.node
   if entry.kind=="spark":n.position=entry.origin+entry.velocity*age+Vector3.DOWN*age*age
+  elif entry.kind=="slash":
+   n.scale=Vector3.ONE*(1+age*1.3)
+   n.material_override.albedo_color.a=clampf(1-age/0.45,0,1)
   elif entry.kind=="orb":n.position=entry.origin+Vector3(sin(age*5+entry.phase)*0.16,age*0.9,cos(age*5+entry.phase)*0.16)
  if clock>=duration:
   busy=false
@@ -137,6 +149,9 @@ func impact():
   pulse(pos,color)
   if damaged:
    sparks(pos+Vector3(0,0.85,0),color)
+   if style=="slash":
+    var slash=make_projectile(pos+Vector3(0,0.85,0),start_pos+Vector3(0,0.85,0),"slash")
+    effects.append({"node":slash,"kind":"slash","origin":slash.position})
    if mode=="skill":pulse(pos+Vector3(0,0.04,0),Color("f6d18a"),0.65)
   else:orbs(pos,color)
  if mode=="skill" and source!=null:
@@ -188,3 +203,38 @@ func orbs(pos: Vector3,color: Color):
   var p=pos+Vector3(cos(i*2.4)*0.28,0.15+i*0.08,sin(i*2.4)*0.28)
   var n=glow(p,color,0.035)
   effects.append({"node":n,"kind":"orb","origin":p,"phase":i*2.4})
+
+
+func make_projectile(pos: Vector3,target: Vector3,effect: String) -> MeshInstance3D:
+ var color={"arrow":Color("ffe6aa"),"heal":Color("8cf0bd"),"magic":Color("b9d7ff"),"slash":Color("ffe0a0")}.get(effect,Color.WHITE)
+ var n=glow(pos,color,0.09)
+ n.set_meta("effect_style",effect)
+ if effect=="arrow":
+  var shaft=BoxMesh.new()
+  shaft.size=Vector3(0.035,0.035,0.6)
+  n.mesh=shaft
+  if pos.distance_squared_to(target)>0.001:n.look_at(target)
+ elif effect=="slash":
+  var vertices=PackedVector3Array()
+  var normals=PackedVector3Array()
+  for i in range(20):
+   var a=-1.3+2.6*i/20.0
+   var b=-1.3+2.6*(i+1)/20.0
+   var outer_a=Vector3(cos(a)*0.55,sin(a)*0.55,0)
+   var outer_b=Vector3(cos(b)*0.55,sin(b)*0.55,0)
+   var inner_a=outer_a*(1-0.25*sin(PI*i/20.0))
+   var inner_b=outer_b*(1-0.25*sin(PI*(i+1)/20.0))
+   for vertex in [outer_a,inner_a,outer_b,outer_b,inner_a,inner_b]:
+    vertices.append(vertex)
+    normals.append(Vector3.FORWARD)
+  var arrays=[]
+  arrays.resize(Mesh.ARRAY_MAX)
+  arrays[Mesh.ARRAY_VERTEX]=vertices
+  arrays[Mesh.ARRAY_NORMAL]=normals
+  var geometry=ArrayMesh.new()
+  geometry.add_surface_from_arrays(Mesh.PRIMITIVE_TRIANGLES,arrays)
+  n.mesh=geometry
+  n.material_override.cull_mode=BaseMaterial3D.CULL_DISABLED
+  n.material_override.transparency=BaseMaterial3D.TRANSPARENCY_ALPHA
+  if pos.distance_squared_to(target)>0.001:n.look_at(target)
+ return n

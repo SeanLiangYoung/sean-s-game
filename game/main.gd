@@ -96,7 +96,9 @@ func _ready():
     battle.round_no=4
  if capture_mode == "":campaign.load_game()
  if campaign.phase == "battle" and battle==null:campaign.phase="world"
- if battle != null:draw_battle()
+ if battle != null:
+  camera_zoom=16.5
+  draw_battle()
  else:draw_world()
  refresh_ui()
  if campaign.phase == "reward":show_reward()
@@ -241,7 +243,6 @@ func cell_position(cell: Vector2i) -> Vector3:
 
 func draw_battle():
  clear_scene()
- camera_zoom = 18.5
  art.landscape(scene_root,battle.radius)
  art.tide(scene_root,battle.radius,battle.round_no>=2)
  var a = battle.active()
@@ -569,6 +570,7 @@ func begin_battle(index: int):
  var b=campaign.make_battle(selected_ids,index)
  if b==null:return
  battle=b
+ camera_zoom=16.5
  resolved=false
  battle_mode="move"
  close_modal()
@@ -785,7 +787,7 @@ func _process(delta):
    if not world_party.get_meta("walking",false):
     preload("res://game/character_visual.gd").play(world_party,"move")
     world_party.set_meta("walking",true)
-   world_party.get_node("Body").rotation.y=atan2(delta_pos.x,delta_pos.z)
+   world_party.get_node("Body").rotation.y=atan2(delta_pos.x,delta_pos.z)+world_party.get_meta("forward_offset",0.0)
    world_party.position=world_party.position.move_toward(world_target,delta*4)
    campaign.world_position=[world_party.position.x,world_party.position.z]
   else:

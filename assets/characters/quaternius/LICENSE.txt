@@ -1,0 +1,9 @@
+Quaternius RPG Character Pack
+Author: Quaternius
+Official source: https://quaternius.com/packs/rpgcharacters.html
+Official download folder: https://drive.google.com/drive/folders/1MIRQXLfTd21HMI5rwOb6Xy0rv0xv1m8b
+License designated by author: Creative Commons Zero 1.0 Universal (CC0).
+https://creativecommons.org/publicdomain/zero/1.0/
+Retrieved 2026-10-24. The official product page permits personal and commercial use.
+Files included here: Warrior.gltf, Ranger.gltf, Rogue.gltf, Cleric.gltf.
+Original files are unmodified. Textures are embedded; Godot may extract copies on import.

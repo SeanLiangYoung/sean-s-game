@@ -19,6 +19,9 @@ func run():
  scene.begin_battle(0)
  check(scene.battle!=null and scene.campaign.phase=="battle","deployment starts scene battle")
  check(scene.footer.get_child_count()>0,"combat controls exist")
+ scene.camera_zoom=13
+ scene.draw_battle()
+ check(scene.camera_zoom==13,"battle redraw preserves player zoom")
  var actor=scene.battle.active()
  var target=actor.cell+Vector2i(0,1)
  var click=InputEventMouseButton.new()

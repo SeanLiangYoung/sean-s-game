@@ -60,6 +60,8 @@ func run():
   scene.draw_battle()
   scene.perform_battle_action("attack",enemy.id)
   check(scene.campaign.phase=="battle" and not is_instance_valid(scene.modal),"final kill waits before reward")
+  var death_clip=scene.presentation.pawn_for(enemy.id).find_child("AnimationPlayer",true,false).get_animation("Death")
+  check(scene.presentation.duration-scene.presentation.impact_time>=death_clip.length,"lethal timeline preserves the complete death clip")
   scene.presentation.advance(2)
   check(scene.campaign.phase=="reward","reward appears after death feedback")
  # A movement that spends the last AP can trigger shrinking and damage.
@@ -89,7 +91,7 @@ func run():
   scene.perform_battle_action("enemy")
   var archer_pawn=scene.presentation.pawn_for("enemy2")
   var player=archer_pawn.find_child("AnimationPlayer",true,false) if archer_pawn!=null else null
-  check(player!=null and player.current_animation=="2H_Ranged_Shoot","enemy archer plays ranged attack")
+  check(player!=null and player.current_animation=="Bow_Shoot","enemy archer plays ranged attack")
   check(is_instance_valid(scene.presentation.projectile),"enemy ranged attack has a projectile")
   scene.presentation.advance(2)
  scene.queue_free()
