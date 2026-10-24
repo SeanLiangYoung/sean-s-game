@@ -13,15 +13,54 @@ func run():
  await process_frame
  check(scene.ui.get_child(0).size.y<100,"header remains one line")
  scene.campaign=load("res://game/campaign.gd").new("user://ashbound-ui-tests.json")
- scene.depart()
+ check(scene.has_method("show_party_menu"),"party menu exists")
+ if scene.has_method("show_party_menu"):
+  scene.show_party_menu("角色","medic")
+  check(find_button(scene.modal,"白芷")!=null,"character selector reachable")
+  check(has_text(scene.modal,"恢复 26"),"medic skill details reflect rules")
+  scene.show_party_menu("装备","hero")
+  var equip=find_button(scene.modal,"装备此武器")
+  check(equip!=null,"inventory equip action reachable")
+  if equip!=null:equip.pressed.emit()
+  check(scene.campaign.equipped_index("hero")==0,"UI equips selected character")
+  var remove=find_button(scene.modal,"卸下当前")
+  check(remove!=null,"unequip action reachable")
+  if remove!=null:remove.pressed.emit()
+  check(scene.campaign.equipped_index("hero")==-1,"UI unequips selected character")
+  scene.campaign.relics=["ember","spring","lens"]
+  scene.show_party_menu("角色","hero")
+  check(has_text(scene.modal,"余烬徽印") and has_text(scene.modal,"旧世泉核"),"character details show effective relics")
+  scene.close_modal()
+ scene.campaign.depart()
+ scene.refresh_ui()
+ var world_size=scene.camera.size
+ var wheel=InputEventMouseButton.new()
+ wheel.button_index=MOUSE_BUTTON_WHEEL_DOWN
+ wheel.pressed=true
+ scene._unhandled_input(wheel)
+ check(scene.camera.size==world_size,"world ignores mouse wheel zoom")
+ var ground=scene.scene_root.get_child(0)
+ for viewport_size in [Vector2i(1280,800),Vector2i(1920,1080),Vector2i(2560,1080),Vector2i(800,1000)]:
+  root.size=viewport_size
+  await process_frame
+  for corner in [Vector2.ZERO,Vector2(viewport_size.x,0),Vector2(0,viewport_size.y),Vector2(viewport_size)]:
+   var point=scene.ground_position(corner)
+   check(absf(point.x-ground.position.x)<ground.mesh.size.x/2 and absf(point.z-ground.position.z)<ground.mesh.size.z/2,"world terrain covers viewport corner at %s"%viewport_size)
+ root.size=Vector2i(1440,900)
+ await process_frame
  scene.show_deploy(0)
  check(scene.selected_ids.size()==5,"deployment defaults to five")
  scene.begin_battle(0)
  check(scene.battle!=null and scene.campaign.phase=="battle","deployment starts scene battle")
  check(scene.footer.get_child_count()>0,"combat controls exist")
- scene.camera_zoom=13
  scene.draw_battle()
- check(scene.camera_zoom==13,"battle redraw preserves player zoom")
+ var fixed_size=scene.camera.size
+ for direction in [MOUSE_BUTTON_WHEEL_UP,MOUSE_BUTTON_WHEEL_DOWN]:
+  var battle_wheel=InputEventMouseButton.new()
+  battle_wheel.button_index=direction
+  battle_wheel.pressed=true
+  scene._unhandled_input(battle_wheel)
+ check(scene.camera.size==fixed_size,"battle ignores mouse wheel zoom")
  var actor=scene.battle.active()
  var target=actor.cell+Vector2i(0,1)
  var click=InputEventMouseButton.new()
@@ -46,7 +85,8 @@ func run():
  check(scene.campaign.phase=="gameover" and is_instance_valid(scene.modal),"timeout exposes game-over modal")
  scene.restore()
  check(scene.battle==null and scene.campaign.phase=="camp","snapshot restores camp scene")
- scene.depart()
+ scene.campaign.depart()
+ scene.refresh_ui()
  scene.travel_to(0)
  scene._process(10.0)
  scene._process(0.1)
@@ -77,3 +117,9 @@ func find_button(node, needle):
   var found=find_button(child,needle)
   if found!=null:return found
  return null
+
+func has_text(node,needle):
+ if node is Label and needle in node.text:return true
+ for child in node.get_children():
+  if has_text(child,needle):return true
+ return false

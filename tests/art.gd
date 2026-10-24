@@ -15,7 +15,7 @@ func run():
   quit(1)
   return
  scene.campaign=load("res://game/campaign.gd").new("user://ashbound-art-tests.json")
- scene.depart()
+ scene.campaign.depart()
  scene.show_deploy(0)
  scene.begin_battle(0)
  var before=scene.battle.actors.duplicate(true)
