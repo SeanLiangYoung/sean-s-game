@@ -1,4 +1,5 @@
 extends RefCounted
+const Professions=preload("res://game/professions.gd")
 const Rules = preload("res://game/rules.gd")
 var save_path = "user://ashbound-save.json"
 const REWARDS = [
@@ -9,12 +10,24 @@ const REWARDS = [
  {"id":"medicine","name":"战地药箱","type":"resource","desc":"获得 2 份补给，可在野外恢复队伍","color":"#80c7b2"},
  {"id":"sword","name":"遗铁刃","type":"equipment","desc":"武器 · 攻击 +3；可分配、更换或卸下","color":"#b4a1d1"}]
 const Route = preload("res://game/route.gd")
-const GOODS = {"sword":{"name":"遗铁刃","price":45,"desc":"武器 · 攻击 +3"},"ember":{"name":"余烬徽印","price":70,"desc":"遗物 · 全队攻击与伤害战技 +4"},"spring":{"name":"旧世泉核","price":60,"desc":"遗物 · 休息恢复提升"},"fury":{"name":"技能书 · 破阵","price":35,"desc":"学习后伤害战技 +8；治疗战技 +8"},"focus":{"name":"技能书 · 调息","price":30,"desc":"学习后每点休息行动额外恢复 2%"}}
+const LEGACY_GOODS = {"sword":{"name":"遗铁刃","price":45,"desc":"武器 · 攻击 +3"},"ember":{"name":"余烬徽印","price":70,"desc":"遗物 · 全队攻击与伤害战技 +4"},"spring":{"name":"旧世泉核","price":60,"desc":"遗物 · 休息恢复提升"},"fury":{"name":"技能书 · 破阵","price":35,"desc":"学习后伤害战技 +8；治疗战技 +8"},"focus":{"name":"技能书 · 调息","price":30,"desc":"学习后每点休息行动额外恢复 2%"}}
+static func goods_catalog() -> Dictionary:
+ var result=LEGACY_GOODS.duplicate(true)
+ for id in Professions.ITEMS:
+  var item=Professions.ITEMS[id]
+  result[id]={"name":item.name,"price":item.price,"desc":Professions.item_description(id)}
+ for id in Professions.SKILLS:
+  if id=="strike":continue
+  var skill=Professions.SKILLS[id]
+  result[id]={"name":"技能书 · "+skill.name,"price":35,"desc":skill.desc}
+ return result
+static var GOODS=goods_catalog()
+var trial_equipment_claimed=true
 var route = Route.new()
 var books: Array = []
 var purchases: Array = []
 var recruits: Array = []
-var equipment: Array = [{"id":"sword","owner":""}]
+var equipment: Array = []
 var roster: Array = []
 var phase = "camp"
 var encounters: Array = ["open","open","open"]
@@ -35,6 +48,7 @@ var rng = RandomNumberGenerator.new()
 func _init(destination: String = "user://ashbound-save.json"):
  save_path=destination
  roster = Rules.new().default_party()
+ for id in Professions.ITEMS:equipment.append({"id":id,"owner":""})
  rng.seed = reward_seed
 
 func depart() -> bool:
@@ -72,7 +86,12 @@ func make_battle(ids: Array, encounter: int):
  current_encounter = encounter
  phase = "battle"
  var b = Rules.new()
- b.start_battle(chosen,encounter,relics+collection)
+ var prepared=[]
+ for unit in chosen:
+  var actor=unit.duplicate(true)
+  actor.merge(character_stats(unit.id),true)
+  prepared.append(actor)
+ b.start_battle(prepared,encounter,relics+collection)
  return b
 
 func resolve_battle(b) -> bool:
@@ -161,7 +180,7 @@ func visit_event() -> bool:
 func to_data(include_snapshot: bool = true) -> Dictionary:
  var units = roster.duplicate(true)
  for u in units:u.erase("cell")
- var data = {"version":1,"equipment":equipment.duplicate(true),"roster":units,"phase":phase,"encounters":encounters.duplicate(),"relics":relics.duplicate(),"collection":collection.duplicate(),"silver":silver,"supplies":supplies,"expedition":expedition,"world_position":world_position.duplicate(),"event_used":event_used,"choices":choices.duplicate(true),"notice":notice,"rng_state":str(rng.state),"route":route.data() if route.region!="" else {},"books":books.duplicate(),"purchases":purchases.duplicate(),"recruits":recruits.duplicate()}
+ var data = {"version":2,"trial_equipment_claimed":trial_equipment_claimed,"equipment":equipment.duplicate(true),"roster":units,"phase":phase,"encounters":encounters.duplicate(),"relics":relics.duplicate(),"collection":collection.duplicate(),"silver":silver,"supplies":supplies,"expedition":expedition,"world_position":world_position.duplicate(),"event_used":event_used,"choices":choices.duplicate(true),"notice":notice,"rng_state":str(rng.state),"route":route.data() if route.region!="" else {},"books":books.duplicate(),"purchases":purchases.duplicate(),"recruits":recruits.duplicate()}
  if include_snapshot:data["snapshot"] = snapshot.duplicate(true)
  return data
 
@@ -169,7 +188,9 @@ func is_number(value) -> bool:
  return (value is int or value is float) and is_finite(float(value))
 
 func load_data(data: Dictionary) -> bool:
- if data.get("version",0) != 1:return false
+ if data.get("version",0)!=1 and data.get("version",0)!=2:return false
+ var migrated=data.get("version")==1
+ data=data.duplicate(true)
  if not data.get("roster") is Array or data.roster.is_empty() or data.roster.size()>10:return false
  if not data.get("encounters") is Array or data.encounters.size()!=3:return false
  if data.get("phase","") not in ["camp","world","reward","gameover"]:return false
@@ -182,6 +203,14 @@ func load_data(data: Dictionary) -> bool:
   for key in ["hp","max_hp","mp","max_mp","power","range","speed","side","ap"]:
    if not is_number(u[key]):return false
   if not u.id is String or not u.name is String or not u.role is String:return false
+  if u.has("profession") and not u.profession is String:return false
+  var job=Professions.job_id(u)
+  if not Professions.JOBS.has(job) or (job=="hero")!=(u.id=="hero"):return false
+  for key in ["base_power","base_range","base_speed"]:
+   if not migrated and not u.has(key):return false
+   if u.has(key) and (not is_number(u[key]) or u[key]<0):return false
+  for key in ["identity","appearance"]:
+   if u.has(key) and not u[key] is String:return false
   if u.id in ids or u.max_hp<=0 or u.hp<0 or u.hp>u.max_hp or u.max_mp<0 or u.mp<0 or u.mp>u.max_mp:return false
   ids.append(u.id)
   if u.id=="hero":has_hero=true
@@ -209,10 +238,11 @@ func load_data(data: Dictionary) -> bool:
  if not saved_equipment is Array:return false
  var owners=[]
  for item in saved_equipment:
-  if not item is Dictionary or item.get("id","")!="sword" or not item.get("owner") is String:return false
+  if not item is Dictionary or not Professions.ITEMS.has(item.get("id","")) or not item.get("owner") is String:return false
   if item.owner!="":
-   if item.owner not in ids or item.owner in owners:return false
-   owners.append(item.owner)
+   var slot_key=item.owner+":"+Professions.ITEMS[item.id].slot
+   if item.owner not in ids or slot_key in owners:return false
+   owners.append(slot_key)
  var next_route=Route.new()
  var saved_route=data.get("route",{})
  if not saved_route is Dictionary:return false
@@ -220,11 +250,24 @@ func load_data(data: Dictionary) -> bool:
  for key in ["books","purchases","recruits"]:
   if not data.get(key,[]) is Array:return false
  for id in data.get("books",[]):
-  if id not in ["fury","focus"]:return false
+  if id not in ["fury","focus"] and not Professions.SKILLS.has(id):return false
  for u in data.roster:
   if not u.get("learned",[]) is Array:return false
   for id in u.get("learned",[]):
-   if id not in ["fury","focus"]:return false
+   if id not in ["fury","focus"] and not Professions.SKILLS.has(id):return false
+ var saved_snapshot=data.get("snapshot",{})
+ if not saved_snapshot.is_empty():
+  if not saved_snapshot.get("snapshot",{}) is Dictionary or not saved_snapshot.get("snapshot",{}).is_empty():return false
+  var validator=get_script().new(save_path)
+  if not validator.load_data(saved_snapshot):return false
+  data.snapshot=validator.to_data(false)
+ for u in data.roster:
+  if migrated:
+   u.erase("base_power");u.erase("base_range");u.erase("base_speed")
+   for item in saved_equipment:
+    if item.owner==u.id:u.power-=Professions.ITEMS[item.id].power
+  Professions.normalize(u)
+ trial_equipment_claimed=bool(data.get("trial_equipment_claimed",not migrated))
  route=next_route
  books=data.get("books",[]).duplicate()
  purchases=data.get("purchases",[]).duplicate()
@@ -232,6 +275,7 @@ func load_data(data: Dictionary) -> bool:
  equipment=saved_equipment.duplicate(true)
  roster = data.roster.duplicate(true)
  for u in roster:u.cell = Vector2i.ZERO
+ refresh_stats()
  phase = data.phase
  encounters = data.encounters.duplicate()
  relics = data.relics.duplicate()
@@ -283,35 +327,67 @@ func restore_snapshot() -> bool:
  save_game()
  return true
 
-# Stored power includes equipped bonuses; applying only deltas preserves legacy upgrades.
-func equipped_index(character_id: String) -> int:
+func character_stats(character_id: String) -> Dictionary:
+ for unit in roster:
+  if unit.id==character_id:return Professions.stats(unit,equipment)
+ return {}
+
+func refresh_stats():
+ for unit in roster:unit.merge(Professions.stats(unit,equipment),true)
+
+func equipped_index(character_id: String,slot: String="mainhand") -> int:
  for i in range(equipment.size()):
-  if equipment[i].owner==character_id:return i
+  if equipment[i].owner==character_id and Professions.ITEMS[equipment[i].id].slot==slot:return i
  return -1
+
+func preview_equipment(index: int,character_id: String) -> Dictionary:
+ if index<0 or index>=equipment.size():return {}
+ var preview=equipment.duplicate(true)
+ var slot=Professions.ITEMS[preview[index].id].slot
+ for item in preview:
+  if item.owner==character_id and Professions.ITEMS[item.id].slot==slot:item.owner=""
+ preview[index].owner=character_id
+ for unit in roster:
+  if unit.id==character_id:return Professions.stats(unit,preview)
+ return {}
 
 func equip_item(index: int,character_id: String) -> bool:
  if phase not in ["camp","world"] or index<0 or index>=equipment.size():return false
- var targets=roster.filter(func(u):return u.id==character_id and u.hp>0)
- if targets.is_empty():return false
- if equipment[index].owner==character_id:return true
- var previous=equipped_index(character_id)
- if previous>=0:remove_equipment_bonus(previous)
- remove_equipment_bonus(index)
+ if not roster.any(func(u):return u.id==character_id and u.hp>0):return false
+ var slot=Professions.ITEMS[equipment[index].id].slot
+ var previous=equipped_index(character_id,slot)
+ if previous>=0:equipment[previous].owner=""
  equipment[index].owner=character_id
- targets[0].power+=3
+ refresh_stats()
  save_game()
  return true
 
-func remove_equipment_bonus(index: int):
- for u in roster:
-  if u.id==equipment[index].owner:u.power-=3
- equipment[index].owner=""
-
-func unequip_item(character_id: String) -> bool:
+func unequip_item(character_id: String,slot: String="mainhand") -> bool:
  if phase not in ["camp","world"]:return false
- var index=equipped_index(character_id)
+ var index=equipped_index(character_id,slot)
  if index<0:return false
- remove_equipment_bonus(index)
+ equipment[index].owner=""
+ refresh_stats()
+ save_game()
+ return true
+
+func change_profession(character_id: String,job: String) -> bool:
+ if phase!="camp" or not Professions.JOBS.has(job) or job=="hero" or character_id=="hero":return false
+ for unit in roster:
+  if unit.id!=character_id or unit.hp<=0:continue
+  unit.profession=job
+  unit.role=Professions.JOBS[job].name
+  refresh_stats()
+  notice="%s 已转职为 %s；已学技能与装备保留。"%[unit.name,unit.role]
+  save_game()
+  return true
+ return false
+
+func claim_trial_equipment() -> bool:
+ if phase!="camp" or trial_equipment_claimed:return false
+ for id in Professions.ITEMS:
+  if id!="sword":equipment.append({"id":id,"owner":""})
+ trial_equipment_claimed=true
  save_game()
  return true
 
@@ -357,8 +433,8 @@ func buy(id: String) -> bool:
  if key in purchases or silver<GOODS[id].price:return false
  silver-=GOODS[id].price
  purchases.append(key)
- if id=="sword":equipment.append({"id":"sword","owner":""})
- elif id in ["fury","focus"]:books.append(id)
+ if Professions.ITEMS.has(id):equipment.append({"id":id,"owner":""})
+ elif id in ["fury","focus"] or Professions.SKILLS.has(id):books.append(id)
  else:relics.append(id)
  notice="购入 "+GOODS[id].name
  save_game()
@@ -382,6 +458,7 @@ func learn_book(index: int,character_id: String) -> bool:
  if phase not in ["camp","world"] or index<0 or index>=books.size():return false
  for u in roster:
   if u.id!=character_id or u.hp<=0:continue
+  if not Professions.can_learn(u,books[index]):return false
   var learned=u.get("learned",[]).duplicate()
   if books[index] in learned:return false
   learned.append(books[index])

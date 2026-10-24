@@ -61,7 +61,7 @@ func run():
  caster.cell=Vector2i.ZERO
  caster.hp=20
  check(rules.cast(caster.id))
- check(caster.hp==46)
+ check(caster.hp==52)
  scene.queue_free()
  await process_frame
  print("CHECKS: %d FAILURES: %d"%[checks,failures])

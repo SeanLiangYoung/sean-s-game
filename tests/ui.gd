@@ -19,7 +19,7 @@ func run():
   check(find_button(scene.modal,"白芷")!=null,"character selector reachable")
   var portrait_card=find_button(scene.modal,"白芷")
   check(portrait_card!=null and portrait_card.icon!=null,"party cards display character portraits")
-  check(has_text(scene.modal,"恢复 26"),"medic skill details reflect rules")
+  check(has_text(scene.modal,"恢复 32"),"medic skill details reflect rules")
   scene.show_party_menu("装备","hero")
   var equip=find_button(scene.modal,"装备此武器")
   check(equip!=null,"inventory equip action reachable")

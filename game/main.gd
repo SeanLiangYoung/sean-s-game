@@ -1,4 +1,6 @@
 extends Node3D
+const Jobs=preload("res://game/professions.gd")
+const PartyDetails=preload("res://game/party_details.gd")
 const Campaign = preload("res://game/campaign.gd")
 const Rules = preload("res://game/rules.gd")
 const Art = preload("res://game/art.gd")
@@ -34,6 +36,7 @@ var arrived_location = -1
 var selected_ids: Array = []
 var extraction_ids: Array = []
 var battle_mode = ""
+var selected_skill = ""
 var ai_clock = 0.0
 var resolved = false
 var elapsed = 0.0
@@ -279,6 +282,7 @@ func draw_battle():
   if not a.is_empty() and a.side==0 and battle_mode in ["attack","skill","item"]:
    var target=battle.unit_at(cell)
    if target_allowed(target):col=TEAL if target.side==0 else RED
+   if target_cell_allowed(cell):col=TEAL
   if not a.is_empty() and a.cell==cell:col=Color("abac6e")
   cylinder(p+Vector3(0,-0.075,0),0.765,0.765,0.025,col,6)
   art.ring(scene_root,p+Vector3(0,-0.057,0),0.765,Color("62765b"),0.012)
@@ -287,6 +291,10 @@ func draw_battle():
   if cell in battle.obstacles:
    art.rock(scene_root,p+Vector3(0,0.22,0),Vector3(0.85,0.65,0.75),Color("b1ae92"))
    art.rock(scene_root,p+Vector3(0.27,0.02,0.15),Vector3(0.35,0.28,0.4),Color("a2a58b"))
+ for trap in battle.traps:
+  var p=cell_position(trap.cell)
+  art.ring(scene_root,p+Vector3(0,0.04,0),0.42,GOLD,0.06)
+  label3("机关",p+Vector3(0,0.26,0),GOLD,18)
  for u in battle.actors:
   if u.hp<=0:continue
   var col = Color("b46555") if u.side==1 else Color("6eaaa5")
@@ -294,6 +302,8 @@ func draw_battle():
   if u.id=="medic":col=Color("9db68b")
   var root = make_pawn(cell_position(u.cell),col,u.id,not a.is_empty() and a.id==u.id)
   label3(u.name,Vector3(0,1.93,0),CREAM,23,root)
+  var state=battle.status_text(u)
+  if state!="":label3(state,Vector3(0,2.42,0),GOLD,15,root)
   box(Vector3(0,1.66,0),Vector3(0.85,0.06,0.05),Color("283536"),root)
   var width=0.85*float(u.hp)/u.max_hp
   var fill=box(Vector3((width-0.85)/2,1.67,0.015),Vector3(0.85,0.065,0.06),RED if u.side==1 else TEAL,root)
@@ -491,7 +501,7 @@ func refresh_ui():
   for log in logs:sidebar.add_child(text_label(log,13,MUTED))
   var is_player=not a.is_empty() and a.side==0 and battle.outcome==""
   if not a.is_empty():
-   status_label.text="%s  /  %s    生命 %d/%d    法力 %d/%d    行动点 %d/4"%[a.name,a.role,a.hp,a.max_hp,a.mp,a.max_mp,a.ap]
+   status_label.text="%s  /  %s    生命 %d/%d    法力 %d/%d    行动点 %d/%d"%[a.name,a.role,a.hp,a.max_hp,a.mp,a.max_mp,a.ap,a.get("max_ap",4)]
   render_action_menu(is_player)
   sidebar.add_child(button("放弃战斗…",show_surrender))
 
@@ -599,6 +609,9 @@ func render_deploy(index: int):
    elif selected_ids.size()<5:selected_ids.append(id)
    render_deploy(index),id in selected_ids,"已出战" if id in selected_ids else "留守")
   deployment_grid.add_child(b)
+ var hero=campaign.roster.filter(func(u):return u.id=="hero")[0]
+ var preview=Jobs.aura_for(campaign.character_stats(hero.id))
+ modal_body.add_child(text_label("主角光环："+preview+(" · 上阵生效" if "hero" in selected_ids else " · 主角留守，本场不生效"),16,GOLD if "hero" in selected_ids else MUTED))
  var count=selected_ids.size()
  var start=button("出战 %d / 5 人  →"%count,func():begin_battle(index),true)
  start.disabled=count==0
@@ -635,11 +648,12 @@ func perform_battle_action(action: String,target=null) -> bool:
  if action=="move":path=battle.path_to(actor.cell,target)
  if action=="enemy":
   for cell in battle.cells():enemy_paths[cell]=battle.path_to(actor.cell,cell)
+ var used_skill=selected_skill if selected_skill!="" else battle.default_skill(actor)
  var accepted=false
  match action:
   "move":accepted=battle.move_to(target)
   "attack":accepted=battle.attack(target)
-  "skill":accepted=battle.cast(target)
+  "skill":accepted=battle.cast(target,used_skill)
   "rest_hp":accepted=battle.rest("hp")
   "rest_mp":accepted=battle.rest("mp")
   "end":accepted=battle.end_action()
@@ -660,6 +674,12 @@ func perform_battle_action(action: String,target=null) -> bool:
      var old=before.filter(func(u):return u.id==unit.id)[0]
      if unit.id!=actor_id and unit.hp<old.hp:action="attack";break
  if not accepted:return false
+ if action=="move":
+  var actual=path.find(actor.cell)
+  if actual>=0:path=path.slice(0,actual+1)
+ presentation.skill_effect=Jobs.SKILLS.get(used_skill,{}).get("effect","") if action=="skill" else ""
+ presentation.skill_id=used_skill if action=="skill" else ""
+ presentation.skill_target=target if action=="skill" else null
  presentation.start(self,before,battle.actors.duplicate(true),actor_id,action,path,str(target) if target is String else "")
  # Keep the old HUD values until the visible action lands; prevent every button callback.
  for node in footer.find_children("*","Button",true,false):node.disabled=true
@@ -668,6 +688,7 @@ func perform_battle_action(action: String,target=null) -> bool:
 
 func after_battle_action():
  battle_mode=""
+ selected_skill=""
  draw_battle()
  refresh_ui()
  ai_clock=0
@@ -954,7 +975,7 @@ func _unhandled_input(event):
    for cell in battle.cells():
     var distance=cell_position(cell).distance_to(p)
     if distance<best:nearest=cell;best=distance
-   if battle_mode in ["attack","skill","item"]:
+   if battle_mode in ["attack","skill","item"] and not (battle_mode=="skill" and Jobs.SKILLS.get(selected_skill,{}).get("target","")=="cell"):
     var model_distance=30.0
     for unit in battle.actors:
      if unit.hp<=0:continue
@@ -967,6 +988,7 @@ func _unhandled_input(event):
    var target=battle.unit_at(nearest)
    var accepted=false
    if battle_mode=="move":accepted=perform_battle_action("move",nearest)
+   elif battle_mode=="skill" and Jobs.SKILLS.get(selected_skill,{}).get("target","")=="cell":accepted=perform_battle_action("skill",nearest)
    elif not target.is_empty():
     if battle_mode=="attack":accepted=perform_battle_action("attack",target.id)
     elif battle_mode in ["skill","item"]:accepted=perform_battle_action(battle_mode,target.id)
@@ -1060,7 +1082,7 @@ func show_party_menu(tab: String="角色",character_id: String=""):
  frame.add_child(tabs)
  content_scroll.size_flags_vertical=Control.SIZE_EXPAND_FILL
  frame.add_child(content_scroll)
- for section in ["角色","装备","物品","遗物"]:
+ for section in ["角色","职业","装备","物品","遗物"]:
   var target=section
   var entry=button(section,func():show_party_menu(target),section==tab)
   entry.size_flags_horizontal=Control.SIZE_EXPAND_FILL
@@ -1091,61 +1113,9 @@ func show_party_menu(tab: String="角色",character_id: String=""):
  details.add_child(portrait)
  details.add_child(text_label(unit.name+"  /  "+unit.role,27,GOLD))
  details.add_child(text_label("已阵亡 · 无法出战" if unit.hp<=0 else ("正在战场 · 实时状态" if battle!=null and battle.find_actor(unit.id)!={} else "存活 · 可参与远征"),15,RED if unit.hp<=0 else TEAL))
- if tab=="角色":
-  details.add_child(text_label("生命  %d / %d       法力  %d / %d"%[unit.hp,unit.max_hp,unit.mp,unit.max_mp],19))
-  var attack_bonus=4 if "ember" in campaign.active_relics() else 0
-  details.add_child(text_label("攻击  %d     速度  %d     普攻射程  %d 格"%[unit.power+attack_bonus,unit.speed,unit.range],18))
-  var cards=HBoxContainer.new()
-  cards.add_theme_constant_override("separation",22)
-  details.add_child(cards)
-  var skills=VBoxContainer.new()
-  var loadout=VBoxContainer.new()
-  for card in [skills,loadout]:
-   card.size_flags_horizontal=Control.SIZE_EXPAND_FILL
-   card.size_flags_stretch_ratio=1.0
-   card.add_theme_constant_override("separation",10)
-   cards.add_child(card)
-  detail_section(skills,"当前技能")
-  skills.add_child(text_label("普通攻击 · 2 行动点 · 造成 %d 点伤害"%(unit.power+attack_bonus),16))
-  var effect="恢复 %d 点生命，目标为存活友军"%(26+(8 if "fury" in unit.get("learned",[]) else 0)) if unit.role=="行医者" else "造成 %d 点伤害，目标为敌人"%(unit.power+14+attack_bonus+(8 if "fury" in unit.get("learned",[]) else 0))
-  skills.add_child(text_label("治疗战技" if unit.role=="行医者" else "伤害战技",18,TEAL))
-  skills.add_child(text_label(effect+"\n3 行动点 · 8 法力 · 射程 3 格",16))
-  var ratio=7 if "spring" in campaign.active_relics() else 5
-  if "focus" in unit.get("learned",[]):ratio+=2
-  skills.add_child(text_label("休息 · 消耗剩余行动点，每点恢复 %d%% 最大生命或法力（至少 1 点）"%ratio,15,MUTED))
-  detail_section(loadout,"当前装备")
-  loadout.add_child(text_label("武器：遗铁刃 · 攻击 +3（已计入属性）" if campaign.equipped_index(unit.id)>=0 else "武器栏空置 · 可在装备菜单分配武器",16))
-  loadout.add_child(button("管理此角色装备 →",func():show_party_menu("装备",menu_character)))
-  detail_section(loadout,"生效的遗物")
-  show_relic_details(loadout,true)
- elif tab=="装备":
-  details.add_child(text_label("武器栏 · 每名角色可装备 1 件武器",17,TEAL))
-  var editable=campaign.phase in ["camp","world"] and battle==null
-  if not editable:details.add_child(text_label("当前阶段仅可查看，营地或野外可调整装备。",15,MUTED))
-  var equipped=campaign.equipped_index(unit.id)
-  details.add_child(text_label("当前：遗铁刃 · 攻击 +3" if equipped>=0 else "当前：未装备武器",18))
-  if equipped>=0:
-   var remove=button("卸下当前武器",func():
-    if campaign.unequip_item(menu_character):
-     refresh_ui()
-     show_party_menu("装备"))
-   remove.disabled=not editable
-   details.add_child(remove)
-  detail_section(details,"队伍武器库  /  %d 件"%campaign.equipment.size())
-  if campaign.equipment.is_empty():details.add_child(text_label("暂无武器。战斗胜利后可从战利品中获得。",16,MUTED))
-  for i in range(campaign.equipment.size()):
-   var index=i
-   var item=campaign.equipment[i]
-   var owner="背包中"
-   for member in campaign.roster:
-    if member.id==item.owner:owner="由 %s 装备"%member.name
-   details.add_child(text_label("遗铁刃 #%d · 攻击 +3 · %s"%[i+1,owner],17))
-   var entry=button("已装备" if item.owner==unit.id else ("装备此武器" if item.owner=="" else "转交此角色装备"),func():
-    if campaign.equip_item(index,menu_character):
-     refresh_ui()
-     show_party_menu("装备"))
-   entry.disabled=not editable or unit.hp<=0 or item.owner==unit.id
-   details.add_child(entry)
+ if tab=="角色":PartyDetails.role_page(self,details,unit)
+ elif tab=="职业":PartyDetails.profession_page(self,details,unit)
+ elif tab=="装备":PartyDetails.equipment_page(self,details,unit)
  elif tab=="物品":
   detail_section(details,"队伍共享物品")
   details.add_child(text_label("银币  %d"%campaign.silver,22,GOLD))
@@ -1158,7 +1128,7 @@ func show_party_menu(tab: String="角色",character_id: String=""):
   supply.disabled=campaign.phase!="world" or battle!=null or campaign.supplies<=0
   details.add_child(supply)
   detail_section(details,"技能书 · 选择左侧角色后学习")
-  details.add_child(text_label("已学习："+"、".join(unit.get("learned",[]).map(func(id):return Campaign.GOODS[id].name)),16,TEAL))
+  details.add_child(text_label("已学习："+"、".join(unit.get("learned",[]).map(func(id):return Jobs.SKILLS[id].name if Jobs.SKILLS.has(id) else Campaign.GOODS[id].name)),16,TEAL))
   for i in range(campaign.books.size()):
    var book_index=i
    var book_id=campaign.books[i]
@@ -1166,7 +1136,8 @@ func show_party_menu(tab: String="角色",character_id: String=""):
     if campaign.learn_book(book_index,unit.id):
      refresh_ui()
      show_party_menu("物品"))
-   learn.disabled=battle!=null or unit.hp<=0 or book_id in unit.get("learned",[])
+   learn.disabled=battle!=null or unit.hp<=0 or book_id in unit.get("learned",[]) or not Jobs.can_learn(unit,book_id)
+   details.add_child(text_label(Campaign.GOODS[book_id].desc+(" · 当前职业无法学习" if not Jobs.can_learn(unit,book_id) else ""),15,MUTED))
    details.add_child(learn)
  else:
   detail_section(details,"遗物与永久收藏")
@@ -1307,8 +1278,18 @@ func show_route_trade():
 func select_action(mode: String):
  if battle==null or presentation.busy or battle.outcome!="" or battle.active().is_empty() or battle.active().side!=0:return
  battle_mode=mode
+ if mode!="skill":selected_skill=""
+ elif selected_skill=="":selected_skill=battle.default_skill(battle.active())
  draw_battle()
  refresh_ui()
+
+func select_skill(id: String):
+ if battle==null or id not in battle.available_skills(battle.active()):return
+ selected_skill=id
+ select_action("skill")
+
+func target_cell_allowed(cell: Vector2i) -> bool:
+ return battle!=null and battle_mode=="skill" and Jobs.SKILLS.get(selected_skill,{}).get("target","")=="cell" and battle.can_cast(selected_skill,cell)
 
 func cancel_action():
  if presentation.busy:return
@@ -1320,7 +1301,7 @@ func target_allowed(target: Dictionary) -> bool:
  if a.is_empty():return false
  var distance=battle.hex_distance(a.cell,target.cell)
  if battle_mode=="attack":return target.side!=a.side and distance<=a.range
- if battle_mode=="skill":return distance<=3 and target.side==(a.side if a.role=="行医者" else 1-a.side)
+ if battle_mode=="skill":return battle.can_cast(selected_skill,target.id)
  if battle_mode=="item":return target.side==0 and distance<=3 and (target.hp<target.max_hp or target.mp<target.max_mp)
  return false
 
@@ -1340,11 +1321,16 @@ func render_action_menu(is_player: bool):
  var a=battle.active()
  if a.is_empty():return
  slot.add_child(text_label(a.name+" · "+a.role,23,GOLD))
- slot.add_child(text_label("生命 %d/%d · 法力 %d/%d\n行动点 %d / 4"%[a.hp,a.max_hp,a.mp,a.max_mp,a.ap],16,CREAM))
+ slot.add_child(text_label("生命 %d/%d · 法力 %d/%d\n行动点 %d / %d · 防护%d"%[a.hp,a.max_hp,a.mp,a.max_mp,a.ap,a.get("max_ap",4),a.get("armor",0)],16,CREAM))
+ slot.add_child(text_label("主角光环："+battle.aura_description(),14,TEAL))
+ var states=battle.status_text(a)
+ if states!="":slot.add_child(text_label(states,14,GOLD))
+ if battle_mode=="skill" and Jobs.SKILLS.has(selected_skill):
+  var skill=Jobs.SKILLS[selected_skill]
+  slot.add_child(text_label(skill.name+" · %d点 / %d法力 · 射程%d"%[skill.ap,skill.mp,skill.range]+"\n"+skill.desc,15,TEAL))
  var waiting="敌方行动中" if not is_player else ""
  if presentation.busy:waiting="行动播放中"
  var ap2=waiting if waiting!="" else ("需2行动点" if a.ap<2 else "")
- var skill_reason=waiting if waiting!="" else ("需3行动点" if a.ap<3 else ("需8法力" if a.mp<8 else ""))
  var item_reason=ap2 if ap2!="" else ("补给不足" if campaign.supplies<=0 else "")
  if battle_mode in ["","move","attack","skill","item"]:
   action_button(slot,"移动 · 1点/格","move",waiting if waiting!="" else ("行动点不足" if a.ap<1 else ""))
@@ -1358,15 +1344,25 @@ func render_action_menu(is_player: bool):
   end.disabled=waiting!=""
   slot.add_child(end)
  elif battle_mode=="skills":
-  var healing=a.role=="行医者"
-  var bonus=8 if "fury" in a.get("learned",[]) else 0
-  var amount=26+bonus if healing else a.power+14+bonus+(4 if "ember" in battle.bonuses else 0)
-  slot.add_child(text_label("选择技能",19,GOLD))
-  if skill_reason=="" and not battle.actors.any(func(u):return u.hp>0 and u.side==(a.side if healing else 1-a.side) and battle.hex_distance(a.cell,u.cell)<=3):skill_reason="无射程内目标"
-  action_button(slot,("治疗战技" if healing else "伤害战技")+" · 3点 / 8蓝","skill",skill_reason)
-  slot.add_child(text_label("恢复 %d 生命 · 友军 · 射程3"%amount if healing else "造成 %d 伤害 · 敌军 · 射程3"%amount,15,TEAL))
+  slot.add_child(text_label("选择技能 · 每次行动各限用一次",18,GOLD))
+  for skill_id in battle.available_skills(a):
+   var id=skill_id
+   var skill=Jobs.SKILLS[id]
+   var reason=waiting
+   if reason=="" and id in a.get("used_skills",[]):reason="本次已用"
+   if reason=="" and a.ap<skill.ap:reason="行动点不足"
+   if reason=="" and a.mp<skill.mp:reason="法力不足"
+   if reason=="":
+    var has_target=false
+    if skill.target=="cell":has_target=battle.cells().any(func(cell):return battle.can_cast(id,cell))
+    else:has_target=battle.actors.any(func(u):return battle.can_cast(id,u.id))
+    if not has_target:reason="无合法目标"
+   var entry=button(skill.name+" · %d点 / %d法力"%[skill.ap,skill.mp]+(" · "+reason if reason!="" else ""),func():select_skill(id))
+   entry.disabled=reason!=""
+   slot.add_child(entry)
+   slot.add_child(text_label(skill.desc+" · 射程%d"%skill.range,14,TEAL))
   for id in a.get("learned",[]):
-   slot.add_child(text_label(Campaign.GOODS[id].name+"（被动）\n"+Campaign.GOODS[id].desc,14,TEAL))
+   if id in ["fury","focus"]:slot.add_child(text_label(Campaign.GOODS[id].name+"（被动）",14,TEAL))
  elif battle_mode=="items":
   slot.add_child(text_label("选择物品",19,GOLD))
   if item_reason=="" and not battle.actors.any(func(u):return u.side==0 and u.hp>0 and battle.hex_distance(a.cell,u.cell)<=3 and (u.hp<u.max_hp or u.mp<u.max_mp)):item_reason="无须恢复的友军"
@@ -1387,7 +1383,7 @@ func render_action_menu(is_player: bool):
   cancel.disabled=presentation.busy
   slot.add_child(cancel)
  separator(slot)
- var hints={"":"请选择左侧角色指令。","move":"选择青色可达格移动 · 每格1行动点","attack":"选择红色格上的敌人 · 普通攻击消耗2行动点","skills":"从左侧选择技能，再选择目标。","skill":"选择高亮目标施放战技 · 3行动点 / 8法力","items":"从左侧选择物品，再选择友军。","item":"选择高亮友军使用补给 · 2行动点 / 1份补给","rest":"在左侧选择恢复生命或法力。"}
+ var hints={"":"请选择左侧角色指令。","move":"选择青色可达格移动 · 每格1行动点","attack":"选择红色格上的敌人 · 普通攻击消耗2行动点","skills":"从左侧选择技能，再选择目标。","skill":"选择高亮目标施放技能；机关选择空格","items":"从左侧选择物品，再选择友军。","item":"选择高亮友军使用补给 · 2行动点 / 1份补给","rest":"在左侧选择恢复生命或法力。"}
  footer.add_child(text_label(hints.get(battle_mode,"") if is_player else "敌方正在行动，请等待。",21,GOLD))
- footer.add_child(text_label("当前："+a.name+" · 行动点 %d/4 · 生命 %d/%d · 法力 %d/%d"%[a.ap,a.hp,a.max_hp,a.mp,a.max_mp],17))
+ footer.add_child(text_label("当前："+a.name+" · 行动点 %d/%d · 生命 %d/%d · 法力 %d/%d"%[a.ap,a.get("max_ap",4),a.hp,a.max_hp,a.mp,a.max_mp],17))
  if battle_mode!="":footer.add_child(text_label("Esc / 鼠标右键取消选择，不消耗资源。",15,MUTED))

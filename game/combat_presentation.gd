@@ -18,6 +18,9 @@ var before: Array=[]
 var after: Array=[]
 var source_id=""
 var mode=""
+var skill_effect=""
+var skill_id=""
+var skill_target=null
 var style="slash"
 var path: Array=[]
 var projectile: MeshInstance3D
@@ -56,6 +59,7 @@ func start(owner_node,before_state: Array,after_state: Array,actor_id: String,ac
  if source!=null:
   start_pos=source.position
   style=Visual.effect_style(source,action)
+  if action=="skill":style="heal" if skill_effect in ["heal","shield","guard"] else ("magic" if skill_effect in ["trap","mark"] else "slash")
   Visual.play(source,"prepare_skill" if mode=="skill" else mode)
   if mode=="skill":begin_charge()
   for u in after:
@@ -115,6 +119,11 @@ func advance(delta: float):
   var b=host.cell_position(path[index])
   source.position=a.lerp(b,clampf(progress-index,0,1))
   face(source,b)
+ elif source!=null and mode=="skill" and skill_id=="dash":
+  var destination=find_unit(after,source_id)
+  if not destination.is_empty():
+   var progress=clampf((clock-release_time)/maxf(0.01,impact_time-release_time),0,1)
+   source.position=start_pos.lerp(host.cell_position(destination.cell),progress)
  elif source!=null and mode.begins_with("rest"):
   var body=source.get_node("Body")
   var settle=sin(clampf(clock/duration,0,1)*PI)
@@ -151,6 +160,11 @@ func advance(delta: float):
   completed.emit()
 
 func impact():
+ if mode=="skill" and skill_effect in ["trap","mark","shield","guard"]:
+  var effect_position=host.cell_position(skill_target) if skill_target is Vector2i else projectile_target-Vector3(0,0.8,0)
+  var effect_name={"trap":"机关就绪","mark":"猎物标记","shield":"净护","guard":"援护"}[skill_effect]
+  pulse(effect_position,Color("a2f0bc") if skill_effect in ["shield","guard"] else Color("f6d18a"),0.5)
+  floating(effect_name,effect_position+Vector3(0,1.5,0),Color("f6d18a"))
  host.status_label.text={"attack":"攻击命中","skill":"战技生效","rest_hp":"休息 · 生命恢复","rest_mp":"休息 · 法力恢复","move":"移动完成"}.get(mode,"行动生效")
  for unit in after:
   var old=find_unit(before,unit.id)

@@ -18,7 +18,7 @@ func _initialize():
  check(c.equip_item(0,"blade"),"transfer weapon to another character")
  check(c.roster[0].power==original and c.roster[1].power==25,"transfer removes former bonus")
  c.equipment.append({"id":"sword","owner":""})
- check(c.equip_item(1,"blade") and c.equipment[0].owner=="","replacement returns previous weapon")
+ check(c.equip_item(c.equipment.size()-1,"blade") and c.equipment[0].owner=="","replacement returns previous weapon")
  check(c.roster[1].power==25,"replacement does not stack")
  check(c.unequip_item("blade") and c.roster[1].power==22,"unequip restores base attack")
  c.roster[1].hp=0
@@ -38,6 +38,9 @@ func _initialize():
  check(next.load_data(pending),"legacy pending equipment reward still loads")
  var legacy=data.duplicate(true)
  legacy.erase("equipment")
+ legacy.version=1
+ for unit in legacy.roster:
+  unit.erase("base_power");unit.erase("base_range");unit.erase("base_speed")
  check(next.load_data(legacy) and next.equipment.is_empty() and next.roster[0].power==original+3,"legacy permanent upgrades retained")
  c.depart()
  var battle=c.make_battle(["hero"],0)
