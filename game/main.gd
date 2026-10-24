@@ -59,14 +59,17 @@ func _ready():
  env.background_color = Color("b6c7bc")
  env.ambient_light_source = Environment.AMBIENT_SOURCE_COLOR
  env.ambient_light_color = Color("b9c9c2")
- env.ambient_light_energy = 0.48
+ env.ambient_light_energy = 0.40
+ env.fog_enabled=true
+ env.fog_light_color=Color("b5c5b9")
+ env.fog_density=0.0015
  env.tonemap_mode = Environment.TONE_MAPPER_FILMIC
  environment.environment = env
  add_child(environment)
  var sun = DirectionalLight3D.new()
  sun.rotation_degrees = Vector3(-52,-35,0)
  sun.light_color = Color("ffe9bc")
- sun.light_energy = 0.78
+ sun.light_energy = 0.65
  sun.shadow_enabled = true
  add_child(sun)
  camera = Camera3D.new()
@@ -82,9 +85,12 @@ func _ready():
   if capture_mode == "--capture-battle":
    battle = campaign.make_battle(["hero","blade","ranger","medic","engineer"],0)
    battle.actors[1].hp = 36
-  if capture_mode == "--capture-shrink":
+  if capture_mode in ["--capture-shrink","--capture-tide"]:
    battle = campaign.make_battle(["hero","blade","ranger","medic","engineer"],0)
    battle.round_no=3
+   if capture_mode=="--capture-tide":
+    battle.shrink()
+    battle.round_no=4
  if capture_mode == "":campaign.load_game()
  if campaign.phase == "battle" and battle==null:campaign.phase="world"
  if battle != null:draw_battle()
@@ -233,7 +239,7 @@ func cell_position(cell: Vector2i) -> Vector3:
 func draw_battle():
  clear_scene()
  camera_zoom = 18.5
- art.landscape(scene_root)
+ art.landscape(scene_root,battle.radius)
  art.tide(scene_root,battle.radius,battle.round_no>=2)
  var a = battle.active()
  for cell in battle.cells():
@@ -361,6 +367,7 @@ func make_ui():
  info.add_child(text_label("边境生存手册",17,GOLD))
  info.add_child(text_label("点击地面移动 · 点击地标交互\n滚轮缩放 · Q / E 旋转视角",14,MUTED))
  status_label=text_label("",17)
+ status_label.add_theme_stylebox_override("normal",style(Color(0.06,0.10,0.13,0.85),Color.TRANSPARENT,7))
  status_label.position=Vector2(340,114)
  status_label.size=Vector2(1040,65)
  status_label.mouse_filter=Control.MOUSE_FILTER_IGNORE
@@ -721,6 +728,11 @@ func _unhandled_input(event):
 
 func _process(delta):
  elapsed+=delta
+ for i in range(pawn_nodes.size()):
+  var pawn=pawn_nodes[i]
+  if is_instance_valid(pawn):
+   var body=pawn.get_node_or_null("Body")
+   if body!=null:body.position.y=sin(elapsed*2.1+i*0.8)*0.012
  if battle==null and campaign.phase=="world" and world_party!=null and not is_instance_valid(modal):
   var delta_pos=world_target-world_party.position
   if delta_pos.length()>0.06:
@@ -749,6 +761,7 @@ func capture_image():
  DirAccess.make_dir_recursive_absolute(ProjectSettings.globalize_path("res://artifacts"))
  var filename="battle" if battle!=null else "world"
  if capture_mode=="--capture-shrink":filename="shrink"
+ if capture_mode=="--capture-tide":filename="tide"
  var path="res://artifacts/"+filename+".png"
  image.save_png(path)
  print("CAPTURE_READY ",ProjectSettings.globalize_path(path))

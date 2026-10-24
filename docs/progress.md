@@ -16,3 +16,10 @@ Visual verification: native rendered world and battle PNGs inspected; fixed head
 Final verification: python3 tests/verify.py — 80 checks in six suites, zero failures; SCENE_SMOKE_OK. Native captures have no script errors.
 Integration: retain local prototype branch in this fresh repository; no remote or merge base exists. No platform publishing performed.
 Limitations: one small region, six starting units, no full recruitment/story/equipment-management system, simple models, no final audio/animation or phone layout validation.
+
+## 2026-10-24 art upgrade
+Standing authorization used to execute approved Tears-of-the-Kingdom-inspired original style without routine confirmation. Added separate Art factory and painterly, wind, water, cloth and tide shaders. No simulation/save-format changes.
+Art test initially failed (missing factory), then passed after integration; now 10 visual/state checks. Fixed overbright custom diffuse lighting against Godot shader reference (LIGHT_COLOR includes PI), ring/cylinder orientation mismatch, water stepping, grass in water/paths, cape flutter axis and status contrast after native screenshot review.
+Independent read-only review reported no blocking defects. Native Compatibility captures inspected for world, battle, warning and post-shrink terrain. Full suite expanded to 90 checks / 7 suites plus native scene smoke.
+Ruling: scenery outside the tactical field may have height; tactical picking and actor positions stay on the existing plane. Shared generated assets used across encounter types, with broken bridge as the main sample.
+Limits: procedural original art is an intermediate visual sample; no final rigged battle animations, no measured mobile performance, no assertion of matching reference game's production quality.

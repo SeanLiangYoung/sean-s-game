@@ -71,8 +71,8 @@ func ring(parent: Node3D,pos: Vector3,radius: float,color: Color,width: float=0.
  var verts=PackedVector3Array()
  var normals=PackedVector3Array()
  for i in range(sides):
-  var a=TAU*i/sides
-  var b=TAU*(i+1)/sides
+  var a=PI*0.5+TAU*i/sides
+  var b=PI*0.5+TAU*(i+1)/sides
   var out_a=Vector3(cos(a)*radius,0,sin(a)*radius)
   var out_b=Vector3(cos(b)*radius,0,sin(b)*radius)
   var in_a=out_a*(radius-width)/radius
@@ -146,6 +146,8 @@ func terrain(parent: Node3D):
  # Terrain patch colors are painted mathematically, avoiding photographic noise.
  n.material_override=paint(Color("71864e"),0.28)
  n.cast_shadow=GeometryInstance3D.SHADOW_CASTING_SETTING_OFF
+ n.name="Meadow"
+ return n
 
 func grass(parent: Node3D,seed_value: int,count: int,extent: Vector2,exclude_center: bool=false):
  var rng=RandomNumberGenerator.new()
@@ -172,6 +174,10 @@ func grass(parent: Node3D,seed_value: int,count: int,extent: Vector2,exclude_cen
    var r=rng.randf_range(6.0,10.5)
    x=cos(angle)*r
    z=sin(angle)*r
+  if exclude_center and absf(x-(6.6+sin(z*0.24)*0.8))<1.4:x+=3.0
+  if not exclude_center:
+   if absf(z-(-10.5+sin(x*0.28)*1.2))<1.4:z+=2.8
+   if absf(x-sin(z*0.24)*1.7)<1.3:x+=2.5
   var h=terrain_height(x,z) if exclude_center else -0.08
   var size=rng.randf_range(0.5,1.35)
   var basis=Basis(Vector3.UP,rng.randf()*TAU).scaled(Vector3(size,size,size))
@@ -223,23 +229,50 @@ func ruin(parent: Node3D,pos: Vector3):
  cloth(root,Vector3(1.08,2.85,0),0.7,0.8,Color("9d6d49"))
  cone(root,Vector3(-0.5,0.05,0.25),0.4,0.38,0.1,Color("78824a"),12)
 
-func landscape(parent: Node3D):
+func river(parent: Node3D):
+ var vertices=PackedVector3Array()
+ var normals=PackedVector3Array()
+ var uvs=PackedVector2Array()
+ var indices=PackedInt32Array()
+ for i in range(65):
+  var z=-16.0+i*0.5
+  var x=6.6+sin(z*0.24)*0.8
+  for side in [-1,1]:
+   vertices.append(Vector3(x+side*1.15,-0.07,z))
+   normals.append(Vector3.UP)
+   uvs.append(Vector2((side+1)*0.5,i*0.1))
+  if i<64:
+   var k=i*2
+   indices.append_array(PackedInt32Array([k,k+1,k+2,k+1,k+3,k+2]))
+ var arrays=[]
+ arrays.resize(Mesh.ARRAY_MAX)
+ arrays[Mesh.ARRAY_VERTEX]=vertices
+ arrays[Mesh.ARRAY_NORMAL]=normals
+ arrays[Mesh.ARRAY_TEX_UV]=uvs
+ arrays[Mesh.ARRAY_INDEX]=indices
+ var geometry=ArrayMesh.new()
+ geometry.add_surface_from_arrays(Mesh.PRIMITIVE_TRIANGLES,arrays)
+ var n=mesh(parent,geometry,Vector3.ZERO,Color.WHITE)
+ n.name="Brook"
+ var m=ShaderMaterial.new()
+ m.shader=WATER
+ n.material_override=m
+ return n
+
+func landscape(parent: Node3D,safe_radius: int=4):
  var root=Node3D.new()
  root.name="BattleLandscape"
  parent.add_child(root)
- terrain(root)
+ var meadow=terrain(root)
+ meadow.material_override=meadow.material_override.duplicate()
+ meadow.material_override.set_shader_parameter("safe_radius",float(safe_radius) if safe_radius<4 else -1.0)
  grass(root,1207,2200,Vector2(13,12),true)
- # A stream along the battlefield's eastern bank.
- var water=ShaderMaterial.new()
- water.shader=WATER
- for j in range(34):
-  var z=-13.0+j*0.75
+ # Continuous ribbon geometry avoids the old stepped water blocks.
+ river(root)
+ for j in range(12):
+  var z=-12.0+j*2.0
   var x=6.6+sin(z*0.24)*0.8
-  var n=box(root,Vector3(x,-0.08,z),Vector3(2.3,0.035,0.9),Color("529b9b"))
-  n.rotation_degrees.y=-cos(z*0.24)*10
-  n.material_override=water
-  if j%3==0:
-   rock(root,Vector3(x-1.4,0.04,z),Vector3(0.6,0.3,0.65),Color("aba88c"))
+  rock(root,Vector3(x-1.4,0.04,z),Vector3(0.6,0.3,0.65),Color("aba88c"))
  broken_bridge(root)
  ruin(root,Vector3(-4.8,0,-5.0))
  ruin(root,Vector3(1.5,0,-6.7))

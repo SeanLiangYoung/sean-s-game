@@ -32,5 +32,7 @@ func run():
  check(scene.scene_root.find_children("BattleLandscape","",false,false).size()==1,"rebuild removes previous landscape")
  check(scene.scene_root.find_children("GreyTide","",false,false).size()==1,"rebuild removes previous tide")
  check(scene.scene_root.find_child("WindGrass",true,false)!=null,"vegetation survives shrink rebuild")
+ var meadow=scene.scene_root.find_child("Meadow",true,false)
+ check(meadow!=null and meadow.material_override.get_shader_parameter("safe_radius")==3.0,"ash terrain follows current safe radius")
  print("CHECKS: ",checks," FAILURES: ",failures)
  quit(1 if failures else 0)
