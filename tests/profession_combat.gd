@@ -11,6 +11,7 @@ func setup(job: String):
  var party=r.default_party()
  var unit=party[0] if job=="hero" else party[1]
  unit.profession=job;unit.role=Jobs.JOBS[job].name;unit.speed=30
+ for id in Jobs.JOBS[job].skills:unit.skill_ranks[id]=1
  r.start_battle([unit,party[3]],0)
  r.obstacles=[]
  var a=r.actors[0]
@@ -31,7 +32,7 @@ func _initialize():
  ally.hp=1
  check(r.call("cast",ally.id,"heal") and ally.hp==33,"medic healing specialization")
  check(not r.call("cast",ally.id,"heal"),"skill once per personal turn")
- r=setup("hero");a=r.active();ally=r.actors[1];ally.hp=1;a.learned=["heal"]
+ r=setup("hero");a=r.active();ally=r.actors[1];ally.hp=1;a.learned=["heal"];a.skill_ranks.heal=1
  check(r.call("cast",ally.id,"heal") and ally.hp==27,"hero learns heal without medic specialization")
  r=setup("blade");a=r.active();var enemy=r.actors[2]
  enemy.cell=Vector2i(2,0)

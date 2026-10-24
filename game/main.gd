@@ -703,7 +703,7 @@ func perform_battle_action(action: String,target=null) -> bool:
  if action=="move":
   var actual=path.find(actor.cell)
   if actual>=0:path=path.slice(0,actual+1)
- presentation.skill_effect=Jobs.SKILLS.get(used_skill,{}).get("effect","") if action=="skill" else ""
+ presentation.skill_effect=Jobs.ALL_SKILLS.get(used_skill,{}).get("effect","") if action=="skill" else ""
  presentation.skill_id=used_skill if action=="skill" else ""
  presentation.skill_target=target if action=="skill" else null
  presentation.start(self,before,battle.actors.duplicate(true),actor_id,action,path,str(target) if target is String else "")
@@ -742,6 +742,7 @@ func return_world():
 func show_reward():
  open_modal("战斗胜利  /  战利品三选一","宝物在远征中立即生效。安全撤离时最多带回两件，其余换成银币。")
  set_page_back(Callable())
+ modal_body.add_child(text_label(campaign.notice,16,GOLD))
  for i in range(campaign.choices.size()):
   var index=i
   var reward=campaign.choices[i]
@@ -1002,7 +1003,7 @@ func _unhandled_input(event):
    for cell in battle.cells():
     var distance=cell_position(cell).distance_to(p)
     if distance<best:nearest=cell;best=distance
-   if battle_mode in ["attack","skill","item"] and not (battle_mode=="skill" and Jobs.SKILLS.get(selected_skill,{}).get("target","")=="cell"):
+   if battle_mode in ["attack","skill","item"] and not (battle_mode=="skill" and Jobs.ALL_SKILLS.get(selected_skill,{}).get("target","")=="cell"):
     var model_distance=30.0
     for unit in battle.actors:
      if unit.hp<=0:continue
@@ -1015,7 +1016,7 @@ func _unhandled_input(event):
    var target=battle.unit_at(nearest)
    var accepted=false
    if battle_mode=="move":accepted=perform_battle_action("move",nearest)
-   elif battle_mode=="skill" and Jobs.SKILLS.get(selected_skill,{}).get("target","")=="cell":accepted=perform_battle_action("skill",nearest)
+   elif battle_mode=="skill" and Jobs.ALL_SKILLS.get(selected_skill,{}).get("target","")=="cell":accepted=perform_battle_action("skill",nearest)
    elif not target.is_empty():
     if battle_mode=="attack":accepted=perform_battle_action("attack",target.id)
     elif battle_mode in ["skill","item"]:accepted=perform_battle_action(battle_mode,target.id)
@@ -1297,6 +1298,7 @@ func show_route_trade():
  open_modal("行路商店" if shop else "雇佣兵营地","银币 %d · 离开后不能返回；可以关闭窗口继续选择路线。"%campaign.silver)
  if shop:
   for id in Campaign.GOODS:
+   if Jobs.ALL_SKILLS.has(id):continue
    var item_id=id
    var good=Campaign.GOODS[id]
    modal_body.add_child(text_label(good.name+" · "+good.desc,18))
@@ -1333,7 +1335,7 @@ func select_skill(id: String):
  select_action("skill")
 
 func target_cell_allowed(cell: Vector2i) -> bool:
- return battle!=null and battle_mode=="skill" and Jobs.SKILLS.get(selected_skill,{}).get("target","")=="cell" and battle.can_cast(selected_skill,cell)
+ return battle!=null and battle_mode=="skill" and Jobs.ALL_SKILLS.get(selected_skill,{}).get("target","")=="cell" and battle.can_cast(selected_skill,cell)
 
 func cancel_action():
  if presentation.busy:return
@@ -1369,9 +1371,9 @@ func render_action_menu(is_player: bool):
  slot.add_child(text_label("主角光环："+battle.aura_description(),14,TEAL))
  var states=battle.status_text(a)
  if states!="":slot.add_child(text_label(states,14,GOLD))
- if battle_mode=="skill" and Jobs.SKILLS.has(selected_skill):
-  var skill=Jobs.SKILLS[selected_skill]
-  slot.add_child(text_label(skill.name+" · %d点 / %d法力 · 射程%d"%[skill.ap,skill.mp,skill.range]+"\n"+skill.desc,15,TEAL))
+ if battle_mode=="skill" and Jobs.ALL_SKILLS.has(selected_skill):
+  var skill=Jobs.ALL_SKILLS[selected_skill]
+  slot.add_child(text_label(skill.name+" · %d点 / %d法力 · 射程%d"%[skill.ap,skill.mp,skill.range]+"\n"+Jobs.rank_description(battle.active(),selected_skill),15,TEAL))
  var waiting="敌方行动中" if not is_player else ""
  if presentation.busy:waiting="行动播放中"
  var ap2=waiting if waiting!="" else ("需2行动点" if a.ap<2 else "")
@@ -1391,7 +1393,7 @@ func render_action_menu(is_player: bool):
   slot.add_child(text_label("选择技能 · 每次行动各限用一次",18,GOLD))
   for skill_id in battle.available_skills(a):
    var id=skill_id
-   var skill=Jobs.SKILLS[id]
+   var skill=Jobs.ALL_SKILLS[id]
    var reason=waiting
    if reason=="" and id in a.get("used_skills",[]):reason="本次已用"
    if reason=="" and a.ap<skill.ap:reason="行动点不足"
@@ -1404,7 +1406,7 @@ func render_action_menu(is_player: bool):
    var entry=button(skill.name+" · %d点 / %d法力"%[skill.ap,skill.mp]+(" · "+reason if reason!="" else ""),func():select_skill(id))
    entry.disabled=reason!=""
    slot.add_child(entry)
-   slot.add_child(text_label(skill.desc+" · 射程%d"%skill.range,14,TEAL))
+   slot.add_child(text_label(Jobs.rank_description(a,id)+" · 射程%d"%skill.range,14,TEAL))
   for id in a.get("learned",[]):
    if id in ["fury","focus"]:slot.add_child(text_label(Campaign.GOODS[id].name+"（被动）",14,TEAL))
  elif battle_mode=="items":

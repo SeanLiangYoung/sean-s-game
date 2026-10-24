@@ -13,19 +13,19 @@ static func comparison(before: Dictionary,after: Dictionary) -> String:
 static func skill_details(host,parent: Control,unit: Dictionary):
  host.detail_section(parent,"当前技能")
  for id in Jobs.skills_for(unit):
-  var skill=Jobs.SKILLS[id]
+  var skill=Jobs.ALL_SKILLS[id]
   parent.add_child(host.text_label(skill.name+" · %d点 / %d法力 · 射程%d"%[skill.ap,skill.mp,skill.range],17,host.TEAL))
-  var description=skill.desc
-  if id=="heal":
+  var description=Jobs.rank_description(unit,id)
+  if skill.get("base",id)=="heal":
    var stats=host.campaign.character_stats(unit.id)
-   var amount=26+stats.heal_bonus+(6 if unit.profession=="medic" else 0)+(8 if "fury" in unit.get("learned",[]) else 0)
+   var amount=26+Jobs.skill_bonus(unit,id)+stats.heal_bonus+(6 if unit.profession=="medic" else 0)+(8 if "fury" in unit.get("learned",[]) else 0)
    description="恢复 %d 生命（基础26，已计入职业及装备增益）"%amount
   parent.add_child(host.text_label(description+"；每次个人行动限用一次",15,host.MUTED))
  for id in unit.get("learned",[]):
   if id in ["fury","focus"]:
    parent.add_child(host.text_label(host.Campaign.GOODS[id].name+" · "+host.Campaign.GOODS[id].desc,15,host.TEAL))
   elif id not in Jobs.skills_for(unit):
-   parent.add_child(host.text_label(Jobs.SKILLS[id].name+" · 已学，转回对应职业后可用",15,host.MUTED))
+   parent.add_child(host.text_label(Jobs.ALL_SKILLS[id].name+" · 已学，转回对应职业后可用",15,host.MUTED))
 
 static func role_page(host,parent: Control,unit: Dictionary):
  var stats=unit if host.battle!=null and not host.battle.find_actor(unit.id).is_empty() else host.campaign.character_stats(unit.id)
@@ -41,13 +41,42 @@ static func role_page(host,parent: Control,unit: Dictionary):
  host.show_relic_details(parent,true)
 
 static func skills_page(host,parent: Control,unit: Dictionary):
- parent.add_child(host.text_label("职业技能、已学技能与技能书",18,host.TEAL))
- parent.add_child(host.text_label("普通职业使用当前职业对应的技能；通用被动始终生效。主角可学习和使用所有职业技能。",15,host.MUTED))
- if unit.profession=="hero":aura_preview(host,parent,unit)
+ parent.add_child(host.text_label("职业技能树 · 可用经验 %d"%unit.get("xp",0),22,host.GOLD))
+ parent.add_child(host.text_label("战胜敌人后，上阵幸存者平分经验；击杀者每次额外获得15经验。解锁与强化均消耗经验，最高3级。",15,host.MUTED))
+ parent.add_child(host.text_label("基础技能达到2级后，可选择任一进阶分支；两条分支都可学习。转职保留投入，主角可学习所有职业。",15,host.MUTED))
+ var jobs=Jobs.JOBS.keys() if unit.profession=="hero" else [unit.profession]
+ for job_id in jobs:
+  host.detail_section(parent,Jobs.JOBS[job_id].name+" · 技能树")
+  var root=Jobs.JOBS[job_id].skills[0]
+  var branches=Jobs.JOBS[job_id].skills
+  parent.add_child(host.text_label(Jobs.ALL_SKILLS[root].name+" 2级 → "+Jobs.ALL_SKILLS[branches[1]].name+" / "+Jobs.ALL_SKILLS[branches[2]].name,16,host.TEAL))
+  for skill_id in Jobs.JOBS[job_id].skills:
+   var id=skill_id
+   var skill=Jobs.ALL_SKILLS[id]
+   var rank=Jobs.skill_rank(unit,id)
+   var root_id=Jobs.prerequisite(id)
+   var title=("◆ 基础 · " if root_id=="" else "↳ 进阶 · ")+skill.name+" · "+("未解锁" if rank==0 else "%d / 3级"%rank)
+   parent.add_child(host.text_label(title,19,host.TEAL if rank>0 else host.MUTED))
+   parent.add_child(host.text_label("%d行动点 / %d法力 · 射程%d"%[skill.ap,skill.mp,skill.range],15,host.MUTED))
+   if rank>0:parent.add_child(host.text_label("当前："+Jobs.rank_description(unit,id),15))
+   if rank<3:parent.add_child(host.text_label(("解锁效果：" if rank==0 else "下一级：")+Jobs.rank_description(unit,id,rank+1),15,host.TEAL))
+   if root_id!="":parent.add_child(host.text_label("前置："+Jobs.ALL_SKILLS[root_id].name+" 2级",14,host.MUTED))
+   var reason=Jobs.training_reason(unit,id)
+   if host.battle!=null or host.campaign.phase not in ["camp","world"]:reason="当前阶段无法加点"
+   elif unit.hp<=0:reason="已阵亡，无法加点"
+   var label=("解锁" if rank==0 else "强化")+skill.name+" · %d经验"%Jobs.skill_cost(unit,id)
+   if rank>=3:label=skill.name+" · 已满级"
+   elif reason!="":label+=" · "+reason
+   var train=host.button(label,func():
+    if host.campaign.train_skill(unit.id,id):
+     host.refresh_ui();host.show_party_menu("技能",unit.id))
+   train.disabled=reason!=""
+   parent.add_child(train)
  skill_details(host,parent,unit)
  host.detail_section(parent,"技能书 · 为当前角色学习")
+ parent.add_child(host.text_label("旧存档中的技能书仍可直接学习；职业技能书不再售卖，新增技能通过经验解锁。",15,host.MUTED))
  if host.campaign.books.is_empty():
-  parent.add_child(host.text_label("暂无技能书，可在远征商店购买。",16,host.MUTED))
+  parent.add_child(host.text_label("暂无旧技能书。职业技能请在上方使用经验解锁。",16,host.MUTED))
  for i in host.campaign.books.size():
   var book_index=i
   var book_id=host.campaign.books[i]
@@ -97,7 +126,7 @@ static func profession_page(host,parent: Control,unit: Dictionary):
   var after=Jobs.stats(candidate,host.campaign.equipment)
   parent.add_child(host.text_label(comparison(before,after),15,host.MUTED))
   for skill_id in job.skills:
-   var skill=Jobs.SKILLS[skill_id]
+   var skill=Jobs.ALL_SKILLS[skill_id]
    parent.add_child(host.text_label(skill.name+" · "+skill.desc,15))
   var entry=host.button("转职为 "+job.name,func():
    if host.campaign.change_profession(unit.id,job_id):

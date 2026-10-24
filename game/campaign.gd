@@ -16,9 +16,9 @@ static func goods_catalog() -> Dictionary:
  for id in Professions.ITEMS:
   var item=Professions.ITEMS[id]
   result[id]={"name":item.name,"price":item.price,"desc":Professions.item_description(id)}
- for id in Professions.SKILLS:
+ for id in Professions.ALL_SKILLS:
   if id=="strike":continue
-  var skill=Professions.SKILLS[id]
+  var skill=Professions.ALL_SKILLS[id]
   result[id]={"name":"技能书 · "+skill.name,"price":35,"desc":skill.desc}
  return result
 static var GOODS=goods_catalog()
@@ -113,7 +113,13 @@ func resolve_battle(b) -> bool:
   for i in range(3):
    var index = rng.randi_range(0,available.size()-1)
    choices.append(available.pop_at(index))
-  notice = "战斗胜利。选择一份战利品。"
+  var survivors=b.actors.filter(func(a):return a.side==0 and a.hp>0)
+  var pool=120+current_encounter*60
+  var share=int(pool/maxi(1,survivors.size()))
+  for unit in roster:
+   for actor in survivors:
+    if unit.id==actor.id:unit.xp+=share+int(actor.get("kills",0))*15
+  notice = "战斗胜利！上阵幸存者每人获得 %d 经验，击杀额外奖励每名15经验。选择一份战利品。"%share
  else:
   phase = "world"
   notice = "出战队伍全灭。幸存留守者接续远征；该遭遇已无法重试。"
@@ -180,7 +186,7 @@ func visit_event() -> bool:
 func to_data(include_snapshot: bool = true) -> Dictionary:
  var units = roster.duplicate(true)
  for u in units:u.erase("cell")
- var data = {"version":2,"trial_equipment_claimed":trial_equipment_claimed,"equipment":equipment.duplicate(true),"roster":units,"phase":phase,"encounters":encounters.duplicate(),"relics":relics.duplicate(),"collection":collection.duplicate(),"silver":silver,"supplies":supplies,"expedition":expedition,"world_position":world_position.duplicate(),"event_used":event_used,"choices":choices.duplicate(true),"notice":notice,"rng_state":str(rng.state),"route":route.data() if route.region!="" else {},"books":books.duplicate(),"purchases":purchases.duplicate(),"recruits":recruits.duplicate()}
+ var data = {"version":3,"trial_equipment_claimed":trial_equipment_claimed,"equipment":equipment.duplicate(true),"roster":units,"phase":phase,"encounters":encounters.duplicate(),"relics":relics.duplicate(),"collection":collection.duplicate(),"silver":silver,"supplies":supplies,"expedition":expedition,"world_position":world_position.duplicate(),"event_used":event_used,"choices":choices.duplicate(true),"notice":notice,"rng_state":str(rng.state),"route":route.data() if route.region!="" else {},"books":books.duplicate(),"purchases":purchases.duplicate(),"recruits":recruits.duplicate()}
  if include_snapshot:data["snapshot"] = snapshot.duplicate(true)
  return data
 
@@ -188,7 +194,7 @@ func is_number(value) -> bool:
  return (value is int or value is float) and is_finite(float(value))
 
 func load_data(data: Dictionary) -> bool:
- if data.get("version",0)!=1 and data.get("version",0)!=2:return false
+ if data.get("version",0)!=1 and data.get("version",0)!=2 and data.get("version",0)!=3:return false
  var migrated=data.get("version")==1
  data=data.duplicate(true)
  if not data.get("roster") is Array or data.roster.is_empty() or data.roster.size()>10:return false
@@ -250,11 +256,18 @@ func load_data(data: Dictionary) -> bool:
  for key in ["books","purchases","recruits"]:
   if not data.get(key,[]) is Array:return false
  for id in data.get("books",[]):
-  if id not in ["fury","focus"] and not Professions.SKILLS.has(id):return false
+  if id not in ["fury","focus"] and not Professions.ALL_SKILLS.has(id):return false
  for u in data.roster:
+  if data.version>=3 and (not u.has("xp") or not u.has("skill_ranks")):return false
+  if not is_number(u.get("xp",0)) or u.get("xp",0)<0 or float(u.get("xp",0))!=floor(float(u.get("xp",0))):return false
+  if not u.get("skill_ranks",{}) is Dictionary:return false
+  for id in u.get("skill_ranks",{}):
+   var rank=u.skill_ranks[id]
+   if not Professions.ALL_SKILLS.has(id) or not is_number(rank):return false
+   if rank<1 or rank>3 or float(rank)!=floor(float(rank)):return false
   if not u.get("learned",[]) is Array:return false
   for id in u.get("learned",[]):
-   if id not in ["fury","focus"] and not Professions.SKILLS.has(id):return false
+   if id not in ["fury","focus"] and not Professions.ALL_SKILLS.has(id):return false
  var saved_snapshot=data.get("snapshot",{})
  if not saved_snapshot.is_empty():
   if not saved_snapshot.get("snapshot",{}) is Dictionary or not saved_snapshot.get("snapshot",{}).is_empty():return false
@@ -266,6 +279,10 @@ func load_data(data: Dictionary) -> bool:
    u.erase("base_power");u.erase("base_range");u.erase("base_speed")
    for item in saved_equipment:
     if item.owner==u.id:u.power-=Professions.ITEMS[item.id].power
+  if data.version<3 and not u.has("skill_ranks"):
+   u.skill_ranks={}
+   for id in Professions.JOBS[Professions.job_id(u)].skills:
+    if not Professions.BRANCHES.has(id):u.skill_ranks[id]=1
   Professions.normalize(u)
  trial_equipment_claimed=bool(data.get("trial_equipment_claimed",not migrated))
  route=next_route
@@ -386,6 +403,7 @@ func change_profession(character_id: String,job: String) -> bool:
   if unit.id!=character_id or unit.hp<=0:continue
   unit.profession=job
   unit.role=Professions.JOBS[job].name
+  Professions.grant_basic(unit)
   refresh_stats()
   notice="%s 已转职为 %s；已学技能与装备保留。"%[unit.name,unit.role]
   save_game()
@@ -437,13 +455,13 @@ func at_node(kind: String) -> bool:
  return phase=="world" and route.region!="" and route.node(route.current).get("kind","")==kind
 
 func buy(id: String) -> bool:
- if not at_node("shop") or not GOODS.has(id):return false
+ if not at_node("shop") or not GOODS.has(id) or Professions.ALL_SKILLS.has(id):return false
  var key=route.current+":"+id
  if key in purchases or silver<GOODS[id].price:return false
  silver-=GOODS[id].price
  purchases.append(key)
  if Professions.ITEMS.has(id):equipment.append({"id":id,"owner":""})
- elif id in ["fury","focus"] or Professions.SKILLS.has(id):books.append(id)
+ elif id in ["fury","focus"] or Professions.ALL_SKILLS.has(id):books.append(id)
  else:relics.append(id)
  notice="购入 "+GOODS[id].name
  save_game()
@@ -472,8 +490,22 @@ func learn_book(index: int,character_id: String) -> bool:
   if books[index] in learned:return false
   learned.append(books[index])
   u.learned=learned
+  if Professions.ALL_SKILLS.has(books[index]) and Professions.skill_rank(u,books[index])==0:u.skill_ranks[books[index]]=1
   books.remove_at(index)
   notice="%s 学会了新技能。"%u.name
+  save_game()
+  return true
+ return false
+
+func train_skill(character_id: String,skill_id: String) -> bool:
+ if phase not in ["camp","world"]:return false
+ for unit in roster:
+  if unit.id!=character_id or unit.hp<=0:continue
+  if Professions.training_reason(unit,skill_id)!="":return false
+  var cost=Professions.skill_cost(unit,skill_id)
+  unit.xp-=cost
+  unit.skill_ranks[skill_id]=Professions.skill_rank(unit,skill_id)+1
+  notice="%s 的 %s 达到%d级（消耗%d经验）。"%[unit.name,Professions.ALL_SKILLS[skill_id].name,unit.skill_ranks[skill_id],cost]
   save_game()
   return true
  return false

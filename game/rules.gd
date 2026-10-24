@@ -63,6 +63,7 @@ func start_battle(party: Array, difficulty: int, relic_bonuses: Array = []):
   u.statuses={}
   u.used_skills=[]
   u.kill_refunded=false
+  u.kills=0
   u.ap=u.max_ap
   actors.append(u)
  var enemy_starts = [Vector2i(2,0),Vector2i(2,-1),Vector2i(1,2),Vector2i(3,-2),Vector2i(0,3)]
@@ -169,7 +170,7 @@ func default_skill(unit: Dictionary) -> String:
 func skill_ready(skill_id: String) -> bool:
  if not can_act() or active().side!=0 or skill_id not in available_skills(active()):return false
  var a=active()
- var skill=Professions.SKILLS[skill_id]
+ var skill=Professions.ALL_SKILLS[skill_id]
  return a.ap>=skill.ap and a.mp>=skill.mp and skill_id not in a.get("used_skills",[])
 
 func dash_landing(a: Dictionary,t: Dictionary):
@@ -190,7 +191,7 @@ func dash_landing(a: Dictionary,t: Dictionary):
 func can_cast(skill_id: String,target) -> bool:
  if not skill_ready(skill_id):return false
  var a=active()
- var skill=Professions.SKILLS[skill_id]
+ var skill=Professions.ALL_SKILLS[skill_id]
  if skill.target=="cell":return target is Vector2i and is_free(target) and hex_distance(a.cell,target)<=skill.range
  if not target is String:return false
  var t=find_actor(target)
@@ -205,27 +206,29 @@ func cast(target,skill_id: String="") -> bool:
  if skill_id=="" and can_act():skill_id=default_skill(active())
  if not can_cast(skill_id,target):return false
  var a=active()
- var skill=Professions.SKILLS[skill_id]
+ var skill=Professions.ALL_SKILLS[skill_id]
+ var effect_id=skill.get("base",skill_id)
+ var rank_bonus=Professions.skill_bonus(a,skill_id)
  a.ap-=skill.ap
  a.mp-=skill.mp
  a.used_skills.append(skill_id)
  events.append("%s 施放 %s"%[a.name,skill.name])
- if skill_id=="trap":
+ if effect_id=="trap":
   traps=traps.filter(func(trap):return trap.source!=a.id)
-  traps.append({"source":a.id,"side":a.side,"cell":target,"damage":26 if Professions.job_id(a)=="engineer" else 20})
+  traps.append({"source":a.id,"side":a.side,"cell":target,"damage":(26 if Professions.job_id(a)=="engineer" else 20)+rank_bonus})
  else:
   var t=find_actor(target)
-  match skill_id:
+  match effect_id:
    "heal":
-    var amount=26+a.get("heal_bonus",0)+(6 if Professions.job_id(a)=="medic" else 0)+(8 if "fury" in a.get("learned",[]) else 0)
+    var amount=26+rank_bonus+a.get("heal_bonus",0)+(6 if Professions.job_id(a)=="medic" else 0)+(8 if "fury" in a.get("learned",[]) else 0)
     var gain=mini(t.max_hp-t.hp,amount)
     t.hp+=gain
     events.append("%s 恢复 %d 生命"%[t.name,gain])
-   "mark":put_status(t,"mark",a.id)
+   "mark":put_status(t,"mark",a.id,rank_bonus)
    "cleanse":
     t.statuses.erase("mark")
-    put_status(t,"shield",a.id)
-   "guard":put_status(t,"guard",a.id)
+    put_status(t,"shield",a.id,rank_bonus)
+   "guard":put_status(t,"guard",a.id,rank_bonus)
    _:
     if skill_id=="dash":
      var destination=dash_landing(a,t)
@@ -233,18 +236,19 @@ func cast(target,skill_id: String="") -> bool:
       a.cell=destination
       trigger_trap(a)
     if a.hp>0:
-     var extra={"strike":14,"dash":4,"execute":6,"sniper":10,"bomb":2,"bash":0}.get(skill_id,0)
-     if skill_id=="execute" and t.hp*2<=t.max_hp:extra+=10
+     var extra={"strike":14,"dash":4,"execute":6,"sniper":10,"bomb":2,"bash":0}.get(effect_id,0)
+     if effect_id=="execute" and t.hp*2<=t.max_hp:extra+=10
      var victims=[t]
-     if skill_id=="bomb":victims=actors.filter(func(u):return u.hp>0 and u.side!=a.side and hex_distance(t.cell,u.cell)<=1)
-     for victim in victims:deal_damage(a,victim,a.power+extra+(8 if "fury" in a.get("learned",[]) else 0))
-     if skill_id=="bash" and t.hp>0:put_status(t,"stagger",a.id)
+     if effect_id=="bomb":victims=actors.filter(func(u):return u.hp>0 and u.side!=a.side and hex_distance(t.cell,u.cell)<=1)
+     for victim in victims:
+      if a.hp>0:deal_damage(a,victim,a.power+extra+rank_bonus+(8 if "fury" in a.get("learned",[]) else 0))
+     if effect_id=="bash" and t.hp>0:put_status(t,"stagger",a.id)
  after_action()
  return true
 
-func put_status(unit: Dictionary,kind: String,source_id: String):
+func put_status(unit: Dictionary,kind: String,source_id: String,bonus: int=0):
  if not unit.has("statuses"):unit.statuses={}
- unit.statuses[kind]={"source":source_id}
+ unit.statuses[kind]={"source":source_id,"bonus":bonus}
 
 func clear_source_statuses(source_id: String):
  for unit in actors:
@@ -290,10 +294,10 @@ func deal_damage(source: Dictionary,target: Dictionary,amount: int,direct: bool=
   var marked=target.get("statuses",{}).get("mark",{})
   if not marked.is_empty():
    var marker=find_actor(marked.source)
-   if not marker.is_empty() and marker.hp>0 and marker.side==source.side:amount+=5
+   if not marker.is_empty() and marker.hp>0 and marker.side==source.side:amount+=5+int(marked.get("bonus",0))
  amount=maxi(1,amount-target.get("armor",0))
  if target.get("statuses",{}).has("shield"):
-  amount=maxi(0,amount-10)
+  amount=maxi(0,amount-10-int(target.statuses.shield.get("bonus",0)))
   target.statuses.erase("shield")
  var guard_data=target.get("statuses",{}).get("guard",{})
  if direct and not guard_data.is_empty():
@@ -301,11 +305,15 @@ func deal_damage(source: Dictionary,target: Dictionary,amount: int,direct: bool=
   if not protector.is_empty() and protector.hp>0 and protector.id!=target.id and hex_distance(protector.cell,target.cell)<=2:
    var share=int(ceil(amount/2.0))
    amount-=share
-   var reduced=share-protector.get("armor",0)-(3 if Professions.job_id(protector)=="warden" else 0)
+   var reduced=share-int(guard_data.get("bonus",0))-protector.get("armor",0)-(3 if Professions.job_id(protector)=="warden" else 0)
    if protector.get("statuses",{}).has("shield"):
-    reduced-=10;protector.statuses.erase("shield")
+    reduced-=10+int(protector.statuses.shield.get("bonus",0));protector.statuses.erase("shield")
    lose_hp(protector,maxi(0,reduced))
+ var was_alive=target.hp>0
  lose_hp(target,amount)
+ if was_alive and target.hp<=0 and source.get("side",-1)==0 and target.side==1:
+  source.kills=int(source.get("kills",0))+1
+  events.append("%s 击杀奖励 +15经验（胜利后结算）"%source.name)
  if target.hp<=0 and source.hp>0 and Professions.job_id(source)=="blade" and not source.get("kill_refunded",false):
   source.ap+=1;source.kill_refunded=true
   events.append("游剑客专精 · 击杀恢复1行动点")
@@ -328,7 +336,12 @@ func aura_description() -> String:
 func status_text(unit: Dictionary) -> String:
  var names={"mark":"被标记：受击+5","shield":"净护：下次减伤10","guard":"援护中","stagger":"下次行动点-1"}
  var result=[]
- for kind in unit.get("statuses",{}):result.append(names.get(kind,kind))
+ for kind in unit.get("statuses",{}):
+  var bonus=int(unit.statuses[kind].get("bonus",0))
+  if kind=="mark":result.append("被标记：受击+%d"%[5+bonus])
+  elif kind=="shield":result.append("净护：下次减伤%d"%[10+bonus])
+  elif kind=="guard":result.append("援护中 · 额外减伤%d"%bonus)
+  else:result.append(names.get(kind,kind))
  return " · ".join(result)
 
 func rest_amount(kind: String) -> int:
