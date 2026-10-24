@@ -1,6 +1,8 @@
 extends Node3D
 const Campaign = preload("res://game/campaign.gd")
 const Rules = preload("res://game/rules.gd")
+const Art = preload("res://game/art.gd")
+var art=Art.new()
 const INK = Color("111c24")
 const GOLD = Color("d5b57a")
 const CREAM = Color("e4e5dc")
@@ -54,17 +56,17 @@ func _ready():
  var environment = WorldEnvironment.new()
  var env = Environment.new()
  env.background_mode = Environment.BG_COLOR
- env.background_color = Color("17262d")
+ env.background_color = Color("b6c7bc")
  env.ambient_light_source = Environment.AMBIENT_SOURCE_COLOR
- env.ambient_light_color = Color("adc5ca")
- env.ambient_light_energy = 0.4
+ env.ambient_light_color = Color("b9c9c2")
+ env.ambient_light_energy = 0.48
  env.tonemap_mode = Environment.TONE_MAPPER_FILMIC
  environment.environment = env
  add_child(environment)
  var sun = DirectionalLight3D.new()
- sun.rotation_degrees = Vector3(-48,-32,0)
- sun.light_color = Color("ffe2ae")
- sun.light_energy = 0.85
+ sun.rotation_degrees = Vector3(-52,-35,0)
+ sun.light_color = Color("ffe9bc")
+ sun.light_energy = 0.78
  sun.shadow_enabled = true
  add_child(sun)
  camera = Camera3D.new()
@@ -80,6 +82,9 @@ func _ready():
   if capture_mode == "--capture-battle":
    battle = campaign.make_battle(["hero","blade","ranger","medic","engineer"],0)
    battle.actors[1].hp = 36
+  if capture_mode == "--capture-shrink":
+   battle = campaign.make_battle(["hero","blade","ranger","medic","engineer"],0)
+   battle.round_no=3
  if capture_mode == "":campaign.load_game()
  if campaign.phase == "battle" and battle==null:campaign.phase="world"
  if battle != null:draw_battle()
@@ -91,14 +96,13 @@ func _ready():
   print("SCENE_SMOKE_OK")
   get_tree().create_timer(1.0).timeout.connect(func():get_tree().quit())
 
-func material(color: Color, emission: bool = false) -> StandardMaterial3D:
- var m = StandardMaterial3D.new()
- m.albedo_color = color
- m.roughness = 0.9
- if emission:
-  m.emission_enabled = true
-  m.emission = color
-  m.emission_energy_multiplier = 0.35
+func material(color: Color, emission: bool = false) -> Material:
+ if not emission:return art.paint(color)
+ var m=StandardMaterial3D.new()
+ m.albedo_color=color
+ m.emission_enabled=true
+ m.emission=color
+ m.emission_energy_multiplier=0.35
  return m
 
 func mesh_node(mesh: Mesh, pos: Vector3, color: Color, parent: Node3D = null) -> MeshInstance3D:
@@ -153,30 +157,12 @@ func clear_scene():
  world_party = null
 
 func make_pawn(pos: Vector3,color: Color,kind: String,active: bool = false) -> Node3D:
- var root = Node3D.new()
- root.position = pos
- scene_root.add_child(root)
- cylinder(Vector3(0,0.08,0),0.4,0.4,0.12,GOLD if active else color,24,root)
- cylinder(Vector3(0,0.55,0),0.24,0.18,0.65,color,6,root)
- sphere(Vector3(0,1.03,0),0.17,Color("d4ba93"),root)
- cylinder(Vector3(0,1.16,0),0.24,0.0,0.25,color.darkened(0.22),6,root)
- box(Vector3(-0.13,0.19,0),Vector3(0.12,0.30,0.14),Color("29343b"),root)
- box(Vector3(0.13,0.19,0),Vector3(0.12,0.30,0.14),Color("29343b"),root)
- if kind in ["hero","blade"] or kind.begins_with("enemy"):
-  var sword = box(Vector3(0.32,0.55,-0.02),Vector3(0.06,0.65,0.09),Color("bec9c7"),root)
-  sword.rotation_degrees.z = -20
- elif kind=="warden":box(Vector3(-0.33,0.65,0),Vector3(0.12,0.55,0.45),GOLD,root)
- else:
-  var staff = box(Vector3(0.3,0.65,0),Vector3(0.07,1.05,0.07),Color("917b61"),root)
-  if kind == "medic":sphere(Vector3(0.3,1.2,0),0.1,TEAL,root)
-  staff.rotation_degrees.z = -8
+ var root=art.character(scene_root,pos,color,kind,active)
  pawn_nodes.append(root)
  return root
 
 func tree_at(pos: Vector3,scale_factor: float):
- cylinder(pos+Vector3(0,0.5*scale_factor,0),0.12*scale_factor,0.09*scale_factor,scale_factor,Color("5c5345"),5)
- cylinder(pos+Vector3(0,1.1*scale_factor,0),0.8*scale_factor,0,1.6*scale_factor,Color("355c56"),6)
- cylinder(pos+Vector3(0,1.65*scale_factor,0),0.57*scale_factor,0,1.2*scale_factor,Color("456c60"),6)
+ return art.tree(scene_root,pos,scale_factor)
 
 func draw_world():
  clear_scene()
@@ -184,6 +170,7 @@ func draw_world():
  camera_angle = 0
  box(Vector3(0,-0.65,-3),Vector3(29,1,34),Color("364c43"))
  box(Vector3(0,-1.25,-3),Vector3(29,0.5,34),Color("263a36"))
+ art.grass(scene_root,4481,1400,Vector2(14,15))
  # Meandering roads and a cold river provide readable landmarks.
  for z in range(-13,10):
   var x = sin(z*0.24)*1.7
@@ -245,36 +232,38 @@ func cell_position(cell: Vector2i) -> Vector3:
 
 func draw_battle():
  clear_scene()
- camera_zoom = 17
- box(Vector3(0,-0.9,0),Vector3(19,0.6,18),Color("24363b"))
+ camera_zoom = 18.5
+ art.landscape(scene_root)
+ art.tide(scene_root,battle.radius,battle.round_no>=2)
  var a = battle.active()
  for cell in battle.cells():
   var p = cell_position(cell)
-  var col = Color("65796c") if (cell.x-cell.y)%2==0 else Color("5b7065")
+  var col = Color("859358") if (cell.x-cell.y)%2==0 else Color("7d8c54")
   var distance = battle.hex_distance(cell,Vector2i.ZERO)
   var warning = battle.round_no in [2,3,4,5,6,7,8,9] and distance==battle.radius
-  if warning:col=Color("9b7750")
-  if cell in battle.obstacles:col=Color("475b55")
+  if warning:col=Color("a59663")
+  if cell in battle.obstacles:col=Color("8b8b68")
   if not a.is_empty() and a.side==0 and battle.outcome=="" and battle_mode=="move":
    var path = battle.path_to(a.cell,cell)
-   if not path.is_empty() and path.size()<=a.ap:col=Color("538e85")
-  if not a.is_empty() and a.cell==cell:col=GOLD
-  cylinder(p+Vector3(0,-0.16,0),0.76,0.76,0.24,col,6)
+   if not path.is_empty() and path.size()<=a.ap:col=Color("7b9b78")
+  if not a.is_empty() and a.cell==cell:col=Color("abac6e")
+  cylinder(p+Vector3(0,-0.075,0),0.765,0.765,0.025,col,6)
+  art.ring(scene_root,p+Vector3(0,-0.057,0),0.765,Color("62765b"),0.012)
   if warning:
-   cylinder(p+Vector3(0,-0.31,0),0.79,0.79,0.05,Color("d59452"),6)
+   art.ring(scene_root,p+Vector3(0,-0.045,0),0.755,Color("d6a268"),0.045)
   if cell in battle.obstacles:
-   var rock=cylinder(p+Vector3(0,0.37,0),0.45,0.2,0.85,Color("8a8a75"),5)
-   rock.rotation_degrees.z = 12
+   art.rock(scene_root,p+Vector3(0,0.22,0),Vector3(0.85,0.65,0.75),Color("b1ae92"))
+   art.rock(scene_root,p+Vector3(0.27,0.02,0.15),Vector3(0.35,0.28,0.4),Color("a2a58b"))
  for u in battle.actors:
   if u.hp<=0:continue
   var col = Color("b46555") if u.side==1 else Color("6eaaa5")
   if u.id=="hero":col=Color("c4a56b")
   if u.id=="medic":col=Color("9db68b")
   var root = make_pawn(cell_position(u.cell),col,u.id,not a.is_empty() and a.id==u.id)
-  label3(u.name,Vector3(0,1.8,0),CREAM,23,root)
-  box(Vector3(0,1.48,0),Vector3(0.85,0.06,0.05),Color("283536"),root)
+  label3(u.name,Vector3(0,1.93,0),CREAM,23,root)
+  box(Vector3(0,1.66,0),Vector3(0.85,0.06,0.05),Color("283536"),root)
   var width=0.85*float(u.hp)/u.max_hp
-  box(Vector3((width-0.85)/2,1.49,0.015),Vector3(maxf(0.01,width),0.065,0.06),RED if u.side==1 else TEAL,root)
+  box(Vector3((width-0.85)/2,1.67,0.015),Vector3(maxf(0.01,width),0.065,0.06),RED if u.side==1 else TEAL,root)
   if not a.is_empty() and a.side==0 and u.side==1 and battle.hex_distance(a.cell,u.cell)<=a.range:
    label3("◆",Vector3(0,2.25,0),RED,22,root)
  update_camera()
@@ -759,6 +748,7 @@ func capture_image():
  var image=get_viewport().get_texture().get_image()
  DirAccess.make_dir_recursive_absolute(ProjectSettings.globalize_path("res://artifacts"))
  var filename="battle" if battle!=null else "world"
+ if capture_mode=="--capture-shrink":filename="shrink"
  var path="res://artifacts/"+filename+".png"
  image.save_png(path)
  print("CAPTURE_READY ",ProjectSettings.globalize_path(path))
