@@ -7,7 +7,14 @@ const REWARDS = [
  {"id":"lens","name":"测绘透镜","type":"relic","desc":"拾取时获得 30 银币；可带回收藏","color":"#97b7df"},
  {"id":"silver","name":"佣金袋","type":"resource","desc":"获得 65 银币","color":"#dbbf78"},
  {"id":"medicine","name":"战地药箱","type":"resource","desc":"获得 2 份补给，可在野外恢复队伍","color":"#80c7b2"},
- {"id":"sword","name":"遗铁刃","type":"equipment","desc":"永久强化一名存活队员：攻击 +3","color":"#b4a1d1"}]
+ {"id":"sword","name":"遗铁刃","type":"equipment","desc":"武器 · 攻击 +3；可分配、更换或卸下","color":"#b4a1d1"}]
+const Route = preload("res://game/route.gd")
+const GOODS = {"sword":{"name":"遗铁刃","price":45,"desc":"武器 · 攻击 +3"},"ember":{"name":"余烬徽印","price":70,"desc":"遗物 · 全队攻击与伤害战技 +4"},"spring":{"name":"旧世泉核","price":60,"desc":"遗物 · 休息恢复提升"},"fury":{"name":"技能书 · 破阵","price":35,"desc":"学习后伤害战技 +8；治疗战技 +8"},"focus":{"name":"技能书 · 调息","price":30,"desc":"学习后每点休息行动额外恢复 2%"}}
+var route = Route.new()
+var books: Array = []
+var purchases: Array = []
+var recruits: Array = []
+var equipment: Array = [{"id":"sword","owner":""}]
 var roster: Array = []
 var phase = "camp"
 var encounters: Array = ["open","open","open"]
@@ -51,12 +58,17 @@ func depart() -> bool:
 
 func make_battle(ids: Array, encounter: int):
  if phase != "world" or encounter<0 or encounter>=3 or encounters[encounter] != "open":return null
+ if route.region!="" and (not at_node("battle") or route.completed or int(route.node(route.current).encounter)!=encounter):return null
  if ids.is_empty() or ids.size()>5:return null
  var chosen = []
  for id in ids:
   var matches = roster.filter(func(u):return u.id==id and u.hp>0)
   if matches.is_empty() or chosen.any(func(u):return u.id==id):return null
   chosen.append(matches[0])
+ # Keep the latest world progress as the pre-battle checkpoint.
+ if not save_game():
+  notice="开战前保存失败，请检查存储空间或目录权限后重试。"
+  return null
  current_encounter = encounter
  phase = "battle"
  var b = Rules.new()
@@ -70,6 +82,7 @@ func resolve_battle(b) -> bool:
    if u.id==a.id:
     u.hp = a.hp
     u.mp = a.mp
+ if route.region!="":route.completed=true
  encounters[current_encounter] = "cleared" if b.outcome=="victory" else "failed"
  if b.outcome == "gameover":
   phase = "gameover"
@@ -98,10 +111,7 @@ func choose_reward(index: int) -> bool:
  elif reward.id == "silver":silver += 65
  elif reward.id == "medicine":supplies += 2
  elif reward.type == "equipment":
-  for u in roster:
-   if u.hp > 0:
-    u.power += 3
-    break
+  equipment.append({"id":reward.id,"owner":""})
  notice = "获得 %s。继续深入，或前往北方渡口撤离。"%reward.name
  choices = []
  phase = "world"
@@ -110,6 +120,7 @@ func choose_reward(index: int) -> bool:
 
 func extract(indices: Array) -> bool:
  if phase != "world" or indices.size()>2:return false
+ if route.region!="" and not at_node("extract"):return false
  var seen = []
  for i in indices:
   if i is not int or i<0 or i>=relics.size() or i in seen:return false
@@ -150,7 +161,7 @@ func visit_event() -> bool:
 func to_data(include_snapshot: bool = true) -> Dictionary:
  var units = roster.duplicate(true)
  for u in units:u.erase("cell")
- var data = {"version":1,"roster":units,"phase":phase,"encounters":encounters.duplicate(),"relics":relics.duplicate(),"collection":collection.duplicate(),"silver":silver,"supplies":supplies,"expedition":expedition,"world_position":world_position.duplicate(),"event_used":event_used,"choices":choices.duplicate(true),"notice":notice,"rng_state":str(rng.state)}
+ var data = {"version":1,"equipment":equipment.duplicate(true),"roster":units,"phase":phase,"encounters":encounters.duplicate(),"relics":relics.duplicate(),"collection":collection.duplicate(),"silver":silver,"supplies":supplies,"expedition":expedition,"world_position":world_position.duplicate(),"event_used":event_used,"choices":choices.duplicate(true),"notice":notice,"rng_state":str(rng.state),"route":route.data() if route.region!="" else {},"books":books.duplicate(),"purchases":purchases.duplicate(),"recruits":recruits.duplicate()}
  if include_snapshot:data["snapshot"] = snapshot.duplicate(true)
  return data
 
@@ -188,8 +199,37 @@ func load_data(data: Dictionary) -> bool:
  for id in data.relics+data.collection:
   if id not in ["ember","spring","lens"]:return false
  for reward in data.choices:
-  if not reward is Dictionary or not REWARDS.any(func(r):return r==reward):return false
+  if not reward is Dictionary:return false
+  var normalized=reward.duplicate(true)
+  if normalized.get("id")=="sword" and normalized.get("desc")=="永久强化一名存活队员：攻击 +3":
+   normalized.desc=REWARDS[-1].desc
+  if not REWARDS.any(func(r):return r==normalized):return false
  if data.phase=="reward" and data.choices.size()!=3:return false
+ var saved_equipment=data.get("equipment",[])
+ if not saved_equipment is Array:return false
+ var owners=[]
+ for item in saved_equipment:
+  if not item is Dictionary or item.get("id","")!="sword" or not item.get("owner") is String:return false
+  if item.owner!="":
+   if item.owner not in ids or item.owner in owners:return false
+   owners.append(item.owner)
+ var next_route=Route.new()
+ var saved_route=data.get("route",{})
+ if not saved_route is Dictionary:return false
+ if not saved_route.is_empty() and not next_route.restore(saved_route):return false
+ for key in ["books","purchases","recruits"]:
+  if not data.get(key,[]) is Array:return false
+ for id in data.get("books",[]):
+  if id not in ["fury","focus"]:return false
+ for u in data.roster:
+  if not u.get("learned",[]) is Array:return false
+  for id in u.get("learned",[]):
+   if id not in ["fury","focus"]:return false
+ route=next_route
+ books=data.get("books",[]).duplicate()
+ purchases=data.get("purchases",[]).duplicate()
+ recruits=data.get("recruits",[]).duplicate()
+ equipment=saved_equipment.duplicate(true)
  roster = data.roster.duplicate(true)
  for u in roster:u.cell = Vector2i.ZERO
  phase = data.phase
@@ -197,6 +237,8 @@ func load_data(data: Dictionary) -> bool:
  relics = data.relics.duplicate()
  collection = data.collection.duplicate()
  choices = data.choices.duplicate(true)
+ for reward in choices:
+  if reward.id=="sword":reward.desc=REWARDS[-1].desc
  silver = int(data.get("silver",0))
  supplies = int(data.get("supplies",0))
  expedition = int(data.get("expedition",0))
@@ -213,13 +255,22 @@ func save_game() -> bool:
  if phase == "battle":return false
  var file = FileAccess.open(save_path+".tmp",FileAccess.WRITE)
  if file == null:return false
- file.store_string(JSON.stringify(to_data()))
+ var data=to_data()
+ data["saved_at"]=Time.get_datetime_string_from_system(false,true)
+ file.store_string(JSON.stringify(data))
+ file.flush()
+ var write_error=file.get_error()
  file.close()
+ if write_error!=OK:
+  DirAccess.remove_absolute(save_path+".tmp")
+  return false
  return DirAccess.rename_absolute(save_path+".tmp",save_path)==OK
 
 func load_game() -> bool:
  if not FileAccess.file_exists(save_path):return false
- var data = JSON.parse_string(FileAccess.get_file_as_string(save_path))
+ var parser=JSON.new()
+ if parser.parse(FileAccess.get_file_as_string(save_path))!=OK:return false
+ var data = parser.data
  if not data is Dictionary:return false
  return load_data(data)
 
@@ -231,3 +282,112 @@ func restore_snapshot() -> bool:
  notice = "已读取远征前存档。"
  save_game()
  return true
+
+# Stored power includes equipped bonuses; applying only deltas preserves legacy upgrades.
+func equipped_index(character_id: String) -> int:
+ for i in range(equipment.size()):
+  if equipment[i].owner==character_id:return i
+ return -1
+
+func equip_item(index: int,character_id: String) -> bool:
+ if phase not in ["camp","world"] or index<0 or index>=equipment.size():return false
+ var targets=roster.filter(func(u):return u.id==character_id and u.hp>0)
+ if targets.is_empty():return false
+ if equipment[index].owner==character_id:return true
+ var previous=equipped_index(character_id)
+ if previous>=0:remove_equipment_bonus(previous)
+ remove_equipment_bonus(index)
+ equipment[index].owner=character_id
+ targets[0].power+=3
+ save_game()
+ return true
+
+func remove_equipment_bonus(index: int):
+ for u in roster:
+  if u.id==equipment[index].owner:u.power-=3
+ equipment[index].owner=""
+
+func unequip_item(character_id: String) -> bool:
+ if phase not in ["camp","world"]:return false
+ var index=equipped_index(character_id)
+ if index<0:return false
+ remove_equipment_bonus(index)
+ save_game()
+ return true
+
+func active_relics() -> Array:
+ var result=[]
+ for id in relics+collection:
+  if id not in result:result.append(id)
+ return result
+
+func start_region(id: String) -> bool:
+ if id not in Route.REGIONS.map(func(r):return r.id) or phase!="camp":return false
+ if not depart():return false
+ route.setup(id)
+ purchases=[]
+ recruits=[]
+ save_game()
+ return true
+
+func enter_route(id: String) -> bool:
+ if phase!="world" or not route.enter(id):return false
+ var n=route.node(id)
+ if n.kind=="event":
+  silver+=25
+  supplies+=1
+  notice="旅人留下 25 银币与一份补给。"
+  route.completed=true
+ elif n.kind=="supply":
+  supplies+=2
+  notice="找到两份补给，可在背包中使用。"
+  route.completed=true
+ elif n.kind in ["shop","hire"]:
+  route.completed=true
+  notice="可以交易，或选择下一处地点离开。"
+ save_game()
+ return true
+
+func at_node(kind: String) -> bool:
+ return phase=="world" and route.region!="" and route.node(route.current).get("kind","")==kind
+
+func buy(id: String) -> bool:
+ if not at_node("shop") or not GOODS.has(id):return false
+ var key=route.current+":"+id
+ if key in purchases or silver<GOODS[id].price:return false
+ silver-=GOODS[id].price
+ purchases.append(key)
+ if id=="sword":equipment.append({"id":"sword","owner":""})
+ elif id in ["fury","focus"]:books.append(id)
+ else:relics.append(id)
+ notice="购入 "+GOODS[id].name
+ save_game()
+ return true
+
+func hire(index: int) -> bool:
+ if not at_node("hire") or index<0 or index>1 or silver<55 or roster.size()>=10:return false
+ var key=route.current+":"+str(index)
+ if key in recruits:return false
+ var unit=Rules.new().default_party()[2 if index==0 else 3].duplicate(true)
+ unit.id="hire_%d_%s_%d"%[expedition,route.current,index]
+ unit.name="林鸦" if index==0 else "青禾"
+ roster.append(unit)
+ recruits.append(key)
+ silver-=55
+ notice="%s 加入佣兵团。"%unit.name
+ save_game()
+ return true
+
+func learn_book(index: int,character_id: String) -> bool:
+ if phase not in ["camp","world"] or index<0 or index>=books.size():return false
+ for u in roster:
+  if u.id!=character_id or u.hp<=0:continue
+  var learned=u.get("learned",[]).duplicate()
+  if books[index] in learned:return false
+  learned.append(books[index])
+  u.learned=learned
+  books.remove_at(index)
+  notice="%s 学会了新技能。"%u.name
+  save_game()
+  return true
+ return false

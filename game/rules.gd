@@ -142,16 +142,16 @@ func cast(id: String) -> bool:
  var t = find_actor(id)
  if t.is_empty() or t.hp <= 0 or a.ap < 3 or a.mp < 8:return false
  if hex_distance(a.cell,t.cell)>3:return false
- var heal = a.id == "medic"
+ var heal = a.role == "行医者"
  if heal and t.side != a.side:return false
  if not heal and t.side == a.side:return false
  a.ap -= 3
  a.mp -= 8
  if heal:
-  t.hp = mini(t.max_hp,t.hp+26)
+  t.hp = mini(t.max_hp,t.hp+26+(8 if "fury" in a.get("learned",[]) else 0))
   events.append("%s 为 %s 恢复 26 生命"%[a.name,t.name])
  else:
-  var damage = a.power+14+(4 if "ember" in bonuses and a.side == 0 else 0)
+  var damage = a.power+14+(8 if "fury" in a.get("learned",[]) else 0)+(4 if "ember" in bonuses and a.side == 0 else 0)
   t.hp = maxi(0,t.hp-damage)
   events.append("%s 施放战技 → %s  −%d 生命"%[a.name,t.name,damage])
  after_action()
@@ -163,6 +163,7 @@ func rest_amount(kind: String) -> int:
  var maximum = a.max_hp if kind == "hp" else a.max_mp
  var current = a.hp if kind == "hp" else a.mp
  var ratio = 0.07 if "spring" in bonuses and a.side == 0 else 0.05
+ if "focus" in a.get("learned",[]):ratio+=0.02
  return mini(maximum-current,maxi(1,int(floor(maximum*a.ap*ratio))))
 
 func rest(kind: String) -> bool:
