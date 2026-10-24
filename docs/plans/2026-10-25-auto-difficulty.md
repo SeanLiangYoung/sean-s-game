@@ -1,5 +1,7 @@
 # Fresh-start auto difficulty calibration
 
+> Historical calibration record. The 45–55/100 normal target below has been superseded by the [accepted four-difficulty baseline](../difficulty-balance-baseline-2026-10-25.md): normal 40%, hard 12.5%, nightmare 2%, final difficulty 0% as first-region reference rates. Exact measurements are 382/1,000, 127/1,000, 17/1,000 and 0/1,000. Current gameplay values are retained; neither this older target nor the later 50%/25%/10%/1% targets require further tuning. Zero observed clears does not establish a true probability of zero.
+
 ## Final change
 
 Generated road encounters: base enemy HP 32 -> 34, retaining tier scaling,

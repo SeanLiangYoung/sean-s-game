@@ -1,5 +1,13 @@
 # Overall difficulty
 
+## Accepted balance baseline — 2026-10-25
+
+Keep all current gameplay values. The accepted first-region reference clear rates are **普通 40%, 困难 12.5%, 噩梦 2%, 我想找死 0%**. The paired 1,000-run-per-difficulty study measured **382/1,000 (38.2%), 127/1,000 (12.7%), 17/1,000 (1.7%) and 0/1,000**, respectively. A clear means defeating the border-region boss and extracting with the fixed fresh-start auto policy, not completing all six regions.
+
+The previous 50%/25%/10%/1% goals and earlier normal 45–55/100 acceptance band are historical and no longer require retuning. The final reference of 0% records the observed zero-clear cohort; it does not require a mathematically impossible victory or an absolute zero true probability. Preserve the raw measurements and historical target fields. See the authoritative [accepted baseline](../difficulty-balance-baseline-2026-10-25.md) and [study report](../difficulty-rates-report-2026-10-25.md).
+
+## Implementation
+
 Four campaign difficulties: 普通, 困难, 噩梦, 我想找死. Existing saves default to 普通. Hard now applies +25% enemy maximum HP and +15% enemy power to the corresponding normal encounter, rounded to integers after regional growth and enemy affixes. Nightmare adds the same +25% HP and +15% power step on top of the rounded hard values (approximately +56% HP and +32% power versus normal). The final difficulty applies +50% HP and +25% power on top of nightmare (approximately +134% HP and +65% power versus normal). Normal is unchanged. Six-region progression continues to apply.
 
 Defeating the final boss completes a difficulty and unlocks the next difficulty. Unlocks persist locally in a separate progression file alongside display preferences, so replacing the campaign save does not erase them. The campaign save and expedition recovery snapshot retain the chosen difficulty.
