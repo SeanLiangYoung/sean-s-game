@@ -8,6 +8,10 @@ var clock=0.0
 var duration=1.2
 var move_duration=0.55
 var impact_time=0.4
+var release_time=0.12
+var released=false
+var release_count=0
+var charge_root: Node3D
 var host
 var before: Array=[]
 var after: Array=[]
@@ -33,13 +37,17 @@ func start(owner_node,before_state: Array,after_state: Array,actor_id: String,ac
  busy=true
  clock=0
  impact_count=0
+ released=false
+ release_count=0
  move_duration=maxf(0.55,path.size()*0.22)
  var consequences=false
  for unit in after:
   var old=find_unit(before,unit.id)
   if not old.is_empty() and unit.hp<old.hp:consequences=true
  duration=move_duration+(1.0 if consequences else 0.0) if mode=="move" else (1.5 if mode.begins_with("rest") else 1.2)
- impact_time=move_duration if mode=="move" else 0.4
+ release_time=0.62 if mode=="skill" else 0.12
+ impact_time=move_duration if mode=="move" else (0.98 if mode=="skill" else 0.4)
+ if mode=="skill":duration=impact_time+0.70
  for unit in after:
   var old=find_unit(before,unit.id)
   if not old.is_empty() and old.hp>0 and unit.hp<=0:duration=maxf(duration,impact_time+1.25)
@@ -47,7 +55,8 @@ func start(owner_node,before_state: Array,after_state: Array,actor_id: String,ac
  if source!=null:
   start_pos=source.position
   style=Visual.effect_style(source,action)
-  Visual.play(source,mode)
+  Visual.play(source,"prepare_skill" if mode=="skill" else mode)
+  if mode=="skill":begin_charge()
   for u in after:
    var prior=find_unit(before,u.id)
    if not prior.is_empty() and u.id!=source_id and (u.hp!=prior.hp or u.mp!=prior.mp):
@@ -55,6 +64,7 @@ func start(owner_node,before_state: Array,after_state: Array,actor_id: String,ac
     if action=="skill" or (action=="attack" and style in ["arrow","magic"]):
      projectile_target=host.cell_position(prior.cell)+Vector3(0,0.8,0)
      projectile=make_projectile(start_pos+Vector3(0,0.85,0),projectile_target,style)
+     projectile.visible=false
     break
  host.status_label.text={"attack":"攻击准备…","skill":"凝聚战技…","rest_hp":"休息 · 恢复生命…","rest_mp":"休息 · 恢复法力…","move":"移动中…"}.get(mode,"行动中…")
 
@@ -77,10 +87,23 @@ func face(pawn: Node3D,target: Vector3):
 func advance(delta: float):
  if not busy:return
  clock+=delta
+ if not released and clock>=release_time:
+  released=true
+  release_count+=1
+  if mode=="skill" and source!=null:Visual.play(source,"skill")
+  if is_instance_valid(charge_root):charge_root.visible=false
+ if is_instance_valid(charge_root) and not released:
+  var intensity=clampf(clock/release_time,0,1)
+  for i in range(charge_root.get_child_count()):
+   var orb=charge_root.get_child(i)
+   var angle=TAU*i/charge_root.get_child_count()+clock*4.0
+   var radius=lerpf(0.47,0.16,intensity)
+   orb.position=Vector3(cos(angle)*radius,sin(angle*1.7)*0.12,sin(angle)*radius)
+   orb.scale=Vector3.ONE*(0.5+intensity*0.5)
  if is_instance_valid(projectile):
-  var t=clampf((clock-0.12)/maxf(0.01,impact_time-0.12),0,1)
+  var t=clampf((clock-release_time)/maxf(0.01,impact_time-release_time),0,1)
   projectile.position=(start_pos+Vector3(0,0.85,0)).lerp(projectile_target,t)+Vector3.UP*sin(t*PI)*0.3
-  projectile.visible=clock>=0.12 and clock<impact_time
+  projectile.visible=released and clock<impact_time
  if mode=="move" and source!=null and not path.is_empty():
   var progress=clampf(clock/move_duration,0,1)*path.size()
   var index=mini(int(progress),path.size()-1)
@@ -119,6 +142,7 @@ func advance(delta: float):
   for child in get_children():remove_child(child);child.queue_free()
   floats.clear();rings.clear();effects.clear()
   projectile=null
+  charge_root=null
   completed.emit()
 
 func impact():
@@ -238,3 +262,14 @@ func make_projectile(pos: Vector3,target: Vector3,effect: String) -> MeshInstanc
   n.material_override.transparency=BaseMaterial3D.TRANSPARENCY_ALPHA
   if pos.distance_squared_to(target)>0.001:n.look_at(target)
  return n
+
+
+func begin_charge():
+ charge_root=Node3D.new()
+ charge_root.name="SkillCharge"
+ add_child(charge_root)
+ charge_root.position=start_pos+Vector3(0,0.88,0)
+ var color=Color("a9dec4") if style=="heal" else (Color("ddc795") if style in ["arrow","slash"] else Color("a3cbd5"))
+ for i in range(7):
+  var orb=glow(Vector3.ZERO,color,0.025)
+  orb.reparent(charge_root,false)

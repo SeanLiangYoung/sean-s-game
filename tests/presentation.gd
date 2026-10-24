@@ -11,7 +11,7 @@ func run():
  await process_frame
  await process_frame
  scene.campaign=load("res://game/campaign.gd").new("user://ashbound-presentation-tests.json")
- scene.depart()
+ scene.campaign.depart()
  scene.show_deploy(0)
  scene.begin_battle(0)
  check(scene.has_method("perform_battle_action"),"combat commands expose a presentation timeline")
@@ -67,7 +67,7 @@ func run():
  # A movement that spends the last AP can trigger shrinking and damage.
   scene.close_modal()
   scene.campaign=load("res://game/campaign.gd").new("user://ashbound-presentation-tests.json")
-  scene.depart()
+  scene.campaign.depart()
   scene.show_deploy(0)
   scene.begin_battle(0)
   actor=scene.battle.active()
@@ -94,6 +94,23 @@ func run():
   check(player!=null and player.current_animation=="Bow_Shoot","enemy archer plays ranged attack")
   check(is_instance_valid(scene.presentation.projectile),"enemy ranged attack has a projectile")
   scene.presentation.advance(2)
+  scene.begin_battle(0)
+  actor=scene.battle.find_actor("ranger")
+  scene.battle.order=[scene.battle.actors.find(actor)]
+  scene.battle.order_index=0
+  enemy=scene.battle.find_actor("enemy0")
+  enemy.cell=actor.cell+Vector2i(1,0)
+  scene.draw_battle()
+  scene.perform_battle_action("skill",enemy.id)
+  var bow_player=scene.presentation.source.find_child("AnimationPlayer",true,false)
+  check(bow_player.current_animation=="Bow_Draw","ranged skill draws bow before shooting")
+  check(not scene.presentation.projectile.visible,"skill projectile hidden before release")
+  scene.presentation.advance(0.15)
+  check(not scene.presentation.projectile.visible and scene.presentation.impact_count==0,"charge cannot show a projectile or impact early")
+  scene.presentation.advance(0.6)
+  check(bow_player.current_animation=="Bow_Shoot","release transitions to shooting")
+  scene.presentation.advance(2)
+  check(not scene.presentation.busy and scene.presentation.impact_count==1,"coarse skill frames finish with exactly one impact")
  scene.queue_free()
  await process_frame
  print("CHECKS: ",checks," FAILURES: ",failures)

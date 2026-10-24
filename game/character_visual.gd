@@ -3,33 +3,31 @@ extends RefCounted
 const MODELS={"hero":"Warrior","blade":"Rogue","ranger":"Ranger","medic":"Cleric","engineer":"Ranger","warden":"Warrior","enemy2":"Ranger"}
 const ACTIONS={"idle":"Idle","move":"Walk","hit":"RecieveHit","death":"Death","rest_hp":"PickUp","rest_mp":"PickUp"}
 static func create(parent: Node3D,kind: String) -> Node3D:
+ if kind.begins_with("hire_"):kind="ranger" if kind.ends_with("_0") else "medic"
  var model_name=MODELS.get(kind,"Rogue" if kind.ends_with("1") else "Warrior")
  var model=load("res://assets/characters/quaternius/%s.gltf"%model_name).instantiate()
  model.name="Body"
  model.scale=Vector3.ONE*0.54
- model.rotation.y=0.0 if kind.begins_with("enemy") else PI
+ model.rotation.y=PI if kind.begins_with("enemy") else 0.0
  parent.add_child(model)
  parent.set_meta("role",kind)
  parent.set_meta("asset_pack","quaternius_rpg")
  parent.set_meta("archetype",model_name)
- parent.set_meta("forward_offset",PI)
+ parent.set_meta("forward_offset",0.0)
  for node in model.find_children("*","MeshInstance3D",true,false):
+  if model_name=="Cleric" and node.name=="Head":node.visible=false
   for i in range(node.mesh.get_surface_count()):
    var material=node.mesh.surface_get_material(i)
    if material is StandardMaterial3D:
-    var local=material.duplicate()
-    local.roughness=0.88
-    local.diffuse_mode=BaseMaterial3D.DIFFUSE_TOON
-    local.rim_enabled=true
-    local.rim=0.25
-    local.rim_tint=0.5
-    if kind.begins_with("enemy"):local.albedo_color=Color("b28b84")
-    elif kind=="hero":local.albedo_color=Color("fff0d6")
-    elif kind=="warden":local.albedo_color=Color("a6bccb")
-    elif kind=="engineer":local.albedo_color=Color("c7ab83")
-    local.texture_filter=BaseMaterial3D.TEXTURE_FILTER_LINEAR_WITH_MIPMAPS
-    local.albedo_color=local.albedo_color*1.18
+    var local=ShaderMaterial.new()
+    local.shader=preload("res://game/shaders/character.gdshader")
+    local.set_shader_parameter("source_texture",material.albedo_texture)
+    local.set_shader_parameter("has_texture",material.albedo_texture!=null)
+    local.set_shader_parameter("base_color",material.albedo_color)
+    var tint=Color("dbc4b5") if kind.begins_with("enemy") else Color.WHITE
+    local.set_shader_parameter("tint",tint)
     node.set_surface_override_material(i,local)
+ preload("res://game/character_wardrobe.gd").attach(model,kind)
  play(parent,"idle")
  return model
 
@@ -47,6 +45,9 @@ static func play(pawn: Node3D,action: String):
  if player==null:return
  var archetype=pawn.get_meta("archetype","Warrior")
  var clip=ACTIONS.get(action,"Idle")
+ if action=="prepare_skill":
+  clip="Bow_Draw" if archetype=="Ranger" else ("Spell1" if archetype=="Cleric" else "Idle_Weapon")
+  if not player.has_animation(clip):clip="Attacking_Idle"
  if action in ["attack","skill"]:
   match archetype:
    "Warrior":clip="Sword_Attack2" if action=="skill" else "Sword_Attack"
@@ -60,5 +61,7 @@ static func play(pawn: Node3D,action: String):
  # Rest uses a kneeling/recovery gesture; the timeline adds a sustained posture and particles.
  var speed=1.0
  if action=="skill":speed=1.15
+ if action=="prepare_skill" and archetype=="Cleric":speed=0.55
+ if action=="prepare_skill" and archetype=="Ranger":speed=2.0
  player.play(clip,0.10,speed)
  player.advance(0)

@@ -13,6 +13,8 @@ func run():
   visual.create(pawn,role)
   check(pawn.get_meta("asset_pack","")=="quaternius_rpg","new human-proportion model: "+role)
   check(pawn.find_child("Skeleton3D",true,false)!=null,"humanoid rig exists: "+role)
+  if not role.begins_with("enemy"):
+   check(pawn.find_child("Wardrobe",true,false)!=null,"allied costume follows rig: "+role)
   var player=pawn.find_child("AnimationPlayer",true,false)
   for action in ["idle","move","attack","skill","hit","death","rest_hp","rest_mp"]:
    player.stop()
