@@ -12,7 +12,7 @@ func _initialize():
   print("CHECKS: %d FAILURES: %d"%[checks,failures]);quit(1);return
  var hero=c.roster[0]
  var medic=c.roster[3]
- check(hero.profession=="hero" and hero.identity=="团长","identity separated from profession")
+ check(hero.profession=="hero" and hero.identity.begins_with("团长") and hero.character_id=="shen","identity separated from profession")
  medic.hp=20;medic.mp=7
  check(c.change_profession("medic","warden"),"retrain at camp")
  check(medic.hp==20 and medic.mp==7 and medic.profession==c.roster[5].profession,"same profession multiple characters; no healing")
@@ -22,7 +22,7 @@ func _initialize():
  for i in c.equipment.size():
   if c.equipment[i].id=="plate":plate=i
  check(plate>=0,"trial equipment available")
- check(c.equip_item(plate,"medic") and c.character_stats("medic").max_ap==2,"medic plate halves AP")
+ check(c.equip_item(plate,"medic") and c.character_stats("medic").max_ap==4,"plate supplies only armor without AP penalty")
  check(c.equip_item(plate,"hero") and c.character_stats("hero").max_ap==4,"hero plate no penalty")
  check(c.character_stats("medic").max_ap==4,"transfer removes previous penalty")
  var original=hero.power

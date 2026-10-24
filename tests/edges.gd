@@ -34,6 +34,20 @@ func _initialize():
  r.shrink()
  check(hero.hp == 0,"shrink damage can kill")
  check(r.outcome == "gameover","shrink hero death ends game")
+ # Finish round three through the actual turn transition. Lethal tide damage
+ # resolves the battle before round_no can advance, even though shrink occurred.
+ r.start_battle(party.slice(0,5),0)
+ hero = r.actors[0]
+ hero.cell = Vector2i(-4,0)
+ hero.hp = 2
+ r.round_no = 3
+ r.order_index = r.order.size()-1
+ r.finish_turn()
+ check(r.outcome == "gameover" and r.round_no == 3,"lethal first shrink ends game before next round")
+ check(r.radius == 3 and r.events.any(func(event):return "灰潮收缩" in event),"first shrink is observable despite unchanged round counter")
+ var tide_events = r.events.duplicate()
+ r.finish_turn()
+ check(r.radius == 3 and r.round_no == 3 and r.events == tide_events,"resolved lethal shrink cannot run twice")
  r.start_battle(party.slice(0,5),0)
  r.round_no = 10
  for u in r.actors:

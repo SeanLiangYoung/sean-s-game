@@ -102,7 +102,7 @@ func _initialize():
  r.deal_damage(source,victim,100)
  check(source.kills==1,"corpse cannot reward another kill")
  var shopper=Campaign.new("user://progression-shop.json")
- shopper.start_region("border");shopper.enter_route("0b");shopper.silver=500
+ shopper.start_region("border");shopper.route.setup("border");shopper.encounters=["open","open","open"];shopper.enter_route("0b");shopper.silver=500
  check(not shopper.buy("execute") and not shopper.buy("blade_sweep"),"shop cannot bypass tree unlock costs")
  var defeat=Campaign.new("user://progression-defeat.json");defeat.depart()
  var lost=defeat.make_battle(["hero"],0);lost.find_actor("hero").kills=3;lost.outcome="gameover"

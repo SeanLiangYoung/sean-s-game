@@ -20,10 +20,14 @@ func run():
  scene.show_party_menu("装备","medic")
  var content=texts(scene.modal)
  check("主手" in content and "副手" in content and "护甲" in content,"three equipment slots visible")
- check("4 → 2" in content,"plate penalty preview")
+ scene.modal.find_child("EquipmentSlot_armor",true,false).pressed.emit();await process_frame
+ scene.modal.find_child("EquipmentChoice_7",true,false).pressed.emit();await process_frame
+ var confirmation=scene.find_child("EquipmentConfirmation",true,false)
+ check("4 → 4" in texts(confirmation),"armor keeps action points unchanged")
+ confirmation.canceled.emit();await process_frame
  scene.show_party_menu("职业","hero")
  check("团长" in texts(scene.modal) and "主角" in texts(scene.modal),"identity and profession separate")
- check("光环" in texts(scene.modal),"hero aura preview")
+ check("全队遗物" in texts(scene.modal),"relic team effects explained")
  scene.show_party_menu("技能","engineer")
  check("布设机关" in texts(scene.modal) and "震荡弹" in texts(scene.modal),"profession skills in dossier")
  scene.close_modal();scene.campaign.depart();scene.selected_ids=["engineer","hero"];scene.begin_battle(0)

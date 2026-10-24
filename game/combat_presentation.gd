@@ -1,6 +1,7 @@
 extends Node3D
 # Presentation never changes battle rules. Main owns the authoritative state.
 signal completed
+const BossEffects=preload("res://game/boss_effects.gd")
 const Visual=preload("res://game/character_visual.gd")
 var busy=false
 var impact_count=0
@@ -30,9 +31,11 @@ var start_pos=Vector3.ZERO
 var floats: Array=[]
 var rings: Array=[]
 var effects: Array=[]
+var boss_cues: Array=[]
 
-func start(owner_node,before_state: Array,after_state: Array,actor_id: String,action: String,move_path: Array=[],target_id: String=""):
+func start(owner_node,before_state: Array,after_state: Array,actor_id: String,action: String,move_path: Array=[],target_id: String="",boss_events: Array=[]):
  host=owner_node
+ boss_cues=boss_events.duplicate(true)
  before=before_state
  after=after_state
  source_id=actor_id
@@ -67,12 +70,16 @@ func start(owner_node,before_state: Array,after_state: Array,actor_id: String,ac
    var chosen=u.id==target_id if target_id!="" else (u.id!=source_id and (u.hp!=prior.get("hp",u.hp) or u.mp!=prior.get("mp",u.mp)))
    if not prior.is_empty() and chosen:
     face(source,host.cell_position(prior.cell))
-    if action=="skill" or (action=="attack" and style in ["arrow","magic"]):
+    if action=="skill" or (action in ["attack","enemy_skill"] and style in ["arrow","magic"]):
      projectile_target=host.cell_position(prior.cell)+Vector3(0,0.8,0)
      projectile=make_projectile(start_pos+Vector3(0,0.85,0),projectile_target,style)
      projectile.visible=false
     break
+ if not boss_cues.is_empty():
+  duration=maxf(duration,1.8)
+  BossEffects.begin(self,boss_cues)
  host.status_label.text={"attack":"攻击准备…","skill":"凝聚战技…","rest_hp":"休息 · 恢复生命…","rest_mp":"休息 · 恢复法力…","move":"移动中…"}.get(mode,"行动中…")
+ if not boss_cues.is_empty():host.status_label.text=cue_caption(boss_cues)
 
 func pawn_for(id: String):
  for pawn in host.pawn_nodes:
@@ -93,6 +100,7 @@ func face(pawn: Node3D,target: Vector3):
 func advance(delta: float):
  if not busy:return
  clock+=delta
+ BossEffects.advance(self,boss_cues,clock,delta)
  if not released and clock>=release_time:
   released=true
   release_count+=1
@@ -112,8 +120,9 @@ func advance(delta: float):
   var t=clampf((clock-release_time)/maxf(0.01,impact_time-release_time),0,1)
   projectile.position=(start_pos+Vector3(0,0.85,0)).lerp(projectile_target,t)+Vector3.UP*sin(t*PI)*0.3
   projectile.visible=released and clock<impact_time
- if mode=="move" and source!=null and not path.is_empty():
-  var progress=clampf(clock/move_duration,0,1)*path.size()
+ if (mode=="move" or (mode=="enemy_skill" and boss_cues.any(func(c):return c.source==source_id and c.get("movement",false)))) and source!=null and not path.is_empty():
+  var travel_end=impact_time if mode=="enemy_skill" else move_duration
+  var progress=clampf(clock/travel_end,0,1)*path.size()
   var index=mini(int(progress),path.size()-1)
   var a=start_pos if index==0 else host.cell_position(path[index-1])
   var b=host.cell_position(path[index])
@@ -160,12 +169,14 @@ func advance(delta: float):
   completed.emit()
 
 func impact():
+ BossEffects.impact(self,boss_cues)
  if mode=="skill" and skill_effect in ["trap","mark","shield","guard"]:
   var effect_position=host.cell_position(skill_target) if skill_target is Vector2i else projectile_target-Vector3(0,0.8,0)
   var effect_name={"trap":"机关就绪","mark":"猎物标记","shield":"净护","guard":"援护"}[skill_effect]
   pulse(effect_position,Color("a2f0bc") if skill_effect in ["shield","guard"] else Color("f6d18a"),0.5)
   floating(effect_name,effect_position+Vector3(0,1.5,0),Color("f6d18a"))
  host.status_label.text={"attack":"攻击命中","skill":"战技生效","rest_hp":"休息 · 生命恢复","rest_mp":"休息 · 法力恢复","move":"移动完成"}.get(mode,"行动生效")
+ if not boss_cues.is_empty():host.status_label.text=cue_caption(boss_cues)
  for unit in after:
   var old=find_unit(before,unit.id)
   if old.is_empty():continue
@@ -178,7 +189,13 @@ func impact():
   var pos=pawn.position if pawn!=null else host.cell_position(old.cell)
   if pawn!=null:
    if damaged:Visual.play(pawn,"death" if unit.hp<=0 else "hit")
-   if unit.id!=source_id and damaged:face(pawn,start_pos)
+   if unit.id!=source_id and damaged:
+    var cause=start_pos
+    for cue in boss_cues:
+     if cue.type in ["release","enemy_skill"] and old.cell in cue.get("cells",[]):
+      var caster=pawn_for(cue.source)
+      if caster!=null:cause=caster.position
+    face(pawn,cause)
    # Update the existing bar at impact without destroying the skeletal animation.
    var bar=pawn.get_node_or_null("HealthFill")
    if bar!=null:
@@ -294,3 +311,9 @@ func begin_charge():
  for i in range(7):
   var orb=glow(Vector3.ZERO,color,0.04)
   orb.reparent(charge_root,false)
+
+func cue_caption(cues: Array) -> String:
+ var lines=[]
+ for cue in cues:
+  lines.append({"charge":"蓄力预告 · ","release":"技能释放 · ","phase":"转阶段 · ","interrupt":"蓄力已打断 · ","enemy_skill":"敌方战技 · "}.get(cue.type,"")+cue.get("name","")+("（下次自身行动结算）" if cue.type=="charge" else ""))
+ return "；".join(lines)
