@@ -455,9 +455,8 @@ func refresh_ui():
    sidebar.add_child(character_card(u,func():show_party_menu("角色",character_id)))
   separator(sidebar)
   sidebar.add_child(text_label("远征宝物  %d    永久收藏  %d"%[campaign.relics.size(),campaign.collection.size()],15,GOLD))
-  for id in campaign.relics:
-   for reward in Campaign.REWARDS:
-    if reward.id==id:sidebar.add_child(text_label("◆ "+reward.name,14,TEAL))
+  for relic in campaign.relics:
+   sidebar.add_child(text_label("◆ "+Campaign.Relic.definition(relic).name,14,TEAL))
   if campaign.phase=="camp":
    status_label.text="南境营地  /  幸存者休整完毕，准备下一次远征。"
    footer.add_child(text_label("走进边境，带着战利品活着回来。",22,GOLD))
@@ -740,9 +739,15 @@ func return_world():
  refresh_ui()
 
 func show_reward():
- open_modal("战斗胜利  /  战利品三选一","宝物在远征中立即生效。安全撤离时最多带回两件，其余换成银币。")
+ open_modal("战斗胜利  /  战利品三选一","选择即承担收益与代价；个人遗物需绑定角色。撤离最多带回两件，其余兑换银币。")
  set_page_back(Callable())
  modal_body.add_child(text_label(campaign.notice,16,GOLD))
+ if battle!=null:
+  var survivors=battle.actors.filter(func(a):return a.side==0 and a.hp>0)
+  var shares=[]
+  for a in survivors:
+   shares.append("%s · 击杀%d · 击杀奖励+%d经验"%[a.name,a.get("kills",0),int(a.get("kills",0))*15])
+  modal_body.add_child(text_label("\n".join(shares),15,TEAL))
  for i in range(campaign.choices.size()):
   var index=i
   var reward=campaign.choices[i]
@@ -754,7 +759,9 @@ func show_reward():
   content.add_child(text_label(reward.name,22,Color(reward.color)))
   content.add_child(text_label(reward.desc,16))
   content.add_child(button("选择此奖励",func():
-   if campaign.choose_reward(index):return_world(),true))
+   if reward.type=="relic" and Campaign.Relic.definition(reward.id).scope=="personal":
+    show_relic_binding(reward.id,index)
+   elif campaign.choose_reward(index):return_world(),true))
 
 func show_extract():
  extraction_ids=[]
@@ -766,10 +773,10 @@ func render_extract():
  if campaign.relics.is_empty():modal_body.add_child(text_label("本次尚未获得宝物。已有资源仍会保留。",19))
  for i in range(campaign.relics.size()):
   var index=i
-  var id=campaign.relics[i]
+  var id=Campaign.Relic.id_of(campaign.relics[i])
   for reward in Campaign.REWARDS:
    if reward.id==id:
-    modal_body.add_child(button(("☑ " if i in extraction_ids else "□ ")+reward.name+"  /  "+reward.desc,func():
+    modal_body.add_child(button(("☑ " if i in extraction_ids else "□ ")+reward.name+"  /  "+relic_instance_status(campaign.relics[i])+"\n"+reward.desc,func():
      if index in extraction_ids:extraction_ids.erase(index)
      elif extraction_ids.size()<2:extraction_ids.append(index)
      render_extract()))
@@ -1177,7 +1184,7 @@ func show_party_menu(tab: String="详情",character_id: String=""):
   detail_section(details,"队伍共享物品")
   details.add_child(text_label("银币  %d"%campaign.silver,22,GOLD))
   details.add_child(text_label("补给  × %d"%campaign.supplies,22,TEAL))
-  details.add_child(text_label("消耗 1 份补给，为所有存活队员恢复 30% 最大生命与法力。只能在野外使用。",17))
+  details.add_child(text_label("消耗1份补给，基础恢复30%最大生命与法力；生命恢复受遗物代价影响。只能在野外使用。",17))
   var supply=button("使用一份补给",func():
    if campaign.use_supply():
     refresh_ui()
@@ -1186,23 +1193,71 @@ func show_party_menu(tab: String="详情",character_id: String=""):
   details.add_child(supply)
  else:
   detail_section(details,"遗物与永久收藏")
-  details.add_child(text_label("远征携带 %d 件 · 永久收藏 %d 件\n同类加成不叠加，全队共享。"%[campaign.relics.size(),campaign.collection.size()],17,MUTED))
+  details.add_child(text_label("远征携带 %d 件 · 永久收藏 %d 件\n全队遗物自动生效；个人遗物绑定佩戴者，每人至多1件。同类全队效果不叠加。"%[campaign.relics.size(),campaign.collection.size()],17,MUTED))
   show_relic_details(details,false)
  separator(frame)
  frame.add_child(button("关闭菜单 · 返回旅途",close_modal))
 
+func relic_instance_status(entry) -> String:
+ var d=Campaign.Relic.definition(entry)
+ var owner="全队自动生效"
+ if d.scope=="personal":
+  owner="佩戴者："+menu_unit(entry.owner).name
+ var charges="持续生效" if d.uses==0 else "剩余 %d / %d 次 · 耗尽损毁"%[entry.remaining if entry is Dictionary else d.uses,d.uses]
+ return owner+" · "+charges
+
+func show_relic_slot(parent: Control,unit: Dictionary):
+ detail_section(parent,"遗物栏 · 独立栏位 · 至多1件")
+ var entry=campaign.personal_relic(unit.id)
+ if battle!=null:
+  var current=battle.relic_state.filter(func(r):return r.owner==unit.id)
+  entry=current[0] if not current.is_empty() else {}
+ if entry.is_empty():
+  parent.add_child(text_label("空置 · 获得个人遗物时可绑定给此角色。",16,MUTED))
+ else:
+  parent.add_child(text_label(Campaign.Relic.definition(entry).name+" · "+relic_instance_status(entry),17,TEAL))
+  parent.add_child(text_label(Campaign.Relic.description(entry),15,MUTED))
+ parent.add_child(text_label("获取即绑定并承担代价；不能卸下或转交。新遗物替换时会失去旧遗物。",15,MUTED))
+
 func show_relic_details(parent: Control,effects_only: bool):
  var found=false
- for reward in Campaign.REWARDS:
-  if reward.type!="relic" or reward.id not in campaign.active_relics():continue
-  if effects_only and reward.id=="lens":continue
-  found=true
-  var source="永久收藏" if reward.id in campaign.collection else "本次远征"
-  parent.add_child(text_label("◆ "+reward.name+"  ·  "+source,17,TEAL))
-  var description=reward.desc
-  if reward.id=="lens":description="拾取时已获得 30 银币；收藏后不重复发放，无战斗属性加成。"
-  parent.add_child(text_label(description+(" · 阵亡角色无法享受战斗效果" if effects_only and menu_unit(menu_character).hp<=0 else ""),15,MUTED))
- if not found:parent.add_child(text_label("暂无生效的战斗遗物。" if effects_only else "暂无遗物。探索边境并安全撤离，可积累永久收藏。",16,MUTED))
+ var pools=[campaign.relics,campaign.collection]
+ if battle!=null:pools=[battle.relic_state,[]]
+ for pool_index in pools.size():
+  for entry in pools[pool_index]:
+   var d=Campaign.Relic.definition(entry)
+   if effects_only and d.scope=="personal" and entry.owner!=menu_character:continue
+   found=true
+   var source="永久收藏" if pool_index==1 else "本次远征"
+   if battle!=null:source="本场持有"
+   parent.add_child(text_label("◆ "+d.name+" · "+source,18,TEAL))
+   parent.add_child(text_label(relic_instance_status(entry),15,GOLD))
+   parent.add_child(text_label(Campaign.Relic.description(entry),15,MUTED))
+   if effects_only and menu_unit(menu_character).hp<=0:parent.add_child(text_label("角色已阵亡，无法享受战斗效果。",15,RED))
+ if not found:parent.add_child(text_label("暂无遗物。探索边境并安全撤离，可积累永久收藏。",16,MUTED))
+
+func show_relic_binding(id: String,reward_index: int=-1):
+ var d=Campaign.Relic.definition(id)
+ open_modal("绑定个人遗物 · "+d.name,"指定一名存活角色，每人至多1件；绑定后无法卸下或转交。")
+ set_page_back(func():
+  if reward_index>=0:show_reward()
+  else:show_route_trade())
+ modal_body.add_child(text_label(Campaign.Relic.description(id),17))
+ for unit in campaign.roster:
+  if unit.hp<=0:continue
+  var owner_id=unit.id
+  var old=campaign.personal_relic(owner_id)
+  var warning="空遗物栏" if old.is_empty() else "替换并失去："+Campaign.Relic.definition(old).name
+  modal_body.add_child(text_label(unit.name+" · "+warning,17,GOLD))
+  modal_body.add_child(button("绑定给 "+unit.name+" · 接受收益与代价",func():
+   if reward_index>=0:
+    if campaign.choose_reward(reward_index,owner_id):return_world()
+   elif campaign.buy(id,owner_id):
+    refresh_ui()
+    show_route_trade(),true))
+ modal_body.add_child(button("返回奖励选择" if reward_index>=0 else "返回商店",func():
+  if reward_index>=0:show_reward()
+  else:show_route_trade()))
 
 func refresh_atlas():
  if is_instance_valid(atlas):
@@ -1231,6 +1286,7 @@ func refresh_atlas():
  entries.add_child(text_label("银币 %d · 补给 %d"%[campaign.silver,campaign.supplies],17))
  entries.add_child(button("队伍与装备",func():show_party_menu("角色")))
  entries.add_child(button("技能与技能书",func():show_party_menu("技能")))
+ entries.add_child(button("遗物与风险",func():show_party_menu("遗物")))
  entries.add_child(button("保存与菜单",show_pause_menu))
  if campaign.phase=="camp":entries.add_child(button("选择远征",depart,true))
  var note=text_label(campaign.notice,18,CREAM)
@@ -1295,7 +1351,7 @@ func select_route_node(id: String):
 
 func show_route_trade():
  var shop=campaign.at_node("shop")
- open_modal("行路商店" if shop else "雇佣兵营地","银币 %d · 离开后不能返回；可以关闭窗口继续选择路线。"%campaign.silver)
+ open_modal("行路商店" if shop else "雇佣兵营地","银币 %d · 离开后不能返回；可以返回路线页继续选择路线。"%campaign.silver)
  if shop:
   for id in Campaign.GOODS:
    if Jobs.ALL_SKILLS.has(id):continue
@@ -1303,7 +1359,9 @@ func show_route_trade():
    var good=Campaign.GOODS[id]
    modal_body.add_child(text_label(good.name+" · "+good.desc,18))
    var entry=button("购买 · %d 银币"%good.price,func():
-    if campaign.buy(item_id):
+    if Campaign.Relic.CATALOG.has(item_id) and Campaign.Relic.definition(item_id).scope=="personal":
+     show_relic_binding(item_id)
+    elif campaign.buy(item_id):
      refresh_ui()
      show_route_trade())
    entry.disabled=campaign.silver<good.price or campaign.route.current+":"+id in campaign.purchases
@@ -1373,7 +1431,7 @@ func render_action_menu(is_player: bool):
  if states!="":slot.add_child(text_label(states,14,GOLD))
  if battle_mode=="skill" and Jobs.ALL_SKILLS.has(selected_skill):
   var skill=Jobs.ALL_SKILLS[selected_skill]
-  slot.add_child(text_label(skill.name+" · %d点 / %d法力 · 射程%d"%[skill.ap,skill.mp,skill.range]+"\n"+Jobs.rank_description(battle.active(),selected_skill),15,TEAL))
+  slot.add_child(text_label(skill.name+" · %d点 / %d法力 · 射程%d"%[skill.ap,skill.mp+battle.skill_relic_cost(battle.active(),selected_skill),skill.range]+"\n"+Jobs.rank_description(battle.active(),selected_skill),15,TEAL))
  var waiting="敌方行动中" if not is_player else ""
  if presentation.busy:waiting="行动播放中"
  var ap2=waiting if waiting!="" else ("需2行动点" if a.ap<2 else "")
@@ -1397,13 +1455,13 @@ func render_action_menu(is_player: bool):
    var reason=waiting
    if reason=="" and id in a.get("used_skills",[]):reason="本次已用"
    if reason=="" and a.ap<skill.ap:reason="行动点不足"
-   if reason=="" and a.mp<skill.mp:reason="法力不足"
+   if reason=="" and a.mp<skill.mp+battle.skill_relic_cost(a,id):reason="法力不足"
    if reason=="":
     var has_target=false
     if skill.target=="cell":has_target=battle.cells().any(func(cell):return battle.can_cast(id,cell))
     else:has_target=battle.actors.any(func(u):return battle.can_cast(id,u.id))
     if not has_target:reason="无合法目标"
-   var entry=button(skill.name+" · %d点 / %d法力"%[skill.ap,skill.mp]+(" · "+reason if reason!="" else ""),func():select_skill(id))
+   var entry=button(skill.name+" · %d点 / %d法力"%[skill.ap,skill.mp+battle.skill_relic_cost(a,id)]+(" · "+reason if reason!="" else ""),func():select_skill(id))
    entry.disabled=reason!=""
    slot.add_child(entry)
    slot.add_child(text_label(Jobs.rank_description(a,id)+" · 射程%d"%skill.range,14,TEAL))
@@ -1413,7 +1471,7 @@ func render_action_menu(is_player: bool):
   slot.add_child(text_label("选择物品",19,GOLD))
   if item_reason=="" and not battle.actors.any(func(u):return u.side==0 and u.hp>0 and battle.hex_distance(a.cell,u.cell)<=3 and (u.hp<u.max_hp or u.mp<u.max_mp)):item_reason="无须恢复的友军"
   action_button(slot,"战地补给 ×%d · 2点"%campaign.supplies,"item",item_reason)
-  slot.add_child(text_label("消耗1份补给，为射程3内一名存活友军恢复30%生命与法力。",15,TEAL))
+  slot.add_child(text_label("消耗1份补给，基础恢复射程3内一名友军30%生命与法力；生命恢复受遗物影响。",15,TEAL))
  elif battle_mode=="rest":
   slot.add_child(text_label("休息并结束行动",19,GOLD))
   for kind in ["hp","mp"]:

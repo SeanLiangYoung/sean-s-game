@@ -111,6 +111,9 @@ func run():
  var reward_button=find_button(scene.modal,"选择此奖励")
  check(reward_button!=null,"reward button reachable")
  if reward_button!=null:reward_button.pressed.emit()
+ if scene.campaign.phase=="reward":
+  var binding=find_button(scene.modal,"绑定给 沈烬")
+  if binding!=null:binding.pressed.emit()
  check(scene.battle==null and scene.campaign.phase=="world","reward click returns world")
  scene.travel_to(3)
  scene._process(10.0)

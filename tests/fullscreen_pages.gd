@@ -72,11 +72,17 @@ func run():
  press_back(scene)
  check(scene.campaign.phase=="world" and not is_instance_valid(scene.modal),"extraction back keeps expedition active")
  scene.campaign.phase="reward"
- var reward=scene.campaign.REWARDS.filter(func(r):return r.id=="ember")[0]
+ var reward=scene.campaign.REWARDS.filter(func(r):return r.id=="echo")[0]
  scene.campaign.choices=[reward.duplicate(true)]
  scene.show_reward()
  escape(scene)
  check(is_instance_valid(scene.modal) and scene.page_back.disabled,"Escape cannot skip reward settlement")
+ scene.show_relic_binding("echo",0)
+ press_back(scene)
+ check(scene.campaign.phase=="reward" and scene.campaign.choices.size()==1 and scene.page_back.disabled,"binding back retains unclaimed reward")
+ scene.show_relic_binding("echo",0)
+ escape(scene)
+ check(scene.campaign.phase=="reward" and scene.page_back.disabled,"binding Escape returns to reward page")
  scene.close_modal()
  scene.campaign=load("res://game/campaign.gd").new("user://fullscreen-navigation-tests.json")
  scene.enter_campaign()
@@ -88,6 +94,9 @@ func run():
  start.pressed.emit()
  check(not is_instance_valid(scene.modal) and scene.atlas.route_mode,"region confirmation enters route map")
  scene.select_route_node("0b")
+ scene.show_relic_binding("echo")
+ press_back(scene)
+ check(find_button(scene.modal,"购买")!=null and scene.campaign.at_node("shop"),"shop binding back returns to shop")
  press_back(scene)
  check(not is_instance_valid(scene.modal) and scene.atlas.route_mode,"shop back returns to route")
  scene.select_route_node("1b")

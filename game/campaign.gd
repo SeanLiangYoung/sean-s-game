@@ -2,10 +2,8 @@ extends RefCounted
 const Professions=preload("res://game/professions.gd")
 const Rules = preload("res://game/rules.gd")
 var save_path = "user://ashbound-save.json"
-const REWARDS = [
- {"id":"ember","name":"余烬徽印","type":"relic","desc":"全队攻击与伤害战技 +4","color":"#ec9a5c"},
- {"id":"spring","name":"旧世泉核","type":"relic","desc":"休息每点行动点恢复 7%","color":"#80c7b2"},
- {"id":"lens","name":"测绘透镜","type":"relic","desc":"拾取时获得 30 银币；可带回收藏","color":"#97b7df"},
+const Relic=preload("res://game/relics.gd")
+static var REWARDS = Relic.rewards()+[
  {"id":"silver","name":"佣金袋","type":"resource","desc":"获得 65 银币","color":"#dbbf78"},
  {"id":"medicine","name":"战地药箱","type":"resource","desc":"获得 2 份补给，可在野外恢复队伍","color":"#80c7b2"},
  {"id":"sword","name":"遗铁刃","type":"equipment","desc":"武器 · 攻击 +3；可分配、更换或卸下","color":"#b4a1d1"}]
@@ -13,6 +11,8 @@ const Route = preload("res://game/route.gd")
 const LEGACY_GOODS = {"sword":{"name":"遗铁刃","price":45,"desc":"武器 · 攻击 +3"},"ember":{"name":"余烬徽印","price":70,"desc":"遗物 · 全队攻击与伤害战技 +4"},"spring":{"name":"旧世泉核","price":60,"desc":"遗物 · 休息恢复提升"},"fury":{"name":"技能书 · 破阵","price":35,"desc":"学习后伤害战技 +8；治疗战技 +8"},"focus":{"name":"技能书 · 调息","price":30,"desc":"学习后每点休息行动额外恢复 2%"}}
 static func goods_catalog() -> Dictionary:
  var result=LEGACY_GOODS.duplicate(true)
+ for id in Relic.CATALOG:
+  result[id]={"name":Relic.CATALOG[id].name,"price":LEGACY_GOODS.get(id,{}).get("price",70),"desc":Relic.description(id)}
  for id in Professions.ITEMS:
   var item=Professions.ITEMS[id]
   result[id]={"name":item.name,"price":item.price,"desc":Professions.item_description(id)}
@@ -91,11 +91,13 @@ func make_battle(ids: Array, encounter: int):
   var actor=unit.duplicate(true)
   actor.merge(character_stats(unit.id),true)
   prepared.append(actor)
+ normalize_relics()
  b.start_battle(prepared,encounter,relics+collection)
  return b
 
 func resolve_battle(b) -> bool:
  if phase != "battle" or b.outcome == "" or current_encounter<0:return false
+ sync_relics(b.relic_state)
  for u in roster:
   for a in b.actors:
    if u.id==a.id:
@@ -127,12 +129,11 @@ func resolve_battle(b) -> bool:
  save_game()
  return true
 
-func choose_reward(index: int) -> bool:
+func choose_reward(index: int,owner: String="") -> bool:
  if phase != "reward" or index<0 or index>=choices.size():return false
  var reward = choices[index]
  if reward.type == "relic":
-  relics.append(reward.id)
-  if reward.id == "lens":silver += 30
+  if not acquire_relic(reward.id,owner if Relic.definition(reward.id).scope=="personal" else ""):return false
  elif reward.id == "silver":silver += 65
  elif reward.id == "medicine":supplies += 2
  elif reward.type == "equipment":
@@ -168,9 +169,10 @@ func use_supply() -> bool:
  supplies -= 1
  for u in roster:
   if u.hp>0:
-   u.hp = mini(u.max_hp,u.hp+int(u.max_hp*0.3))
+   var healing_scale=0.75 if "ember" in active_relics() else 1.0
+   u.hp = mini(u.max_hp,u.hp+int(u.max_hp*0.3*healing_scale))
    u.mp = mini(u.max_mp,u.mp+int(u.max_mp*0.3))
- notice = "消耗 1 份补给，所有存活队员恢复 30% 生命与法力。"
+ notice = "消耗 1 份补给，所有存活队员恢复生命与法力（基础30%，生命恢复受遗物代价影响）。"
  save_game()
  return true
 
@@ -186,7 +188,7 @@ func visit_event() -> bool:
 func to_data(include_snapshot: bool = true) -> Dictionary:
  var units = roster.duplicate(true)
  for u in units:u.erase("cell")
- var data = {"version":3,"trial_equipment_claimed":trial_equipment_claimed,"equipment":equipment.duplicate(true),"roster":units,"phase":phase,"encounters":encounters.duplicate(),"relics":relics.duplicate(),"collection":collection.duplicate(),"silver":silver,"supplies":supplies,"expedition":expedition,"world_position":world_position.duplicate(),"event_used":event_used,"choices":choices.duplicate(true),"notice":notice,"rng_state":str(rng.state),"route":route.data() if route.region!="" else {},"books":books.duplicate(),"purchases":purchases.duplicate(),"recruits":recruits.duplicate()}
+ var data = {"version":4,"trial_equipment_claimed":trial_equipment_claimed,"equipment":equipment.duplicate(true),"roster":units,"phase":phase,"encounters":encounters.duplicate(),"relics":relics.duplicate(true),"collection":collection.duplicate(true),"silver":silver,"supplies":supplies,"expedition":expedition,"world_position":world_position.duplicate(),"event_used":event_used,"choices":choices.duplicate(true),"notice":notice,"rng_state":str(rng.state),"route":route.data() if route.region!="" else {},"books":books.duplicate(),"purchases":purchases.duplicate(),"recruits":recruits.duplicate()}
  if include_snapshot:data["snapshot"] = snapshot.duplicate(true)
  return data
 
@@ -194,7 +196,7 @@ func is_number(value) -> bool:
  return (value is int or value is float) and is_finite(float(value))
 
 func load_data(data: Dictionary) -> bool:
- if data.get("version",0)!=1 and data.get("version",0)!=2 and data.get("version",0)!=3:return false
+ if data.get("version",0)!=1 and data.get("version",0)!=2 and data.get("version",0)!=3 and data.get("version",0)!=4:return false
  var migrated=data.get("version")==1
  data=data.duplicate(true)
  if not data.get("roster") is Array or data.roster.is_empty() or data.roster.size()>10:return false
@@ -231,13 +233,35 @@ func load_data(data: Dictionary) -> bool:
  for key in ["silver","supplies","expedition"]:
   if not is_number(data.get(key,0)) or data.get(key,0)<0:return false
  if not data.get("snapshot",{}) is Dictionary:return false
- for id in data.relics+data.collection:
-  if id not in ["ember","spring","lens"]:return false
+ var relic_uids=[]
+ var relic_owners=[]
+ for entry in data.relics+data.collection:
+  if not entry is String and not entry is Dictionary:return false
+  if not Relic.CATALOG.has(Relic.id_of(entry)):return false
+  if entry is String:
+   if Relic.definition(entry).scope!="team":return false
+   continue
+  var d=Relic.definition(entry)
+  if not entry.get("owner") is String or not is_number(entry.get("uid")):return false
+  if entry.uid<1 or float(entry.uid)!=floor(float(entry.uid)) or entry.uid in relic_uids:return false
+  relic_uids.append(entry.uid)
+  if not is_number(entry.get("remaining")):return false
+  if float(entry.remaining)!=floor(float(entry.remaining)):return false
+  if d.uses==0 and entry.remaining!=-1:return false
+  if d.uses>0 and (entry.remaining<1 or entry.remaining>d.uses):return false
+  if d.scope=="team" and entry.owner!="":return false
+  if d.scope=="personal":
+   if entry.owner not in ids or entry.owner in relic_owners:return false
+   relic_owners.append(entry.owner)
  for reward in data.choices:
   if not reward is Dictionary:return false
   var normalized=reward.duplicate(true)
   if normalized.get("id")=="sword" and normalized.get("desc")=="永久强化一名存活队员：攻击 +3":
    normalized.desc=REWARDS[-1].desc
+  if data.version<4:
+   var candidates=REWARDS.filter(func(r):return r.id==normalized.get("id","") and r.type==normalized.get("type",""))
+   if candidates.is_empty():return false
+   normalized=candidates[0]
   if not REWARDS.any(func(r):return r==normalized):return false
  if data.phase=="reward" and data.choices.size()!=3:return false
  var saved_equipment=data.get("equipment",[])
@@ -295,11 +319,13 @@ func load_data(data: Dictionary) -> bool:
  refresh_stats()
  phase = data.phase
  encounters = data.encounters.duplicate()
- relics = data.relics.duplicate()
- collection = data.collection.duplicate()
+ relics = data.relics.duplicate(true)
+ collection = data.collection.duplicate(true)
+ normalize_relics()
  choices = data.choices.duplicate(true)
  for reward in choices:
-  if reward.id=="sword":reward.desc=REWARDS[-1].desc
+  for canonical in REWARDS:
+   if reward.id==canonical.id:reward.merge(canonical,true)
  silver = int(data.get("silver",0))
  supplies = int(data.get("supplies",0))
  expedition = int(data.get("expedition",0))
@@ -418,11 +444,51 @@ func claim_trial_equipment() -> bool:
  save_game()
  return true
 
+func normalize_relics():
+ var next_uid=1
+ for entry in relics+collection:
+  if entry is Dictionary:next_uid=maxi(next_uid,int(entry.uid)+1)
+ for pool in [relics,collection]:
+  for i in pool.size():
+   if pool[i] is String:
+    pool[i]=Relic.instance(pool[i],next_uid)
+    next_uid+=1
+
 func active_relics() -> Array:
  var result=[]
- for id in relics+collection:
+ for entry in relics+collection:
+  var id=Relic.id_of(entry)
   if id not in result:result.append(id)
  return result
+
+func personal_relic(owner: String) -> Dictionary:
+ for entry in relics+collection:
+  if entry is Dictionary and entry.owner==owner:return entry
+ return {}
+
+func acquire_relic(id: String,owner: String="") -> bool:
+ if phase not in ["world","reward"] or not Relic.CATALOG.has(id):return false
+ var d=Relic.CATALOG[id]
+ if d.scope=="personal":
+  if not roster.any(func(u):return u.id==owner and u.hp>0):return false
+ elif owner!="":return false
+ normalize_relics()
+ var uid=1
+ for entry in relics+collection:uid=maxi(uid,int(entry.uid)+1)
+ if d.scope=="personal":
+  for pool in [relics,collection]:
+   for i in range(pool.size()-1,-1,-1):
+    if pool[i].owner==owner:pool.remove_at(i)
+ relics.append(Relic.instance(id,uid,owner))
+ if id=="lens":silver+=30
+ return true
+
+func sync_relics(state: Array):
+ for pool in [relics,collection]:
+  for i in range(pool.size()-1,-1,-1):
+   var found=state.filter(func(entry):return entry.uid==pool[i].uid)
+   if found.is_empty():pool.remove_at(i)
+   else:pool[i]=found[0].duplicate(true)
 
 func start_region(id: String) -> bool:
  if id not in Route.REGIONS.map(func(r):return r.id) or phase!="camp":return false
@@ -454,15 +520,16 @@ func enter_route(id: String) -> bool:
 func at_node(kind: String) -> bool:
  return phase=="world" and route.region!="" and route.node(route.current).get("kind","")==kind
 
-func buy(id: String) -> bool:
+func buy(id: String,owner: String="") -> bool:
  if not at_node("shop") or not GOODS.has(id) or Professions.ALL_SKILLS.has(id):return false
  var key=route.current+":"+id
  if key in purchases or silver<GOODS[id].price:return false
+ if Relic.CATALOG.has(id) and not acquire_relic(id,owner):return false
  silver-=GOODS[id].price
  purchases.append(key)
  if Professions.ITEMS.has(id):equipment.append({"id":id,"owner":""})
  elif id in ["fury","focus"] or Professions.ALL_SKILLS.has(id):books.append(id)
- else:relics.append(id)
+ elif not Relic.CATALOG.has(id):return false
  notice="购入 "+GOODS[id].name
  save_game()
  return true

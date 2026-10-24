@@ -1,5 +1,6 @@
 extends RefCounted
 # Deterministic tactical state; no scene or rendering dependency.
+const Relic=preload("res://game/relics.gd")
 const Professions=preload("res://game/professions.gd")
 const DIRS = [Vector2i(1,0),Vector2i(0,1),Vector2i(-1,1),Vector2i(-1,0),Vector2i(0,-1),Vector2i(1,-1)]
 var actors: Array = []
@@ -12,6 +13,7 @@ var outcome = ""
 var events: Array = []
 var obstacles: Array = []
 var bonuses: Array = []
+var relic_state: Array = []
 var traps: Array = []
 var aura = ""
 
@@ -45,7 +47,14 @@ func start_battle(party: Array, difficulty: int, relic_bonuses: Array = []):
  actors = []
  traps=[]
  aura=""
- bonuses = relic_bonuses.duplicate()
+ bonuses = []
+ relic_state=[]
+ var relic_uid=1
+ for entry in relic_bonuses:
+  if not Relic.CATALOG.has(Relic.id_of(entry)):continue
+  relic_state.append(Relic.instance(entry,relic_uid) if entry is String else entry.duplicate(true))
+  relic_uid+=1
+  bonuses.append(Relic.id_of(entry))
  events = []
  outcome = ""
  radius = 4
@@ -78,6 +87,7 @@ func start_battle(party: Array, difficulty: int, relic_bonuses: Array = []):
   if aura=="dagger":u.speed+=2
   if aura=="bow":u.range+=1
   if aura=="crossbow":u.armor+=2
+ refresh_relic_stats()
  rebuild_order()
  events.append("主角光环："+aura_description())
  events.append("遭遇开始。第 3 回合结束时首次收缩。")
@@ -171,7 +181,7 @@ func skill_ready(skill_id: String) -> bool:
  if not can_act() or active().side!=0 or skill_id not in available_skills(active()):return false
  var a=active()
  var skill=Professions.ALL_SKILLS[skill_id]
- return a.ap>=skill.ap and a.mp>=skill.mp and skill_id not in a.get("used_skills",[])
+ return a.ap>=skill.ap and a.mp>=skill.mp+skill_relic_cost(a,skill_id) and skill_id not in a.get("used_skills",[])
 
 func dash_landing(a: Dictionary,t: Dictionary):
  if hex_distance(a.cell,t.cell)==1:return a.cell
@@ -210,7 +220,7 @@ func cast(target,skill_id: String="") -> bool:
  var effect_id=skill.get("base",skill_id)
  var rank_bonus=Professions.skill_bonus(a,skill_id)
  a.ap-=skill.ap
- a.mp-=skill.mp
+ a.mp-=skill.mp+skill_relic_cost(a,skill_id)
  a.used_skills.append(skill_id)
  events.append("%s 施放 %s"%[a.name,skill.name])
  if effect_id=="trap":
@@ -221,8 +231,9 @@ func cast(target,skill_id: String="") -> bool:
   match effect_id:
    "heal":
     var amount=26+rank_bonus+a.get("heal_bonus",0)+(6 if Professions.job_id(a)=="medic" else 0)+(8 if "fury" in a.get("learned",[]) else 0)
-    var gain=mini(t.max_hp-t.hp,amount)
-    t.hp+=gain
+    amount+=int(relic_modifier(a,"heal"))
+    var gain=heal_unit(t,amount)
+    if gain>0:consume_relic(a,"prism")
     events.append("%s 恢复 %d 生命"%[t.name,gain])
    "mark":put_status(t,"mark",a.id,rank_bonus)
    "cleanse":
@@ -242,6 +253,11 @@ func cast(target,skill_id: String="") -> bool:
      if effect_id=="bomb":victims=actors.filter(func(u):return u.hp>0 and u.side!=a.side and hex_distance(t.cell,u.cell)<=1)
      for victim in victims:
       if a.hp>0:deal_damage(a,victim,a.power+extra+rank_bonus+(8 if "fury" in a.get("learned",[]) else 0))
+     if a.hp>0 and t.hp>0 and has_relic(a,"echo") and a.mp>=3:
+      a.mp-=3
+      consume_relic(a,"echo")
+      events.append("回响棱镜 · 追加伤害，消耗3法力")
+      deal_damage(a,t,8,false)
      if effect_id=="bash" and t.hp>0:put_status(t,"stagger",a.id)
  after_action()
  return true
@@ -278,24 +294,36 @@ func begin_turn(unit: Dictionary):
  unit.ap=maxi(1,unit.get("max_ap",4)-(1 if stagger else 0))
  if stagger:unit.statuses.erase("stagger")
  if aura=="staff" and unit.side==0 and unit.hp>0:
-  var gain=mini(3,unit.max_hp-unit.hp)
-  unit.hp+=gain
+  var gain=heal_unit(unit,3)
   if gain>0:events.append("主角光环 · %s 恢复 %d 生命"%[unit.name,gain])
 
 func lose_hp(unit: Dictionary,amount: int):
+ amount=maxi(0,amount)
+ if amount>0 and has_relic(unit,"shell"):
+  amount=maxi(0,amount-10)
+  consume_relic(unit,"shell")
+ if amount>=unit.hp and unit.hp>0 and has_relic(unit,"candle"):
+  amount=unit.hp-1
+  unit.mp=0
+  consume_relic(unit,"candle")
+  events.append("续命烛芯 · 保留1生命，法力耗尽")
  unit.hp=maxi(0,unit.hp-amount)
  events.append("%s −%d 生命"%[unit.name,amount])
 
 func deal_damage(source: Dictionary,target: Dictionary,amount: int,direct: bool=true):
  if direct:
   if source.side==0:
-   if "ember" in bonuses:amount+=4
+   amount+=int(relic_modifier(source,"damage"))
+   if has_relic(source,"fang"):
+    amount+=10
+    consume_relic(source,"fang")
+    lose_hp(source,2)
    if aura=="sword":amount+=2
   var marked=target.get("statuses",{}).get("mark",{})
   if not marked.is_empty():
    var marker=find_actor(marked.source)
    if not marker.is_empty() and marker.hp>0 and marker.side==source.side:amount+=5+int(marked.get("bonus",0))
- amount=maxi(1,amount-target.get("armor",0))
+ amount=maxi(1,amount-target.get("armor",0)+int(relic_modifier(target,"taken")))
  if target.get("statuses",{}).has("shield"):
   amount=maxi(0,amount-10-int(target.statuses.shield.get("bonus",0)))
   target.statuses.erase("shield")
@@ -305,13 +333,16 @@ func deal_damage(source: Dictionary,target: Dictionary,amount: int,direct: bool=
   if not protector.is_empty() and protector.hp>0 and protector.id!=target.id and hex_distance(protector.cell,target.cell)<=2:
    var share=int(ceil(amount/2.0))
    amount-=share
-   var reduced=share-int(guard_data.get("bonus",0))-protector.get("armor",0)-(3 if Professions.job_id(protector)=="warden" else 0)
+   var reduced=share-int(guard_data.get("bonus",0))-protector.get("armor",0)+int(relic_modifier(protector,"taken"))-(3 if Professions.job_id(protector)=="warden" else 0)
    if protector.get("statuses",{}).has("shield"):
     reduced-=10+int(protector.statuses.shield.get("bonus",0));protector.statuses.erase("shield")
    lose_hp(protector,maxi(0,reduced))
  var was_alive=target.hp>0
  lose_hp(target,amount)
  if was_alive and target.hp<=0 and source.get("side",-1)==0 and target.side==1:
+  if source.hp>0 and source.hp<source.max_hp and has_relic(source,"chalice"):
+   heal_unit(source,12)
+   consume_relic(source,"chalice")
   source.kills=int(source.get("kills",0))+1
   events.append("%s 击杀奖励 +15经验（胜利后结算）"%source.name)
  if target.hp<=0 and source.hp>0 and Professions.job_id(source)=="blade" and not source.get("kill_refunded",false):
@@ -349,15 +380,18 @@ func rest_amount(kind: String) -> int:
  if a.is_empty() or a.ap <= 0:return 0
  var maximum = a.max_hp if kind == "hp" else a.max_mp
  var current = a.hp if kind == "hp" else a.mp
- var ratio = 0.07 if "spring" in bonuses and a.side == 0 else 0.05
+ var ratio = maxf(0.0,0.05+relic_modifier(a,"rest_"+kind))
  if "focus" in a.get("learned",[]):ratio+=0.02
- return mini(maximum-current,maxi(1,int(floor(maximum*a.ap*ratio))))
+ var amount=maxi(1,int(floor(maximum*a.ap*ratio)))
+ if kind=="hp":amount=int(floor(amount*maxf(0.0,1.0+relic_modifier(a,"healing_pct")/100.0)))
+ return mini(maximum-current,amount)
 
 func rest(kind: String) -> bool:
  if not can_act() or kind not in ["hp","mp"]:return false
  var a = active()
  var gain = rest_amount(kind)
  a[kind] += gain
+ if kind=="mp" and gain>0:consume_relic(a,"tide")
  a.ap = 0
  events.append("%s 休息：恢复 %d %s"%[a.name,gain,"生命" if kind=="hp" else "法力"])
  finish_turn()
@@ -428,8 +462,8 @@ func shrink():
    events.append("%s 无处撤离，阵亡"%a.name)
   else:
    a.cell = destinations[0]
-   var damage = int(ceil(a.max_hp*0.2))
-   a.hp = maxi(0,a.hp-damage)
+   var damage = int(ceil(a.max_hp*0.2))+int(relic_modifier(a,"taken"))
+   lose_hp(a,damage)
    events.append("%s 被灰潮推移，−%d 生命"%[a.name,damage])
  check_outcome()
 
@@ -465,7 +499,7 @@ func use_medicine(id: String) -> bool:
  if hex_distance(a.cell,target.cell)>3:return false
  if target.hp==target.max_hp and target.mp==target.max_mp:return false
  a.ap-=2
- target.hp=mini(target.max_hp,target.hp+int(target.max_hp*0.3))
+ heal_unit(target,int(target.max_hp*0.3))
  target.mp=mini(target.max_mp,target.mp+int(target.max_mp*0.3))
  events.append("%s 为 %s 使用补给：恢复30%%生命与法力"%[a.name,target.name])
  after_action()
@@ -476,3 +510,53 @@ func end_action() -> bool:
  events.append("%s 结束行动"%active().name)
  finish_turn()
  return true
+
+# Team duplicates share an effect but only one physical instance spends a charge.
+func applicable_relics(unit: Dictionary) -> Array:
+ if unit.get("side",-1)!=0:return []
+ var result=[]
+ var seen=[]
+ for entry in relic_state:
+  var d=Relic.definition(entry)
+  if entry.remaining==0 or (d.scope=="personal" and entry.owner!=unit.id) or entry.id in seen:continue
+  seen.append(entry.id)
+  result.append(entry)
+ return result
+
+func relic_modifier(unit: Dictionary,key: String) -> float:
+ var value=0.0
+ for entry in applicable_relics(unit):value+=float(Relic.definition(entry).mods.get(key,0))
+ return value
+
+func has_relic(unit: Dictionary,id: String) -> bool:
+ return applicable_relics(unit).any(func(entry):return entry.id==id)
+
+func consume_relic(unit: Dictionary,id: String):
+ for entry in applicable_relics(unit):
+  if entry.id!=id or entry.remaining<0:continue
+  entry.remaining-=1
+  if entry.remaining==0:
+   relic_state.erase(entry)
+   events.append("遗物损毁 · "+Relic.definition(entry).name+"（次数耗尽）")
+   refresh_relic_stats()
+  return
+
+func refresh_relic_stats():
+ for unit in actors:
+  if unit.side!=0:continue
+  var old=unit.get("relic_stats",{})
+  var next={}
+  for key in ["speed","armor","range","max_ap"]:
+   next[key]=int(relic_modifier(unit,key))
+   unit[key]=unit.get(key,4 if key=="max_ap" else 0)-int(old.get(key,0))+next[key]
+  unit.relic_stats=next
+
+func heal_unit(unit: Dictionary,amount: int) -> int:
+ if unit.hp<=0:return 0
+ var gain=mini(unit.max_hp-unit.hp,maxi(0,int(floor(amount*maxf(0.0,1.0+relic_modifier(unit,"healing_pct")/100.0)))))
+ unit.hp+=gain
+ return gain
+
+func skill_relic_cost(unit: Dictionary,skill_id: String) -> int:
+ var skill=Professions.ALL_SKILLS[skill_id]
+ return int(relic_modifier(unit,"heal_mp")) if skill.get("base",skill_id)=="heal" else 0

@@ -11,15 +11,24 @@ static func comparison(before: Dictionary,after: Dictionary) -> String:
  return " · ".join(result)
 
 static func skill_details(host,parent: Control,unit: Dictionary):
+ var relic_rules=host.battle
+ if relic_rules==null:
+  relic_rules=host.campaign.Rules.new()
+  var uid=1
+  for entry in host.campaign.relics+host.campaign.collection:
+   relic_rules.relic_state.append(host.campaign.Relic.instance(entry,uid) if entry is String else entry.duplicate(true))
+   uid+=1
  host.detail_section(parent,"当前技能")
  for id in Jobs.skills_for(unit):
   var skill=Jobs.ALL_SKILLS[id]
-  parent.add_child(host.text_label(skill.name+" · %d点 / %d法力 · 射程%d"%[skill.ap,skill.mp,skill.range],17,host.TEAL))
+  parent.add_child(host.text_label(skill.name+" · %d点 / %d法力 · 射程%d"%[skill.ap,skill.mp+relic_rules.skill_relic_cost(unit,id),skill.range],17,host.TEAL))
   var description=Jobs.rank_description(unit,id)
   if skill.get("base",id)=="heal":
    var stats=host.campaign.character_stats(unit.id)
    var amount=26+Jobs.skill_bonus(unit,id)+stats.heal_bonus+(6 if unit.profession=="medic" else 0)+(8 if "fury" in unit.get("learned",[]) else 0)
-   description="恢复 %d 生命（基础26，已计入职业及装备增益）"%amount
+   amount+=int(relic_rules.relic_modifier(unit,"heal"))
+   amount=int(floor(amount*maxf(0.0,1.0+relic_rules.relic_modifier(unit,"healing_pct")/100.0)))
+   description="恢复 %d 生命（基础26，已计入职业、装备及遗物增益与代价）"%amount
   parent.add_child(host.text_label(description+"；每次个人行动限用一次",15,host.MUTED))
  for id in unit.get("learned",[]):
   if id in ["fury","focus"]:
@@ -135,6 +144,7 @@ static func profession_page(host,parent: Control,unit: Dictionary):
   parent.add_child(entry)
 
 static func equipment_page(host,parent: Control,unit: Dictionary):
+ host.show_relic_slot(parent,unit)
  parent.add_child(host.text_label("主手 / 副手 / 护甲 · 各1件 · 所有职业均可穿戴",17,host.TEAL))
  var editable=host.campaign.phase in ["camp","world"] and host.battle==null and unit.hp>0
  if not editable:parent.add_child(host.text_label("当前只能查看装备。",15,host.MUTED))

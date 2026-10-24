@@ -44,7 +44,7 @@ func run():
  scene.battle.check_outcome()
  scene.after_battle_action()
  check(scene.campaign.phase=="reward")
- check(scene.campaign.choose_reward(0))
+ check(scene.campaign.choose_reward(0,"hero"))
  scene.return_world()
  scene.select_route_node("3b")
  check(scene.campaign.route.completed)
