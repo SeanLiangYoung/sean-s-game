@@ -13,7 +13,7 @@ No rule/save changes. Original geometry/shaders only; no copied reference-game a
 ## Review Focus
 Attachment drift; weapons/capes intersecting; projectile visible before release; large frame delta skipping release; death/reward overlap.
 
-- [ ] Add failing checks for wardrobe on allied rigs, bow draw before release, no early projectile, once-only release/impact and healing stage behavior.
-- [ ] Create game/character_wardrobe.gd and character/garment shaders; integrate role palettes and torso attachments in CharacterVisual.
-- [ ] Add staged release and charge presentation, map preparation clips, retain action cleanup and death timing.
-- [ ] Run full suites and inspect native close-up/skill captures. Independent review, document limitations, save iteration.
+- [x] Add failing checks for wardrobe on allied rigs, bow draw before release, no early projectile, once-only release/impact and healing stage behavior.
+- [x] Create game/character_wardrobe.gd and character/garment shaders; integrate role palettes and torso attachments in CharacterVisual.
+- [x] Add staged release and charge presentation, map preparation clips, retain action cleanup and death timing.
+- [x] Run full suites and inspect native close-up/skill captures. Independent review, document limitations, save iteration.

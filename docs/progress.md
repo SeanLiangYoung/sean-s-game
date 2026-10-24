@@ -42,3 +42,12 @@ Limits: procedural original art is an intermediate visual sample; no final rigge
 - Discovered battle redraw reset user zoom. UI regression failed before fix, then passed; initialize camera zoom only at battle entry, preserve through actions and mode changes.
 - Independent reviewer found no blocking defects, verified a clean-cache import and 122 character checks; documentation synchronization completed.
 - Final verification: 233 checks in 9 suites passed, plus native scene smoke passed. Character models, effects and camera only; battle/save rules preserved.
+
+## 2026-10-24 original costume layers and staged skills
+- Added original torso-bound curved cloth, shoulder wraps, clasps, engineer satchel and role palettes; pinned-edge wind and soft texture-preserving character light bands. Source glTF and textures unchanged.
+- Corrected the previous forward-axis assumption using a native two-sided model comparison. Added head-bound eyes and brows; Cleric uses Head_2 and an original visible face surface rather than its stone-like outer helmet.
+- Ruling: keep existing licensed rigs, add original secondary costume geometry and shaders instead of another pack swap. Cost: original base silhouettes/hair and shared templates remain recognizable, and cloth is procedural rather than simulated.
+- Skills now draw/prepare, gather restrained motes and ground wind ring, release, impact, recover; projectiles stay hidden before release. Normal attacks remain faster. Full death clips and once-only impacts are retained.
+- Initial regression failures: no wardrobe on six allies; no bow-draw or hidden charge projectile. Green after implementation. Independent review found wrong projectile destination when skill-ending shrink damages another actor, and Cleric head-bone mismatch. Added failing regressions and fixed by explicit target ID and Head_2 fallback.
+- Captured and inspected native six-role lineup plus skill charge/release. A capture helper uses isolated campaign data; no real save changes. Shared workspace concurrently contains menu/equipment work; kept that work intact.
+- Scope limits: no custom full-body sculpt, new facial rig, or physics cloth; this is a further original stylized prototype refinement, not reference-game production parity.
