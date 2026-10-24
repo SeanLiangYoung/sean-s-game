@@ -10,7 +10,7 @@ func _initialize():
  check(c.has_method("acquire_relic"),"individual relic acquisition and binding implemented")
  if not c.has_method("acquire_relic"):
   print("CHECKS: ",checks," FAILURES: ",failures);quit(1);return
- check(c.Relic.CATALOG.size()==15,"fifteen designed relics")
+ check(c.Relic.CATALOG.size()==110,"110 designed relics")
  c.depart()
  check(not c.acquire_relic("echo"),"personal relic requires explicit owner")
  check(c.acquire_relic("echo","blade"),"personal relic binds on acquisition")

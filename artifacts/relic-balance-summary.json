@@ -1,0 +1,2034 @@
+{
+  "controls": {
+    "wins": 12,
+    "samples": 18,
+    "mean_rounds": 3.67,
+    "mean_hp": 165.4,
+    "mean_deaths": 1.33
+  },
+  "builds": {
+    "blood": {
+      "before": {
+        "wins": 30,
+        "samples": 36,
+        "mean_rounds": 3.53,
+        "mean_hp": 188.9,
+        "mean_deaths": 1.08
+      },
+      "after": {
+        "wins": 34,
+        "samples": 36,
+        "mean_rounds": 3.56,
+        "mean_hp": 203.1,
+        "mean_deaths": 0.92
+      }
+    },
+    "hunt": {
+      "before": {
+        "wins": 31,
+        "samples": 36,
+        "mean_rounds": 2.67,
+        "mean_hp": 202.6,
+        "mean_deaths": 0.61
+      },
+      "after": {
+        "wins": 32,
+        "samples": 36,
+        "mean_rounds": 2.67,
+        "mean_hp": 206.7,
+        "mean_deaths": 0.53
+      }
+    },
+    "ward": {
+      "before": {
+        "wins": 36,
+        "samples": 36,
+        "mean_rounds": 3.39,
+        "mean_hp": 224.9,
+        "mean_deaths": 0.31
+      },
+      "after": {
+        "wins": 36,
+        "samples": 36,
+        "mean_rounds": 3.5,
+        "mean_hp": 221.6,
+        "mean_deaths": 0.33
+      }
+    },
+    "arcane": {
+      "before": {
+        "wins": 36,
+        "samples": 36,
+        "mean_rounds": 2.47,
+        "mean_hp": 215.8,
+        "mean_deaths": 0.42
+      },
+      "after": {
+        "wins": 35,
+        "samples": 36,
+        "mean_rounds": 2.86,
+        "mean_hp": 213.8,
+        "mean_deaths": 0.5
+      }
+    },
+    "engine": {
+      "before": {
+        "wins": 30,
+        "samples": 36,
+        "mean_rounds": 2.75,
+        "mean_hp": 204.0,
+        "mean_deaths": 0.67
+      },
+      "after": {
+        "wins": 33,
+        "samples": 36,
+        "mean_rounds": 2.97,
+        "mean_hp": 202.7,
+        "mean_deaths": 0.61
+      }
+    },
+    "pilgrim": {
+      "before": {
+        "wins": 26,
+        "samples": 36,
+        "mean_rounds": 3.92,
+        "mean_hp": 196.2,
+        "mean_deaths": 1.14
+      },
+      "after": {
+        "wins": 31,
+        "samples": 36,
+        "mean_rounds": 4.03,
+        "mean_hp": 213.3,
+        "mean_deaths": 0.94
+      }
+    },
+    "dusk": {
+      "before": {
+        "wins": 35,
+        "samples": 36,
+        "mean_rounds": 2.53,
+        "mean_hp": 217.6,
+        "mean_deaths": 0.28
+      },
+      "after": {
+        "wins": 29,
+        "samples": 36,
+        "mean_rounds": 2.47,
+        "mean_hp": 212.9,
+        "mean_deaths": 0.42
+      }
+    },
+    "command": {
+      "before": {
+        "wins": 36,
+        "samples": 36,
+        "mean_rounds": 3.11,
+        "mean_hp": 220.6,
+        "mean_deaths": 0.33
+      },
+      "after": {
+        "wins": 33,
+        "samples": 36,
+        "mean_rounds": 3.06,
+        "mean_hp": 219.7,
+        "mean_deaths": 0.39
+      }
+    }
+  },
+  "singles": {
+    "arcane_1": {
+      "before": {
+        "wins": 6,
+        "samples": 6,
+        "mean_rounds": 4,
+        "mean_hp": 178.7,
+        "mean_deaths": 1
+      },
+      "after": {
+        "wins": 6,
+        "samples": 6,
+        "mean_rounds": 4,
+        "mean_hp": 178.7,
+        "mean_deaths": 1
+      }
+    },
+    "arcane_10": {
+      "before": {
+        "wins": 6,
+        "samples": 6,
+        "mean_rounds": 4.33,
+        "mean_hp": 138.8,
+        "mean_deaths": 1.5
+      },
+      "after": {
+        "wins": 6,
+        "samples": 6,
+        "mean_rounds": 4.33,
+        "mean_hp": 138.8,
+        "mean_deaths": 1.5
+      }
+    },
+    "arcane_2": {
+      "before": {
+        "wins": 6,
+        "samples": 6,
+        "mean_rounds": 4.17,
+        "mean_hp": 133.5,
+        "mean_deaths": 1.33
+      },
+      "after": {
+        "wins": 6,
+        "samples": 6,
+        "mean_rounds": 4.17,
+        "mean_hp": 133.5,
+        "mean_deaths": 1.33
+      }
+    },
+    "arcane_3": {
+      "before": {
+        "wins": 6,
+        "samples": 6,
+        "mean_rounds": 3,
+        "mean_hp": 184.7,
+        "mean_deaths": 1
+      },
+      "after": {
+        "wins": 6,
+        "samples": 6,
+        "mean_rounds": 3.33,
+        "mean_hp": 174.3,
+        "mean_deaths": 1.17
+      }
+    },
+    "arcane_4": {
+      "before": {
+        "wins": 6,
+        "samples": 6,
+        "mean_rounds": 3.33,
+        "mean_hp": 185.7,
+        "mean_deaths": 1
+      },
+      "after": {
+        "wins": 6,
+        "samples": 6,
+        "mean_rounds": 3.83,
+        "mean_hp": 169,
+        "mean_deaths": 1
+      }
+    },
+    "arcane_5": {
+      "before": {
+        "wins": 6,
+        "samples": 6,
+        "mean_rounds": 4,
+        "mean_hp": 147.3,
+        "mean_deaths": 1.17
+      },
+      "after": {
+        "wins": 6,
+        "samples": 6,
+        "mean_rounds": 4,
+        "mean_hp": 147.3,
+        "mean_deaths": 1.17
+      }
+    },
+    "arcane_6": {
+      "before": {
+        "wins": 5,
+        "samples": 6,
+        "mean_rounds": 4.17,
+        "mean_hp": 131.5,
+        "mean_deaths": 1.67
+      },
+      "after": {
+        "wins": 5,
+        "samples": 6,
+        "mean_rounds": 4.17,
+        "mean_hp": 131.5,
+        "mean_deaths": 1.67
+      }
+    },
+    "arcane_7": {
+      "before": {
+        "wins": 6,
+        "samples": 6,
+        "mean_rounds": 3.83,
+        "mean_hp": 160.5,
+        "mean_deaths": 1
+      },
+      "after": {
+        "wins": 6,
+        "samples": 6,
+        "mean_rounds": 4.17,
+        "mean_hp": 156.5,
+        "mean_deaths": 1.33
+      }
+    },
+    "arcane_8": {
+      "before": {
+        "wins": 6,
+        "samples": 6,
+        "mean_rounds": 4.33,
+        "mean_hp": 125.5,
+        "mean_deaths": 1.5
+      },
+      "after": {
+        "wins": 6,
+        "samples": 6,
+        "mean_rounds": 4.33,
+        "mean_hp": 125.5,
+        "mean_deaths": 1.5
+      }
+    },
+    "arcane_9": {
+      "before": {
+        "wins": 6,
+        "samples": 6,
+        "mean_rounds": 4.33,
+        "mean_hp": 154,
+        "mean_deaths": 1.33
+      },
+      "after": {
+        "wins": 6,
+        "samples": 6,
+        "mean_rounds": 4.33,
+        "mean_hp": 154,
+        "mean_deaths": 1.33
+      }
+    },
+    "banner": {
+      "before": {
+        "wins": 6,
+        "samples": 6,
+        "mean_rounds": 3.33,
+        "mean_hp": 166.5,
+        "mean_deaths": 1.17
+      },
+      "after": {
+        "wins": 6,
+        "samples": 6,
+        "mean_rounds": 3.33,
+        "mean_hp": 166.5,
+        "mean_deaths": 1.17
+      }
+    },
+    "bastion": {
+      "before": {
+        "wins": 6,
+        "samples": 6,
+        "mean_rounds": 3.5,
+        "mean_hp": 185.7,
+        "mean_deaths": 0.83
+      },
+      "after": {
+        "wins": 6,
+        "samples": 6,
+        "mean_rounds": 4.17,
+        "mean_hp": 178.3,
+        "mean_deaths": 0.83
+      }
+    },
+    "blood_1": {
+      "before": {
+        "wins": 6,
+        "samples": 6,
+        "mean_rounds": 4,
+        "mean_hp": 150.7,
+        "mean_deaths": 1.17
+      },
+      "after": {
+        "wins": 6,
+        "samples": 6,
+        "mean_rounds": 4,
+        "mean_hp": 151.3,
+        "mean_deaths": 1.17
+      }
+    },
+    "blood_10": {
+      "before": {
+        "wins": 6,
+        "samples": 6,
+        "mean_rounds": 4.17,
+        "mean_hp": 143.2,
+        "mean_deaths": 1.33
+      },
+      "after": {
+        "wins": 6,
+        "samples": 6,
+        "mean_rounds": 4.17,
+        "mean_hp": 143.2,
+        "mean_deaths": 1.33
+      }
+    },
+    "blood_2": {
+      "before": {
+        "wins": 6,
+        "samples": 6,
+        "mean_rounds": 4.17,
+        "mean_hp": 150,
+        "mean_deaths": 1.17
+      },
+      "after": {
+        "wins": 6,
+        "samples": 6,
+        "mean_rounds": 4.17,
+        "mean_hp": 150,
+        "mean_deaths": 1.17
+      }
+    },
+    "blood_3": {
+      "before": {
+        "wins": 6,
+        "samples": 6,
+        "mean_rounds": 4.33,
+        "mean_hp": 152,
+        "mean_deaths": 1.33
+      },
+      "after": {
+        "wins": 6,
+        "samples": 6,
+        "mean_rounds": 4.33,
+        "mean_hp": 155.5,
+        "mean_deaths": 1.17
+      }
+    },
+    "blood_4": {
+      "before": {
+        "wins": 6,
+        "samples": 6,
+        "mean_rounds": 4.17,
+        "mean_hp": 144.3,
+        "mean_deaths": 1.5
+      },
+      "after": {
+        "wins": 6,
+        "samples": 6,
+        "mean_rounds": 4.17,
+        "mean_hp": 144.3,
+        "mean_deaths": 1.5
+      }
+    },
+    "blood_5": {
+      "before": {
+        "wins": 5,
+        "samples": 6,
+        "mean_rounds": 4.33,
+        "mean_hp": 129,
+        "mean_deaths": 1.83
+      },
+      "after": {
+        "wins": 6,
+        "samples": 6,
+        "mean_rounds": 4.33,
+        "mean_hp": 166.2,
+        "mean_deaths": 1.5
+      }
+    },
+    "blood_6": {
+      "before": {
+        "wins": 6,
+        "samples": 6,
+        "mean_rounds": 4.17,
+        "mean_hp": 140.5,
+        "mean_deaths": 1.17
+      },
+      "after": {
+        "wins": 6,
+        "samples": 6,
+        "mean_rounds": 4.17,
+        "mean_hp": 140.5,
+        "mean_deaths": 1.17
+      }
+    },
+    "blood_7": {
+      "before": {
+        "wins": 6,
+        "samples": 6,
+        "mean_rounds": 4.33,
+        "mean_hp": 138.2,
+        "mean_deaths": 1.5
+      },
+      "after": {
+        "wins": 6,
+        "samples": 6,
+        "mean_rounds": 4.33,
+        "mean_hp": 138.2,
+        "mean_deaths": 1.5
+      }
+    },
+    "blood_8": {
+      "before": {
+        "wins": 6,
+        "samples": 6,
+        "mean_rounds": 4.33,
+        "mean_hp": 137.2,
+        "mean_deaths": 1
+      },
+      "after": {
+        "wins": 6,
+        "samples": 6,
+        "mean_rounds": 4.33,
+        "mean_hp": 137.2,
+        "mean_deaths": 1
+      }
+    },
+    "blood_9": {
+      "before": {
+        "wins": 6,
+        "samples": 6,
+        "mean_rounds": 4.33,
+        "mean_hp": 138.2,
+        "mean_deaths": 1.5
+      },
+      "after": {
+        "wins": 6,
+        "samples": 6,
+        "mean_rounds": 4.33,
+        "mean_hp": 138.2,
+        "mean_deaths": 1.5
+      }
+    },
+    "boots": {
+      "before": {
+        "wins": 6,
+        "samples": 6,
+        "mean_rounds": 4.5,
+        "mean_hp": 134.7,
+        "mean_deaths": 1.67
+      },
+      "after": {
+        "wins": 6,
+        "samples": 6,
+        "mean_rounds": 4.5,
+        "mean_hp": 134.7,
+        "mean_deaths": 1.67
+      }
+    },
+    "bulwark": {
+      "before": {
+        "wins": 5,
+        "samples": 6,
+        "mean_rounds": 5,
+        "mean_hp": 103,
+        "mean_deaths": 1.83
+      },
+      "after": {
+        "wins": 5,
+        "samples": 6,
+        "mean_rounds": 5,
+        "mean_hp": 103,
+        "mean_deaths": 1.83
+      }
+    },
+    "campfire": {
+      "before": {
+        "wins": 6,
+        "samples": 6,
+        "mean_rounds": 4.33,
+        "mean_hp": 136.3,
+        "mean_deaths": 1.5
+      },
+      "after": {
+        "wins": 6,
+        "samples": 6,
+        "mean_rounds": 4.33,
+        "mean_hp": 136.3,
+        "mean_deaths": 1.5
+      }
+    },
+    "candle": {
+      "before": {
+        "wins": 6,
+        "samples": 6,
+        "mean_rounds": 4.33,
+        "mean_hp": 138.2,
+        "mean_deaths": 1.5
+      },
+      "after": {
+        "wins": 6,
+        "samples": 6,
+        "mean_rounds": 4.33,
+        "mean_hp": 138.2,
+        "mean_deaths": 1.5
+      }
+    },
+    "chalice": {
+      "before": {
+        "wins": 6,
+        "samples": 6,
+        "mean_rounds": 4.33,
+        "mean_hp": 138.2,
+        "mean_deaths": 1.5
+      },
+      "after": {
+        "wins": 6,
+        "samples": 6,
+        "mean_rounds": 4.33,
+        "mean_hp": 138.2,
+        "mean_deaths": 1.5
+      }
+    },
+    "cog": {
+      "before": {
+        "wins": 4,
+        "samples": 6,
+        "mean_rounds": 4,
+        "mean_hp": 142.8,
+        "mean_deaths": 1.67
+      },
+      "after": {
+        "wins": 6,
+        "samples": 6,
+        "mean_rounds": 4.33,
+        "mean_hp": 139.3,
+        "mean_deaths": 1.33
+      }
+    },
+    "command_1": {
+      "before": {
+        "wins": 5,
+        "samples": 6,
+        "mean_rounds": 3.67,
+        "mean_hp": 140.5,
+        "mean_deaths": 1.5
+      },
+      "after": {
+        "wins": 5,
+        "samples": 6,
+        "mean_rounds": 3.67,
+        "mean_hp": 140.5,
+        "mean_deaths": 1.5
+      }
+    },
+    "command_10": {
+      "before": {
+        "wins": 5,
+        "samples": 6,
+        "mean_rounds": 3.83,
+        "mean_hp": 129,
+        "mean_deaths": 1.5
+      },
+      "after": {
+        "wins": 5,
+        "samples": 6,
+        "mean_rounds": 3.83,
+        "mean_hp": 129,
+        "mean_deaths": 1.5
+      }
+    },
+    "command_2": {
+      "before": {
+        "wins": 6,
+        "samples": 6,
+        "mean_rounds": 4.33,
+        "mean_hp": 132.2,
+        "mean_deaths": 1.67
+      },
+      "after": {
+        "wins": 6,
+        "samples": 6,
+        "mean_rounds": 4.33,
+        "mean_hp": 138.3,
+        "mean_deaths": 1.5
+      }
+    },
+    "command_3": {
+      "before": {
+        "wins": 5,
+        "samples": 6,
+        "mean_rounds": 4,
+        "mean_hp": 183,
+        "mean_deaths": 1
+      },
+      "after": {
+        "wins": 5,
+        "samples": 6,
+        "mean_rounds": 4,
+        "mean_hp": 183,
+        "mean_deaths": 1
+      }
+    },
+    "command_4": {
+      "before": {
+        "wins": 5,
+        "samples": 6,
+        "mean_rounds": 3.83,
+        "mean_hp": 177.7,
+        "mean_deaths": 0.5
+      },
+      "after": {
+        "wins": 3,
+        "samples": 6,
+        "mean_rounds": 3.5,
+        "mean_hp": 161.3,
+        "mean_deaths": 1
+      }
+    },
+    "command_5": {
+      "before": {
+        "wins": 5,
+        "samples": 6,
+        "mean_rounds": 4.83,
+        "mean_hp": 111.3,
+        "mean_deaths": 2
+      },
+      "after": {
+        "wins": 5,
+        "samples": 6,
+        "mean_rounds": 4.83,
+        "mean_hp": 111.3,
+        "mean_deaths": 2
+      }
+    },
+    "command_6": {
+      "before": {
+        "wins": 6,
+        "samples": 6,
+        "mean_rounds": 4.17,
+        "mean_hp": 141.3,
+        "mean_deaths": 1.33
+      },
+      "after": {
+        "wins": 6,
+        "samples": 6,
+        "mean_rounds": 4.17,
+        "mean_hp": 141.3,
+        "mean_deaths": 1.33
+      }
+    },
+    "command_7": {
+      "before": {
+        "wins": 6,
+        "samples": 6,
+        "mean_rounds": 4.17,
+        "mean_hp": 141.2,
+        "mean_deaths": 1.33
+      },
+      "after": {
+        "wins": 6,
+        "samples": 6,
+        "mean_rounds": 4.33,
+        "mean_hp": 138.2,
+        "mean_deaths": 1.5
+      }
+    },
+    "command_8": {
+      "before": {
+        "wins": 6,
+        "samples": 6,
+        "mean_rounds": 4.17,
+        "mean_hp": 143,
+        "mean_deaths": 1.33
+      },
+      "after": {
+        "wins": 6,
+        "samples": 6,
+        "mean_rounds": 4.17,
+        "mean_hp": 143,
+        "mean_deaths": 1.33
+      }
+    },
+    "command_9": {
+      "before": {
+        "wins": 6,
+        "samples": 6,
+        "mean_rounds": 4.33,
+        "mean_hp": 138.2,
+        "mean_deaths": 1.5
+      },
+      "after": {
+        "wins": 6,
+        "samples": 6,
+        "mean_rounds": 4.33,
+        "mean_hp": 138.2,
+        "mean_deaths": 1.5
+      }
+    },
+    "dusk_1": {
+      "before": {
+        "wins": 6,
+        "samples": 6,
+        "mean_rounds": 3.67,
+        "mean_hp": 166.3,
+        "mean_deaths": 1.17
+      },
+      "after": {
+        "wins": 6,
+        "samples": 6,
+        "mean_rounds": 3.83,
+        "mean_hp": 147.2,
+        "mean_deaths": 1.17
+      }
+    },
+    "dusk_10": {
+      "before": {
+        "wins": 6,
+        "samples": 6,
+        "mean_rounds": 3.5,
+        "mean_hp": 168.2,
+        "mean_deaths": 1.17
+      },
+      "after": {
+        "wins": 6,
+        "samples": 6,
+        "mean_rounds": 3.5,
+        "mean_hp": 168.2,
+        "mean_deaths": 1.17
+      }
+    },
+    "dusk_2": {
+      "before": {
+        "wins": 5,
+        "samples": 6,
+        "mean_rounds": 3.33,
+        "mean_hp": 162,
+        "mean_deaths": 0.83
+      },
+      "after": {
+        "wins": 5,
+        "samples": 6,
+        "mean_rounds": 3.33,
+        "mean_hp": 162.2,
+        "mean_deaths": 0.83
+      }
+    },
+    "dusk_3": {
+      "before": {
+        "wins": 6,
+        "samples": 6,
+        "mean_rounds": 3.67,
+        "mean_hp": 163.8,
+        "mean_deaths": 1.33
+      },
+      "after": {
+        "wins": 6,
+        "samples": 6,
+        "mean_rounds": 3.67,
+        "mean_hp": 163.8,
+        "mean_deaths": 1.33
+      }
+    },
+    "dusk_4": {
+      "before": {
+        "wins": 6,
+        "samples": 6,
+        "mean_rounds": 3.83,
+        "mean_hp": 163.2,
+        "mean_deaths": 1.17
+      },
+      "after": {
+        "wins": 6,
+        "samples": 6,
+        "mean_rounds": 4,
+        "mean_hp": 155.2,
+        "mean_deaths": 1.17
+      }
+    },
+    "dusk_5": {
+      "before": {
+        "wins": 4,
+        "samples": 6,
+        "mean_rounds": 4.17,
+        "mean_hp": 121,
+        "mean_deaths": 2.17
+      },
+      "after": {
+        "wins": 4,
+        "samples": 6,
+        "mean_rounds": 4.17,
+        "mean_hp": 121,
+        "mean_deaths": 2.17
+      }
+    },
+    "dusk_6": {
+      "before": {
+        "wins": 6,
+        "samples": 6,
+        "mean_rounds": 3.67,
+        "mean_hp": 154.3,
+        "mean_deaths": 1.33
+      },
+      "after": {
+        "wins": 6,
+        "samples": 6,
+        "mean_rounds": 3.67,
+        "mean_hp": 156.8,
+        "mean_deaths": 1.17
+      }
+    },
+    "dusk_7": {
+      "before": {
+        "wins": 3,
+        "samples": 6,
+        "mean_rounds": 2.5,
+        "mean_hp": 178.3,
+        "mean_deaths": 0.67
+      },
+      "after": {
+        "wins": 3,
+        "samples": 6,
+        "mean_rounds": 2.5,
+        "mean_hp": 178.3,
+        "mean_deaths": 0.67
+      }
+    },
+    "dusk_8": {
+      "before": {
+        "wins": 6,
+        "samples": 6,
+        "mean_rounds": 3.33,
+        "mean_hp": 174.3,
+        "mean_deaths": 1.17
+      },
+      "after": {
+        "wins": 6,
+        "samples": 6,
+        "mean_rounds": 3.33,
+        "mean_hp": 174.3,
+        "mean_deaths": 1.17
+      }
+    },
+    "dusk_9": {
+      "before": {
+        "wins": 6,
+        "samples": 6,
+        "mean_rounds": 4.17,
+        "mean_hp": 148.8,
+        "mean_deaths": 1.17
+      },
+      "after": {
+        "wins": 6,
+        "samples": 6,
+        "mean_rounds": 4.17,
+        "mean_hp": 148.8,
+        "mean_deaths": 1.17
+      }
+    },
+    "echo": {
+      "before": {
+        "wins": 6,
+        "samples": 6,
+        "mean_rounds": 4.33,
+        "mean_hp": 130.8,
+        "mean_deaths": 1.5
+      },
+      "after": {
+        "wins": 6,
+        "samples": 6,
+        "mean_rounds": 4.33,
+        "mean_hp": 130.8,
+        "mean_deaths": 1.5
+      }
+    },
+    "ember": {
+      "before": {
+        "wins": 6,
+        "samples": 6,
+        "mean_rounds": 3.67,
+        "mean_hp": 156.3,
+        "mean_deaths": 1.33
+      },
+      "after": {
+        "wins": 6,
+        "samples": 6,
+        "mean_rounds": 3.67,
+        "mean_hp": 156.3,
+        "mean_deaths": 1.33
+      }
+    },
+    "engine_1": {
+      "before": {
+        "wins": 5,
+        "samples": 6,
+        "mean_rounds": 4.33,
+        "mean_hp": 129.8,
+        "mean_deaths": 1.5
+      },
+      "after": {
+        "wins": 5,
+        "samples": 6,
+        "mean_rounds": 4.83,
+        "mean_hp": 108.5,
+        "mean_deaths": 2
+      }
+    },
+    "engine_10": {
+      "before": {
+        "wins": 6,
+        "samples": 6,
+        "mean_rounds": 4.67,
+        "mean_hp": 109.3,
+        "mean_deaths": 1.67
+      },
+      "after": {
+        "wins": 6,
+        "samples": 6,
+        "mean_rounds": 4.67,
+        "mean_hp": 109.3,
+        "mean_deaths": 1.67
+      }
+    },
+    "engine_2": {
+      "before": {
+        "wins": 6,
+        "samples": 6,
+        "mean_rounds": 3.83,
+        "mean_hp": 165,
+        "mean_deaths": 1.17
+      },
+      "after": {
+        "wins": 6,
+        "samples": 6,
+        "mean_rounds": 3.83,
+        "mean_hp": 165,
+        "mean_deaths": 1.17
+      }
+    },
+    "engine_3": {
+      "before": {
+        "wins": 5,
+        "samples": 6,
+        "mean_rounds": 3.33,
+        "mean_hp": 164.7,
+        "mean_deaths": 0.83
+      },
+      "after": {
+        "wins": 5,
+        "samples": 6,
+        "mean_rounds": 3.33,
+        "mean_hp": 164.7,
+        "mean_deaths": 0.83
+      }
+    },
+    "engine_4": {
+      "before": {
+        "wins": 6,
+        "samples": 6,
+        "mean_rounds": 4.17,
+        "mean_hp": 175.5,
+        "mean_deaths": 1.17
+      },
+      "after": {
+        "wins": 6,
+        "samples": 6,
+        "mean_rounds": 4.17,
+        "mean_hp": 175.5,
+        "mean_deaths": 1.17
+      }
+    },
+    "engine_5": {
+      "before": {
+        "wins": 6,
+        "samples": 6,
+        "mean_rounds": 4.5,
+        "mean_hp": 126.5,
+        "mean_deaths": 1.33
+      },
+      "after": {
+        "wins": 6,
+        "samples": 6,
+        "mean_rounds": 4.5,
+        "mean_hp": 126.5,
+        "mean_deaths": 1.33
+      }
+    },
+    "engine_6": {
+      "before": {
+        "wins": 6,
+        "samples": 6,
+        "mean_rounds": 4.5,
+        "mean_hp": 123.8,
+        "mean_deaths": 1.5
+      },
+      "after": {
+        "wins": 6,
+        "samples": 6,
+        "mean_rounds": 4.33,
+        "mean_hp": 137.7,
+        "mean_deaths": 1.33
+      }
+    },
+    "engine_7": {
+      "before": {
+        "wins": 5,
+        "samples": 6,
+        "mean_rounds": 4.17,
+        "mean_hp": 139.2,
+        "mean_deaths": 1.5
+      },
+      "after": {
+        "wins": 5,
+        "samples": 6,
+        "mean_rounds": 4.17,
+        "mean_hp": 139.2,
+        "mean_deaths": 1.5
+      }
+    },
+    "engine_8": {
+      "before": {
+        "wins": 6,
+        "samples": 6,
+        "mean_rounds": 4,
+        "mean_hp": 156,
+        "mean_deaths": 1.33
+      },
+      "after": {
+        "wins": 6,
+        "samples": 6,
+        "mean_rounds": 4,
+        "mean_hp": 156,
+        "mean_deaths": 1.33
+      }
+    },
+    "engine_9": {
+      "before": {
+        "wins": 6,
+        "samples": 6,
+        "mean_rounds": 4.33,
+        "mean_hp": 137.7,
+        "mean_deaths": 1.5
+      },
+      "after": {
+        "wins": 6,
+        "samples": 6,
+        "mean_rounds": 4.33,
+        "mean_hp": 137.7,
+        "mean_deaths": 1.5
+      }
+    },
+    "fang": {
+      "before": {
+        "wins": 6,
+        "samples": 6,
+        "mean_rounds": 4.17,
+        "mean_hp": 142.7,
+        "mean_deaths": 1.17
+      },
+      "after": {
+        "wins": 6,
+        "samples": 6,
+        "mean_rounds": 4.17,
+        "mean_hp": 142.7,
+        "mean_deaths": 1.17
+      }
+    },
+    "focusstone": {
+      "before": {
+        "wins": 6,
+        "samples": 6,
+        "mean_rounds": 4.5,
+        "mean_hp": 124.3,
+        "mean_deaths": 1.5
+      },
+      "after": {
+        "wins": 6,
+        "samples": 6,
+        "mean_rounds": 4.5,
+        "mean_hp": 124.3,
+        "mean_deaths": 1.5
+      }
+    },
+    "harvest": {
+      "before": {
+        "wins": 6,
+        "samples": 6,
+        "mean_rounds": 4.33,
+        "mean_hp": 138.2,
+        "mean_deaths": 1.5
+      },
+      "after": {
+        "wins": 6,
+        "samples": 6,
+        "mean_rounds": 4.33,
+        "mean_hp": 138.2,
+        "mean_deaths": 1.5
+      }
+    },
+    "hourglass": {
+      "before": {
+        "wins": 6,
+        "samples": 6,
+        "mean_rounds": 3.67,
+        "mean_hp": 186.2,
+        "mean_deaths": 0.33
+      },
+      "after": {
+        "wins": 3,
+        "samples": 6,
+        "mean_rounds": 3.33,
+        "mean_hp": 170.3,
+        "mean_deaths": 1
+      }
+    },
+    "hunt": {
+      "before": {
+        "wins": 6,
+        "samples": 6,
+        "mean_rounds": 4.5,
+        "mean_hp": 116.5,
+        "mean_deaths": 1.67
+      },
+      "after": {
+        "wins": 6,
+        "samples": 6,
+        "mean_rounds": 4.5,
+        "mean_hp": 116.5,
+        "mean_deaths": 1.67
+      }
+    },
+    "hunt_1": {
+      "before": {
+        "wins": 4,
+        "samples": 6,
+        "mean_rounds": 3,
+        "mean_hp": 169.3,
+        "mean_deaths": 0.67
+      },
+      "after": {
+        "wins": 4,
+        "samples": 6,
+        "mean_rounds": 3,
+        "mean_hp": 169.3,
+        "mean_deaths": 0.67
+      }
+    },
+    "hunt_10": {
+      "before": {
+        "wins": 5,
+        "samples": 6,
+        "mean_rounds": 3.83,
+        "mean_hp": 139.3,
+        "mean_deaths": 1.33
+      },
+      "after": {
+        "wins": 5,
+        "samples": 6,
+        "mean_rounds": 3.83,
+        "mean_hp": 139.3,
+        "mean_deaths": 1.33
+      }
+    },
+    "hunt_2": {
+      "before": {
+        "wins": 3,
+        "samples": 6,
+        "mean_rounds": 4,
+        "mean_hp": 110.7,
+        "mean_deaths": 2.17
+      },
+      "after": {
+        "wins": 5,
+        "samples": 6,
+        "mean_rounds": 4.33,
+        "mean_hp": 127.7,
+        "mean_deaths": 1.67
+      }
+    },
+    "hunt_3": {
+      "before": {
+        "wins": 4,
+        "samples": 6,
+        "mean_rounds": 3.83,
+        "mean_hp": 124.2,
+        "mean_deaths": 2
+      },
+      "after": {
+        "wins": 5,
+        "samples": 6,
+        "mean_rounds": 3.83,
+        "mean_hp": 140.7,
+        "mean_deaths": 1.5
+      }
+    },
+    "hunt_4": {
+      "before": {
+        "wins": 6,
+        "samples": 6,
+        "mean_rounds": 3.5,
+        "mean_hp": 183,
+        "mean_deaths": 0.83
+      },
+      "after": {
+        "wins": 6,
+        "samples": 6,
+        "mean_rounds": 3.5,
+        "mean_hp": 183,
+        "mean_deaths": 0.83
+      }
+    },
+    "hunt_5": {
+      "before": {
+        "wins": 6,
+        "samples": 6,
+        "mean_rounds": 4,
+        "mean_hp": 157.7,
+        "mean_deaths": 1.33
+      },
+      "after": {
+        "wins": 6,
+        "samples": 6,
+        "mean_rounds": 4,
+        "mean_hp": 157.7,
+        "mean_deaths": 1.33
+      }
+    },
+    "hunt_6": {
+      "before": {
+        "wins": 3,
+        "samples": 6,
+        "mean_rounds": 2.5,
+        "mean_hp": 175.3,
+        "mean_deaths": 0.67
+      },
+      "after": {
+        "wins": 3,
+        "samples": 6,
+        "mean_rounds": 2.5,
+        "mean_hp": 175.3,
+        "mean_deaths": 0.67
+      }
+    },
+    "hunt_7": {
+      "before": {
+        "wins": 6,
+        "samples": 6,
+        "mean_rounds": 3.67,
+        "mean_hp": 169.3,
+        "mean_deaths": 1.33
+      },
+      "after": {
+        "wins": 6,
+        "samples": 6,
+        "mean_rounds": 3.67,
+        "mean_hp": 168,
+        "mean_deaths": 1.33
+      }
+    },
+    "hunt_8": {
+      "before": {
+        "wins": 5,
+        "samples": 6,
+        "mean_rounds": 3.67,
+        "mean_hp": 145.8,
+        "mean_deaths": 1.5
+      },
+      "after": {
+        "wins": 5,
+        "samples": 6,
+        "mean_rounds": 3.67,
+        "mean_hp": 145.8,
+        "mean_deaths": 1.5
+      }
+    },
+    "hunt_9": {
+      "before": {
+        "wins": 6,
+        "samples": 6,
+        "mean_rounds": 4.33,
+        "mean_hp": 127.7,
+        "mean_deaths": 1.5
+      },
+      "after": {
+        "wins": 6,
+        "samples": 6,
+        "mean_rounds": 4.33,
+        "mean_hp": 127.7,
+        "mean_deaths": 1.5
+      }
+    },
+    "ironheart": {
+      "before": {
+        "wins": 6,
+        "samples": 6,
+        "mean_rounds": 4.33,
+        "mean_hp": 148.3,
+        "mean_deaths": 1.5
+      },
+      "after": {
+        "wins": 6,
+        "samples": 6,
+        "mean_rounds": 4.33,
+        "mean_hp": 148.3,
+        "mean_deaths": 1.5
+      }
+    },
+    "leech": {
+      "before": {
+        "wins": 6,
+        "samples": 6,
+        "mean_rounds": 4.33,
+        "mean_hp": 138.2,
+        "mean_deaths": 1.5
+      },
+      "after": {
+        "wins": 6,
+        "samples": 6,
+        "mean_rounds": 4.33,
+        "mean_hp": 138.2,
+        "mean_deaths": 1.5
+      }
+    },
+    "lens": {
+      "before": {
+        "wins": 5,
+        "samples": 6,
+        "mean_rounds": 4.33,
+        "mean_hp": 128,
+        "mean_deaths": 1.5
+      },
+      "after": {
+        "wins": 5,
+        "samples": 6,
+        "mean_rounds": 4.33,
+        "mean_hp": 128,
+        "mean_deaths": 1.5
+      }
+    },
+    "mist": {
+      "before": {
+        "wins": 6,
+        "samples": 6,
+        "mean_rounds": 3.83,
+        "mean_hp": 151.3,
+        "mean_deaths": 1.33
+      },
+      "after": {
+        "wins": 6,
+        "samples": 6,
+        "mean_rounds": 3.83,
+        "mean_hp": 151.3,
+        "mean_deaths": 1.33
+      }
+    },
+    "pilgrim_1": {
+      "before": {
+        "wins": 4,
+        "samples": 6,
+        "mean_rounds": 3.67,
+        "mean_hp": 169.2,
+        "mean_deaths": 1.33
+      },
+      "after": {
+        "wins": 4,
+        "samples": 6,
+        "mean_rounds": 3.83,
+        "mean_hp": 175.3,
+        "mean_deaths": 1.33
+      }
+    },
+    "pilgrim_10": {
+      "before": {
+        "wins": 6,
+        "samples": 6,
+        "mean_rounds": 4.67,
+        "mean_hp": 128.3,
+        "mean_deaths": 1.5
+      },
+      "after": {
+        "wins": 6,
+        "samples": 6,
+        "mean_rounds": 4.67,
+        "mean_hp": 128.3,
+        "mean_deaths": 1.5
+      }
+    },
+    "pilgrim_2": {
+      "before": {
+        "wins": 6,
+        "samples": 6,
+        "mean_rounds": 5,
+        "mean_hp": 98.5,
+        "mean_deaths": 1.83
+      },
+      "after": {
+        "wins": 6,
+        "samples": 6,
+        "mean_rounds": 4.83,
+        "mean_hp": 108.2,
+        "mean_deaths": 1.83
+      }
+    },
+    "pilgrim_3": {
+      "before": {
+        "wins": 5,
+        "samples": 6,
+        "mean_rounds": 4.33,
+        "mean_hp": 130,
+        "mean_deaths": 1.5
+      },
+      "after": {
+        "wins": 5,
+        "samples": 6,
+        "mean_rounds": 4.83,
+        "mean_hp": 111.2,
+        "mean_deaths": 2
+      }
+    },
+    "pilgrim_4": {
+      "before": {
+        "wins": 6,
+        "samples": 6,
+        "mean_rounds": 4.33,
+        "mean_hp": 137.7,
+        "mean_deaths": 1.5
+      },
+      "after": {
+        "wins": 6,
+        "samples": 6,
+        "mean_rounds": 4.33,
+        "mean_hp": 137.7,
+        "mean_deaths": 1.5
+      }
+    },
+    "pilgrim_5": {
+      "before": {
+        "wins": 6,
+        "samples": 6,
+        "mean_rounds": 5,
+        "mean_hp": 93.5,
+        "mean_deaths": 1.83
+      },
+      "after": {
+        "wins": 6,
+        "samples": 6,
+        "mean_rounds": 4.5,
+        "mean_hp": 120,
+        "mean_deaths": 1.5
+      }
+    },
+    "pilgrim_6": {
+      "before": {
+        "wins": 6,
+        "samples": 6,
+        "mean_rounds": 4.67,
+        "mean_hp": 137.2,
+        "mean_deaths": 1.5
+      },
+      "after": {
+        "wins": 6,
+        "samples": 6,
+        "mean_rounds": 4.33,
+        "mean_hp": 148.8,
+        "mean_deaths": 1.5
+      }
+    },
+    "pilgrim_7": {
+      "before": {
+        "wins": 4,
+        "samples": 6,
+        "mean_rounds": 4.17,
+        "mean_hp": 147.5,
+        "mean_deaths": 1.67
+      },
+      "after": {
+        "wins": 5,
+        "samples": 6,
+        "mean_rounds": 4.33,
+        "mean_hp": 147.8,
+        "mean_deaths": 1.5
+      }
+    },
+    "pilgrim_8": {
+      "before": {
+        "wins": 6,
+        "samples": 6,
+        "mean_rounds": 4.33,
+        "mean_hp": 138.2,
+        "mean_deaths": 1.5
+      },
+      "after": {
+        "wins": 6,
+        "samples": 6,
+        "mean_rounds": 4.33,
+        "mean_hp": 138.2,
+        "mean_deaths": 1.5
+      }
+    },
+    "pilgrim_9": {
+      "before": {
+        "wins": 5,
+        "samples": 6,
+        "mean_rounds": 4,
+        "mean_hp": 155.2,
+        "mean_deaths": 1.5
+      },
+      "after": {
+        "wins": 5,
+        "samples": 6,
+        "mean_rounds": 4,
+        "mean_hp": 155.2,
+        "mean_deaths": 1.5
+      }
+    },
+    "prism": {
+      "before": {
+        "wins": 5,
+        "samples": 6,
+        "mean_rounds": 4.33,
+        "mean_hp": 127.2,
+        "mean_deaths": 1.67
+      },
+      "after": {
+        "wins": 5,
+        "samples": 6,
+        "mean_rounds": 4.33,
+        "mean_hp": 127.2,
+        "mean_deaths": 1.67
+      }
+    },
+    "reservoir": {
+      "before": {
+        "wins": 6,
+        "samples": 6,
+        "mean_rounds": 5,
+        "mean_hp": 93.5,
+        "mean_deaths": 1.83
+      },
+      "after": {
+        "wins": 6,
+        "samples": 6,
+        "mean_rounds": 5,
+        "mean_hp": 93.5,
+        "mean_deaths": 1.83
+      }
+    },
+    "rune": {
+      "before": {
+        "wins": 6,
+        "samples": 6,
+        "mean_rounds": 3.83,
+        "mean_hp": 166.8,
+        "mean_deaths": 1.33
+      },
+      "after": {
+        "wins": 6,
+        "samples": 6,
+        "mean_rounds": 3.83,
+        "mean_hp": 166.8,
+        "mean_deaths": 1.33
+      }
+    },
+    "shell": {
+      "before": {
+        "wins": 6,
+        "samples": 6,
+        "mean_rounds": 4.17,
+        "mean_hp": 186,
+        "mean_deaths": 0.83
+      },
+      "after": {
+        "wins": 6,
+        "samples": 6,
+        "mean_rounds": 4.17,
+        "mean_hp": 186,
+        "mean_deaths": 0.83
+      }
+    },
+    "spark": {
+      "before": {
+        "wins": 5,
+        "samples": 6,
+        "mean_rounds": 4.33,
+        "mean_hp": 136,
+        "mean_deaths": 1.5
+      },
+      "after": {
+        "wins": 5,
+        "samples": 6,
+        "mean_rounds": 4.33,
+        "mean_hp": 136,
+        "mean_deaths": 1.5
+      }
+    },
+    "spring": {
+      "before": {
+        "wins": 4,
+        "samples": 6,
+        "mean_rounds": 4.17,
+        "mean_hp": 109.7,
+        "mean_deaths": 2
+      },
+      "after": {
+        "wins": 4,
+        "samples": 6,
+        "mean_rounds": 4.17,
+        "mean_hp": 109.7,
+        "mean_deaths": 2
+      }
+    },
+    "thorn": {
+      "before": {
+        "wins": 6,
+        "samples": 6,
+        "mean_rounds": 4.33,
+        "mean_hp": 130.8,
+        "mean_deaths": 0.83
+      },
+      "after": {
+        "wins": 6,
+        "samples": 6,
+        "mean_rounds": 4.33,
+        "mean_hp": 130.8,
+        "mean_deaths": 0.83
+      }
+    },
+    "tide": {
+      "before": {
+        "wins": 6,
+        "samples": 6,
+        "mean_rounds": 4.33,
+        "mean_hp": 136.2,
+        "mean_deaths": 1.5
+      },
+      "after": {
+        "wins": 6,
+        "samples": 6,
+        "mean_rounds": 4.33,
+        "mean_hp": 136.2,
+        "mean_deaths": 1.5
+      }
+    },
+    "ward_1": {
+      "before": {
+        "wins": 6,
+        "samples": 6,
+        "mean_rounds": 4.5,
+        "mean_hp": 169.7,
+        "mean_deaths": 1
+      },
+      "after": {
+        "wins": 6,
+        "samples": 6,
+        "mean_rounds": 4.17,
+        "mean_hp": 172,
+        "mean_deaths": 0.83
+      }
+    },
+    "ward_10": {
+      "before": {
+        "wins": 4,
+        "samples": 6,
+        "mean_rounds": 3.83,
+        "mean_hp": 150,
+        "mean_deaths": 1.5
+      },
+      "after": {
+        "wins": 4,
+        "samples": 6,
+        "mean_rounds": 3.83,
+        "mean_hp": 150,
+        "mean_deaths": 1.5
+      }
+    },
+    "ward_2": {
+      "before": {
+        "wins": 5,
+        "samples": 6,
+        "mean_rounds": 4.33,
+        "mean_hp": 128.2,
+        "mean_deaths": 1.5
+      },
+      "after": {
+        "wins": 5,
+        "samples": 6,
+        "mean_rounds": 4.33,
+        "mean_hp": 128.2,
+        "mean_deaths": 1.5
+      }
+    },
+    "ward_3": {
+      "before": {
+        "wins": 5,
+        "samples": 6,
+        "mean_rounds": 4.83,
+        "mean_hp": 108.2,
+        "mean_deaths": 2
+      },
+      "after": {
+        "wins": 5,
+        "samples": 6,
+        "mean_rounds": 4.83,
+        "mean_hp": 108.2,
+        "mean_deaths": 2
+      }
+    },
+    "ward_4": {
+      "before": {
+        "wins": 6,
+        "samples": 6,
+        "mean_rounds": 4.33,
+        "mean_hp": 134.3,
+        "mean_deaths": 1.5
+      },
+      "after": {
+        "wins": 6,
+        "samples": 6,
+        "mean_rounds": 4.33,
+        "mean_hp": 134.3,
+        "mean_deaths": 1.5
+      }
+    },
+    "ward_5": {
+      "before": {
+        "wins": 6,
+        "samples": 6,
+        "mean_rounds": 4.17,
+        "mean_hp": 158.2,
+        "mean_deaths": 1
+      },
+      "after": {
+        "wins": 6,
+        "samples": 6,
+        "mean_rounds": 4.17,
+        "mean_hp": 158.2,
+        "mean_deaths": 1
+      }
+    },
+    "ward_6": {
+      "before": {
+        "wins": 5,
+        "samples": 6,
+        "mean_rounds": 4,
+        "mean_hp": 163.5,
+        "mean_deaths": 1
+      },
+      "after": {
+        "wins": 5,
+        "samples": 6,
+        "mean_rounds": 4,
+        "mean_hp": 163.2,
+        "mean_deaths": 1
+      }
+    },
+    "ward_7": {
+      "before": {
+        "wins": 5,
+        "samples": 6,
+        "mean_rounds": 4.17,
+        "mean_hp": 131.5,
+        "mean_deaths": 1.67
+      },
+      "after": {
+        "wins": 5,
+        "samples": 6,
+        "mean_rounds": 4.17,
+        "mean_hp": 131.5,
+        "mean_deaths": 1.67
+      }
+    },
+    "ward_8": {
+      "before": {
+        "wins": 6,
+        "samples": 6,
+        "mean_rounds": 4.33,
+        "mean_hp": 138.2,
+        "mean_deaths": 1.5
+      },
+      "after": {
+        "wins": 6,
+        "samples": 6,
+        "mean_rounds": 4.33,
+        "mean_hp": 138.2,
+        "mean_deaths": 1.5
+      }
+    },
+    "ward_9": {
+      "before": {
+        "wins": 6,
+        "samples": 6,
+        "mean_rounds": 4.83,
+        "mean_hp": 105.8,
+        "mean_deaths": 1.67
+      },
+      "after": {
+        "wins": 6,
+        "samples": 6,
+        "mean_rounds": 4.83,
+        "mean_hp": 105.8,
+        "mean_deaths": 1.67
+      }
+    },
+    "wardbell": {
+      "before": {
+        "wins": 6,
+        "samples": 6,
+        "mean_rounds": 4.33,
+        "mean_hp": 134.3,
+        "mean_deaths": 1.33
+      },
+      "after": {
+        "wins": 6,
+        "samples": 6,
+        "mean_rounds": 4.33,
+        "mean_hp": 134.3,
+        "mean_deaths": 1.33
+      }
+    },
+    "wardstone": {
+      "before": {
+        "wins": 6,
+        "samples": 6,
+        "mean_rounds": 4.33,
+        "mean_hp": 138.5,
+        "mean_deaths": 1.33
+      },
+      "after": {
+        "wins": 6,
+        "samples": 6,
+        "mean_rounds": 4.33,
+        "mean_hp": 138.5,
+        "mean_deaths": 1.33
+      }
+    },
+    "well": {
+      "before": {
+        "wins": 5,
+        "samples": 6,
+        "mean_rounds": 4,
+        "mean_hp": 150.7,
+        "mean_deaths": 1.5
+      },
+      "after": {
+        "wins": 5,
+        "samples": 6,
+        "mean_rounds": 4,
+        "mean_hp": 150.7,
+        "mean_deaths": 1.5
+      }
+    }
+  },
+  "drops": {
+    "baseline": {
+      "samples": 500,
+      "stages": [
+        {
+          "reward": 1,
+          "two_piece": 0,
+          "four_piece": 0
+        },
+        {
+          "reward": 2,
+          "two_piece": 86,
+          "four_piece": 0
+        },
+        {
+          "reward": 3,
+          "two_piece": 212,
+          "four_piece": 0
+        },
+        {
+          "reward": 4,
+          "two_piece": 318,
+          "four_piece": 0
+        },
+        {
+          "reward": 5,
+          "two_piece": 404,
+          "four_piece": 2
+        },
+        {
+          "reward": 6,
+          "two_piece": 456,
+          "four_piece": 10
+        }
+      ],
+      "themes": {
+        "ward": 65,
+        "blood": 70,
+        "command": 62,
+        "hunt": 57,
+        "dusk": 66,
+        "pilgrim": 59,
+        "engine": 61,
+        "arcane": 57,
+        "": 3
+      }
+    },
+    "final": {
+      "samples": 500,
+      "stages": [
+        {
+          "reward": 1,
+          "two_piece": 0,
+          "four_piece": 0
+        },
+        {
+          "reward": 2,
+          "two_piece": 500,
+          "four_piece": 0
+        },
+        {
+          "reward": 3,
+          "two_piece": 500,
+          "four_piece": 0
+        },
+        {
+          "reward": 4,
+          "two_piece": 500,
+          "four_piece": 500
+        },
+        {
+          "reward": 5,
+          "two_piece": 500,
+          "four_piece": 500
+        },
+        {
+          "reward": 6,
+          "two_piece": 500,
+          "four_piece": 500
+        }
+      ],
+      "themes": {
+        "blood": 67,
+        "dusk": 57,
+        "arcane": 67,
+        "command": 66,
+        "pilgrim": 57,
+        "hunt": 58,
+        "engine": 64,
+        "ward": 64
+      }
+    }
+  },
+  "expeditions": {
+    "baseline": {
+      "samples": 96,
+      "clears": 88,
+      "reached_boss": 94,
+      "two_before_boss": 35,
+      "four_before_boss": 0,
+      "four_at_last_successful_stage": 0,
+      "themes_at_last_successful_stage": {
+        "pilgrim": 20,
+        "blood": 9,
+        "command": 13,
+        "engine": 11,
+        "arcane": 15,
+        "dusk": 10,
+        "ward": 6,
+        "hunt": 12
+      },
+      "battles": 369
+    },
+    "final": {
+      "samples": 96,
+      "clears": 91,
+      "reached_boss": 95,
+      "two_before_boss": 95,
+      "four_before_boss": 24,
+      "four_at_last_successful_stage": 55,
+      "themes_at_last_successful_stage": {
+        "arcane": 13,
+        "pilgrim": 16,
+        "blood": 11,
+        "command": 13,
+        "ward": 10,
+        "hunt": 7,
+        "dusk": 17,
+        "engine": 9
+      },
+      "battles": 370
+    }
+  }
+}

@@ -1,0 +1,4793 @@
+{
+  "changed_sources": [],
+  "invalid_actions": 0,
+  "label": "baseline",
+  "policy": "96 prepared low-tier rank1 skill parties; actual generated six-region routes; fixed battle policy; relic rewards with preferred theme and continuity, buy matching relics when affordable; supplies at 70%HP/50%MP; no free relic grants",
+  "results": [
+    {
+      "battles": [
+        {
+          "depth": 0,
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 14,
+          "threat": "normal"
+        },
+        {
+          "depth": 2,
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 22,
+          "threat": "normal"
+        },
+        {
+          "depth": 4,
+          "outcome": "gameover",
+          "rounds": 1,
+          "steps": 20,
+          "threat": "elite"
+        }
+      ],
+      "before_boss": {
+        "count": 0,
+        "family": ""
+      },
+      "cleared": false,
+      "failure": "gameover",
+      "final": {
+        "count": 1,
+        "family": "pilgrim"
+      },
+      "region": "border",
+      "relics": [
+        "pilgrim_2",
+        "blood_5"
+      ],
+      "seed": 2026102500,
+      "target": "blood"
+    },
+    {
+      "battles": [
+        {
+          "depth": 0,
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 26,
+          "threat": "normal"
+        },
+        {
+          "depth": 2,
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 22,
+          "threat": "normal"
+        },
+        {
+          "depth": 4,
+          "outcome": "victory",
+          "rounds": 3,
+          "steps": 34,
+          "threat": "elite"
+        },
+        {
+          "depth": 6,
+          "outcome": "gameover",
+          "rounds": 1,
+          "steps": 18,
+          "threat": "boss"
+        }
+      ],
+      "before_boss": {
+        "count": 1,
+        "family": "blood"
+      },
+      "cleared": false,
+      "failure": "gameover",
+      "final": {
+        "count": 1,
+        "family": "blood"
+      },
+      "region": "border",
+      "relics": [
+        "blood_2",
+        "campfire",
+        "pilgrim_4"
+      ],
+      "seed": 2026102501,
+      "target": "blood"
+    },
+    {
+      "battles": [
+        {
+          "depth": 0,
+          "outcome": "victory",
+          "rounds": 3,
+          "steps": 33,
+          "threat": "normal"
+        },
+        {
+          "depth": 2,
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 22,
+          "threat": "normal"
+        },
+        {
+          "depth": 4,
+          "outcome": "victory",
+          "rounds": 3,
+          "steps": 44,
+          "threat": "elite"
+        },
+        {
+          "depth": 6,
+          "outcome": "victory",
+          "rounds": 4,
+          "steps": 50,
+          "threat": "boss"
+        }
+      ],
+      "before_boss": {
+        "count": 1,
+        "family": "blood"
+      },
+      "cleared": true,
+      "failure": "",
+      "final": {
+        "count": 1,
+        "family": "blood"
+      },
+      "region": "wood",
+      "relics": [
+        "prism",
+        "reservoir",
+        "blood_6",
+        "banner"
+      ],
+      "seed": 2026102510,
+      "target": "blood"
+    },
+    {
+      "battles": [
+        {
+          "depth": 0,
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 17,
+          "threat": "normal"
+        },
+        {
+          "depth": 2,
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 29,
+          "threat": "normal"
+        },
+        {
+          "depth": 4,
+          "outcome": "victory",
+          "rounds": 3,
+          "steps": 34,
+          "threat": "elite"
+        },
+        {
+          "depth": 5,
+          "outcome": "victory",
+          "rounds": 4,
+          "steps": 39,
+          "threat": "elite"
+        },
+        {
+          "depth": 7,
+          "outcome": "victory",
+          "rounds": 4,
+          "steps": 43,
+          "threat": "boss"
+        }
+      ],
+      "before_boss": {
+        "count": 1,
+        "family": "command"
+      },
+      "cleared": true,
+      "failure": "",
+      "final": {
+        "count": 2,
+        "family": "command"
+      },
+      "region": "wood",
+      "relics": [
+        "command_2",
+        "engine_5",
+        "hunt",
+        "hunt_3",
+        "command_10"
+      ],
+      "seed": 2026102511,
+      "target": "blood"
+    },
+    {
+      "battles": [
+        {
+          "depth": 0,
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 22,
+          "threat": "normal"
+        },
+        {
+          "depth": 2,
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 17,
+          "threat": "normal"
+        },
+        {
+          "depth": 5,
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 32,
+          "threat": "boss"
+        }
+      ],
+      "before_boss": {
+        "count": 1,
+        "family": "command"
+      },
+      "cleared": true,
+      "failure": "",
+      "final": {
+        "count": 2,
+        "family": "command"
+      },
+      "region": "waste",
+      "relics": [
+        "command_4",
+        "ward_4",
+        "command_1"
+      ],
+      "seed": 2026102520,
+      "target": "blood"
+    },
+    {
+      "battles": [
+        {
+          "depth": 0,
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 19,
+          "threat": "normal"
+        },
+        {
+          "depth": 2,
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 21,
+          "threat": "normal"
+        },
+        {
+          "depth": 5,
+          "outcome": "victory",
+          "rounds": 3,
+          "steps": 38,
+          "threat": "boss"
+        }
+      ],
+      "before_boss": {
+        "count": 1,
+        "family": "engine"
+      },
+      "cleared": true,
+      "failure": "",
+      "final": {
+        "count": 2,
+        "family": "engine"
+      },
+      "region": "waste",
+      "relics": [
+        "engine_2",
+        "blood_3",
+        "engine_4"
+      ],
+      "seed": 2026102521,
+      "target": "blood"
+    },
+    {
+      "battles": [
+        {
+          "depth": 0,
+          "outcome": "victory",
+          "rounds": 3,
+          "steps": 32,
+          "threat": "normal"
+        },
+        {
+          "depth": 2,
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 20,
+          "threat": "normal"
+        },
+        {
+          "depth": 4,
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 33,
+          "threat": "elite"
+        },
+        {
+          "depth": 6,
+          "outcome": "victory",
+          "rounds": 4,
+          "steps": 56,
+          "threat": "boss"
+        }
+      ],
+      "before_boss": {
+        "count": 1,
+        "family": "arcane"
+      },
+      "cleared": true,
+      "failure": "",
+      "final": {
+        "count": 1,
+        "family": "arcane"
+      },
+      "region": "frost",
+      "relics": [
+        "hunt_6",
+        "arcane_10",
+        "blood_3",
+        "command_4"
+      ],
+      "seed": 2026102530,
+      "target": "blood"
+    },
+    {
+      "battles": [
+        {
+          "depth": 0,
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 26,
+          "threat": "normal"
+        },
+        {
+          "depth": 2,
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 17,
+          "threat": "normal"
+        },
+        {
+          "depth": 5,
+          "outcome": "victory",
+          "rounds": 4,
+          "steps": 49,
+          "threat": "boss"
+        }
+      ],
+      "before_boss": {
+        "count": 1,
+        "family": "pilgrim"
+      },
+      "cleared": true,
+      "failure": "",
+      "final": {
+        "count": 1,
+        "family": "pilgrim"
+      },
+      "region": "frost",
+      "relics": [
+        "blood_10",
+        "pilgrim_4",
+        "lens"
+      ],
+      "seed": 2026102531,
+      "target": "blood"
+    },
+    {
+      "battles": [
+        {
+          "depth": 0,
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 22,
+          "threat": "normal"
+        },
+        {
+          "depth": 2,
+          "outcome": "victory",
+          "rounds": 3,
+          "steps": 31,
+          "threat": "normal"
+        },
+        {
+          "depth": 4,
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 33,
+          "threat": "elite"
+        },
+        {
+          "depth": 6,
+          "outcome": "victory",
+          "rounds": 4,
+          "steps": 56,
+          "threat": "boss"
+        }
+      ],
+      "before_boss": {
+        "count": 2,
+        "family": "dusk"
+      },
+      "cleared": true,
+      "failure": "",
+      "final": {
+        "count": 2,
+        "family": "dusk"
+      },
+      "region": "marsh",
+      "relics": [
+        "hunt_5",
+        "dusk_1",
+        "dusk_5",
+        "blood_1"
+      ],
+      "seed": 2026102540,
+      "target": "blood"
+    },
+    {
+      "battles": [
+        {
+          "depth": 0,
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 16,
+          "threat": "normal"
+        },
+        {
+          "depth": 2,
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 22,
+          "threat": "normal"
+        },
+        {
+          "depth": 4,
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 29,
+          "threat": "elite"
+        },
+        {
+          "depth": 6,
+          "outcome": "victory",
+          "rounds": 3,
+          "steps": 44,
+          "threat": "boss"
+        }
+      ],
+      "before_boss": {
+        "count": 2,
+        "family": "arcane"
+      },
+      "cleared": true,
+      "failure": "",
+      "final": {
+        "count": 3,
+        "family": "arcane"
+      },
+      "region": "marsh",
+      "relics": [
+        "blood_6",
+        "arcane_5",
+        "arcane_4",
+        "arcane_10"
+      ],
+      "seed": 2026102541,
+      "target": "blood"
+    },
+    {
+      "battles": [
+        {
+          "depth": 0,
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 24,
+          "threat": "normal"
+        },
+        {
+          "depth": 2,
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 24,
+          "threat": "normal"
+        },
+        {
+          "depth": 4,
+          "outcome": "victory",
+          "rounds": 4,
+          "steps": 58,
+          "threat": "elite"
+        },
+        {
+          "depth": 5,
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 33,
+          "threat": "elite"
+        },
+        {
+          "depth": 7,
+          "outcome": "victory",
+          "rounds": 3,
+          "steps": 36,
+          "threat": "boss"
+        }
+      ],
+      "before_boss": {
+        "count": 1,
+        "family": "engine"
+      },
+      "cleared": true,
+      "failure": "",
+      "final": {
+        "count": 2,
+        "family": "engine"
+      },
+      "region": "ruins",
+      "relics": [
+        "fang",
+        "hunt",
+        "engine_2",
+        "arcane_3",
+        "engine_1"
+      ],
+      "seed": 2026102550,
+      "target": "blood"
+    },
+    {
+      "battles": [
+        {
+          "depth": 0,
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 27,
+          "threat": "normal"
+        },
+        {
+          "depth": 2,
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 23,
+          "threat": "normal"
+        },
+        {
+          "depth": 4,
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 30,
+          "threat": "elite"
+        },
+        {
+          "depth": 5,
+          "outcome": "victory",
+          "rounds": 3,
+          "steps": 43,
+          "threat": "elite"
+        },
+        {
+          "depth": 7,
+          "outcome": "victory",
+          "rounds": 3,
+          "steps": 41,
+          "threat": "boss"
+        }
+      ],
+      "before_boss": {
+        "count": 1,
+        "family": "dusk"
+      },
+      "cleared": true,
+      "failure": "",
+      "final": {
+        "count": 1,
+        "family": "dusk"
+      },
+      "region": "ruins",
+      "relics": [
+        "blood_7",
+        "dusk_1",
+        "command_3",
+        "ember",
+        "lens"
+      ],
+      "seed": 2026102551,
+      "target": "blood"
+    },
+    {
+      "battles": [
+        {
+          "depth": 0,
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 24,
+          "threat": "normal"
+        },
+        {
+          "depth": 2,
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 21,
+          "threat": "normal"
+        },
+        {
+          "depth": 5,
+          "outcome": "victory",
+          "rounds": 4,
+          "steps": 56,
+          "threat": "boss"
+        }
+      ],
+      "before_boss": {
+        "count": 1,
+        "family": "ward"
+      },
+      "cleared": true,
+      "failure": "",
+      "final": {
+        "count": 1,
+        "family": "ward"
+      },
+      "region": "border",
+      "relics": [
+        "hunt_9",
+        "ward_3",
+        "tide"
+      ],
+      "seed": 2026102600,
+      "target": "hunt"
+    },
+    {
+      "battles": [
+        {
+          "depth": 0,
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 29,
+          "threat": "normal"
+        },
+        {
+          "depth": 2,
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 22,
+          "threat": "normal"
+        },
+        {
+          "depth": 5,
+          "outcome": "victory",
+          "rounds": 3,
+          "steps": 39,
+          "threat": "boss"
+        }
+      ],
+      "before_boss": {
+        "count": 1,
+        "family": "hunt"
+      },
+      "cleared": true,
+      "failure": "",
+      "final": {
+        "count": 1,
+        "family": "hunt"
+      },
+      "region": "border",
+      "relics": [
+        "hunt_9",
+        "spring",
+        "rune"
+      ],
+      "seed": 2026102601,
+      "target": "hunt"
+    },
+    {
+      "battles": [
+        {
+          "depth": 0,
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 17,
+          "threat": "normal"
+        },
+        {
+          "depth": 2,
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 18,
+          "threat": "normal"
+        },
+        {
+          "depth": 4,
+          "outcome": "victory",
+          "rounds": 3,
+          "steps": 44,
+          "threat": "elite"
+        },
+        {
+          "depth": 6,
+          "outcome": "victory",
+          "rounds": 4,
+          "steps": 64,
+          "threat": "boss"
+        }
+      ],
+      "before_boss": {
+        "count": 2,
+        "family": "pilgrim"
+      },
+      "cleared": true,
+      "failure": "",
+      "final": {
+        "count": 2,
+        "family": "pilgrim"
+      },
+      "region": "wood",
+      "relics": [
+        "pilgrim_1",
+        "ward_5",
+        "pilgrim_9"
+      ],
+      "seed": 2026102610,
+      "target": "hunt"
+    },
+    {
+      "battles": [
+        {
+          "depth": 0,
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 25,
+          "threat": "normal"
+        },
+        {
+          "depth": 2,
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 24,
+          "threat": "normal"
+        },
+        {
+          "depth": 4,
+          "outcome": "victory",
+          "rounds": 3,
+          "steps": 39,
+          "threat": "elite"
+        },
+        {
+          "depth": 6,
+          "outcome": "victory",
+          "rounds": 5,
+          "steps": 69,
+          "threat": "boss"
+        }
+      ],
+      "before_boss": {
+        "count": 1,
+        "family": "pilgrim"
+      },
+      "cleared": true,
+      "failure": "",
+      "final": {
+        "count": 1,
+        "family": "pilgrim"
+      },
+      "region": "wood",
+      "relics": [
+        "boots",
+        "lens",
+        "pilgrim_1",
+        "blood_2"
+      ],
+      "seed": 2026102611,
+      "target": "hunt"
+    },
+    {
+      "battles": [
+        {
+          "depth": 0,
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 23,
+          "threat": "normal"
+        },
+        {
+          "depth": 2,
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 22,
+          "threat": "normal"
+        },
+        {
+          "depth": 5,
+          "outcome": "victory",
+          "rounds": 3,
+          "steps": 39,
+          "threat": "boss"
+        }
+      ],
+      "before_boss": {
+        "count": 1,
+        "family": "hunt"
+      },
+      "cleared": true,
+      "failure": "",
+      "final": {
+        "count": 1,
+        "family": "hunt"
+      },
+      "region": "waste",
+      "relics": [
+        "hunt_1",
+        "blood_5",
+        "command_7"
+      ],
+      "seed": 2026102620,
+      "target": "hunt"
+    },
+    {
+      "battles": [
+        {
+          "depth": 0,
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 20,
+          "threat": "normal"
+        },
+        {
+          "depth": 2,
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 18,
+          "threat": "normal"
+        },
+        {
+          "depth": 5,
+          "outcome": "victory",
+          "rounds": 3,
+          "steps": 49,
+          "threat": "boss"
+        }
+      ],
+      "before_boss": {
+        "count": 2,
+        "family": "blood"
+      },
+      "cleared": true,
+      "failure": "",
+      "final": {
+        "count": 3,
+        "family": "blood"
+      },
+      "region": "waste",
+      "relics": [
+        "blood_4",
+        "blood_5",
+        "blood_9"
+      ],
+      "seed": 2026102621,
+      "target": "hunt"
+    },
+    {
+      "battles": [
+        {
+          "depth": 0,
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 26,
+          "threat": "normal"
+        },
+        {
+          "depth": 2,
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 26,
+          "threat": "normal"
+        },
+        {
+          "depth": 4,
+          "outcome": "victory",
+          "rounds": 3,
+          "steps": 49,
+          "threat": "elite"
+        },
+        {
+          "depth": 6,
+          "outcome": "victory",
+          "rounds": 3,
+          "steps": 38,
+          "threat": "boss"
+        }
+      ],
+      "before_boss": {
+        "count": 1,
+        "family": "engine"
+      },
+      "cleared": true,
+      "failure": "",
+      "final": {
+        "count": 1,
+        "family": "engine"
+      },
+      "region": "frost",
+      "relics": [
+        "hunt_8",
+        "lens",
+        "engine_5",
+        "bastion"
+      ],
+      "seed": 2026102630,
+      "target": "hunt"
+    },
+    {
+      "battles": [
+        {
+          "depth": 0,
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 15,
+          "threat": "normal"
+        },
+        {
+          "depth": 2,
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 20,
+          "threat": "normal"
+        },
+        {
+          "depth": 5,
+          "outcome": "victory",
+          "rounds": 3,
+          "steps": 40,
+          "threat": "boss"
+        }
+      ],
+      "before_boss": {
+        "count": 2,
+        "family": "hunt"
+      },
+      "cleared": true,
+      "failure": "",
+      "final": {
+        "count": 2,
+        "family": "hunt"
+      },
+      "region": "frost",
+      "relics": [
+        "hunt_8",
+        "hunt_3",
+        "bulwark"
+      ],
+      "seed": 2026102631,
+      "target": "hunt"
+    },
+    {
+      "battles": [
+        {
+          "depth": 0,
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 25,
+          "threat": "normal"
+        },
+        {
+          "depth": 2,
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 24,
+          "threat": "normal"
+        },
+        {
+          "depth": 5,
+          "outcome": "victory",
+          "rounds": 4,
+          "steps": 55,
+          "threat": "boss"
+        }
+      ],
+      "before_boss": {
+        "count": 2,
+        "family": "pilgrim"
+      },
+      "cleared": true,
+      "failure": "",
+      "final": {
+        "count": 2,
+        "family": "pilgrim"
+      },
+      "region": "marsh",
+      "relics": [
+        "pilgrim_3",
+        "pilgrim_10",
+        "dusk_4"
+      ],
+      "seed": 2026102640,
+      "target": "hunt"
+    },
+    {
+      "battles": [
+        {
+          "depth": 0,
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 27,
+          "threat": "normal"
+        },
+        {
+          "depth": 2,
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 23,
+          "threat": "normal"
+        },
+        {
+          "depth": 4,
+          "outcome": "victory",
+          "rounds": 3,
+          "steps": 35,
+          "threat": "elite"
+        },
+        {
+          "depth": 6,
+          "outcome": "victory",
+          "rounds": 3,
+          "steps": 42,
+          "threat": "boss"
+        }
+      ],
+      "before_boss": {
+        "count": 1,
+        "family": "pilgrim"
+      },
+      "cleared": true,
+      "failure": "",
+      "final": {
+        "count": 1,
+        "family": "pilgrim"
+      },
+      "region": "marsh",
+      "relics": [
+        "mist",
+        "pilgrim_1",
+        "ward_4",
+        "wardbell"
+      ],
+      "seed": 2026102641,
+      "target": "hunt"
+    },
+    {
+      "battles": [
+        {
+          "depth": 0,
+          "outcome": "victory",
+          "rounds": 3,
+          "steps": 31,
+          "threat": "normal"
+        },
+        {
+          "depth": 2,
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 23,
+          "threat": "normal"
+        },
+        {
+          "depth": 4,
+          "outcome": "victory",
+          "rounds": 3,
+          "steps": 42,
+          "threat": "elite"
+        },
+        {
+          "depth": 6,
+          "outcome": "victory",
+          "rounds": 3,
+          "steps": 51,
+          "threat": "boss"
+        }
+      ],
+      "before_boss": {
+        "count": 1,
+        "family": "hunt"
+      },
+      "cleared": true,
+      "failure": "",
+      "final": {
+        "count": 2,
+        "family": "engine"
+      },
+      "region": "ruins",
+      "relics": [
+        "hunt_10",
+        "engine_10",
+        "boots",
+        "engine_3"
+      ],
+      "seed": 2026102650,
+      "target": "hunt"
+    },
+    {
+      "battles": [
+        {
+          "depth": 0,
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 30,
+          "threat": "normal"
+        },
+        {
+          "depth": 2,
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 23,
+          "threat": "normal"
+        },
+        {
+          "depth": 5,
+          "outcome": "victory",
+          "rounds": 3,
+          "steps": 46,
+          "threat": "boss"
+        }
+      ],
+      "before_boss": {
+        "count": 1,
+        "family": "ward"
+      },
+      "cleared": true,
+      "failure": "",
+      "final": {
+        "count": 1,
+        "family": "ward"
+      },
+      "region": "ruins",
+      "relics": [
+        "ward_1",
+        "hunt_1",
+        "spring"
+      ],
+      "seed": 2026102651,
+      "target": "hunt"
+    },
+    {
+      "battles": [
+        {
+          "depth": 0,
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 22,
+          "threat": "normal"
+        },
+        {
+          "depth": 2,
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 22,
+          "threat": "normal"
+        },
+        {
+          "depth": 4,
+          "outcome": "victory",
+          "rounds": 3,
+          "steps": 41,
+          "threat": "elite"
+        },
+        {
+          "depth": 5,
+          "outcome": "victory",
+          "rounds": 3,
+          "steps": 44,
+          "threat": "elite"
+        },
+        {
+          "depth": 7,
+          "outcome": "victory",
+          "rounds": 4,
+          "steps": 57,
+          "threat": "boss"
+        }
+      ],
+      "before_boss": {
+        "count": 1,
+        "family": "ward"
+      },
+      "cleared": true,
+      "failure": "",
+      "final": {
+        "count": 1,
+        "family": "pilgrim"
+      },
+      "region": "border",
+      "relics": [
+        "bastion",
+        "pilgrim_3",
+        "hunt",
+        "ironheart"
+      ],
+      "seed": 2026102700,
+      "target": "ward"
+    },
+    {
+      "battles": [
+        {
+          "depth": 0,
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 17,
+          "threat": "normal"
+        },
+        {
+          "depth": 2,
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 25,
+          "threat": "normal"
+        },
+        {
+          "depth": 5,
+          "outcome": "victory",
+          "rounds": 3,
+          "steps": 42,
+          "threat": "boss"
+        }
+      ],
+      "before_boss": {
+        "count": 1,
+        "family": "dusk"
+      },
+      "cleared": true,
+      "failure": "",
+      "final": {
+        "count": 1,
+        "family": "dusk"
+      },
+      "region": "border",
+      "relics": [
+        "dusk_1",
+        "pilgrim_1",
+        "arcane_5"
+      ],
+      "seed": 2026102701,
+      "target": "ward"
+    },
+    {
+      "battles": [
+        {
+          "depth": 0,
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 23,
+          "threat": "normal"
+        },
+        {
+          "depth": 2,
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 20,
+          "threat": "normal"
+        },
+        {
+          "depth": 5,
+          "outcome": "victory",
+          "rounds": 3,
+          "steps": 43,
+          "threat": "boss"
+        }
+      ],
+      "before_boss": {
+        "count": 0,
+        "family": ""
+      },
+      "cleared": true,
+      "failure": "",
+      "final": {
+        "count": 1,
+        "family": "arcane"
+      },
+      "region": "wood",
+      "relics": [
+        "campfire",
+        "bastion",
+        "arcane_4"
+      ],
+      "seed": 2026102710,
+      "target": "ward"
+    },
+    {
+      "battles": [
+        {
+          "depth": 0,
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 25,
+          "threat": "normal"
+        },
+        {
+          "depth": 2,
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 28,
+          "threat": "normal"
+        },
+        {
+          "depth": 5,
+          "outcome": "victory",
+          "rounds": 3,
+          "steps": 44,
+          "threat": "boss"
+        }
+      ],
+      "before_boss": {
+        "count": 2,
+        "family": "ward"
+      },
+      "cleared": true,
+      "failure": "",
+      "final": {
+        "count": 2,
+        "family": "ward"
+      },
+      "region": "wood",
+      "relics": [
+        "ward_5",
+        "ward_10",
+        "rune"
+      ],
+      "seed": 2026102711,
+      "target": "ward"
+    },
+    {
+      "battles": [
+        {
+          "depth": 0,
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 19,
+          "threat": "normal"
+        },
+        {
+          "depth": 2,
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 17,
+          "threat": "normal"
+        },
+        {
+          "depth": 4,
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 33,
+          "threat": "elite"
+        },
+        {
+          "depth": 6,
+          "outcome": "victory",
+          "rounds": 3,
+          "steps": 36,
+          "threat": "boss"
+        }
+      ],
+      "before_boss": {
+        "count": 2,
+        "family": "command"
+      },
+      "cleared": true,
+      "failure": "",
+      "final": {
+        "count": 3,
+        "family": "command"
+      },
+      "region": "waste",
+      "relics": [
+        "command_5",
+        "engine_3",
+        "command_4",
+        "command_2"
+      ],
+      "seed": 2026102720,
+      "target": "ward"
+    },
+    {
+      "battles": [
+        {
+          "depth": 0,
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 29,
+          "threat": "normal"
+        },
+        {
+          "depth": 2,
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 19,
+          "threat": "normal"
+        },
+        {
+          "depth": 4,
+          "outcome": "victory",
+          "rounds": 3,
+          "steps": 42,
+          "threat": "elite"
+        },
+        {
+          "depth": 6,
+          "outcome": "victory",
+          "rounds": 3,
+          "steps": 41,
+          "threat": "boss"
+        }
+      ],
+      "before_boss": {
+        "count": 1,
+        "family": "pilgrim"
+      },
+      "cleared": true,
+      "failure": "",
+      "final": {
+        "count": 2,
+        "family": "arcane"
+      },
+      "region": "waste",
+      "relics": [
+        "pilgrim_4",
+        "arcane_5",
+        "arcane_7"
+      ],
+      "seed": 2026102721,
+      "target": "ward"
+    },
+    {
+      "battles": [
+        {
+          "depth": 0,
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 23,
+          "threat": "normal"
+        },
+        {
+          "depth": 2,
+          "outcome": "victory",
+          "rounds": 3,
+          "steps": 33,
+          "threat": "normal"
+        },
+        {
+          "depth": 4,
+          "outcome": "victory",
+          "rounds": 3,
+          "steps": 35,
+          "threat": "elite"
+        },
+        {
+          "depth": 5,
+          "outcome": "victory",
+          "rounds": 3,
+          "steps": 34,
+          "threat": "elite"
+        },
+        {
+          "depth": 7,
+          "outcome": "victory",
+          "rounds": 3,
+          "steps": 40,
+          "threat": "boss"
+        }
+      ],
+      "before_boss": {
+        "count": 2,
+        "family": "engine"
+      },
+      "cleared": true,
+      "failure": "",
+      "final": {
+        "count": 2,
+        "family": "engine"
+      },
+      "region": "frost",
+      "relics": [
+        "engine_4",
+        "engine_6",
+        "dusk_9",
+        "banner",
+        "fang"
+      ],
+      "seed": 2026102730,
+      "target": "ward"
+    },
+    {
+      "battles": [
+        {
+          "depth": 0,
+          "outcome": "victory",
+          "rounds": 3,
+          "steps": 34,
+          "threat": "normal"
+        },
+        {
+          "depth": 2,
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 19,
+          "threat": "normal"
+        },
+        {
+          "depth": 4,
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 27,
+          "threat": "elite"
+        },
+        {
+          "depth": 5,
+          "outcome": "victory",
+          "rounds": 3,
+          "steps": 38,
+          "threat": "elite"
+        },
+        {
+          "depth": 7,
+          "outcome": "victory",
+          "rounds": 4,
+          "steps": 63,
+          "threat": "boss"
+        }
+      ],
+      "before_boss": {
+        "count": 2,
+        "family": "command"
+      },
+      "cleared": true,
+      "failure": "",
+      "final": {
+        "count": 2,
+        "family": "command"
+      },
+      "region": "frost",
+      "relics": [
+        "pilgrim_2",
+        "command_4",
+        "command_8",
+        "spring",
+        "command_7"
+      ],
+      "seed": 2026102731,
+      "target": "ward"
+    },
+    {
+      "battles": [
+        {
+          "depth": 0,
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 20,
+          "threat": "normal"
+        },
+        {
+          "depth": 2,
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 25,
+          "threat": "normal"
+        },
+        {
+          "depth": 4,
+          "outcome": "victory",
+          "rounds": 3,
+          "steps": 40,
+          "threat": "elite"
+        },
+        {
+          "depth": 5,
+          "outcome": "victory",
+          "rounds": 3,
+          "steps": 37,
+          "threat": "elite"
+        },
+        {
+          "depth": 7,
+          "outcome": "victory",
+          "rounds": 4,
+          "steps": 51,
+          "threat": "boss"
+        }
+      ],
+      "before_boss": {
+        "count": 1,
+        "family": "pilgrim"
+      },
+      "cleared": true,
+      "failure": "",
+      "final": {
+        "count": 1,
+        "family": "pilgrim"
+      },
+      "region": "marsh",
+      "relics": [
+        "pilgrim_4",
+        "hunt",
+        "ward_8",
+        "engine_4",
+        "command_1"
+      ],
+      "seed": 2026102740,
+      "target": "ward"
+    },
+    {
+      "battles": [
+        {
+          "depth": 0,
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 22,
+          "threat": "normal"
+        },
+        {
+          "depth": 2,
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 21,
+          "threat": "normal"
+        },
+        {
+          "depth": 4,
+          "outcome": "victory",
+          "rounds": 3,
+          "steps": 43,
+          "threat": "elite"
+        },
+        {
+          "depth": 5,
+          "outcome": "victory",
+          "rounds": 3,
+          "steps": 35,
+          "threat": "elite"
+        },
+        {
+          "depth": 7,
+          "outcome": "gameover",
+          "rounds": 2,
+          "steps": 36,
+          "threat": "boss"
+        }
+      ],
+      "before_boss": {
+        "count": 2,
+        "family": "blood"
+      },
+      "cleared": false,
+      "failure": "gameover",
+      "final": {
+        "count": 2,
+        "family": "blood"
+      },
+      "region": "marsh",
+      "relics": [
+        "blood_7",
+        "blood_2",
+        "spark",
+        "command_1"
+      ],
+      "seed": 2026102741,
+      "target": "ward"
+    },
+    {
+      "battles": [
+        {
+          "depth": 0,
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 22,
+          "threat": "normal"
+        },
+        {
+          "depth": 2,
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 22,
+          "threat": "normal"
+        },
+        {
+          "depth": 4,
+          "outcome": "gameover",
+          "rounds": 1,
+          "steps": 19,
+          "threat": "elite"
+        }
+      ],
+      "before_boss": {
+        "count": 0,
+        "family": ""
+      },
+      "cleared": false,
+      "failure": "gameover",
+      "final": {
+        "count": 1,
+        "family": "hunt"
+      },
+      "region": "ruins",
+      "relics": [
+        "pilgrim_6",
+        "hunt_2"
+      ],
+      "seed": 2026102750,
+      "target": "ward"
+    },
+    {
+      "battles": [
+        {
+          "depth": 0,
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 29,
+          "threat": "normal"
+        },
+        {
+          "depth": 2,
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 28,
+          "threat": "normal"
+        },
+        {
+          "depth": 5,
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 26,
+          "threat": "boss"
+        }
+      ],
+      "before_boss": {
+        "count": 1,
+        "family": "arcane"
+      },
+      "cleared": true,
+      "failure": "",
+      "final": {
+        "count": 2,
+        "family": "arcane"
+      },
+      "region": "ruins",
+      "relics": [
+        "bastion",
+        "arcane_4",
+        "arcane_9"
+      ],
+      "seed": 2026102751,
+      "target": "ward"
+    },
+    {
+      "battles": [
+        {
+          "depth": 0,
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 21,
+          "threat": "normal"
+        },
+        {
+          "depth": 2,
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 27,
+          "threat": "normal"
+        },
+        {
+          "depth": 4,
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 23,
+          "threat": "elite"
+        },
+        {
+          "depth": 5,
+          "outcome": "victory",
+          "rounds": 3,
+          "steps": 39,
+          "threat": "elite"
+        },
+        {
+          "depth": 7,
+          "outcome": "victory",
+          "rounds": 3,
+          "steps": 46,
+          "threat": "boss"
+        }
+      ],
+      "before_boss": {
+        "count": 2,
+        "family": "arcane"
+      },
+      "cleared": true,
+      "failure": "",
+      "final": {
+        "count": 2,
+        "family": "arcane"
+      },
+      "region": "border",
+      "relics": [
+        "arcane_5",
+        "command_10",
+        "arcane_10"
+      ],
+      "seed": 2026102800,
+      "target": "arcane"
+    },
+    {
+      "battles": [
+        {
+          "depth": 0,
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 22,
+          "threat": "normal"
+        },
+        {
+          "depth": 2,
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 19,
+          "threat": "normal"
+        },
+        {
+          "depth": 4,
+          "outcome": "victory",
+          "rounds": 3,
+          "steps": 32,
+          "threat": "elite"
+        },
+        {
+          "depth": 6,
+          "outcome": "gameover",
+          "rounds": 3,
+          "steps": 47,
+          "threat": "boss"
+        }
+      ],
+      "before_boss": {
+        "count": 1,
+        "family": "arcane"
+      },
+      "cleared": false,
+      "failure": "gameover",
+      "final": {
+        "count": 1,
+        "family": "arcane"
+      },
+      "region": "border",
+      "relics": [
+        "arcane_5",
+        "ward_8"
+      ],
+      "seed": 2026102801,
+      "target": "arcane"
+    },
+    {
+      "battles": [
+        {
+          "depth": 0,
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 22,
+          "threat": "normal"
+        },
+        {
+          "depth": 2,
+          "outcome": "victory",
+          "rounds": 3,
+          "steps": 35,
+          "threat": "normal"
+        },
+        {
+          "depth": 5,
+          "outcome": "victory",
+          "rounds": 3,
+          "steps": 33,
+          "threat": "boss"
+        }
+      ],
+      "before_boss": {
+        "count": 1,
+        "family": "arcane"
+      },
+      "cleared": true,
+      "failure": "",
+      "final": {
+        "count": 1,
+        "family": "arcane"
+      },
+      "region": "wood",
+      "relics": [
+        "arcane_9",
+        "reservoir",
+        "hunt_1"
+      ],
+      "seed": 2026102810,
+      "target": "arcane"
+    },
+    {
+      "battles": [
+        {
+          "depth": 0,
+          "outcome": "victory",
+          "rounds": 3,
+          "steps": 35,
+          "threat": "normal"
+        },
+        {
+          "depth": 2,
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 18,
+          "threat": "normal"
+        },
+        {
+          "depth": 4,
+          "outcome": "victory",
+          "rounds": 3,
+          "steps": 34,
+          "threat": "elite"
+        },
+        {
+          "depth": 5,
+          "outcome": "victory",
+          "rounds": 3,
+          "steps": 35,
+          "threat": "elite"
+        },
+        {
+          "depth": 7,
+          "outcome": "victory",
+          "rounds": 3,
+          "steps": 38,
+          "threat": "boss"
+        }
+      ],
+      "before_boss": {
+        "count": 1,
+        "family": "arcane"
+      },
+      "cleared": true,
+      "failure": "",
+      "final": {
+        "count": 1,
+        "family": "arcane"
+      },
+      "region": "wood",
+      "relics": [
+        "arcane_2",
+        "hourglass",
+        "pilgrim_1",
+        "reservoir",
+        "blood_6"
+      ],
+      "seed": 2026102811,
+      "target": "arcane"
+    },
+    {
+      "battles": [
+        {
+          "depth": 0,
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 21,
+          "threat": "normal"
+        },
+        {
+          "depth": 2,
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 23,
+          "threat": "normal"
+        },
+        {
+          "depth": 4,
+          "outcome": "victory",
+          "rounds": 3,
+          "steps": 43,
+          "threat": "elite"
+        },
+        {
+          "depth": 5,
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 28,
+          "threat": "elite"
+        },
+        {
+          "depth": 7,
+          "outcome": "victory",
+          "rounds": 4,
+          "steps": 58,
+          "threat": "boss"
+        }
+      ],
+      "before_boss": {
+        "count": 1,
+        "family": "command"
+      },
+      "cleared": true,
+      "failure": "",
+      "final": {
+        "count": 1,
+        "family": "command"
+      },
+      "region": "waste",
+      "relics": [
+        "command_5",
+        "blood_3",
+        "arcane_9",
+        "hunt_8",
+        "pilgrim_8"
+      ],
+      "seed": 2026102820,
+      "target": "arcane"
+    },
+    {
+      "battles": [
+        {
+          "depth": 0,
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 26,
+          "threat": "normal"
+        },
+        {
+          "depth": 2,
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 24,
+          "threat": "normal"
+        },
+        {
+          "depth": 4,
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 31,
+          "threat": "elite"
+        },
+        {
+          "depth": 5,
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 25,
+          "threat": "elite"
+        },
+        {
+          "depth": 7,
+          "outcome": "victory",
+          "rounds": 3,
+          "steps": 43,
+          "threat": "boss"
+        }
+      ],
+      "before_boss": {
+        "count": 2,
+        "family": "pilgrim"
+      },
+      "cleared": true,
+      "failure": "",
+      "final": {
+        "count": 2,
+        "family": "pilgrim"
+      },
+      "region": "waste",
+      "relics": [
+        "pilgrim_1",
+        "engine_1",
+        "engine_6",
+        "pilgrim_4",
+        "hunt_7"
+      ],
+      "seed": 2026102821,
+      "target": "arcane"
+    },
+    {
+      "battles": [
+        {
+          "depth": 0,
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 19,
+          "threat": "normal"
+        },
+        {
+          "depth": 2,
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 23,
+          "threat": "normal"
+        },
+        {
+          "depth": 4,
+          "outcome": "victory",
+          "rounds": 3,
+          "steps": 33,
+          "threat": "elite"
+        },
+        {
+          "depth": 6,
+          "outcome": "victory",
+          "rounds": 4,
+          "steps": 55,
+          "threat": "boss"
+        }
+      ],
+      "before_boss": {
+        "count": 1,
+        "family": "arcane"
+      },
+      "cleared": true,
+      "failure": "",
+      "final": {
+        "count": 1,
+        "family": "arcane"
+      },
+      "region": "frost",
+      "relics": [
+        "arcane_9",
+        "hunt_10",
+        "campfire",
+        "dusk_1"
+      ],
+      "seed": 2026102830,
+      "target": "arcane"
+    },
+    {
+      "battles": [
+        {
+          "depth": 0,
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 19,
+          "threat": "normal"
+        },
+        {
+          "depth": 2,
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 26,
+          "threat": "normal"
+        },
+        {
+          "depth": 4,
+          "outcome": "victory",
+          "rounds": 3,
+          "steps": 36,
+          "threat": "elite"
+        },
+        {
+          "depth": 5,
+          "outcome": "victory",
+          "rounds": 3,
+          "steps": 45,
+          "threat": "elite"
+        },
+        {
+          "depth": 7,
+          "outcome": "victory",
+          "rounds": 4,
+          "steps": 64,
+          "threat": "boss"
+        }
+      ],
+      "before_boss": {
+        "count": 2,
+        "family": "ward"
+      },
+      "cleared": true,
+      "failure": "",
+      "final": {
+        "count": 2,
+        "family": "ward"
+      },
+      "region": "frost",
+      "relics": [
+        "ward_2",
+        "ward_3",
+        "command_5",
+        "blood_3",
+        "lens"
+      ],
+      "seed": 2026102831,
+      "target": "arcane"
+    },
+    {
+      "battles": [
+        {
+          "depth": 0,
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 24,
+          "threat": "normal"
+        },
+        {
+          "depth": 2,
+          "outcome": "victory",
+          "rounds": 3,
+          "steps": 26,
+          "threat": "normal"
+        },
+        {
+          "depth": 5,
+          "outcome": "victory",
+          "rounds": 3,
+          "steps": 37,
+          "threat": "boss"
+        }
+      ],
+      "before_boss": {
+        "count": 1,
+        "family": "arcane"
+      },
+      "cleared": true,
+      "failure": "",
+      "final": {
+        "count": 1,
+        "family": "arcane"
+      },
+      "region": "marsh",
+      "relics": [
+        "arcane_9",
+        "blood_5",
+        "ember"
+      ],
+      "seed": 2026102840,
+      "target": "arcane"
+    },
+    {
+      "battles": [
+        {
+          "depth": 0,
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 21,
+          "threat": "normal"
+        },
+        {
+          "depth": 2,
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 21,
+          "threat": "normal"
+        },
+        {
+          "depth": 5,
+          "outcome": "victory",
+          "rounds": 3,
+          "steps": 39,
+          "threat": "boss"
+        }
+      ],
+      "before_boss": {
+        "count": 1,
+        "family": "command"
+      },
+      "cleared": true,
+      "failure": "",
+      "final": {
+        "count": 1,
+        "family": "command"
+      },
+      "region": "marsh",
+      "relics": [
+        "command_4",
+        "boots",
+        "pilgrim_3"
+      ],
+      "seed": 2026102841,
+      "target": "arcane"
+    },
+    {
+      "battles": [
+        {
+          "depth": 0,
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 21,
+          "threat": "normal"
+        },
+        {
+          "depth": 2,
+          "outcome": "victory",
+          "rounds": 3,
+          "steps": 29,
+          "threat": "normal"
+        },
+        {
+          "depth": 4,
+          "outcome": "victory",
+          "rounds": 3,
+          "steps": 39,
+          "threat": "elite"
+        },
+        {
+          "depth": 6,
+          "outcome": "victory",
+          "rounds": 3,
+          "steps": 47,
+          "threat": "boss"
+        }
+      ],
+      "before_boss": {
+        "count": 1,
+        "family": "ward"
+      },
+      "cleared": true,
+      "failure": "",
+      "final": {
+        "count": 1,
+        "family": "ward"
+      },
+      "region": "ruins",
+      "relics": [
+        "ward_4",
+        "fang",
+        "dusk_1",
+        "arcane_5"
+      ],
+      "seed": 2026102850,
+      "target": "arcane"
+    },
+    {
+      "battles": [
+        {
+          "depth": 0,
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 27,
+          "threat": "normal"
+        },
+        {
+          "depth": 2,
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 21,
+          "threat": "normal"
+        },
+        {
+          "depth": 4,
+          "outcome": "victory",
+          "rounds": 3,
+          "steps": 38,
+          "threat": "elite"
+        },
+        {
+          "depth": 6,
+          "outcome": "victory",
+          "rounds": 4,
+          "steps": 58,
+          "threat": "boss"
+        }
+      ],
+      "before_boss": {
+        "count": 1,
+        "family": "command"
+      },
+      "cleared": true,
+      "failure": "",
+      "final": {
+        "count": 1,
+        "family": "command"
+      },
+      "region": "ruins",
+      "relics": [
+        "command_1",
+        "mist",
+        "bastion",
+        "engine_5"
+      ],
+      "seed": 2026102851,
+      "target": "arcane"
+    },
+    {
+      "battles": [
+        {
+          "depth": 0,
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 26,
+          "threat": "normal"
+        },
+        {
+          "depth": 2,
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 25,
+          "threat": "normal"
+        },
+        {
+          "depth": 4,
+          "outcome": "victory",
+          "rounds": 3,
+          "steps": 39,
+          "threat": "elite"
+        },
+        {
+          "depth": 6,
+          "outcome": "victory",
+          "rounds": 3,
+          "steps": 36,
+          "threat": "boss"
+        }
+      ],
+      "before_boss": {
+        "count": 2,
+        "family": "arcane"
+      },
+      "cleared": true,
+      "failure": "",
+      "final": {
+        "count": 3,
+        "family": "arcane"
+      },
+      "region": "border",
+      "relics": [
+        "ward_3",
+        "arcane_2",
+        "arcane_9",
+        "arcane_1"
+      ],
+      "seed": 2026102900,
+      "target": "engine"
+    },
+    {
+      "battles": [
+        {
+          "depth": 0,
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 23,
+          "threat": "normal"
+        },
+        {
+          "depth": 2,
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 21,
+          "threat": "normal"
+        },
+        {
+          "depth": 4,
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 23,
+          "threat": "elite"
+        },
+        {
+          "depth": 6,
+          "outcome": "victory",
+          "rounds": 3,
+          "steps": 41,
+          "threat": "boss"
+        }
+      ],
+      "before_boss": {
+        "count": 2,
+        "family": "engine"
+      },
+      "cleared": true,
+      "failure": "",
+      "final": {
+        "count": 3,
+        "family": "engine"
+      },
+      "region": "border",
+      "relics": [
+        "rune",
+        "engine_2",
+        "engine_1",
+        "engine_8"
+      ],
+      "seed": 2026102901,
+      "target": "engine"
+    },
+    {
+      "battles": [
+        {
+          "depth": 0,
+          "outcome": "victory",
+          "rounds": 3,
+          "steps": 30,
+          "threat": "normal"
+        },
+        {
+          "depth": 2,
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 28,
+          "threat": "normal"
+        },
+        {
+          "depth": 5,
+          "outcome": "victory",
+          "rounds": 3,
+          "steps": 42,
+          "threat": "boss"
+        }
+      ],
+      "before_boss": {
+        "count": 1,
+        "family": "arcane"
+      },
+      "cleared": true,
+      "failure": "",
+      "final": {
+        "count": 1,
+        "family": "arcane"
+      },
+      "region": "wood",
+      "relics": [
+        "arcane_1",
+        "blood_1",
+        "engine_5"
+      ],
+      "seed": 2026102910,
+      "target": "engine"
+    },
+    {
+      "battles": [
+        {
+          "depth": 0,
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 18,
+          "threat": "normal"
+        },
+        {
+          "depth": 2,
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 20,
+          "threat": "normal"
+        },
+        {
+          "depth": 4,
+          "outcome": "victory",
+          "rounds": 3,
+          "steps": 33,
+          "threat": "elite"
+        },
+        {
+          "depth": 5,
+          "outcome": "victory",
+          "rounds": 4,
+          "steps": 46,
+          "threat": "elite"
+        },
+        {
+          "depth": 7,
+          "outcome": "victory",
+          "rounds": 3,
+          "steps": 44,
+          "threat": "boss"
+        }
+      ],
+      "before_boss": {
+        "count": 2,
+        "family": "hunt"
+      },
+      "cleared": true,
+      "failure": "",
+      "final": {
+        "count": 2,
+        "family": "hunt"
+      },
+      "region": "wood",
+      "relics": [
+        "mist",
+        "hunt_5",
+        "hunt_8",
+        "hourglass",
+        "blood_1"
+      ],
+      "seed": 2026102911,
+      "target": "engine"
+    },
+    {
+      "battles": [
+        {
+          "depth": 0,
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 27,
+          "threat": "normal"
+        },
+        {
+          "depth": 2,
+          "outcome": "victory",
+          "rounds": 3,
+          "steps": 35,
+          "threat": "normal"
+        },
+        {
+          "depth": 4,
+          "outcome": "victory",
+          "rounds": 3,
+          "steps": 37,
+          "threat": "elite"
+        },
+        {
+          "depth": 6,
+          "outcome": "victory",
+          "rounds": 3,
+          "steps": 41,
+          "threat": "boss"
+        }
+      ],
+      "before_boss": {
+        "count": 2,
+        "family": "pilgrim"
+      },
+      "cleared": true,
+      "failure": "",
+      "final": {
+        "count": 3,
+        "family": "pilgrim"
+      },
+      "region": "waste",
+      "relics": [
+        "pilgrim_1",
+        "pilgrim_8",
+        "pilgrim_2"
+      ],
+      "seed": 2026102920,
+      "target": "engine"
+    },
+    {
+      "battles": [
+        {
+          "depth": 0,
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 24,
+          "threat": "normal"
+        },
+        {
+          "depth": 2,
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 19,
+          "threat": "normal"
+        },
+        {
+          "depth": 4,
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 27,
+          "threat": "elite"
+        },
+        {
+          "depth": 5,
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 32,
+          "threat": "elite"
+        },
+        {
+          "depth": 7,
+          "outcome": "victory",
+          "rounds": 3,
+          "steps": 44,
+          "threat": "boss"
+        }
+      ],
+      "before_boss": {
+        "count": 1,
+        "family": "hunt"
+      },
+      "cleared": true,
+      "failure": "",
+      "final": {
+        "count": 1,
+        "family": "hunt"
+      },
+      "region": "waste",
+      "relics": [
+        "rune",
+        "hunt_1",
+        "blood_4",
+        "engine_10",
+        "ward_5"
+      ],
+      "seed": 2026102921,
+      "target": "engine"
+    },
+    {
+      "battles": [
+        {
+          "depth": 0,
+          "outcome": "victory",
+          "rounds": 3,
+          "steps": 35,
+          "threat": "normal"
+        },
+        {
+          "depth": 2,
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 23,
+          "threat": "normal"
+        },
+        {
+          "depth": 5,
+          "outcome": "victory",
+          "rounds": 3,
+          "steps": 49,
+          "threat": "boss"
+        }
+      ],
+      "before_boss": {
+        "count": 1,
+        "family": "blood"
+      },
+      "cleared": true,
+      "failure": "",
+      "final": {
+        "count": 2,
+        "family": "blood"
+      },
+      "region": "frost",
+      "relics": [
+        "blood_5",
+        "hunt",
+        "blood_3"
+      ],
+      "seed": 2026102930,
+      "target": "engine"
+    },
+    {
+      "battles": [
+        {
+          "depth": 0,
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 23,
+          "threat": "normal"
+        },
+        {
+          "depth": 2,
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 26,
+          "threat": "normal"
+        },
+        {
+          "depth": 5,
+          "outcome": "victory",
+          "rounds": 3,
+          "steps": 46,
+          "threat": "boss"
+        }
+      ],
+      "before_boss": {
+        "count": 2,
+        "family": "dusk"
+      },
+      "cleared": true,
+      "failure": "",
+      "final": {
+        "count": 2,
+        "family": "dusk"
+      },
+      "region": "frost",
+      "relics": [
+        "dusk_1",
+        "dusk_3",
+        "hunt_2"
+      ],
+      "seed": 2026102931,
+      "target": "engine"
+    },
+    {
+      "battles": [
+        {
+          "depth": 0,
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 30,
+          "threat": "normal"
+        },
+        {
+          "depth": 2,
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 24,
+          "threat": "normal"
+        },
+        {
+          "depth": 4,
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 31,
+          "threat": "elite"
+        },
+        {
+          "depth": 6,
+          "outcome": "gameover",
+          "rounds": 2,
+          "steps": 37,
+          "threat": "boss"
+        }
+      ],
+      "before_boss": {
+        "count": 1,
+        "family": "command"
+      },
+      "cleared": false,
+      "failure": "gameover",
+      "final": {
+        "count": 1,
+        "family": "command"
+      },
+      "region": "marsh",
+      "relics": [
+        "command_1",
+        "hunt_8",
+        "leech"
+      ],
+      "seed": 2026102940,
+      "target": "engine"
+    },
+    {
+      "battles": [
+        {
+          "depth": 0,
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 16,
+          "threat": "normal"
+        },
+        {
+          "depth": 2,
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 17,
+          "threat": "normal"
+        },
+        {
+          "depth": 5,
+          "outcome": "victory",
+          "rounds": 3,
+          "steps": 42,
+          "threat": "boss"
+        }
+      ],
+      "before_boss": {
+        "count": 2,
+        "family": "arcane"
+      },
+      "cleared": true,
+      "failure": "",
+      "final": {
+        "count": 2,
+        "family": "arcane"
+      },
+      "region": "marsh",
+      "relics": [
+        "arcane_1",
+        "arcane_3",
+        "command_1"
+      ],
+      "seed": 2026102941,
+      "target": "engine"
+    },
+    {
+      "battles": [
+        {
+          "depth": 0,
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 22,
+          "threat": "normal"
+        },
+        {
+          "depth": 2,
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 23,
+          "threat": "normal"
+        },
+        {
+          "depth": 4,
+          "outcome": "victory",
+          "rounds": 3,
+          "steps": 46,
+          "threat": "elite"
+        },
+        {
+          "depth": 5,
+          "outcome": "victory",
+          "rounds": 3,
+          "steps": 43,
+          "threat": "elite"
+        },
+        {
+          "depth": 7,
+          "outcome": "victory",
+          "rounds": 4,
+          "steps": 54,
+          "threat": "boss"
+        }
+      ],
+      "before_boss": {
+        "count": 1,
+        "family": "pilgrim"
+      },
+      "cleared": true,
+      "failure": "",
+      "final": {
+        "count": 1,
+        "family": "pilgrim"
+      },
+      "region": "ruins",
+      "relics": [
+        "engine_8",
+        "leech",
+        "pilgrim_1",
+        "dusk_2",
+        "ward_5"
+      ],
+      "seed": 2026102950,
+      "target": "engine"
+    },
+    {
+      "battles": [
+        {
+          "depth": 0,
+          "outcome": "victory",
+          "rounds": 3,
+          "steps": 33,
+          "threat": "normal"
+        },
+        {
+          "depth": 2,
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 20,
+          "threat": "normal"
+        },
+        {
+          "depth": 5,
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 21,
+          "threat": "boss"
+        }
+      ],
+      "before_boss": {
+        "count": 2,
+        "family": "arcane"
+      },
+      "cleared": true,
+      "failure": "",
+      "final": {
+        "count": 3,
+        "family": "arcane"
+      },
+      "region": "ruins",
+      "relics": [
+        "arcane_2",
+        "arcane_3",
+        "arcane_6"
+      ],
+      "seed": 2026102951,
+      "target": "engine"
+    },
+    {
+      "battles": [
+        {
+          "depth": 0,
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 20,
+          "threat": "normal"
+        },
+        {
+          "depth": 2,
+          "outcome": "victory",
+          "rounds": 3,
+          "steps": 31,
+          "threat": "normal"
+        },
+        {
+          "depth": 4,
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 25,
+          "threat": "elite"
+        },
+        {
+          "depth": 6,
+          "outcome": "victory",
+          "rounds": 4,
+          "steps": 54,
+          "threat": "boss"
+        }
+      ],
+      "before_boss": {
+        "count": 1,
+        "family": "pilgrim"
+      },
+      "cleared": true,
+      "failure": "",
+      "final": {
+        "count": 1,
+        "family": "pilgrim"
+      },
+      "region": "border",
+      "relics": [
+        "ironheart",
+        "pilgrim_1",
+        "hunt_2",
+        "command_1"
+      ],
+      "seed": 2026103000,
+      "target": "pilgrim"
+    },
+    {
+      "battles": [
+        {
+          "depth": 0,
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 22,
+          "threat": "normal"
+        },
+        {
+          "depth": 2,
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 30,
+          "threat": "normal"
+        },
+        {
+          "depth": 4,
+          "outcome": "victory",
+          "rounds": 3,
+          "steps": 38,
+          "threat": "elite"
+        },
+        {
+          "depth": 5,
+          "outcome": "victory",
+          "rounds": 3,
+          "steps": 38,
+          "threat": "elite"
+        },
+        {
+          "depth": 7,
+          "outcome": "victory",
+          "rounds": 3,
+          "steps": 35,
+          "threat": "boss"
+        }
+      ],
+      "before_boss": {
+        "count": 2,
+        "family": "engine"
+      },
+      "cleared": true,
+      "failure": "",
+      "final": {
+        "count": 2,
+        "family": "engine"
+      },
+      "region": "border",
+      "relics": [
+        "arcane_5",
+        "engine_5",
+        "engine_2",
+        "command_1",
+        "command_2"
+      ],
+      "seed": 2026103001,
+      "target": "pilgrim"
+    },
+    {
+      "battles": [
+        {
+          "depth": 0,
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 23,
+          "threat": "normal"
+        },
+        {
+          "depth": 2,
+          "outcome": "victory",
+          "rounds": 3,
+          "steps": 31,
+          "threat": "normal"
+        },
+        {
+          "depth": 4,
+          "outcome": "victory",
+          "rounds": 4,
+          "steps": 44,
+          "threat": "elite"
+        },
+        {
+          "depth": 6,
+          "outcome": "gameover",
+          "rounds": 2,
+          "steps": 26,
+          "threat": "boss"
+        }
+      ],
+      "before_boss": {
+        "count": 2,
+        "family": "hunt"
+      },
+      "cleared": false,
+      "failure": "gameover",
+      "final": {
+        "count": 2,
+        "family": "hunt"
+      },
+      "region": "wood",
+      "relics": [
+        "hunt_5",
+        "hunt_9",
+        "pilgrim_4"
+      ],
+      "seed": 2026103010,
+      "target": "pilgrim"
+    },
+    {
+      "battles": [
+        {
+          "depth": 0,
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 18,
+          "threat": "normal"
+        },
+        {
+          "depth": 2,
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 22,
+          "threat": "normal"
+        },
+        {
+          "depth": 4,
+          "outcome": "victory",
+          "rounds": 3,
+          "steps": 36,
+          "threat": "elite"
+        },
+        {
+          "depth": 6,
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 28,
+          "threat": "boss"
+        }
+      ],
+      "before_boss": {
+        "count": 1,
+        "family": "dusk"
+      },
+      "cleared": true,
+      "failure": "",
+      "final": {
+        "count": 1,
+        "family": "dusk"
+      },
+      "region": "wood",
+      "relics": [
+        "rune",
+        "dusk_4",
+        "hunt_4",
+        "pilgrim_10"
+      ],
+      "seed": 2026103011,
+      "target": "pilgrim"
+    },
+    {
+      "battles": [
+        {
+          "depth": 0,
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 22,
+          "threat": "normal"
+        },
+        {
+          "depth": 2,
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 18,
+          "threat": "normal"
+        },
+        {
+          "depth": 4,
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 24,
+          "threat": "elite"
+        },
+        {
+          "depth": 6,
+          "outcome": "victory",
+          "rounds": 4,
+          "steps": 47,
+          "threat": "boss"
+        }
+      ],
+      "before_boss": {
+        "count": 1,
+        "family": "hunt"
+      },
+      "cleared": true,
+      "failure": "",
+      "final": {
+        "count": 1,
+        "family": "hunt"
+      },
+      "region": "waste",
+      "relics": [
+        "prism",
+        "hunt_2",
+        "ward_3",
+        "command_5"
+      ],
+      "seed": 2026103020,
+      "target": "pilgrim"
+    },
+    {
+      "battles": [
+        {
+          "depth": 0,
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 18,
+          "threat": "normal"
+        },
+        {
+          "depth": 2,
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 17,
+          "threat": "normal"
+        },
+        {
+          "depth": 5,
+          "outcome": "victory",
+          "rounds": 3,
+          "steps": 38,
+          "threat": "boss"
+        }
+      ],
+      "before_boss": {
+        "count": 1,
+        "family": "dusk"
+      },
+      "cleared": true,
+      "failure": "",
+      "final": {
+        "count": 1,
+        "family": "dusk"
+      },
+      "region": "waste",
+      "relics": [
+        "dusk_1",
+        "mist",
+        "pilgrim_4"
+      ],
+      "seed": 2026103021,
+      "target": "pilgrim"
+    },
+    {
+      "battles": [
+        {
+          "depth": 0,
+          "outcome": "victory",
+          "rounds": 3,
+          "steps": 30,
+          "threat": "normal"
+        },
+        {
+          "depth": 2,
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 24,
+          "threat": "normal"
+        },
+        {
+          "depth": 4,
+          "outcome": "victory",
+          "rounds": 3,
+          "steps": 37,
+          "threat": "elite"
+        },
+        {
+          "depth": 6,
+          "outcome": "victory",
+          "rounds": 4,
+          "steps": 52,
+          "threat": "boss"
+        }
+      ],
+      "before_boss": {
+        "count": 2,
+        "family": "pilgrim"
+      },
+      "cleared": true,
+      "failure": "",
+      "final": {
+        "count": 2,
+        "family": "pilgrim"
+      },
+      "region": "frost",
+      "relics": [
+        "pilgrim_8",
+        "arcane_5",
+        "pilgrim_5",
+        "engine_3"
+      ],
+      "seed": 2026103030,
+      "target": "pilgrim"
+    },
+    {
+      "battles": [
+        {
+          "depth": 0,
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 25,
+          "threat": "normal"
+        },
+        {
+          "depth": 2,
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 22,
+          "threat": "normal"
+        },
+        {
+          "depth": 4,
+          "outcome": "victory",
+          "rounds": 3,
+          "steps": 44,
+          "threat": "elite"
+        },
+        {
+          "depth": 6,
+          "outcome": "victory",
+          "rounds": 3,
+          "steps": 55,
+          "threat": "boss"
+        }
+      ],
+      "before_boss": {
+        "count": 1,
+        "family": "ward"
+      },
+      "cleared": true,
+      "failure": "",
+      "final": {
+        "count": 2,
+        "family": "pilgrim"
+      },
+      "region": "frost",
+      "relics": [
+        "ward_8",
+        "pilgrim_2",
+        "hunt_4",
+        "pilgrim_1"
+      ],
+      "seed": 2026103031,
+      "target": "pilgrim"
+    },
+    {
+      "battles": [
+        {
+          "depth": 0,
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 26,
+          "threat": "normal"
+        },
+        {
+          "depth": 2,
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 20,
+          "threat": "normal"
+        },
+        {
+          "depth": 4,
+          "outcome": "victory",
+          "rounds": 3,
+          "steps": 40,
+          "threat": "elite"
+        },
+        {
+          "depth": 6,
+          "outcome": "victory",
+          "rounds": 4,
+          "steps": 44,
+          "threat": "boss"
+        }
+      ],
+      "before_boss": {
+        "count": 2,
+        "family": "dusk"
+      },
+      "cleared": true,
+      "failure": "",
+      "final": {
+        "count": 2,
+        "family": "dusk"
+      },
+      "region": "marsh",
+      "relics": [
+        "ward_5",
+        "dusk_1",
+        "dusk_5",
+        "reservoir"
+      ],
+      "seed": 2026103040,
+      "target": "pilgrim"
+    },
+    {
+      "battles": [
+        {
+          "depth": 0,
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 23,
+          "threat": "normal"
+        },
+        {
+          "depth": 2,
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 20,
+          "threat": "normal"
+        },
+        {
+          "depth": 4,
+          "outcome": "victory",
+          "rounds": 3,
+          "steps": 36,
+          "threat": "elite"
+        },
+        {
+          "depth": 5,
+          "outcome": "victory",
+          "rounds": 3,
+          "steps": 46,
+          "threat": "elite"
+        },
+        {
+          "depth": 7,
+          "outcome": "victory",
+          "rounds": 3,
+          "steps": 42,
+          "threat": "boss"
+        }
+      ],
+      "before_boss": {
+        "count": 2,
+        "family": "pilgrim"
+      },
+      "cleared": true,
+      "failure": "",
+      "final": {
+        "count": 2,
+        "family": "pilgrim"
+      },
+      "region": "marsh",
+      "relics": [
+        "mist",
+        "pilgrim_2",
+        "pilgrim_5",
+        "hunt_4",
+        "hunt_5"
+      ],
+      "seed": 2026103041,
+      "target": "pilgrim"
+    },
+    {
+      "battles": [
+        {
+          "depth": 0,
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 24,
+          "threat": "normal"
+        },
+        {
+          "depth": 2,
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 19,
+          "threat": "normal"
+        },
+        {
+          "depth": 4,
+          "outcome": "victory",
+          "rounds": 4,
+          "steps": 56,
+          "threat": "elite"
+        },
+        {
+          "depth": 6,
+          "outcome": "victory",
+          "rounds": 4,
+          "steps": 59,
+          "threat": "boss"
+        }
+      ],
+      "before_boss": {
+        "count": 1,
+        "family": "command"
+      },
+      "cleared": true,
+      "failure": "",
+      "final": {
+        "count": 2,
+        "family": "pilgrim"
+      },
+      "region": "ruins",
+      "relics": [
+        "command_4",
+        "pilgrim_5",
+        "blood_4",
+        "pilgrim_6"
+      ],
+      "seed": 2026103050,
+      "target": "pilgrim"
+    },
+    {
+      "battles": [
+        {
+          "depth": 0,
+          "outcome": "victory",
+          "rounds": 3,
+          "steps": 34,
+          "threat": "normal"
+        },
+        {
+          "depth": 2,
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 19,
+          "threat": "normal"
+        },
+        {
+          "depth": 4,
+          "outcome": "victory",
+          "rounds": 3,
+          "steps": 42,
+          "threat": "elite"
+        },
+        {
+          "depth": 5,
+          "outcome": "victory",
+          "rounds": 3,
+          "steps": 34,
+          "threat": "elite"
+        },
+        {
+          "depth": 7,
+          "outcome": "victory",
+          "rounds": 4,
+          "steps": 57,
+          "threat": "boss"
+        }
+      ],
+      "before_boss": {
+        "count": 1,
+        "family": "dusk"
+      },
+      "cleared": true,
+      "failure": "",
+      "final": {
+        "count": 2,
+        "family": "dusk"
+      },
+      "region": "ruins",
+      "relics": [
+        "dusk_4",
+        "blood_9",
+        "arcane_4",
+        "pilgrim_6",
+        "dusk_3"
+      ],
+      "seed": 2026103051,
+      "target": "pilgrim"
+    },
+    {
+      "battles": [
+        {
+          "depth": 0,
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 21,
+          "threat": "normal"
+        },
+        {
+          "depth": 2,
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 25,
+          "threat": "normal"
+        },
+        {
+          "depth": 5,
+          "outcome": "victory",
+          "rounds": 3,
+          "steps": 42,
+          "threat": "boss"
+        }
+      ],
+      "before_boss": {
+        "count": 1,
+        "family": "engine"
+      },
+      "cleared": true,
+      "failure": "",
+      "final": {
+        "count": 1,
+        "family": "engine"
+      },
+      "region": "border",
+      "relics": [
+        "engine_2",
+        "ironheart",
+        "pilgrim_3"
+      ],
+      "seed": 2026103100,
+      "target": "dusk"
+    },
+    {
+      "battles": [
+        {
+          "depth": 0,
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 24,
+          "threat": "normal"
+        },
+        {
+          "depth": 2,
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 31,
+          "threat": "normal"
+        },
+        {
+          "depth": 4,
+          "outcome": "victory",
+          "rounds": 3,
+          "steps": 37,
+          "threat": "elite"
+        },
+        {
+          "depth": 5,
+          "outcome": "victory",
+          "rounds": 3,
+          "steps": 39,
+          "threat": "elite"
+        },
+        {
+          "depth": 7,
+          "outcome": "victory",
+          "rounds": 3,
+          "steps": 35,
+          "threat": "boss"
+        }
+      ],
+      "before_boss": {
+        "count": 1,
+        "family": "command"
+      },
+      "cleared": true,
+      "failure": "",
+      "final": {
+        "count": 2,
+        "family": "hunt"
+      },
+      "region": "border",
+      "relics": [
+        "hunt_8",
+        "lens",
+        "command_4",
+        "dusk_4",
+        "hunt_2"
+      ],
+      "seed": 2026103101,
+      "target": "dusk"
+    },
+    {
+      "battles": [
+        {
+          "depth": 0,
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 17,
+          "threat": "normal"
+        },
+        {
+          "depth": 2,
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 20,
+          "threat": "normal"
+        },
+        {
+          "depth": 4,
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 27,
+          "threat": "elite"
+        },
+        {
+          "depth": 6,
+          "outcome": "victory",
+          "rounds": 3,
+          "steps": 47,
+          "threat": "boss"
+        }
+      ],
+      "before_boss": {
+        "count": 1,
+        "family": "hunt"
+      },
+      "cleared": true,
+      "failure": "",
+      "final": {
+        "count": 1,
+        "family": "hunt"
+      },
+      "region": "wood",
+      "relics": [
+        "dusk_7",
+        "hunt_1",
+        "pilgrim_3",
+        "command_5"
+      ],
+      "seed": 2026103110,
+      "target": "dusk"
+    },
+    {
+      "battles": [
+        {
+          "depth": 0,
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 20,
+          "threat": "normal"
+        },
+        {
+          "depth": 2,
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 20,
+          "threat": "normal"
+        },
+        {
+          "depth": 4,
+          "outcome": "victory",
+          "rounds": 3,
+          "steps": 36,
+          "threat": "elite"
+        },
+        {
+          "depth": 5,
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 23,
+          "threat": "elite"
+        },
+        {
+          "depth": 7,
+          "outcome": "victory",
+          "rounds": 3,
+          "steps": 42,
+          "threat": "boss"
+        }
+      ],
+      "before_boss": {
+        "count": 1,
+        "family": "pilgrim"
+      },
+      "cleared": true,
+      "failure": "",
+      "final": {
+        "count": 2,
+        "family": "pilgrim"
+      },
+      "region": "wood",
+      "relics": [
+        "hourglass",
+        "boots",
+        "pilgrim_1",
+        "engine_3",
+        "pilgrim_6"
+      ],
+      "seed": 2026103111,
+      "target": "dusk"
+    },
+    {
+      "battles": [
+        {
+          "depth": 0,
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 25,
+          "threat": "normal"
+        },
+        {
+          "depth": 2,
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 22,
+          "threat": "normal"
+        },
+        {
+          "depth": 4,
+          "outcome": "victory",
+          "rounds": 3,
+          "steps": 34,
+          "threat": "elite"
+        },
+        {
+          "depth": 5,
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 26,
+          "threat": "elite"
+        },
+        {
+          "depth": 7,
+          "outcome": "victory",
+          "rounds": 3,
+          "steps": 45,
+          "threat": "boss"
+        }
+      ],
+      "before_boss": {
+        "count": 2,
+        "family": "blood"
+      },
+      "cleared": true,
+      "failure": "",
+      "final": {
+        "count": 2,
+        "family": "blood"
+      },
+      "region": "waste",
+      "relics": [
+        "blood_1",
+        "hunt_5",
+        "blood_4",
+        "boots",
+        "command_3"
+      ],
+      "seed": 2026103120,
+      "target": "dusk"
+    },
+    {
+      "battles": [
+        {
+          "depth": 0,
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 21,
+          "threat": "normal"
+        },
+        {
+          "depth": 2,
+          "outcome": "victory",
+          "rounds": 3,
+          "steps": 35,
+          "threat": "normal"
+        },
+        {
+          "depth": 5,
+          "outcome": "victory",
+          "rounds": 4,
+          "steps": 53,
+          "threat": "boss"
+        }
+      ],
+      "before_boss": {
+        "count": 2,
+        "family": "pilgrim"
+      },
+      "cleared": true,
+      "failure": "",
+      "final": {
+        "count": 2,
+        "family": "pilgrim"
+      },
+      "region": "waste",
+      "relics": [
+        "pilgrim_4",
+        "pilgrim_8",
+        "ward_4"
+      ],
+      "seed": 2026103121,
+      "target": "dusk"
+    },
+    {
+      "battles": [
+        {
+          "depth": 0,
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 28,
+          "threat": "normal"
+        },
+        {
+          "depth": 2,
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 18,
+          "threat": "normal"
+        },
+        {
+          "depth": 4,
+          "outcome": "victory",
+          "rounds": 3,
+          "steps": 33,
+          "threat": "elite"
+        },
+        {
+          "depth": 6,
+          "outcome": "victory",
+          "rounds": 3,
+          "steps": 42,
+          "threat": "boss"
+        }
+      ],
+      "before_boss": {
+        "count": 2,
+        "family": "hunt"
+      },
+      "cleared": true,
+      "failure": "",
+      "final": {
+        "count": 2,
+        "family": "hunt"
+      },
+      "region": "frost",
+      "relics": [
+        "hunt_5",
+        "hunt_3",
+        "blood_7",
+        "arcane_4"
+      ],
+      "seed": 2026103130,
+      "target": "dusk"
+    },
+    {
+      "battles": [
+        {
+          "depth": 0,
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 16,
+          "threat": "normal"
+        },
+        {
+          "depth": 2,
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 31,
+          "threat": "normal"
+        },
+        {
+          "depth": 4,
+          "outcome": "victory",
+          "rounds": 4,
+          "steps": 51,
+          "threat": "elite"
+        },
+        {
+          "depth": 6,
+          "outcome": "gameover",
+          "rounds": 3,
+          "steps": 46,
+          "threat": "boss"
+        }
+      ],
+      "before_boss": {
+        "count": 2,
+        "family": "pilgrim"
+      },
+      "cleared": false,
+      "failure": "gameover",
+      "final": {
+        "count": 2,
+        "family": "pilgrim"
+      },
+      "region": "frost",
+      "relics": [
+        "pilgrim_4",
+        "arcane_5",
+        "pilgrim_2"
+      ],
+      "seed": 2026103131,
+      "target": "dusk"
+    },
+    {
+      "battles": [
+        {
+          "depth": 0,
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 20,
+          "threat": "normal"
+        },
+        {
+          "depth": 2,
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 26,
+          "threat": "normal"
+        },
+        {
+          "depth": 4,
+          "outcome": "victory",
+          "rounds": 3,
+          "steps": 36,
+          "threat": "elite"
+        },
+        {
+          "depth": 5,
+          "outcome": "victory",
+          "rounds": 3,
+          "steps": 33,
+          "threat": "elite"
+        },
+        {
+          "depth": 7,
+          "outcome": "victory",
+          "rounds": 3,
+          "steps": 40,
+          "threat": "boss"
+        }
+      ],
+      "before_boss": {
+        "count": 2,
+        "family": "engine"
+      },
+      "cleared": true,
+      "failure": "",
+      "final": {
+        "count": 2,
+        "family": "engine"
+      },
+      "region": "marsh",
+      "relics": [
+        "engine_1",
+        "dusk_3",
+        "engine_7",
+        "hunt_1",
+        "blood_3"
+      ],
+      "seed": 2026103140,
+      "target": "dusk"
+    },
+    {
+      "battles": [
+        {
+          "depth": 0,
+          "outcome": "victory",
+          "rounds": 3,
+          "steps": 29,
+          "threat": "normal"
+        },
+        {
+          "depth": 2,
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 16,
+          "threat": "normal"
+        },
+        {
+          "depth": 5,
+          "outcome": "victory",
+          "rounds": 3,
+          "steps": 44,
+          "threat": "boss"
+        }
+      ],
+      "before_boss": {
+        "count": 1,
+        "family": "blood"
+      },
+      "cleared": true,
+      "failure": "",
+      "final": {
+        "count": 1,
+        "family": "blood"
+      },
+      "region": "marsh",
+      "relics": [
+        "dusk_7",
+        "blood_5",
+        "command_4"
+      ],
+      "seed": 2026103141,
+      "target": "dusk"
+    },
+    {
+      "battles": [
+        {
+          "depth": 0,
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 24,
+          "threat": "normal"
+        },
+        {
+          "depth": 2,
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 18,
+          "threat": "normal"
+        },
+        {
+          "depth": 5,
+          "outcome": "victory",
+          "rounds": 3,
+          "steps": 35,
+          "threat": "boss"
+        }
+      ],
+      "before_boss": {
+        "count": 1,
+        "family": "blood"
+      },
+      "cleared": true,
+      "failure": "",
+      "final": {
+        "count": 2,
+        "family": "blood"
+      },
+      "region": "ruins",
+      "relics": [
+        "banner",
+        "blood_3",
+        "blood_6"
+      ],
+      "seed": 2026103150,
+      "target": "dusk"
+    },
+    {
+      "battles": [
+        {
+          "depth": 0,
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 17,
+          "threat": "normal"
+        },
+        {
+          "depth": 2,
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 26,
+          "threat": "normal"
+        },
+        {
+          "depth": 5,
+          "outcome": "victory",
+          "rounds": 4,
+          "steps": 67,
+          "threat": "boss"
+        }
+      ],
+      "before_boss": {
+        "count": 1,
+        "family": "dusk"
+      },
+      "cleared": true,
+      "failure": "",
+      "final": {
+        "count": 1,
+        "family": "dusk"
+      },
+      "region": "ruins",
+      "relics": [
+        "dusk_7",
+        "boots",
+        "spring"
+      ],
+      "seed": 2026103151,
+      "target": "dusk"
+    },
+    {
+      "battles": [
+        {
+          "depth": 0,
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 25,
+          "threat": "normal"
+        },
+        {
+          "depth": 2,
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 19,
+          "threat": "normal"
+        },
+        {
+          "depth": 5,
+          "outcome": "victory",
+          "rounds": 3,
+          "steps": 34,
+          "threat": "boss"
+        }
+      ],
+      "before_boss": {
+        "count": 1,
+        "family": "blood"
+      },
+      "cleared": true,
+      "failure": "",
+      "final": {
+        "count": 1,
+        "family": "blood"
+      },
+      "region": "border",
+      "relics": [
+        "blood_3",
+        "engine_1",
+        "arcane_2"
+      ],
+      "seed": 2026103200,
+      "target": "command"
+    },
+    {
+      "battles": [
+        {
+          "depth": 0,
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 21,
+          "threat": "normal"
+        },
+        {
+          "depth": 2,
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 17,
+          "threat": "normal"
+        },
+        {
+          "depth": 4,
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 38,
+          "threat": "elite"
+        },
+        {
+          "depth": 5,
+          "outcome": "victory",
+          "rounds": 3,
+          "steps": 43,
+          "threat": "elite"
+        },
+        {
+          "depth": 7,
+          "outcome": "victory",
+          "rounds": 3,
+          "steps": 42,
+          "threat": "boss"
+        }
+      ],
+      "before_boss": {
+        "count": 1,
+        "family": "command"
+      },
+      "cleared": true,
+      "failure": "",
+      "final": {
+        "count": 1,
+        "family": "command"
+      },
+      "region": "border",
+      "relics": [
+        "command_4",
+        "ward_3",
+        "hunt_3",
+        "campfire",
+        "engine_5"
+      ],
+      "seed": 2026103201,
+      "target": "command"
+    },
+    {
+      "battles": [
+        {
+          "depth": 0,
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 22,
+          "threat": "normal"
+        },
+        {
+          "depth": 2,
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 19,
+          "threat": "normal"
+        },
+        {
+          "depth": 5,
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 29,
+          "threat": "boss"
+        }
+      ],
+      "before_boss": {
+        "count": 2,
+        "family": "engine"
+      },
+      "cleared": true,
+      "failure": "",
+      "final": {
+        "count": 3,
+        "family": "engine"
+      },
+      "region": "wood",
+      "relics": [
+        "engine_2",
+        "engine_8",
+        "engine_1"
+      ],
+      "seed": 2026103210,
+      "target": "command"
+    },
+    {
+      "battles": [
+        {
+          "depth": 0,
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 22,
+          "threat": "normal"
+        },
+        {
+          "depth": 2,
+          "outcome": "victory",
+          "rounds": 3,
+          "steps": 32,
+          "threat": "normal"
+        },
+        {
+          "depth": 4,
+          "outcome": "victory",
+          "rounds": 3,
+          "steps": 38,
+          "threat": "elite"
+        },
+        {
+          "depth": 6,
+          "outcome": "victory",
+          "rounds": 3,
+          "steps": 44,
+          "threat": "boss"
+        }
+      ],
+      "before_boss": {
+        "count": 2,
+        "family": "pilgrim"
+      },
+      "cleared": true,
+      "failure": "",
+      "final": {
+        "count": 3,
+        "family": "pilgrim"
+      },
+      "region": "wood",
+      "relics": [
+        "pilgrim_1",
+        "command_2",
+        "pilgrim_3",
+        "pilgrim_9"
+      ],
+      "seed": 2026103211,
+      "target": "command"
+    },
+    {
+      "battles": [
+        {
+          "depth": 0,
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 19,
+          "threat": "normal"
+        },
+        {
+          "depth": 2,
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 20,
+          "threat": "normal"
+        },
+        {
+          "depth": 4,
+          "outcome": "victory",
+          "rounds": 3,
+          "steps": 38,
+          "threat": "elite"
+        },
+        {
+          "depth": 6,
+          "outcome": "victory",
+          "rounds": 3,
+          "steps": 34,
+          "threat": "boss"
+        }
+      ],
+      "before_boss": {
+        "count": 1,
+        "family": "command"
+      },
+      "cleared": true,
+      "failure": "",
+      "final": {
+        "count": 1,
+        "family": "command"
+      },
+      "region": "waste",
+      "relics": [
+        "command_2",
+        "rune",
+        "arcane_4",
+        "hourglass"
+      ],
+      "seed": 2026103220,
+      "target": "command"
+    },
+    {
+      "battles": [
+        {
+          "depth": 0,
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 16,
+          "threat": "normal"
+        },
+        {
+          "depth": 2,
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 22,
+          "threat": "normal"
+        },
+        {
+          "depth": 5,
+          "outcome": "victory",
+          "rounds": 3,
+          "steps": 39,
+          "threat": "boss"
+        }
+      ],
+      "before_boss": {
+        "count": 2,
+        "family": "dusk"
+      },
+      "cleared": true,
+      "failure": "",
+      "final": {
+        "count": 2,
+        "family": "dusk"
+      },
+      "region": "waste",
+      "relics": [
+        "dusk_2",
+        "dusk_7"
+      ],
+      "seed": 2026103221,
+      "target": "command"
+    },
+    {
+      "battles": [
+        {
+          "depth": 0,
+          "outcome": "victory",
+          "rounds": 3,
+          "steps": 34,
+          "threat": "normal"
+        },
+        {
+          "depth": 2,
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 25,
+          "threat": "normal"
+        },
+        {
+          "depth": 5,
+          "outcome": "victory",
+          "rounds": 3,
+          "steps": 40,
+          "threat": "boss"
+        }
+      ],
+      "before_boss": {
+        "count": 2,
+        "family": "hunt"
+      },
+      "cleared": true,
+      "failure": "",
+      "final": {
+        "count": 2,
+        "family": "hunt"
+      },
+      "region": "frost",
+      "relics": [
+        "hunt_4",
+        "hunt_9",
+        "ward_5"
+      ],
+      "seed": 2026103230,
+      "target": "command"
+    },
+    {
+      "battles": [
+        {
+          "depth": 0,
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 20,
+          "threat": "normal"
+        },
+        {
+          "depth": 2,
+          "outcome": "victory",
+          "rounds": 3,
+          "steps": 37,
+          "threat": "normal"
+        },
+        {
+          "depth": 5,
+          "outcome": "victory",
+          "rounds": 4,
+          "steps": 49,
+          "threat": "boss"
+        }
+      ],
+      "before_boss": {
+        "count": 1,
+        "family": "arcane"
+      },
+      "cleared": true,
+      "failure": "",
+      "final": {
+        "count": 2,
+        "family": "command"
+      },
+      "region": "frost",
+      "relics": [
+        "command_7",
+        "arcane_7",
+        "command_4"
+      ],
+      "seed": 2026103231,
+      "target": "command"
+    },
+    {
+      "battles": [
+        {
+          "depth": 0,
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 29,
+          "threat": "normal"
+        },
+        {
+          "depth": 2,
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 26,
+          "threat": "normal"
+        },
+        {
+          "depth": 5,
+          "outcome": "victory",
+          "rounds": 4,
+          "steps": 54,
+          "threat": "boss"
+        }
+      ],
+      "before_boss": {
+        "count": 0,
+        "family": ""
+      },
+      "cleared": true,
+      "failure": "",
+      "final": {
+        "count": 1,
+        "family": "command"
+      },
+      "region": "marsh",
+      "relics": [
+        "bulwark",
+        "lens",
+        "command_4"
+      ],
+      "seed": 2026103240,
+      "target": "command"
+    },
+    {
+      "battles": [
+        {
+          "depth": 0,
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 20,
+          "threat": "normal"
+        },
+        {
+          "depth": 2,
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 25,
+          "threat": "normal"
+        },
+        {
+          "depth": 5,
+          "outcome": "victory",
+          "rounds": 4,
+          "steps": 52,
+          "threat": "boss"
+        }
+      ],
+      "before_boss": {
+        "count": 1,
+        "family": "ward"
+      },
+      "cleared": true,
+      "failure": "",
+      "final": {
+        "count": 1,
+        "family": "ward"
+      },
+      "region": "marsh",
+      "relics": [
+        "ward_3",
+        "pilgrim_3",
+        "command_4"
+      ],
+      "seed": 2026103241,
+      "target": "command"
+    },
+    {
+      "battles": [
+        {
+          "depth": 0,
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 18,
+          "threat": "normal"
+        },
+        {
+          "depth": 2,
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 20,
+          "threat": "normal"
+        },
+        {
+          "depth": 5,
+          "outcome": "victory",
+          "rounds": 3,
+          "steps": 45,
+          "threat": "boss"
+        }
+      ],
+      "before_boss": {
+        "count": 1,
+        "family": "command"
+      },
+      "cleared": true,
+      "failure": "",
+      "final": {
+        "count": 1,
+        "family": "command"
+      },
+      "region": "ruins",
+      "relics": [
+        "command_5",
+        "mist",
+        "blood_1"
+      ],
+      "seed": 2026103250,
+      "target": "command"
+    },
+    {
+      "battles": [
+        {
+          "depth": 0,
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 19,
+          "threat": "normal"
+        },
+        {
+          "depth": 2,
+          "outcome": "victory",
+          "rounds": 2,
+          "steps": 19,
+          "threat": "normal"
+        },
+        {
+          "depth": 5,
+          "outcome": "victory",
+          "rounds": 3,
+          "steps": 42,
+          "threat": "boss"
+        }
+      ],
+      "before_boss": {
+        "count": 1,
+        "family": "engine"
+      },
+      "cleared": true,
+      "failure": "",
+      "final": {
+        "count": 1,
+        "family": "engine"
+      },
+      "region": "ruins",
+      "relics": [
+        "engine_4",
+        "wardbell",
+        "arcane_1"
+      ],
+      "seed": 2026103251,
+      "target": "command"
+    }
+  ],
+  "source_hashes": {
+    "art.gd": "1b1094cd02ccc2dfe0b67029ad5d0b0cb0b264f20ad03f92cfe7a5623598f58d",
+    "atlas.gd": "78ee63ee223bb7cb7a6405a144f42e6cc9119408bb4161fa04e0cd82425ee987",
+    "battlefield.gd": "5cb2473e1c2a806c2c279ceb0ff6afa5149c0917c67d22317f1ebeea8048712c",
+    "campaign.gd": "3bdddc3fb8582b528728a98fdb3c786f269244998ab27c94ea6ecef0b7074ad5",
+    "character_visual.gd": "a03beebd110101b8543a0d917c8bfeea1c2a328507bd93e84287311b1d0b24ce",
+    "character_wardrobe.gd": "b4a2b452b0d802d7fb85a573ea4a75213acce64b4bfabedda3bb0717280e3e95",
+    "combat_presentation.gd": "aad6726c6f018efe48eb0035451f25c294a0024d538ac4ec1efb47fa7e5b359d",
+    "equipment_menu.gd": "07e897e9f3efeae25585951b25d02af89f588cbab8921c2a6cdeb0df1fe8a70a",
+    "equipment_preview.gd": "dff75fb27bc23b9d1860ff2ab3ea47a7593927a9153327e6c2582b6ecb42e229",
+    "equipment_shapes.gd": "0f00d83d207de72d7378fc03c38779a7090e15a3a63a2881928498f742e0d7e1",
+    "equipment_visual.gd": "020e67c863a79ba4ffee27196ef860fbcbc0092c12c1ba74e4aefc8d43fd43af",
+    "main.gd": "3c8403b405dfc799ead32b214f6ed5c6f379923f4f41034a4b1db07c8c8242a4",
+    "party_details.gd": "8704d49768dd58a525c2191a51d4c59efcf8e99e53e6e8a8838afb39a3f4d2d2",
+    "portraits.gd": "2f139514305eea70c52c48d9e7a4e056cb547df314da481aa7c8d8de6fb14330",
+    "professions.gd": "93cd937b3794cd2fa7ec4544bb92b15af195a47f0d8a43b48bf1ebe8efd589ac",
+    "region_art.gd": "25a2b7e593cc5d10a8eb733a88edea4a40946c0c95a71750446c83c5e0ccf7e2",
+    "region_combat.gd": "f20206e0d807c55392d235e192e873d6b40b1d00e1c8073609d6c72638638166",
+    "regions.gd": "934a3f2b5beb169c1a06ae9917596ffe90a2526d0eddfb19a0cf9d2f08f17964",
+    "relic_expansion.gd": "bcab343f206c8e9d38b8c6836d3fba2e65e20af434ff78b8e8143c844f1f740d",
+    "relics.gd": "c5860272c05560b94af9a26a063b8991c7fca28a1583e93f2d2cdb93bf1cd323",
+    "route.gd": "119f75b3e108722b1381f5bf0ddc559d4edb56dc2b0904ac402de228330e0842",
+    "rules.gd": "e40eb9acf2639eed09b157eb97df3455fdaeb6dc12b14370256445d601ad6e6f",
+    "skill_tree.gd": "d7edf9672c62713d5b4ff199fc5099d54d5f69eaa8852a71a4ad31a5966ac584"
+  }
+}
