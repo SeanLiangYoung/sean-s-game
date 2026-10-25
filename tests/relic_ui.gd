@@ -36,6 +36,7 @@ func run():
  check(not has_text(scene.modal,"封存") and not has_text(scene.modal,"卸下遗物"),"no deactivation controls")
  check(scene.has_method("show_relic_catalog"),"complete relic catalog is browseable")
  if scene.has_method("show_relic_catalog"):
+  for id in scene.Campaign.Relic.CATALOG:scene.campaign.discover_relic(id)
   scene.show_relic_catalog("blood")
   check(has_text(scene.modal,"赤誓残卷") and has_text(scene.modal,"殉火心脏"),"theme filter shows complete blood family")
   check(not has_text(scene.modal,"湛蓝瞳环"),"theme filter excludes unrelated entries")

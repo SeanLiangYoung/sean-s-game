@@ -5,6 +5,8 @@ const Rules = preload("res://game/rules.gd")
 const Achievements=preload("res://game/achievements.gd")
 var completed_difficulties: Array = []
 var achievement_save_failed=false
+var discovered_relics: Array = []
+var discovery_save_failed=false
 const OVERALL_DIFFICULTIES = ["普通","困难","噩梦","我想找死"]
 var overall_difficulty = 0
 var save_path = "user://ashbound-save.json"
@@ -65,6 +67,7 @@ func _init(destination: String = "user://ashbound-save.json"):
  for id in ["sword","dagger","bow","staff","crossbow","shield","leather","plate"]:equipment.append({"id":id,"owner":""})
  rng.randomize()
  sync_achievements()
+ load_relic_discoveries()
 
 func depart() -> bool:
  if phase != "camp":return false
@@ -236,7 +239,7 @@ func visit_event() -> bool:
 func to_data(include_snapshot: bool = true) -> Dictionary:
  var units = roster.duplicate(true)
  for u in units:u.erase("cell")
- var data = {"version":9,"completed_difficulties":completed_difficulties.duplicate(),"overall_difficulty":overall_difficulty,"cleared_regions":cleared_regions.duplicate(),"trial_equipment_claimed":trial_equipment_claimed,"equipment":equipment.duplicate(true),"roster":units,"phase":phase,"encounters":encounters.duplicate(),"relics":relics.duplicate(true),"collection":collection.duplicate(true),"silver":silver,"supplies":supplies,"expedition":expedition,"world_position":world_position.duplicate(),"event_used":event_used,"choices":choices.duplicate(true),"notice":notice,"rng_state":str(rng.state),"route":route.data() if route.region!="" else {},"books":books.duplicate(),"purchases":purchases.duplicate(),"recruits":recruits.duplicate()}
+ var data = {"version":9,"discovered_relics":discovered_relics.duplicate(),"completed_difficulties":completed_difficulties.duplicate(),"overall_difficulty":overall_difficulty,"cleared_regions":cleared_regions.duplicate(),"trial_equipment_claimed":trial_equipment_claimed,"equipment":equipment.duplicate(true),"roster":units,"phase":phase,"encounters":encounters.duplicate(),"relics":relics.duplicate(true),"collection":collection.duplicate(true),"silver":silver,"supplies":supplies,"expedition":expedition,"world_position":world_position.duplicate(),"event_used":event_used,"choices":choices.duplicate(true),"notice":notice,"rng_state":str(rng.state),"route":route.data() if route.region!="" else {},"books":books.duplicate(),"purchases":purchases.duplicate(),"recruits":recruits.duplicate()}
  data["last_battle_summary"]=last_battle_summary.duplicate(true)
  if include_snapshot:data["snapshot"] = snapshot.duplicate(true)
  return data
@@ -259,7 +262,8 @@ func valid_battle_summary(value) -> bool:
   if unit.max_hp<=0 or unit.hp>unit.max_hp or unit.mp>unit.max_mp:return false
  return true
 
-func load_data(data: Dictionary) -> bool:
+func load_data(data: Dictionary,persist_discoveries: bool=true) -> bool:
+ if not valid_discoveries(data.get("discovered_relics",[])):return false
  if not valid_battle_summary(data.get("last_battle_summary",{})):return false
  if not Achievements.valid(data.get("completed_difficulties",[])):return false
  var saved_difficulty=data.get("overall_difficulty",0)
@@ -380,7 +384,7 @@ func load_data(data: Dictionary) -> bool:
  if not saved_snapshot.is_empty():
   if not saved_snapshot.get("snapshot",{}) is Dictionary or not saved_snapshot.get("snapshot",{}).is_empty():return false
   var validator=get_script().new(save_path)
-  if not validator.load_data(saved_snapshot):return false
+  if not validator.load_data(saved_snapshot,false):return false
   data.snapshot=validator.to_data(false)
  for u in data.roster:
   if migrated:
@@ -432,6 +436,12 @@ func load_data(data: Dictionary) -> bool:
  notice = data.get("notice","")
  rng.state = int(data.get("rng_state",str(reward_seed)))
  current_encounter = -1
+ load_relic_discoveries()
+ for id in data.get("discovered_relics",[]):discover_relic(id,false)
+ for entry in relics+collection:discover_relic(Relic.id_of(entry),false)
+ for reward in choices:
+  if reward.type=="relic":discover_relic(reward.id,false)
+ if persist_discoveries:save_relic_discoveries()
  return true
 
 func save_game() -> bool:
@@ -450,6 +460,7 @@ func save_game() -> bool:
   DirAccess.remove_absolute(save_path+".tmp")
   return false
  if DirAccess.rename_absolute(save_path+".tmp",save_path)!=OK:return false
+ save_relic_discoveries()
  achievement_save_failed=not Achievements.save_profile(save_path+".achievements",completed_difficulties)
  return true
 
@@ -579,6 +590,7 @@ func acquire_relic(id: String,owner: String="") -> bool:
   for pool in [relics,collection]:
    for i in range(pool.size()-1,-1,-1):
     if pool[i].owner==owner:pool.remove_at(i)
+ discover_relic(id)
  relics.append(Relic.instance(id,uid,owner))
  if id=="lens":silver+=30
  return true
@@ -781,3 +793,42 @@ func sync_achievements():
   completed_difficulties.append(overall_difficulty)
  completed_difficulties.sort()
  refresh_stats()
+
+static func valid_discoveries(value) -> bool:
+ if not value is Array:return false
+ var seen=[]
+ for id in value:
+  if not id is String or not Relic.CATALOG.has(id) or id in seen:return false
+  seen.append(id)
+ return true
+
+func load_relic_discoveries():
+ var path=save_path+".relics"
+ if not FileAccess.file_exists(path):return
+ var parser=JSON.new()
+ if parser.parse(FileAccess.get_file_as_string(path))!=OK or not valid_discoveries(parser.data):return
+ for id in parser.data:
+  if id not in discovered_relics:discovered_relics.append(id)
+
+func save_relic_discoveries() -> bool:
+ load_relic_discoveries()
+ discovery_save_failed=not Achievements.save_profile(save_path+".relics",discovered_relics)
+ return not discovery_save_failed
+
+func discover_relic(id: String,persist: bool=true) -> bool:
+ if not Relic.CATALOG.has(id) or id in discovered_relics:return false
+ discovered_relics.append(id)
+ if persist:save_relic_discoveries()
+ return true
+
+func discover_reward_relics():
+ var changed=false
+ for reward in choices:
+  if reward.type=="relic":changed=discover_relic(reward.id,false) or changed
+ if changed:save_relic_discoveries()
+
+func relic_achievement_count() -> int:
+ var count=0
+ for threshold in [1,10,100,Relic.CATALOG.size()]:
+  if discovered_relics.size()>=threshold:count+=1
+ return count

@@ -939,6 +939,7 @@ func return_world():
  refresh_ui()
 
 func show_reward():
+ campaign.discover_reward_relics()
  record_difficulty_completion()
  open_modal("全部通关  /  星陨遗城" if campaign.campaign_completed() else "战斗胜利  /  选择战利品","五选一 · 查看详情不会领取奖励")
  set_page_back(Callable())
@@ -1058,6 +1059,9 @@ func start_new_campaign(captain: String):
  var prior=saved_campaign()
  if prior!=null and not Campaign.Achievements.save_profile(campaign.save_path+".achievements",prior.completed_difficulties):
   show_main_menu("成就记录保存失败，已保留原存档。请检查本地存储空间后重试。")
+  return
+ if prior!=null and not prior.save_relic_discoveries():
+  show_main_menu("遗物发现记录保存失败，已保留原存档。请检查本地存储空间后重试。")
   return
  var fresh=Campaign.new(campaign.save_path)
  fresh.overall_difficulty=selected_difficulty
@@ -1576,8 +1580,8 @@ func show_party_menu(tab: String="详情",character_id: String=""):
  separator(frame)
  frame.add_child(button("关闭菜单 · 返回旅途",close_modal))
 
-func show_relic_catalog(family: String=""):
- open_modal("遗物图鉴 · %d 件"%Campaign.Relic.CATALOG.size(),"遗物决定打法；同主题2/4件激活共鸣。全队遗物与当前角色个人遗物计数，同名不重复计算。")
+func show_relic_catalog(family: String="",query: String="",_page: int=0):
+ open_modal("遗物图鉴 · 已解锁 %d / %d 件"%[campaign.discovered_relics.size(),Campaign.Relic.CATALOG.size()],"遗物决定打法；同主题2/4件激活共鸣。全队遗物与当前角色个人遗物计数，同名不重复计算。")
  set_page_back(func():show_party_menu("遗物",menu_character))
  var filters=HFlowContainer.new()
  filters.add_theme_constant_override("h_separation",8)
@@ -1588,7 +1592,9 @@ func show_relic_catalog(family: String=""):
   var d=Campaign.Relic.Expansion.SETS[id]
   filters.add_child(button(d.name,func():show_relic_catalog(theme_id)))
  for id in Campaign.Relic.CATALOG:
+  if id not in campaign.discovered_relics:continue
   var d=Campaign.Relic.definition(id)
+  if query.strip_edges()!="" and query.strip_edges().to_lower() not in (d.name+" "+d.benefit+" "+d.risk).to_lower():continue
   if family!="" and d.get("family","")!=family:continue
   detail_section(modal_body,d.name)
   modal_body.add_child(text_label(Campaign.Relic.description(id),16,MUTED))
@@ -1763,7 +1769,7 @@ func select_route_node(id: String):
  elif n.kind=="extract":show_extract()
  elif n.kind in ["shop","hire"]:show_route_trade()
 
-func show_route_trade():
+func show_route_trade(_category: String=""):
  var shop=campaign.at_node("shop")
  open_modal("行路商店" if shop else "雇佣兵营地","银币 %d · 离开后不能返回；可以返回路线页继续选择路线。"%campaign.silver)
  if shop:
@@ -1772,6 +1778,7 @@ func show_route_trade():
    if Jobs.ALL_SKILLS.has(id):continue
    var item_id=id
    var good=Campaign.GOODS[id]
+   if Campaign.Relic.CATALOG.has(id):campaign.discover_relic(id)
    modal_body.add_child(text_label(good.name+" · "+good.desc,18))
    var quote=campaign.shop_price(id)
    var entry=button("购买 · %d 银币"%quote,func():
@@ -1986,11 +1993,11 @@ func show_achievements(from_main: bool=false):
   var saved=saved_campaign()
   if saved!=null:progress=saved
  progress.sync_achievements()
- open_modal("通关成就", "在对应整体难度下，通关全部六个区域即可解锁。奖励自动给予全队，并保留到新的旅途。")
+ open_modal("成就", "通关与遗物发现记录会保留到新的旅途。")
  menu_screen="achievements"
  set_page_back(show_main_menu if from_main else show_pause_menu)
  var bonus=progress.achievement_bonus()
- modal_body.add_child(text_label("已解锁 %d / 4 · 累计加成：攻击 +%d · 护甲 +%d"%[progress.completed_difficulties.size(),bonus.power,bonus.armor],22,GOLD))
+ modal_body.add_child(text_label("通关成就 · 已解锁 %d / 4 · 累计加成：攻击 +%d · 护甲 +%d"%[progress.completed_difficulties.size(),bonus.power,bonus.armor],22,GOLD))
  for rank in Campaign.Achievements.CATALOG.size():
   var entry=Campaign.Achievements.CATALOG[rank]
   var unlocked=rank in progress.completed_difficulties
@@ -1999,6 +2006,15 @@ func show_achievements(from_main: bool=false):
   var count=6 if unlocked else progress.cleared_regions.size() if progress.overall_difficulty==rank else 0
   modal_body.add_child(text_label("区域进度 %d / 6 · 奖励：%s"%[count,entry.reward],17,TEAL if unlocked else MUTED))
  modal_body.add_child(text_label("每项只生效一次；仅解锁实际通关的难度。四项全部解锁：全队攻击 +2、护甲 +2。",16,MUTED))
+ detail_section(modal_body,"遗物收集成就 · 已解锁 %d / 4"%progress.relic_achievement_count())
+ var thresholds=[1,10,100,Campaign.Relic.CATALOG.size()]
+ var names=["初识遗物","遗物探寻者","遗物博识者","遗物全图鉴"]
+ for i in thresholds.size():
+  var target=thresholds[i]
+  var unlocked=progress.discovered_relics.size()>=target
+  detail_section(modal_body,("◆ 已解锁 · " if unlocked else "◇ 未解锁 · ")+names[i])
+  modal_body.add_child(text_label("条件：解锁%s遗物 · 进度 %d / %d"%["全部" if i==3 else " %d 个"%target,mini(progress.discovered_relics.size(),target),target],17,TEAL if unlocked else MUTED))
+ modal_body.add_child(text_label("见过即可解锁，无需购买或选取；重复遗物不重复计数。收集成就无额外属性加成。",16,MUTED))
  modal_body.add_child(button("返回主菜单" if from_main else "返回旅途菜单",show_main_menu if from_main else show_pause_menu))
 
 func show_achievement_unlock(rank: int):
