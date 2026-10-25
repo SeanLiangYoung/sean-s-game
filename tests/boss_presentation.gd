@@ -17,11 +17,15 @@ func run():
  if not scene.has_method("refresh_boss_hud"):
   scene.queue_free();await process_frame;finish();return
  for region in ["border","wood","waste","frost","marsh","ruins"]:
-  scene.battle=null;scene.campaign=Campaign.new("user://boss-presentation-"+region+".json");scene.campaign.cleared_regions=(["border","wood","waste","frost","marsh"] if region=="ruins" else []);scene.campaign.start_region(region)
+  scene.battle=null;scene.campaign=Campaign.new("user://boss-presentation-"+region+".json");scene.campaign.cleared_regions=(["border","wood","waste","frost","marsh"] if region=="ruins" else []);scene.campaign.rng.seed=71023;scene.campaign.start_region(region)
   var node=scene.campaign.route.nodes.filter(func(n):return n.get("threat","")=="boss")[0]
   scene.campaign.route.current=node.id;scene.campaign.route.completed=false
   scene.show_deploy(node.encounter)
-  check("随机强化" in texts(scene.modal) and "无耗蓝" in texts(scene.modal),"deployment previews affix and enemy skills")
+  var intel=scene.modal.find_children("*","Button",true,false).filter(func(entry):return "敌情与战场规则" in entry.text)
+  check(not intel.is_empty(),"deployment exposes enemy intel details")
+  intel[0].pressed.emit()
+  check("随机强化" in texts(scene.detail_overlay) and "无耗蓝" in texts(scene.detail_overlay),"deployment details preserve affix and enemy skills")
+  scene.close_details()
   scene.begin_battle(node.encounter);scene.close_modal()
   var boss=scene.battle.actors[-1]
   check(scene.ui.find_child("BossHUD",true,false)!=null and "50%" in texts(scene.ui.find_child("BossHUD",true,false)),"boss HUD states threshold")
@@ -30,9 +34,9 @@ func run():
   scene.battle.order_index=scene.battle.order.find(scene.battle.actors.find(boss));boss.ap=4
   scene.draw_battle();var before=scene.battle.actors.duplicate(true)
   check(scene.perform_battle_action("enemy"),"boss prepares via actual scene command")
-  check(scene.presentation.boss_cues.size()>0 and scene.presentation.boss_cues[0].type=="charge","structured charge reaches presentation")
+  check(scene.presentation.boss_cues.size()>0 and scene.presentation.boss_cues[0].type=="charge","structured charge reaches presentation "+region)
   scene.presentation.advance(0.55)
-  check(scene.presentation.find_children("BossCue*","",true,false).size()>0,"charge has visible per-region effects")
+  check(scene.presentation.find_children("BossCue*","",true,false).size()>0,"charge has visible per-region effects "+region)
   scene.presentation.advance(3)
   check(scene.battle.actors[-1].hp==before[-1].hp,"playback does not mutate boss HP")
   var frozen=scene.battle.boss_intents.duplicate(true)

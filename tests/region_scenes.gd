@@ -26,7 +26,10 @@ func run():
   var boss=scene.campaign.route.nodes.filter(func(n):return n.get("threat","")=="boss")[0]
   scene.campaign.route.current=boss.id;scene.campaign.route.completed=false
   scene.show_deploy(boss.encounter)
-  check("敌人特性" in texts(scene.modal) and "预告" in texts(scene.modal),"deployment explains mechanics "+id)
+  var intel=scene.modal.find_children("*","Button",true,false).filter(func(entry):return "敌情与战场规则" in entry.text)[0]
+  intel.pressed.emit()
+  check("敌人特性" in texts(scene.detail_overlay) and "预告" in texts(scene.detail_overlay),"deployment details explain mechanics "+id)
+  scene.close_details()
   scene.begin_battle(boss.encounter);scene.close_modal();scene.draw_battle();scene.refresh_ui()
   var landscape=scene.scene_root.find_child("BattleLandscape",true,false)
   check(landscape!=null and landscape.get_meta("biome","")==id,"landscape identity "+id)
@@ -42,7 +45,7 @@ func run():
   check(scene.battle.cast_enemy_skill(id+"_intent"),"legal boss preparation for warning fixture "+id)
   scene.draw_battle();scene.refresh_ui()
   var warnings=scene.scene_root.find_children("BossWarning*","",true,false)
-  check(not warnings.is_empty() and "预告" in texts(scene.sidebar),"visible warning and readable timeline "+id)
+  check(not warnings.is_empty() and "预告" in texts(scene.footer),"visible warning and readable timeline "+id)
   scene.battle.shrink();scene.draw_battle()
   check(scene.scene_root.find_child("BattleLandscape",true,false).find_child("Meadow",true,false).material_override.get_shader_parameter("safe_radius")==3.0,"regional scene preserves shrinking visuals")
   scene.battle=null

@@ -79,6 +79,8 @@ static func page(host,parent: Control,unit: Dictionary):
 static func show_choices(host,parent: Control,unit: Dictionary,slot: String,editable: bool):
  for child in parent.get_children():parent.remove_child(child);child.queue_free()
  host.detail_section(parent,Jobs.SLOTS[slot]+" · 可选装备")
+ var scroll=host.modal.find_child("CharacterPageScroll",true,false)
+ if scroll!=null:scroll.ensure_control_visible.call_deferred(parent)
  var count=0
  for i in host.campaign.equipment.size():
   var index=i

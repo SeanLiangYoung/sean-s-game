@@ -47,7 +47,9 @@ func run():
  for captain in Characters.CAPTAINS:
   var d=Characters.CATALOG[captain]
   button(scene.modal,d.name+" · ").pressed.emit()
-  check(d.story in texts(scene.modal) and d.effect in texts(scene.modal),"captain card exposes full story and talent "+captain)
+  button(scene.modal,"人物背景与天赋详情").pressed.emit()
+  check(d.story in texts(scene.detail_overlay) and d.effect in texts(scene.detail_overlay),"captain details expose full story and talent "+captain)
+  scene.close_details()
  button(scene.modal,"以「陆衡」").pressed.emit()
  check(scene.campaign.roster[0].character_id=="lu" and not is_instance_valid(scene.modal),"selected captain enters game")
  var loaded=Campaign.new(path)
