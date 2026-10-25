@@ -46,6 +46,7 @@ func run():
   var id=stock.filter(func(item):return not s.Campaign.Relic.CATALOG.has(item) or s.Campaign.Relic.definition(item).scope=="team")[0]
   var card=named(s.modal,"ShopItem_"+id)
   var before=s.campaign.to_data();var detail=named(card,"ItemDetails")
+  check(s.Campaign.GOODS[id].name in detail.tooltip_text,"shop detail identifies the corresponding item")
   for item in stock:
    if item not in s.Jobs.ITEMS and item not in s.Campaign.Relic.CATALOG:
     var book_card=named(s.modal,"ShopItem_"+item)
@@ -90,7 +91,9 @@ func run():
  if search!=null and catalog!=null:
   check(catalog.get_child_count()<=6,"catalog pages avoid unbounded content")
   var before=s.campaign.to_data();var first=catalog.get_child(0);var page=s.modal
-  named(first,"ItemDetails").pressed.emit();s.close_details()
+  var first_detail=named(first,"ItemDetails")
+  check(s.Campaign.Relic.definition(str(first.name).trim_prefix("CatalogRelic_")).name in first_detail.tooltip_text,"catalog detail identifies the corresponding relic")
+  first_detail.pressed.emit();s.close_details()
   check(s.modal==page and s.campaign.to_data()==before,"catalog details preserve list and never acquire relics")
   search.text="百战军册";search.text_submitted.emit(search.text)
   check("百战军册" in texts(s.modal) and named(s.modal,"RelicCatalogGrid").get_child_count()==1,"search finds item beyond first page")

@@ -46,7 +46,7 @@ static func catalog(host,family: String,query: String,page: int):
   var d=host.Campaign.Relic.definition(id)
   var card=Compact.card(host,grid,d.name,Color(d.color),Equipment.icon("relic"));card.get_parent().name="CatalogRelic_"+id
   relic_content(host,card,id)
-  details(host,card,"详情",host.Campaign.Relic.description(id))
+  details(host,card,d.name+" · 详情",host.Campaign.Relic.description(id))
  if matches.is_empty():host.modal_body.add_child(host.text_label("没有匹配的已解锁遗物，继续探索旅途或更换筛选。",18,host.MUTED))
  var navigation=HBoxContainer.new();navigation.add_theme_constant_override("separation",12);host.modal.get_child(0).add_child(navigation)
  var previous=host.button("上一页",func():host.show_relic_catalog(family,query,page-1));Compact.symbolize(previous,"back");previous.name="CatalogPrevious";previous.disabled=page==0;navigation.add_child(previous)
@@ -88,7 +88,7 @@ static func trade(host,category: String=""):
    card.add_child(host.text_label(host.Jobs.SLOTS[item.slot]+" · %d档"%item.tier,14,host.MUTED))
    Compact.metrics(host,card,[["attack",item.power,"装备攻击"],["armor",item.armor,"装备防护"],["range",item.get("range",0),"装备武器射程；护甲/副手不改变武器射程"]])
   else:card.add_child(host.text_label(good.desc,14,host.TEAL))
-  var actions=HBoxContainer.new();card.add_child(actions);details(host,actions,"详情",good.desc)
+  var actions=HBoxContainer.new();card.add_child(actions);details(host,actions,good.name+" · 详情",good.desc)
   var reason="已售罄" if host.campaign.route.current+":"+id in host.campaign.purchases else "银币不足" if host.campaign.silver<quote else ""
   var buy=host.button(("购买 · %d 银币"%quote) if reason=="" else reason+" · %d银币"%quote,func():
    if host.Campaign.Relic.CATALOG.has(item_id) and host.Campaign.Relic.definition(item_id).scope=="personal":host.show_relic_binding(item_id)
@@ -106,7 +106,7 @@ static func hire(host):
   var index=i;var id=candidates[i];var d=host.Campaign.Characters.CATALOG[id]
   var card=Compact.card(host,grid,d.name+" · "+host.Jobs.JOBS[d.job].name,host.GOLD,host.portraits.portrait(id,host.Campaign.Characters.create(id)))
   card.add_child(host.text_label("天赋 · "+d.talent,15,host.TEAL))
-  details(host,card,"人物与天赋",d.story+"\n\n"+d.talent+"："+d.effect+"\n\n遗物搭配："+d.relics)
+  details(host,card,d.name+" · 人物与天赋",d.story+"\n\n"+d.talent+"："+d.effect+"\n\n遗物搭配："+d.relics)
   var existing=host.campaign.roster.any(func(u):return u.get("character_id","")==id)
   var reason="已在佣兵团中" if existing else "队伍已满" if host.campaign.roster.size()>=10 else "银币不足" if host.campaign.silver<55 else ""
   var entry=host.button("招募 · 55 银币" if reason=="" else reason,func():
@@ -134,7 +134,7 @@ static func owned_relics(host,parent: Control,effects_only: bool):
    var source="永久收藏" if pool_index==1 else "本次远征" if host.battle==null else "本场持有"
    card.add_child(host.text_label(source+(" · 佩戴者："+host.menu_unit(entry.owner).name if d.scope=="personal" and entry is Dictionary else ""),14,host.MUTED))
    relic_content(host,card,entry)
-   details(host,card,"效果与触发详情",host.Campaign.Relic.description(entry)+"\n\n"+host.relic_instance_status(entry))
+   details(host,card,d.name+" · 效果与触发详情",host.Campaign.Relic.description(entry)+"\n\n"+host.relic_instance_status(entry))
  if grid.get_child_count()==0:parent.add_child(host.text_label("暂无生效遗物。探索并安全撤离可积累收藏。",16,host.MUTED))
  if effects_only and host.menu_unit(host.menu_character).hp<=0:parent.add_child(host.text_label("角色已阵亡，无法享受战斗效果。",15,host.RED))
 
