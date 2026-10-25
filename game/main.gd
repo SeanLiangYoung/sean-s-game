@@ -6,6 +6,9 @@ const Rules = preload("res://game/rules.gd")
 const Art = preload("res://game/art.gd")
 const Compact=preload("res://game/compact_ui.gd")
 var detail_overlay: Control
+var move_preview_root: Node3D
+var hovered_cell=Vector2i(999,999)
+var movement_label: Label
 var art=Art.new()
 var portraits=preload("res://game/portraits.gd").new()
 var presentation=preload("res://game/combat_presentation.gd").new()
@@ -283,6 +286,7 @@ func cell_position(cell: Vector2i) -> Vector3:
  return Vector3(sqrt(3.0)*(cell.x+cell.y*0.5)*0.78,0,1.5*cell.y*0.78)
 
 func draw_battle():
+ clear_movement_preview()
  clear_scene()
  var region=preload("res://game/regions.gd").definition(battle.biome)
  apply_region_style(battle.biome)
@@ -587,6 +591,7 @@ func close_details():
 
 func show_details(title: String,content: String):
  close_details()
+ clear_movement_preview()
  detail_overlay=ColorRect.new()
  detail_overlay.name="DetailOverlay"
  detail_overlay.color=Color(0.02,0.04,0.06,0.92)
@@ -614,8 +619,64 @@ func primary_action(entry: Button):
  frame.add_child(entry)
  entry.size_flags_horizontal=Control.SIZE_EXPAND_FILL
 
+func movement_preview(cell: Vector2i) -> Dictionary:
+ if battle==null or battle.outcome!="" or battle.active().is_empty():return {}
+ var actor=battle.active()
+ if actor.side!=0:return {}
+ var path=battle.path_to(actor.cell,cell)
+ if path.is_empty() or battle.movement_cost(actor,path)>actor.ap:return {}
+ var shown=path.duplicate()
+ var trapped=false
+ for i in path.size():
+  if battle.traps.any(func(trap):return trap.cell==path[i] and trap.side!=actor.side):
+   shown=path.slice(0,i+1);trapped=true;break
+ var cost=battle.movement_cost(actor,shown)
+ return {"path":shown,"cost":cost,"remaining":maxi(0,actor.ap-cost),"trapped":trapped}
+
+func clear_movement_preview():
+ hovered_cell=Vector2i(999,999)
+ if is_instance_valid(move_preview_root):
+  move_preview_root.get_parent().remove_child(move_preview_root)
+  move_preview_root.queue_free()
+ move_preview_root=null
+ if is_instance_valid(movement_label):movement_label.text="悬停可达格：预览路径、费用与剩余行动点"
+
+func board_cell(screen: Vector2) -> Vector2i:
+ var point=ground_position(screen)
+ var nearest=Vector2i(999,999)
+ var best=1.1
+ for cell in battle.cells():
+  var distance=cell_position(cell).distance_to(point)
+  if distance<best:nearest=cell;best=distance
+ return nearest
+
+func update_movement_preview(screen: Vector2):
+ var cell=board_cell(screen)
+ if cell==hovered_cell:return
+ clear_movement_preview()
+ hovered_cell=cell
+ var data=movement_preview(cell)
+ if data.is_empty():
+  if is_instance_valid(movement_label):movement_label.text="不可移动至此处"
+  return
+ move_preview_root=Node3D.new();move_preview_root.name="MovementPath";scene_root.add_child(move_preview_root)
+ var previous=cell_position(battle.active().cell)+Vector3(0,0.12,0)
+ for step in data.path:
+  var at=cell_position(step)+Vector3(0,0.12,0)
+  art.ring(move_preview_root,at,0.28,GOLD,0.055)
+  var segment=MeshInstance3D.new();var mesh=BoxMesh.new()
+  mesh.size=Vector3(0.09,0.035,previous.distance_to(at));segment.mesh=mesh
+  segment.material_override=material(GOLD,true);move_preview_root.add_child(segment)
+  segment.position=(previous+at)/2;segment.look_at(at,Vector3.UP)
+  previous=at
+ if is_instance_valid(movement_label):
+  movement_label.text="移动 %d 格  ·  消耗 %d 行动点  →  剩余 %d"%[data.path.size(),data.cost,data.remaining]
+  if data.remaining==0:movement_label.text+="  ·  将结束行动"
+  if data.trapped:movement_label.text+="  ·  途中机关截停并造成伤害"
+
 func close_modal():
  close_details()
+ clear_movement_preview()
  party_menu_open=false
  if is_instance_valid(modal):
   var shade=modal.get_parent()
@@ -811,6 +872,7 @@ func perform_battle_action(action: String,target=null) -> bool:
      var old=before.filter(func(u):return u.id==unit.id)[0]
      if unit.id!=actor_id and unit.hp<old.hp:action="attack";break
  if not accepted:return false
+ clear_movement_preview()
  var cues=battle.boss_cues.slice(cue_index).duplicate(true)
  if cues.any(func(c):return c.source==actor_id and c.type=="charge"):action="boss_charge"
  elif cues.any(func(c):return c.source==actor_id and c.type=="enemy_skill"):action="enemy_skill"
@@ -1249,6 +1311,8 @@ func _unhandled_input(event):
   if event is InputEventKey and event.pressed and not event.echo and event.keycode==KEY_ESCAPE:
    close_details();get_viewport().set_input_as_handled()
   return
+ if event is InputEventMouseMotion and battle!=null and battle_mode=="move" and not auto_battle and not presentation.busy and not is_instance_valid(modal):
+  update_movement_preview(event.position)
  if event is InputEventKey and event.pressed and not event.echo and event.keycode==KEY_ESCAPE and battle!=null and battle_mode!="" and not is_instance_valid(modal):
   cancel_action()
   get_viewport().set_input_as_handled()
@@ -1307,6 +1371,11 @@ func _unhandled_input(event):
    if not accepted:
     status_label.text="无法执行：检查行动点、法力、射程与目标阵营。"
     status_label.show()
+
+func _input(event):
+ if event is InputEventMouseMotion and is_instance_valid(move_preview_root):
+  var hovered=get_viewport().gui_get_hovered_control()
+  if hovered!=null:clear_movement_preview()
 
 func _process(delta):
  elapsed+=delta
@@ -1769,7 +1838,7 @@ func render_action_menu(is_player: bool):
  var item_reason=ap2 if ap2!="" else ("补给不足" if campaign.supplies<=0 else "")
  var grid=GridContainer.new();grid.columns=2;grid.add_theme_constant_override("h_separation",6);grid.add_theme_constant_override("v_separation",6);slot.add_child(grid)
  var move_reason=waiting
- if move_reason=="" and a.ap<1:move_reason="行动点不足"
+ if move_reason=="" and not battle.cells().any(func(cell):return not movement_preview(cell).is_empty()):move_reason="行动点不足"
  action_button(grid,"移动","move",move_reason).icon=Compact.icon("move")
  var attack_reason=ap2
  if attack_reason=="" and not battle.actors.any(func(u):return u.hp>0 and u.side!=a.side and battle.hex_distance(a.cell,u.cell)<=a.range):attack_reason="无射程内敌人"
@@ -1825,9 +1894,13 @@ func render_action_menu(is_player: bool):
     var padding=entry.get_theme_stylebox(state).duplicate();padding.set_content_margin_all(4);entry.add_theme_stylebox_override(state,padding)
    states.add_child(entry)
  details_button(slot,"角色状态与共鸣",battle.status_text(a)+"\n\n遗物共鸣\n"+Campaign.Relic.resonance_description(battle.applicable_relics(a)))
- var hints={"":"选择行动","move":"选择可达格移动","attack":"选择红色目标 · 射程%d · 消耗2点"%a.range,"skills":"选择技能 · 悬停查看效果与射程","skill":"选择高亮目标施放","items":"选择物品","item":"单名友军 · 射程3 · 2点 / 1份补给","rest":"选择恢复类型 · 使用剩余行动点"}
- var hint=text_label("Auto：优先输出 · 可能永久阵亡 · 可随时接管" if auto_battle else hints.get(battle_mode,"") if is_player else "敌方行动中",19,GOLD)
- footer.add_child(hint);footer.move_child(hint,0)
+ var hints={"":"选择行动","move":"悬停可达格：预览路径、费用与剩余行动点","attack":"选择红色目标 · 射程%d · 消耗2点"%a.range,"skills":"选择技能 · 悬停查看效果与射程","skill":"选择高亮目标施放","items":"选择物品","item":"单名友军 · 射程3 · 2点 / 1份补给","rest":"选择恢复类型 · 使用剩余行动点"}
+ movement_label=null
+ if battle_mode=="move":
+  movement_label=text_label(hints.move,20,GOLD);movement_label.name="MovementPreview";footer.add_child(movement_label)
+ else:
+  var hint=text_label("Auto：优先输出 · 可能永久阵亡 · 可随时接管" if auto_battle else hints.get(battle_mode,"") if is_player else "敌方行动中",19,GOLD)
+  footer.add_child(hint);footer.move_child(hint,0)
  if battle_mode=="skill" and Jobs.ALL_SKILLS.has(selected_skill):
   var skill=Jobs.ALL_SKILLS[selected_skill]
   footer.add_child(text_label(skill.name+" · %d点 / %d法力 · 射程%d"%[skill.ap,battle.skill_mana_cost(a,selected_skill),battle.skill_range(a,selected_skill)],16,TEAL))
