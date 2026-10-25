@@ -1,0 +1,325 @@
+[compact_ui]
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+CHECKS: 59 FAILURES: 0
+[fresh_progression_balance]
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+CHECKS: 129 FAILURES: 0
+[fresh_progression]
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+CHECKS: 161 FAILURES: 0
+[audio_settings]
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+CHECKS: 23 FAILURES: 0
+[achievement_popup]
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+CHECKS: 17 FAILURES: 0
+[achievements]
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+CHECKS: 20 FAILURES: 0
+[achievements_ui]
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+CHECKS: 8 FAILURES: 0
+[finale]
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+CHECKS: 60 FAILURES: 0
+[region_personal_balance]
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+CHECKS: 268 FAILURES: 0
+[region_variant_balance]
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+CHECKS: 288 FAILURES: 0
+[region_retune]
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+CHECKS: 36 FAILURES: 0
+[region_retune_balance]
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+CHECKS: 909 FAILURES: 0
+[enemy_coordination]
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+CHECKS: 28 FAILURES: 0
+[enemy_coordination_balance]
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+CHECKS: 2714 FAILURES: 0
+[enemy_tactics]
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+CHECKS: 433 FAILURES: 0
+[enemy_ai_balance]
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+CHECKS: 928 FAILURES: 0
+[relic_mix_balance]
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+CHECKS: 7967 FAILURES: 0
+[boss_balance]
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+CHECKS: 172 FAILURES: 0
+[boss_phases]
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+CHECKS: 77 FAILURES: 0
+[enemy_skills]
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+CHECKS: 889 FAILURES: 0
+[boss_visual]
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+CHECKS: 130 FAILURES: 0
+[boss_presentation]
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+CHECKS: 79 FAILURES: 0
+[character_catalog]
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+CHECKS: 97 FAILURES: 0
+[character_talents]
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+CHECKS: 50 FAILURES: 0
+[character_identity_ui]
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+CHECKS: 53 FAILURES: 0
+[relic_balance]
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+CHECKS: 2253 FAILURES: 0
+[region_combat]
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+CHECKS: 85 FAILURES: 0
+[region_scenes]
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+CHECKS: 51 FAILURES: 0
+[region_balance]
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+REGION_SIM border seed=21 outcome=victory round=3
+REGION_SIM border seed=42 outcome=victory round=3
+REGION_SIM border seed=73 outcome=victory round=3
+REGION_SIM wood seed=21 outcome=victory round=3
+REGION_SIM wood seed=42 outcome=victory round=4
+REGION_SIM wood seed=73 outcome=victory round=3
+REGION_SIM waste seed=21 outcome=victory round=3
+REGION_SIM waste seed=42 outcome=victory round=4
+REGION_SIM waste seed=73 outcome=victory round=3
+REGION_SIM frost seed=21 outcome=victory round=3
+REGION_SIM frost seed=42 outcome=victory round=3
+REGION_SIM frost seed=73 outcome=victory round=3
+REGION_SIM marsh seed=21 outcome=victory round=3
+REGION_SIM marsh seed=42 outcome=victory round=3
+REGION_SIM marsh seed=73 outcome=victory round=3
+REGION_SIM ruins seed=21 outcome=victory round=3
+REGION_SIM ruins seed=42 outcome=victory round=4
+REGION_SIM ruins seed=73 outcome=victory round=3
+REGIONAL_BALANCE: 18/18 victories
+CHECKS: 25 FAILURES: 0
+[battlefield_generation]
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+CHECKS: 43448 FAILURES: 0
+[relic_builds]
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+CHECKS: 239 FAILURES: 0
+[equipment_tiers]
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+CHECKS: 74 FAILURES: 0
+[auto_difficulty]
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+CHECKS: 12 FAILURES: 0
+[hard_difficulty]
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+CHECKS: 13876 FAILURES: 0
+[expansion_regressions]
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+CHECKS: 7 FAILURES: 0
+[expedition_balance]
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+REGION border boss_cleared=true
+REGION wood boss_cleared=false
+REGION waste boss_cleared=true
+REGION frost boss_cleared=false
+REGION marsh boss_cleared=true
+REGION ruins boss_cleared=false
+BALANCE: victories=25/28 max_round=5
+CHECKS: 60 FAILURES: 0
+[build_combinations]
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+CHECKS: 332 FAILURES: 0
+[content_expansion]
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+CHECKS: 63 FAILURES: 0
+[expedition_generation]
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+CHECKS: 12499 FAILURES: 0
+[expansion_ui]
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+CHECKS: 57 FAILURES: 0
+[auto_combat]
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+CHECKS: 38 FAILURES: 0
+[reward_settlement]
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+CHECKS: 17 FAILURES: 0
+[equipment_preview]
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+CHECKS: 16 FAILURES: 0
+[relics]
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+CHECKS: 21 FAILURES: 0
+[relic_combat]
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+CHECKS: 22 FAILURES: 0
+[relic_ui]
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+CHECKS: 15 FAILURES: 0
+[fullscreen_pages]
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+CHECKS: 55 FAILURES: 0
+[run]
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+CHECKS: 11 FAILURES: 0
+[edges]
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+CHECKS: 11 FAILURES: 0
+[campaign]
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+CHECKS: 23 FAILURES: 0
+[integration]
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+SIM difficulty=0 outcome=victory rounds=4 radius=3 actions=59
+SIM difficulty=1 outcome=victory rounds=4 radius=3 actions=66
+SIM difficulty=2 outcome=gameover rounds=2 radius=4 actions=49
+CHECKS: 18 FAILURES: 0 victories=2
+[persistence]
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+CHECKS: 7 FAILURES: 0
+[ui]
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+CHECKS: 44 FAILURES: 0
+[menu]
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+CHECKS: 43 FAILURES: 0
+[art]
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+CHECKS: 10 FAILURES: 0
+[presentation]
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+CHECKS: 29 FAILURES: 0
+[characters]
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+CHECKS: 139 FAILURES: 0
+[equipment]
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+CHECKS: 19 FAILURES: 0
+[routes]
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+CHECKS: 31 FAILURES: 0
+[atlas]
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+CHECKS: 22 FAILURES: 0
+[actions]
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+CHECKS: 18 FAILURES: 0
+[professions]
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+CHECKS: 23 FAILURES: 0
+[profession_combat]
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+CHECKS: 47 FAILURES: 0
+[profession_ui]
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+CHECKS: 15 FAILURES: 0
+[equipment_visual]
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+CHECKS: 298 FAILURES: 0
+[equipment_appearance_ui]
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+CHECKS: 11 FAILURES: 0
+[equipment_shapes]
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+CHECKS: 3 FAILURES: 0
+[character_pages]
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+CHECKS: 10 FAILURES: 0
+[progression]
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+CHECKS: 37 FAILURES: 0
+[progression_ui]
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+CHECKS: 50 FAILURES: 0
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+SCENE_SMOKE_OK
+[appearance_render]
+sandbox_extension_issue_file_to_process failed for /private/var/folders/qr/cp9jfqqs75j5_2r78cqsp9980000gn/T/ashbound-ui-release-o_kge91i/.tools/Godot.app: 1 (Operation not permitted)
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+OpenGL API 4.1 Metal - 91.7 - Compatibility - Using Device: Apple - Apple M4
+
+CHECKS: 10 FAILURES: 0
+[equipment_preview_render]
+sandbox_extension_issue_file_to_process failed for /private/var/folders/qr/cp9jfqqs75j5_2r78cqsp9980000gn/T/ashbound-ui-release-o_kge91i/.tools/Godot.app: 1 (Operation not permitted)
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+OpenGL API 4.1 Metal - 91.7 - Compatibility - Using Device: Apple - Apple M4
+
+CHECKS: 5 FAILURES: 0
+PASS: 89794 checks across 72 suites; scene smoke and native appearance rendering passed.
