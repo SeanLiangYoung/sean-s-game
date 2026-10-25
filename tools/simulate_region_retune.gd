@@ -12,6 +12,10 @@ const FOCUS_BUILDS=["cross_blood_ward","cross_arcane_pilgrim","blood","ward"]
 const FOCUS_PROFILES=["balanced","hunt_guard"]
 class StudyRules extends Rules:
  var preparing=true
+ func auto_snapshot():
+  var copy=super.auto_snapshot()
+  copy.preparing=preparing
+  return copy
  var study_casts=[]
  func cast(target,skill_id: String="") -> bool:
   var chosen=skill_id if skill_id!="" else default_skill(active())

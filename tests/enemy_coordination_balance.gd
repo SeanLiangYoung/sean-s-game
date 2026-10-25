@@ -73,6 +73,18 @@ func run():
     check(shield==old_shield+(4 if affix=="warded" else 0),"warded combines native barrier once")
     check(enemies[3].boss and study.Skills.skills(enemies[3]).size()==3,"boss retains regional active skills")
     check(a.active().turn_serial==1,"first actor turn starts exactly once")
+ var wrap=study.prepare_battle(study.case_matrix(true)[0])
+ var authoritative=JSON.stringify([wrap.actors,wrap.order,wrap.order_index,wrap.round_no,wrap.preparing])
+ var rollover=wrap.auto_snapshot()
+ check(not rollover.preparing,"snapshot preserves completed preparation state")
+ rollover.order_index=rollover.order.size()-1;rollover.active().ap=2
+ var next_id=rollover.actors[rollover.order[0]].id
+ var prior_serial=int(rollover.find_actor(next_id).get("turn_serial",0))
+ var prior_round=rollover.round_no
+ check(rollover.rest("hp"),"snapshot last actor can spend its final AP")
+ check(rollover.round_no==prior_round+1 and rollover.order_index==0,"snapshot round boundary rebuilds initiative")
+ check(rollover.active().id==next_id and int(rollover.active().get("turn_serial",0))==prior_serial+1,"snapshot round boundary starts the next actor turn")
+ check(authoritative==JSON.stringify([wrap.actors,wrap.order,wrap.order_index,wrap.round_no,wrap.preparing]),"snapshot round rollover does not mutate authoritative battle")
  for case in study.case_matrix(true):
   var row=study.battle(case)
   check(row.invalid_actions==0 and row.stalls==0 and study.completed(row.outcome),"legal completed "+case.policy+" battle")

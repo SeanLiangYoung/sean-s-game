@@ -23,6 +23,10 @@ const OWNERS={"blood":"blade","hunt":"ranger","ward":"hero","arcane":"hero","eng
 # setup is complete, so the first actor's regen/barriers/CD trigger exactly once.
 class StudyRules extends Rules:
  var preparing=true
+ func auto_snapshot():
+  var copy=super.auto_snapshot()
+  copy.preparing=preparing
+  return copy
  func rebuild_order():
   if not preparing:super.rebuild_order()
 func _initialize():call_deferred("run")

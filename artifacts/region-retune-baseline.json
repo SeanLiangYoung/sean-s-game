@@ -2,7 +2,7 @@
   "changed_sources": [],
   "completed_cases": 768,
   "core_policy": "fixed identities; same legal 300XP-per-actor training budget and seven low-tier items (210 silver); dodge warnings without moving back; control pending ruins overload; support/cleanse/heal/mana, mark/trap, exact-damage safe hits, deterministic approach, paid rest; all AP/MP costs and relic drawbacks use real rules",
-  "elapsed_seconds": 217.331934928894,
+  "elapsed_seconds": 431.938513040543,
   "expected_cases": 768,
   "focus_policy": "Mix.step: real identity talents, support/cleanse/guard/one mark per action/trap/real damage and retreat rules, equal 360XP budget and 330 silver gear",
   "holdout": false,
@@ -22326,6 +22326,7 @@
       "dead": [],
       "deaths": 0,
       "enemy_skills": {
+        "哨声指认": 1,
         "架盾固守": 1,
         "督军破阵箭": 1
       },
@@ -71098,11 +71099,10 @@
     },
     {
       "actions": {
-        "approach": 6,
+        "approach": 5,
         "enemy": 5,
         "mark": 1,
-        "rest": 1,
-        "skill": 8
+        "skill": 7
       },
       "affix": "reach",
       "affix_slot": 0,
@@ -71113,9 +71113,7 @@
       "cohort": "core",
       "dead": [],
       "deaths": 0,
-      "enemy_skills": {
-        "林间钉射": 1
-      },
+      "enemy_skills": {},
       "equipment": [
         {
           "id": "sword",
@@ -71148,7 +71146,7 @@
       ],
       "gear_silver": 210,
       "healing_observed": 0,
-      "hp": 303,
+      "hp": 300,
       "initial_enemies": [
         {
           "affix": "reach",
@@ -71664,8 +71662,8 @@
         "(-3, 2)",
         "(-2, 3)"
       ],
-      "mp": 80,
-      "other_damage": 9,
+      "mp": 85,
+      "other_damage": 12,
       "outcome": "victory",
       "phase2_reached": false,
       "profile": "balanced",
@@ -71892,7 +71890,7 @@
         }
       ],
       "region": "wood",
-      "relic_trigger_events": 18,
+      "relic_trigger_events": 15,
       "relics": [
         {
           "id": "ward_1",
@@ -71924,16 +71922,15 @@
       "seed": 21,
       "skills": {
         "blade_feint": 1,
-        "dash": 1,
+        "dash": 2,
         "engineer_shot": 1,
-        "hero_sunder": 2,
+        "hero_sunder": 1,
         "mark": 1,
         "medic_purge": 1,
-        "ranger_pin": 1,
         "ranger_volley": 1
       },
       "stalls": 0,
-      "steps": 21,
+      "steps": 18,
       "threat": "normal",
       "win": true,
       "xp_budget_per_actor": 300
@@ -81911,15 +81908,15 @@
     },
     {
       "actions": {
-        "approach": 6,
-        "attack": 1,
+        "approach": 7,
+        "attack": 2,
         "cleanse": 1,
         "dodge": 1,
-        "enemy": 15,
+        "enemy": 14,
         "heal": 1,
         "mana_support": 1,
         "mark": 1,
-        "rest": 8,
+        "rest": 7,
         "skill": 9,
         "trap": 1
       },
@@ -81967,8 +81964,8 @@
         }
       ],
       "gear_silver": 210,
-      "healing_observed": 43,
-      "hp": 307,
+      "healing_observed": 49,
+      "hp": 300,
       "initial_enemies": [
         {
           "affix": "iron",
@@ -82459,7 +82456,7 @@
         "(2, -3)"
       ],
       "mp": 63,
-      "other_damage": 48,
+      "other_damage": 61,
       "outcome": "victory",
       "phase2_reached": true,
       "profile": "balanced",
@@ -82717,18 +82714,17 @@
       "rounds": 3,
       "seed": 21,
       "skills": {
-        "blade_sweep": 1,
-        "bomb": 1,
         "cleanse": 1,
-        "dash": 1,
+        "dash": 2,
+        "engineer_shot": 1,
         "heal": 1,
-        "hero_sunder": 1,
+        "hero_sunder": 2,
         "mark": 1,
         "medic_channel": 1,
         "medic_purge": 1,
         "ranger_volley": 1,
         "sniper": 1,
-        "strike": 2,
+        "strike": 1,
         "trap": 1
       },
       "stalls": 0,
@@ -88554,13 +88550,13 @@
       "affix_slot": 3,
       "build": "ward",
       "captain": "default",
-      "captain_damage": 0,
+      "captain_damage": 10,
       "cleanses": 0,
       "cohort": "core",
       "dead": [],
       "deaths": 0,
       "enemy_skills": {
-        "林间钉射": 2,
+        "林间钉射": 1,
         "树心回生": 1,
         "荆棘穿刺": 1
       },
@@ -88595,8 +88591,8 @@
         }
       ],
       "gear_silver": 210,
-      "healing_observed": 68,
-      "hp": 219,
+      "healing_observed": 79,
+      "hp": 229,
       "initial_enemies": [
         {
           "ap": 4,
@@ -89086,8 +89082,8 @@
         "(0, -3)",
         "(2, -3)"
       ],
-      "mp": 20,
-      "other_damage": 34,
+      "mp": 17,
+      "other_damage": 25,
       "outcome": "victory",
       "phase2_reached": true,
       "profile": "balanced",
@@ -138223,11 +138219,10 @@
     },
     {
       "actions": {
-        "approach": 6,
-        "enemy": 8,
-        "mana_support": 1,
+        "approach": 4,
+        "enemy": 6,
         "mark": 1,
-        "rest": 5,
+        "rest": 2,
         "skill": 7,
         "trap": 1
       },
@@ -138763,7 +138758,7 @@
         "(-2, -1)",
         "(-1, -1)"
       ],
-      "mp": 96,
+      "mp": 73,
       "other_damage": 0,
       "outcome": "victory",
       "phase2_reached": true,
@@ -138991,7 +138986,7 @@
         }
       ],
       "region": "waste",
-      "relic_trigger_events": 20,
+      "relic_trigger_events": 18,
       "relics": [
         {
           "id": "ward_1",
@@ -139019,21 +139014,21 @@
         }
       ],
       "resource": "full",
-      "rounds": 3,
+      "rounds": 2,
       "seed": 21,
       "skills": {
         "blade_hunt": 1,
-        "dash": 2,
+        "dash": 1,
+        "hero_burst": 1,
         "hero_sunder": 1,
         "mark": 1,
-        "medic_channel": 1,
         "medic_purge": 1,
-        "ranger_pin": 1,
         "ranger_volley": 1,
+        "sniper": 1,
         "trap": 1
       },
       "stalls": 0,
-      "steps": 29,
+      "steps": 21,
       "threat": "boss",
       "win": true,
       "xp_budget_per_actor": 300
@@ -158902,7 +158897,7 @@
       "affix_slot": 3,
       "build": "pilgrim",
       "captain": "default",
-      "captain_damage": 155,
+      "captain_damage": 149,
       "cleanses": 0,
       "cohort": "core",
       "dead": [
@@ -158945,8 +158940,8 @@
         }
       ],
       "gear_silver": 210,
-      "healing_observed": 248,
-      "hp": 112,
+      "healing_observed": 252,
+      "hp": 110,
       "initial_enemies": [
         {
           "ap": 4,
@@ -159456,7 +159451,7 @@
         "(-1, 3)"
       ],
       "mp": 9,
-      "other_damage": 170,
+      "other_damage": 182,
       "outcome": "victory",
       "phase2_reached": false,
       "profile": "balanced",
@@ -220860,7 +220855,7 @@
       "actions": {
         "approach": 8,
         "attack": 10,
-        "enemy": 19,
+        "enemy": 20,
         "heal": 2,
         "mana_support": 1,
         "mark": 2,
@@ -220916,7 +220911,7 @@
       ],
       "gear_silver": 210,
       "healing_observed": 50,
-      "hp": 188,
+      "hp": 201,
       "initial_enemies": [
         {
           "ap": 4,
@@ -221411,7 +221406,7 @@
         "(0, -3)"
       ],
       "mp": 16,
-      "other_damage": 47,
+      "other_damage": 34,
       "outcome": "victory",
       "phase2_reached": true,
       "profile": "balanced",
@@ -221679,7 +221674,7 @@
         "trap": 1
       },
       "stalls": 0,
-      "steps": 50,
+      "steps": 51,
       "threat": "boss",
       "win": true,
       "xp_budget_per_actor": 300
@@ -246605,12 +246600,12 @@
       "actions": {
         "approach": 6,
         "attack": 1,
-        "enemy": 26,
+        "enemy": 27,
         "mana_support": 2,
         "mark": 1,
-        "rest": 11,
+        "rest": 10,
         "shield": 1,
-        "skill": 10,
+        "skill": 11,
         "trap": 1
       },
       "affix": "reach",
@@ -246656,8 +246651,8 @@
         }
       ],
       "gear_silver": 210,
-      "healing_observed": 21,
-      "hp": 290,
+      "healing_observed": 18,
+      "hp": 291,
       "initial_enemies": [
         {
           "affix": "reach",
@@ -247171,8 +247166,8 @@
         "(1, 1)",
         "(-1, -2)"
       ],
-      "mp": 72,
-      "other_damage": 32,
+      "mp": 69,
+      "other_damage": 28,
       "outcome": "victory",
       "phase2_reached": false,
       "profile": "balanced",
@@ -247399,7 +247394,7 @@
         }
       ],
       "region": "frost",
-      "relic_trigger_events": 17,
+      "relic_trigger_events": 16,
       "relics": [
         {
           "id": "blood_1",
@@ -247431,22 +247426,20 @@
       "seed": 42,
       "skills": {
         "blade_hunt": 1,
-        "blade_sweep": 1,
+        "bomb": 1,
         "cleanse": 1,
-        "dash": 1,
-        "engineer_shot": 1,
-        "hero_burst": 1,
+        "dash": 3,
         "hero_sunder": 1,
         "mark": 1,
         "medic_channel": 2,
         "medic_purge": 1,
         "ranger_volley": 1,
         "sniper": 1,
-        "strike": 1,
+        "strike": 2,
         "trap": 1
       },
       "stalls": 0,
-      "steps": 59,
+      "steps": 60,
       "threat": "normal",
       "win": true,
       "xp_budget_per_actor": 300
@@ -263166,20 +263159,20 @@
     {
       "actions": {
         "approach": 8,
-        "attack": 16,
+        "attack": 10,
         "enemy": 31,
-        "heal": 3,
+        "heal": 4,
         "mana_support": 1,
         "mark": 2,
-        "rest": 14,
-        "skill": 3,
+        "rest": 17,
+        "skill": 5,
         "trap": 1
       },
       "affix": "mending",
       "affix_slot": 3,
       "build": "cross_blood_ward",
       "captain": "default",
-      "captain_damage": 43,
+      "captain_damage": 27,
       "cleanses": 0,
       "cohort": "core",
       "dead": [
@@ -263187,7 +263180,7 @@
       ],
       "deaths": 1,
       "enemy_skills": {
-        "霜甲覆身": 2
+        "霜甲覆身": 3
       },
       "equipment": [
         {
@@ -263220,8 +263213,8 @@
         }
       ],
       "gear_silver": 210,
-      "healing_observed": 128,
-      "hp": 193,
+      "healing_observed": 146,
+      "hp": 231,
       "initial_enemies": [
         {
           "ap": 4,
@@ -263735,8 +263728,8 @@
         "(1, 1)",
         "(-1, -2)"
       ],
-      "mp": 33,
-      "other_damage": 77,
+      "mp": 14,
+      "other_damage": 73,
       "outcome": "victory",
       "phase2_reached": false,
       "profile": "balanced",
@@ -263963,7 +263956,7 @@
         }
       ],
       "region": "frost",
-      "relic_trigger_events": 25,
+      "relic_trigger_events": 23,
       "relics": [
         {
           "id": "blood_1",
@@ -263991,14 +263984,16 @@
         }
       ],
       "resource": "depleted",
-      "rounds": 6,
+      "rounds": 5,
       "seed": 42,
       "skills": {
         "blade_hunt": 1,
+        "bomb": 1,
         "heal": 2,
+        "hero_sunder": 1,
         "mark": 2,
         "medic_channel": 1,
-        "medic_mend": 1,
+        "medic_mend": 2,
         "sniper": 1,
         "strike": 1,
         "trap": 1
@@ -270600,11 +270595,10 @@
     },
     {
       "actions": {
-        "approach": 7,
+        "approach": 4,
         "enemy": 6,
-        "mana_support": 1,
         "mark": 1,
-        "rest": 4,
+        "rest": 2,
         "skill": 7,
         "trap": 1
       },
@@ -271141,7 +271135,7 @@
         "(-2, 3)",
         "(0, -3)"
       ],
-      "mp": 95,
+      "mp": 76,
       "other_damage": 0,
       "outcome": "victory",
       "phase2_reached": true,
@@ -271369,7 +271363,7 @@
         }
       ],
       "region": "marsh",
-      "relic_trigger_events": 20,
+      "relic_trigger_events": 17,
       "relics": [
         {
           "id": "ward_1",
@@ -271397,21 +271391,21 @@
         }
       ],
       "resource": "full",
-      "rounds": 3,
+      "rounds": 2,
       "seed": 21,
       "skills": {
         "blade_hunt": 1,
-        "dash": 2,
+        "dash": 1,
         "hero_sunder": 1,
         "mark": 1,
-        "medic_channel": 1,
         "medic_purge": 1,
-        "ranger_pin": 1,
         "ranger_volley": 1,
+        "sniper": 1,
+        "strike": 1,
         "trap": 1
       },
       "stalls": 0,
-      "steps": 27,
+      "steps": 21,
       "threat": "boss",
       "win": true,
       "xp_budget_per_actor": 300
@@ -353764,8 +353758,8 @@
     {
       "actions": {
         "approach": 9,
-        "attack": 9,
-        "enemy": 20,
+        "attack": 10,
+        "enemy": 21,
         "heal": 2,
         "mana_support": 1,
         "mark": 2,
@@ -353777,7 +353771,7 @@
       "affix_slot": 3,
       "build": "ward",
       "captain": "default",
-      "captain_damage": 13,
+      "captain_damage": 0,
       "cleanses": 0,
       "cohort": "core",
       "dead": [],
@@ -353818,7 +353812,7 @@
       ],
       "gear_silver": 210,
       "healing_observed": 50,
-      "hp": 222,
+      "hp": 235,
       "initial_enemies": [
         {
           "ap": 4,
@@ -354323,7 +354317,7 @@
         "(0, -3)",
         "(2, -3)"
       ],
-      "mp": 22,
+      "mp": 25,
       "other_damage": 0,
       "outcome": "victory",
       "phase2_reached": true,
@@ -354551,7 +354545,7 @@
         }
       ],
       "region": "ruins",
-      "relic_trigger_events": 27,
+      "relic_trigger_events": 29,
       "relics": [
         {
           "id": "ward_1",
@@ -354592,7 +354586,7 @@
         "trap": 1
       },
       "stalls": 0,
-      "steps": 54,
+      "steps": 56,
       "threat": "boss",
       "win": true,
       "xp_budget_per_actor": 300
@@ -440854,7 +440848,7 @@
     },
     {
       "actions": {
-        "focus_policy": 51
+        "focus_policy": 63
       },
       "affix": "reach",
       "affix_slot": 0,
@@ -440868,14 +440862,14 @@
       ],
       "deaths": 1,
       "enemy_skills": {
-        "林间钉射": 1,
+        "林间钉射": 3,
         "棘影突袭": 1,
-        "荆棘穿刺": 1
+        "荆棘穿刺": 2
       },
       "equipment": "same eleven low-tier items: one weapon and leather per actor, captain shield",
       "gear_silver": 330,
-      "healing_observed": 83,
-      "hp": 214,
+      "healing_observed": 152,
+      "hp": 250,
       "initial_enemies": [
         {
           "affix": "reach",
@@ -441366,8 +441360,8 @@
         "(-2, -1)",
         "(0, -3)"
       ],
-      "mp": 66,
-      "other_damage": 59,
+      "mp": 55,
+      "other_damage": 92,
       "outcome": "victory",
       "phase2_reached": true,
       "profile": "balanced",
@@ -441601,7 +441595,7 @@
         }
       ],
       "region": "wood",
-      "relic_trigger_events": 13,
+      "relic_trigger_events": 17,
       "relics": [
         {
           "id": "arcane_1",
@@ -441629,23 +441623,25 @@
         }
       ],
       "resource": "depleted",
-      "rounds": 3,
+      "rounds": 4,
       "seed": 73,
       "skills": {
         "blade_sweep": 1,
-        "bomb": 1,
         "dash": 1,
+        "engineer_pulse": 1,
         "engineer_shot": 1,
-        "heal": 1,
+        "heal": 3,
         "hero_heal": 1,
-        "hero_rally": 2,
-        "mark": 1,
+        "hero_rally": 3,
+        "mark": 2,
         "medic_channel": 3,
+        "ranger_hunt": 1,
         "ranger_volley": 2,
-        "sniper": 1
+        "sniper": 1,
+        "trap": 1
       },
       "stalls": 0,
-      "steps": 51,
+      "steps": 63,
       "threat": "boss",
       "win": true,
       "xp_budget_per_actor": 360
@@ -453644,13 +453640,13 @@
     },
     {
       "actions": {
-        "focus_policy": 50
+        "focus_policy": 68
       },
       "affix": "mending",
       "affix_slot": 0,
       "build": "cross_arcane_pilgrim",
       "captain": "wen",
-      "captain_damage": 17,
+      "captain_damage": 23,
       "cleanses": 0,
       "cohort": "focus",
       "dead": [
@@ -453658,14 +453654,14 @@
       ],
       "deaths": 1,
       "enemy_skills": {
-        "林间钉射": 2,
+        "林间钉射": 3,
         "棘影突袭": 1,
-        "荆棘穿刺": 1
+        "荆棘穿刺": 2
       },
       "equipment": "same eleven low-tier items: one weapon and leather per actor, captain shield",
       "gear_silver": 330,
-      "healing_observed": 82,
-      "hp": 232,
+      "healing_observed": 143,
+      "hp": 252,
       "initial_enemies": [
         {
           "affix": "mending",
@@ -454156,8 +454152,8 @@
         "(-2, -1)",
         "(0, -3)"
       ],
-      "mp": 61,
-      "other_damage": 53,
+      "mp": 58,
+      "other_damage": 88,
       "outcome": "victory",
       "phase2_reached": true,
       "profile": "balanced",
@@ -454391,7 +454387,7 @@
         }
       ],
       "region": "wood",
-      "relic_trigger_events": 13,
+      "relic_trigger_events": 17,
       "relics": [
         {
           "id": "arcane_1",
@@ -454419,24 +454415,25 @@
         }
       ],
       "resource": "depleted",
-      "rounds": 3,
+      "rounds": 5,
       "seed": 73,
       "skills": {
         "blade_sweep": 1,
         "bomb": 1,
         "dash": 1,
-        "engineer_shot": 1,
-        "heal": 1,
+        "engineer_pulse": 1,
+        "heal": 2,
         "hero_heal": 1,
-        "hero_rally": 2,
-        "mark": 1,
-        "medic_channel": 3,
-        "ranger_expose": 1,
+        "hero_rally": 3,
+        "mark": 3,
+        "medic_channel": 4,
+        "ranger_pin": 2,
         "ranger_volley": 2,
-        "sniper": 1
+        "sniper": 1,
+        "trap": 1
       },
       "stalls": 0,
-      "steps": 50,
+      "steps": 68,
       "threat": "boss",
       "win": true,
       "xp_budget_per_actor": 360
@@ -518267,7 +518264,7 @@
     },
     {
       "actions": {
-        "focus_policy": 70
+        "focus_policy": 75
       },
       "affix": "reach",
       "affix_slot": 3,
@@ -518279,11 +518276,11 @@
       "dead": [],
       "deaths": 0,
       "enemy_skills": {
-        "冰锋裁断": 1
+        "冰锋裁断": 2
       },
       "equipment": "same eleven low-tier items: one weapon and leather per actor, captain shield",
       "gear_silver": 330,
-      "healing_observed": 140,
+      "healing_observed": 154,
       "hp": 268,
       "initial_enemies": [
         {
@@ -518779,8 +518776,8 @@
         "(-2, 2)",
         "(-2, -1)"
       ],
-      "mp": 21,
-      "other_damage": 50,
+      "mp": 11,
+      "other_damage": 64,
       "outcome": "victory",
       "phase2_reached": true,
       "profile": "balanced",
@@ -519014,7 +519011,7 @@
         }
       ],
       "region": "frost",
-      "relic_trigger_events": 3,
+      "relic_trigger_events": 5,
       "relics": [
         {
           "id": "blood_1",
@@ -519045,31 +519042,33 @@
       "rounds": 5,
       "seed": 73,
       "skills": {
+        "blade_hunt": 1,
         "dash": 2,
+        "engineer_pulse": 1,
         "engineer_shot": 1,
-        "heal": 1,
-        "hero_heal": 2,
-        "mark": 3,
-        "medic_channel": 3,
+        "heal": 2,
+        "hero_heal": 1,
+        "hero_rally": 1,
+        "mark": 4,
+        "medic_channel": 2,
         "ranger_pin": 1,
-        "sniper": 1,
-        "trap": 1
+        "sniper": 1
       },
       "stalls": 0,
-      "steps": 70,
+      "steps": 75,
       "threat": "boss",
       "win": true,
       "xp_budget_per_actor": 360
     },
     {
       "actions": {
-        "focus_policy": 61
+        "focus_policy": 53
       },
       "affix": "mending",
       "affix_slot": 0,
       "build": "ward",
       "captain": "shen",
-      "captain_damage": 25,
+      "captain_damage": 13,
       "cleanses": 0,
       "cohort": "focus",
       "dead": [],
@@ -519081,7 +519080,7 @@
       "equipment": "same eleven low-tier items: one weapon and leather per actor, captain shield",
       "gear_silver": 330,
       "healing_observed": 45,
-      "hp": 236,
+      "hp": 248,
       "initial_enemies": [
         {
           "affix": "mending",
@@ -519581,7 +519580,7 @@
         "(-2, 2)",
         "(-2, -1)"
       ],
-      "mp": 18,
+      "mp": 29,
       "other_damage": 0,
       "outcome": "victory",
       "phase2_reached": true,
@@ -519816,7 +519815,7 @@
         }
       ],
       "region": "frost",
-      "relic_trigger_events": 30,
+      "relic_trigger_events": 26,
       "relics": [
         {
           "id": "ward_1",
@@ -519844,10 +519843,9 @@
         }
       ],
       "resource": "depleted",
-      "rounds": 4,
+      "rounds": 3,
       "seed": 73,
       "skills": {
-        "blade_hunt": 1,
         "dash": 1,
         "engineer_shot": 1,
         "heal": 1,
@@ -519855,12 +519853,10 @@
         "mark": 3,
         "medic_channel": 3,
         "ranger_expose": 1,
-        "ranger_hunt": 1,
-        "ranger_volley": 1,
-        "trap": 1
+        "ranger_volley": 2
       },
       "stalls": 0,
-      "steps": 61,
+      "steps": 53,
       "threat": "boss",
       "win": true,
       "xp_budget_per_actor": 360
@@ -521190,7 +521186,7 @@
         "(-2, 2)",
         "(-2, -1)"
       ],
-      "mp": 81,
+      "mp": 75,
       "other_damage": 63,
       "outcome": "victory",
       "phase2_reached": true,
@@ -521425,7 +521421,7 @@
         }
       ],
       "region": "frost",
-      "relic_trigger_events": 11,
+      "relic_trigger_events": 10,
       "relics": [
         {
           "id": "arcane_1",
@@ -521458,7 +521454,7 @@
       "skills": {
         "bash": 1,
         "blade_feint": 1,
-        "dash": 3,
+        "dash": 4,
         "hero_heal": 2,
         "hero_rally": 2,
         "mark": 1,
@@ -521466,7 +521462,6 @@
         "medic_purge": 1,
         "ranger_expose": 1,
         "ranger_hunt": 1,
-        "ranger_pin": 1,
         "ranger_volley": 1,
         "sniper": 1,
         "warden_ward": 2
@@ -529500,13 +529495,13 @@
     },
     {
       "actions": {
-        "focus_policy": 99
+        "focus_policy": 104
       },
       "affix": "swift",
       "affix_slot": 3,
       "build": "cross_blood_ward",
       "captain": "wen",
-      "captain_damage": 61,
+      "captain_damage": 71,
       "cleanses": 0,
       "cohort": "focus",
       "dead": [
@@ -529518,8 +529513,8 @@
       },
       "equipment": "same eleven low-tier items: one weapon and leather per actor, captain shield",
       "gear_silver": 330,
-      "healing_observed": 192,
-      "hp": 232,
+      "healing_observed": 194,
+      "hp": 212,
       "initial_enemies": [
         {
           "ap": 4,
@@ -530019,8 +530014,8 @@
         "(-2, 2)",
         "(-2, -1)"
       ],
-      "mp": 16,
-      "other_damage": 115,
+      "mp": 13,
+      "other_damage": 127,
       "outcome": "victory",
       "phase2_reached": true,
       "profile": "balanced",
@@ -530292,7 +530287,7 @@
         "heal": 1,
         "hero_heal": 3,
         "hero_rally": 3,
-        "mark": 4,
+        "mark": 5,
         "medic_channel": 5,
         "medic_purge": 1,
         "ranger_pin": 1,
@@ -530300,7 +530295,7 @@
         "trap": 1
       },
       "stalls": 0,
-      "steps": 99,
+      "steps": 104,
       "threat": "boss",
       "win": true,
       "xp_budget_per_actor": 360
@@ -531106,13 +531101,13 @@
     },
     {
       "actions": {
-        "focus_policy": 62
+        "focus_policy": 68
       },
       "affix": "mending",
       "affix_slot": 3,
       "build": "blood",
       "captain": "wen",
-      "captain_damage": 38,
+      "captain_damage": 53,
       "cleanses": 0,
       "cohort": "focus",
       "dead": [],
@@ -531122,8 +531117,8 @@
       },
       "equipment": "same eleven low-tier items: one weapon and leather per actor, captain shield",
       "gear_silver": 330,
-      "healing_observed": 142,
-      "hp": 270,
+      "healing_observed": 144,
+      "hp": 257,
       "initial_enemies": [
         {
           "ap": 4,
@@ -531618,7 +531613,7 @@
         "(-2, 2)",
         "(-2, -1)"
       ],
-      "mp": 12,
+      "mp": 13,
       "other_damage": 50,
       "outcome": "victory",
       "phase2_reached": true,
@@ -531881,47 +531876,47 @@
         }
       ],
       "resource": "depleted",
-      "rounds": 4,
+      "rounds": 5,
       "seed": 73,
       "skills": {
-        "blade_hunt": 1,
         "dash": 1,
-        "engineer_shot": 1,
-        "heal": 1,
-        "hero_heal": 2,
-        "mark": 3,
-        "medic_channel": 3,
+        "engineer_shot": 2,
+        "execute": 1,
+        "heal": 2,
+        "hero_heal": 1,
+        "hero_rally": 1,
+        "mark": 4,
+        "medic_channel": 2,
         "ranger_pin": 1,
-        "sniper": 1,
-        "trap": 1
+        "sniper": 1
       },
       "stalls": 0,
-      "steps": 62,
+      "steps": 68,
       "threat": "boss",
       "win": true,
       "xp_budget_per_actor": 360
     },
     {
       "actions": {
-        "focus_policy": 65
+        "focus_policy": 60
       },
       "affix": "warded",
       "affix_slot": 0,
       "build": "ward",
       "captain": "wen",
-      "captain_damage": 16,
+      "captain_damage": 0,
       "cleanses": 0,
       "cohort": "focus",
       "dead": [],
       "deaths": 0,
       "enemy_skills": {
         "冰锋裁断": 1,
-        "霜甲覆身": 1
+        "霜甲覆身": 2
       },
       "equipment": "same eleven low-tier items: one weapon and leather per actor, captain shield",
       "gear_silver": 330,
       "healing_observed": 39,
-      "hp": 227,
+      "hp": 231,
       "initial_enemies": [
         {
           "affix": "warded",
@@ -532426,8 +532421,8 @@
         "(-2, 2)",
         "(-2, -1)"
       ],
-      "mp": 15,
-      "other_damage": 12,
+      "mp": 21,
+      "other_damage": 24,
       "outcome": "victory",
       "phase2_reached": true,
       "profile": "balanced",
@@ -532661,7 +532656,7 @@
         }
       ],
       "region": "frost",
-      "relic_trigger_events": 30,
+      "relic_trigger_events": 26,
       "relics": [
         {
           "id": "ward_1",
@@ -532692,18 +532687,19 @@
       "rounds": 4,
       "seed": 73,
       "skills": {
+        "blade_hunt": 1,
         "dash": 2,
         "engineer_pulse": 1,
         "hero_heal": 1,
-        "mark": 4,
+        "mark": 3,
         "medic_channel": 3,
         "medic_purge": 1,
-        "ranger_pin": 2,
+        "ranger_pin": 1,
         "ranger_volley": 1,
         "trap": 1
       },
       "stalls": 0,
-      "steps": 65,
+      "steps": 60,
       "threat": "boss",
       "win": true,
       "xp_budget_per_actor": 360
@@ -534027,7 +534023,7 @@
         "(-2, 2)",
         "(-2, -1)"
       ],
-      "mp": 87,
+      "mp": 81,
       "other_damage": 63,
       "outcome": "victory",
       "phase2_reached": true,
@@ -534262,7 +534258,7 @@
         }
       ],
       "region": "frost",
-      "relic_trigger_events": 11,
+      "relic_trigger_events": 10,
       "relics": [
         {
           "id": "arcane_1",
@@ -534294,7 +534290,7 @@
       "seed": 73,
       "skills": {
         "blade_feint": 1,
-        "dash": 3,
+        "dash": 4,
         "hero_heal": 2,
         "hero_rally": 2,
         "mark": 1,
@@ -534302,7 +534298,6 @@
         "medic_purge": 1,
         "ranger_expose": 1,
         "ranger_hunt": 1,
-        "ranger_pin": 1,
         "ranger_volley": 1,
         "sniper": 1,
         "warden_ward": 2
@@ -539124,7 +539119,7 @@
     },
     {
       "actions": {
-        "focus_policy": 60
+        "focus_policy": 53
       },
       "affix": "reach",
       "affix_slot": 0,
@@ -539140,8 +539135,8 @@
       },
       "equipment": "same eleven low-tier items: one weapon and leather per actor, captain shield",
       "gear_silver": 330,
-      "healing_observed": 48,
-      "hp": 258,
+      "healing_observed": 65,
+      "hp": 291,
       "initial_enemies": [
         {
           "affix": "reach",
@@ -539641,8 +539636,8 @@
         "(-2, 2)",
         "(-2, -1)"
       ],
-      "mp": 71,
-      "other_damage": 102,
+      "mp": 65,
+      "other_damage": 86,
       "outcome": "victory",
       "phase2_reached": true,
       "profile": "balanced",
@@ -539876,7 +539871,7 @@
         }
       ],
       "region": "frost",
-      "relic_trigger_events": 16,
+      "relic_trigger_events": 15,
       "relics": [
         {
           "id": "blood_1",
@@ -539907,20 +539902,19 @@
       "rounds": 4,
       "seed": 73,
       "skills": {
-        "dash": 2,
+        "dash": 3,
         "engineer_shot": 2,
         "execute": 1,
-        "heal": 1,
+        "heal": 2,
         "hero_rally": 2,
         "mark": 3,
-        "medic_channel": 2,
+        "medic_channel": 1,
         "ranger_expose": 1,
         "ranger_hunt": 2,
-        "ranger_volley": 1,
         "strike": 1
       },
       "stalls": 0,
-      "steps": 60,
+      "steps": 53,
       "threat": "boss",
       "win": true,
       "xp_budget_per_actor": 360
@@ -543942,13 +543936,13 @@
     },
     {
       "actions": {
-        "focus_policy": 62
+        "focus_policy": 68
       },
       "affix": "warded",
       "affix_slot": 3,
       "build": "blood",
       "captain": "lu",
-      "captain_damage": 38,
+      "captain_damage": 53,
       "cleanses": 0,
       "cohort": "focus",
       "dead": [],
@@ -543958,8 +543952,8 @@
       },
       "equipment": "same eleven low-tier items: one weapon and leather per actor, captain shield",
       "gear_silver": 330,
-      "healing_observed": 140,
-      "hp": 268,
+      "healing_observed": 144,
+      "hp": 257,
       "initial_enemies": [
         {
           "ap": 4,
@@ -544454,7 +544448,7 @@
         "(-2, 2)",
         "(-2, -1)"
       ],
-      "mp": 12,
+      "mp": 13,
       "other_damage": 50,
       "outcome": "victory",
       "phase2_reached": true,
@@ -544717,35 +544711,35 @@
         }
       ],
       "resource": "depleted",
-      "rounds": 4,
+      "rounds": 5,
       "seed": 73,
       "skills": {
-        "blade_hunt": 1,
         "dash": 1,
-        "engineer_shot": 1,
-        "heal": 1,
-        "hero_heal": 2,
-        "mark": 3,
-        "medic_channel": 3,
+        "engineer_shot": 2,
+        "execute": 1,
+        "heal": 2,
+        "hero_heal": 1,
+        "hero_rally": 1,
+        "mark": 4,
+        "medic_channel": 2,
         "ranger_pin": 1,
-        "sniper": 1,
-        "trap": 1
+        "sniper": 1
       },
       "stalls": 0,
-      "steps": 62,
+      "steps": 68,
       "threat": "boss",
       "win": true,
       "xp_budget_per_actor": 360
     },
     {
       "actions": {
-        "focus_policy": 61
+        "focus_policy": 55
       },
       "affix": "vigor",
       "affix_slot": 0,
       "build": "ward",
       "captain": "lu",
-      "captain_damage": 16,
+      "captain_damage": 0,
       "cleanses": 0,
       "cohort": "focus",
       "dead": [],
@@ -544757,7 +544751,7 @@
       "equipment": "same eleven low-tier items: one weapon and leather per actor, captain shield",
       "gear_silver": 330,
       "healing_observed": 39,
-      "hp": 239,
+      "hp": 255,
       "initial_enemies": [
         {
           "affix": "vigor",
@@ -545257,7 +545251,7 @@
         "(-2, 2)",
         "(-2, -1)"
       ],
-      "mp": 22,
+      "mp": 19,
       "other_damage": 0,
       "outcome": "victory",
       "phase2_reached": true,
@@ -545492,7 +545486,7 @@
         }
       ],
       "region": "frost",
-      "relic_trigger_events": 30,
+      "relic_trigger_events": 28,
       "relics": [
         {
           "id": "ward_1",
@@ -545523,19 +545517,19 @@
       "rounds": 4,
       "seed": 73,
       "skills": {
-        "dash": 2,
+        "dash": 3,
         "engineer_pulse": 1,
+        "engineer_shot": 1,
         "execute": 1,
         "hero_heal": 1,
         "mark": 3,
         "medic_channel": 3,
         "medic_purge": 1,
         "ranger_pin": 1,
-        "ranger_volley": 1,
-        "trap": 1
+        "ranger_volley": 1
       },
       "stalls": 0,
-      "steps": 61,
+      "steps": 55,
       "threat": "boss",
       "win": true,
       "xp_budget_per_actor": 360
@@ -546857,7 +546851,7 @@
         "(-2, 2)",
         "(-2, -1)"
       ],
-      "mp": 81,
+      "mp": 75,
       "other_damage": 63,
       "outcome": "victory",
       "phase2_reached": true,
@@ -547092,7 +547086,7 @@
         }
       ],
       "region": "frost",
-      "relic_trigger_events": 11,
+      "relic_trigger_events": 10,
       "relics": [
         {
           "id": "arcane_1",
@@ -547125,7 +547119,7 @@
       "skills": {
         "bash": 1,
         "blade_feint": 1,
-        "dash": 3,
+        "dash": 4,
         "hero_heal": 2,
         "hero_rally": 2,
         "mark": 1,
@@ -547133,7 +547127,6 @@
         "medic_purge": 1,
         "ranger_expose": 1,
         "ranger_hunt": 1,
-        "ranger_pin": 1,
         "ranger_volley": 1,
         "sniper": 1,
         "warden_ward": 2
@@ -567104,7 +567097,7 @@
     },
     {
       "actions": {
-        "focus_policy": 45
+        "focus_policy": 46
       },
       "affix": "iron",
       "affix_slot": 3,
@@ -567616,7 +567609,7 @@
         "(-2, 2)",
         "(-2, -1)"
       ],
-      "mp": 85,
+      "mp": 79,
       "other_damage": 0,
       "outcome": "victory",
       "phase2_reached": true,
@@ -567889,11 +567882,12 @@
         "mark": 1,
         "medic_channel": 1,
         "medic_purge": 1,
+        "ranger_expose": 1,
         "ranger_volley": 1,
         "sniper": 2
       },
       "stalls": 0,
-      "steps": 45,
+      "steps": 46,
       "threat": "boss",
       "win": true,
       "xp_budget_per_actor": 360
@@ -600817,7 +600811,7 @@
       "affix_slot": 0,
       "build": "cross_arcane_pilgrim",
       "captain": "shen",
-      "captain_damage": 78,
+      "captain_damage": 72,
       "cleanses": 1,
       "cohort": "focus",
       "dead": [
@@ -600830,8 +600824,8 @@
       },
       "equipment": "same eleven low-tier items: one weapon and leather per actor, captain shield",
       "gear_silver": 330,
-      "healing_observed": 301,
-      "hp": 216,
+      "healing_observed": 311,
+      "hp": 220,
       "initial_enemies": [
         {
           "affix": "warded",
@@ -601342,8 +601336,8 @@
         "(-2, -1)",
         "(0, -3)"
       ],
-      "mp": 66,
-      "other_damage": 247,
+      "mp": 59,
+      "other_damage": 259,
       "outcome": "victory",
       "phase2_reached": true,
       "profile": "hunt_guard",
@@ -601611,8 +601605,8 @@
         "dash": 1,
         "guard": 3,
         "heal": 2,
-        "hero_heal": 3,
-        "hero_rally": 6,
+        "hero_heal": 4,
+        "hero_rally": 4,
         "mark": 5,
         "medic_channel": 8,
         "medic_purge": 4,
@@ -606498,7 +606492,7 @@
     },
     {
       "actions": {
-        "focus_policy": 87
+        "focus_policy": 92
       },
       "affix": "iron",
       "affix_slot": 3,
@@ -606508,18 +606502,17 @@
       "cleanses": 0,
       "cohort": "focus",
       "dead": [
-        "aling",
-        "ya"
+        "aling"
       ],
-      "deaths": 2,
+      "deaths": 1,
       "enemy_skills": {
         "应急屏障": 1,
         "汲星射线": 1
       },
       "equipment": "same eleven low-tier items: one weapon and leather per actor, captain shield",
       "gear_silver": 330,
-      "healing_observed": 136,
-      "hp": 198,
+      "healing_observed": 142,
+      "hp": 250,
       "initial_enemies": [
         {
           "ap": 4,
@@ -607031,7 +607024,7 @@
         "(0, -3)"
       ],
       "mp": 10,
-      "other_damage": 134,
+      "other_damage": 88,
       "outcome": "victory",
       "phase2_reached": true,
       "profile": "balanced",
@@ -607265,7 +607258,7 @@
         }
       ],
       "region": "ruins",
-      "relic_trigger_events": 22,
+      "relic_trigger_events": 23,
       "relics": [
         {
           "id": "blood_1",
@@ -607306,11 +607299,11 @@
         "mark": 3,
         "medic_channel": 3,
         "medic_purge": 1,
-        "ranger_pin": 1,
+        "ranger_pin": 2,
         "sniper": 1
       },
       "stalls": 0,
-      "steps": 87,
+      "steps": 92,
       "threat": "boss",
       "win": true,
       "xp_budget_per_actor": 360
@@ -613011,7 +613004,7 @@
     },
     {
       "actions": {
-        "focus_policy": 76
+        "focus_policy": 86
       },
       "affix": "warded",
       "affix_slot": 3,
@@ -613024,13 +613017,11 @@
         "pei"
       ],
       "deaths": 1,
-      "enemy_skills": {
-        "星核修复": 1
-      },
+      "enemy_skills": {},
       "equipment": "same eleven low-tier items: one weapon and leather per actor, captain shield",
       "gear_silver": 330,
-      "healing_observed": 136,
-      "hp": 234,
+      "healing_observed": 157,
+      "hp": 219,
       "initial_enemies": [
         {
           "ap": 4,
@@ -613541,8 +613532,8 @@
         "(-2, -1)",
         "(0, -3)"
       ],
-      "mp": 20,
-      "other_damage": 138,
+      "mp": 30,
+      "other_damage": 174,
       "outcome": "victory",
       "phase2_reached": true,
       "profile": "hunt_guard",
@@ -613776,7 +613767,7 @@
         }
       ],
       "region": "ruins",
-      "relic_trigger_events": 21,
+      "relic_trigger_events": 23,
       "relics": [
         {
           "id": "blood_1",
@@ -613812,16 +613803,17 @@
         "execute": 1,
         "heal": 2,
         "hero_heal": 1,
-        "hero_rally": 3,
+        "hero_rally": 4,
         "hero_sunder": 1,
-        "mark": 4,
-        "medic_channel": 4,
+        "mark": 3,
+        "medic_channel": 5,
         "medic_purge": 1,
-        "ranger_pin": 1,
-        "sniper": 2
+        "ranger_pin": 3,
+        "sniper": 1,
+        "warden_rescue": 1
       },
       "stalls": 0,
-      "steps": 76,
+      "steps": 86,
       "threat": "boss",
       "win": true,
       "xp_budget_per_actor": 360
@@ -620328,13 +620320,13 @@
     },
     {
       "actions": {
-        "focus_policy": 84
+        "focus_policy": 74
       },
       "affix": "reach",
       "affix_slot": 0,
       "build": "cross_arcane_pilgrim",
       "captain": "lu",
-      "captain_damage": 97,
+      "captain_damage": 112,
       "cleanses": 0,
       "cohort": "focus",
       "dead": [
@@ -620343,12 +620335,12 @@
       ],
       "deaths": 2,
       "enemy_skills": {
-        "汲星射线": 2
+        "汲星射线": 1
       },
       "equipment": "same eleven low-tier items: one weapon and leather per actor, captain shield",
       "gear_silver": 330,
-      "healing_observed": 183,
-      "hp": 192,
+      "healing_observed": 204,
+      "hp": 202,
       "initial_enemies": [
         {
           "affix": "reach",
@@ -620854,8 +620846,8 @@
         "(-2, -1)",
         "(0, -3)"
       ],
-      "mp": 58,
-      "other_damage": 114,
+      "mp": 61,
+      "other_damage": 110,
       "outcome": "victory",
       "phase2_reached": true,
       "profile": "balanced",
@@ -621089,7 +621081,7 @@
         }
       ],
       "region": "ruins",
-      "relic_trigger_events": 21,
+      "relic_trigger_events": 19,
       "relics": [
         {
           "id": "arcane_1",
@@ -621117,25 +621109,23 @@
         }
       ],
       "resource": "depleted",
-      "rounds": 7,
+      "rounds": 6,
       "seed": 73,
       "skills": {
+        "bomb": 1,
         "dash": 1,
-        "engineer_pulse": 1,
-        "engineer_shot": 3,
-        "heal": 2,
+        "engineer_shot": 4,
+        "heal": 3,
         "hero_heal": 3,
         "hero_rally": 3,
-        "hero_sunder": 1,
         "mark": 1,
         "medic_channel": 6,
         "medic_purge": 1,
         "ranger_pin": 1,
-        "ranger_volley": 1,
-        "trap": 1
+        "ranger_volley": 1
       },
       "stalls": 0,
-      "steps": 84,
+      "steps": 74,
       "threat": "boss",
       "win": true,
       "xp_budget_per_actor": 360
@@ -629305,8 +629295,8 @@
     "tools/relic_mix_simulation.gd": "3f9d87f4fef45d6a01d4ad850b83f20e7f307aa72c151b6ca56ddf01b0b2c78f",
     "tools/simulate_boss_balance.gd": "cffe5f4d2b36e4c829bfa66db75f42af6f422214f2b9a9ca543a04c119bafd3e",
     "tools/simulate_enemy_ai.gd": "4a50fd86c5b492bd61881b1c3225229337a0ac74a5de05dd9cc1e27f5cf51432",
-    "tools/simulate_enemy_coordination.gd": "dcfb03b095a9db29ce934cdff1505a132beccc0e156dfc2a0cfa634e66ce8649",
-    "tools/simulate_region_retune.gd": "d2ceaba0005376dd52a8805d58ab97f024fc6de68f77c2a7d279f3e70255eaac"
+    "tools/simulate_enemy_coordination.gd": "3f202403aca3bfccbaffde4197cb0b1fc4f06f881760fdc362a0e53f25f25855",
+    "tools/simulate_region_retune.gd": "7da99e054c0f263ce85af4b12f8e6ab9724ef59b37d0d8243dcd64c45c1b939b"
   },
   "stale": false,
   "stalls": 0,
@@ -629555,10 +629545,10 @@
       "cases": 4,
       "cleanses": 2,
       "deaths": 3,
-      "healing_observed": 433,
-      "hp": 801,
-      "mp": 91,
-      "rounds": 22,
+      "healing_observed": 451,
+      "hp": 839,
+      "mp": 72,
+      "rounds": 21,
       "wins": 4
     },
     "core/frost/depleted/dusk": {
@@ -629606,7 +629596,7 @@
       "cleanses": 0,
       "deaths": 3,
       "healing_observed": 264,
-      "hp": 819,
+      "hp": 832,
       "mp": 73,
       "rounds": 16,
       "wins": 3
@@ -629655,9 +629645,9 @@
       "cases": 4,
       "cleanses": 1,
       "deaths": 0,
-      "healing_observed": 190,
-      "hp": 1141,
-      "mp": 274,
+      "healing_observed": 187,
+      "hp": 1142,
+      "mp": 271,
       "rounds": 15,
       "wins": 4
     },
@@ -629907,8 +629897,8 @@
       "deaths": 0,
       "healing_observed": 0,
       "hp": 1221,
-      "mp": 320,
-      "rounds": 12,
+      "mp": 301,
+      "rounds": 11,
       "wins": 4
     },
     "core/ruins/depleted/arcane": {
@@ -630006,8 +629996,8 @@
       "cleanses": 0,
       "deaths": 0,
       "healing_observed": 293,
-      "hp": 942,
-      "mp": 69,
+      "hp": 955,
+      "mp": 72,
       "rounds": 16,
       "wins": 4
     },
@@ -630195,8 +630185,8 @@
       "cases": 4,
       "cleanses": 0,
       "deaths": 7,
-      "healing_observed": 479,
-      "hp": 674,
+      "healing_observed": 483,
+      "hp": 672,
       "mp": 107,
       "rounds": 15,
       "wins": 1
@@ -630307,8 +630297,8 @@
       "deaths": 0,
       "healing_observed": 0,
       "hp": 1218,
-      "mp": 346,
-      "rounds": 12,
+      "mp": 323,
+      "rounds": 11,
       "wins": 4
     },
     "core/wood/depleted/arcane": {
@@ -630405,9 +630395,9 @@
       "cases": 4,
       "cleanses": 0,
       "deaths": 2,
-      "healing_observed": 224,
-      "hp": 795,
-      "mp": 112,
+      "healing_observed": 235,
+      "hp": 805,
+      "mp": 109,
       "rounds": 11,
       "wins": 2
     },
@@ -630455,8 +630445,8 @@
       "cases": 4,
       "cleanses": 1,
       "deaths": 1,
-      "healing_observed": 114,
-      "hp": 1080,
+      "healing_observed": 120,
+      "hp": 1073,
       "mp": 264,
       "rounds": 15,
       "wins": 4
@@ -630506,8 +630496,8 @@
       "cleanses": 1,
       "deaths": 0,
       "healing_observed": 0,
-      "hp": 1162,
-      "mp": 338,
+      "hp": 1159,
+      "mp": 343,
       "rounds": 12,
       "wins": 4
     },
@@ -630595,10 +630585,10 @@
       "cases": 6,
       "cleanses": 0,
       "deaths": 0,
-      "healing_observed": 985,
-      "hp": 1689,
-      "mp": 107,
-      "rounds": 28,
+      "healing_observed": 1005,
+      "hp": 1665,
+      "mp": 99,
+      "rounds": 30,
       "wins": 6
     },
     "focus/frost/depleted/cross_arcane_pilgrim": {
@@ -630615,9 +630605,9 @@
       "cases": 6,
       "cleanses": 5,
       "deaths": 13,
-      "healing_observed": 1069,
-      "hp": 940,
-      "mp": 253,
+      "healing_observed": 1071,
+      "hp": 920,
+      "mp": 250,
       "rounds": 45,
       "wins": 5
     },
@@ -630626,9 +630616,9 @@
       "cleanses": 0,
       "deaths": 0,
       "healing_observed": 372,
-      "hp": 1564,
-      "mp": 139,
-      "rounds": 24,
+      "hp": 1596,
+      "mp": 153,
+      "rounds": 23,
       "wins": 6
     },
     "focus/frost/full/blood": {
@@ -630647,7 +630637,7 @@
       "deaths": 0,
       "healing_observed": 386,
       "hp": 1778,
-      "mp": 490,
+      "mp": 472,
       "rounds": 21,
       "wins": 6
     },
@@ -630655,9 +630645,9 @@
       "cases": 6,
       "cleanses": 0,
       "deaths": 0,
-      "healing_observed": 353,
-      "hp": 1808,
-      "mp": 398,
+      "healing_observed": 370,
+      "hp": 1841,
+      "mp": 392,
       "rounds": 25,
       "wins": 6
     },
@@ -630747,7 +630737,7 @@
       "deaths": 0,
       "healing_observed": 18,
       "hp": 1814,
-      "mp": 453,
+      "mp": 447,
       "rounds": 18,
       "wins": 6
     },
@@ -630765,19 +630755,19 @@
       "cases": 6,
       "cleanses": 2,
       "deaths": 9,
-      "healing_observed": 1210,
-      "hp": 1251,
-      "mp": 322,
-      "rounds": 37,
+      "healing_observed": 1241,
+      "hp": 1265,
+      "mp": 318,
+      "rounds": 36,
       "wins": 6
     },
     "focus/ruins/depleted/cross_blood_ward": {
       "cases": 6,
       "cleanses": 0,
-      "deaths": 8,
-      "healing_observed": 803,
-      "hp": 1353,
-      "mp": 125,
+      "deaths": 7,
+      "healing_observed": 830,
+      "hp": 1390,
+      "mp": 135,
       "rounds": 34,
       "wins": 6
     },
@@ -630925,10 +630915,10 @@
       "cases": 6,
       "cleanses": 0,
       "deaths": 6,
-      "healing_observed": 629,
-      "hp": 1440,
-      "mp": 413,
-      "rounds": 24,
+      "healing_observed": 759,
+      "hp": 1496,
+      "mp": 399,
+      "rounds": 27,
       "wins": 6
     },
     "focus/wood/depleted/cross_blood_ward": {

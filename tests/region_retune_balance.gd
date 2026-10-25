@@ -40,6 +40,18 @@ func run():
    var native=Study.prepare_battle(neutral_case).find_actor("enemy3")
    var expected=10+int(native.statuses.shield.bonus)
    check(10+int(enemies[3].statuses.shield.bonus)==expected+4,"native barrier and affix stack once")
+ var wrap=Study.prepare_battle(Study.case_matrix(true)[0])
+ var authoritative=JSON.stringify([wrap.actors,wrap.order,wrap.order_index,wrap.round_no,wrap.preparing])
+ var rollover=wrap.auto_snapshot()
+ check(not rollover.preparing,"snapshot preserves completed preparation state")
+ rollover.order_index=rollover.order.size()-1;rollover.active().ap=2
+ var next_id=rollover.actors[rollover.order[0]].id
+ var prior_serial=int(rollover.find_actor(next_id).get("turn_serial",0))
+ var prior_round=rollover.round_no
+ check(rollover.rest("hp"),"snapshot last actor can spend its final AP")
+ check(rollover.round_no==prior_round+1 and rollover.order_index==0,"snapshot round boundary rebuilds initiative")
+ check(rollover.active().id==next_id and int(rollover.active().get("turn_serial",0))==prior_serial+1,"snapshot round boundary starts the next actor turn")
+ check(authoritative==JSON.stringify([wrap.actors,wrap.order,wrap.order_index,wrap.round_no,wrap.preparing]),"snapshot round rollover does not mutate authoritative battle")
  var sample=Study.case_matrix(true)[0];var tracked=Study.prepare_battle(sample)
  var actor=tracked.active();tracked.find_actor("enemy0").cell=actor.cell+Vector2i(1,0)
  var hits=tracked.auto_hits().filter(func(choice):return choice.action=="skill")

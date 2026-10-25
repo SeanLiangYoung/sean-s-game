@@ -1,7 +1,7 @@
 {
   "changed_sources": [],
   "completed_cases": 240,
-  "elapsed_seconds": 293.94854092598,
+  "elapsed_seconds": 99.4529860019684,
   "expected_cases": 240,
   "holdout": true,
   "invalid_actions": 0,
@@ -2537,7 +2537,9 @@
       "cohort": "core",
       "dead": [],
       "deaths": 0,
-      "enemy_skills": {},
+      "enemy_skills": {
+        "督军破阵箭": 1
+      },
       "equipment": [
         {
           "id": "sword",
@@ -2569,8 +2571,8 @@
         }
       ],
       "gear_silver": 210,
-      "healing_observed": 12,
-      "hp": 312,
+      "healing_observed": 4,
+      "hp": 306,
       "initial_enemies": [
         {
           "affix": "reach",
@@ -3058,7 +3060,7 @@
         "(3, -1)"
       ],
       "mp": 77,
-      "other_damage": 12,
+      "other_damage": 10,
       "outcome": "victory",
       "phase2_reached": true,
       "profile": "balanced",
@@ -21713,7 +21715,7 @@
         "heal": 2,
         "mana_support": 2,
         "mark": 2,
-        "rest": 7,
+        "rest": 8,
         "skill": 8,
         "trap": 1
       },
@@ -21727,7 +21729,7 @@
       "dead": [],
       "deaths": 0,
       "enemy_skills": {
-        "林间钉射": 2
+        "林间钉射": 1
       },
       "equipment": [
         {
@@ -21760,7 +21762,7 @@
         }
       ],
       "gear_silver": 210,
-      "healing_observed": 76,
+      "healing_observed": 79,
       "hp": 296,
       "initial_enemies": [
         {
@@ -22253,7 +22255,7 @@
         "(0, 3)"
       ],
       "mp": 74,
-      "other_damage": 76,
+      "other_damage": 79,
       "outcome": "victory",
       "phase2_reached": true,
       "profile": "balanced",
@@ -22524,7 +22526,7 @@
         "trap": 1
       },
       "stalls": 0,
-      "steps": 54,
+      "steps": 55,
       "threat": "boss",
       "win": true,
       "xp_budget_per_actor": 300
@@ -32540,28 +32542,28 @@
     },
     {
       "actions": {
-        "approach": 9,
+        "approach": 10,
         "attack": 7,
         "enemy": 15,
-        "heal": 3,
-        "mana_support": 2,
+        "heal": 2,
+        "mana_support": 1,
         "mark": 1,
-        "rest": 11,
-        "skill": 5,
+        "rest": 10,
+        "skill": 4,
         "trap": 1
       },
       "affix": "brutal",
       "affix_slot": 3,
       "build": "cross_blood_ward_assault",
       "captain": "default",
-      "captain_damage": 0,
+      "captain_damage": 9,
       "cleanses": 0,
       "cohort": "core",
       "dead": [],
       "deaths": 0,
       "enemy_skills": {
         "扬沙护体": 1,
-        "裂风突刺": 2
+        "裂风突刺": 1
       },
       "equipment": [
         {
@@ -32594,8 +32596,8 @@
         }
       ],
       "gear_silver": 210,
-      "healing_observed": 131,
-      "hp": 275,
+      "healing_observed": 97,
+      "hp": 247,
       "initial_enemies": [
         {
           "ap": 4,
@@ -33084,8 +33086,8 @@
         "(-3, 1)",
         "(-3, 3)"
       ],
-      "mp": 18,
-      "other_damage": 41,
+      "mp": 26,
+      "other_damage": 26,
       "outcome": "victory",
       "phase2_reached": true,
       "profile": "balanced",
@@ -33312,7 +33314,7 @@
         }
       ],
       "region": "waste",
-      "relic_trigger_events": 32,
+      "relic_trigger_events": 29,
       "relics": [
         {
           "id": "blood_1",
@@ -33343,11 +33345,10 @@
       "rounds": 4,
       "seed": 104,
       "skills": {
-        "bomb": 1,
         "dash": 1,
-        "heal": 2,
+        "heal": 1,
         "mark": 1,
-        "medic_channel": 2,
+        "medic_channel": 1,
         "medic_mend": 1,
         "ranger_pin": 1,
         "ranger_volley": 1,
@@ -33355,7 +33356,7 @@
         "trap": 1
       },
       "stalls": 0,
-      "steps": 54,
+      "steps": 51,
       "threat": "boss",
       "win": true,
       "xp_budget_per_actor": 300
@@ -196390,14 +196391,14 @@
     "game/equipment_preview.gd": "dff75fb27bc23b9d1860ff2ab3ea47a7593927a9153327e6c2582b6ecb42e229",
     "game/equipment_shapes.gd": "0f00d83d207de72d7378fc03c38779a7090e15a3a63a2881928498f742e0d7e1",
     "game/equipment_visual.gd": "020e67c863a79ba4ffee27196ef860fbcbc0092c12c1ba74e4aefc8d43fd43af",
-    "game/main.gd": "1bc2337bb9525d2d5583271cbd26f210d1fd954fef733b814977255ad7ece2ff",
+    "game/main.gd": "4ee20a3ed272fcc63bc5fb29bd4955e829f59fb4248b9bd5b5e869a41fb26645",
     "game/party_details.gd": "e6b1714d5ef0662f036d32a20cf21b01515208ae2e6f5b261dfe9155a1ff48af",
     "game/portraits.gd": "2f139514305eea70c52c48d9e7a4e056cb547df314da481aa7c8d8de6fb14330",
     "game/professions.gd": "93cd937b3794cd2fa7ec4544bb92b15af195a47f0d8a43b48bf1ebe8efd589ac",
     "game/region_art.gd": "462cbb9dd4409cbe0af6267542ea6a5313ad3069a916cc325136674b450ba8be",
     "game/region_combat.gd": "57cd8eae6898d1104e439156aa7e192e942acb759840f968b1db4af9061c1fe2",
     "game/regions.gd": "53cd20ae5880b8eba4858f0735421af072a46f36e5dc5bd644c3a8a0d65805ee",
-    "game/relic_expansion.gd": "61fa79214a3eedf2c0d20eb74553385ce73ab7631d1986245bd1768962770567",
+    "game/relic_expansion.gd": "b2b31d905d4d403470c79180d5eb48edc55ef8e996b963a7df5de309d93e8a8d",
     "game/relics.gd": "ca05691b5ec9a95a31867e4a7a34b206979184634b1f89b55f1779a6c10336ca",
     "game/route.gd": "119f75b3e108722b1381f5bf0ddc559d4edb56dc2b0904ac402de228330e0842",
     "game/rules.gd": "2cfa068f7088aeda8906e5d512599d5e7e5ccb7d8f13c42c751bc936cfb2b5e5",
@@ -196407,8 +196408,8 @@
     "tools/relic_mix_simulation.gd": "3f9d87f4fef45d6a01d4ad850b83f20e7f307aa72c151b6ca56ddf01b0b2c78f",
     "tools/simulate_boss_balance.gd": "cffe5f4d2b36e4c829bfa66db75f42af6f422214f2b9a9ca543a04c119bafd3e",
     "tools/simulate_enemy_ai.gd": "4a50fd86c5b492bd61881b1c3225229337a0ac74a5de05dd9cc1e27f5cf51432",
-    "tools/simulate_enemy_coordination.gd": "dcfb03b095a9db29ce934cdff1505a132beccc0e156dfc2a0cfa634e66ce8649",
-    "tools/simulate_region_retune.gd": "d2ceaba0005376dd52a8805d58ab97f024fc6de68f77c2a7d279f3e70255eaac",
+    "tools/simulate_enemy_coordination.gd": "3f202403aca3bfccbaffde4197cb0b1fc4f06f881760fdc362a0e53f25f25855",
+    "tools/simulate_region_retune.gd": "7da99e054c0f263ce85af4b12f8e6ab9724ef59b37d0d8243dcd64c45c1b939b",
     "tools/simulate_region_variants.gd": "68dc6c8f97726c5c4a6a043fd654cb55658731e896959337e37a2fbe0c4fba67"
   },
   "stale": false,
@@ -196438,8 +196439,8 @@
       "cases": 4,
       "cleanses": 0,
       "deaths": 0,
-      "healing_observed": 40,
-      "hp": 1214,
+      "healing_observed": 32,
+      "hp": 1208,
       "mp": 301,
       "rounds": 11,
       "wins": 4
@@ -196578,9 +196579,9 @@
       "cases": 4,
       "cleanses": 0,
       "deaths": 5,
-      "healing_observed": 417,
-      "hp": 759,
-      "mp": 68,
+      "healing_observed": 383,
+      "hp": 731,
+      "mp": 76,
       "rounds": 19,
       "wins": 4
     },
@@ -196648,7 +196649,7 @@
       "cases": 4,
       "cleanses": 3,
       "deaths": 1,
-      "healing_observed": 161,
+      "healing_observed": 164,
       "hp": 1088,
       "mp": 251,
       "rounds": 16,
