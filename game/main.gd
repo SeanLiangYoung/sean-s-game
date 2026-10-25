@@ -674,6 +674,21 @@ func update_movement_preview(screen: Vector2):
   if data.remaining==0:movement_label.text+="  ·  将结束行动"
   if data.trapped:movement_label.text+="  ·  途中机关截停并造成伤害"
 
+func battle_summary(parent: Control):
+ var summary=campaign.last_battle_summary
+ if summary.is_empty():return
+ var block=VBoxContainer.new();block.name="BattleSummary";block.add_theme_constant_override("separation",6);parent.add_child(block)
+ var fallen=[];var alive=[];var resources=[]
+ for unit in summary.members:
+  if unit.hp<=0:fallen.append(unit.name)
+  else:
+   alive.append(unit.name)
+   resources.append("%s  ·  生命 %d/%d  ·  法力 %d/%d  ·  击杀%d"%[unit.name,unit.hp,unit.max_hp,unit.mp,unit.max_mp,unit.kills])
+ var headline="存活 %d  ·  阵亡 %d"%[alive.size(),fallen.size()]
+ block.add_child(text_label(headline+("  ·  全员存活" if fallen.is_empty() else "  ·  永久失去："+"、".join(fallen)),21,TEAL if fallen.is_empty() else RED))
+ if not fallen.is_empty():block.add_child(text_label("阵亡队员无法继续出战；战斗胜利不会复活队员。",15,RED))
+ if not resources.is_empty():details_button(block,"幸存者状态与击杀", "\n".join(resources))
+
 func close_modal():
  close_details()
  clear_movement_preview()
@@ -909,6 +924,7 @@ func after_battle_action():
   else:
    open_modal("出战队伍覆灭",campaign.notice)
    set_page_back(Callable())
+   battle_summary(modal_body)
    for u in battle.actors:
     if u.side==0:modal_body.add_child(text_label("† "+u.name,19,RED))
    modal_body.add_child(button("返回营地" if campaign.phase=="camp" else "由幸存者继续远征",return_world,true))
@@ -926,6 +942,7 @@ func show_reward():
  record_difficulty_completion()
  open_modal("全部通关  /  星陨遗城" if campaign.campaign_completed() else "战斗胜利  /  选择战利品","五选一 · 查看详情不会领取奖励")
  set_page_back(Callable())
+ battle_summary(modal_body)
  if campaign.campaign_completed():
   var achievement=Campaign.Achievements.CATALOG[campaign.overall_difficulty]
   modal_body.add_child(text_label("通关成就 · %s：%s"%[achievement.name,achievement.reward],16,TEAL))
@@ -985,6 +1002,7 @@ func render_extract():
 func show_gameover():
  open_modal("行旅止于此  /  团长阵亡","没有获救，也没有死亡豁免。这段远征已经结束。")
  set_page_back(Callable())
+ battle_summary(modal_body)
  modal_body.add_child(text_label("你可以读取远征前的存档，重新规划路线与出战队伍。",20))
  modal_body.add_child(button("读取远征前存档",restore,true))
  modal_body.add_child(button("重新开始游戏",new_game))
@@ -1127,6 +1145,12 @@ func show_pause_menu(message: String=""):
  var save=button("保存游戏"+(" · 战斗中不可用" if battle!=null else ""),manual_save)
  save.disabled=battle!=null
  modal_body.add_child(save)
+ if not campaign.last_battle_summary.is_empty():
+  var report=campaign.last_battle_summary
+  var lines=[]
+  for unit in report.members:
+   lines.append(unit.name+" · 永久阵亡" if unit.hp<=0 else "%s · 存活 · 生命%d/%d · 法力%d/%d · 击杀%d"%[unit.name,unit.hp,unit.max_hp,unit.mp,unit.max_mp,unit.kills])
+  details_button(modal_body,"上一场战报",{"victory":"战斗胜利","defeat":"战斗失败","gameover":"团长阵亡"}.get(report.outcome,"")+"\n\n"+"\n".join(lines))
  modal_body.add_child(button("成就",func():show_achievements(false)))
  modal_body.add_child(button("设置",func():show_settings(false)))
  modal_body.add_child(button("返回主菜单",request_main_menu))

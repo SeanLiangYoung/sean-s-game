@@ -50,6 +50,7 @@ var choices: Array = []
 var silver = 40
 var supplies = 3
 var snapshot: Dictionary = {}
+var last_battle_summary: Dictionary = {}
 var current_encounter = -1
 var expedition = 0
 var world_position = [0.0,5.0]
@@ -72,6 +73,7 @@ func depart() -> bool:
   if u.hp > 0:
    u.hp = u.max_hp
    u.mp = u.max_mp
+ last_battle_summary={}
  snapshot = to_data(false)
  expedition += 1
  phase = "world"
@@ -113,6 +115,10 @@ func make_battle(ids: Array, encounter: int):
 
 func resolve_battle(b) -> bool:
  if phase != "battle" or b.outcome == "" or current_encounter<0:return false
+ last_battle_summary={"outcome":b.outcome,"members":[]}
+ for actor in b.actors:
+  if actor.side==0:
+   last_battle_summary.members.append({"id":actor.id,"name":actor.name,"hp":actor.hp,"max_hp":actor.max_hp,"mp":actor.mp,"max_mp":actor.max_mp,"kills":int(actor.get("kills",0))})
  sync_relics(b.relic_state)
  for u in roster:
   for a in b.actors:
@@ -231,13 +237,30 @@ func to_data(include_snapshot: bool = true) -> Dictionary:
  var units = roster.duplicate(true)
  for u in units:u.erase("cell")
  var data = {"version":9,"completed_difficulties":completed_difficulties.duplicate(),"overall_difficulty":overall_difficulty,"cleared_regions":cleared_regions.duplicate(),"trial_equipment_claimed":trial_equipment_claimed,"equipment":equipment.duplicate(true),"roster":units,"phase":phase,"encounters":encounters.duplicate(),"relics":relics.duplicate(true),"collection":collection.duplicate(true),"silver":silver,"supplies":supplies,"expedition":expedition,"world_position":world_position.duplicate(),"event_used":event_used,"choices":choices.duplicate(true),"notice":notice,"rng_state":str(rng.state),"route":route.data() if route.region!="" else {},"books":books.duplicate(),"purchases":purchases.duplicate(),"recruits":recruits.duplicate()}
+ data["last_battle_summary"]=last_battle_summary.duplicate(true)
  if include_snapshot:data["snapshot"] = snapshot.duplicate(true)
  return data
 
 func is_number(value) -> bool:
  return (value is int or value is float) and is_finite(float(value))
 
+func valid_battle_summary(value) -> bool:
+ if not value is Dictionary:return false
+ if value.is_empty():return true
+ if value.get("outcome","") not in ["victory","defeat","gameover"]:return false
+ if not value.get("members") is Array or value.members.size()>5:return false
+ var ids=[]
+ for unit in value.members:
+  if not unit is Dictionary:return false
+  if not unit.get("id") is String or not unit.get("name") is String or unit.id in ids:return false
+  ids.append(unit.id)
+  for key in ["hp","max_hp","mp","max_mp","kills"]:
+   if not is_number(unit.get(key)) or unit[key]<0:return false
+  if unit.max_hp<=0 or unit.hp>unit.max_hp or unit.mp>unit.max_mp:return false
+ return true
+
 func load_data(data: Dictionary) -> bool:
+ if not valid_battle_summary(data.get("last_battle_summary",{})):return false
  if not Achievements.valid(data.get("completed_difficulties",[])):return false
  var saved_difficulty=data.get("overall_difficulty",0)
  if not is_number(saved_difficulty) or float(saved_difficulty)!=floor(float(saved_difficulty)) or int(saved_difficulty)<0 or int(saved_difficulty)>3:return false
@@ -405,6 +428,7 @@ func load_data(data: Dictionary) -> bool:
  world_position = data.world_position.duplicate()
  event_used = bool(data.get("event_used",false))
  snapshot = data.get("snapshot",{}).duplicate(true)
+ last_battle_summary=data.get("last_battle_summary",{}).duplicate(true)
  notice = data.get("notice","")
  rng.state = int(data.get("rng_state",str(reward_seed)))
  current_encounter = -1
