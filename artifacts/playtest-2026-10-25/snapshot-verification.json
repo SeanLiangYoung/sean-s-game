@@ -1,0 +1,5 @@
+{
+  "files_checked": 100,
+  "changed_gameplay_assets": [],
+  "scope": "snapshot game/assets only; external UI bridge and project user-directory override excluded"
+}
