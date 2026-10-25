@@ -7,7 +7,7 @@ func check(value,message):
  if not value:failures+=1;print("FAIL: ",message)
 func _initialize():call_deferred("run")
 func find_button(node,needle):
- if node is Button and needle in node.text:
+ if node is Button and (needle in node.text or needle in node.accessibility_name):
   if needle not in Campaign.OVERALL_DIFFICULTIES or node.text.begins_with("◆ "+needle) or node.text.begins_with("◇ "+needle):return node
  for child in node.get_children():
   var found=find_button(child,needle)

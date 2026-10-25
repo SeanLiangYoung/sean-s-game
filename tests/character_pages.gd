@@ -10,7 +10,7 @@ func texts(node: Node) -> String:
  for child in node.get_children():result+=texts(child)
  return result
 func find_button(node: Node,needle: String):
- if node is Button and needle in node.text:return node
+ if node is Button and (needle in node.text or needle in node.accessibility_name):return node
  for child in node.get_children():
   var found=find_button(child,needle)
   if found!=null:return found
@@ -24,7 +24,7 @@ func run():
  scene.show_party_menu("角色","medic")
  check(scene.menu_tab=="详情","old character entry opens Details")
  var content=texts(scene.modal)
- check("角色基础" in content and "当前技能" not in content and "队伍装备库" not in content,"details contains identity and stats only")
+ check(scene.modal.find_child("CharacterMetrics",true,false)!=null and "当前技能" not in content and "队伍装备库" not in content,"details contains identity and stats only")
  var skills=find_button(scene.modal,"技能")
  check(skills!=null,"dedicated Skills navigation exists")
  if skills==null:
@@ -33,9 +33,10 @@ func run():
  skills.pressed.emit()
  check(scene.menu_tab=="技能" and scene.menu_character=="medic","page switch keeps character")
  content=texts(scene.modal)
- check("回春" in content and "净护" in content and "技能书" in content and "队伍装备库" not in content,"skills page shows usable skills and learning")
+ check("回春" in content and "净护" in content and scene.modal.find_child("SkillBooks",true,false)!=null and "队伍装备库" not in content,"skills page shows usable skills and learning")
  find_button(scene.modal,"沈烬").pressed.emit()
  check(scene.menu_tab=="技能" and scene.menu_character=="hero","switching character retains skills page")
+ scene.modal.find_child("SkillBooks",true,false).pressed.emit()
  find_button(scene.modal,"技能书 · 调息 →").pressed.emit()
  check("focus" in scene.campaign.roster[0].learned and scene.menu_tab=="技能","learning remains on skills page")
  scene.show_party_menu("装备","hero")

@@ -26,7 +26,7 @@ func run():
   var boss=scene.campaign.route.nodes.filter(func(n):return n.get("threat","")=="boss")[0]
   scene.campaign.route.current=boss.id;scene.campaign.route.completed=false
   scene.show_deploy(boss.encounter)
-  var intel=scene.modal.find_children("*","Button",true,false).filter(func(entry):return "敌情与战场规则" in entry.text)[0]
+  var intel=scene.modal.find_children("*","Button",true,false).filter(func(entry):return "敌情与战场规则" in entry.accessibility_name)[0]
   intel.pressed.emit()
   check("敌人特性" in texts(scene.detail_overlay) and "预告" in texts(scene.detail_overlay),"deployment details explain mechanics "+id)
   scene.close_details()

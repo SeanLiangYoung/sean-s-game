@@ -73,6 +73,7 @@ func _ready():
   if font!=null:button.add_theme_font_override("font",font)
   button.add_theme_font_size_override("font_size",16)
   var box=StyleBoxFlat.new();box.bg_color=Color("273e47");box.border_color=Color("4c6870");box.set_border_width_all(1);box.set_corner_radius_all(5);button.add_theme_stylebox_override("normal",box)
+  preload("res://game/compact_ui.gd").symbolize(button,{"左转":"rotate_left","右转":"rotate_right","−":"zoom_out","＋":"zoom_in","重置":"reset"}[action],(action+" · " if action in ["左转","右转","重置"] else "")+entry[1])
   button.pressed.connect(activate.bind(action))
   controls.add_child(button)
  var hint=label("拖动旋转 · 滚轮缩放\n换装实时更新，保留查看角度",14)

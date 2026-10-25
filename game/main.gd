@@ -425,7 +425,7 @@ func make_ui():
  top_label.size_flags_horizontal=Control.SIZE_EXPAND_FILL
  top_label.horizontal_alignment=HORIZONTAL_ALIGNMENT_RIGHT
  row.add_child(top_label)
- row.add_child(button("菜单 · Esc",show_pause_menu))
+ row.add_child(Compact.symbolize(button("菜单 · Esc",show_pause_menu),"menu"))
  var side=panel(ui,Vector2(22,106),Vector2(288,620))
  var scroll=ScrollContainer.new()
  scroll.horizontal_scroll_mode=ScrollContainer.SCROLL_MODE_DISABLED
@@ -479,6 +479,7 @@ func refresh_ui():
  for tab in ["角色","装备","物品","遗物"]:
   var section=tab
   var entry=button(tab,func():show_party_menu(section))
+  Compact.symbolize(entry,{"角色":"person","装备":"equipment","物品":"items","遗物":"relic"}[tab])
   entry.add_theme_font_size_override("font_size",14)
   var compact=style(Color("263942"),Color("4b6267"),5)
   compact.content_margin_left=8
@@ -605,12 +606,12 @@ func show_details(title: String,content: String):
  var scroll=ScrollContainer.new();scroll.size_flags_vertical=Control.SIZE_EXPAND_FILL
  scroll.horizontal_scroll_mode=ScrollContainer.SCROLL_MODE_DISABLED;frame.add_child(scroll)
  var label=text_label(content,18);label.size_flags_horizontal=Control.SIZE_EXPAND_FILL;scroll.add_child(label)
- var back=button("返回 · Esc",close_details,true);back.name="DetailsBack";frame.add_child(back)
+ var back=button("返回 · Esc",close_details,true);Compact.symbolize(back,"back");back.name="DetailsBack";frame.add_child(back)
  back.grab_focus()
 
 func details_button(parent: Control,title: String,content: String):
  var entry=button(title+"  ›",func():show_details(title,content))
- entry.icon=Compact.icon("info");entry.add_theme_constant_override("icon_max_width",20)
+ Compact.symbolize(entry,Compact.detail_kind(title))
  parent.add_child(entry)
  return entry
 
@@ -723,6 +724,7 @@ func open_modal(title: String,subtitle: String):
  scroll.add_child(modal_body)
  page_back_action=close_modal
  page_back=button("‹ 返回",navigate_back)
+ Compact.symbolize(page_back,"back")
  page_back.name="PageBack"
  page_back.size_flags_horizontal=Control.SIZE_SHRINK_BEGIN
  page_frame.add_child(page_back)
@@ -1490,17 +1492,25 @@ func show_party_menu(tab: String="详情",character_id: String=""):
  var original_scroll=frame.get_child(1)
  frame.remove_child(original_scroll)
  frame.add_theme_constant_override("separation",10)
- for heading in modal_body.get_children():
-  modal_body.remove_child(heading)
-  frame.add_child(heading)
+ var toolbar=HBoxContainer.new();toolbar.name="PartyToolbar";toolbar.add_theme_constant_override("separation",16)
+ frame.add_child(toolbar);frame.move_child(toolbar,0)
+ frame.remove_child(page_back);toolbar.add_child(page_back)
+ var headings=modal_body.get_children()
+ for i in headings.size():
+  var heading=headings[i];modal_body.remove_child(heading)
+  if i==0:
+   heading.add_theme_font_size_override("font_size",23)
+   heading.autowrap_mode=TextServer.AUTOWRAP_OFF;heading.size_flags_horizontal=Control.SIZE_EXPAND_FILL;toolbar.add_child(heading)
+  else:heading.queue_free()
  original_scroll.queue_free()
  var tabs=HBoxContainer.new()
  frame.add_child(tabs)
  for section in ["详情","装备","技能","职业","物品","遗物"]:
   var target=section
   var entry=button(section,func():show_party_menu(target),section==tab)
-  entry.size_flags_horizontal=Control.SIZE_EXPAND_FILL
+  Compact.symbolize(entry,{"详情":"person","装备":"equipment","技能":"skill","职业":"profession","物品":"items","遗物":"relic"}[section])
   tabs.add_child(entry)
+ var section_title=text_label(tab,20,GOLD);section_title.autowrap_mode=TextServer.AUTOWRAP_OFF;section_title.size_flags_horizontal=Control.SIZE_EXPAND_FILL;tabs.add_child(section_title)
  var columns=HBoxContainer.new()
  columns.size_flags_vertical=Control.SIZE_EXPAND_FILL
  columns.add_theme_constant_override("separation",16 if tab=="装备" else 24)
@@ -1524,7 +1534,7 @@ func show_party_menu(tab: String="详情",character_id: String=""):
  if tab=="装备":
   preload("res://game/equipment_menu.gd").character_sheet(self,columns,unit)
   separator(frame)
-  frame.add_child(button("关闭菜单 · 返回旅途",close_modal))
+  var close=button("关闭菜单 · 返回旅途",close_modal);Compact.symbolize(close,"close");close.size_flags_horizontal=Control.SIZE_SHRINK_END;frame.add_child(close)
   return
  var right=VBoxContainer.new()
  right.size_flags_horizontal=Control.SIZE_EXPAND_FILL
@@ -1535,7 +1545,7 @@ func show_party_menu(tab: String="详情",character_id: String=""):
  right.add_child(header)
  var portrait=TextureRect.new()
  portrait.texture=portraits.portrait(unit.id,campaign.visual_profile(unit.id))
- portrait.custom_minimum_size=Vector2(80,80) if tab=="装备" else Vector2(112,112)
+ portrait.custom_minimum_size=Vector2(80,80)
  portrait.expand_mode=TextureRect.EXPAND_IGNORE_SIZE
  portrait.stretch_mode=TextureRect.STRETCH_KEEP_ASPECT_CENTERED
  header.add_child(portrait)
@@ -1562,42 +1572,26 @@ func show_party_menu(tab: String="详情",character_id: String=""):
  elif tab=="职业":PartyDetails.profession_page(self,details,unit)
  elif tab=="物品":
   detail_section(details,"队伍共享物品")
-  details.add_child(text_label("银币  %d"%campaign.silver,22,GOLD))
-  details.add_child(text_label("补给  × %d"%campaign.supplies,22,TEAL))
+  Compact.metrics(self,details,[["silver",campaign.silver,"银币"],["supply",campaign.supplies,"补给份数"]])
   details.add_child(text_label("全队存活者 · 消耗1份 · 基础恢复30%生命与法力（受遗物影响）· 仅野外",17))
   var supply=button("使用一份补给",func():
    if campaign.use_supply():
     refresh_ui()
     show_party_menu("物品"))
+  Compact.symbolize(supply,"supply","使用一份补给 · 全队存活者恢复生命与法力",str(campaign.supplies))
   supply.disabled=campaign.phase!="world" or battle!=null or campaign.supplies<=0
   details.add_child(supply)
  else:
   detail_section(details,"遗物与永久收藏")
-  details.add_child(text_label("远征携带 %d 件 · 永久收藏 %d 件\n全队遗物自动生效；个人遗物绑定佩戴者，每人至多1件。同类全队效果不叠加。"%[campaign.relics.size(),campaign.collection.size()],17,MUTED))
-  details.add_child(text_label("遗物图鉴 · %d 件 · 8大主题 · 同主题2/4件激活共鸣"%Campaign.Relic.CATALOG.size(),17,GOLD))
-  details.add_child(button("查看全部 %d 件遗物 · 按流派筛选"%Campaign.Relic.CATALOG.size(),func():show_relic_catalog()))
+  Compact.metrics(self,details,[["relic","远征 %d"%campaign.relics.size(),"当前远征遗物"],["relic","收藏 %d"%campaign.collection.size(),"永久收藏"]])
+  details_button(details,"遗物与绑定规则","全队遗物自动生效；个人遗物绑定佩戴者，每人至多1件，不能卸下或转交，替换失去旧遗物。同名全队效果不叠加；同主题2/4件激活共鸣。")
+  details.add_child(button("遗物图鉴 · 共 %d 件 · 按流派筛选"%Campaign.Relic.CATALOG.size(),func():show_relic_catalog()))
   show_relic_details(details,false)
  separator(frame)
- frame.add_child(button("关闭菜单 · 返回旅途",close_modal))
+ var close=button("关闭菜单 · 返回旅途",close_modal);Compact.symbolize(close,"close");close.size_flags_horizontal=Control.SIZE_SHRINK_END;frame.add_child(close)
 
-func show_relic_catalog(family: String="",query: String="",_page: int=0):
- open_modal("遗物图鉴 · 已解锁 %d / %d 件"%[campaign.discovered_relics.size(),Campaign.Relic.CATALOG.size()],"遗物决定打法；同主题2/4件激活共鸣。全队遗物与当前角色个人遗物计数，同名不重复计算。")
- set_page_back(func():show_party_menu("遗物",menu_character))
- var filters=HFlowContainer.new()
- filters.add_theme_constant_override("h_separation",8)
- modal_body.add_child(filters)
- filters.add_child(button("全部",func():show_relic_catalog()))
- for id in Campaign.Relic.Expansion.SETS:
-  var theme_id=id
-  var d=Campaign.Relic.Expansion.SETS[id]
-  filters.add_child(button(d.name,func():show_relic_catalog(theme_id)))
- for id in Campaign.Relic.CATALOG:
-  if id not in campaign.discovered_relics:continue
-  var d=Campaign.Relic.definition(id)
-  if query.strip_edges()!="" and query.strip_edges().to_lower() not in (d.name+" "+d.benefit+" "+d.risk).to_lower():continue
-  if family!="" and d.get("family","")!=family:continue
-  detail_section(modal_body,d.name)
-  modal_body.add_child(text_label(Campaign.Relic.description(id),16,MUTED))
+func show_relic_catalog(family: String="",query: String="",page: int=0):
+ preload("res://game/management_ui.gd").catalog(self,family,query,page)
 
 func relic_instance_status(entry) -> String:
  var d=Campaign.Relic.definition(entry)
@@ -1621,50 +1615,10 @@ func show_relic_slot(parent: Control,unit: Dictionary):
  parent.add_child(text_label("获取即绑定并承担代价；不能卸下或转交。新遗物替换时会失去旧遗物。",15,MUTED))
 
 func show_relic_details(parent: Control,effects_only: bool):
- var found=false
- var pools=[campaign.relics,campaign.collection]
- if battle!=null:pools=[battle.relic_state,[]]
- var applicable=[]
- for pool in pools:
-  for entry in pool:
-   if Campaign.Relic.definition(entry).scope=="team" or (entry is Dictionary and entry.owner==menu_character):applicable.append(entry)
- parent.add_child(text_label("当前角色共鸣 · "+menu_unit(menu_character).name+"\n"+Campaign.Relic.resonance_description(applicable),16,GOLD))
- for pool_index in pools.size():
-  for entry in pools[pool_index]:
-   var d=Campaign.Relic.definition(entry)
-   if effects_only and d.scope=="personal" and entry.owner!=menu_character:continue
-   found=true
-   var source="永久收藏" if pool_index==1 else "本次远征"
-   if battle!=null:source="本场持有"
-   parent.add_child(text_label("◆ "+d.name+" · "+source,18,TEAL))
-   parent.add_child(text_label(relic_instance_status(entry),15,GOLD))
-   parent.add_child(text_label(Campaign.Relic.description(entry),15,MUTED))
-   if effects_only and menu_unit(menu_character).hp<=0:parent.add_child(text_label("角色已阵亡，无法享受战斗效果。",15,RED))
- if not found:parent.add_child(text_label("暂无遗物。探索边境并安全撤离，可积累永久收藏。",16,MUTED))
+ preload("res://game/management_ui.gd").owned_relics(self,parent,effects_only)
 
 func show_relic_binding(id: String,reward_index: int=-1):
- var d=Campaign.Relic.definition(id)
- open_modal("绑定个人遗物 · "+d.name,"指定一名存活角色，每人至多1件；绑定后无法卸下或转交。")
- set_page_back(func():
-  if reward_index>=0:show_reward()
-  else:show_route_trade())
- modal_body.add_child(text_label(Campaign.Relic.description(id),17))
- if reward_index<0:modal_body.add_child(text_label("本次购买：%d银币"%campaign.shop_price(id),17,GOLD))
- for unit in campaign.roster:
-  if unit.hp<=0:continue
-  var owner_id=unit.id
-  var old=campaign.personal_relic(owner_id)
-  var warning="空遗物栏" if old.is_empty() else "替换并失去："+Campaign.Relic.definition(old).name
-  modal_body.add_child(text_label(unit.name+" · "+warning,17,GOLD))
-  modal_body.add_child(button("绑定给 "+unit.name+" · 接受收益与代价",func():
-   if reward_index>=0:
-    if campaign.choose_reward(reward_index,owner_id):return_world()
-   elif campaign.buy(id,owner_id):
-    refresh_ui()
-    show_route_trade(),true))
- modal_body.add_child(button("返回奖励选择" if reward_index>=0 else "返回商店",func():
-  if reward_index>=0:show_reward()
-  else:show_route_trade()))
+ preload("res://game/management_ui.gd").binding(self,id,reward_index)
 
 func refresh_atlas():
  if is_instance_valid(atlas):
@@ -1769,44 +1723,8 @@ func select_route_node(id: String):
  elif n.kind=="extract":show_extract()
  elif n.kind in ["shop","hire"]:show_route_trade()
 
-func show_route_trade(_category: String=""):
- var shop=campaign.at_node("shop")
- open_modal("行路商店" if shop else "雇佣兵营地","银币 %d · 离开后不能返回；可以返回路线页继续选择路线。"%campaign.silver)
- if shop:
-  modal_body.add_child(text_label("本次远征首次购买遗物优惠15银币；后续按原价。副主题遗物可搭配两件共鸣。",15,GOLD))
-  for id in campaign.shop_inventory():
-   if Jobs.ALL_SKILLS.has(id):continue
-   var item_id=id
-   var good=Campaign.GOODS[id]
-   if Campaign.Relic.CATALOG.has(id):campaign.discover_relic(id)
-   modal_body.add_child(text_label(good.name+" · "+good.desc,18))
-   var quote=campaign.shop_price(id)
-   var entry=button("购买 · %d 银币"%quote,func():
-    if Campaign.Relic.CATALOG.has(item_id) and Campaign.Relic.definition(item_id).scope=="personal":
-     show_relic_binding(item_id)
-    elif campaign.buy(item_id):
-     refresh_ui()
-     show_route_trade())
-   entry.disabled=campaign.silver<quote or campaign.route.current+":"+id in campaign.purchases
-   modal_body.add_child(entry)
- else:
-  var candidates=campaign.recruit_candidates()
-  for i in candidates.size():
-   var index=i
-   var d=Campaign.Characters.CATALOG[candidates[i]]
-   detail_section(modal_body,d.name+" · "+Jobs.JOBS[d.job].name+" · "+d.title)
-   modal_body.add_child(text_label(d.story,15,MUTED))
-   modal_body.add_child(text_label("专属天赋 · "+d.talent+"："+d.effect,16,TEAL))
-   modal_body.add_child(text_label("遗物搭配："+d.relics,15,GOLD))
-   var entry=button("招募 · 55 银币",func():
-    if campaign.hire(index):
-     refresh_ui()
-     show_route_trade())
-   entry.disabled=not campaign.can_hire(i)
-   if campaign.roster.any(func(u):return u.get("character_id","")==candidates[i]):entry.text="已在佣兵团中"
-   modal_body.add_child(entry)
-  modal_body.add_child(text_label("队伍档案 %d / 10"%campaign.roster.size(),16,MUTED))
- modal_body.add_child(button("继续旅途",close_modal))
+func show_route_trade(category: String=""):
+ preload("res://game/management_ui.gd").trade(self,category)
 
 func select_action(mode: String):
  if auto_battle or battle==null or presentation.busy or battle.outcome!="" or battle.active().is_empty() or battle.active().side!=0:return
@@ -1850,6 +1768,8 @@ func action_button(parent: Control,label_text: String,mode: String,reason: Strin
   entry.mouse_entered.connect(func():status_label.text=reason;status_label.show())
   entry.mouse_exited.connect(func():status_label.visible=battle==null)
  entry.focus_entered.connect(func():status_label.text=reason if reason!="" else label_text)
+ var kind={"move":"move","attack":"attack","skills":"skill","items":"items","rest":"rest","item":"supply"}.get(mode,"info")
+ Compact.symbolize(entry,kind,label_text+(" · "+reason if reason!="" else ""),str(campaign.supplies) if mode=="item" else "")
  parent.add_child(entry)
  return entry
 
@@ -1870,21 +1790,21 @@ func render_action_menu(is_player: bool):
  var grid=GridContainer.new();grid.columns=2;grid.add_theme_constant_override("h_separation",6);grid.add_theme_constant_override("v_separation",6);slot.add_child(grid)
  var move_reason=waiting
  if move_reason=="" and not battle.cells().any(func(cell):return not movement_preview(cell).is_empty()):move_reason="行动点不足"
- action_button(grid,"移动","move",move_reason).icon=Compact.icon("move")
+ action_button(grid,"移动","move",move_reason)
  var attack_reason=ap2
  if attack_reason=="" and not battle.actors.any(func(u):return u.hp>0 and u.side!=a.side and battle.hex_distance(a.cell,u.cell)<=a.range):attack_reason="无射程内敌人"
- action_button(grid,"普攻 · 2点","attack",attack_reason).icon=Compact.icon("attack")
- action_button(grid,"技能","skills",waiting).icon=Compact.icon("skill")
- action_button(grid,"物品","items",waiting).icon=Compact.icon("supply")
- action_button(grid,"休息","rest",waiting).icon=Compact.icon("rest")
- var end=button("结束行动",func():perform_battle_action("end"));end.icon=Compact.icon("end");end.disabled=waiting!="";grid.add_child(end)
+ action_button(grid,"普攻 · 2点","attack",attack_reason)
+ action_button(grid,"技能","skills",waiting)
+ action_button(grid,"物品","items",waiting)
+ action_button(grid,"休息","rest",waiting)
+ var end=button("结束行动",func():perform_battle_action("end"));Compact.symbolize(end,"end","结束当前角色行动 · 不恢复资源");end.disabled=waiting!="";grid.add_child(end)
  for entry in grid.get_children():
   entry.size_flags_horizontal=Control.SIZE_EXPAND_FILL;entry.add_theme_font_size_override("font_size",15)
-  entry.add_theme_constant_override("icon_max_width",20)
+  entry.add_theme_constant_override("icon_max_width",32)
   for state in ["normal","hover","pressed","disabled"]:
    var padding=entry.get_theme_stylebox(state).duplicate();padding.content_margin_left=8;padding.content_margin_right=8;padding.content_margin_top=8;padding.content_margin_bottom=8;entry.add_theme_stylebox_override(state,padding)
  if battle_mode!="":
-  var cancel=button("取消 / 返回 · Esc",cancel_action);cancel.disabled=presentation.busy;slot.add_child(cancel)
+  var cancel=button("取消 / 返回 · Esc",cancel_action);Compact.symbolize(cancel,"back");cancel.disabled=presentation.busy;slot.add_child(cancel)
  if battle_mode in ["skills","items","rest"]:
   var scroll=ScrollContainer.new();scroll.name="ActionOptions";scroll.custom_minimum_size.y=62
   scroll.vertical_scroll_mode=ScrollContainer.SCROLL_MODE_DISABLED;footer.add_child(scroll)

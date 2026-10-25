@@ -6,7 +6,7 @@ func check(ok,message):
  if not ok:failures+=1;print("FAIL: ",message)
 func _initialize():call_deferred("run")
 func find_button(node,needle):
- if node is Button and needle in node.text:return node
+ if node is Button and (needle in node.text or needle in node.accessibility_name):return node
  for child in node.get_children():
   var found=find_button(child,needle)
   if found!=null:return found

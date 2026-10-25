@@ -11,7 +11,7 @@ func has_text(node,needle):
   if has_text(child,needle):return true
  return false
 func find_button(node,needle):
- if node is Button and needle in node.text:return node
+ if node is Button and (needle in node.text or needle in node.accessibility_name):return node
  for child in node.get_children():
   var result=find_button(child,needle)
   if result!=null:return result
@@ -28,7 +28,9 @@ func run():
  scene.campaign.acquire_relic("banner")
  scene.campaign.acquire_relic("prism","medic")
  scene.show_party_menu("技能","medic")
- check(has_text(scene.modal,"恢复 44") and has_text(scene.modal,"2点 / 9法力"),"current skill details include relic healing and mana cost")
+ scene.modal.find_child("SkillReference",true,false).pressed.emit()
+ check(has_text(scene.detail_overlay,"恢复 44") and has_text(scene.detail_overlay,"2点 / 9法力"),"current skill reference includes relic healing and mana cost")
+ scene.close_details()
  scene.show_party_menu("遗物","hero")
  check(has_text(scene.modal,"续命烛芯") and has_text(scene.modal,"裂甲战旗"),"world relic page shows owned instances")
  check(has_text(scene.modal,"剩余 1 / 1") and has_text(scene.modal,"沈烬"),"remaining charges and wearer displayed")
@@ -38,10 +40,15 @@ func run():
  if scene.has_method("show_relic_catalog"):
   for id in scene.Campaign.Relic.CATALOG:scene.campaign.discover_relic(id)
   scene.show_relic_catalog("blood")
-  check(has_text(scene.modal,"赤誓残卷") and has_text(scene.modal,"殉火心脏"),"theme filter shows complete blood family")
+  scene.show_relic_catalog("blood","赤誓残卷")
+  check(has_text(scene.modal,"赤誓残卷"),"theme search finds blood relic")
+  scene.show_relic_catalog("blood","殉火心脏")
+  check(has_text(scene.modal,"殉火心脏"),"theme search finds later blood relic")
   check(not has_text(scene.modal,"湛蓝瞳环"),"theme filter excludes unrelated entries")
   scene.show_relic_catalog()
-  check(has_text(scene.modal,"110") and has_text(scene.modal,"百战军册"),"full catalog includes all relics")
+  check(has_text(scene.modal,"110"),"full catalog exposes total count")
+  scene.show_relic_catalog("","百战军册")
+  check(has_text(scene.modal,"百战军册"),"catalog search reaches all relics")
  scene.campaign.phase="reward"
  scene.campaign.choices=[scene.campaign.REWARDS.filter(func(r):return r.id=="echo")[0]]
  scene.show_reward()
