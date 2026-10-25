@@ -1511,6 +1511,7 @@ func show_relic_binding(id: String,reward_index: int=-1):
   if reward_index>=0:show_reward()
   else:show_route_trade())
  modal_body.add_child(text_label(Campaign.Relic.description(id),17))
+ if reward_index<0:modal_body.add_child(text_label("本次购买：%d银币"%campaign.shop_price(id),17,GOLD))
  for unit in campaign.roster:
   if unit.hp<=0:continue
   var owner_id=unit.id
@@ -1634,18 +1635,20 @@ func show_route_trade():
  var shop=campaign.at_node("shop")
  open_modal("行路商店" if shop else "雇佣兵营地","银币 %d · 离开后不能返回；可以返回路线页继续选择路线。"%campaign.silver)
  if shop:
+  modal_body.add_child(text_label("本次远征首次购买遗物优惠15银币；后续按原价。副主题遗物可搭配两件共鸣。",15,GOLD))
   for id in campaign.shop_inventory():
    if Jobs.ALL_SKILLS.has(id):continue
    var item_id=id
    var good=Campaign.GOODS[id]
    modal_body.add_child(text_label(good.name+" · "+good.desc,18))
-   var entry=button("购买 · %d 银币"%good.price,func():
+   var quote=campaign.shop_price(id)
+   var entry=button("购买 · %d 银币"%quote,func():
     if Campaign.Relic.CATALOG.has(item_id) and Campaign.Relic.definition(item_id).scope=="personal":
      show_relic_binding(item_id)
     elif campaign.buy(item_id):
      refresh_ui()
      show_route_trade())
-   entry.disabled=campaign.silver<good.price or campaign.route.current+":"+id in campaign.purchases
+   entry.disabled=campaign.silver<quote or campaign.route.current+":"+id in campaign.purchases
    modal_body.add_child(entry)
  else:
   var candidates=campaign.recruit_candidates()

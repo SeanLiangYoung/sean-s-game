@@ -1,0 +1,795 @@
+{
+  "baseline": {
+    "runs": 240,
+    "clears": 232,
+    "initial_seed_blocks": 40,
+    "boss_entries": 240,
+    "boss_two_piece": 228,
+    "boss_four_piece": 7,
+    "boss_mixed_two_two": 6,
+    "captain": {
+      "lu": {
+        "runs": 80,
+        "clears": 77
+      },
+      "shen": {
+        "runs": 80,
+        "clears": 77
+      },
+      "wen": {
+        "runs": 80,
+        "clears": 78
+      }
+    },
+    "profile": {
+      "assault": {
+        "runs": 60,
+        "clears": 60
+      },
+      "balanced": {
+        "runs": 60,
+        "clears": 60
+      },
+      "guard": {
+        "runs": 60,
+        "clears": 58
+      },
+      "support": {
+        "runs": 60,
+        "clears": 54
+      }
+    },
+    "strategy": {
+      "adaptive": {
+        "runs": 120,
+        "clears": 117
+      },
+      "relic_focus": {
+        "runs": 120,
+        "clears": 115
+      }
+    },
+    "failure_regions": {
+      "border": 8
+    }
+  },
+  "final": {
+    "runs": 240,
+    "clears": 238,
+    "initial_seed_blocks": 40,
+    "boss_entries": 240,
+    "boss_two_piece": 231,
+    "boss_four_piece": 8,
+    "boss_mixed_two_two": 38,
+    "captain": {
+      "lu": {
+        "runs": 80,
+        "clears": 79
+      },
+      "shen": {
+        "runs": 80,
+        "clears": 80
+      },
+      "wen": {
+        "runs": 80,
+        "clears": 79
+      }
+    },
+    "profile": {
+      "assault": {
+        "runs": 60,
+        "clears": 58
+      },
+      "balanced": {
+        "runs": 60,
+        "clears": 60
+      },
+      "guard": {
+        "runs": 60,
+        "clears": 60
+      },
+      "support": {
+        "runs": 60,
+        "clears": 60
+      }
+    },
+    "strategy": {
+      "adaptive": {
+        "runs": 120,
+        "clears": 118
+      },
+      "relic_focus": {
+        "runs": 120,
+        "clears": 120
+      }
+    },
+    "failure_regions": {
+      "wood": 1,
+      "border": 1
+    },
+    "paired_gains": 8,
+    "paired_losses": 2
+  },
+  "campaign-baseline": {
+    "runs": 72,
+    "clears": 25,
+    "initial_seed_blocks": 12,
+    "boss_entries": 282,
+    "boss_two_piece": 271,
+    "boss_four_piece": 100,
+    "boss_mixed_two_two": 171,
+    "captain": {
+      "lu": {
+        "runs": 24,
+        "clears": 8
+      },
+      "shen": {
+        "runs": 24,
+        "clears": 7
+      },
+      "wen": {
+        "runs": 24,
+        "clears": 10
+      }
+    },
+    "profile": {
+      "assault": {
+        "runs": 18,
+        "clears": 5
+      },
+      "balanced": {
+        "runs": 18,
+        "clears": 9
+      },
+      "guard": {
+        "runs": 18,
+        "clears": 6
+      },
+      "support": {
+        "runs": 18,
+        "clears": 5
+      }
+    },
+    "strategy": {
+      "adaptive": {
+        "runs": 36,
+        "clears": 16
+      },
+      "relic_focus": {
+        "runs": 36,
+        "clears": 9
+      }
+    },
+    "failure_regions": {
+      "marsh": 7,
+      "frost": 8,
+      "waste": 4,
+      "ruins": 4,
+      "border": 16,
+      "wood": 8
+    }
+  },
+  "campaign-final": {
+    "runs": 72,
+    "clears": 31,
+    "initial_seed_blocks": 12,
+    "boss_entries": 325,
+    "boss_two_piece": 316,
+    "boss_four_piece": 110,
+    "boss_mixed_two_two": 232,
+    "captain": {
+      "lu": {
+        "runs": 24,
+        "clears": 10
+      },
+      "shen": {
+        "runs": 24,
+        "clears": 10
+      },
+      "wen": {
+        "runs": 24,
+        "clears": 11
+      }
+    },
+    "profile": {
+      "assault": {
+        "runs": 18,
+        "clears": 9
+      },
+      "balanced": {
+        "runs": 18,
+        "clears": 10
+      },
+      "guard": {
+        "runs": 18,
+        "clears": 7
+      },
+      "support": {
+        "runs": 18,
+        "clears": 5
+      }
+    },
+    "strategy": {
+      "adaptive": {
+        "runs": 36,
+        "clears": 13
+      },
+      "relic_focus": {
+        "runs": 36,
+        "clears": 18
+      }
+    },
+    "failure_regions": {
+      "ruins": 11,
+      "frost": 11,
+      "border": 8,
+      "waste": 3,
+      "wood": 7,
+      "marsh": 1
+    },
+    "paired_gains": 18,
+    "paired_losses": 12
+  },
+  "holdout": {
+    "runs": 120,
+    "clears": 119,
+    "initial_seed_blocks": 20,
+    "boss_entries": 120,
+    "boss_two_piece": 114,
+    "boss_four_piece": 12,
+    "boss_mixed_two_two": 27,
+    "captain": {
+      "lu": {
+        "runs": 40,
+        "clears": 39
+      },
+      "shen": {
+        "runs": 40,
+        "clears": 40
+      },
+      "wen": {
+        "runs": 40,
+        "clears": 40
+      }
+    },
+    "profile": {
+      "assault": {
+        "runs": 30,
+        "clears": 30
+      },
+      "balanced": {
+        "runs": 30,
+        "clears": 30
+      },
+      "guard": {
+        "runs": 30,
+        "clears": 29
+      },
+      "support": {
+        "runs": 30,
+        "clears": 30
+      }
+    },
+    "strategy": {
+      "adaptive": {
+        "runs": 60,
+        "clears": 60
+      },
+      "relic_focus": {
+        "runs": 60,
+        "clears": 59
+      }
+    },
+    "failure_regions": {
+      "frost": 1
+    }
+  },
+  "refusal": {
+    "runs": 192,
+    "clears": 185,
+    "initial_seed_blocks": 30,
+    "boss_entries": 192,
+    "boss_two_piece": 161,
+    "boss_four_piece": 3,
+    "boss_mixed_two_two": 21,
+    "captain": {
+      "lu": {
+        "runs": 64,
+        "clears": 63
+      },
+      "shen": {
+        "runs": 64,
+        "clears": 60
+      },
+      "wen": {
+        "runs": 64,
+        "clears": 62
+      }
+    },
+    "profile": {
+      "assault": {
+        "runs": 54,
+        "clears": 53
+      },
+      "balanced": {
+        "runs": 48,
+        "clears": 48
+      },
+      "guard": {
+        "runs": 54,
+        "clears": 48
+      },
+      "support": {
+        "runs": 36,
+        "clears": 36
+      }
+    },
+    "strategy": {
+      "adaptive": {
+        "runs": 174,
+        "clears": 168
+      },
+      "relic_focus": {
+        "runs": 18,
+        "clears": 17
+      }
+    },
+    "failure_regions": {
+      "waste": 2,
+      "border": 5
+    },
+    "groups": {
+      "dusk_2": {
+        "runs": 24,
+        "clears": 23,
+        "initial_seed_blocks": 8,
+        "boss_entries": 24,
+        "boss_two_piece": 20,
+        "boss_four_piece": 0,
+        "boss_mixed_two_two": 3,
+        "captain": {
+          "lu": {
+            "runs": 8,
+            "clears": 8
+          },
+          "shen": {
+            "runs": 8,
+            "clears": 7
+          },
+          "wen": {
+            "runs": 8,
+            "clears": 8
+          }
+        },
+        "profile": {
+          "assault": {
+            "runs": 3,
+            "clears": 3
+          },
+          "balanced": {
+            "runs": 9,
+            "clears": 9
+          },
+          "guard": {
+            "runs": 6,
+            "clears": 5
+          },
+          "support": {
+            "runs": 6,
+            "clears": 6
+          }
+        },
+        "strategy": {
+          "adaptive": {
+            "runs": 24,
+            "clears": 23
+          }
+        },
+        "failure_regions": {
+          "waste": 1
+        }
+      },
+      "hunt_3": {
+        "runs": 24,
+        "clears": 22,
+        "initial_seed_blocks": 8,
+        "boss_entries": 24,
+        "boss_two_piece": 24,
+        "boss_four_piece": 0,
+        "boss_mixed_two_two": 8,
+        "captain": {
+          "lu": {
+            "runs": 8,
+            "clears": 8
+          },
+          "shen": {
+            "runs": 8,
+            "clears": 7
+          },
+          "wen": {
+            "runs": 8,
+            "clears": 7
+          }
+        },
+        "profile": {
+          "assault": {
+            "runs": 6,
+            "clears": 6
+          },
+          "balanced": {
+            "runs": 3,
+            "clears": 3
+          },
+          "guard": {
+            "runs": 9,
+            "clears": 7
+          },
+          "support": {
+            "runs": 6,
+            "clears": 6
+          }
+        },
+        "strategy": {
+          "adaptive": {
+            "runs": 24,
+            "clears": 22
+          }
+        },
+        "failure_regions": {
+          "border": 2
+        }
+      },
+      "hunt_4": {
+        "runs": 24,
+        "clears": 24,
+        "initial_seed_blocks": 7,
+        "boss_entries": 24,
+        "boss_two_piece": 15,
+        "boss_four_piece": 0,
+        "boss_mixed_two_two": 0,
+        "captain": {
+          "lu": {
+            "runs": 8,
+            "clears": 8
+          },
+          "shen": {
+            "runs": 8,
+            "clears": 8
+          },
+          "wen": {
+            "runs": 8,
+            "clears": 8
+          }
+        },
+        "profile": {
+          "assault": {
+            "runs": 9,
+            "clears": 9
+          },
+          "guard": {
+            "runs": 12,
+            "clears": 12
+          },
+          "support": {
+            "runs": 3,
+            "clears": 3
+          }
+        },
+        "strategy": {
+          "adaptive": {
+            "runs": 18,
+            "clears": 18
+          },
+          "relic_focus": {
+            "runs": 6,
+            "clears": 6
+          }
+        },
+        "failure_regions": {}
+      },
+      "arcane_3": {
+        "runs": 24,
+        "clears": 23,
+        "initial_seed_blocks": 7,
+        "boss_entries": 24,
+        "boss_two_piece": 18,
+        "boss_four_piece": 0,
+        "boss_mixed_two_two": 0,
+        "captain": {
+          "lu": {
+            "runs": 8,
+            "clears": 7
+          },
+          "shen": {
+            "runs": 8,
+            "clears": 8
+          },
+          "wen": {
+            "runs": 8,
+            "clears": 8
+          }
+        },
+        "profile": {
+          "assault": {
+            "runs": 6,
+            "clears": 5
+          },
+          "balanced": {
+            "runs": 15,
+            "clears": 15
+          },
+          "support": {
+            "runs": 3,
+            "clears": 3
+          }
+        },
+        "strategy": {
+          "adaptive": {
+            "runs": 18,
+            "clears": 18
+          },
+          "relic_focus": {
+            "runs": 6,
+            "clears": 5
+          }
+        },
+        "failure_regions": {
+          "border": 1
+        }
+      },
+      "dusk_4": {
+        "runs": 24,
+        "clears": 24,
+        "initial_seed_blocks": 7,
+        "boss_entries": 24,
+        "boss_two_piece": 21,
+        "boss_four_piece": 3,
+        "boss_mixed_two_two": 2,
+        "captain": {
+          "lu": {
+            "runs": 8,
+            "clears": 8
+          },
+          "shen": {
+            "runs": 8,
+            "clears": 8
+          },
+          "wen": {
+            "runs": 8,
+            "clears": 8
+          }
+        },
+        "profile": {
+          "assault": {
+            "runs": 6,
+            "clears": 6
+          },
+          "balanced": {
+            "runs": 9,
+            "clears": 9
+          },
+          "guard": {
+            "runs": 6,
+            "clears": 6
+          },
+          "support": {
+            "runs": 3,
+            "clears": 3
+          }
+        },
+        "strategy": {
+          "adaptive": {
+            "runs": 21,
+            "clears": 21
+          },
+          "relic_focus": {
+            "runs": 3,
+            "clears": 3
+          }
+        },
+        "failure_regions": {}
+      },
+      "dusk_2,hunt_3,hunt_4": {
+        "runs": 72,
+        "clears": 69,
+        "initial_seed_blocks": 24,
+        "boss_entries": 72,
+        "boss_two_piece": 63,
+        "boss_four_piece": 0,
+        "boss_mixed_two_two": 8,
+        "captain": {
+          "lu": {
+            "runs": 24,
+            "clears": 24
+          },
+          "shen": {
+            "runs": 24,
+            "clears": 22
+          },
+          "wen": {
+            "runs": 24,
+            "clears": 23
+          }
+        },
+        "profile": {
+          "assault": {
+            "runs": 24,
+            "clears": 24
+          },
+          "balanced": {
+            "runs": 12,
+            "clears": 12
+          },
+          "guard": {
+            "runs": 21,
+            "clears": 18
+          },
+          "support": {
+            "runs": 15,
+            "clears": 15
+          }
+        },
+        "strategy": {
+          "adaptive": {
+            "runs": 69,
+            "clears": 66
+          },
+          "relic_focus": {
+            "runs": 3,
+            "clears": 3
+          }
+        },
+        "failure_regions": {
+          "border": 2,
+          "waste": 1
+        }
+      }
+    },
+    "paired_baseline_clears": 186,
+    "paired_gains": 6,
+    "paired_losses": 7,
+    "reward_exposure_cases": 165,
+    "shop_exposure_cases": 36
+  },
+  "campaign-refusal": {
+    "runs": 21,
+    "clears": 11,
+    "initial_seed_blocks": 9,
+    "boss_entries": 94,
+    "boss_two_piece": 88,
+    "boss_four_piece": 20,
+    "boss_mixed_two_two": 62,
+    "captain": {
+      "lu": {
+        "runs": 6,
+        "clears": 3
+      },
+      "shen": {
+        "runs": 8,
+        "clears": 4
+      },
+      "wen": {
+        "runs": 7,
+        "clears": 4
+      }
+    },
+    "profile": {
+      "assault": {
+        "runs": 6,
+        "clears": 4
+      },
+      "balanced": {
+        "runs": 5,
+        "clears": 3
+      },
+      "guard": {
+        "runs": 6,
+        "clears": 2
+      },
+      "support": {
+        "runs": 4,
+        "clears": 2
+      }
+    },
+    "strategy": {
+      "adaptive": {
+        "runs": 12,
+        "clears": 9
+      },
+      "relic_focus": {
+        "runs": 9,
+        "clears": 2
+      }
+    },
+    "failure_regions": {
+      "border": 3,
+      "marsh": 2,
+      "ruins": 1,
+      "waste": 2,
+      "frost": 1,
+      "wood": 1
+    },
+    "groups": {
+      "dusk_2,hunt_3,hunt_4": {
+        "runs": 21,
+        "clears": 11,
+        "initial_seed_blocks": 9,
+        "boss_entries": 94,
+        "boss_two_piece": 88,
+        "boss_four_piece": 20,
+        "boss_mixed_two_two": 62,
+        "captain": {
+          "lu": {
+            "runs": 6,
+            "clears": 3
+          },
+          "shen": {
+            "runs": 8,
+            "clears": 4
+          },
+          "wen": {
+            "runs": 7,
+            "clears": 4
+          }
+        },
+        "profile": {
+          "assault": {
+            "runs": 6,
+            "clears": 4
+          },
+          "balanced": {
+            "runs": 5,
+            "clears": 3
+          },
+          "guard": {
+            "runs": 6,
+            "clears": 2
+          },
+          "support": {
+            "runs": 4,
+            "clears": 2
+          }
+        },
+        "strategy": {
+          "adaptive": {
+            "runs": 12,
+            "clears": 9
+          },
+          "relic_focus": {
+            "runs": 9,
+            "clears": 2
+          }
+        },
+        "failure_regions": {
+          "border": 3,
+          "marsh": 2,
+          "ruins": 1,
+          "waste": 2,
+          "frost": 1,
+          "wood": 1
+        }
+      }
+    },
+    "paired_baseline_clears": 21,
+    "paired_gains": 0,
+    "paired_losses": 10,
+    "reward_exposure_cases": 17,
+    "shop_exposure_cases": 9
+  },
+  "audit": {
+    "same_policy_hashes": {
+      "fresh_run_simulation.gd": "1fe43c905df28cccf68bad062bcc74139f1c73e773fcb70a02036fb2a5bd8e36",
+      "relic_mix_simulation.gd": "3f9d87f4fef45d6a01d4ad850b83f20e7f307aa72c151b6ca56ddf01b0b2c78f",
+      "simulate_fresh_runs.gd": "76425fbc434c587267328f4ddf1e2d6c52689a5e34454fd83f168d868587725f"
+    },
+    "changed_game_files": [
+      "campaign.gd",
+      "relics.gd"
+    ],
+    "all_initial_states_and_denied_acquisitions_checked": true,
+    "input_hashes": {
+      "fresh-refusal-cases.json": "bbd8e5082f27456c6601c48e9e390a78dd886415c2216c0cb8b0f32dd14f43c7",
+      "fresh-campaign-refusal-cases.json": "3da1b4ed809099dfd6fb8816655b7de6b87cf8fd0c75a9042ff52ef50812b209"
+    }
+  }
+}

@@ -353,3 +353,10 @@
 较小汇总为 `artifacts/region-retune-summary.json`；原始配对记录为 `region-retune-{baseline,final}[-holdout].json`、两种全队变体 `region-variants-{baseline,final}[-holdout].json`。`artifacts/region-retune-{baseline,final}-sources.zip`保存可独立运行的冻结源码与工具，指纹见 `region-retune-sources.json`；归档供无界面战斗复现，不含美术资源。旧候选另存 `region-retune-discarded-*.zip`，不参与最终汇总。
 
 复跑时分别解压两个正式源码归档，在各目录用Godot `--headless --path <解压目录> --script res://tools/simulate_region_retune.gd -- --label=baseline`（最终版改为`final`），再对 `tools/simulate_region_variants.gd`运行相同参数；分别加`--holdout`复跑独立种子。最后运行 `python3 tools/summarize_region_retune.py --baseline <基线目录> --final <最终目录>`核验源码指纹、2016组配对输入、相同实验策略、同场构筑反例与区域方向并生成汇总。
+
+
+### 从零开荒成长与构筑验证
+
+新生成路线的基础胜利经验池为200：五人生还的两场普通胜利，未拿击杀经验的角色也能支付基础技能二级与一个分支。每次远征首次购买遗物优惠15银币，后续原价，免费奖励和技能书不消耗优惠，存读档保留购买记录。战利品的异主题遗物槽优先帮助已有副主题凑齐两件，仍保留主主题延续和全目录随机选择。
+
+本轮从真实初始六人、八件装备、40银币、3补给、0经验与零遗物推进，没有预配技能或遗物。首区域同初始种子前后232/240→238/240，首领前2＋2混搭6/240→38/240；额外独立种子119/120。完整六区25/72→31/72，三位团长及四种队伍优先级均有通关，但陆衡支援分组本次0/6。热门遗物前三集合拒选仍有69/72次首区域、11/21次原成功病例的完整六区通关；不代表所有组合均衡或所有遗物依赖都已排除。实验分组、真实成长账目、统计局限与冻结复跑源码见 [从零开荒实测记录](docs/fresh-progression-report.md)。

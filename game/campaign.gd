@@ -138,7 +138,7 @@ func resolve_battle(b) -> bool:
   choices.append(resource_pool[rng.randi_range(0,resource_pool.size()-1)].duplicate(true))
   var survivors=b.actors.filter(func(a):return a.side==0 and a.hp>0)
   var config=route.node(route.current) if route.seed_value>=0 else {}
-  var pool=120+current_encounter*60 if config.is_empty() else 120+int(config.tier)*40+(40 if config.threat=="boss" else (20 if config.threat=="elite" else 0))
+  var pool=120+current_encounter*60 if config.is_empty() else 200+int(config.tier)*40+(40 if config.threat=="boss" else (20 if config.threat=="elite" else 0))
   if not config.is_empty():
    silver+=15+int(config.tier)*5+(25 if config.threat=="boss" else 0)
   var share=int(pool/maxi(1,survivors.size()))
@@ -609,12 +609,23 @@ func enter_route(id: String) -> bool:
 func at_node(kind: String) -> bool:
  return phase=="world" and route.region!="" and route.node(route.current).get("kind","")==kind
 
+# The saved purchase ledger, not a transient flag, owns the once-per-expedition offer.
+func shop_price(id: String) -> int:
+ if not GOODS.has(id):return 0
+ var base=int(GOODS[id].price)
+ if not Relic.CATALOG.has(id):return base
+ for purchase in purchases:
+  var parts=str(purchase).split(":")
+  if parts.size()==2 and Relic.CATALOG.has(parts[1]):return base
+ return maxi(1,base-15)
+
 func buy(id: String,owner: String="") -> bool:
  if not at_node("shop") or id not in shop_inventory() or not GOODS.has(id) or Professions.ALL_SKILLS.has(id):return false
  var key=route.current+":"+id
- if key in purchases or silver<GOODS[id].price:return false
+ var price=shop_price(id)
+ if key in purchases or silver<price:return false
  if Relic.CATALOG.has(id) and not acquire_relic(id,owner):return false
- silver-=GOODS[id].price
+ silver-=price
  purchases.append(key)
  if Professions.ITEMS.has(id):equipment.append({"id":id,"owner":""})
  elif id in ["fury","focus"] or Professions.ALL_SKILLS.has(id):books.append(id)

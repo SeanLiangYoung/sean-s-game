@@ -117,6 +117,11 @@ static func draft_rewards(rng: RandomNumberGenerator,held: Array,current_run: Ar
   elif slot==1:
    var first_family=CATALOG[result[0]].get("family","")
    var themes=Expansion.SETS.keys().filter(func(family):return family!=first_family and pool.any(func(id):return CATALOG[id].get("family","")==family and CATALOG[id].scope=="team"))
+   # Keep a genuine alternative slot, but help an already chosen secondary theme reach two.
+   var unfinished=themes.filter(func(family):return int(counts.get(family,0))==1)
+   var established=themes.filter(func(family):return int(counts.get(family,0))>=2)
+   if not unfinished.is_empty():themes=unfinished
+   elif not established.is_empty():themes=established
    if not themes.is_empty():
     var family=themes[rng.randi_range(0,themes.size()-1)]
     candidates=pool.filter(func(id):return CATALOG[id].get("family","")==family and CATALOG[id].scope=="team")

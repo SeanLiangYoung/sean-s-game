@@ -159,11 +159,13 @@ func learn_books_for(c,profile: String,ledger: Array):
   candidates.sort_custom(func(a,b):return a.skill_ranks.size()>b.skill_ranks.size() if a.skill_ranks.size()!=b.skill_ranks.size() else a.id<b.id)
   var book=c.books[0]
   if c.learn_book(0,candidates[0].id):ledger.append({"actor":candidates[0].character_id,"book":book})
+func quoted_price(c,id: String) -> int:
+ return int(c.shop_price(id)) if c.has_method("shop_price") else int(c.GOODS[id].price)
 func shopping(c,profile: String,strategy: String,denied: Array,trace: Array):
  for attempt in 4:
   var best="";var best_score=0.0;var owner=""
   for id in c.shop_inventory():
-   if c.route.current+":"+id in c.purchases or c.GOODS[id].price>c.silver:continue
+   if c.route.current+":"+id in c.purchases or quoted_price(c,id)>c.silver:continue
    var value=0.0;var bearer=""
    if Relic.CATALOG.has(id):
     if id in denied or id in c.active_relics():continue
@@ -172,12 +174,12 @@ func shopping(c,profile: String,strategy: String,denied: Array,trace: Array):
     if not c.roster.any(func(unit):return unit.id in deployed(c,profile) and id not in unit.learned and (id!="fury" or unit.skill_ranks.keys().any(func(skill):return Jobs.ALL_SKILLS[skill].effect in ["damage","heal"]))):continue
     value=3.0 if id=="fury" else 2.0
    elif Jobs.ITEMS.has(id):value=equipment_gain(c,id,profile)
-   var score=value/float(c.GOODS[id].price)
+   var score=value/float(quoted_price(c,id))
    if score>best_score:best_score=score;best=id;owner=bearer
   if best=="" or best_score<0.035:break
-  var before=c.silver
+  var before=c.silver;var quote=quoted_price(c,best)
   if not c.buy(best,owner):errors.append("affordable purchase rejected");break
-  trace.append({"id":best,"owner":owner,"price":before-c.silver,"silver_after":c.silver,"region":c.route.region,"node":c.route.current})
+  trace.append({"id":best,"owner":owner,"price":quote,"net_cost":before-c.silver,"silver_before":before,"silver_after":c.silver,"acquisition_bonus":c.silver-before+quote,"region":c.route.region,"node":c.route.current})
   equip(c,profile)
 func supply(c,trace: Array,profile: String="balanced"):
  while c.supplies>0 and c.phase=="world":
@@ -250,7 +252,7 @@ func run(captain: String,profile: String,strategy: String,region: String,seed_va
    if node.is_empty() or not c.enter_route(node.id):result.failure="route rejected";break
    if node.kind=="shop":
     var stock=c.shop_inventory()
-    result.shop_offers.append({"node":node.id,"region":area,"silver":c.silver,"stock":stock,"affordable":stock.filter(func(id):return c.GOODS[id].price<=c.silver)})
+    result.shop_offers.append({"node":node.id,"region":area,"silver":c.silver,"stock":stock,"affordable":stock.filter(func(id):return quoted_price(c,id)<=c.silver)})
     shopping(c,profile,strategy,denied,result.purchases)
    if node.kind=="hire" and c.roster.filter(func(unit):return unit.hp>0).size()<5:
     for i in c.recruit_candidates().size():

@@ -1,0 +1,26 @@
+{
+  "rank_rule": "top five actually acquired relics before boss among successful final primary runs; descriptive candidate ranking, not causal evidence",
+  "top_items": [
+    "dusk_2",
+    "hunt_3",
+    "hunt_4",
+    "arcane_3",
+    "dusk_4"
+  ],
+  "candidate_counts": {
+    "dusk_2": 66,
+    "hunt_3": 54,
+    "hunt_4": 39,
+    "arcane_3": 36,
+    "dusk_4": 36
+  },
+  "single_case_cap_per_captain": 8,
+  "combined_items": [
+    "dusk_2",
+    "hunt_3",
+    "hunt_4"
+  ],
+  "combined_case_cap_per_captain": 24,
+  "cases": 192,
+  "case_file_sha256": "bbd8e5082f27456c6601c48e9e390a78dd886415c2216c0cb8b0f32dd14f43c7"
+}
