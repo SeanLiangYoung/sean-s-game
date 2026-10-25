@@ -46,6 +46,11 @@ func run():
   var id=stock.filter(func(item):return not s.Campaign.Relic.CATALOG.has(item) or s.Campaign.Relic.definition(item).scope=="team")[0]
   var card=named(s.modal,"ShopItem_"+id)
   var before=s.campaign.to_data();var detail=named(card,"ItemDetails")
+  for item in stock:
+   if item not in s.Jobs.ITEMS and item not in s.Campaign.Relic.CATALOG:
+    var book_card=named(s.modal,"ShopItem_"+item)
+    var image=book_card.find_children("*","TextureRect",true,false)[0]
+    check(image.texture==preload("res://game/compact_ui.gd").icon("book"),"skill book stock uses recognizable book icon")
   detail.pressed.emit();check(s.campaign.to_data()==before,"viewing shop details cannot buy")
   s.close_details()
   var cost=s.campaign.shop_price(id);named(card,"BuyItem").pressed.emit()

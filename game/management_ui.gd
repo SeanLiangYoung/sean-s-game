@@ -78,7 +78,7 @@ static func trade(host,category: String=""):
   if state.category!="全部" and kind!=state.category:continue
   count+=1
   var item_id=id;var good=host.Campaign.GOODS[id];var quote=host.campaign.shop_price(id)
-  var texture=Equipment.icon(host.Jobs.ITEMS[id].kind) if kind=="装备" else Equipment.icon("relic") if kind=="遗物" else Compact.icon("skill")
+  var texture=Equipment.icon(host.Jobs.ITEMS[id].kind) if kind=="装备" else Equipment.icon("relic") if kind=="遗物" else Compact.icon("book")
   var card=Compact.card(host,grid,good.name,host.GOLD,texture);card.get_parent().name="ShopItem_"+id
   if kind=="遗物":
    host.campaign.discover_relic(id)
