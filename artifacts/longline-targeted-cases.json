@@ -1,0 +1,80 @@
+[
+  {
+    "captain": "shen",
+    "profile": "support",
+    "strategy": "adaptive",
+    "seed": 2026110300,
+    "denied": [
+      "dusk_2",
+      "hunt_3",
+      "hunt_4"
+    ],
+    "support_ai": true,
+    "careful_supply": true
+  },
+  {
+    "captain": "shen",
+    "profile": "support",
+    "strategy": "relic_focus",
+    "seed": 2026110300,
+    "denied": [
+      "dusk_2",
+      "hunt_3",
+      "hunt_4"
+    ],
+    "support_ai": true,
+    "careful_supply": true
+  },
+  {
+    "captain": "wen",
+    "profile": "support",
+    "strategy": "adaptive",
+    "seed": 2026110300,
+    "denied": [
+      "dusk_2",
+      "hunt_3",
+      "hunt_4"
+    ],
+    "support_ai": true,
+    "careful_supply": true
+  },
+  {
+    "captain": "wen",
+    "profile": "support",
+    "strategy": "relic_focus",
+    "seed": 2026110300,
+    "denied": [
+      "dusk_2",
+      "hunt_3",
+      "hunt_4"
+    ],
+    "support_ai": true,
+    "careful_supply": true
+  },
+  {
+    "captain": "lu",
+    "profile": "support",
+    "strategy": "adaptive",
+    "seed": 2026110300,
+    "denied": [
+      "dusk_2",
+      "hunt_3",
+      "hunt_4"
+    ],
+    "support_ai": true,
+    "careful_supply": true
+  },
+  {
+    "captain": "lu",
+    "profile": "support",
+    "strategy": "relic_focus",
+    "seed": 2026110300,
+    "denied": [
+      "dusk_2",
+      "hunt_3",
+      "hunt_4"
+    ],
+    "support_ai": true,
+    "careful_supply": true
+  }
+]

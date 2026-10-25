@@ -63,7 +63,7 @@ static func page(host,parent: Control,unit: Dictionary):
  if host.battle!=null:
   var current=host.battle.relic_state.filter(func(r):return r.owner==unit.id)
   relic=current[0] if not current.is_empty() else {}
- var relic_button=host.button("遗物栏   ·   "+(host.Campaign.Relic.definition(relic).name if not relic.is_empty() else "空置"),func():pass)
+ var relic_button=host.button("遗物栏   ·   "+(host.Campaign.Relic.definition(relic).name if not relic.is_empty() else "空置"),func():host.show_details("个人遗物栏",host.Campaign.Relic.description(relic)+"\n"+host.relic_instance_status(relic) if not relic.is_empty() else "空遗物栏。获得个人遗物后可绑定；不能卸下或转交，替换失去旧遗物。"))
  relic_button.expand_icon=false;relic_button.icon=icon("empty_relic" if relic.is_empty() else "relic");relic_button.alignment=HORIZONTAL_ALIGNMENT_LEFT;relic_button.custom_minimum_size.y=76
  compact_icon_padding(relic_button)
  relic_button.add_theme_constant_override("h_separation",16)
@@ -74,6 +74,7 @@ static func page(host,parent: Control,unit: Dictionary):
  if not host.campaign.trial_equipment_claimed:
   var claim=host.button("领取职业试用装备（旧档一次）",func():
    if host.campaign.claim_trial_equipment():host.show_party_menu("装备",unit.id))
+  preload("res://game/compact_ui.gd").symbolize(claim,"gift")
   claim.disabled=host.campaign.phase!="camp" or host.battle!=null;parent.add_child(claim)
 
 static func show_choices(host,parent: Control,unit: Dictionary,slot: String,editable: bool):
@@ -102,6 +103,7 @@ static func show_choices(host,parent: Control,unit: Dictionary,slot: String,edit
  if count==0:parent.add_child(host.text_label("暂无此类装备，可从商店或战利品获得。",15,host.MUTED))
  if host.campaign.equipped_index(unit.id,slot)>=0:
   var remove=host.button("卸下当前"+Jobs.SLOTS[slot],func():confirm_change(host,unit,slot,-1))
+  preload("res://game/compact_ui.gd").symbolize(remove,"unequip","卸下当前"+Jobs.SLOTS[slot]+" · 退回背包")
   remove.name="EquipmentRemove_"+slot;remove.disabled=not editable;parent.add_child(remove)
 
 static func show_changes(host,parent: Control,before: Dictionary,after: Dictionary):
@@ -146,23 +148,15 @@ static func confirm_change(host,unit: Dictionary,slot: String,index: int):
  host.add_child(dialog);dialog.popup_centered()
 
 static func attributes(host,parent: Control,unit: Dictionary,stats: Dictionary):
- parent.add_child(host.text_label("当前人物属性",20,host.GOLD))
- for resource in [["生命",unit.hp,unit.max_hp,host.TEAL],["法力",unit.mp,unit.max_mp,Color("8daee6")]]:
-  var row=HBoxContainer.new();parent.add_child(row)
-  var title=host.text_label(resource[0],16,host.MUTED);title.size_flags_horizontal=Control.SIZE_EXPAND_FILL;row.add_child(title)
-  var value=host.text_label("%d / %d"%[resource[1],resource[2]],18,resource[3]);value.autowrap_mode=TextServer.AUTOWRAP_OFF;row.add_child(value)
-  var bar=ProgressBar.new();bar.custom_minimum_size.y=6;bar.max_value=maxi(1,resource[2]);bar.value=resource[1];bar.show_percentage=false
-  var fill=StyleBoxFlat.new();fill.bg_color=resource[3];bar.add_theme_stylebox_override("fill",fill);parent.add_child(bar)
- var combat_stats=[["攻击",stats.power],["防护",stats.armor],["治疗加成",stats.heal_bonus]]
- for pair in ATTRIBUTES.slice(6):
-  if stats[pair[0]]!=0:combat_stats.append([pair[1],stats[pair[0]]])
- if stats.get("rest_mp",0)!=0:combat_stats.append(["休息回蓝/点","%+d%%"%int(round(stats.rest_mp*100))])
- for group in [["战斗能力",combat_stats],["行动能力",[["速度",stats.speed],["射程",stats.range],["行动点",stats.max_ap]]]]:
-  host.detail_section(parent,group[0])
-  for stat in group[1]:
-   var row=HBoxContainer.new();parent.add_child(row)
-   var title=host.text_label(stat[0],16,host.MUTED);title.size_flags_horizontal=Control.SIZE_EXPAND_FILL;row.add_child(title)
-   var value=host.text_label(str(stat[1]),18,host.TEAL);value.autowrap_mode=TextServer.AUTOWRAP_OFF;row.add_child(value)
+ var compact=preload("res://game/compact_ui.gd")
+ parent.add_child(host.text_label("当前人物属性",18,host.GOLD))
+ compact.metrics(host,parent,[["hp","%d/%d"%[unit.hp,unit.max_hp],"生命"],["mp","%d/%d"%[unit.mp,unit.max_mp],"法力"]])
+ compact.metrics(host,parent,[["attack",stats.power,"攻击"],["armor",stats.armor,"防护"],["skill",stats.heal_bonus,"治疗加成"]])
+ compact.metrics(host,parent,[["speed",stats.speed,"速度"],["range",stats.range,"普攻射程"],["ap",stats.max_ap,"行动点"]])
+ var lines=[]
+ for pair in ATTRIBUTES:lines.append(pair[1]+"："+str(stats[pair[0]]))
+ if stats.get("rest_mp",0)!=0:lines.append("休息回蓝/点：%+d%%"%int(round(stats.rest_mp*100)))
+ host.details_button(parent,"完整属性", "\n".join(lines))
 
 static func character_sheet(host,columns: Control,unit: Dictionary):
  var sheet=VBoxContainer.new();sheet.name="CharacterEquipmentSheet";sheet.size_flags_horizontal=Control.SIZE_EXPAND_FILL;sheet.add_theme_constant_override("separation",12);columns.add_child(sheet)

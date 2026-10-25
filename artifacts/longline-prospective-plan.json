@@ -1,0 +1,23 @@
+{
+  "revision": "v3 captain exposure fix; v2 complete results retained, not counted as final",
+  "frozen_before_outcomes": true,
+  "main_seed_start": 2027010100,
+  "holdout_seed_start": 2027020100,
+  "runs": {
+    "prospective-baseline": 72,
+    "prospective-final": 72,
+    "prospective-alternative": 24,
+    "prospective-holdout": 24,
+    "prospective-refusal": 72
+  },
+  "main_training": "broad original earned-XP plan",
+  "alternative_training": "earlier control branches for Lu and ranger, exact original costs",
+  "refusal": "all 72 paired cases, 12 initial seed blocks; frozen old top3, no outcome filtering",
+  "case_hashes": {
+    "longline-prospective-final-cases.json": "e8725dde099155f7ca64bb21ae5d946ad7d2e32c6c47a0955aa2f280c821fd3a",
+    "longline-prospective-alternative-cases.json": "5963d38ada0eafc9ecf0adb69ec158ed827fc31f082dec0b099c9d29e366cd48",
+    "longline-prospective-baseline-cases.json": "1114f8fe2f3a19f5f7c5f32842f20ee8c30a87a62f25e5d4815a8ca69c399389",
+    "longline-prospective-holdout-cases.json": "be9cef64c2fca69f6f199299ffbfcb8f6fba413b3d20c22db7c87df6c6286c02",
+    "longline-prospective-refusal-cases.json": "0af7c03d52e8d9941af78d0dbd6b3d0de6a98825b767a633dd85d701d4be919d"
+  }
+}

@@ -5,7 +5,7 @@ func check(ok,message):
  checks+=1
  if not ok:failures+=1;print("FAIL: ",message)
 func button(node,needle):
- if node is Button and needle in node.text:return node
+ if node is Button and (needle in node.text or needle in node.accessibility_name):return node
  for child in node.get_children():
   var found=button(child,needle)
   if found!=null:return found

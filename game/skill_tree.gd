@@ -97,6 +97,7 @@ func rebuild():
    var id=job_id
    var tab=host.button(Jobs.JOBS[id].name,func():
     profession=id;selected=Jobs.JOBS[id].skills[0];remember();rebuild(),id==profession)
+   preload("res://game/compact_ui.gd").symbolize(tab,{"hero":"person","blade":"attack","ranger":"range","medic":"supply","engineer":"engine","warden":"armor"}[id])
    tab.name="SkillProfession_"+id
    tab.add_theme_font_size_override("font_size",15)
    tabs.add_child(tab)
@@ -169,27 +170,30 @@ func show_details(parent: Control):
  parent.add_child(host.text_label("基础技能" if root=="" else ("深层技能" if skill.has("prerequisite") else "进阶技能"),14,host.MUTED))
  parent.add_child(host.text_label(skill.name,24,host.GOLD))
  parent.add_child(host.text_label("未解锁" if rank==0 else "%d / 3级"%rank,17,host.TEAL if rank>0 else host.MUTED))
- var rules=host.battle if host.battle!=null else preload("res://game/rules.gd").new()
- parent.add_child(host.text_label("%d行动点 · %d法力 · 射程%d"%[skill.ap,rules.skill_mana_cost(unit,selected),rules.skill_range(unit,selected)],14,host.MUTED))
+ var rules=preload("res://game/party_details.gd").rules_for(host)
+ preload("res://game/compact_ui.gd").metrics(host,parent,[["ap",skill.ap,"行动点费用"],["mp",rules.skill_mana_cost(unit,selected),"法力费用，已计入遗物"],["range",rules.skill_range(unit,selected),"技能射程"]],"SkillCosts")
  var character=preload("res://game/characters.gd").definition(unit)
- if not character.is_empty():parent.add_child(host.text_label("专属天赋 · "+character.talent+"："+character.effect,14,host.TEAL))
+ if not character.is_empty():host.details_button(parent,"天赋与技能说明",character.talent+"："+character.effect+"\n\n"+Jobs.rank_description(unit,selected,maxi(1,rank))+"\n\n基础2级开放对应进阶，进阶2级开放深层技能。每次个人行动各技能限用一次。")
  host.separator(parent)
  if rank>0:parent.add_child(host.text_label("当前："+Jobs.rank_description(unit,selected),15))
  if rank<3:parent.add_child(host.text_label(("解锁效果：" if rank==0 else "下一级：")+Jobs.rank_description(unit,selected,rank+1),15,host.TEAL))
  if root!="":parent.add_child(host.text_label("前置："+Jobs.ALL_SKILLS[root].name+" 2级",14,host.MUTED))
- var spacer=Control.new()
- spacer.size_flags_vertical=Control.SIZE_EXPAND_FILL
- parent.add_child(spacer)
  var reason=Jobs.training_reason(unit,selected)
  if host.battle!=null or host.campaign.phase not in ["camp","world"]:reason="当前阶段无法加点"
  elif unit.hp<=0:reason="已阵亡，无法加点"
- if reason!="":parent.add_child(host.text_label(reason,14,host.GOLD if rank<3 else host.TEAL))
+ var why: Label
+ if reason!="":
+  why=host.text_label(reason,14,host.GOLD if rank<3 else host.TEAL);parent.add_child(why)
  var caption=("解锁" if rank==0 else "强化")+skill.name+" · %d经验"%Jobs.skill_cost(unit,selected)
  if rank>=3:caption="已满级"
  var id=selected
  var train=host.button(caption,func():
   if host.campaign.train_skill(unit.id,id):
    remember();host.refresh_ui();host.show_party_menu("技能",unit.id),reason=="")
+ preload("res://game/compact_ui.gd").symbolize(train,"upgrade",caption,"" if rank>=3 else str(Jobs.skill_cost(unit,selected)))
  train.add_theme_font_size_override("font_size",15)
  train.disabled=reason!=""
  parent.add_child(train)
+ var position=parent.get_node("SkillCosts").get_index()+1
+ if why!=null:parent.move_child(why,position);position+=1
+ parent.move_child(train,position)

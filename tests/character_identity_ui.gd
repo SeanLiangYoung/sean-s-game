@@ -12,7 +12,7 @@ func texts(node):
  for child in node.get_children():result+=texts(child)
  return result
 func button(node,needle):
- if node is Button and needle in node.text:return node
+ if node is Button and (needle in node.text or needle in node.accessibility_name):return node
  for child in node.get_children():
   var result=button(child,needle)
   if result!=null:return result
@@ -68,9 +68,11 @@ func run():
   scene.campaign.roster=[Characters.create("shen")] if unit.id!="hero" else []
   scene.campaign.roster.append(unit)
   scene.show_party_menu("详情",unit.id)
-  var content=texts(scene.modal)
   var d=Characters.CATALOG[id]
-  check(d.story in content and d.talent in content and d.effect in content and d.relics in content,"details complete for "+id)
+  scene.modal.find_child("CharacterBiography",true,false).pressed.emit()
+  var content=texts(scene.detail_overlay)
+  check(d.story in content and d.talent in content and d.effect in content and d.relics in content,"secondary character details complete for "+id)
+  scene.close_details()
  scene.battle=null;scene.campaign=Campaign.new(path)
  scene.campaign.start_region("border");scene.campaign.route.setup("border");scene.campaign.encounters=["open","open","open"]
  scene.campaign.enter_route("0b");scene.campaign.enter_route("1b");scene.campaign.silver=1000

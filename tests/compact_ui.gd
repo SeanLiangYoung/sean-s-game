@@ -136,7 +136,7 @@ func run():
  s.campaign=Campaign.new("user://compact-ui-test.json")
  check(s.campaign.load_game(),"ordinary defeat checkpoint reloads")
  s.battle=null;s.session_started=true;s.close_modal();s.show_pause_menu()
- var history=s.modal.find_children("*","Button",true,false).filter(func(entry):return "上一场战报" in entry.text)
+ var history=s.modal.find_children("*","Button",true,false).filter(func(entry):return "上一场战报" in entry.accessibility_name)
  check(history.size()==1,"ordinary defeat report remains accessible after continue")
  if history.size()==1:
   history[0].pressed.emit()

@@ -1,0 +1,77 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+OpenGL API 4.1 Metal - 91.7 - Compatibility - Using Device: Apple - Apple M4
+
+UI_BRIDGE_READY (1280, 800) [P: (0.0, 0.0), S: (1440.0, 900.0)]
+UI_BRIDGE_CMD 1792894655991 capture
+UI_BRIDGE_CAPTURE /tmp/playtest-bridge-current.png 0
+UI_ACTIVATE @Button@1606 继续游戏
+UI_BRIDGE_CMD 1792895003662 activate
+UI_ACTIVATE @Button@3081 精英交战
+UI_BRIDGE_CMD 1792895004309 activate
+UI_BRIDGE_CMD 1792895004672 scroll
+UI_ACTIVATE @Button@3163 出战 5 / 5 人  →
+UI_BRIDGE_CMD 1792895005086 activate
+UI_BRIDGE_CMD 1792895005438 capture
+UI_BRIDGE_CAPTURE /Users/seanliang/projects/sean-s-game/artifacts/playtest-2026-10-25/44-elite-real-battle.png 0
+UI_ACTIVATE AutoBattle Auto · 一键交战
+UI_BRIDGE_CMD 1792895049918 activate
+UI_BRIDGE_CMD 1792895050405 capture
+UI_BRIDGE_CAPTURE /Users/seanliang/projects/sean-s-game/artifacts/playtest-2026-10-25/45-auto-start.png 0
+UI_BRIDGE_CMD 1792895149084 capture
+UI_BRIDGE_CAPTURE /Users/seanliang/projects/sean-s-game/artifacts/playtest-2026-10-25/46-auto-progress.png 0
+UI_ACTIVATE @Button@33907 选择此奖励
+UI_BRIDGE_CMD 1792895273321 activate
+UI_ACTIVATE @Button@35384 队伍与装备
+UI_BRIDGE_CMD 1792895273970 activate
+UI_BRIDGE_CMD 1792895274320 capture
+UI_BRIDGE_CAPTURE /Users/seanliang/projects/sean-s-game/artifacts/playtest-2026-10-25/47-after-auto-roster.png 0
+UI_BRIDGE_CMD 1792895488204 key
+UI_BRIDGE_CMD 1792895488507 capture
+UI_BRIDGE_CAPTURE /tmp/playtest-bridge-current.png 0
+UI_ACTIVATE @Button@35395 补给
+UI_BRIDGE_CMD 1792895600047 activate
+UI_ACTIVATE @Button@35496 补给
+UI_BRIDGE_CMD 1792895600413 activate
+UI_BRIDGE_CMD 1792895600720 capture
+UI_BRIDGE_CAPTURE /Users/seanliang/projects/sean-s-game/artifacts/playtest-2026-10-25/48-before-boss-route.png 0
+UI_ACTIVATE @Button@35528 队伍与装备
+UI_BRIDGE_CMD 1792895660762 activate
+UI_ACTIVATE @Button@35581 物品
+UI_BRIDGE_CMD 1792895661134 activate
+UI_ACTIVATE @Button@35660 使用一份补给
+UI_BRIDGE_CMD 1792895661429 activate
+UI_ACTIVATE @Button@35745 使用一份补给
+UI_BRIDGE_CMD 1792895661733 activate
+UI_ACTIVATE @Button@35830 使用一份补给
+UI_BRIDGE_CMD 1792895662096 activate
+UI_ACTIVATE @Button@35915 使用一份补给
+UI_BRIDGE_CMD 1792895662505 activate
+UI_ACTIVATE @Button@35976 技能
+UI_BRIDGE_CMD 1792895662800 activate
+UI_BRIDGE_CMD 1792895663109 scroll
+UI_BRIDGE_CMD 1792895663409 capture
+UI_BRIDGE_CAPTURE /tmp/playtest-bridge-current.png 0
+UI_ACTIVATE @Button@36079 强化破势 · 45经验
+UI_BRIDGE_CMD 1792895877241 activate
+UI_BRIDGE_CMD 1792895877603 key
+UI_ACTIVATE @Button@36113 首领
+UI_BRIDGE_CMD 1792895877893 activate
+UI_BRIDGE_CMD 1792895878245 capture
+UI_BRIDGE_CAPTURE /Users/seanliang/projects/sean-s-game/artifacts/playtest-2026-10-25/49-boss-deployment.png 0
+UI_BRIDGE_CMD 1792896025706 scroll
+UI_ACTIVATE @Button@36294 出战 5 / 5 人  →
+UI_BRIDGE_CMD 1792896026108 activate
+UI_BRIDGE_CMD 1792896026636 capture
+UI_BRIDGE_CAPTURE /Users/seanliang/projects/sean-s-game/artifacts/playtest-2026-10-25/50-boss-battle.png 0
+UI_ACTIVATE AutoBattle Auto · 一键交战
+UI_BRIDGE_CMD 1792896222424 activate
+UI_BRIDGE_CMD 1792896407106 capture
+UI_BRIDGE_CAPTURE /Users/seanliang/projects/sean-s-game/artifacts/playtest-2026-10-25/51-boss-auto-progress.png 0
+UI_ACTIVATE @Button@62995 读取远征前存档
+UI_BRIDGE_CMD 1792896513483 activate
+UI_BRIDGE_CMD 1792896514166 capture
+UI_BRIDGE_CAPTURE /Users/seanliang/projects/sean-s-game/artifacts/playtest-2026-10-25/52-rollback.png 0
+UI_ACTIVATE @Button@64458 队伍与装备
+UI_BRIDGE_CMD 1792896751047 activate
+UI_BRIDGE_CMD 1792896751392 capture
+UI_BRIDGE_CAPTURE /Users/seanliang/projects/sean-s-game/artifacts/playtest-2026-10-25/53-rollback-roster.png 0

@@ -1,0 +1,16 @@
+{
+  "checks": 89737,
+  "suites": 72,
+  "scene_smoke": true,
+  "native_rendering": true,
+  "verification_log_sha256": "0771233bfd4a0553bbcac26e81b311f32bf2303dd09885fa54c72b41416be5bf",
+  "game_matches_frozen_final": true,
+  "archive_manifest_valid": true,
+  "archive_full_campaign_result_equals_reference": true,
+  "archive_smoke_key": {
+    "captain": "lu",
+    "profile": "support",
+    "strategy": "adaptive",
+    "seed": 2027010301
+  }
+}

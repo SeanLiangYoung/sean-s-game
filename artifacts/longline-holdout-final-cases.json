@@ -1,0 +1,650 @@
+[
+  {
+    "captain": "shen",
+    "profile": "balanced",
+    "strategy": "adaptive",
+    "seed": 2026120100,
+    "support_ai": true,
+    "careful_supply": true,
+    "sustain_training": true
+  },
+  {
+    "captain": "shen",
+    "profile": "balanced",
+    "strategy": "adaptive",
+    "seed": 2026120101,
+    "support_ai": true,
+    "careful_supply": true,
+    "sustain_training": true
+  },
+  {
+    "captain": "shen",
+    "profile": "balanced",
+    "strategy": "adaptive",
+    "seed": 2026120102,
+    "support_ai": true,
+    "careful_supply": true,
+    "sustain_training": true
+  },
+  {
+    "captain": "shen",
+    "profile": "balanced",
+    "strategy": "relic_focus",
+    "seed": 2026120100,
+    "support_ai": true,
+    "careful_supply": true,
+    "sustain_training": true
+  },
+  {
+    "captain": "shen",
+    "profile": "balanced",
+    "strategy": "relic_focus",
+    "seed": 2026120101,
+    "support_ai": true,
+    "careful_supply": true,
+    "sustain_training": true
+  },
+  {
+    "captain": "shen",
+    "profile": "balanced",
+    "strategy": "relic_focus",
+    "seed": 2026120102,
+    "support_ai": true,
+    "careful_supply": true,
+    "sustain_training": true
+  },
+  {
+    "captain": "shen",
+    "profile": "guard",
+    "strategy": "adaptive",
+    "seed": 2026120200,
+    "support_ai": true,
+    "careful_supply": true,
+    "sustain_training": true
+  },
+  {
+    "captain": "shen",
+    "profile": "guard",
+    "strategy": "adaptive",
+    "seed": 2026120201,
+    "support_ai": true,
+    "careful_supply": true,
+    "sustain_training": true
+  },
+  {
+    "captain": "shen",
+    "profile": "guard",
+    "strategy": "adaptive",
+    "seed": 2026120202,
+    "support_ai": true,
+    "careful_supply": true,
+    "sustain_training": true
+  },
+  {
+    "captain": "shen",
+    "profile": "guard",
+    "strategy": "relic_focus",
+    "seed": 2026120200,
+    "support_ai": true,
+    "careful_supply": true,
+    "sustain_training": true
+  },
+  {
+    "captain": "shen",
+    "profile": "guard",
+    "strategy": "relic_focus",
+    "seed": 2026120201,
+    "support_ai": true,
+    "careful_supply": true,
+    "sustain_training": true
+  },
+  {
+    "captain": "shen",
+    "profile": "guard",
+    "strategy": "relic_focus",
+    "seed": 2026120202,
+    "support_ai": true,
+    "careful_supply": true,
+    "sustain_training": true
+  },
+  {
+    "captain": "shen",
+    "profile": "support",
+    "strategy": "adaptive",
+    "seed": 2026120300,
+    "support_ai": true,
+    "careful_supply": true,
+    "sustain_training": true
+  },
+  {
+    "captain": "shen",
+    "profile": "support",
+    "strategy": "adaptive",
+    "seed": 2026120301,
+    "support_ai": true,
+    "careful_supply": true,
+    "sustain_training": true
+  },
+  {
+    "captain": "shen",
+    "profile": "support",
+    "strategy": "adaptive",
+    "seed": 2026120302,
+    "support_ai": true,
+    "careful_supply": true,
+    "sustain_training": true
+  },
+  {
+    "captain": "shen",
+    "profile": "support",
+    "strategy": "relic_focus",
+    "seed": 2026120300,
+    "support_ai": true,
+    "careful_supply": true,
+    "sustain_training": true
+  },
+  {
+    "captain": "shen",
+    "profile": "support",
+    "strategy": "relic_focus",
+    "seed": 2026120301,
+    "support_ai": true,
+    "careful_supply": true,
+    "sustain_training": true
+  },
+  {
+    "captain": "shen",
+    "profile": "support",
+    "strategy": "relic_focus",
+    "seed": 2026120302,
+    "support_ai": true,
+    "careful_supply": true,
+    "sustain_training": true
+  },
+  {
+    "captain": "shen",
+    "profile": "assault",
+    "strategy": "adaptive",
+    "seed": 2026120400,
+    "support_ai": true,
+    "careful_supply": true,
+    "sustain_training": true
+  },
+  {
+    "captain": "shen",
+    "profile": "assault",
+    "strategy": "adaptive",
+    "seed": 2026120401,
+    "support_ai": true,
+    "careful_supply": true,
+    "sustain_training": true
+  },
+  {
+    "captain": "shen",
+    "profile": "assault",
+    "strategy": "adaptive",
+    "seed": 2026120402,
+    "support_ai": true,
+    "careful_supply": true,
+    "sustain_training": true
+  },
+  {
+    "captain": "shen",
+    "profile": "assault",
+    "strategy": "relic_focus",
+    "seed": 2026120400,
+    "support_ai": true,
+    "careful_supply": true,
+    "sustain_training": true
+  },
+  {
+    "captain": "shen",
+    "profile": "assault",
+    "strategy": "relic_focus",
+    "seed": 2026120401,
+    "support_ai": true,
+    "careful_supply": true,
+    "sustain_training": true
+  },
+  {
+    "captain": "shen",
+    "profile": "assault",
+    "strategy": "relic_focus",
+    "seed": 2026120402,
+    "support_ai": true,
+    "careful_supply": true,
+    "sustain_training": true
+  },
+  {
+    "captain": "wen",
+    "profile": "balanced",
+    "strategy": "adaptive",
+    "seed": 2026120100,
+    "support_ai": true,
+    "careful_supply": true,
+    "sustain_training": true
+  },
+  {
+    "captain": "wen",
+    "profile": "balanced",
+    "strategy": "adaptive",
+    "seed": 2026120101,
+    "support_ai": true,
+    "careful_supply": true,
+    "sustain_training": true
+  },
+  {
+    "captain": "wen",
+    "profile": "balanced",
+    "strategy": "adaptive",
+    "seed": 2026120102,
+    "support_ai": true,
+    "careful_supply": true,
+    "sustain_training": true
+  },
+  {
+    "captain": "wen",
+    "profile": "balanced",
+    "strategy": "relic_focus",
+    "seed": 2026120100,
+    "support_ai": true,
+    "careful_supply": true,
+    "sustain_training": true
+  },
+  {
+    "captain": "wen",
+    "profile": "balanced",
+    "strategy": "relic_focus",
+    "seed": 2026120101,
+    "support_ai": true,
+    "careful_supply": true,
+    "sustain_training": true
+  },
+  {
+    "captain": "wen",
+    "profile": "balanced",
+    "strategy": "relic_focus",
+    "seed": 2026120102,
+    "support_ai": true,
+    "careful_supply": true,
+    "sustain_training": true
+  },
+  {
+    "captain": "wen",
+    "profile": "guard",
+    "strategy": "adaptive",
+    "seed": 2026120200,
+    "support_ai": true,
+    "careful_supply": true,
+    "sustain_training": true
+  },
+  {
+    "captain": "wen",
+    "profile": "guard",
+    "strategy": "adaptive",
+    "seed": 2026120201,
+    "support_ai": true,
+    "careful_supply": true,
+    "sustain_training": true
+  },
+  {
+    "captain": "wen",
+    "profile": "guard",
+    "strategy": "adaptive",
+    "seed": 2026120202,
+    "support_ai": true,
+    "careful_supply": true,
+    "sustain_training": true
+  },
+  {
+    "captain": "wen",
+    "profile": "guard",
+    "strategy": "relic_focus",
+    "seed": 2026120200,
+    "support_ai": true,
+    "careful_supply": true,
+    "sustain_training": true
+  },
+  {
+    "captain": "wen",
+    "profile": "guard",
+    "strategy": "relic_focus",
+    "seed": 2026120201,
+    "support_ai": true,
+    "careful_supply": true,
+    "sustain_training": true
+  },
+  {
+    "captain": "wen",
+    "profile": "guard",
+    "strategy": "relic_focus",
+    "seed": 2026120202,
+    "support_ai": true,
+    "careful_supply": true,
+    "sustain_training": true
+  },
+  {
+    "captain": "wen",
+    "profile": "support",
+    "strategy": "adaptive",
+    "seed": 2026120300,
+    "support_ai": true,
+    "careful_supply": true,
+    "sustain_training": true
+  },
+  {
+    "captain": "wen",
+    "profile": "support",
+    "strategy": "adaptive",
+    "seed": 2026120301,
+    "support_ai": true,
+    "careful_supply": true,
+    "sustain_training": true
+  },
+  {
+    "captain": "wen",
+    "profile": "support",
+    "strategy": "adaptive",
+    "seed": 2026120302,
+    "support_ai": true,
+    "careful_supply": true,
+    "sustain_training": true
+  },
+  {
+    "captain": "wen",
+    "profile": "support",
+    "strategy": "relic_focus",
+    "seed": 2026120300,
+    "support_ai": true,
+    "careful_supply": true,
+    "sustain_training": true
+  },
+  {
+    "captain": "wen",
+    "profile": "support",
+    "strategy": "relic_focus",
+    "seed": 2026120301,
+    "support_ai": true,
+    "careful_supply": true,
+    "sustain_training": true
+  },
+  {
+    "captain": "wen",
+    "profile": "support",
+    "strategy": "relic_focus",
+    "seed": 2026120302,
+    "support_ai": true,
+    "careful_supply": true,
+    "sustain_training": true
+  },
+  {
+    "captain": "wen",
+    "profile": "assault",
+    "strategy": "adaptive",
+    "seed": 2026120400,
+    "support_ai": true,
+    "careful_supply": true,
+    "sustain_training": true
+  },
+  {
+    "captain": "wen",
+    "profile": "assault",
+    "strategy": "adaptive",
+    "seed": 2026120401,
+    "support_ai": true,
+    "careful_supply": true,
+    "sustain_training": true
+  },
+  {
+    "captain": "wen",
+    "profile": "assault",
+    "strategy": "adaptive",
+    "seed": 2026120402,
+    "support_ai": true,
+    "careful_supply": true,
+    "sustain_training": true
+  },
+  {
+    "captain": "wen",
+    "profile": "assault",
+    "strategy": "relic_focus",
+    "seed": 2026120400,
+    "support_ai": true,
+    "careful_supply": true,
+    "sustain_training": true
+  },
+  {
+    "captain": "wen",
+    "profile": "assault",
+    "strategy": "relic_focus",
+    "seed": 2026120401,
+    "support_ai": true,
+    "careful_supply": true,
+    "sustain_training": true
+  },
+  {
+    "captain": "wen",
+    "profile": "assault",
+    "strategy": "relic_focus",
+    "seed": 2026120402,
+    "support_ai": true,
+    "careful_supply": true,
+    "sustain_training": true
+  },
+  {
+    "captain": "lu",
+    "profile": "balanced",
+    "strategy": "adaptive",
+    "seed": 2026120100,
+    "support_ai": true,
+    "careful_supply": true,
+    "sustain_training": true
+  },
+  {
+    "captain": "lu",
+    "profile": "balanced",
+    "strategy": "adaptive",
+    "seed": 2026120101,
+    "support_ai": true,
+    "careful_supply": true,
+    "sustain_training": true
+  },
+  {
+    "captain": "lu",
+    "profile": "balanced",
+    "strategy": "adaptive",
+    "seed": 2026120102,
+    "support_ai": true,
+    "careful_supply": true,
+    "sustain_training": true
+  },
+  {
+    "captain": "lu",
+    "profile": "balanced",
+    "strategy": "relic_focus",
+    "seed": 2026120100,
+    "support_ai": true,
+    "careful_supply": true,
+    "sustain_training": true
+  },
+  {
+    "captain": "lu",
+    "profile": "balanced",
+    "strategy": "relic_focus",
+    "seed": 2026120101,
+    "support_ai": true,
+    "careful_supply": true,
+    "sustain_training": true
+  },
+  {
+    "captain": "lu",
+    "profile": "balanced",
+    "strategy": "relic_focus",
+    "seed": 2026120102,
+    "support_ai": true,
+    "careful_supply": true,
+    "sustain_training": true
+  },
+  {
+    "captain": "lu",
+    "profile": "guard",
+    "strategy": "adaptive",
+    "seed": 2026120200,
+    "support_ai": true,
+    "careful_supply": true,
+    "sustain_training": true
+  },
+  {
+    "captain": "lu",
+    "profile": "guard",
+    "strategy": "adaptive",
+    "seed": 2026120201,
+    "support_ai": true,
+    "careful_supply": true,
+    "sustain_training": true
+  },
+  {
+    "captain": "lu",
+    "profile": "guard",
+    "strategy": "adaptive",
+    "seed": 2026120202,
+    "support_ai": true,
+    "careful_supply": true,
+    "sustain_training": true
+  },
+  {
+    "captain": "lu",
+    "profile": "guard",
+    "strategy": "relic_focus",
+    "seed": 2026120200,
+    "support_ai": true,
+    "careful_supply": true,
+    "sustain_training": true
+  },
+  {
+    "captain": "lu",
+    "profile": "guard",
+    "strategy": "relic_focus",
+    "seed": 2026120201,
+    "support_ai": true,
+    "careful_supply": true,
+    "sustain_training": true
+  },
+  {
+    "captain": "lu",
+    "profile": "guard",
+    "strategy": "relic_focus",
+    "seed": 2026120202,
+    "support_ai": true,
+    "careful_supply": true,
+    "sustain_training": true
+  },
+  {
+    "captain": "lu",
+    "profile": "support",
+    "strategy": "adaptive",
+    "seed": 2026120300,
+    "support_ai": true,
+    "careful_supply": true,
+    "sustain_training": true
+  },
+  {
+    "captain": "lu",
+    "profile": "support",
+    "strategy": "adaptive",
+    "seed": 2026120301,
+    "support_ai": true,
+    "careful_supply": true,
+    "sustain_training": true
+  },
+  {
+    "captain": "lu",
+    "profile": "support",
+    "strategy": "adaptive",
+    "seed": 2026120302,
+    "support_ai": true,
+    "careful_supply": true,
+    "sustain_training": true
+  },
+  {
+    "captain": "lu",
+    "profile": "support",
+    "strategy": "relic_focus",
+    "seed": 2026120300,
+    "support_ai": true,
+    "careful_supply": true,
+    "sustain_training": true
+  },
+  {
+    "captain": "lu",
+    "profile": "support",
+    "strategy": "relic_focus",
+    "seed": 2026120301,
+    "support_ai": true,
+    "careful_supply": true,
+    "sustain_training": true
+  },
+  {
+    "captain": "lu",
+    "profile": "support",
+    "strategy": "relic_focus",
+    "seed": 2026120302,
+    "support_ai": true,
+    "careful_supply": true,
+    "sustain_training": true
+  },
+  {
+    "captain": "lu",
+    "profile": "assault",
+    "strategy": "adaptive",
+    "seed": 2026120400,
+    "support_ai": true,
+    "careful_supply": true,
+    "sustain_training": true
+  },
+  {
+    "captain": "lu",
+    "profile": "assault",
+    "strategy": "adaptive",
+    "seed": 2026120401,
+    "support_ai": true,
+    "careful_supply": true,
+    "sustain_training": true
+  },
+  {
+    "captain": "lu",
+    "profile": "assault",
+    "strategy": "adaptive",
+    "seed": 2026120402,
+    "support_ai": true,
+    "careful_supply": true,
+    "sustain_training": true
+  },
+  {
+    "captain": "lu",
+    "profile": "assault",
+    "strategy": "relic_focus",
+    "seed": 2026120400,
+    "support_ai": true,
+    "careful_supply": true,
+    "sustain_training": true
+  },
+  {
+    "captain": "lu",
+    "profile": "assault",
+    "strategy": "relic_focus",
+    "seed": 2026120401,
+    "support_ai": true,
+    "careful_supply": true,
+    "sustain_training": true
+  },
+  {
+    "captain": "lu",
+    "profile": "assault",
+    "strategy": "relic_focus",
+    "seed": 2026120402,
+    "support_ai": true,
+    "careful_supply": true,
+    "sustain_training": true
+  }
+]

@@ -21,7 +21,7 @@ func run():
   var node=scene.campaign.route.nodes.filter(func(n):return n.get("threat","")=="boss")[0]
   scene.campaign.route.current=node.id;scene.campaign.route.completed=false
   scene.show_deploy(node.encounter)
-  var intel=scene.modal.find_children("*","Button",true,false).filter(func(entry):return "敌情与战场规则" in entry.text)
+  var intel=scene.modal.find_children("*","Button",true,false).filter(func(entry):return "敌情与战场规则" in entry.accessibility_name)
   check(not intel.is_empty(),"deployment exposes enemy intel details")
   intel[0].pressed.emit()
   check("随机强化" in texts(scene.detail_overlay) and "无耗蓝" in texts(scene.detail_overlay),"deployment details preserve affix and enemy skills")

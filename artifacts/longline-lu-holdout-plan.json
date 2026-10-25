@@ -1,0 +1,11 @@
+{
+  "reason": "one independent v3 holdout support seed lost both strategies; assess without tuning rules",
+  "frozen_before_outcomes": true,
+  "source": "same v3 frozen final",
+  "new_seed_blocks": 5,
+  "runs_per_training": 10,
+  "case_hashes": {
+    "longline-lu-broad-holdout-cases.json": "5c9c8e91ecb5d1dc4305c181aae0415fe77e716284b17772d3855c679d6d6a2f",
+    "longline-lu-control-holdout-cases.json": "ced643ce8665a223e81e04ec9c1951e0cc11f346dbd0ac9cccaf0ebfa4ffab1d"
+  }
+}

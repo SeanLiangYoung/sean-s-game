@@ -1,0 +1,16 @@
+diagnostic 0 / 20 Lu support {'runs': 6, 'clears': 0} None
+support 8 / 20 Lu support {'runs': 6, 'clears': 2} {'gains': 8, 'losses': 0}
+supply 13 / 20 Lu support {'runs': 6, 'clears': 1} {'gains': 8, 'losses': 3}
+training 14 / 20 Lu support {'runs': 6, 'clears': 3} {'gains': 4, 'losses': 3}
+new-baseline 28 / 72 Lu support {'runs': 6, 'clears': 1} None
+new-final 49 / 72 Lu support {'runs': 6, 'clears': 4} {'gains': 27, 'losses': 6}
+holdout-final 58 / 72 Lu support {'runs': 6, 'clears': 4} None
+refusal 16 / 24 Lu support {'runs': 2, 'clears': 0} {'gains': 0, 'losses': 8}
+prospective-baseline 35 / 72 Lu support {'runs': 6, 'clears': 3} None
+prospective-final 56 / 72 Lu support {'runs': 6, 'clears': 6} {'gains': 27, 'losses': 6}
+prospective-refusal 48 / 72 Lu support {'runs': 6, 'clears': 5} {'gains': 7, 'losses': 15}
+prospective-alternative 23 / 24 Lu support {'runs': 2, 'clears': 2} {'gains': 3, 'losses': 0}
+prospective-holdout 19 / 24 Lu support {'runs': 2, 'clears': 0} None
+targeted 2 / 6 Lu support {'runs': 2, 'clears': 1} None
+lu-broad-holdout 8 / 10 Lu support {'runs': 10, 'clears': 8} None
+lu-control-holdout 8 / 10 Lu support {'runs': 10, 'clears': 8} {'gains': 0, 'losses': 0}

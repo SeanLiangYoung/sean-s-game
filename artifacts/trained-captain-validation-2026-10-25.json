@@ -1,0 +1,14 @@
+{
+  "training_fixture_checks": 24,
+  "memory_disk_matches": {
+    "shen": 10,
+    "wen": 10,
+    "lu": 10
+  },
+  "budget": 105,
+  "skill_ranks": {
+    "strike": 2,
+    "hero_heal": 1,
+    "mark": 1
+  }
+}

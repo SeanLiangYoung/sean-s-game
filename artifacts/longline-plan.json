@@ -1,0 +1,24 @@
+{
+  "frozen_before_new_outcomes": true,
+  "diagnosis_case_count": 20,
+  "new_seed_start": 2026110100,
+  "holdout_seed_start": 2026120100,
+  "count_per_profile": 3,
+  "strategies": [
+    "adaptive",
+    "relic_focus"
+  ],
+  "new_training": "original broad earned-XP order",
+  "holdout_training": "alternative control-first earned-XP order for Lu and ranger",
+  "refusal": "fixed previous top-three collection, no outcome filtering; first sample of every captain/profile/strategy",
+  "cases_hashes": {
+    "longline-new-baseline-cases.json": "171bf1b7872c069485d6476eb48a1b86b7779c6e8ddebf78960dc920269ef074",
+    "longline-training-cases.json": "acf2a5a37c4c92eaaba0551710a28719bfd58fd55b956d9387c9d7482ea3fd72",
+    "longline-holdout-final-cases.json": "b9f3b1f9f1175cfb7088495aa5097c2a71b8222c522247993d38a7581942e2b1",
+    "longline-refusal-cases.json": "f368d5b50671c0201b427292af16da62049cf0300acdc77e2de82c95502ecb20",
+    "longline-support-cases.json": "2560a76b5a3f219c32df70d406ecbd482e63d589c13a33b2dbdc9b5f3c8482e8",
+    "longline-supply-cases.json": "1618991d369449e2ed0e4e7609de065544e08cfe2d2d8681c7b3b1c53bea9614",
+    "longline-new-final-cases.json": "dd9f1109531cc1b63c2ee981d9e95493b11cfbbc3b3bc8699874ab2cd71ece4b",
+    "longline-diagnostic-cases.json": "6a02143102646c48db79fc9631ffd8d0ee715a4c0cee5e4e25849e5efc0062f6"
+  }
+}

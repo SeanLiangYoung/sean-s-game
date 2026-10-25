@@ -1,0 +1,92 @@
+[
+  {
+    "captain": "lu",
+    "profile": "support",
+    "strategy": "adaptive",
+    "seed": 2027030300,
+    "support_ai": true,
+    "careful_supply": true,
+    "sustain_training": false
+  },
+  {
+    "captain": "lu",
+    "profile": "support",
+    "strategy": "adaptive",
+    "seed": 2027030301,
+    "support_ai": true,
+    "careful_supply": true,
+    "sustain_training": false
+  },
+  {
+    "captain": "lu",
+    "profile": "support",
+    "strategy": "adaptive",
+    "seed": 2027030302,
+    "support_ai": true,
+    "careful_supply": true,
+    "sustain_training": false
+  },
+  {
+    "captain": "lu",
+    "profile": "support",
+    "strategy": "adaptive",
+    "seed": 2027030303,
+    "support_ai": true,
+    "careful_supply": true,
+    "sustain_training": false
+  },
+  {
+    "captain": "lu",
+    "profile": "support",
+    "strategy": "adaptive",
+    "seed": 2027030304,
+    "support_ai": true,
+    "careful_supply": true,
+    "sustain_training": false
+  },
+  {
+    "captain": "lu",
+    "profile": "support",
+    "strategy": "relic_focus",
+    "seed": 2027030300,
+    "support_ai": true,
+    "careful_supply": true,
+    "sustain_training": false
+  },
+  {
+    "captain": "lu",
+    "profile": "support",
+    "strategy": "relic_focus",
+    "seed": 2027030301,
+    "support_ai": true,
+    "careful_supply": true,
+    "sustain_training": false
+  },
+  {
+    "captain": "lu",
+    "profile": "support",
+    "strategy": "relic_focus",
+    "seed": 2027030302,
+    "support_ai": true,
+    "careful_supply": true,
+    "sustain_training": false
+  },
+  {
+    "captain": "lu",
+    "profile": "support",
+    "strategy": "relic_focus",
+    "seed": 2027030303,
+    "support_ai": true,
+    "careful_supply": true,
+    "sustain_training": false
+  },
+  {
+    "captain": "lu",
+    "profile": "support",
+    "strategy": "relic_focus",
+    "seed": 2027030304,
+    "support_ai": true,
+    "careful_supply": true,
+    "sustain_training": false
+  }
+]

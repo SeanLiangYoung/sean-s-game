@@ -1,0 +1,67 @@
+{
+  "longline_current_full_result_matches": true,
+  "longline_battles": 19,
+  "longline_cleared": true,
+  "longline_frozen_full_result_matches": true,
+  "longline_core_sources_match_frozen": true,
+  "game_source_hashes": {
+    "game/equipment_preview.gd": "27a8bcc5b992deb077ccd4e382f8b369cfa67eef823992448f0f849cd867d2f6",
+    "game/compact_ui.gd": "0c3984fd0862f6ac98d6b297eccebace108d48b3ac110eacf308063d6a1abc58",
+    "game/professions.gd": "93cd937b3794cd2fa7ec4544bb92b15af195a47f0d8a43b48bf1ebe8efd589ac",
+    "game/art.gd": "1b1094cd02ccc2dfe0b67029ad5d0b0cb0b264f20ad03f92cfe7a5623598f58d",
+    "game/campaign.gd": "f97664ec1a5df5a06c2febebeeffc0f59b914d045e47372256293e4d1acc2c7e",
+    "game/boss_visual.gd": "be9f52d3e24e5ac0b7fffad29ce2d3d3ddbd77d6d7c8ee40a8e274eb10ab4ff7",
+    "game/region_combat.gd": "57cd8eae6898d1104e439156aa7e192e942acb759840f968b1db4af9061c1fe2",
+    "game/combat_presentation.gd": "d5e811cc79a7e36ee70960c71c098a6352d1027bb27bd569baf2ffe47cad7a3d",
+    "game/relic_expansion.gd": "b2b31d905d4d403470c79180d5eb48edc55ef8e996b963a7df5de309d93e8a8d",
+    "game/skill_tree.gd": "864da08d7a4a86c419b83e67007d897670da3e1baefdb537f75e20d16a79f281",
+    "game/battlefield.gd": "5cb2473e1c2a806c2c279ceb0ff6afa5149c0917c67d22317f1ebeea8048712c",
+    "game/characters.gd": "763386bf9b4d94116549da5830d9c86392096aa018a08a6c088072084d97b6a5",
+    "game/achievements.gd": "37e26a36f5816565e6d8e9ae565fcc1982ae290c02c7c9f090fbc320806186ca",
+    "game/atlas.gd": "78ee63ee223bb7cb7a6405a144f42e6cc9119408bb4161fa04e0cd82425ee987",
+    "game/main.gd": "c2f818f30a0114cee7148f73d1e905db5d25c261b2ae0395876fe4d22a78d6fb",
+    "game/character_wardrobe.gd": "b4a2b452b0d802d7fb85a573ea4a75213acce64b4bfabedda3bb0717280e3e95",
+    "game/equipment_visual.gd": "020e67c863a79ba4ffee27196ef860fbcbc0092c12c1ba74e4aefc8d43fd43af",
+    "game/character_visual.gd": "a03beebd110101b8543a0d917c8bfeea1c2a328507bd93e84287311b1d0b24ce",
+    "game/enemy_ai.gd": "b91d89f48dcd1523383914960b87438c757eea8ce74a16ad063d7d7ad6dc829d",
+    "game/enemy_skills.gd": "33d4a67a936cc2e2766a79b62200a21873401dd3c7f9493c1aeee4005a6cad1a",
+    "game/party_details.gd": "f65540c68a5d3e5e035c78a6ff7873771699918bdfb918746119a7d06cf5d407",
+    "game/boss_effects.gd": "8b3ef6e67c2823517e1504941aa683eff443d014513be8ababaffaa74eaed3d1",
+    "game/region_art.gd": "462cbb9dd4409cbe0af6267542ea6a5313ad3069a916cc325136674b450ba8be",
+    "game/relics.gd": "ef214523016a126f3de69edbaa30659d84f624908a979bda69900d17786ba055",
+    "game/talents.gd": "ec1a374d7111d6e9a7051ad62a9da358b7d2a6830aac2f10170492fea9bad961",
+    "game/portraits.gd": "2f139514305eea70c52c48d9e7a4e056cb547df314da481aa7c8d8de6fb14330",
+    "game/rules.gd": "f8715d7345247d202e93715192555a375f6f5ff63e52d781778de7eb89f164ea",
+    "game/equipment_menu.gd": "ed1b706855fd5822ead3e6fbafcfef93b26f01b5d4326839a9b325785cffa353",
+    "game/achievement_celebration.gd": "0a0782079de2c1cc3f24df30dc1f530082a7085e8a3b205abb9dd7753c3f8bef",
+    "game/equipment_shapes.gd": "0f00d83d207de72d7378fc03c38779a7090e15a3a63a2881928498f742e0d7e1",
+    "game/regions.gd": "53cd20ae5880b8eba4858f0735421af072a46f36e5dc5bd644c3a8a0d65805ee",
+    "game/management_ui.gd": "32fab97fe529b258e2fdf2cf8891096a7aaad8857aa9682342a52b39d5d9fa17",
+    "game/route.gd": "119f75b3e108722b1381f5bf0ddc559d4edb56dc2b0904ac402de228330e0842"
+  },
+  "case": {
+    "captain": "lu",
+    "profile": "support",
+    "strategy": "adaptive",
+    "seed": 2027010301
+  },
+  "source_archives": {
+    "baseline": {
+      "manifest_files": 36,
+      "valid": true
+    },
+    "ablation": {
+      "manifest_files": 36,
+      "valid": true
+    },
+    "v2": {
+      "manifest_files": 36,
+      "valid": true
+    },
+    "final": {
+      "manifest_files": 36,
+      "valid": true
+    }
+  },
+  "historical_summaries_reproduced_unchanged": true
+}
