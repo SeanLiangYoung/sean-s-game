@@ -1,0 +1,1141 @@
+{
+  "games": 4176,
+  "paired_scenarios": 1392,
+  "reports": [
+    {
+      "file": "artifacts/enemy-coordination-final.json",
+      "holdout": false,
+      "games": 2088
+    },
+    {
+      "file": "artifacts/enemy-coordination-final-holdout.json",
+      "holdout": true,
+      "games": 2088
+    }
+  ],
+  "pressure_measure": "HP loss observed during enemy actions, including turn-transition effects; not direct damage only",
+  "overall": {
+    "classic": {
+      "cases": 1392,
+      "deaths": 629,
+      "rounds": 4352,
+      "remaining_hp": 329972,
+      "remaining_mp": 63554,
+      "captain_damage": 25575,
+      "other_damage": 57543,
+      "captain_hits": 2243,
+      "other_hits": 5056,
+      "wins": 1262,
+      "win_rate": 0.9066091954022989
+    },
+    "previous": {
+      "cases": 1392,
+      "deaths": 693,
+      "rounds": 5192,
+      "remaining_hp": 323015,
+      "remaining_mp": 64880,
+      "captain_damage": 25577,
+      "other_damage": 74974,
+      "captain_hits": 2044,
+      "other_hits": 6012,
+      "wins": 1274,
+      "win_rate": 0.9152298850574713
+    },
+    "current": {
+      "cases": 1392,
+      "deaths": 883,
+      "rounds": 4883,
+      "remaining_hp": 317572,
+      "remaining_mp": 66185,
+      "captain_damage": 44276,
+      "other_damage": 58538,
+      "captain_hits": 3611,
+      "other_hits": 4834,
+      "wins": 1128,
+      "win_rate": 0.8103448275862069
+    }
+  },
+  "regions": {
+    "border": {
+      "classic": {
+        "cases": 232,
+        "deaths": 45,
+        "rounds": 694,
+        "remaining_hp": 57811,
+        "remaining_mp": 10738,
+        "captain_damage": 3845,
+        "other_damage": 6423,
+        "captain_hits": 317,
+        "other_hits": 520,
+        "wins": 226,
+        "win_rate": 0.9741379310344828
+      },
+      "previous": {
+        "cases": 232,
+        "deaths": 97,
+        "rounds": 823,
+        "remaining_hp": 55071,
+        "remaining_mp": 11074,
+        "captain_damage": 5319,
+        "other_damage": 10011,
+        "captain_hits": 403,
+        "other_hits": 773,
+        "wins": 211,
+        "win_rate": 0.9094827586206896
+      },
+      "current": {
+        "cases": 232,
+        "deaths": 116,
+        "rounds": 745,
+        "remaining_hp": 54183,
+        "remaining_mp": 11137,
+        "captain_damage": 7761,
+        "other_damage": 7369,
+        "captain_hits": 591,
+        "other_hits": 597,
+        "wins": 188,
+        "win_rate": 0.8103448275862069
+      }
+    },
+    "frost": {
+      "classic": {
+        "cases": 232,
+        "deaths": 110,
+        "rounds": 741,
+        "remaining_hp": 55389,
+        "remaining_mp": 10481,
+        "captain_damage": 4302,
+        "other_damage": 8877,
+        "captain_hits": 376,
+        "other_hits": 777,
+        "wins": 201,
+        "win_rate": 0.8663793103448276
+      },
+      "previous": {
+        "cases": 232,
+        "deaths": 114,
+        "rounds": 892,
+        "remaining_hp": 54389,
+        "remaining_mp": 10686,
+        "captain_damage": 3962,
+        "other_damage": 12115,
+        "captain_hits": 326,
+        "other_hits": 976,
+        "wins": 211,
+        "win_rate": 0.9094827586206896
+      },
+      "current": {
+        "cases": 232,
+        "deaths": 146,
+        "rounds": 862,
+        "remaining_hp": 52623,
+        "remaining_mp": 10995,
+        "captain_damage": 7212,
+        "other_damage": 10254,
+        "captain_hits": 594,
+        "other_hits": 847,
+        "wins": 195,
+        "win_rate": 0.8405172413793104
+      }
+    },
+    "marsh": {
+      "classic": {
+        "cases": 232,
+        "deaths": 126,
+        "rounds": 724,
+        "remaining_hp": 53327,
+        "remaining_mp": 10659,
+        "captain_damage": 4129,
+        "other_damage": 10611,
+        "captain_hits": 376,
+        "other_hits": 1001,
+        "wins": 204,
+        "win_rate": 0.8793103448275862
+      },
+      "previous": {
+        "cases": 232,
+        "deaths": 125,
+        "rounds": 852,
+        "remaining_hp": 52224,
+        "remaining_mp": 10991,
+        "captain_damage": 4212,
+        "other_damage": 12571,
+        "captain_hits": 339,
+        "other_hits": 1065,
+        "wins": 207,
+        "win_rate": 0.8922413793103449
+      },
+      "current": {
+        "cases": 232,
+        "deaths": 169,
+        "rounds": 791,
+        "remaining_hp": 50677,
+        "remaining_mp": 11001,
+        "captain_damage": 7016,
+        "other_damage": 10577,
+        "captain_hits": 593,
+        "other_hits": 889,
+        "wins": 175,
+        "win_rate": 0.7543103448275862
+      }
+    },
+    "ruins": {
+      "classic": {
+        "cases": 232,
+        "deaths": 106,
+        "rounds": 736,
+        "remaining_hp": 55649,
+        "remaining_mp": 10247,
+        "captain_damage": 4567,
+        "other_damage": 9363,
+        "captain_hits": 401,
+        "other_hits": 804,
+        "wins": 208,
+        "win_rate": 0.896551724137931
+      },
+      "previous": {
+        "cases": 232,
+        "deaths": 134,
+        "rounds": 873,
+        "remaining_hp": 53802,
+        "remaining_mp": 10146,
+        "captain_damage": 3707,
+        "other_damage": 12928,
+        "captain_hits": 295,
+        "other_hits": 1007,
+        "wins": 211,
+        "win_rate": 0.9094827586206896
+      },
+      "current": {
+        "cases": 232,
+        "deaths": 137,
+        "rounds": 840,
+        "remaining_hp": 54578,
+        "remaining_mp": 10513,
+        "captain_damage": 7343,
+        "other_damage": 9263,
+        "captain_hits": 596,
+        "other_hits": 761,
+        "wins": 195,
+        "win_rate": 0.8405172413793104
+      }
+    },
+    "waste": {
+      "classic": {
+        "cases": 232,
+        "deaths": 108,
+        "rounds": 727,
+        "remaining_hp": 54806,
+        "remaining_mp": 10674,
+        "captain_damage": 3707,
+        "other_damage": 10743,
+        "captain_hits": 329,
+        "other_hits": 927,
+        "wins": 219,
+        "win_rate": 0.9439655172413793
+      },
+      "previous": {
+        "cases": 232,
+        "deaths": 125,
+        "rounds": 850,
+        "remaining_hp": 53649,
+        "remaining_mp": 10912,
+        "captain_damage": 4219,
+        "other_damage": 12918,
+        "captain_hits": 331,
+        "other_hits": 997,
+        "wins": 211,
+        "win_rate": 0.9094827586206896
+      },
+      "current": {
+        "cases": 232,
+        "deaths": 167,
+        "rounds": 817,
+        "remaining_hp": 53230,
+        "remaining_mp": 11124,
+        "captain_damage": 7203,
+        "other_damage": 10177,
+        "captain_hits": 580,
+        "other_hits": 826,
+        "wins": 186,
+        "win_rate": 0.8017241379310345
+      }
+    },
+    "wood": {
+      "classic": {
+        "cases": 232,
+        "deaths": 134,
+        "rounds": 730,
+        "remaining_hp": 52990,
+        "remaining_mp": 10755,
+        "captain_damage": 5025,
+        "other_damage": 11526,
+        "captain_hits": 444,
+        "other_hits": 1027,
+        "wins": 204,
+        "win_rate": 0.8793103448275862
+      },
+      "previous": {
+        "cases": 232,
+        "deaths": 98,
+        "rounds": 902,
+        "remaining_hp": 53880,
+        "remaining_mp": 11071,
+        "captain_damage": 4158,
+        "other_damage": 14431,
+        "captain_hits": 350,
+        "other_hits": 1194,
+        "wins": 223,
+        "win_rate": 0.9612068965517241
+      },
+      "current": {
+        "cases": 232,
+        "deaths": 148,
+        "rounds": 828,
+        "remaining_hp": 52281,
+        "remaining_mp": 11415,
+        "captain_damage": 7741,
+        "other_damage": 10898,
+        "captain_hits": 657,
+        "other_hits": 914,
+        "wins": 189,
+        "win_rate": 0.8146551724137931
+      }
+    }
+  },
+  "resources": {
+    "depleted": {
+      "classic": {
+        "cases": 696,
+        "deaths": 560,
+        "rounds": 2378,
+        "remaining_hp": 130300,
+        "remaining_mp": 12840,
+        "captain_damage": 20089,
+        "other_damage": 32878,
+        "captain_hits": 1756,
+        "other_hits": 2975,
+        "wins": 566,
+        "win_rate": 0.8132183908045977
+      },
+      "previous": {
+        "cases": 696,
+        "deaths": 591,
+        "rounds": 2839,
+        "remaining_hp": 128261,
+        "remaining_mp": 15144,
+        "captain_damage": 18897,
+        "other_damage": 45494,
+        "captain_hits": 1519,
+        "other_hits": 3679,
+        "wins": 579,
+        "win_rate": 0.8318965517241379
+      },
+      "current": {
+        "cases": 696,
+        "deaths": 745,
+        "rounds": 2539,
+        "remaining_hp": 124781,
+        "remaining_mp": 15684,
+        "captain_damage": 29677,
+        "other_damage": 32652,
+        "captain_hits": 2446,
+        "other_hits": 2767,
+        "wins": 438,
+        "win_rate": 0.6293103448275862
+      }
+    },
+    "full": {
+      "classic": {
+        "cases": 696,
+        "deaths": 69,
+        "rounds": 1974,
+        "remaining_hp": 199672,
+        "remaining_mp": 50714,
+        "captain_damage": 5486,
+        "other_damage": 24665,
+        "captain_hits": 487,
+        "other_hits": 2081,
+        "wins": 696,
+        "win_rate": 1.0
+      },
+      "previous": {
+        "cases": 696,
+        "deaths": 102,
+        "rounds": 2353,
+        "remaining_hp": 194754,
+        "remaining_mp": 49736,
+        "captain_damage": 6680,
+        "other_damage": 29480,
+        "captain_hits": 525,
+        "other_hits": 2333,
+        "wins": 695,
+        "win_rate": 0.9985632183908046
+      },
+      "current": {
+        "cases": 696,
+        "deaths": 138,
+        "rounds": 2344,
+        "remaining_hp": 192791,
+        "remaining_mp": 50501,
+        "captain_damage": 14599,
+        "other_damage": 25886,
+        "captain_hits": 1165,
+        "other_hits": 2067,
+        "wins": 690,
+        "win_rate": 0.9913793103448276
+      }
+    }
+  },
+  "builds": {
+    "arcane": {
+      "classic": {
+        "cases": 192,
+        "deaths": 80,
+        "rounds": 535,
+        "remaining_hp": 44487,
+        "remaining_mp": 11512,
+        "captain_damage": 2718,
+        "other_damage": 7626,
+        "captain_hits": 208,
+        "other_hits": 630,
+        "wins": 177,
+        "win_rate": 0.921875
+      },
+      "previous": {
+        "cases": 192,
+        "deaths": 100,
+        "rounds": 620,
+        "remaining_hp": 43162,
+        "remaining_mp": 12362,
+        "captain_damage": 4067,
+        "other_damage": 7827,
+        "captain_hits": 293,
+        "other_hits": 614,
+        "wins": 174,
+        "win_rate": 0.90625
+      },
+      "current": {
+        "cases": 192,
+        "deaths": 115,
+        "rounds": 615,
+        "remaining_hp": 42603,
+        "remaining_mp": 12471,
+        "captain_damage": 6057,
+        "other_damage": 7263,
+        "captain_hits": 434,
+        "other_hits": 571,
+        "wins": 163,
+        "win_rate": 0.8489583333333334
+      }
+    },
+    "base_guard": {
+      "classic": {
+        "cases": 48,
+        "deaths": 0,
+        "rounds": 174,
+        "remaining_hp": 12871,
+        "remaining_mp": 2131,
+        "captain_damage": 425,
+        "other_damage": 467,
+        "captain_hits": 49,
+        "other_hits": 74,
+        "wins": 48,
+        "win_rate": 1.0
+      },
+      "previous": {
+        "cases": 48,
+        "deaths": 2,
+        "rounds": 198,
+        "remaining_hp": 11473,
+        "remaining_mp": 1838,
+        "captain_damage": 853,
+        "other_damage": 1735,
+        "captain_hits": 97,
+        "other_hits": 180,
+        "wins": 46,
+        "win_rate": 0.9583333333333334
+      },
+      "current": {
+        "cases": 48,
+        "deaths": 8,
+        "rounds": 198,
+        "remaining_hp": 11928,
+        "remaining_mp": 1938,
+        "captain_damage": 1277,
+        "other_damage": 1004,
+        "captain_hits": 142,
+        "other_hits": 124,
+        "wins": 45,
+        "win_rate": 0.9375
+      }
+    },
+    "base_mana": {
+      "classic": {
+        "cases": 48,
+        "deaths": 46,
+        "rounds": 177,
+        "remaining_hp": 9924,
+        "remaining_mp": 1813,
+        "captain_damage": 1088,
+        "other_damage": 3002,
+        "captain_hits": 102,
+        "other_hits": 259,
+        "wins": 35,
+        "win_rate": 0.7291666666666666
+      },
+      "previous": {
+        "cases": 48,
+        "deaths": 38,
+        "rounds": 197,
+        "remaining_hp": 9908,
+        "remaining_mp": 1959,
+        "captain_damage": 1344,
+        "other_damage": 3344,
+        "captain_hits": 114,
+        "other_hits": 266,
+        "wins": 35,
+        "win_rate": 0.7291666666666666
+      },
+      "current": {
+        "cases": 48,
+        "deaths": 44,
+        "rounds": 167,
+        "remaining_hp": 9854,
+        "remaining_mp": 2095,
+        "captain_damage": 1739,
+        "other_damage": 2478,
+        "captain_hits": 153,
+        "other_hits": 197,
+        "wins": 27,
+        "win_rate": 0.5625
+      }
+    },
+    "base_risk": {
+      "classic": {
+        "cases": 48,
+        "deaths": 26,
+        "rounds": 131,
+        "remaining_hp": 11199,
+        "remaining_mp": 2350,
+        "captain_damage": 594,
+        "other_damage": 1768,
+        "captain_hits": 44,
+        "other_hits": 132,
+        "wins": 44,
+        "win_rate": 0.9166666666666666
+      },
+      "previous": {
+        "cases": 48,
+        "deaths": 36,
+        "rounds": 180,
+        "remaining_hp": 9926,
+        "remaining_mp": 2278,
+        "captain_damage": 800,
+        "other_damage": 3123,
+        "captain_hits": 54,
+        "other_hits": 227,
+        "wins": 46,
+        "win_rate": 0.9583333333333334
+      },
+      "current": {
+        "cases": 48,
+        "deaths": 45,
+        "rounds": 168,
+        "remaining_hp": 9558,
+        "remaining_mp": 2260,
+        "captain_damage": 1454,
+        "other_damage": 2705,
+        "captain_hits": 103,
+        "other_hits": 207,
+        "wins": 38,
+        "win_rate": 0.7916666666666666
+      }
+    },
+    "blood": {
+      "classic": {
+        "cases": 192,
+        "deaths": 89,
+        "rounds": 679,
+        "remaining_hp": 48317,
+        "remaining_mp": 7482,
+        "captain_damage": 5409,
+        "other_damage": 11597,
+        "captain_hits": 452,
+        "other_hits": 977,
+        "wins": 178,
+        "win_rate": 0.9270833333333334
+      },
+      "previous": {
+        "cases": 192,
+        "deaths": 101,
+        "rounds": 803,
+        "remaining_hp": 46193,
+        "remaining_mp": 7652,
+        "captain_damage": 4408,
+        "other_damage": 16806,
+        "captain_hits": 345,
+        "other_hits": 1263,
+        "wins": 178,
+        "win_rate": 0.9270833333333334
+      },
+      "current": {
+        "cases": 192,
+        "deaths": 149,
+        "rounds": 732,
+        "remaining_hp": 44542,
+        "remaining_mp": 7785,
+        "captain_damage": 9281,
+        "other_damage": 11090,
+        "captain_hits": 739,
+        "other_hits": 870,
+        "wins": 146,
+        "win_rate": 0.7604166666666666
+      }
+    },
+    "command": {
+      "classic": {
+        "cases": 48,
+        "deaths": 12,
+        "rounds": 139,
+        "remaining_hp": 11891,
+        "remaining_mp": 2260,
+        "captain_damage": 1020,
+        "other_damage": 1242,
+        "captain_hits": 75,
+        "other_hits": 112,
+        "wins": 44,
+        "win_rate": 0.9166666666666666
+      },
+      "previous": {
+        "cases": 48,
+        "deaths": 10,
+        "rounds": 182,
+        "remaining_hp": 11731,
+        "remaining_mp": 2025,
+        "captain_damage": 1457,
+        "other_damage": 1854,
+        "captain_hits": 101,
+        "other_hits": 149,
+        "wins": 48,
+        "win_rate": 1.0
+      },
+      "current": {
+        "cases": 48,
+        "deaths": 12,
+        "rounds": 183,
+        "remaining_hp": 11227,
+        "remaining_mp": 2056,
+        "captain_damage": 1890,
+        "other_damage": 1899,
+        "captain_hits": 129,
+        "other_hits": 152,
+        "wins": 47,
+        "win_rate": 0.9791666666666666
+      }
+    },
+    "control": {
+      "classic": {
+        "cases": 144,
+        "deaths": 121,
+        "rounds": 491,
+        "remaining_hp": 29601,
+        "remaining_mp": 5376,
+        "captain_damage": 3978,
+        "other_damage": 8256,
+        "captain_hits": 381,
+        "other_hits": 747,
+        "wins": 113,
+        "win_rate": 0.7847222222222222
+      },
+      "previous": {
+        "cases": 144,
+        "deaths": 137,
+        "rounds": 599,
+        "remaining_hp": 28265,
+        "remaining_mp": 5337,
+        "captain_damage": 3546,
+        "other_damage": 11142,
+        "captain_hits": 301,
+        "other_hits": 919,
+        "wins": 116,
+        "win_rate": 0.8055555555555556
+      },
+      "current": {
+        "cases": 144,
+        "deaths": 145,
+        "rounds": 527,
+        "remaining_hp": 28994,
+        "remaining_mp": 5543,
+        "captain_damage": 5845,
+        "other_damage": 7963,
+        "captain_hits": 523,
+        "other_hits": 663,
+        "wins": 91,
+        "win_rate": 0.6319444444444444
+      }
+    },
+    "cross_arcane_pilgrim": {
+      "classic": {
+        "cases": 48,
+        "deaths": 7,
+        "rounds": 139,
+        "remaining_hp": 12623,
+        "remaining_mp": 2588,
+        "captain_damage": 567,
+        "other_damage": 1336,
+        "captain_hits": 55,
+        "other_hits": 121,
+        "wins": 48,
+        "win_rate": 1.0
+      },
+      "previous": {
+        "cases": 48,
+        "deaths": 8,
+        "rounds": 166,
+        "remaining_hp": 12656,
+        "remaining_mp": 2802,
+        "captain_damage": 631,
+        "other_damage": 1991,
+        "captain_hits": 55,
+        "other_hits": 156,
+        "wins": 48,
+        "win_rate": 1.0
+      },
+      "current": {
+        "cases": 48,
+        "deaths": 9,
+        "rounds": 167,
+        "remaining_hp": 12847,
+        "remaining_mp": 2743,
+        "captain_damage": 1211,
+        "other_damage": 1367,
+        "captain_hits": 112,
+        "other_hits": 108,
+        "wins": 48,
+        "win_rate": 1.0
+      }
+    },
+    "cross_blood_ward": {
+      "classic": {
+        "cases": 48,
+        "deaths": 15,
+        "rounds": 180,
+        "remaining_hp": 11933,
+        "remaining_mp": 1705,
+        "captain_damage": 1175,
+        "other_damage": 2461,
+        "captain_hits": 103,
+        "other_hits": 267,
+        "wins": 46,
+        "win_rate": 0.9583333333333334
+      },
+      "previous": {
+        "cases": 48,
+        "deaths": 23,
+        "rounds": 222,
+        "remaining_hp": 12381,
+        "remaining_mp": 1568,
+        "captain_damage": 608,
+        "other_damage": 3299,
+        "captain_hits": 53,
+        "other_hits": 332,
+        "wins": 42,
+        "win_rate": 0.875
+      },
+      "current": {
+        "cases": 48,
+        "deaths": 32,
+        "rounds": 231,
+        "remaining_hp": 11448,
+        "remaining_mp": 1593,
+        "captain_damage": 386,
+        "other_damage": 4235,
+        "captain_hits": 28,
+        "other_hits": 437,
+        "wins": 48,
+        "win_rate": 1.0
+      }
+    },
+    "cross_hunt_engine": {
+      "classic": {
+        "cases": 48,
+        "deaths": 21,
+        "rounds": 147,
+        "remaining_hp": 11696,
+        "remaining_mp": 2092,
+        "captain_damage": 428,
+        "other_damage": 1656,
+        "captain_hits": 36,
+        "other_hits": 153,
+        "wins": 46,
+        "win_rate": 0.9583333333333334
+      },
+      "previous": {
+        "cases": 48,
+        "deaths": 20,
+        "rounds": 173,
+        "remaining_hp": 11018,
+        "remaining_mp": 1958,
+        "captain_damage": 882,
+        "other_damage": 2495,
+        "captain_hits": 69,
+        "other_hits": 201,
+        "wins": 46,
+        "win_rate": 0.9583333333333334
+      },
+      "current": {
+        "cases": 48,
+        "deaths": 39,
+        "rounds": 160,
+        "remaining_hp": 10795,
+        "remaining_mp": 2274,
+        "captain_damage": 1533,
+        "other_damage": 1826,
+        "captain_hits": 124,
+        "other_hits": 158,
+        "wins": 35,
+        "win_rate": 0.7291666666666666
+      }
+    },
+    "dusk": {
+      "classic": {
+        "cases": 48,
+        "deaths": 17,
+        "rounds": 134,
+        "remaining_hp": 11168,
+        "remaining_mp": 2208,
+        "captain_damage": 752,
+        "other_damage": 1657,
+        "captain_hits": 64,
+        "other_hits": 130,
+        "wins": 42,
+        "win_rate": 0.875
+      },
+      "previous": {
+        "cases": 48,
+        "deaths": 18,
+        "rounds": 135,
+        "remaining_hp": 11202,
+        "remaining_mp": 2416,
+        "captain_damage": 856,
+        "other_damage": 1509,
+        "captain_hits": 66,
+        "other_hits": 117,
+        "wins": 40,
+        "win_rate": 0.8333333333333334
+      },
+      "current": {
+        "cases": 48,
+        "deaths": 26,
+        "rounds": 121,
+        "remaining_hp": 10822,
+        "remaining_mp": 2404,
+        "captain_damage": 1680,
+        "other_damage": 878,
+        "captain_hits": 129,
+        "other_hits": 66,
+        "wins": 34,
+        "win_rate": 0.7083333333333334
+      }
+    },
+    "engine": {
+      "classic": {
+        "cases": 48,
+        "deaths": 37,
+        "rounds": 153,
+        "remaining_hp": 10228,
+        "remaining_mp": 2068,
+        "captain_damage": 1063,
+        "other_damage": 2561,
+        "captain_hits": 97,
+        "other_hits": 205,
+        "wins": 40,
+        "win_rate": 0.8333333333333334
+      },
+      "previous": {
+        "cases": 48,
+        "deaths": 41,
+        "rounds": 171,
+        "remaining_hp": 9458,
+        "remaining_mp": 2156,
+        "captain_damage": 1125,
+        "other_damage": 3263,
+        "captain_hits": 89,
+        "other_hits": 243,
+        "wins": 37,
+        "win_rate": 0.7708333333333334
+      },
+      "current": {
+        "cases": 48,
+        "deaths": 58,
+        "rounds": 133,
+        "remaining_hp": 9269,
+        "remaining_mp": 2170,
+        "captain_damage": 1546,
+        "other_damage": 2670,
+        "captain_hits": 129,
+        "other_hits": 203,
+        "wins": 26,
+        "win_rate": 0.5416666666666666
+      }
+    },
+    "hunt": {
+      "classic": {
+        "cases": 192,
+        "deaths": 67,
+        "rounds": 511,
+        "remaining_hp": 45452,
+        "remaining_mp": 9499,
+        "captain_damage": 2597,
+        "other_damage": 6046,
+        "captain_hits": 251,
+        "other_hits": 549,
+        "wins": 179,
+        "win_rate": 0.9322916666666666
+      },
+      "previous": {
+        "cases": 192,
+        "deaths": 86,
+        "rounds": 616,
+        "remaining_hp": 44064,
+        "remaining_mp": 9840,
+        "captain_damage": 2310,
+        "other_damage": 8230,
+        "captain_hits": 198,
+        "other_hits": 670,
+        "wins": 186,
+        "win_rate": 0.96875
+      },
+      "current": {
+        "cases": 192,
+        "deaths": 110,
+        "rounds": 578,
+        "remaining_hp": 44068,
+        "remaining_mp": 9714,
+        "captain_damage": 4654,
+        "other_damage": 6514,
+        "captain_hits": 408,
+        "other_hits": 540,
+        "wins": 164,
+        "win_rate": 0.8541666666666666
+      }
+    },
+    "pilgrim": {
+      "classic": {
+        "cases": 48,
+        "deaths": 18,
+        "rounds": 180,
+        "remaining_hp": 12127,
+        "remaining_mp": 1666,
+        "captain_damage": 1761,
+        "other_damage": 2206,
+        "captain_hits": 165,
+        "other_hits": 203,
+        "wins": 44,
+        "win_rate": 0.9166666666666666
+      },
+      "previous": {
+        "cases": 48,
+        "deaths": 17,
+        "rounds": 235,
+        "remaining_hp": 12526,
+        "remaining_mp": 1707,
+        "captain_damage": 831,
+        "other_damage": 3867,
+        "captain_hits": 69,
+        "other_hits": 312,
+        "wins": 47,
+        "win_rate": 0.9791666666666666
+      },
+      "current": {
+        "cases": 48,
+        "deaths": 31,
+        "rounds": 224,
+        "remaining_hp": 11559,
+        "remaining_mp": 1787,
+        "captain_damage": 2717,
+        "other_damage": 2712,
+        "captain_hits": 237,
+        "other_hits": 223,
+        "wins": 42,
+        "win_rate": 0.875
+      }
+    },
+    "ward": {
+      "classic": {
+        "cases": 192,
+        "deaths": 73,
+        "rounds": 582,
+        "remaining_hp": 46455,
+        "remaining_mp": 8804,
+        "captain_damage": 2000,
+        "other_damage": 5662,
+        "captain_hits": 161,
+        "other_hits": 497,
+        "wins": 178,
+        "win_rate": 0.9270833333333334
+      },
+      "previous": {
+        "cases": 192,
+        "deaths": 56,
+        "rounds": 695,
+        "remaining_hp": 49052,
+        "remaining_mp": 8982,
+        "captain_damage": 1859,
+        "other_damage": 4489,
+        "captain_hits": 140,
+        "other_hits": 363,
+        "wins": 185,
+        "win_rate": 0.9635416666666666
+      },
+      "current": {
+        "cases": 192,
+        "deaths": 60,
+        "rounds": 679,
+        "remaining_hp": 48058,
+        "remaining_mp": 9352,
+        "captain_damage": 3006,
+        "other_damage": 3934,
+        "captain_hits": 221,
+        "other_hits": 315,
+        "wins": 174,
+        "win_rate": 0.90625
+      }
+    }
+  },
+  "paired_reversals": {
+    "classic": {
+      "earlier_player_win_now_loss": 164,
+      "earlier_player_loss_now_win": 30
+    },
+    "previous": {
+      "earlier_player_win_now_loss": 175,
+      "earlier_player_loss_now_win": 29
+    }
+  },
+  "cohort_difficulty_gates": {
+    "artifacts/enemy-coordination-final.json": {
+      "wins": {
+        "classic": 596,
+        "previous": 622,
+        "current": 526
+      },
+      "regions": {
+        "border": {
+          "wins": {
+            "classic": 113,
+            "previous": 100,
+            "current": 90
+          },
+          "pass": true
+        },
+        "frost": {
+          "wins": {
+            "classic": 91,
+            "previous": 102,
+            "current": 90
+          },
+          "pass": true
+        },
+        "marsh": {
+          "wins": {
+            "classic": 93,
+            "previous": 102,
+            "current": 81
+          },
+          "pass": true
+        },
+        "ruins": {
+          "wins": {
+            "classic": 99,
+            "previous": 101,
+            "current": 89
+          },
+          "pass": true
+        },
+        "waste": {
+          "wins": {
+            "classic": 106,
+            "previous": 104,
+            "current": 87
+          },
+          "pass": true
+        },
+        "wood": {
+          "wins": {
+            "classic": 94,
+            "previous": 113,
+            "current": 89
+          },
+          "pass": true
+        }
+      },
+      "pass": true
+    },
+    "artifacts/enemy-coordination-final-holdout.json": {
+      "wins": {
+        "classic": 666,
+        "previous": 652,
+        "current": 602
+      },
+      "regions": {
+        "border": {
+          "wins": {
+            "classic": 113,
+            "previous": 111,
+            "current": 98
+          },
+          "pass": true
+        },
+        "frost": {
+          "wins": {
+            "classic": 110,
+            "previous": 109,
+            "current": 105
+          },
+          "pass": true
+        },
+        "marsh": {
+          "wins": {
+            "classic": 111,
+            "previous": 105,
+            "current": 94
+          },
+          "pass": true
+        },
+        "ruins": {
+          "wins": {
+            "classic": 109,
+            "previous": 110,
+            "current": 106
+          },
+          "pass": true
+        },
+        "waste": {
+          "wins": {
+            "classic": 113,
+            "previous": 107,
+            "current": 99
+          },
+          "pass": true
+        },
+        "wood": {
+          "wins": {
+            "classic": 110,
+            "previous": 110,
+            "current": 100
+          },
+          "pass": true
+        }
+      },
+      "pass": true
+    }
+  },
+  "difficulty_gate_pass": true,
+  "regions_easier_than_previous": [],
+  "builds_easier_than_previous": [
+    "cross_blood_ward"
+  ],
+  "limits": "Fixed player policy; stratified combinations, not every Cartesian relic/skill combination; no claim of human win rates."
+}

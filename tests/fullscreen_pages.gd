@@ -92,6 +92,7 @@ func run():
  scene.show_region("border")
  var start=find_button(scene.modal,"确认出发")
  start.pressed.emit()
+ scene.campaign.route.setup("border");scene.campaign.encounters=["open","open","open"]
  check(not is_instance_valid(scene.modal) and scene.atlas.route_mode,"region confirmation enters route map")
  scene.select_route_node("0b")
  scene.show_relic_binding("echo")

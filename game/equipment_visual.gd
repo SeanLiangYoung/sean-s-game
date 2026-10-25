@@ -1,5 +1,6 @@
 extends RefCounted
 # Gear uses the same scene builder for live pawns and portrait renders.
+const Jobs=preload("res://game/professions.gd")
 const Shapes=preload("res://game/equipment_shapes.gd")
 const WEAPONS={"sword":["Warrior","Warrior_Sword"],"dagger":["Rogue","Rogue_Dagger"],"bow":["Ranger","Ranger_Bow"],"staff":["Cleric","Cleric_Staff"]}
 static var weapon_resources: Dictionary={}
@@ -254,15 +255,32 @@ static func apply(pawn: Node3D,profile: Dictionary):
  for mesh in model.find_children("*","MeshInstance3D",true,false):
   if str(mesh.name) in ["Warrior_Sword","Rogue_Dagger","Ranger_Bow","Cleric_Staff"]:mesh.visible=false
   if str(mesh.name) in ["ShoulderPad_L","ShoulderPad_R","ShoulderPads","ArmGuard_L","ArmGuard_R","Guard"]:mesh.visible=profile.get("armor","")==""
- var weapon=profile.get("mainhand","")
+ var weapon_id=profile.get("mainhand","")
+ var weapon=Jobs.ITEMS.get(weapon_id,{}).get("kind",weapon_id)
  if WEAPONS.has(weapon) or weapon=="crossbow":
   var attachment=mount(skeleton,"EquippedMainhand","Weapon.R")
-  attachment.set_meta("item_id",weapon)
+  attachment.set_meta("item_id",weapon_id)
   if WEAPONS.has(weapon):
    crafted_weapon(attachment,weapon)
   else:crossbow(skeleton,attachment)
- if profile.get("offhand","")=="shield":shield(skeleton)
- if profile.get("armor","") in ["leather","plate"]:armor(skeleton,profile.armor)
+ var offhand=profile.get("offhand","")
+ if Jobs.ITEMS.get(offhand,{}).get("kind",offhand)=="shield":
+  shield(skeleton)
+  skeleton.get_node("EquippedOffhand").set_meta("item_id",offhand)
+ var armor_id=profile.get("armor","")
+ var armor_kind=Jobs.ITEMS.get(armor_id,{}).get("kind",armor_id)
+ if armor_kind in ["leather","plate"]:
+  armor(skeleton,armor_kind)
+  skeleton.get_node("EquippedArmor").set_meta("item_id",armor_id)
+ for attachment in skeleton.get_children():
+  var id=attachment.get_meta("item_id",armor_id if attachment.get_meta("equipment_armor",false) else "")
+  if Jobs.ITEMS.get(id,{}).get("mods",{}).is_empty():continue
+  var tint=Color("89b9ac") if Jobs.ITEMS[id].slot=="mainhand" else Color("b1a0c7")
+  for mesh in attachment.find_children("*","MeshInstance3D",true,false):
+   if mesh.material_override is StandardMaterial3D:
+    var variant=mesh.material_override.duplicate()
+    variant.albedo_color=variant.albedo_color.lerp(tint,0.32)
+    mesh.material_override=variant
  pawn.set_meta("equipment_signature",key)
  pawn.set_meta("equipped_weapon",weapon)
  pawn.set_meta("equipment_managed",true)

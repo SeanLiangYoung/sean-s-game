@@ -34,6 +34,14 @@ func run():
  check(has_text(scene.modal,"剩余 1 / 1") and has_text(scene.modal,"沈烬"),"remaining charges and wearer displayed")
  check(has_text(scene.modal,"代价："),"risk displayed")
  check(not has_text(scene.modal,"封存") and not has_text(scene.modal,"卸下遗物"),"no deactivation controls")
+ check(scene.has_method("show_relic_catalog"),"complete relic catalog is browseable")
+ if scene.has_method("show_relic_catalog"):
+  for id in scene.Campaign.Relic.CATALOG:scene.campaign.discover_relic(id)
+  scene.show_relic_catalog("blood")
+  check(has_text(scene.modal,"赤誓残卷") and has_text(scene.modal,"殉火心脏"),"theme filter shows complete blood family")
+  check(not has_text(scene.modal,"湛蓝瞳环"),"theme filter excludes unrelated entries")
+  scene.show_relic_catalog()
+  check(has_text(scene.modal,"110") and has_text(scene.modal,"百战军册"),"full catalog includes all relics")
  scene.campaign.phase="reward"
  scene.campaign.choices=[scene.campaign.REWARDS.filter(func(r):return r.id=="echo")[0]]
  scene.show_reward()

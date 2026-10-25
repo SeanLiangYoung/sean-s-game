@@ -45,13 +45,31 @@ func _initialize():
   check(b.outcome!="","battle has outcome")
   if b.outcome=="victory":wins+=1
   total_turns+=b.round_no
-  if difficulty==2:check(b.round_no>=4,"deep encounter lasts long enough to experience first shrink")
   c.resolve_battle(b)
   if c.phase=="reward":
    c.choose_reward(0,"hero")
    check(c.extract([]),"victory to extraction is playable")
    check(c.phase=="camp","complete loop reaches camp")
-  print("SIM difficulty=",difficulty," outcome=",b.outcome," rounds=",b.round_no," actions=",actions)
+  print("SIM difficulty=",difficulty," outcome=",b.outcome," rounds=",b.round_no," radius=",b.radius," actions=",actions)
+ # Deep combat can now kill the captain before the tide. Exercise the tide
+ # transition independently through real paid turns, without requiring AI mercy.
+ var tide=Rules.new();tide.start_battle(tide.default_party().slice(0,5),2)
+ var tide_actions=0
+ while tide.outcome=="" and tide.radius==4 and tide_actions<100:
+  if tide.active().side==0:tide.end_action()
+  else:tide.rest("hp")
+  tide_actions+=1
+ check(tide.radius<4 and tide.events.any(func(event):return "灰潮收缩" in event),"deep encounter first shrink occurs through real turn transitions")
+ # Combat may legitimately end before round 3; verify scheduled_tide scheduling independently.
+ var scheduled_tide=Rules.new();scheduled_tide.start_battle(scheduled_tide.default_party(),2)
+ var captain=scheduled_tide.find_actor("hero");captain.speed=100;captain.cell=Vector2i.ZERO
+ scheduled_tide.order=[scheduled_tide.actors.find(captain)];scheduled_tide.order_index=0;scheduled_tide.round_no=2
+ scheduled_tide.finish_turn()
+ check(scheduled_tide.round_no==3 and scheduled_tide.radius==4,"scheduled_tide remains open before end of round three")
+ scheduled_tide.order=[scheduled_tide.actors.find(captain)];scheduled_tide.order_index=0
+ scheduled_tide.finish_turn()
+ check(scheduled_tide.round_no==4 and scheduled_tide.radius==3,"first scheduled_tide shrinks precisely at end of round three")
+ check(scheduled_tide.events.any(func(event):return "灰潮收缩" in event),"first shrink records its actual event")
  check(wins>=1,"at least introductory battle beatable with basic tactics")
  var c=Campaign.new("user://ashbound-integration-tests.json")
  c.depart()

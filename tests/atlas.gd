@@ -18,6 +18,7 @@ func run():
  scene.show_region("border")
  check(is_instance_valid(scene.modal))
  check(scene.campaign.start_region("border"))
+ scene.campaign.route.setup("border");scene.campaign.encounters=["open","open","open"]
  scene.close_modal()
  scene.campaign.silver=300
  scene.refresh_ui()
@@ -61,7 +62,7 @@ func run():
  caster.cell=Vector2i.ZERO
  caster.hp=20
  check(rules.cast(caster.id))
- check(caster.hp==52)
+ check(caster.hp==54) # Qinghe urgent-care talent fills the remaining life.
  scene.queue_free()
  await process_frame
  print("CHECKS: %d FAILURES: %d"%[checks,failures])

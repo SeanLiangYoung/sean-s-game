@@ -1,0 +1,5843 @@
+{
+  "auto_baseline_equipped_party": [
+    {
+      "adaptation": [],
+      "ap": 4,
+      "appearance": "hero",
+      "armor": 2,
+      "base_power": 19,
+      "base_range": 1,
+      "base_speed": 12,
+      "cell": "(0, 0)",
+      "character_id": "shen",
+      "heal_bonus": 0,
+      "hp": 80,
+      "id": "hero",
+      "identity": "团长 · 断旗继承者",
+      "kill_mp": 0,
+      "learned": [],
+      "mainhand": "sword",
+      "mana_power": 0,
+      "mark_power": 0,
+      "max_ap": 4,
+      "max_hp": 80,
+      "max_mp": 24,
+      "mp": 24,
+      "name": "沈烬",
+      "power": 22,
+      "profession": "hero",
+      "range": 1,
+      "rest_hp": 0.0,
+      "rest_mp": 0.0,
+      "role": "主角",
+      "shield_power": 0,
+      "side": 0,
+      "skill_power": 0,
+      "skill_ranks": {
+        "strike": 1
+      },
+      "speed": 12,
+      "trap_power": 0,
+      "xp": 0
+    },
+    {
+      "adaptation": [],
+      "ap": 4,
+      "appearance": "blade",
+      "armor": 1,
+      "base_power": 22,
+      "base_range": 1,
+      "base_speed": 15,
+      "cell": "(0, 0)",
+      "character_id": "aling",
+      "heal_bonus": 0,
+      "hp": 58,
+      "id": "blade",
+      "identity": "佣兵 · 走索人",
+      "kill_mp": 0,
+      "learned": [],
+      "mainhand": "dagger",
+      "mana_power": 0,
+      "mark_power": 0,
+      "max_ap": 4,
+      "max_hp": 58,
+      "max_mp": 20,
+      "mp": 20,
+      "name": "阿绫",
+      "power": 24,
+      "profession": "blade",
+      "range": 1,
+      "rest_hp": 0.0,
+      "rest_mp": 0.0,
+      "role": "游剑客",
+      "shield_power": 0,
+      "side": 0,
+      "skill_power": 0,
+      "skill_ranks": {
+        "dash": 1
+      },
+      "speed": 15,
+      "trap_power": 0,
+      "xp": 0
+    },
+    {
+      "adaptation": [],
+      "ap": 4,
+      "appearance": "ranger",
+      "armor": 0,
+      "base_power": 17,
+      "base_range": 3,
+      "base_speed": 14,
+      "cell": "(0, 0)",
+      "character_id": "ya",
+      "heal_bonus": 0,
+      "hp": 52,
+      "id": "ranger",
+      "identity": "佣兵 · 风口守望者",
+      "kill_mp": 0,
+      "learned": [],
+      "mainhand": "bow",
+      "mana_power": 0,
+      "mark_power": 0,
+      "max_ap": 4,
+      "max_hp": 52,
+      "max_mp": 24,
+      "mp": 24,
+      "name": "鸦",
+      "power": 19,
+      "profession": "ranger",
+      "range": 3,
+      "rest_hp": 0.0,
+      "rest_mp": 0.0,
+      "role": "荒原猎手",
+      "shield_power": 0,
+      "side": 0,
+      "skill_power": 0,
+      "skill_ranks": {
+        "mark": 1
+      },
+      "speed": 14,
+      "trap_power": 0,
+      "xp": 0
+    },
+    {
+      "adaptation": [],
+      "ap": 4,
+      "appearance": "medic",
+      "armor": 0,
+      "base_power": 12,
+      "base_range": 2,
+      "base_speed": 11,
+      "cell": "(0, 0)",
+      "character_id": "bai",
+      "heal_bonus": 0,
+      "hp": 54,
+      "id": "medic",
+      "identity": "佣兵 · 雾疫记录者",
+      "kill_mp": 0,
+      "learned": [],
+      "mainhand": "staff",
+      "mana_power": 0,
+      "mark_power": 0,
+      "max_ap": 4,
+      "max_hp": 54,
+      "max_mp": 40,
+      "mp": 40,
+      "name": "白芷",
+      "power": 13,
+      "profession": "medic",
+      "range": 2,
+      "rest_hp": 0.0,
+      "rest_mp": 0.0,
+      "role": "行医者",
+      "shield_power": 0,
+      "side": 0,
+      "skill_power": 0,
+      "skill_ranks": {
+        "heal": 1
+      },
+      "speed": 11,
+      "trap_power": 0,
+      "xp": 0
+    },
+    {
+      "adaptation": [],
+      "ap": 4,
+      "appearance": "engineer",
+      "armor": 0,
+      "base_power": 18,
+      "base_range": 2,
+      "base_speed": 10,
+      "cell": "(0, 0)",
+      "character_id": "li",
+      "heal_bonus": 0,
+      "hp": 68,
+      "id": "engineer",
+      "identity": "佣兵 · 废墟拾齿者",
+      "kill_mp": 0,
+      "learned": [],
+      "mainhand": "crossbow",
+      "mana_power": 0,
+      "mark_power": 0,
+      "max_ap": 4,
+      "max_hp": 68,
+      "max_mp": 28,
+      "mp": 28,
+      "name": "砾",
+      "power": 21,
+      "profession": "engineer",
+      "range": 2,
+      "rest_hp": 0.0,
+      "rest_mp": 0.0,
+      "role": "遗械师",
+      "shield_power": 0,
+      "side": 0,
+      "skill_power": 0,
+      "skill_ranks": {
+        "trap": 1
+      },
+      "speed": 10,
+      "trap_power": 0,
+      "xp": 0
+    },
+    {
+      "adaptation": [],
+      "ap": 4,
+      "appearance": "warden",
+      "armor": 0,
+      "base_power": 17,
+      "base_range": 1,
+      "base_speed": 8,
+      "cell": "(0, 0)",
+      "character_id": "yue",
+      "heal_bonus": 0,
+      "hp": 96,
+      "id": "warden",
+      "identity": "佣兵 · 断桥留守者",
+      "kill_mp": 0,
+      "learned": [],
+      "mainhand": "",
+      "mana_power": 0,
+      "mark_power": 0,
+      "max_ap": 4,
+      "max_hp": 96,
+      "max_mp": 16,
+      "mp": 16,
+      "name": "岳峙",
+      "power": 17,
+      "profession": "warden",
+      "range": 1,
+      "rest_hp": 0.0,
+      "rest_mp": 0.0,
+      "role": "盾卫",
+      "shield_power": 0,
+      "side": 0,
+      "skill_power": 0,
+      "skill_ranks": {
+        "guard": 1
+      },
+      "speed": 8,
+      "trap_power": 0,
+      "xp": 0
+    }
+  ],
+  "characters": {
+    "aling": {
+      "effect": "掠影突袭成功突进且造成生命伤害后，本次自身行动下一次普通移动的第一格免费，每次自身行动限一次。束缚的额外消耗不减免，未使用的免费移动在行动结束时失效。",
+      "job": "blade",
+      "name": "阿绫",
+      "relics": "流沙履印；个人：荆棘王冠",
+      "story": "阿绫在巡回戏班长大，拿手节目是踏着细索穿过燃烧的圆环。灰潮截断巡演路线后，戏班拆掉舞台做成车架，她在废墟间探路，替老人和孩子寻找落脚点。\n劫匪抢走车队粮食那天，她从屋檐跃入院落，第一次把表演短刃换成真刀。如今她仍会在出发前检查同伴的绳扣，也总给自己留一条退路。",
+      "talent": "落脚有声",
+      "title": "走索人"
+    },
+    "bai": {
+      "effect": "净护、坚盾庇护实际清除至少一种负面状态时，为目标恢复6生命，并使该次护盾值+4。一次施法只触发一次，恢复受正常修正影响。",
+      "job": "medic",
+      "name": "白芷",
+      "relics": "守誓铜铃；个人：护生石",
+      "story": "白芷在沼泽医馆记录一种反复发作的雾疫。领主要求她把病因写成流民携来的污染，她却在领主私设的遗物工坊里找到相同毒斑。\n医馆被封后，她带着病例和样本逃走。如今她替佣兵解毒，也收集各地异常症状。她始终用同一本册子，前半本写病人姓名，后半本留给尚未查清的病因。",
+      "talent": "祛厄留生",
+      "title": "雾疫记录者"
+    },
+    "chi": {
+      "effect": "饮血斩按实际生命伤害恢复的比例从30%提高至45%；施放前自身半血及以下时，该技能伤害额外+4。过量伤害、护盾吸收和遗物自伤不产生吸血，恢复受正常修正影响。",
+      "job": "blade",
+      "name": "迟照",
+      "relics": "个人：噬生苔或饥渴獠牙",
+      "story": "迟照曾为沼泽药商护送采药人。失散后被找到时，他已高烧多日，伤口长出细小苔芽。医师清除了大部分感染，却无法解释他为何还活着。\n伤愈后，旧伤在寒夜仍发痛，只有活动身体才稍有缓解。他重新拿剑，接最难走的护送任务，把钱寄给没能带回家的采药人家属。每次扎营，他都睡在离火最近的地方。",
+      "talent": "伤口记忆",
+      "title": "苔痕归客"
+    },
+    "ji": {
+      "effect": "修复脉冲基础治疗+4、护盾值+6；若施放前目标已有护盾，改为只使该次护盾值+10，不获得额外治疗。护盾与已有护盾取较高值，不相加。",
+      "job": "engineer",
+      "name": "纪灯",
+      "relics": "守誓铜铃、沉城印玺；个人：护生石",
+      "story": "纪灯维护遗城外围的照明塔。管理者早已不知去向，她仍按旧排班巡检，因为居民要靠灯光判断哪条路还能走。\n撤离那天，她为修最后一盏路灯错过车队，靠拼起的屏障发生器熬过一夜。此后她替佣兵修装备，也改装能保护活人的遗械。她不保证每件东西都能修好，但总会先拆开看看。",
+      "talent": "余光续明",
+      "title": "遗城修灯匠"
+    },
+    "li": {
+      "effect": "布设机关、重压机关伤害+6。自己的机关被敌人触发后回蓝2，每次自身行动开始至下次开始最多一次；机关数量上限仍为1。",
+      "job": "engineer",
+      "name": "砾",
+      "relics": "逆流沙漏；个人：缚潮齿轮",
+      "story": "砾在遗城废料场长大，用坏齿轮换食物，后来学会让它们重新咬合。他的第一个机关没抓住偷粮野兽，却夹住了收保护费的打手。\n废料场被封后，他背着零件离开，坚称每件东西都还能用。他喜欢把装置借给别人，却会追问用了几次、在哪坏的，以及能不能把残件带回来。",
+      "talent": "藏齿",
+      "title": "废墟拾齿者"
+    },
+    "lin": {
+      "effect": "猎物标记、追猎印记的直接伤害加成额外+2。每次施加标记后，下一名其他友军直接攻击该目标，攻击结算后回蓝2；每次标记只触发一次，重复标记刷新。",
+      "job": "ranger",
+      "name": "林鸦",
+      "relics": "逐猎罗盘；个人：静观瞳石",
+      "story": "林鸦曾替伐木队引路。雇主偷偷更换地图，把工人带进旧林，惊醒石环守卫。逃生时他在树干刻下路标，却发现后来者刮掉标记，企图独占找到的遗物。\n他最后只带回几名工人，此后把标志刻进石头。他加入佣兵团寻找失踪工人，也想证明，自己留下的路仍能把人带回去。",
+      "talent": "众矢之的",
+      "title": "失路引猎人"
+    },
+    "lu": {
+      "effect": "每次自身行动施放两个来源职业不同的主动技能后，第二个技能结算完毕回蓝4，每次自身行动限一次。技能需先按原价支付，普攻、休息与遗物不计入。",
+      "job": "hero",
+      "name": "陆衡",
+      "relics": "逆流沙漏；个人：回响棱镜",
+      "story": "陆衡曾替勘探队辨认星陨遗城的旧世文字。他破解了一座设施的门，也亲眼看见门后的防卫系统杀死雇主和同伴。外界称他为唯一的幸存者，他却知道，逃走时关上的门后仍有人敲击。\n他组织佣兵团深入遗址，寻找当年设施的另一处入口。他习惯在出发前准备多种方案，却很少告诉别人自己害怕什么。随身那块不再发光的通行牌背面，刻满了勘探队的姓名。",
+      "talent": "异式演算",
+      "title": "星陨逃生者"
+    },
+    "luosui": {
+      "effect": "守望救援治疗施放前半血及以下的其他友军时，基础治疗+8，并清除中毒；无中毒时清除寒冷，一次只清除一种。原有护盾正常结算，治疗受正常修正影响。",
+      "job": "warden",
+      "name": "罗穗",
+      "relics": "沉城印玺；个人：薪火戒或护生石",
+      "story": "罗穗曾带孩子穿过灰潮边境。她不是士兵，盾也是从货车拆下的门板。路上有人教她握盾，有人把药留给她，到安全营地时，同行的大人只剩她一个。\n孩子后来去了不同城镇，她仍替他们捎信，也继续接护送委托。盾内贴着许多纸条，写着住址、忌口和走失后该去哪里等。她最不喜欢听见：少一个也没办法。",
+      "talent": "带你回去",
+      "title": "长路护送人"
+    },
+    "pei": {
+      "effect": "追斩、猎影处决攻击施放前半血及以下的目标时伤害+6。该技能击杀主目标则回蓝3，每次自身行动限一次；不额外返还行动点。",
+      "job": "blade",
+      "name": "裴九",
+      "relics": "逐猎罗盘；个人：收割骨笛或噬血圣杯",
+      "story": "裴九以前替边境钱庄追回坏账，从不多出一刀，因为伤口、药费和死者家属都会让事情复杂。直到他发现，自己追讨的军饷早已被钱庄扣走，士兵只是账上方便处置的名字。\n他烧了债契，留下真正签发假账的人的名单。如今他只接认可的委托，仍习惯等敌人露出疲态后动手。他说是节省力气，熟悉他的人知道，他在等一个能尽快结束战斗的机会。",
+      "talent": "一刀清账",
+      "title": "讨债刀"
+    },
+    "qin": {
+      "effect": "盾击、震慑重击攻击施放前尚无行动削减的目标时伤害+5。成功打断正在准备的可打断首领招式时，获得8点护盾至下次自身行动开始，每次自身行动限一次，另计护盾增益。",
+      "job": "warden",
+      "name": "秦铮",
+      "relics": "沉城印玺；个人：铁心契",
+      "story": "秦铮在商寨角斗场谋生，用盾压住危险囚徒，好让观众看清处决。某天他认出一名被判作劫匪的护卫，那人曾在荒原分给他半袋水。\n他撞开处刑台的门，和囚徒逃出商寨。此后不再替人守牢门，却尤其擅长判断对手何时发力。看到敌人举武器蓄势，他往往已迈出第一步。",
+      "talent": "震腕",
+      "title": "戒场破阵手"
+    },
+    "qing": {
+      "effect": "回春、深度回春治疗施放前半血及以下的目标时，基础治疗量+10，照常受到职业、装备及遗物修正；不会把过量治疗转成护盾。",
+      "job": "medic",
+      "name": "青禾",
+      "relics": "个人：慈悲裂晶或薪火戒",
+      "story": "青禾原本给边境村落接生治伤。撤退军队把祠堂改成临时伤所，她第一次学会在药不够时决定先救谁。\n战争结束后，她仍在梦中听见有人叫她。她带着药箱远行，每到一处补上药材，也寻找被转送走的伤员。她的手很稳，只在写死亡证明时停得久一些。",
+      "talent": "先救垂危",
+      "title": "战地缝补师"
+    },
+    "shen": {
+      "effect": "每次自身行动首次以破势、破阵斩、裂阵或终焉裁决造成生命伤害后，主目标获得进军号令。下一名其他友军直接攻击该目标伤害+4；该击击杀则攻击者回蓝3。号令触发一次后消失，至沈烬下次行动开始到期。",
+      "job": "hero",
+      "name": "沈烬",
+      "relics": "逐猎罗盘、裂甲战旗；个人：回响棱镜",
+      "story": "沈烬曾是边境军团负责传令的年轻军士。灰潮越过断桥那天，他带回的撤退命令要求放弃桥外尚未归队的士兵。他第一次违抗军令，带着残队折返，最后只救出七个人。\n军团解散后，幸存者把烧剩半截的旗交给了他。他成立佣兵团，接护送、寻人与清路的委托，也一直寻找当年被划掉的失踪者。他不擅长鼓舞人心，却记得每位跟随者的姓名，以及他们没有领到的军饷。",
+      "talent": "余烬接力",
+      "title": "断旗继承者"
+    },
+    "suo": {
+      "effect": "钉足箭命中存活目标时附加束缚：下一次主动移动第一格额外消耗1行动点，移动后消失。束缚不叠加；不突破原有行动削减上限。",
+      "job": "ranger",
+      "name": "索宁",
+      "relics": "逆流沙漏；个人：回响棱镜",
+      "story": "索宁在霜脊追踪过许多危险猎物，最熟悉的却是惊慌的牲畜。父亲教他，雪坡上追得太急，猎物和猎人都会死在崩塌的积雪里。\n山隘封锁后，他带流民绕过巡线谋生。他很少瞄准胸口，更愿意射中腿脚、割断追兵绳索。他记得被自己拖住的人，也记得身后终于跟上的脚步声。",
+      "talent": "截途箭",
+      "title": "雪线逐兽者"
+    },
+    "tang": {
+      "effect": "震荡弹、破甲爆弹对主目标伤害+6，相邻目标不享受。施放前主目标已有破甲时，该次法力消耗-2，最低1；无合法目标时不减价。",
+      "job": "engineer",
+      "name": "唐硝",
+      "relics": "裂纹符核；个人：回响棱镜",
+      "story": "唐硝跟拆城队清理灰潮后的危楼。师傅教她，拆墙要先知道墙为何没有倒下。赶工时监工下令提前引爆，掩埋了未撤出的队员。\n她救出幸存者，带走引爆器和被篡改的施工图。如今每次爆破都留出撤离时间，先标出承重位置。有人嫌她准备太久，直到看见墙倒向她预定的方向。",
+      "talent": "定点拆解",
+      "title": "拆城学徒"
+    },
+    "wen": {
+      "effect": "每次自身行动首次以振奋或军心回响为其他友军实际恢复生命或法力后，给予6点护盾；施放前目标半血及以下时改为10点。护盾至闻笙下次行动开始到期，与已有护盾取较高值，另计护盾增益。",
+      "job": "hero",
+      "name": "闻笙",
+      "relics": "守誓铜铃、沉城印玺；个人：灵泉残页或护生石",
+      "story": "闻笙原是商队账房，负责计算货物、路费与伤亡赔偿。一次荒原遇袭后，东家要求把阵亡护卫记成自行离队，免去赔付。她带走原始账簿，也带走了商队最后一箱救命药。\n她靠替人追回欠款召集伙伴，亲手写下第一份契约：活着的人按约领钱，死去的人也必须有人送信。她仔细计算每次远征的成本，却从不把某个人的命算成可以省下的一笔。",
+      "talent": "归途之约",
+      "title": "灯下立约人"
+    },
+    "wenlan": {
+      "effect": "每次自身行动首次以灵泉引流或军心回响为其他友军实际恢复法力后，自身回蓝3，目标恢复4生命。满蓝目标不触发，返还在结算后发生，生命恢复受正常修正影响。",
+      "job": "medic",
+      "name": "温澜",
+      "relics": "蓄潮水囊；个人：灵泉残页",
+      "story": "温澜出生在赤砂水站，能从井壁震动判断地下水脉，因此被雇去寻找旧世泉核。一次试验里，泉核抽干了周围人的法力，只留下她听见的、持续整夜的水声。\n她学会把这股力量缓慢引出，帮助枯竭的人恢复。她随佣兵团寻找泉核，想知道它们供养过怎样的城市，也想找到不再伤人的用法。",
+      "talent": "细水长流",
+      "title": "枯井听泉人"
+    },
+    "ya": {
+      "effect": "本次自身行动尚未主动移动时，首次施放狙击或逐猎贯射伤害+6、射程+1。施放后可移动；突进算主动移动，被迫位移不算。",
+      "job": "ranger",
+      "name": "鸦",
+      "relics": "裂甲战旗；个人：回响棱镜",
+      "story": "鸦曾是荒原驿站的守望人。她站过的瞭望塔比认识的人更长寿：商队来了又走，守卫换了一批，只有沙丘像在缓慢移动。\n那年求援的烽烟升起，却再没有援军。她独自守了三天，把最后一支箭留给逼近驿站的头领。有人问她为何还肯替别人站岗，她只回答：总得有人先看见。",
+      "talent": "屏息候风",
+      "title": "风口守望者"
+    },
+    "yue": {
+      "effect": "援护、壁垒誓言分担伤害时，自身承受的分担伤害额外-3，最低0。每次自身行动开始至下次开始最多2次，不减少被保护者应承受的另一半伤害。",
+      "job": "warden",
+      "name": "岳峙",
+      "relics": "沉铁壁垒；个人：铁心契或碎誓甲壳",
+      "story": "岳峙守过的最后一座桥没有名字。撤退队伍从身后经过，他只管数人，直到再没人过来。后来才发现，他等候的后队早已收到另一条撤退命令。\n他背着裂盾走出桥头，没有回营请功。成为佣兵后，他总走在最后，确认每个人过了险处再动身。别人问那座桥，他说桥没了，人还在就好。",
+      "talent": "最后一面盾",
+      "title": "断桥留守者"
+    }
+  },
+  "date": "2026-10-25",
+  "encounter_examples": [
+    {
+      "enemies": [
+        {
+          "ap": 4,
+          "archetype": "哨站斥候",
+          "armor": 0,
+          "biome": "border",
+          "boss": false,
+          "boss_prepared": false,
+          "cell": "(1, 2)",
+          "frost_used": false,
+          "hp": 41,
+          "id": "enemy0",
+          "max_hp": 41,
+          "max_mp": 0,
+          "mp": 0,
+          "name": "哨站斥候",
+          "power": 9,
+          "range": 3,
+          "role": "敌人",
+          "side": 1,
+          "speed": 9,
+          "statuses": {},
+          "trait": "spotter",
+          "turn_serial": 0,
+          "venom_used": false
+        },
+        {
+          "ap": 4,
+          "archetype": "灰巢盾卒",
+          "armor": 0,
+          "biome": "border",
+          "boss": false,
+          "boss_prepared": false,
+          "cell": "(-1, 3)",
+          "frost_used": false,
+          "hp": 38,
+          "id": "enemy1",
+          "max_hp": 38,
+          "max_mp": 0,
+          "mp": 0,
+          "name": "灰巢盾卒",
+          "power": 9,
+          "range": 1,
+          "role": "敌人",
+          "side": 1,
+          "speed": 9,
+          "statuses": {},
+          "trait": "formation",
+          "turn_serial": 0,
+          "venom_used": false
+        },
+        {
+          "ap": 4,
+          "archetype": "灰巢盾卒",
+          "armor": 2,
+          "biome": "border",
+          "boss": false,
+          "boss_prepared": false,
+          "cell": "(1, 1)",
+          "frost_used": false,
+          "hp": 50,
+          "id": "enemy2",
+          "max_hp": 50,
+          "max_mp": 0,
+          "mp": 0,
+          "name": "灰巢盾卒",
+          "power": 11,
+          "range": 1,
+          "role": "敌人",
+          "side": 1,
+          "speed": 8,
+          "statuses": {},
+          "trait": "formation",
+          "turn_serial": 0,
+          "venom_used": false
+        }
+      ],
+      "seed": 123,
+      "threat": "normal",
+      "tier": 0
+    },
+    {
+      "enemies": [
+        {
+          "ap": 4,
+          "archetype": "哨站斥候",
+          "armor": 0,
+          "biome": "border",
+          "boss": false,
+          "boss_prepared": false,
+          "cell": "(1, 2)",
+          "frost_used": false,
+          "hp": 41,
+          "id": "enemy0",
+          "max_hp": 41,
+          "max_mp": 0,
+          "mp": 0,
+          "name": "哨站斥候",
+          "power": 9,
+          "range": 3,
+          "role": "敌人",
+          "side": 1,
+          "speed": 9,
+          "statuses": {},
+          "trait": "spotter",
+          "turn_serial": 0,
+          "venom_used": false
+        },
+        {
+          "ap": 4,
+          "archetype": "灰巢盾卒",
+          "armor": 0,
+          "biome": "border",
+          "boss": false,
+          "boss_prepared": false,
+          "cell": "(-1, 3)",
+          "frost_used": false,
+          "hp": 38,
+          "id": "enemy1",
+          "max_hp": 38,
+          "max_mp": 0,
+          "mp": 0,
+          "name": "灰巢盾卒",
+          "power": 9,
+          "range": 1,
+          "role": "敌人",
+          "side": 1,
+          "speed": 9,
+          "statuses": {},
+          "trait": "formation",
+          "turn_serial": 0,
+          "venom_used": false
+        },
+        {
+          "ap": 4,
+          "archetype": "灰巢盾卒",
+          "armor": 2,
+          "biome": "border",
+          "boss": false,
+          "boss_prepared": false,
+          "cell": "(1, 1)",
+          "frost_used": false,
+          "hp": 70,
+          "id": "enemy2",
+          "max_hp": 70,
+          "max_mp": 0,
+          "mp": 0,
+          "name": "精英 · 灰巢盾卒",
+          "power": 12,
+          "range": 1,
+          "role": "敌人",
+          "side": 1,
+          "speed": 8,
+          "statuses": {},
+          "trait": "formation",
+          "turn_serial": 0,
+          "venom_used": false
+        }
+      ],
+      "seed": 123,
+      "threat": "elite",
+      "tier": 0
+    },
+    {
+      "enemies": [
+        {
+          "ap": 4,
+          "archetype": "哨站斥候",
+          "armor": 0,
+          "biome": "border",
+          "boss": false,
+          "boss_prepared": false,
+          "cell": "(1, 2)",
+          "frost_used": false,
+          "hp": 41,
+          "id": "enemy0",
+          "max_hp": 41,
+          "max_mp": 0,
+          "mp": 0,
+          "name": "哨站斥候",
+          "power": 9,
+          "range": 3,
+          "role": "敌人",
+          "side": 1,
+          "speed": 9,
+          "statuses": {},
+          "trait": "spotter",
+          "turn_serial": 0,
+          "venom_used": false
+        },
+        {
+          "ap": 4,
+          "archetype": "灰巢盾卒",
+          "armor": 0,
+          "biome": "border",
+          "boss": false,
+          "boss_prepared": false,
+          "cell": "(-1, 3)",
+          "frost_used": false,
+          "hp": 38,
+          "id": "enemy1",
+          "max_hp": 38,
+          "max_mp": 0,
+          "mp": 0,
+          "name": "灰巢盾卒",
+          "power": 9,
+          "range": 1,
+          "role": "敌人",
+          "side": 1,
+          "speed": 9,
+          "statuses": {},
+          "trait": "formation",
+          "turn_serial": 0,
+          "venom_used": false
+        },
+        {
+          "ap": 4,
+          "archetype": "灰巢盾卒",
+          "armor": 0,
+          "biome": "border",
+          "boss": false,
+          "boss_prepared": false,
+          "cell": "(1, 1)",
+          "frost_used": false,
+          "hp": 42,
+          "id": "enemy2",
+          "max_hp": 42,
+          "max_mp": 0,
+          "mp": 0,
+          "name": "灰巢盾卒",
+          "power": 9,
+          "range": 1,
+          "role": "敌人",
+          "side": 1,
+          "speed": 8,
+          "statuses": {},
+          "trait": "formation",
+          "turn_serial": 0,
+          "venom_used": false
+        },
+        {
+          "ap": 4,
+          "archetype": "灰巢盾卒",
+          "armor": 3,
+          "biome": "border",
+          "boss": true,
+          "boss_prepared": false,
+          "cell": "(3, 0)",
+          "frost_used": false,
+          "hp": 94,
+          "id": "enemy3",
+          "max_hp": 94,
+          "max_mp": 0,
+          "mp": 0,
+          "name": "灰潮督军",
+          "power": 13,
+          "range": 1,
+          "role": "敌人",
+          "side": 1,
+          "speed": 9,
+          "statuses": {},
+          "trait": "formation",
+          "turn_serial": 0,
+          "venom_used": false
+        }
+      ],
+      "seed": 123,
+      "threat": "boss",
+      "tier": 0
+    },
+    {
+      "enemies": [
+        {
+          "ap": 4,
+          "archetype": "哨站斥候",
+          "armor": 0,
+          "biome": "border",
+          "boss": false,
+          "boss_prepared": false,
+          "cell": "(1, 2)",
+          "frost_used": false,
+          "hp": 53,
+          "id": "enemy0",
+          "max_hp": 53,
+          "max_mp": 0,
+          "mp": 0,
+          "name": "哨站斥候",
+          "power": 11,
+          "range": 3,
+          "role": "敌人",
+          "side": 1,
+          "speed": 9,
+          "statuses": {},
+          "trait": "spotter",
+          "turn_serial": 0,
+          "venom_used": false
+        },
+        {
+          "ap": 4,
+          "archetype": "灰巢盾卒",
+          "armor": 0,
+          "biome": "border",
+          "boss": false,
+          "boss_prepared": false,
+          "cell": "(-1, 3)",
+          "frost_used": false,
+          "hp": 50,
+          "id": "enemy1",
+          "max_hp": 50,
+          "max_mp": 0,
+          "mp": 0,
+          "name": "灰巢盾卒",
+          "power": 11,
+          "range": 1,
+          "role": "敌人",
+          "side": 1,
+          "speed": 9,
+          "statuses": {},
+          "trait": "formation",
+          "turn_serial": 0,
+          "venom_used": false
+        },
+        {
+          "ap": 4,
+          "archetype": "灰巢盾卒",
+          "armor": 0,
+          "biome": "border",
+          "boss": false,
+          "boss_prepared": false,
+          "cell": "(1, 1)",
+          "frost_used": false,
+          "hp": 54,
+          "id": "enemy2",
+          "max_hp": 54,
+          "max_mp": 0,
+          "mp": 0,
+          "name": "灰巢盾卒",
+          "power": 11,
+          "range": 1,
+          "role": "敌人",
+          "side": 1,
+          "speed": 8,
+          "statuses": {},
+          "trait": "formation",
+          "turn_serial": 0,
+          "venom_used": false
+        },
+        {
+          "ap": 4,
+          "archetype": "灰巢盾卒",
+          "armor": 2,
+          "biome": "border",
+          "boss": false,
+          "boss_prepared": false,
+          "cell": "(3, 0)",
+          "frost_used": false,
+          "hp": 58,
+          "id": "enemy3",
+          "max_hp": 58,
+          "max_mp": 0,
+          "mp": 0,
+          "name": "灰巢盾卒",
+          "power": 13,
+          "range": 1,
+          "role": "敌人",
+          "side": 1,
+          "speed": 9,
+          "statuses": {},
+          "trait": "formation",
+          "turn_serial": 0,
+          "venom_used": false
+        }
+      ],
+      "seed": 123,
+      "threat": "normal",
+      "tier": 1
+    },
+    {
+      "enemies": [
+        {
+          "ap": 4,
+          "archetype": "哨站斥候",
+          "armor": 0,
+          "biome": "border",
+          "boss": false,
+          "boss_prepared": false,
+          "cell": "(1, 2)",
+          "frost_used": false,
+          "hp": 53,
+          "id": "enemy0",
+          "max_hp": 53,
+          "max_mp": 0,
+          "mp": 0,
+          "name": "哨站斥候",
+          "power": 11,
+          "range": 3,
+          "role": "敌人",
+          "side": 1,
+          "speed": 9,
+          "statuses": {},
+          "trait": "spotter",
+          "turn_serial": 0,
+          "venom_used": false
+        },
+        {
+          "ap": 4,
+          "archetype": "灰巢盾卒",
+          "armor": 0,
+          "biome": "border",
+          "boss": false,
+          "boss_prepared": false,
+          "cell": "(-1, 3)",
+          "frost_used": false,
+          "hp": 50,
+          "id": "enemy1",
+          "max_hp": 50,
+          "max_mp": 0,
+          "mp": 0,
+          "name": "灰巢盾卒",
+          "power": 11,
+          "range": 1,
+          "role": "敌人",
+          "side": 1,
+          "speed": 9,
+          "statuses": {},
+          "trait": "formation",
+          "turn_serial": 0,
+          "venom_used": false
+        },
+        {
+          "ap": 4,
+          "archetype": "灰巢盾卒",
+          "armor": 0,
+          "biome": "border",
+          "boss": false,
+          "boss_prepared": false,
+          "cell": "(1, 1)",
+          "frost_used": false,
+          "hp": 54,
+          "id": "enemy2",
+          "max_hp": 54,
+          "max_mp": 0,
+          "mp": 0,
+          "name": "灰巢盾卒",
+          "power": 11,
+          "range": 1,
+          "role": "敌人",
+          "side": 1,
+          "speed": 8,
+          "statuses": {},
+          "trait": "formation",
+          "turn_serial": 0,
+          "venom_used": false
+        },
+        {
+          "ap": 4,
+          "archetype": "灰巢盾卒",
+          "armor": 2,
+          "biome": "border",
+          "boss": false,
+          "boss_prepared": false,
+          "cell": "(3, 0)",
+          "frost_used": false,
+          "hp": 78,
+          "id": "enemy3",
+          "max_hp": 78,
+          "max_mp": 0,
+          "mp": 0,
+          "name": "精英 · 灰巢盾卒",
+          "power": 14,
+          "range": 1,
+          "role": "敌人",
+          "side": 1,
+          "speed": 9,
+          "statuses": {},
+          "trait": "formation",
+          "turn_serial": 0,
+          "venom_used": false
+        }
+      ],
+      "seed": 123,
+      "threat": "elite",
+      "tier": 1
+    },
+    {
+      "enemies": [
+        {
+          "ap": 4,
+          "archetype": "哨站斥候",
+          "armor": 0,
+          "biome": "border",
+          "boss": false,
+          "boss_prepared": false,
+          "cell": "(1, 2)",
+          "frost_used": false,
+          "hp": 53,
+          "id": "enemy0",
+          "max_hp": 53,
+          "max_mp": 0,
+          "mp": 0,
+          "name": "哨站斥候",
+          "power": 11,
+          "range": 3,
+          "role": "敌人",
+          "side": 1,
+          "speed": 9,
+          "statuses": {},
+          "trait": "spotter",
+          "turn_serial": 0,
+          "venom_used": false
+        },
+        {
+          "ap": 4,
+          "archetype": "灰巢盾卒",
+          "armor": 0,
+          "biome": "border",
+          "boss": false,
+          "boss_prepared": false,
+          "cell": "(-1, 3)",
+          "frost_used": false,
+          "hp": 50,
+          "id": "enemy1",
+          "max_hp": 50,
+          "max_mp": 0,
+          "mp": 0,
+          "name": "灰巢盾卒",
+          "power": 11,
+          "range": 1,
+          "role": "敌人",
+          "side": 1,
+          "speed": 9,
+          "statuses": {},
+          "trait": "formation",
+          "turn_serial": 0,
+          "venom_used": false
+        },
+        {
+          "ap": 4,
+          "archetype": "灰巢盾卒",
+          "armor": 0,
+          "biome": "border",
+          "boss": false,
+          "boss_prepared": false,
+          "cell": "(1, 1)",
+          "frost_used": false,
+          "hp": 54,
+          "id": "enemy2",
+          "max_hp": 54,
+          "max_mp": 0,
+          "mp": 0,
+          "name": "灰巢盾卒",
+          "power": 11,
+          "range": 1,
+          "role": "敌人",
+          "side": 1,
+          "speed": 8,
+          "statuses": {},
+          "trait": "formation",
+          "turn_serial": 0,
+          "venom_used": false
+        },
+        {
+          "ap": 4,
+          "archetype": "灰巢盾卒",
+          "armor": 3,
+          "biome": "border",
+          "boss": true,
+          "boss_prepared": false,
+          "cell": "(3, 0)",
+          "frost_used": false,
+          "hp": 106,
+          "id": "enemy3",
+          "max_hp": 106,
+          "max_mp": 0,
+          "mp": 0,
+          "name": "灰潮督军",
+          "power": 15,
+          "range": 1,
+          "role": "敌人",
+          "side": 1,
+          "speed": 9,
+          "statuses": {},
+          "trait": "formation",
+          "turn_serial": 0,
+          "venom_used": false
+        }
+      ],
+      "seed": 123,
+      "threat": "boss",
+      "tier": 1
+    },
+    {
+      "enemies": [
+        {
+          "ap": 4,
+          "archetype": "哨站斥候",
+          "armor": 0,
+          "biome": "border",
+          "boss": false,
+          "boss_prepared": false,
+          "cell": "(1, 2)",
+          "frost_used": false,
+          "hp": 65,
+          "id": "enemy0",
+          "max_hp": 65,
+          "max_mp": 0,
+          "mp": 0,
+          "name": "哨站斥候",
+          "power": 13,
+          "range": 3,
+          "role": "敌人",
+          "side": 1,
+          "speed": 9,
+          "statuses": {},
+          "trait": "spotter",
+          "turn_serial": 0,
+          "venom_used": false
+        },
+        {
+          "ap": 4,
+          "archetype": "灰巢盾卒",
+          "armor": 0,
+          "biome": "border",
+          "boss": false,
+          "boss_prepared": false,
+          "cell": "(-1, 3)",
+          "frost_used": false,
+          "hp": 62,
+          "id": "enemy1",
+          "max_hp": 62,
+          "max_mp": 0,
+          "mp": 0,
+          "name": "灰巢盾卒",
+          "power": 13,
+          "range": 1,
+          "role": "敌人",
+          "side": 1,
+          "speed": 9,
+          "statuses": {},
+          "trait": "formation",
+          "turn_serial": 0,
+          "venom_used": false
+        },
+        {
+          "ap": 4,
+          "archetype": "灰巢盾卒",
+          "armor": 0,
+          "biome": "border",
+          "boss": false,
+          "boss_prepared": false,
+          "cell": "(1, 1)",
+          "frost_used": false,
+          "hp": 66,
+          "id": "enemy2",
+          "max_hp": 66,
+          "max_mp": 0,
+          "mp": 0,
+          "name": "灰巢盾卒",
+          "power": 13,
+          "range": 1,
+          "role": "敌人",
+          "side": 1,
+          "speed": 8,
+          "statuses": {},
+          "trait": "formation",
+          "turn_serial": 0,
+          "venom_used": false
+        },
+        {
+          "ap": 4,
+          "archetype": "灰巢盾卒",
+          "armor": 0,
+          "biome": "border",
+          "boss": false,
+          "boss_prepared": false,
+          "cell": "(3, 0)",
+          "frost_used": false,
+          "hp": 62,
+          "id": "enemy3",
+          "max_hp": 62,
+          "max_mp": 0,
+          "mp": 0,
+          "name": "灰巢盾卒",
+          "power": 13,
+          "range": 1,
+          "role": "敌人",
+          "side": 1,
+          "speed": 9,
+          "statuses": {},
+          "trait": "formation",
+          "turn_serial": 0,
+          "venom_used": false
+        },
+        {
+          "ap": 4,
+          "archetype": "灰巢盾卒",
+          "armor": 2,
+          "biome": "border",
+          "boss": false,
+          "boss_prepared": false,
+          "cell": "(3, -1)",
+          "frost_used": false,
+          "hp": 66,
+          "id": "enemy4",
+          "max_hp": 66,
+          "max_mp": 0,
+          "mp": 0,
+          "name": "灰巢盾卒",
+          "power": 15,
+          "range": 1,
+          "role": "敌人",
+          "side": 1,
+          "speed": 10,
+          "statuses": {},
+          "trait": "formation",
+          "turn_serial": 0,
+          "venom_used": false
+        }
+      ],
+      "seed": 123,
+      "threat": "normal",
+      "tier": 2
+    },
+    {
+      "enemies": [
+        {
+          "ap": 4,
+          "archetype": "哨站斥候",
+          "armor": 0,
+          "biome": "border",
+          "boss": false,
+          "boss_prepared": false,
+          "cell": "(1, 2)",
+          "frost_used": false,
+          "hp": 65,
+          "id": "enemy0",
+          "max_hp": 65,
+          "max_mp": 0,
+          "mp": 0,
+          "name": "哨站斥候",
+          "power": 13,
+          "range": 3,
+          "role": "敌人",
+          "side": 1,
+          "speed": 9,
+          "statuses": {},
+          "trait": "spotter",
+          "turn_serial": 0,
+          "venom_used": false
+        },
+        {
+          "ap": 4,
+          "archetype": "灰巢盾卒",
+          "armor": 0,
+          "biome": "border",
+          "boss": false,
+          "boss_prepared": false,
+          "cell": "(-1, 3)",
+          "frost_used": false,
+          "hp": 62,
+          "id": "enemy1",
+          "max_hp": 62,
+          "max_mp": 0,
+          "mp": 0,
+          "name": "灰巢盾卒",
+          "power": 13,
+          "range": 1,
+          "role": "敌人",
+          "side": 1,
+          "speed": 9,
+          "statuses": {},
+          "trait": "formation",
+          "turn_serial": 0,
+          "venom_used": false
+        },
+        {
+          "ap": 4,
+          "archetype": "灰巢盾卒",
+          "armor": 0,
+          "biome": "border",
+          "boss": false,
+          "boss_prepared": false,
+          "cell": "(1, 1)",
+          "frost_used": false,
+          "hp": 66,
+          "id": "enemy2",
+          "max_hp": 66,
+          "max_mp": 0,
+          "mp": 0,
+          "name": "灰巢盾卒",
+          "power": 13,
+          "range": 1,
+          "role": "敌人",
+          "side": 1,
+          "speed": 8,
+          "statuses": {},
+          "trait": "formation",
+          "turn_serial": 0,
+          "venom_used": false
+        },
+        {
+          "ap": 4,
+          "archetype": "灰巢盾卒",
+          "armor": 0,
+          "biome": "border",
+          "boss": false,
+          "boss_prepared": false,
+          "cell": "(3, 0)",
+          "frost_used": false,
+          "hp": 62,
+          "id": "enemy3",
+          "max_hp": 62,
+          "max_mp": 0,
+          "mp": 0,
+          "name": "灰巢盾卒",
+          "power": 13,
+          "range": 1,
+          "role": "敌人",
+          "side": 1,
+          "speed": 9,
+          "statuses": {},
+          "trait": "formation",
+          "turn_serial": 0,
+          "venom_used": false
+        },
+        {
+          "ap": 4,
+          "archetype": "灰巢盾卒",
+          "armor": 2,
+          "biome": "border",
+          "boss": false,
+          "boss_prepared": false,
+          "cell": "(3, -1)",
+          "frost_used": false,
+          "hp": 86,
+          "id": "enemy4",
+          "max_hp": 86,
+          "max_mp": 0,
+          "mp": 0,
+          "name": "精英 · 灰巢盾卒",
+          "power": 16,
+          "range": 1,
+          "role": "敌人",
+          "side": 1,
+          "speed": 10,
+          "statuses": {},
+          "trait": "formation",
+          "turn_serial": 0,
+          "venom_used": false
+        }
+      ],
+      "seed": 123,
+      "threat": "elite",
+      "tier": 2
+    },
+    {
+      "enemies": [
+        {
+          "ap": 4,
+          "archetype": "哨站斥候",
+          "armor": 0,
+          "biome": "border",
+          "boss": false,
+          "boss_prepared": false,
+          "cell": "(1, 2)",
+          "frost_used": false,
+          "hp": 65,
+          "id": "enemy0",
+          "max_hp": 65,
+          "max_mp": 0,
+          "mp": 0,
+          "name": "哨站斥候",
+          "power": 13,
+          "range": 3,
+          "role": "敌人",
+          "side": 1,
+          "speed": 9,
+          "statuses": {},
+          "trait": "spotter",
+          "turn_serial": 0,
+          "venom_used": false
+        },
+        {
+          "ap": 4,
+          "archetype": "灰巢盾卒",
+          "armor": 0,
+          "biome": "border",
+          "boss": false,
+          "boss_prepared": false,
+          "cell": "(-1, 3)",
+          "frost_used": false,
+          "hp": 62,
+          "id": "enemy1",
+          "max_hp": 62,
+          "max_mp": 0,
+          "mp": 0,
+          "name": "灰巢盾卒",
+          "power": 13,
+          "range": 1,
+          "role": "敌人",
+          "side": 1,
+          "speed": 9,
+          "statuses": {},
+          "trait": "formation",
+          "turn_serial": 0,
+          "venom_used": false
+        },
+        {
+          "ap": 4,
+          "archetype": "灰巢盾卒",
+          "armor": 0,
+          "biome": "border",
+          "boss": false,
+          "boss_prepared": false,
+          "cell": "(1, 1)",
+          "frost_used": false,
+          "hp": 66,
+          "id": "enemy2",
+          "max_hp": 66,
+          "max_mp": 0,
+          "mp": 0,
+          "name": "灰巢盾卒",
+          "power": 13,
+          "range": 1,
+          "role": "敌人",
+          "side": 1,
+          "speed": 8,
+          "statuses": {},
+          "trait": "formation",
+          "turn_serial": 0,
+          "venom_used": false
+        },
+        {
+          "ap": 4,
+          "archetype": "灰巢盾卒",
+          "armor": 3,
+          "biome": "border",
+          "boss": true,
+          "boss_prepared": false,
+          "cell": "(3, 0)",
+          "frost_used": false,
+          "hp": 118,
+          "id": "enemy3",
+          "max_hp": 118,
+          "max_mp": 0,
+          "mp": 0,
+          "name": "灰潮督军",
+          "power": 17,
+          "range": 1,
+          "role": "敌人",
+          "side": 1,
+          "speed": 9,
+          "statuses": {},
+          "trait": "formation",
+          "turn_serial": 0,
+          "venom_used": false
+        }
+      ],
+      "seed": 123,
+      "threat": "boss",
+      "tier": 2
+    }
+  ],
+  "items": {
+    "bastion_sword": {
+      "armor": 0,
+      "kind": "sword",
+      "name": "高档遗铁刃",
+      "power": 5,
+      "price": 60,
+      "range": 1,
+      "slot": "mainhand",
+      "tier": 3
+    },
+    "blood_dagger": {
+      "armor": 0,
+      "kind": "dagger",
+      "name": "中档短刃",
+      "power": 3,
+      "price": 45,
+      "range": 1,
+      "slot": "mainhand",
+      "tier": 2
+    },
+    "bow": {
+      "armor": 0,
+      "kind": "bow",
+      "name": "低档猎弓",
+      "power": 2,
+      "price": 30,
+      "range": 3,
+      "slot": "mainhand",
+      "tier": 1
+    },
+    "bulwark_plate": {
+      "armor": 4,
+      "kind": "plate",
+      "name": "中档板甲",
+      "power": 0,
+      "price": 45,
+      "slot": "armor",
+      "tier": 2
+    },
+    "crossbow": {
+      "armor": 0,
+      "kind": "crossbow",
+      "name": "低档遗械弩",
+      "power": 3,
+      "price": 30,
+      "range": 2,
+      "slot": "mainhand",
+      "tier": 1
+    },
+    "dagger": {
+      "armor": 0,
+      "kind": "dagger",
+      "name": "低档短刃",
+      "power": 2,
+      "price": 30,
+      "range": 1,
+      "slot": "mainhand",
+      "tier": 1
+    },
+    "focus_guard": {
+      "armor": 3,
+      "kind": "shield",
+      "name": "中档木盾",
+      "power": 0,
+      "price": 45,
+      "slot": "offhand",
+      "tier": 2
+    },
+    "healer_guard": {
+      "armor": 3,
+      "kind": "shield",
+      "legacy": true,
+      "name": "中档木盾",
+      "power": 0,
+      "price": 45,
+      "slot": "offhand",
+      "tier": 2
+    },
+    "leather": {
+      "armor": 1,
+      "kind": "leather",
+      "name": "低档皮甲",
+      "power": 0,
+      "price": 30,
+      "slot": "armor",
+      "tier": 1
+    },
+    "longbow": {
+      "armor": 0,
+      "kind": "bow",
+      "name": "中档猎弓",
+      "power": 3,
+      "price": 45,
+      "range": 3,
+      "slot": "mainhand",
+      "tier": 2
+    },
+    "mark_bow": {
+      "armor": 0,
+      "kind": "bow",
+      "name": "高档猎弓",
+      "power": 4,
+      "price": 60,
+      "range": 3,
+      "slot": "mainhand",
+      "tier": 3
+    },
+    "plate": {
+      "armor": 3,
+      "kind": "plate",
+      "name": "低档板甲",
+      "power": 0,
+      "price": 30,
+      "slot": "armor",
+      "tier": 1
+    },
+    "ritual_leather": {
+      "armor": 3,
+      "kind": "leather",
+      "name": "高档皮甲",
+      "power": 0,
+      "price": 60,
+      "slot": "armor",
+      "tier": 3
+    },
+    "runic_sword": {
+      "armor": 0,
+      "kind": "sword",
+      "name": "中档遗铁刃",
+      "power": 4,
+      "price": 45,
+      "range": 1,
+      "slot": "mainhand",
+      "tier": 2
+    },
+    "scout_leather": {
+      "armor": 2,
+      "kind": "leather",
+      "name": "中档皮甲",
+      "power": 0,
+      "price": 45,
+      "slot": "armor",
+      "tier": 2
+    },
+    "shield": {
+      "armor": 2,
+      "kind": "shield",
+      "name": "低档木盾",
+      "power": 0,
+      "price": 30,
+      "slot": "offhand",
+      "tier": 1
+    },
+    "siege_crossbow": {
+      "armor": 0,
+      "kind": "crossbow",
+      "name": "高档遗械弩",
+      "power": 5,
+      "price": 60,
+      "range": 2,
+      "slot": "mainhand",
+      "tier": 3
+    },
+    "snare_crossbow": {
+      "armor": 0,
+      "kind": "crossbow",
+      "name": "中档遗械弩",
+      "power": 4,
+      "price": 45,
+      "range": 2,
+      "slot": "mainhand",
+      "tier": 2
+    },
+    "spring_staff": {
+      "armor": 0,
+      "kind": "staff",
+      "name": "高档医杖",
+      "power": 3,
+      "price": 60,
+      "range": 2,
+      "slot": "mainhand",
+      "tier": 3
+    },
+    "staff": {
+      "armor": 0,
+      "kind": "staff",
+      "name": "低档医杖",
+      "power": 1,
+      "price": 30,
+      "range": 2,
+      "slot": "mainhand",
+      "tier": 1
+    },
+    "sword": {
+      "armor": 0,
+      "kind": "sword",
+      "name": "低档遗铁刃",
+      "power": 3,
+      "price": 30,
+      "range": 1,
+      "slot": "mainhand",
+      "tier": 1
+    },
+    "tower_shield": {
+      "armor": 4,
+      "kind": "shield",
+      "name": "高档木盾",
+      "power": 0,
+      "price": 60,
+      "slot": "offhand",
+      "tier": 3
+    },
+    "veteran_plate": {
+      "armor": 5,
+      "kind": "plate",
+      "name": "高档板甲",
+      "power": 0,
+      "price": 60,
+      "slot": "armor",
+      "tier": 3
+    },
+    "ward_staff": {
+      "armor": 0,
+      "kind": "staff",
+      "name": "中档医杖",
+      "power": 2,
+      "price": 45,
+      "range": 2,
+      "slot": "mainhand",
+      "tier": 2
+    },
+    "wind_dagger": {
+      "armor": 0,
+      "kind": "dagger",
+      "name": "高档短刃",
+      "power": 4,
+      "price": 60,
+      "range": 1,
+      "slot": "mainhand",
+      "tier": 3
+    }
+  },
+  "jobs": {
+    "blade": {
+      "name": "游剑客",
+      "skills": [
+        "dash",
+        "execute",
+        "blade_sweep",
+        "blade_feint",
+        "blade_drain",
+        "blade_hunt"
+      ],
+      "specialty": "击杀恢复1行动点，每次个人行动最多一次。"
+    },
+    "engineer": {
+      "name": "遗械师",
+      "skills": [
+        "trap",
+        "bomb",
+        "engineer_shot",
+        "engineer_snare",
+        "engineer_breaker",
+        "engineer_pulse"
+      ],
+      "specialty": "机关伤害+6。"
+    },
+    "hero": {
+      "name": "主角",
+      "skills": [
+        "strike",
+        "hero_burst",
+        "hero_heal",
+        "hero_sunder",
+        "hero_rally",
+        "hero_judgment"
+      ],
+      "specialty": "可学所有技能；无职业装备增益或惩罚。团队效果由遗物提供。"
+    },
+    "medic": {
+      "name": "行医者",
+      "skills": [
+        "heal",
+        "cleanse",
+        "medic_mend",
+        "medic_barrier",
+        "medic_channel",
+        "medic_purge"
+      ],
+      "specialty": "治疗+6。"
+    },
+    "ranger": {
+      "name": "荒原猎手",
+      "skills": [
+        "mark",
+        "sniper",
+        "ranger_volley",
+        "ranger_pin",
+        "ranger_expose",
+        "ranger_hunt"
+      ],
+      "specialty": "相距至少3格时普攻伤害+3。"
+    },
+    "warden": {
+      "name": "盾卫",
+      "skills": [
+        "guard",
+        "bash",
+        "warden_ward",
+        "warden_fortify",
+        "warden_rebuke",
+        "warden_rescue"
+      ],
+      "specialty": "援护承伤减免3。"
+    }
+  },
+  "opening": {
+    "equipment": [
+      {
+        "id": "sword",
+        "owner": ""
+      },
+      {
+        "id": "dagger",
+        "owner": ""
+      },
+      {
+        "id": "bow",
+        "owner": ""
+      },
+      {
+        "id": "staff",
+        "owner": ""
+      },
+      {
+        "id": "crossbow",
+        "owner": ""
+      },
+      {
+        "id": "shield",
+        "owner": ""
+      },
+      {
+        "id": "leather",
+        "owner": ""
+      },
+      {
+        "id": "plate",
+        "owner": ""
+      }
+    ],
+    "roster": [
+      {
+        "ap": 4,
+        "appearance": "hero",
+        "base_power": 19,
+        "base_range": 1,
+        "base_speed": 12,
+        "cell": "(0, 0)",
+        "character_id": "shen",
+        "hp": 80,
+        "id": "hero",
+        "identity": "团长 · 断旗继承者",
+        "learned": [],
+        "max_hp": 80,
+        "max_mp": 24,
+        "mp": 24,
+        "name": "沈烬",
+        "power": 19,
+        "profession": "hero",
+        "range": 1,
+        "role": "主角",
+        "side": 0,
+        "skill_ranks": {
+          "strike": 1
+        },
+        "speed": 12,
+        "xp": 0
+      },
+      {
+        "ap": 4,
+        "appearance": "blade",
+        "base_power": 22,
+        "base_range": 1,
+        "base_speed": 15,
+        "cell": "(0, 0)",
+        "character_id": "aling",
+        "hp": 58,
+        "id": "blade",
+        "identity": "佣兵 · 走索人",
+        "learned": [],
+        "max_hp": 58,
+        "max_mp": 20,
+        "mp": 20,
+        "name": "阿绫",
+        "power": 22,
+        "profession": "blade",
+        "range": 1,
+        "role": "游剑客",
+        "side": 0,
+        "skill_ranks": {
+          "dash": 1
+        },
+        "speed": 15,
+        "xp": 0
+      },
+      {
+        "ap": 4,
+        "appearance": "ranger",
+        "base_power": 17,
+        "base_range": 3,
+        "base_speed": 14,
+        "cell": "(0, 0)",
+        "character_id": "ya",
+        "hp": 52,
+        "id": "ranger",
+        "identity": "佣兵 · 风口守望者",
+        "learned": [],
+        "max_hp": 52,
+        "max_mp": 24,
+        "mp": 24,
+        "name": "鸦",
+        "power": 17,
+        "profession": "ranger",
+        "range": 3,
+        "role": "荒原猎手",
+        "side": 0,
+        "skill_ranks": {
+          "mark": 1
+        },
+        "speed": 14,
+        "xp": 0
+      },
+      {
+        "ap": 4,
+        "appearance": "medic",
+        "base_power": 12,
+        "base_range": 2,
+        "base_speed": 11,
+        "cell": "(0, 0)",
+        "character_id": "bai",
+        "hp": 54,
+        "id": "medic",
+        "identity": "佣兵 · 雾疫记录者",
+        "learned": [],
+        "max_hp": 54,
+        "max_mp": 40,
+        "mp": 40,
+        "name": "白芷",
+        "power": 12,
+        "profession": "medic",
+        "range": 2,
+        "role": "行医者",
+        "side": 0,
+        "skill_ranks": {
+          "heal": 1
+        },
+        "speed": 11,
+        "xp": 0
+      },
+      {
+        "ap": 4,
+        "appearance": "engineer",
+        "base_power": 18,
+        "base_range": 2,
+        "base_speed": 10,
+        "cell": "(0, 0)",
+        "character_id": "li",
+        "hp": 68,
+        "id": "engineer",
+        "identity": "佣兵 · 废墟拾齿者",
+        "learned": [],
+        "max_hp": 68,
+        "max_mp": 28,
+        "mp": 28,
+        "name": "砾",
+        "power": 18,
+        "profession": "engineer",
+        "range": 2,
+        "role": "遗械师",
+        "side": 0,
+        "skill_ranks": {
+          "trap": 1
+        },
+        "speed": 10,
+        "xp": 0
+      },
+      {
+        "ap": 4,
+        "appearance": "warden",
+        "base_power": 17,
+        "base_range": 1,
+        "base_speed": 8,
+        "cell": "(0, 0)",
+        "character_id": "yue",
+        "hp": 96,
+        "id": "warden",
+        "identity": "佣兵 · 断桥留守者",
+        "learned": [],
+        "max_hp": 96,
+        "max_mp": 16,
+        "mp": 16,
+        "name": "岳峙",
+        "power": 17,
+        "profession": "warden",
+        "range": 1,
+        "role": "盾卫",
+        "side": 0,
+        "skill_ranks": {
+          "guard": 1
+        },
+        "speed": 8,
+        "xp": 0
+      }
+    ],
+    "silver": 40,
+    "supplies": 3
+  },
+  "regions": {
+    "border": {
+      "accent": "d6aa66",
+      "boss": "灰潮督军",
+      "boss_tip": "督军预告两格号令；下次自身行动标记仍在格中的友军，并强化至多两名敌人的下一击。移出预告格或及时净护。",
+      "boss_trait": "formation",
+      "counter": "盾卒相邻时减伤，斥候会标记。用突进拆阵、净护清标记，援护与高档木盾保护集火目标。",
+      "damage": 0,
+      "debuff": "mark",
+      "enemies": [
+        [
+          "哨站斥候",
+          "spotter",
+          "enemy2",
+          "crossbow"
+        ],
+        [
+          "灰巢盾卒",
+          "formation",
+          "enemy0",
+          "sword"
+        ]
+      ],
+      "ground": "788050",
+      "intent": "号令齐射",
+      "kind": "command",
+      "light": "ffe9bc",
+      "name": "灰潮边境",
+      "sky": "b6c7bc",
+      "theme": "断桥哨站",
+      "tile": "859358"
+    },
+    "frost": {
+      "accent": "90d5ef",
+      "boss": "霜脊统领",
+      "boss_tip": "统领每次行动恢复10点冰盾，破甲可阻止续盾；预告至多三格寒潮，下次行动造成8基础伤害和寒冷。寒冷与盾击合计最多削减1行动点。",
+      "boss_trait": "ice_king",
+      "counter": "霜甲每次自身行动间首个直伤减4；破甲与机关可克制。寒弩首次伤害附寒冷，净护解除；木盾和板甲提升基础防护，护生石强化护盾。",
+      "damage": 8,
+      "debuff": "chill",
+      "enemies": [
+        [
+          "雪隘寒弩",
+          "frostshot",
+          "enemy2",
+          "bow"
+        ],
+        [
+          "霜甲戍卫",
+          "frost_armor",
+          "enemy0",
+          "sword"
+        ]
+      ],
+      "ground": "b6cbd0",
+      "intent": "寒潮裂隙",
+      "kind": "cold",
+      "light": "d1e8ff",
+      "name": "霜脊山隘",
+      "sky": "a8bccf",
+      "theme": "雪线烽台",
+      "tile": "a5bec7"
+    },
+    "marsh": {
+      "accent": "bad578",
+      "boss": "暮雾猎王",
+      "boss_tip": "猎王预告至多三格腐花，下次行动造成6基础伤害并附两次毒伤；每次毒伤基础3，不叠层。可避开、护盾抵挡或用净护解除。",
+      "boss_trait": "venom",
+      "counter": "毒弓首次伤害施加两次毒伤，潜猎者普攻吸取实际伤害20%生命。净护清毒，护盾挡住攻击可防附毒；治疗、调息与续航遗物减少损耗。",
+      "damage": 6,
+      "debuff": "poison",
+      "enemies": [
+        [
+          "雾沼毒弓",
+          "venom",
+          "enemy2",
+          "bow"
+        ],
+        [
+          "噬生潜猎者",
+          "mirehide",
+          "enemy1",
+          "dagger"
+        ]
+      ],
+      "ground": "4c6558",
+      "intent": "腐花绽放",
+      "kind": "bloom",
+      "light": "cee1cb",
+      "name": "暮雾沼泽",
+      "sky": "8daba6",
+      "theme": "幽沼枯木",
+      "tile": "617a66"
+    },
+    "ruins": {
+      "accent": "9dc8ed",
+      "boss": "星陨监守",
+      "boss_tip": "监守每次行动补8点屏障；过载预告至多三格，下次行动造成12基础伤害并耗蓝4。钉足箭、盾击或震慑重击可在结算前打断过载。",
+      "boss_trait": "core",
+      "counter": "构装卫每次行动补6点屏障，破甲阻止续盾；汲能者首次伤害耗蓝3。机关消耗屏障，远程武器、军心回响与收割骨笛维持法力。",
+      "damage": 12,
+      "debuff": "",
+      "enemies": [
+        [
+          "遗械汲能者",
+          "drainer",
+          "enemy2",
+          "crossbow"
+        ],
+        [
+          "城心构装卫",
+          "capacitor",
+          "enemy0",
+          "sword"
+        ]
+      ],
+      "ground": "4e5967",
+      "intent": "星核过载",
+      "kind": "overload",
+      "light": "c6d9ff",
+      "name": "星陨遗城",
+      "sky": "899cac",
+      "theme": "遗械回廊",
+      "tile": "647489"
+    },
+    "waste": {
+      "accent": "ed9b50",
+      "boss": "赤砂军阀",
+      "boss_tip": "军阀预告一条最多五格的沙矛路径，下次自身行动造成10基础伤害并耗蓝2。侧向移动避开整条射线，勿沿线扎堆。",
+      "boss_trait": "raider",
+      "counter": "狂刃半血后普攻+3，掠弩每次行动首次伤害耗蓝2。用钉足箭控制、追斩收割；远程武器便于保持间距，孤影与血契遗物帮助收割。",
+      "damage": 10,
+      "debuff": "",
+      "enemies": [
+        [
+          "砂丘掠弩",
+          "sapper",
+          "enemy2",
+          "crossbow"
+        ],
+        [
+          "赤砂狂刃",
+          "raider",
+          "enemy1",
+          "sword"
+        ]
+      ],
+      "ground": "b28a57",
+      "intent": "穿沙长矛",
+      "kind": "sandline",
+      "light": "ffcf91",
+      "name": "赤砂荒原",
+      "sky": "d9b48a",
+      "theme": "沙丘商寨",
+      "tile": "b99b66"
+    },
+    "wood": {
+      "accent": "90c273",
+      "boss": "古林守望",
+      "boss_tip": "守望预告至多三格藤根，下次自身行动造成6基础伤害并束缚：下一次移动首格多花1行动点。可提前移开或用净护解束缚。",
+      "boss_trait": "camouflage",
+      "counter": "伏弓抵挡远距直伤；标记、近身和机关可以克制。近战武器、静观瞳石或缚潮齿轮各有发挥。",
+      "damage": 6,
+      "debuff": "snare",
+      "enemies": [
+        [
+          "林荫伏弓",
+          "camouflage",
+          "enemy2",
+          "bow"
+        ],
+        [
+          "棘影刺客",
+          "ambush",
+          "enemy1",
+          "dagger"
+        ]
+      ],
+      "ground": "304c38",
+      "intent": "缚根生长",
+      "kind": "roots",
+      "light": "bce1b4",
+      "name": "苍翠林海",
+      "sky": "7b9f8a",
+      "theme": "密林石环",
+      "tile": "52734b"
+    }
+  },
+  "relics": {
+    "arcane_1": {
+      "benefit": "全队：自身行动开始恢复3法力",
+      "color": "#b6a0da",
+      "family": "arcane",
+      "mods": {
+        "attack_power": -3,
+        "turn_mp": 3
+      },
+      "name": "蓝焰烛台",
+      "risk": "全队：普通攻击 -3",
+      "scope": "team",
+      "uses": 0
+    },
+    "arcane_10": {
+      "benefit": "击杀恢复8法力",
+      "color": "#b6a0da",
+      "family": "arcane",
+      "mods": {
+        "heal": -8,
+        "kill_mp": 8
+      },
+      "name": "吞星魔匣",
+      "risk": "治疗战技 -8",
+      "scope": "personal",
+      "uses": 0
+    },
+    "arcane_2": {
+      "benefit": "全队：法力至少一半时直接伤害 +8",
+      "color": "#b6a0da",
+      "family": "arcane",
+      "mods": {
+        "armor": -1,
+        "high_mp_damage": 8
+      },
+      "name": "盈辉星盘",
+      "risk": "全队：防护 -1",
+      "scope": "team",
+      "uses": 0
+    },
+    "arcane_3": {
+      "benefit": "全队：法力低于一半时直接伤害 +8",
+      "color": "#b6a0da",
+      "family": "arcane",
+      "mods": {
+        "healing_pct": -15,
+        "low_mp_damage": 8
+      },
+      "name": "空井咒页",
+      "risk": "全队：生命恢复减少15%",
+      "scope": "team",
+      "uses": 0
+    },
+    "arcane_4": {
+      "benefit": "全队：伤害战技 +5",
+      "color": "#b6a0da",
+      "family": "arcane",
+      "mods": {
+        "attack_power": -3,
+        "skill_power": 5
+      },
+      "name": "逆符书签",
+      "risk": "全队：普通攻击 -3",
+      "scope": "team",
+      "uses": 0
+    },
+    "arcane_5": {
+      "benefit": "全队：法力支援恢复量 +8",
+      "color": "#b6a0da",
+      "family": "arcane",
+      "mods": {
+        "mana_power": 8,
+        "taken": 2
+      },
+      "name": "星泉水晶",
+      "risk": "全队：每次受伤额外2点",
+      "scope": "team",
+      "uses": 0
+    },
+    "arcane_6": {
+      "benefit": "法力至少一半时直接伤害 +12",
+      "color": "#b6a0da",
+      "family": "arcane",
+      "mods": {
+        "armor": -2,
+        "high_mp_damage": 12
+      },
+      "name": "湛蓝瞳环",
+      "risk": "防护 -2",
+      "scope": "personal",
+      "uses": 0
+    },
+    "arcane_7": {
+      "benefit": "法力低于一半时直接伤害 +14",
+      "color": "#b6a0da",
+      "family": "arcane",
+      "mods": {
+        "low_mp_damage": 14,
+        "rest_hp": -0.03
+      },
+      "name": "余魔心灯",
+      "risk": "每点行动休息回血比例 -3%",
+      "scope": "personal",
+      "uses": 0
+    },
+    "arcane_8": {
+      "benefit": "自身行动开始恢复5法力",
+      "color": "#b6a0da",
+      "family": "arcane",
+      "mods": {
+        "damage": -3,
+        "turn_mp": 5
+      },
+      "name": "观星墨瓶",
+      "risk": "直接伤害 -3",
+      "scope": "personal",
+      "uses": 0
+    },
+    "arcane_9": {
+      "benefit": "伤害战技 +14",
+      "color": "#b6a0da",
+      "family": "arcane",
+      "mods": {
+        "attack_power": -6,
+        "skill_power": 14
+      },
+      "name": "禁咒耳坠",
+      "risk": "普通攻击 -6",
+      "scope": "personal",
+      "uses": 0
+    },
+    "banner": {
+      "benefit": "全队攻击与直接伤害战技 +8",
+      "color": "#ec9a5c",
+      "mods": {
+        "armor": -3,
+        "damage": 8
+      },
+      "name": "裂甲战旗",
+      "risk": "全队防护 -3，负防护会增加受伤",
+      "scope": "team",
+      "uses": 0
+    },
+    "bastion": {
+      "benefit": "全队防护 +3",
+      "color": "#97b7df",
+      "mods": {
+        "armor": 3,
+        "speed": -2
+      },
+      "name": "沉铁壁垒",
+      "risk": "全队速度 -2",
+      "scope": "team",
+      "uses": 0
+    },
+    "blood_1": {
+      "benefit": "全队：半血及以下直接伤害 +10",
+      "color": "#da7a75",
+      "family": "blood",
+      "mods": {
+        "healing_pct": -10,
+        "low_hp_damage": 10
+      },
+      "name": "赤誓残卷",
+      "risk": "全队：生命恢复减少10%",
+      "scope": "team",
+      "uses": 0
+    },
+    "blood_10": {
+      "benefit": "半血直伤 +14；击杀回血10",
+      "color": "#da7a75",
+      "family": "blood",
+      "mods": {
+        "kill_heal": 10,
+        "low_hp_damage": 14,
+        "speed": -2
+      },
+      "name": "殉火心脏",
+      "risk": "速度 -2",
+      "scope": "personal",
+      "uses": 0
+    },
+    "blood_2": {
+      "benefit": "全队：半血及以下直接伤害 +8",
+      "color": "#da7a75",
+      "family": "blood",
+      "mods": {
+        "armor": -1,
+        "low_hp_damage": 8
+      },
+      "name": "沸血战鼓",
+      "risk": "全队：防护 -1",
+      "scope": "team",
+      "uses": 0
+    },
+    "blood_3": {
+      "benefit": "全队：直接伤害按实际损血的14%吸血",
+      "color": "#da7a75",
+      "family": "blood",
+      "mods": {
+        "lifesteal": 0.14,
+        "rest_hp": -0.01
+      },
+      "name": "血河旗",
+      "risk": "全队：每点行动休息回血比例 -1%",
+      "scope": "team",
+      "uses": 0
+    },
+    "blood_4": {
+      "benefit": "全队：对半血及以下敌人直接伤害 +10",
+      "color": "#da7a75",
+      "family": "blood",
+      "mods": {
+        "execute_damage": 10,
+        "healing_pct": -20
+      },
+      "name": "赤月圣痕",
+      "risk": "全队：生命恢复减少20%",
+      "scope": "team",
+      "uses": 0
+    },
+    "blood_5": {
+      "benefit": "全队：击杀敌人恢复10生命",
+      "color": "#da7a75",
+      "family": "blood",
+      "mods": {
+        "kill_heal": 10,
+        "taken": 1
+      },
+      "name": "献祭铜盆",
+      "risk": "全队：每次受伤额外1点",
+      "scope": "team",
+      "uses": 0
+    },
+    "blood_6": {
+      "benefit": "半血及以下直接伤害 +18",
+      "color": "#da7a75",
+      "family": "blood",
+      "mods": {
+        "armor": -2,
+        "low_hp_damage": 18
+      },
+      "name": "濒死誓戒",
+      "risk": "防护 -2",
+      "scope": "personal",
+      "uses": 0
+    },
+    "blood_7": {
+      "benefit": "直接伤害按实际损血的25%吸血",
+      "color": "#da7a75",
+      "family": "blood",
+      "mods": {
+        "healing_pct": -20,
+        "lifesteal": 0.25
+      },
+      "name": "饮髓骨针",
+      "risk": "生命恢复减少20%",
+      "scope": "personal",
+      "uses": 0
+    },
+    "blood_8": {
+      "benefit": "对半血及以下敌人直接伤害 +16",
+      "color": "#da7a75",
+      "family": "blood",
+      "mods": {
+        "execute_damage": 16,
+        "taken": 3
+      },
+      "name": "赤牙吊坠",
+      "risk": "每次受伤额外3点",
+      "scope": "personal",
+      "uses": 0
+    },
+    "blood_9": {
+      "benefit": "自身行动开始恢复5生命",
+      "color": "#da7a75",
+      "family": "blood",
+      "mods": {
+        "rest_mp": -0.02,
+        "turn_heal": 5
+      },
+      "name": "血线缝针",
+      "risk": "每点行动休息回蓝比例 -2%",
+      "scope": "personal",
+      "uses": 0
+    },
+    "boots": {
+      "benefit": "全队速度 +2",
+      "color": "#dbbf78",
+      "mods": {
+        "armor": -1,
+        "speed": 2
+      },
+      "name": "流沙履印",
+      "risk": "全队防护 -1",
+      "scope": "team",
+      "uses": 0
+    },
+    "bulwark": {
+      "benefit": "有护盾时受到伤害 -4",
+      "color": "#dbbf78",
+      "mods": {
+        "range": -1,
+        "shield_taken": -4
+      },
+      "name": "沉城印玺",
+      "risk": "全队普通攻击射程 -1（最低1）",
+      "scope": "team",
+      "uses": 0
+    },
+    "campfire": {
+      "benefit": "每点行动休息回血比例 +3%",
+      "color": "#dbbf78",
+      "mods": {
+        "rest_hp": 0.03,
+        "rest_mp": -0.02
+      },
+      "name": "苦火余薪",
+      "risk": "休息回蓝比例 -2%",
+      "scope": "team",
+      "uses": 0
+    },
+    "candle": {
+      "benefit": "抵挡一次致命伤害，保留1生命",
+      "color": "#dbbf78",
+      "mods": {},
+      "name": "续命烛芯",
+      "risk": "触发耗尽佩戴者全部法力",
+      "scope": "personal",
+      "trigger": "受到致命伤害时",
+      "uses": 1
+    },
+    "chalice": {
+      "benefit": "击杀恢复12生命",
+      "color": "#ec9a5c",
+      "mods": {
+        "rest_hp": -0.03
+      },
+      "name": "噬血圣杯",
+      "risk": "生命休息每点行动的恢复比例降低3%",
+      "scope": "personal",
+      "trigger": "佩戴者击杀敌人且生命未满时",
+      "uses": 8
+    },
+    "cog": {
+      "benefit": "机关伤害 +8",
+      "color": "#80c7b2",
+      "mods": {
+        "speed": -1,
+        "trap_power": 8
+      },
+      "name": "缚潮齿轮",
+      "risk": "速度 -1",
+      "scope": "personal",
+      "uses": 0
+    },
+    "command_1": {
+      "benefit": "全队：对标记目标直接伤害 +8",
+      "color": "#d3c487",
+      "family": "command",
+      "mods": {
+        "marked_damage": 8,
+        "rest_mp": -0.02
+      },
+      "name": "集结号角",
+      "risk": "全队：每点行动休息回蓝比例 -2%",
+      "scope": "team",
+      "uses": 0
+    },
+    "command_10": {
+      "benefit": "每次自身行动点 +1；伤害战技 +5",
+      "color": "#d3c487",
+      "family": "command",
+      "mods": {
+        "max_ap": 1,
+        "skill_power": 5,
+        "taken": 3
+      },
+      "name": "百战军册",
+      "risk": "每次受伤额外3点",
+      "scope": "personal",
+      "uses": 0
+    },
+    "command_2": {
+      "benefit": "全队：普通攻击 +5",
+      "color": "#d3c487",
+      "family": "command",
+      "mods": {
+        "attack_power": 5,
+        "heal": -3
+      },
+      "name": "前锋军印",
+      "risk": "全队：治疗战技 -3",
+      "scope": "team",
+      "uses": 0
+    },
+    "command_3": {
+      "benefit": "全队：自身行动开始回血2、回蓝1",
+      "color": "#d3c487",
+      "family": "command",
+      "mods": {
+        "speed": -1,
+        "turn_heal": 2,
+        "turn_mp": 1
+      },
+      "name": "鼓舞肩章",
+      "risk": "全队：速度 -1",
+      "scope": "team",
+      "uses": 0
+    },
+    "command_4": {
+      "benefit": "全队：每次自身行动的行动点 +1",
+      "color": "#d3c487",
+      "family": "command",
+      "mods": {
+        "damage": -6,
+        "max_ap": 1,
+        "rest_mp": -0.01
+      },
+      "name": "督战铁令",
+      "risk": "全队：直接伤害 -6；每点行动休息回蓝比例 -1%",
+      "scope": "team",
+      "uses": 0
+    },
+    "command_5": {
+      "benefit": "全队：治疗 +6；护盾吸收 +4",
+      "color": "#d3c487",
+      "family": "command",
+      "mods": {
+        "attack_power": -3,
+        "heal": 6,
+        "shield_power": 4
+      },
+      "name": "军医铭牌",
+      "risk": "全队：普通攻击 -3",
+      "scope": "team",
+      "uses": 0
+    },
+    "command_6": {
+      "benefit": "对标记目标直接伤害 +16",
+      "color": "#d3c487",
+      "family": "command",
+      "mods": {
+        "armor": -2,
+        "marked_damage": 16
+      },
+      "name": "决战指挥棒",
+      "risk": "防护 -2",
+      "scope": "personal",
+      "uses": 0
+    },
+    "command_7": {
+      "benefit": "普通攻击 +10",
+      "color": "#d3c487",
+      "family": "command",
+      "mods": {
+        "attack_power": 10,
+        "skill_power": -4
+      },
+      "name": "先锋绶带",
+      "risk": "伤害战技 -4",
+      "scope": "personal",
+      "uses": 0
+    },
+    "command_8": {
+      "benefit": "首次击杀回1行动点；法力支援 +5",
+      "color": "#d3c487",
+      "family": "command",
+      "mods": {
+        "kill_ap": 1,
+        "mana_power": 5,
+        "speed": -2
+      },
+      "name": "回令徽章",
+      "risk": "速度 -2",
+      "scope": "personal",
+      "uses": 0
+    },
+    "command_9": {
+      "benefit": "有盾时直伤 +14；标记增伤 +6",
+      "color": "#d3c487",
+      "family": "command",
+      "mods": {
+        "mark_power": 6,
+        "rest_hp": -0.03,
+        "shield_damage": 14
+      },
+      "name": "阵眼棋子",
+      "risk": "每点行动休息回血比例 -3%",
+      "scope": "personal",
+      "uses": 0
+    },
+    "dusk_1": {
+      "benefit": "全队：身边1格没有存活友军时直接伤害 +10",
+      "color": "#929bcd",
+      "family": "dusk",
+      "mods": {
+        "armor": -1,
+        "isolated_damage": 10
+      },
+      "name": "孤旅披扣",
+      "risk": "全队：防护 -1",
+      "scope": "team",
+      "uses": 0
+    },
+    "dusk_10": {
+      "benefit": "孤立时直伤 +16；击杀回蓝4",
+      "color": "#929bcd",
+      "family": "dusk",
+      "mods": {
+        "isolated_damage": 16,
+        "kill_mp": 4,
+        "taken": 2
+      },
+      "name": "独行罗盘",
+      "risk": "每次受伤额外2点",
+      "scope": "personal",
+      "uses": 0
+    },
+    "dusk_2": {
+      "benefit": "全队：每次自身行动首次直接命中伤害 +8",
+      "color": "#929bcd",
+      "family": "dusk",
+      "mods": {
+        "first_damage": 8,
+        "heal": -4
+      },
+      "name": "暮色沙漏",
+      "risk": "全队：治疗战技 -4",
+      "scope": "team",
+      "uses": 0
+    },
+    "dusk_3": {
+      "benefit": "全队：距离至少3格直接伤害 +8",
+      "color": "#929bcd",
+      "family": "dusk",
+      "mods": {
+        "ranged_damage": 8,
+        "rest_hp": -0.02
+      },
+      "name": "夜渡纸舟",
+      "risk": "全队：每点行动休息回血比例 -2%",
+      "scope": "team",
+      "uses": 0
+    },
+    "dusk_4": {
+      "benefit": "全队：对半血及以下敌人直接伤害 +8",
+      "color": "#929bcd",
+      "family": "dusk",
+      "mods": {
+        "execute_damage": 8,
+        "speed": -1
+      },
+      "name": "暗潮灯芯",
+      "risk": "全队：速度 -1",
+      "scope": "team",
+      "uses": 0
+    },
+    "dusk_5": {
+      "benefit": "全队：速度 +3",
+      "color": "#929bcd",
+      "family": "dusk",
+      "mods": {
+        "damage": -2,
+        "speed": 3
+      },
+      "name": "静默风铃",
+      "risk": "全队：直接伤害 -2",
+      "scope": "team",
+      "uses": 0
+    },
+    "dusk_6": {
+      "benefit": "身边1格没有存活友军时直接伤害 +18",
+      "color": "#929bcd",
+      "family": "dusk",
+      "mods": {
+        "healing_pct": -20,
+        "isolated_damage": 18
+      },
+      "name": "无声面纱",
+      "risk": "生命恢复减少20%",
+      "scope": "personal",
+      "uses": 0
+    },
+    "dusk_7": {
+      "benefit": "每次自身行动首次直接命中伤害 +22",
+      "color": "#929bcd",
+      "family": "dusk",
+      "mods": {
+        "armor": -2,
+        "first_damage": 22
+      },
+      "name": "暮刃戒",
+      "risk": "防护 -2",
+      "scope": "personal",
+      "uses": 0
+    },
+    "dusk_8": {
+      "benefit": "距离至少3格直接伤害 +16",
+      "color": "#929bcd",
+      "family": "dusk",
+      "mods": {
+        "heal": -8,
+        "ranged_damage": 16
+      },
+      "name": "夜瞳石",
+      "risk": "治疗战技 -8",
+      "scope": "personal",
+      "uses": 0
+    },
+    "dusk_9": {
+      "benefit": "半血及以下直接伤害 +20",
+      "color": "#929bcd",
+      "family": "dusk",
+      "mods": {
+        "low_hp_damage": 20,
+        "rest_mp": -0.03
+      },
+      "name": "绝路筹码",
+      "risk": "每点行动休息回蓝比例 -3%",
+      "scope": "personal",
+      "uses": 0
+    },
+    "echo": {
+      "benefit": "直接伤害战技追加8点伤害",
+      "color": "#b4a1d1",
+      "mods": {},
+      "name": "回响棱镜",
+      "risk": "触发额外消耗3法力；法力不足则不触发",
+      "scope": "personal",
+      "trigger": "有敌方目标存活且法力足够时，直接伤害战技追加8点伤害（每次施法一次）",
+      "uses": 6
+    },
+    "ember": {
+      "benefit": "全队攻击与直接伤害战技 +4",
+      "color": "#ec9a5c",
+      "mods": {
+        "damage": 4,
+        "healing_pct": -25
+      },
+      "name": "余烬徽印",
+      "risk": "战斗与补给的生命恢复减少25%",
+      "scope": "team",
+      "uses": 0
+    },
+    "engine_1": {
+      "benefit": "全队：机关伤害 +10",
+      "color": "#d8a772",
+      "family": "engine",
+      "mods": {
+        "attack_power": -2,
+        "trap_power": 10
+      },
+      "name": "过载线圈",
+      "risk": "全队：普通攻击 -2",
+      "scope": "team",
+      "uses": 0
+    },
+    "engine_10": {
+      "benefit": "机关伤害 +16；自身行动开始回蓝2",
+      "color": "#d8a772",
+      "family": "engine",
+      "mods": {
+        "taken": 2,
+        "trap_power": 16,
+        "turn_mp": 2
+      },
+      "name": "冷铸芯片",
+      "risk": "每次受伤额外2点",
+      "scope": "personal",
+      "uses": 0
+    },
+    "engine_2": {
+      "benefit": "全队：伤害战技 +6",
+      "color": "#d8a772",
+      "family": "engine",
+      "mods": {
+        "armor": -1,
+        "skill_power": 6
+      },
+      "name": "破城齿盘",
+      "risk": "全队：防护 -1",
+      "scope": "team",
+      "uses": 0
+    },
+    "engine_3": {
+      "benefit": "全队：每次自身行动首次直接命中伤害 +10",
+      "color": "#d8a772",
+      "family": "engine",
+      "mods": {
+        "first_damage": 10,
+        "rest_mp": -0.02
+      },
+      "name": "准星机芯",
+      "risk": "全队：每点行动休息回蓝比例 -2%",
+      "scope": "team",
+      "uses": 0
+    },
+    "engine_4": {
+      "benefit": "全队：自身行动开始恢复2法力",
+      "color": "#d8a772",
+      "family": "engine",
+      "mods": {
+        "heal": -4,
+        "turn_mp": 2
+      },
+      "name": "导流铜管",
+      "risk": "全队：治疗战技 -4",
+      "scope": "team",
+      "uses": 0
+    },
+    "engine_5": {
+      "benefit": "全队：普通攻击 +8",
+      "color": "#d8a772",
+      "family": "engine",
+      "mods": {
+        "attack_power": 8,
+        "skill_power": -3
+      },
+      "name": "重锤铸模",
+      "risk": "全队：伤害战技 -3",
+      "scope": "team",
+      "uses": 0
+    },
+    "engine_6": {
+      "benefit": "机关伤害 +18",
+      "color": "#d8a772",
+      "family": "engine",
+      "mods": {
+        "armor": -1,
+        "trap_power": 18
+      },
+      "name": "灾变扳机",
+      "risk": "防护 -1",
+      "scope": "personal",
+      "uses": 0
+    },
+    "engine_7": {
+      "benefit": "每次自身行动首次直接命中伤害 +20",
+      "color": "#d8a772",
+      "family": "engine",
+      "mods": {
+        "first_damage": 20,
+        "speed": -2
+      },
+      "name": "压缩火种",
+      "risk": "速度 -2",
+      "scope": "personal",
+      "uses": 0
+    },
+    "engine_8": {
+      "benefit": "伤害战技 +12",
+      "color": "#d8a772",
+      "family": "engine",
+      "mods": {
+        "rest_hp": -0.03,
+        "skill_power": 12
+      },
+      "name": "百炼轴承",
+      "risk": "每点行动休息回血比例 -3%",
+      "scope": "personal",
+      "uses": 0
+    },
+    "engine_9": {
+      "benefit": "首次击杀回1行动点；普攻 +5",
+      "color": "#d8a772",
+      "family": "engine",
+      "mods": {
+        "attack_power": 5,
+        "heal": -8,
+        "kill_ap": 1
+      },
+      "name": "连机擒爪",
+      "risk": "治疗战技 -8",
+      "scope": "personal",
+      "uses": 0
+    },
+    "fang": {
+      "benefit": "该次伤害 +10",
+      "color": "#ec9a5c",
+      "mods": {},
+      "name": "饥渴獠牙",
+      "risk": "每次触发自身失去2生命，可能致命",
+      "scope": "personal",
+      "trigger": "直接攻击或直接伤害战技命中时，每个目标一次",
+      "uses": 10
+    },
+    "focusstone": {
+      "benefit": "标记附加伤害 +4",
+      "color": "#80c7b2",
+      "mods": {
+        "attack_power": -3,
+        "mark_power": 4
+      },
+      "name": "静观瞳石",
+      "risk": "普通攻击伤害 -3",
+      "scope": "personal",
+      "uses": 0
+    },
+    "harvest": {
+      "benefit": "击杀敌人恢复4法力",
+      "color": "#80c7b2",
+      "mods": {
+        "healing_pct": -25,
+        "kill_mp": 4
+      },
+      "name": "收割骨笛",
+      "risk": "生命恢复量减少25%",
+      "scope": "personal",
+      "uses": 0
+    },
+    "hourglass": {
+      "benefit": "全队每次行动的行动点 +1",
+      "color": "#dbbf78",
+      "mods": {
+        "damage": -6,
+        "healing_pct": -15,
+        "max_ap": 1
+      },
+      "name": "逆流沙漏",
+      "risk": "全队直接伤害 -6；生命恢复减少15%",
+      "scope": "team",
+      "uses": 0
+    },
+    "hunt": {
+      "benefit": "对被标记敌人直接伤害 +4",
+      "color": "#dbbf78",
+      "mods": {
+        "armor": -1,
+        "marked_damage": 4
+      },
+      "name": "逐猎罗盘",
+      "risk": "全队防护 -1",
+      "scope": "team",
+      "uses": 0
+    },
+    "hunt_1": {
+      "benefit": "全队：每次自身行动首次直接命中伤害 +12",
+      "color": "#d8b77c",
+      "family": "hunt",
+      "mods": {
+        "first_damage": 12,
+        "skill_power": -2
+      },
+      "name": "黎明猎号",
+      "risk": "全队：伤害战技 -2",
+      "scope": "team",
+      "uses": 0
+    },
+    "hunt_10": {
+      "benefit": "首次击杀回1行动点；每次击杀回3法力",
+      "color": "#d8b77c",
+      "family": "hunt",
+      "mods": {
+        "kill_ap": 1,
+        "kill_mp": 3,
+        "speed": -2
+      },
+      "name": "追命符绳",
+      "risk": "速度 -2",
+      "scope": "personal",
+      "uses": 0
+    },
+    "hunt_2": {
+      "benefit": "全队：每次自身行动首次击杀恢复1行动点",
+      "color": "#d8b77c",
+      "family": "hunt",
+      "mods": {
+        "armor": -1,
+        "kill_ap": 1
+      },
+      "name": "续猎战旗",
+      "risk": "全队：防护 -1",
+      "scope": "team",
+      "uses": 0
+    },
+    "hunt_3": {
+      "benefit": "全队：对标记目标直接伤害 +8",
+      "color": "#d8b77c",
+      "family": "hunt",
+      "mods": {
+        "attack_power": -1,
+        "marked_damage": 8
+      },
+      "name": "群猎骨牌",
+      "risk": "全队：普通攻击 -1",
+      "scope": "team",
+      "uses": 0
+    },
+    "hunt_4": {
+      "benefit": "全队：距离至少3格直接伤害 +8",
+      "color": "#d8b77c",
+      "family": "hunt",
+      "mods": {
+        "ranged_damage": 8,
+        "speed": -1
+      },
+      "name": "归巢箭羽",
+      "risk": "全队：速度 -1",
+      "scope": "team",
+      "uses": 0
+    },
+    "hunt_5": {
+      "benefit": "全队：对半血及以下敌人直接伤害 +12",
+      "color": "#d8b77c",
+      "family": "hunt",
+      "mods": {
+        "execute_damage": 12,
+        "rest_hp": -0.02
+      },
+      "name": "猎王牙哨",
+      "risk": "全队：每点行动休息回血比例 -2%",
+      "scope": "team",
+      "uses": 0
+    },
+    "hunt_6": {
+      "benefit": "每次自身行动首次直接命中伤害 +18",
+      "color": "#d8b77c",
+      "family": "hunt",
+      "mods": {
+        "first_damage": 18,
+        "taken": 2
+      },
+      "name": "启猎指环",
+      "risk": "每次受伤额外2点",
+      "scope": "personal",
+      "uses": 0
+    },
+    "hunt_7": {
+      "benefit": "距离至少3格直接伤害 +12",
+      "color": "#d8b77c",
+      "family": "hunt",
+      "mods": {
+        "armor": -1,
+        "ranged_damage": 12
+      },
+      "name": "索命箭囊",
+      "risk": "防护 -1",
+      "scope": "personal",
+      "uses": 0
+    },
+    "hunt_8": {
+      "benefit": "施加标记的伤害增益 +8",
+      "color": "#d8b77c",
+      "family": "hunt",
+      "mods": {
+        "heal": -6,
+        "mark_power": 8
+      },
+      "name": "猎魂眼罩",
+      "risk": "治疗战技 -6",
+      "scope": "personal",
+      "uses": 0
+    },
+    "hunt_9": {
+      "benefit": "对半血及以下敌人直接伤害 +20",
+      "color": "#d8b77c",
+      "family": "hunt",
+      "mods": {
+        "execute_damage": 20,
+        "skill_power": -4
+      },
+      "name": "收尾骨刃",
+      "risk": "伤害战技 -4",
+      "scope": "personal",
+      "uses": 0
+    },
+    "ironheart": {
+      "benefit": "防护 +3",
+      "color": "#80c7b2",
+      "mods": {
+        "armor": 3,
+        "mana_power": -4
+      },
+      "name": "铁心契",
+      "risk": "法力支援恢复量 -4",
+      "scope": "personal",
+      "uses": 0
+    },
+    "leech": {
+      "benefit": "直接伤害按实际生命损失的15%回血",
+      "color": "#80c7b2",
+      "mods": {
+        "lifesteal": 0.15,
+        "taken": 2
+      },
+      "name": "噬生苔",
+      "risk": "每次受伤额外承受2点",
+      "scope": "personal",
+      "uses": 0
+    },
+    "lens": {
+      "benefit": "获取时获得30银币",
+      "color": "#97b7df",
+      "mods": {
+        "speed": -1
+      },
+      "name": "测绘透镜",
+      "risk": "全队速度 -1；收藏不重复发放银币",
+      "scope": "team",
+      "uses": 0
+    },
+    "mist": {
+      "benefit": "全队普通攻击射程 +1",
+      "color": "#80c7b2",
+      "mods": {
+        "range": 1,
+        "rest_hp": -0.02
+      },
+      "name": "远望雾灯",
+      "risk": "生命休息每点行动的恢复比例降低2%",
+      "scope": "team",
+      "uses": 0
+    },
+    "pilgrim_1": {
+      "benefit": "全队：自身行动开始恢复4生命",
+      "color": "#83c5ad",
+      "family": "pilgrim",
+      "mods": {
+        "attack_power": -1,
+        "turn_heal": 4
+      },
+      "name": "长旅药钵",
+      "risk": "全队：普通攻击 -1",
+      "scope": "team",
+      "uses": 0
+    },
+    "pilgrim_10": {
+      "benefit": "每点行动休息回血 +6%、回蓝 +2%",
+      "color": "#83c5ad",
+      "family": "pilgrim",
+      "mods": {
+        "attack_power": -5,
+        "rest_hp": 0.06,
+        "rest_mp": 0.02
+      },
+      "name": "宁息香炉",
+      "risk": "普通攻击 -5",
+      "scope": "personal",
+      "uses": 0
+    },
+    "pilgrim_2": {
+      "benefit": "全队：治疗战技 +10",
+      "color": "#83c5ad",
+      "family": "pilgrim",
+      "mods": {
+        "heal": 10,
+        "skill_power": -2
+      },
+      "name": "行医经卷",
+      "risk": "全队：伤害战技 -2",
+      "scope": "team",
+      "uses": 0
+    },
+    "pilgrim_3": {
+      "benefit": "全队：每点行动休息回血比例 +4%",
+      "color": "#83c5ad",
+      "family": "pilgrim",
+      "mods": {
+        "attack_power": -2,
+        "rest_hp": 0.04
+      },
+      "name": "药泉细沙",
+      "risk": "全队：普通攻击 -2",
+      "scope": "team",
+      "uses": 0
+    },
+    "pilgrim_4": {
+      "benefit": "全队：接受生命恢复量 +20%",
+      "color": "#83c5ad",
+      "family": "pilgrim",
+      "mods": {
+        "armor": -1,
+        "healing_pct": 20
+      },
+      "name": "青枝圣像",
+      "risk": "全队：防护 -1",
+      "scope": "team",
+      "uses": 0
+    },
+    "pilgrim_5": {
+      "benefit": "全队：每点行动休息回蓝比例 +3%",
+      "color": "#83c5ad",
+      "family": "pilgrim",
+      "mods": {
+        "damage": -1,
+        "rest_mp": 0.03
+      },
+      "name": "旅人雨碗",
+      "risk": "全队：直接伤害 -1",
+      "scope": "team",
+      "uses": 0
+    },
+    "pilgrim_6": {
+      "benefit": "治疗战技 +14",
+      "color": "#83c5ad",
+      "family": "pilgrim",
+      "mods": {
+        "damage": -2,
+        "heal": 14
+      },
+      "name": "续生银针",
+      "risk": "直接伤害 -2",
+      "scope": "personal",
+      "uses": 0
+    },
+    "pilgrim_7": {
+      "benefit": "自身行动开始恢复7生命",
+      "color": "#83c5ad",
+      "family": "pilgrim",
+      "mods": {
+        "attack_power": -3,
+        "turn_heal": 7
+      },
+      "name": "苔衣种子",
+      "risk": "普通攻击 -3",
+      "scope": "personal",
+      "uses": 0
+    },
+    "pilgrim_8": {
+      "benefit": "接受生命恢复量 +40%",
+      "color": "#83c5ad",
+      "family": "pilgrim",
+      "mods": {
+        "healing_pct": 40,
+        "taken": 2
+      },
+      "name": "慈心花冠",
+      "risk": "每次受伤额外2点",
+      "scope": "personal",
+      "uses": 0
+    },
+    "pilgrim_9": {
+      "benefit": "治疗 +10；法力支援 +6",
+      "color": "#83c5ad",
+      "family": "pilgrim",
+      "mods": {
+        "armor": -2,
+        "heal": 10,
+        "mana_power": 6
+      },
+      "name": "灵叶药签",
+      "risk": "防护 -2",
+      "scope": "personal",
+      "uses": 0
+    },
+    "prism": {
+      "benefit": "治疗战技恢复量 +12",
+      "color": "#80c7b2",
+      "mods": {
+        "heal": 12,
+        "heal_mp": 3
+      },
+      "name": "慈悲裂晶",
+      "risk": "每次治疗战技额外消耗3法力",
+      "scope": "personal",
+      "trigger": "治疗战技有效恢复生命时",
+      "uses": 8
+    },
+    "reservoir": {
+      "benefit": "每点行动休息回蓝比例 +2%",
+      "color": "#dbbf78",
+      "mods": {
+        "damage": -2,
+        "rest_mp": 0.02
+      },
+      "name": "蓄潮水囊",
+      "risk": "全队直接伤害 -2",
+      "scope": "team",
+      "uses": 0
+    },
+    "rune": {
+      "benefit": "伤害战技 +4",
+      "color": "#dbbf78",
+      "mods": {
+        "attack_power": -2,
+        "skill_power": 4
+      },
+      "name": "裂纹符核",
+      "risk": "全队普通攻击伤害 -2",
+      "scope": "team",
+      "uses": 0
+    },
+    "shell": {
+      "benefit": "该次生命伤害减少10，最低0",
+      "color": "#97b7df",
+      "mods": {
+        "speed": -2
+      },
+      "name": "碎誓甲壳",
+      "risk": "速度 -2",
+      "scope": "personal",
+      "trigger": "受到非零生命伤害时",
+      "uses": 8
+    },
+    "spark": {
+      "benefit": "治疗战技 +6",
+      "color": "#80c7b2",
+      "mods": {
+        "heal": 6,
+        "speed": -2
+      },
+      "name": "薪火戒",
+      "risk": "速度 -2",
+      "scope": "personal",
+      "uses": 0
+    },
+    "spring": {
+      "benefit": "全队休息每点行动额外恢复2%生命与法力",
+      "color": "#80c7b2",
+      "mods": {
+        "rest_hp": 0.02,
+        "rest_mp": 0.02,
+        "taken": 2
+      },
+      "name": "旧世泉核",
+      "risk": "每次受伤额外承受2点伤害",
+      "scope": "team",
+      "uses": 0
+    },
+    "thorn": {
+      "benefit": "攻击与直接伤害战技 +6",
+      "color": "#ec9a5c",
+      "mods": {
+        "damage": 6,
+        "taken": 3
+      },
+      "name": "荆棘王冠",
+      "risk": "每次受伤额外承受3点伤害",
+      "scope": "personal",
+      "uses": 0
+    },
+    "tide": {
+      "benefit": "法力休息每点行动额外恢复5%",
+      "color": "#97b7df",
+      "mods": {
+        "rest_hp": -0.04,
+        "rest_mp": 0.05
+      },
+      "name": "枯潮瓶",
+      "risk": "生命休息每点行动的恢复比例降低4%",
+      "scope": "personal",
+      "trigger": "休息恢复法力且实际有恢复时",
+      "uses": 6
+    },
+    "ward_1": {
+      "benefit": "全队：自身行动开始获得吸收8伤害的护盾",
+      "color": "#88aed1",
+      "family": "ward",
+      "mods": {
+        "damage": -2,
+        "turn_shield": 8
+      },
+      "name": "巡夜铜灯",
+      "risk": "全队：直接伤害 -2",
+      "scope": "team",
+      "uses": 0
+    },
+    "ward_10": {
+      "benefit": "自身行动开始回血4；防护 +2",
+      "color": "#88aed1",
+      "family": "ward",
+      "mods": {
+        "armor": 2,
+        "rest_mp": -0.03,
+        "turn_heal": 4
+      },
+      "name": "不屈祷珠",
+      "risk": "每点行动休息回蓝比例 -3%",
+      "scope": "personal",
+      "uses": 0
+    },
+    "ward_2": {
+      "benefit": "全队：有护盾时受伤额外减少8",
+      "color": "#88aed1",
+      "family": "ward",
+      "mods": {
+        "shield_taken": -8,
+        "speed": -1
+      },
+      "name": "誓约城砖",
+      "risk": "全队：速度 -1",
+      "scope": "team",
+      "uses": 0
+    },
+    "ward_3": {
+      "benefit": "全队：自身有护盾时直接伤害 +8",
+      "color": "#88aed1",
+      "family": "ward",
+      "mods": {
+        "attack_power": -2,
+        "shield_damage": 8
+      },
+      "name": "壁垒残旗",
+      "risk": "全队：普通攻击 -2",
+      "scope": "team",
+      "uses": 0
+    },
+    "ward_4": {
+      "benefit": "全队：施加护盾吸收 +8",
+      "color": "#88aed1",
+      "family": "ward",
+      "mods": {
+        "rest_mp": -0.02,
+        "shield_power": 8
+      },
+      "name": "青铜祷钟",
+      "risk": "全队：每点行动休息回蓝比例 -2%",
+      "scope": "team",
+      "uses": 0
+    },
+    "ward_5": {
+      "benefit": "全队：防护 +3",
+      "color": "#88aed1",
+      "family": "ward",
+      "mods": {
+        "armor": 3,
+        "skill_power": -3
+      },
+      "name": "守夜石碑",
+      "risk": "全队：伤害战技 -3",
+      "scope": "team",
+      "uses": 0
+    },
+    "ward_6": {
+      "benefit": "自身行动开始获得吸收16伤害的护盾",
+      "color": "#88aed1",
+      "family": "ward",
+      "mods": {
+        "speed": -2,
+        "turn_shield": 16
+      },
+      "name": "重誓护符",
+      "risk": "速度 -2",
+      "scope": "personal",
+      "uses": 0
+    },
+    "ward_7": {
+      "benefit": "自身有护盾时直接伤害 +18",
+      "color": "#88aed1",
+      "family": "ward",
+      "mods": {
+        "armor": -2,
+        "shield_damage": 18
+      },
+      "name": "盾锋环",
+      "risk": "防护 -2",
+      "scope": "personal",
+      "uses": 0
+    },
+    "ward_8": {
+      "benefit": "施加护盾吸收 +14",
+      "color": "#88aed1",
+      "family": "ward",
+      "mods": {
+        "heal": -6,
+        "shield_power": 14
+      },
+      "name": "坚城钥匙",
+      "risk": "治疗战技 -6",
+      "scope": "personal",
+      "uses": 0
+    },
+    "ward_9": {
+      "benefit": "有护盾时受伤额外减少14",
+      "color": "#88aed1",
+      "family": "ward",
+      "mods": {
+        "damage": -3,
+        "shield_taken": -14
+      },
+      "name": "余光甲片",
+      "risk": "直接伤害 -3",
+      "scope": "personal",
+      "uses": 0
+    },
+    "wardbell": {
+      "benefit": "护盾吸收 +4",
+      "color": "#dbbf78",
+      "mods": {
+        "healing_pct": -15,
+        "shield_power": 4
+      },
+      "name": "守誓铜铃",
+      "risk": "治疗量减少15%",
+      "scope": "team",
+      "uses": 0
+    },
+    "wardstone": {
+      "benefit": "护盾吸收 +4",
+      "color": "#80c7b2",
+      "mods": {
+        "shield_power": 4,
+        "skill_power": -3
+      },
+      "name": "护生石",
+      "risk": "伤害战技 -3",
+      "scope": "personal",
+      "uses": 0
+    },
+    "well": {
+      "benefit": "法力支援恢复量 +4",
+      "color": "#80c7b2",
+      "mods": {
+        "armor": -2,
+        "mana_power": 4
+      },
+      "name": "灵泉残页",
+      "risk": "防护 -2",
+      "scope": "personal",
+      "uses": 0
+    }
+  },
+  "resonance_sets": {
+    "arcane": {
+      "four": {
+        "turn_mp": 3
+      },
+      "four_desc": "自身行动开始恢复3法力",
+      "name": "秘法",
+      "two": {
+        "skill_power": 5
+      },
+      "two_desc": "伤害战技 +5"
+    },
+    "blood": {
+      "four": {
+        "low_hp_damage": 14
+      },
+      "four_desc": "半血及以下直接伤害 +14",
+      "name": "血契",
+      "two": {
+        "lifesteal": 0.16
+      },
+      "two_desc": "吸血 +16%"
+    },
+    "command": {
+      "four": {
+        "max_ap": 1
+      },
+      "four_desc": "每次自身行动的行动点 +1",
+      "name": "战阵",
+      "two": {
+        "marked_damage": 6
+      },
+      "two_desc": "对标记目标直接伤害 +6"
+    },
+    "dusk": {
+      "four": {
+        "execute_damage": 12
+      },
+      "four_desc": "对半血及以下敌人直接伤害 +12",
+      "name": "孤影",
+      "two": {
+        "isolated_damage": 8
+      },
+      "two_desc": "身边1格没有存活友军时直接伤害 +8"
+    },
+    "engine": {
+      "four": {
+        "first_damage": 12
+      },
+      "four_desc": "每次自身行动首次直接命中伤害 +12",
+      "name": "遗械",
+      "two": {
+        "trap_power": 10
+      },
+      "two_desc": "机关伤害 +10"
+    },
+    "hunt": {
+      "four": {
+        "kill_ap": 1
+      },
+      "four_desc": "每次自身行动首次击杀恢复1行动点",
+      "name": "追猎",
+      "two": {
+        "marked_damage": 8
+      },
+      "two_desc": "对标记目标直接伤害 +8"
+    },
+    "pilgrim": {
+      "four": {
+        "turn_heal": 6,
+        "turn_mp": 2
+      },
+      "four_desc": "自身行动开始恢复6生命、2法力",
+      "name": "生息",
+      "two": {
+        "armor": 1,
+        "heal": 6
+      },
+      "two_desc": "治疗战技 +6、防护 +1"
+    },
+    "ward": {
+      "four": {
+        "turn_shield": 12
+      },
+      "four_desc": "自身行动开始获得吸收12伤害的护盾",
+      "name": "守誓",
+      "two": {
+        "shield_power": 4
+      },
+      "two_desc": "施加护盾吸收 +4"
+    }
+  },
+  "rewards": [
+    {
+      "color": "#ec9a5c",
+      "desc": "全队遗物\n收益：全队攻击与直接伤害战技 +4\n代价：战斗与补给的生命恢复减少25%\n持续生效",
+      "id": "ember",
+      "name": "余烬徽印",
+      "type": "relic"
+    },
+    {
+      "color": "#80c7b2",
+      "desc": "全队遗物\n收益：全队休息每点行动额外恢复2%生命与法力\n代价：每次受伤额外承受2点伤害\n持续生效",
+      "id": "spring",
+      "name": "旧世泉核",
+      "type": "relic"
+    },
+    {
+      "color": "#97b7df",
+      "desc": "全队遗物\n收益：获取时获得30银币\n代价：全队速度 -1；收藏不重复发放银币\n持续生效",
+      "id": "lens",
+      "name": "测绘透镜",
+      "type": "relic"
+    },
+    {
+      "color": "#ec9a5c",
+      "desc": "全队遗物\n收益：全队攻击与直接伤害战技 +8\n代价：全队防护 -3，负防护会增加受伤\n持续生效",
+      "id": "banner",
+      "name": "裂甲战旗",
+      "type": "relic"
+    },
+    {
+      "color": "#97b7df",
+      "desc": "全队遗物\n收益：全队防护 +3\n代价：全队速度 -2\n持续生效",
+      "id": "bastion",
+      "name": "沉铁壁垒",
+      "type": "relic"
+    },
+    {
+      "color": "#dbbf78",
+      "desc": "全队遗物\n收益：全队每次行动的行动点 +1\n代价：全队直接伤害 -6；生命恢复减少15%\n持续生效",
+      "id": "hourglass",
+      "name": "逆流沙漏",
+      "type": "relic"
+    },
+    {
+      "color": "#80c7b2",
+      "desc": "全队遗物\n收益：全队普通攻击射程 +1\n代价：生命休息每点行动的恢复比例降低2%\n持续生效",
+      "id": "mist",
+      "name": "远望雾灯",
+      "type": "relic"
+    },
+    {
+      "color": "#b4a1d1",
+      "desc": "个人遗物 · 每人限1件\n收益：直接伤害战技追加8点伤害\n代价：触发额外消耗3法力；法力不足则不触发\n触发：有敌方目标存活且法力足够时，直接伤害战技追加8点伤害（每次施法一次） · 6次后损毁",
+      "id": "echo",
+      "name": "回响棱镜",
+      "type": "relic"
+    },
+    {
+      "color": "#dbbf78",
+      "desc": "个人遗物 · 每人限1件\n收益：抵挡一次致命伤害，保留1生命\n代价：触发耗尽佩戴者全部法力\n触发：受到致命伤害时 · 1次后损毁",
+      "id": "candle",
+      "name": "续命烛芯",
+      "type": "relic"
+    },
+    {
+      "color": "#ec9a5c",
+      "desc": "个人遗物 · 每人限1件\n收益：击杀恢复12生命\n代价：生命休息每点行动的恢复比例降低3%\n触发：佩戴者击杀敌人且生命未满时 · 8次后损毁",
+      "id": "chalice",
+      "name": "噬血圣杯",
+      "type": "relic"
+    },
+    {
+      "color": "#ec9a5c",
+      "desc": "个人遗物 · 每人限1件\n收益：攻击与直接伤害战技 +6\n代价：每次受伤额外承受3点伤害\n持续生效",
+      "id": "thorn",
+      "name": "荆棘王冠",
+      "type": "relic"
+    },
+    {
+      "color": "#80c7b2",
+      "desc": "个人遗物 · 每人限1件\n收益：治疗战技恢复量 +12\n代价：每次治疗战技额外消耗3法力\n触发：治疗战技有效恢复生命时 · 8次后损毁",
+      "id": "prism",
+      "name": "慈悲裂晶",
+      "type": "relic"
+    },
+    {
+      "color": "#ec9a5c",
+      "desc": "个人遗物 · 每人限1件\n收益：该次伤害 +10\n代价：每次触发自身失去2生命，可能致命\n触发：直接攻击或直接伤害战技命中时，每个目标一次 · 10次后损毁",
+      "id": "fang",
+      "name": "饥渴獠牙",
+      "type": "relic"
+    },
+    {
+      "color": "#97b7df",
+      "desc": "个人遗物 · 每人限1件\n收益：法力休息每点行动额外恢复5%\n代价：生命休息每点行动的恢复比例降低4%\n触发：休息恢复法力且实际有恢复时 · 6次后损毁",
+      "id": "tide",
+      "name": "枯潮瓶",
+      "type": "relic"
+    },
+    {
+      "color": "#97b7df",
+      "desc": "个人遗物 · 每人限1件\n收益：该次生命伤害减少10，最低0\n代价：速度 -2\n触发：受到非零生命伤害时 · 8次后损毁",
+      "id": "shell",
+      "name": "碎誓甲壳",
+      "type": "relic"
+    },
+    {
+      "color": "#dbbf78",
+      "desc": "全队遗物\n收益：伤害战技 +4\n代价：全队普通攻击伤害 -2\n持续生效",
+      "id": "rune",
+      "name": "裂纹符核",
+      "type": "relic"
+    },
+    {
+      "color": "#dbbf78",
+      "desc": "全队遗物\n收益：对被标记敌人直接伤害 +4\n代价：全队防护 -1\n持续生效",
+      "id": "hunt",
+      "name": "逐猎罗盘",
+      "type": "relic"
+    },
+    {
+      "color": "#dbbf78",
+      "desc": "全队遗物\n收益：护盾吸收 +4\n代价：治疗量减少15%\n持续生效",
+      "id": "wardbell",
+      "name": "守誓铜铃",
+      "type": "relic"
+    },
+    {
+      "color": "#dbbf78",
+      "desc": "全队遗物\n收益：每点行动休息回蓝比例 +2%\n代价：全队直接伤害 -2\n持续生效",
+      "id": "reservoir",
+      "name": "蓄潮水囊",
+      "type": "relic"
+    },
+    {
+      "color": "#dbbf78",
+      "desc": "全队遗物\n收益：全队速度 +2\n代价：全队防护 -1\n持续生效",
+      "id": "boots",
+      "name": "流沙履印",
+      "type": "relic"
+    },
+    {
+      "color": "#dbbf78",
+      "desc": "全队遗物\n收益：有护盾时受到伤害 -4\n代价：全队普通攻击射程 -1（最低1）\n持续生效",
+      "id": "bulwark",
+      "name": "沉城印玺",
+      "type": "relic"
+    },
+    {
+      "color": "#dbbf78",
+      "desc": "全队遗物\n收益：每点行动休息回血比例 +3%\n代价：休息回蓝比例 -2%\n持续生效",
+      "id": "campfire",
+      "name": "苦火余薪",
+      "type": "relic"
+    },
+    {
+      "color": "#80c7b2",
+      "desc": "个人遗物 · 每人限1件\n收益：机关伤害 +8\n代价：速度 -1\n持续生效",
+      "id": "cog",
+      "name": "缚潮齿轮",
+      "type": "relic"
+    },
+    {
+      "color": "#80c7b2",
+      "desc": "个人遗物 · 每人限1件\n收益：护盾吸收 +4\n代价：伤害战技 -3\n持续生效",
+      "id": "wardstone",
+      "name": "护生石",
+      "type": "relic"
+    },
+    {
+      "color": "#80c7b2",
+      "desc": "个人遗物 · 每人限1件\n收益：法力支援恢复量 +4\n代价：防护 -2\n持续生效",
+      "id": "well",
+      "name": "灵泉残页",
+      "type": "relic"
+    },
+    {
+      "color": "#80c7b2",
+      "desc": "个人遗物 · 每人限1件\n收益：击杀敌人恢复4法力\n代价：生命恢复量减少25%\n持续生效",
+      "id": "harvest",
+      "name": "收割骨笛",
+      "type": "relic"
+    },
+    {
+      "color": "#80c7b2",
+      "desc": "个人遗物 · 每人限1件\n收益：直接伤害按实际生命损失的15%回血\n代价：每次受伤额外承受2点\n持续生效",
+      "id": "leech",
+      "name": "噬生苔",
+      "type": "relic"
+    },
+    {
+      "color": "#80c7b2",
+      "desc": "个人遗物 · 每人限1件\n收益：标记附加伤害 +4\n代价：普通攻击伤害 -3\n持续生效",
+      "id": "focusstone",
+      "name": "静观瞳石",
+      "type": "relic"
+    },
+    {
+      "color": "#80c7b2",
+      "desc": "个人遗物 · 每人限1件\n收益：防护 +3\n代价：法力支援恢复量 -4\n持续生效",
+      "id": "ironheart",
+      "name": "铁心契",
+      "type": "relic"
+    },
+    {
+      "color": "#80c7b2",
+      "desc": "个人遗物 · 每人限1件\n收益：治疗战技 +6\n代价：速度 -2\n持续生效",
+      "id": "spark",
+      "name": "薪火戒",
+      "type": "relic"
+    },
+    {
+      "color": "#da7a75",
+      "desc": "全队遗物\n收益：全队：半血及以下直接伤害 +10\n代价：全队：生命恢复减少10%\n持续生效\n共鸣 · 血契：2件 吸血 +16%；4件 半血及以下直接伤害 +14（全队遗物与本人个人遗物计数；遗物行动点最多+2，击杀回行动点最多1）",
+      "id": "blood_1",
+      "name": "赤誓残卷",
+      "type": "relic"
+    },
+    {
+      "color": "#da7a75",
+      "desc": "全队遗物\n收益：全队：半血及以下直接伤害 +8\n代价：全队：防护 -1\n持续生效\n共鸣 · 血契：2件 吸血 +16%；4件 半血及以下直接伤害 +14（全队遗物与本人个人遗物计数；遗物行动点最多+2，击杀回行动点最多1）",
+      "id": "blood_2",
+      "name": "沸血战鼓",
+      "type": "relic"
+    },
+    {
+      "color": "#da7a75",
+      "desc": "全队遗物\n收益：全队：直接伤害按实际损血的14%吸血\n代价：全队：每点行动休息回血比例 -1%\n持续生效\n共鸣 · 血契：2件 吸血 +16%；4件 半血及以下直接伤害 +14（全队遗物与本人个人遗物计数；遗物行动点最多+2，击杀回行动点最多1）",
+      "id": "blood_3",
+      "name": "血河旗",
+      "type": "relic"
+    },
+    {
+      "color": "#da7a75",
+      "desc": "全队遗物\n收益：全队：对半血及以下敌人直接伤害 +10\n代价：全队：生命恢复减少20%\n持续生效\n共鸣 · 血契：2件 吸血 +16%；4件 半血及以下直接伤害 +14（全队遗物与本人个人遗物计数；遗物行动点最多+2，击杀回行动点最多1）",
+      "id": "blood_4",
+      "name": "赤月圣痕",
+      "type": "relic"
+    },
+    {
+      "color": "#da7a75",
+      "desc": "全队遗物\n收益：全队：击杀敌人恢复10生命\n代价：全队：每次受伤额外1点\n持续生效\n共鸣 · 血契：2件 吸血 +16%；4件 半血及以下直接伤害 +14（全队遗物与本人个人遗物计数；遗物行动点最多+2，击杀回行动点最多1）",
+      "id": "blood_5",
+      "name": "献祭铜盆",
+      "type": "relic"
+    },
+    {
+      "color": "#da7a75",
+      "desc": "个人遗物 · 每人限1件\n收益：半血及以下直接伤害 +18\n代价：防护 -2\n持续生效\n共鸣 · 血契：2件 吸血 +16%；4件 半血及以下直接伤害 +14（全队遗物与本人个人遗物计数；遗物行动点最多+2，击杀回行动点最多1）",
+      "id": "blood_6",
+      "name": "濒死誓戒",
+      "type": "relic"
+    },
+    {
+      "color": "#da7a75",
+      "desc": "个人遗物 · 每人限1件\n收益：直接伤害按实际损血的25%吸血\n代价：生命恢复减少20%\n持续生效\n共鸣 · 血契：2件 吸血 +16%；4件 半血及以下直接伤害 +14（全队遗物与本人个人遗物计数；遗物行动点最多+2，击杀回行动点最多1）",
+      "id": "blood_7",
+      "name": "饮髓骨针",
+      "type": "relic"
+    },
+    {
+      "color": "#da7a75",
+      "desc": "个人遗物 · 每人限1件\n收益：对半血及以下敌人直接伤害 +16\n代价：每次受伤额外3点\n持续生效\n共鸣 · 血契：2件 吸血 +16%；4件 半血及以下直接伤害 +14（全队遗物与本人个人遗物计数；遗物行动点最多+2，击杀回行动点最多1）",
+      "id": "blood_8",
+      "name": "赤牙吊坠",
+      "type": "relic"
+    },
+    {
+      "color": "#da7a75",
+      "desc": "个人遗物 · 每人限1件\n收益：自身行动开始恢复5生命\n代价：每点行动休息回蓝比例 -2%\n持续生效\n共鸣 · 血契：2件 吸血 +16%；4件 半血及以下直接伤害 +14（全队遗物与本人个人遗物计数；遗物行动点最多+2，击杀回行动点最多1）",
+      "id": "blood_9",
+      "name": "血线缝针",
+      "type": "relic"
+    },
+    {
+      "color": "#da7a75",
+      "desc": "个人遗物 · 每人限1件\n收益：半血直伤 +14；击杀回血10\n代价：速度 -2\n持续生效\n共鸣 · 血契：2件 吸血 +16%；4件 半血及以下直接伤害 +14（全队遗物与本人个人遗物计数；遗物行动点最多+2，击杀回行动点最多1）",
+      "id": "blood_10",
+      "name": "殉火心脏",
+      "type": "relic"
+    },
+    {
+      "color": "#d8b77c",
+      "desc": "全队遗物\n收益：全队：每次自身行动首次直接命中伤害 +12\n代价：全队：伤害战技 -2\n持续生效\n共鸣 · 追猎：2件 对标记目标直接伤害 +8；4件 每次自身行动首次击杀恢复1行动点（全队遗物与本人个人遗物计数；遗物行动点最多+2，击杀回行动点最多1）",
+      "id": "hunt_1",
+      "name": "黎明猎号",
+      "type": "relic"
+    },
+    {
+      "color": "#d8b77c",
+      "desc": "全队遗物\n收益：全队：每次自身行动首次击杀恢复1行动点\n代价：全队：防护 -1\n持续生效\n共鸣 · 追猎：2件 对标记目标直接伤害 +8；4件 每次自身行动首次击杀恢复1行动点（全队遗物与本人个人遗物计数；遗物行动点最多+2，击杀回行动点最多1）",
+      "id": "hunt_2",
+      "name": "续猎战旗",
+      "type": "relic"
+    },
+    {
+      "color": "#d8b77c",
+      "desc": "全队遗物\n收益：全队：对标记目标直接伤害 +8\n代价：全队：普通攻击 -1\n持续生效\n共鸣 · 追猎：2件 对标记目标直接伤害 +8；4件 每次自身行动首次击杀恢复1行动点（全队遗物与本人个人遗物计数；遗物行动点最多+2，击杀回行动点最多1）",
+      "id": "hunt_3",
+      "name": "群猎骨牌",
+      "type": "relic"
+    },
+    {
+      "color": "#d8b77c",
+      "desc": "全队遗物\n收益：全队：距离至少3格直接伤害 +8\n代价：全队：速度 -1\n持续生效\n共鸣 · 追猎：2件 对标记目标直接伤害 +8；4件 每次自身行动首次击杀恢复1行动点（全队遗物与本人个人遗物计数；遗物行动点最多+2，击杀回行动点最多1）",
+      "id": "hunt_4",
+      "name": "归巢箭羽",
+      "type": "relic"
+    },
+    {
+      "color": "#d8b77c",
+      "desc": "全队遗物\n收益：全队：对半血及以下敌人直接伤害 +12\n代价：全队：每点行动休息回血比例 -2%\n持续生效\n共鸣 · 追猎：2件 对标记目标直接伤害 +8；4件 每次自身行动首次击杀恢复1行动点（全队遗物与本人个人遗物计数；遗物行动点最多+2，击杀回行动点最多1）",
+      "id": "hunt_5",
+      "name": "猎王牙哨",
+      "type": "relic"
+    },
+    {
+      "color": "#d8b77c",
+      "desc": "个人遗物 · 每人限1件\n收益：每次自身行动首次直接命中伤害 +18\n代价：每次受伤额外2点\n持续生效\n共鸣 · 追猎：2件 对标记目标直接伤害 +8；4件 每次自身行动首次击杀恢复1行动点（全队遗物与本人个人遗物计数；遗物行动点最多+2，击杀回行动点最多1）",
+      "id": "hunt_6",
+      "name": "启猎指环",
+      "type": "relic"
+    },
+    {
+      "color": "#d8b77c",
+      "desc": "个人遗物 · 每人限1件\n收益：距离至少3格直接伤害 +12\n代价：防护 -1\n持续生效\n共鸣 · 追猎：2件 对标记目标直接伤害 +8；4件 每次自身行动首次击杀恢复1行动点（全队遗物与本人个人遗物计数；遗物行动点最多+2，击杀回行动点最多1）",
+      "id": "hunt_7",
+      "name": "索命箭囊",
+      "type": "relic"
+    },
+    {
+      "color": "#d8b77c",
+      "desc": "个人遗物 · 每人限1件\n收益：施加标记的伤害增益 +8\n代价：治疗战技 -6\n持续生效\n共鸣 · 追猎：2件 对标记目标直接伤害 +8；4件 每次自身行动首次击杀恢复1行动点（全队遗物与本人个人遗物计数；遗物行动点最多+2，击杀回行动点最多1）",
+      "id": "hunt_8",
+      "name": "猎魂眼罩",
+      "type": "relic"
+    },
+    {
+      "color": "#d8b77c",
+      "desc": "个人遗物 · 每人限1件\n收益：对半血及以下敌人直接伤害 +20\n代价：伤害战技 -4\n持续生效\n共鸣 · 追猎：2件 对标记目标直接伤害 +8；4件 每次自身行动首次击杀恢复1行动点（全队遗物与本人个人遗物计数；遗物行动点最多+2，击杀回行动点最多1）",
+      "id": "hunt_9",
+      "name": "收尾骨刃",
+      "type": "relic"
+    },
+    {
+      "color": "#d8b77c",
+      "desc": "个人遗物 · 每人限1件\n收益：首次击杀回1行动点；每次击杀回3法力\n代价：速度 -2\n持续生效\n共鸣 · 追猎：2件 对标记目标直接伤害 +8；4件 每次自身行动首次击杀恢复1行动点（全队遗物与本人个人遗物计数；遗物行动点最多+2，击杀回行动点最多1）",
+      "id": "hunt_10",
+      "name": "追命符绳",
+      "type": "relic"
+    },
+    {
+      "color": "#88aed1",
+      "desc": "全队遗物\n收益：全队：自身行动开始获得吸收8伤害的护盾\n代价：全队：直接伤害 -2\n持续生效\n共鸣 · 守誓：2件 施加护盾吸收 +4；4件 自身行动开始获得吸收12伤害的护盾（全队遗物与本人个人遗物计数；遗物行动点最多+2，击杀回行动点最多1）",
+      "id": "ward_1",
+      "name": "巡夜铜灯",
+      "type": "relic"
+    },
+    {
+      "color": "#88aed1",
+      "desc": "全队遗物\n收益：全队：有护盾时受伤额外减少8\n代价：全队：速度 -1\n持续生效\n共鸣 · 守誓：2件 施加护盾吸收 +4；4件 自身行动开始获得吸收12伤害的护盾（全队遗物与本人个人遗物计数；遗物行动点最多+2，击杀回行动点最多1）",
+      "id": "ward_2",
+      "name": "誓约城砖",
+      "type": "relic"
+    },
+    {
+      "color": "#88aed1",
+      "desc": "全队遗物\n收益：全队：自身有护盾时直接伤害 +8\n代价：全队：普通攻击 -2\n持续生效\n共鸣 · 守誓：2件 施加护盾吸收 +4；4件 自身行动开始获得吸收12伤害的护盾（全队遗物与本人个人遗物计数；遗物行动点最多+2，击杀回行动点最多1）",
+      "id": "ward_3",
+      "name": "壁垒残旗",
+      "type": "relic"
+    },
+    {
+      "color": "#88aed1",
+      "desc": "全队遗物\n收益：全队：施加护盾吸收 +8\n代价：全队：每点行动休息回蓝比例 -2%\n持续生效\n共鸣 · 守誓：2件 施加护盾吸收 +4；4件 自身行动开始获得吸收12伤害的护盾（全队遗物与本人个人遗物计数；遗物行动点最多+2，击杀回行动点最多1）",
+      "id": "ward_4",
+      "name": "青铜祷钟",
+      "type": "relic"
+    },
+    {
+      "color": "#88aed1",
+      "desc": "全队遗物\n收益：全队：防护 +3\n代价：全队：伤害战技 -3\n持续生效\n共鸣 · 守誓：2件 施加护盾吸收 +4；4件 自身行动开始获得吸收12伤害的护盾（全队遗物与本人个人遗物计数；遗物行动点最多+2，击杀回行动点最多1）",
+      "id": "ward_5",
+      "name": "守夜石碑",
+      "type": "relic"
+    },
+    {
+      "color": "#88aed1",
+      "desc": "个人遗物 · 每人限1件\n收益：自身行动开始获得吸收16伤害的护盾\n代价：速度 -2\n持续生效\n共鸣 · 守誓：2件 施加护盾吸收 +4；4件 自身行动开始获得吸收12伤害的护盾（全队遗物与本人个人遗物计数；遗物行动点最多+2，击杀回行动点最多1）",
+      "id": "ward_6",
+      "name": "重誓护符",
+      "type": "relic"
+    },
+    {
+      "color": "#88aed1",
+      "desc": "个人遗物 · 每人限1件\n收益：自身有护盾时直接伤害 +18\n代价：防护 -2\n持续生效\n共鸣 · 守誓：2件 施加护盾吸收 +4；4件 自身行动开始获得吸收12伤害的护盾（全队遗物与本人个人遗物计数；遗物行动点最多+2，击杀回行动点最多1）",
+      "id": "ward_7",
+      "name": "盾锋环",
+      "type": "relic"
+    },
+    {
+      "color": "#88aed1",
+      "desc": "个人遗物 · 每人限1件\n收益：施加护盾吸收 +14\n代价：治疗战技 -6\n持续生效\n共鸣 · 守誓：2件 施加护盾吸收 +4；4件 自身行动开始获得吸收12伤害的护盾（全队遗物与本人个人遗物计数；遗物行动点最多+2，击杀回行动点最多1）",
+      "id": "ward_8",
+      "name": "坚城钥匙",
+      "type": "relic"
+    },
+    {
+      "color": "#88aed1",
+      "desc": "个人遗物 · 每人限1件\n收益：有护盾时受伤额外减少14\n代价：直接伤害 -3\n持续生效\n共鸣 · 守誓：2件 施加护盾吸收 +4；4件 自身行动开始获得吸收12伤害的护盾（全队遗物与本人个人遗物计数；遗物行动点最多+2，击杀回行动点最多1）",
+      "id": "ward_9",
+      "name": "余光甲片",
+      "type": "relic"
+    },
+    {
+      "color": "#88aed1",
+      "desc": "个人遗物 · 每人限1件\n收益：自身行动开始回血4；防护 +2\n代价：每点行动休息回蓝比例 -3%\n持续生效\n共鸣 · 守誓：2件 施加护盾吸收 +4；4件 自身行动开始获得吸收12伤害的护盾（全队遗物与本人个人遗物计数；遗物行动点最多+2，击杀回行动点最多1）",
+      "id": "ward_10",
+      "name": "不屈祷珠",
+      "type": "relic"
+    },
+    {
+      "color": "#b6a0da",
+      "desc": "全队遗物\n收益：全队：自身行动开始恢复3法力\n代价：全队：普通攻击 -3\n持续生效\n共鸣 · 秘法：2件 伤害战技 +5；4件 自身行动开始恢复3法力（全队遗物与本人个人遗物计数；遗物行动点最多+2，击杀回行动点最多1）",
+      "id": "arcane_1",
+      "name": "蓝焰烛台",
+      "type": "relic"
+    },
+    {
+      "color": "#b6a0da",
+      "desc": "全队遗物\n收益：全队：法力至少一半时直接伤害 +8\n代价：全队：防护 -1\n持续生效\n共鸣 · 秘法：2件 伤害战技 +5；4件 自身行动开始恢复3法力（全队遗物与本人个人遗物计数；遗物行动点最多+2，击杀回行动点最多1）",
+      "id": "arcane_2",
+      "name": "盈辉星盘",
+      "type": "relic"
+    },
+    {
+      "color": "#b6a0da",
+      "desc": "全队遗物\n收益：全队：法力低于一半时直接伤害 +8\n代价：全队：生命恢复减少15%\n持续生效\n共鸣 · 秘法：2件 伤害战技 +5；4件 自身行动开始恢复3法力（全队遗物与本人个人遗物计数；遗物行动点最多+2，击杀回行动点最多1）",
+      "id": "arcane_3",
+      "name": "空井咒页",
+      "type": "relic"
+    },
+    {
+      "color": "#b6a0da",
+      "desc": "全队遗物\n收益：全队：伤害战技 +5\n代价：全队：普通攻击 -3\n持续生效\n共鸣 · 秘法：2件 伤害战技 +5；4件 自身行动开始恢复3法力（全队遗物与本人个人遗物计数；遗物行动点最多+2，击杀回行动点最多1）",
+      "id": "arcane_4",
+      "name": "逆符书签",
+      "type": "relic"
+    },
+    {
+      "color": "#b6a0da",
+      "desc": "全队遗物\n收益：全队：法力支援恢复量 +8\n代价：全队：每次受伤额外2点\n持续生效\n共鸣 · 秘法：2件 伤害战技 +5；4件 自身行动开始恢复3法力（全队遗物与本人个人遗物计数；遗物行动点最多+2，击杀回行动点最多1）",
+      "id": "arcane_5",
+      "name": "星泉水晶",
+      "type": "relic"
+    },
+    {
+      "color": "#b6a0da",
+      "desc": "个人遗物 · 每人限1件\n收益：法力至少一半时直接伤害 +12\n代价：防护 -2\n持续生效\n共鸣 · 秘法：2件 伤害战技 +5；4件 自身行动开始恢复3法力（全队遗物与本人个人遗物计数；遗物行动点最多+2，击杀回行动点最多1）",
+      "id": "arcane_6",
+      "name": "湛蓝瞳环",
+      "type": "relic"
+    },
+    {
+      "color": "#b6a0da",
+      "desc": "个人遗物 · 每人限1件\n收益：法力低于一半时直接伤害 +14\n代价：每点行动休息回血比例 -3%\n持续生效\n共鸣 · 秘法：2件 伤害战技 +5；4件 自身行动开始恢复3法力（全队遗物与本人个人遗物计数；遗物行动点最多+2，击杀回行动点最多1）",
+      "id": "arcane_7",
+      "name": "余魔心灯",
+      "type": "relic"
+    },
+    {
+      "color": "#b6a0da",
+      "desc": "个人遗物 · 每人限1件\n收益：自身行动开始恢复5法力\n代价：直接伤害 -3\n持续生效\n共鸣 · 秘法：2件 伤害战技 +5；4件 自身行动开始恢复3法力（全队遗物与本人个人遗物计数；遗物行动点最多+2，击杀回行动点最多1）",
+      "id": "arcane_8",
+      "name": "观星墨瓶",
+      "type": "relic"
+    },
+    {
+      "color": "#b6a0da",
+      "desc": "个人遗物 · 每人限1件\n收益：伤害战技 +14\n代价：普通攻击 -6\n持续生效\n共鸣 · 秘法：2件 伤害战技 +5；4件 自身行动开始恢复3法力（全队遗物与本人个人遗物计数；遗物行动点最多+2，击杀回行动点最多1）",
+      "id": "arcane_9",
+      "name": "禁咒耳坠",
+      "type": "relic"
+    },
+    {
+      "color": "#b6a0da",
+      "desc": "个人遗物 · 每人限1件\n收益：击杀恢复8法力\n代价：治疗战技 -8\n持续生效\n共鸣 · 秘法：2件 伤害战技 +5；4件 自身行动开始恢复3法力（全队遗物与本人个人遗物计数；遗物行动点最多+2，击杀回行动点最多1）",
+      "id": "arcane_10",
+      "name": "吞星魔匣",
+      "type": "relic"
+    },
+    {
+      "color": "#d8a772",
+      "desc": "全队遗物\n收益：全队：机关伤害 +10\n代价：全队：普通攻击 -2\n持续生效\n共鸣 · 遗械：2件 机关伤害 +10；4件 每次自身行动首次直接命中伤害 +12（全队遗物与本人个人遗物计数；遗物行动点最多+2，击杀回行动点最多1）",
+      "id": "engine_1",
+      "name": "过载线圈",
+      "type": "relic"
+    },
+    {
+      "color": "#d8a772",
+      "desc": "全队遗物\n收益：全队：伤害战技 +6\n代价：全队：防护 -1\n持续生效\n共鸣 · 遗械：2件 机关伤害 +10；4件 每次自身行动首次直接命中伤害 +12（全队遗物与本人个人遗物计数；遗物行动点最多+2，击杀回行动点最多1）",
+      "id": "engine_2",
+      "name": "破城齿盘",
+      "type": "relic"
+    },
+    {
+      "color": "#d8a772",
+      "desc": "全队遗物\n收益：全队：每次自身行动首次直接命中伤害 +10\n代价：全队：每点行动休息回蓝比例 -2%\n持续生效\n共鸣 · 遗械：2件 机关伤害 +10；4件 每次自身行动首次直接命中伤害 +12（全队遗物与本人个人遗物计数；遗物行动点最多+2，击杀回行动点最多1）",
+      "id": "engine_3",
+      "name": "准星机芯",
+      "type": "relic"
+    },
+    {
+      "color": "#d8a772",
+      "desc": "全队遗物\n收益：全队：自身行动开始恢复2法力\n代价：全队：治疗战技 -4\n持续生效\n共鸣 · 遗械：2件 机关伤害 +10；4件 每次自身行动首次直接命中伤害 +12（全队遗物与本人个人遗物计数；遗物行动点最多+2，击杀回行动点最多1）",
+      "id": "engine_4",
+      "name": "导流铜管",
+      "type": "relic"
+    },
+    {
+      "color": "#d8a772",
+      "desc": "全队遗物\n收益：全队：普通攻击 +8\n代价：全队：伤害战技 -3\n持续生效\n共鸣 · 遗械：2件 机关伤害 +10；4件 每次自身行动首次直接命中伤害 +12（全队遗物与本人个人遗物计数；遗物行动点最多+2，击杀回行动点最多1）",
+      "id": "engine_5",
+      "name": "重锤铸模",
+      "type": "relic"
+    },
+    {
+      "color": "#d8a772",
+      "desc": "个人遗物 · 每人限1件\n收益：机关伤害 +18\n代价：防护 -1\n持续生效\n共鸣 · 遗械：2件 机关伤害 +10；4件 每次自身行动首次直接命中伤害 +12（全队遗物与本人个人遗物计数；遗物行动点最多+2，击杀回行动点最多1）",
+      "id": "engine_6",
+      "name": "灾变扳机",
+      "type": "relic"
+    },
+    {
+      "color": "#d8a772",
+      "desc": "个人遗物 · 每人限1件\n收益：每次自身行动首次直接命中伤害 +20\n代价：速度 -2\n持续生效\n共鸣 · 遗械：2件 机关伤害 +10；4件 每次自身行动首次直接命中伤害 +12（全队遗物与本人个人遗物计数；遗物行动点最多+2，击杀回行动点最多1）",
+      "id": "engine_7",
+      "name": "压缩火种",
+      "type": "relic"
+    },
+    {
+      "color": "#d8a772",
+      "desc": "个人遗物 · 每人限1件\n收益：伤害战技 +12\n代价：每点行动休息回血比例 -3%\n持续生效\n共鸣 · 遗械：2件 机关伤害 +10；4件 每次自身行动首次直接命中伤害 +12（全队遗物与本人个人遗物计数；遗物行动点最多+2，击杀回行动点最多1）",
+      "id": "engine_8",
+      "name": "百炼轴承",
+      "type": "relic"
+    },
+    {
+      "color": "#d8a772",
+      "desc": "个人遗物 · 每人限1件\n收益：首次击杀回1行动点；普攻 +5\n代价：治疗战技 -8\n持续生效\n共鸣 · 遗械：2件 机关伤害 +10；4件 每次自身行动首次直接命中伤害 +12（全队遗物与本人个人遗物计数；遗物行动点最多+2，击杀回行动点最多1）",
+      "id": "engine_9",
+      "name": "连机擒爪",
+      "type": "relic"
+    },
+    {
+      "color": "#d8a772",
+      "desc": "个人遗物 · 每人限1件\n收益：机关伤害 +16；自身行动开始回蓝2\n代价：每次受伤额外2点\n持续生效\n共鸣 · 遗械：2件 机关伤害 +10；4件 每次自身行动首次直接命中伤害 +12（全队遗物与本人个人遗物计数；遗物行动点最多+2，击杀回行动点最多1）",
+      "id": "engine_10",
+      "name": "冷铸芯片",
+      "type": "relic"
+    },
+    {
+      "color": "#83c5ad",
+      "desc": "全队遗物\n收益：全队：自身行动开始恢复4生命\n代价：全队：普通攻击 -1\n持续生效\n共鸣 · 生息：2件 治疗战技 +6、防护 +1；4件 自身行动开始恢复6生命、2法力（全队遗物与本人个人遗物计数；遗物行动点最多+2，击杀回行动点最多1）",
+      "id": "pilgrim_1",
+      "name": "长旅药钵",
+      "type": "relic"
+    },
+    {
+      "color": "#83c5ad",
+      "desc": "全队遗物\n收益：全队：治疗战技 +10\n代价：全队：伤害战技 -2\n持续生效\n共鸣 · 生息：2件 治疗战技 +6、防护 +1；4件 自身行动开始恢复6生命、2法力（全队遗物与本人个人遗物计数；遗物行动点最多+2，击杀回行动点最多1）",
+      "id": "pilgrim_2",
+      "name": "行医经卷",
+      "type": "relic"
+    },
+    {
+      "color": "#83c5ad",
+      "desc": "全队遗物\n收益：全队：每点行动休息回血比例 +4%\n代价：全队：普通攻击 -2\n持续生效\n共鸣 · 生息：2件 治疗战技 +6、防护 +1；4件 自身行动开始恢复6生命、2法力（全队遗物与本人个人遗物计数；遗物行动点最多+2，击杀回行动点最多1）",
+      "id": "pilgrim_3",
+      "name": "药泉细沙",
+      "type": "relic"
+    },
+    {
+      "color": "#83c5ad",
+      "desc": "全队遗物\n收益：全队：接受生命恢复量 +20%\n代价：全队：防护 -1\n持续生效\n共鸣 · 生息：2件 治疗战技 +6、防护 +1；4件 自身行动开始恢复6生命、2法力（全队遗物与本人个人遗物计数；遗物行动点最多+2，击杀回行动点最多1）",
+      "id": "pilgrim_4",
+      "name": "青枝圣像",
+      "type": "relic"
+    },
+    {
+      "color": "#83c5ad",
+      "desc": "全队遗物\n收益：全队：每点行动休息回蓝比例 +3%\n代价：全队：直接伤害 -1\n持续生效\n共鸣 · 生息：2件 治疗战技 +6、防护 +1；4件 自身行动开始恢复6生命、2法力（全队遗物与本人个人遗物计数；遗物行动点最多+2，击杀回行动点最多1）",
+      "id": "pilgrim_5",
+      "name": "旅人雨碗",
+      "type": "relic"
+    },
+    {
+      "color": "#83c5ad",
+      "desc": "个人遗物 · 每人限1件\n收益：治疗战技 +14\n代价：直接伤害 -2\n持续生效\n共鸣 · 生息：2件 治疗战技 +6、防护 +1；4件 自身行动开始恢复6生命、2法力（全队遗物与本人个人遗物计数；遗物行动点最多+2，击杀回行动点最多1）",
+      "id": "pilgrim_6",
+      "name": "续生银针",
+      "type": "relic"
+    },
+    {
+      "color": "#83c5ad",
+      "desc": "个人遗物 · 每人限1件\n收益：自身行动开始恢复7生命\n代价：普通攻击 -3\n持续生效\n共鸣 · 生息：2件 治疗战技 +6、防护 +1；4件 自身行动开始恢复6生命、2法力（全队遗物与本人个人遗物计数；遗物行动点最多+2，击杀回行动点最多1）",
+      "id": "pilgrim_7",
+      "name": "苔衣种子",
+      "type": "relic"
+    },
+    {
+      "color": "#83c5ad",
+      "desc": "个人遗物 · 每人限1件\n收益：接受生命恢复量 +40%\n代价：每次受伤额外2点\n持续生效\n共鸣 · 生息：2件 治疗战技 +6、防护 +1；4件 自身行动开始恢复6生命、2法力（全队遗物与本人个人遗物计数；遗物行动点最多+2，击杀回行动点最多1）",
+      "id": "pilgrim_8",
+      "name": "慈心花冠",
+      "type": "relic"
+    },
+    {
+      "color": "#83c5ad",
+      "desc": "个人遗物 · 每人限1件\n收益：治疗 +10；法力支援 +6\n代价：防护 -2\n持续生效\n共鸣 · 生息：2件 治疗战技 +6、防护 +1；4件 自身行动开始恢复6生命、2法力（全队遗物与本人个人遗物计数；遗物行动点最多+2，击杀回行动点最多1）",
+      "id": "pilgrim_9",
+      "name": "灵叶药签",
+      "type": "relic"
+    },
+    {
+      "color": "#83c5ad",
+      "desc": "个人遗物 · 每人限1件\n收益：每点行动休息回血 +6%、回蓝 +2%\n代价：普通攻击 -5\n持续生效\n共鸣 · 生息：2件 治疗战技 +6、防护 +1；4件 自身行动开始恢复6生命、2法力（全队遗物与本人个人遗物计数；遗物行动点最多+2，击杀回行动点最多1）",
+      "id": "pilgrim_10",
+      "name": "宁息香炉",
+      "type": "relic"
+    },
+    {
+      "color": "#929bcd",
+      "desc": "全队遗物\n收益：全队：身边1格没有存活友军时直接伤害 +10\n代价：全队：防护 -1\n持续生效\n共鸣 · 孤影：2件 身边1格没有存活友军时直接伤害 +8；4件 对半血及以下敌人直接伤害 +12（全队遗物与本人个人遗物计数；遗物行动点最多+2，击杀回行动点最多1）",
+      "id": "dusk_1",
+      "name": "孤旅披扣",
+      "type": "relic"
+    },
+    {
+      "color": "#929bcd",
+      "desc": "全队遗物\n收益：全队：每次自身行动首次直接命中伤害 +8\n代价：全队：治疗战技 -4\n持续生效\n共鸣 · 孤影：2件 身边1格没有存活友军时直接伤害 +8；4件 对半血及以下敌人直接伤害 +12（全队遗物与本人个人遗物计数；遗物行动点最多+2，击杀回行动点最多1）",
+      "id": "dusk_2",
+      "name": "暮色沙漏",
+      "type": "relic"
+    },
+    {
+      "color": "#929bcd",
+      "desc": "全队遗物\n收益：全队：距离至少3格直接伤害 +8\n代价：全队：每点行动休息回血比例 -2%\n持续生效\n共鸣 · 孤影：2件 身边1格没有存活友军时直接伤害 +8；4件 对半血及以下敌人直接伤害 +12（全队遗物与本人个人遗物计数；遗物行动点最多+2，击杀回行动点最多1）",
+      "id": "dusk_3",
+      "name": "夜渡纸舟",
+      "type": "relic"
+    },
+    {
+      "color": "#929bcd",
+      "desc": "全队遗物\n收益：全队：对半血及以下敌人直接伤害 +8\n代价：全队：速度 -1\n持续生效\n共鸣 · 孤影：2件 身边1格没有存活友军时直接伤害 +8；4件 对半血及以下敌人直接伤害 +12（全队遗物与本人个人遗物计数；遗物行动点最多+2，击杀回行动点最多1）",
+      "id": "dusk_4",
+      "name": "暗潮灯芯",
+      "type": "relic"
+    },
+    {
+      "color": "#929bcd",
+      "desc": "全队遗物\n收益：全队：速度 +3\n代价：全队：直接伤害 -2\n持续生效\n共鸣 · 孤影：2件 身边1格没有存活友军时直接伤害 +8；4件 对半血及以下敌人直接伤害 +12（全队遗物与本人个人遗物计数；遗物行动点最多+2，击杀回行动点最多1）",
+      "id": "dusk_5",
+      "name": "静默风铃",
+      "type": "relic"
+    },
+    {
+      "color": "#929bcd",
+      "desc": "个人遗物 · 每人限1件\n收益：身边1格没有存活友军时直接伤害 +18\n代价：生命恢复减少20%\n持续生效\n共鸣 · 孤影：2件 身边1格没有存活友军时直接伤害 +8；4件 对半血及以下敌人直接伤害 +12（全队遗物与本人个人遗物计数；遗物行动点最多+2，击杀回行动点最多1）",
+      "id": "dusk_6",
+      "name": "无声面纱",
+      "type": "relic"
+    },
+    {
+      "color": "#929bcd",
+      "desc": "个人遗物 · 每人限1件\n收益：每次自身行动首次直接命中伤害 +22\n代价：防护 -2\n持续生效\n共鸣 · 孤影：2件 身边1格没有存活友军时直接伤害 +8；4件 对半血及以下敌人直接伤害 +12（全队遗物与本人个人遗物计数；遗物行动点最多+2，击杀回行动点最多1）",
+      "id": "dusk_7",
+      "name": "暮刃戒",
+      "type": "relic"
+    },
+    {
+      "color": "#929bcd",
+      "desc": "个人遗物 · 每人限1件\n收益：距离至少3格直接伤害 +16\n代价：治疗战技 -8\n持续生效\n共鸣 · 孤影：2件 身边1格没有存活友军时直接伤害 +8；4件 对半血及以下敌人直接伤害 +12（全队遗物与本人个人遗物计数；遗物行动点最多+2，击杀回行动点最多1）",
+      "id": "dusk_8",
+      "name": "夜瞳石",
+      "type": "relic"
+    },
+    {
+      "color": "#929bcd",
+      "desc": "个人遗物 · 每人限1件\n收益：半血及以下直接伤害 +20\n代价：每点行动休息回蓝比例 -3%\n持续生效\n共鸣 · 孤影：2件 身边1格没有存活友军时直接伤害 +8；4件 对半血及以下敌人直接伤害 +12（全队遗物与本人个人遗物计数；遗物行动点最多+2，击杀回行动点最多1）",
+      "id": "dusk_9",
+      "name": "绝路筹码",
+      "type": "relic"
+    },
+    {
+      "color": "#929bcd",
+      "desc": "个人遗物 · 每人限1件\n收益：孤立时直伤 +16；击杀回蓝4\n代价：每次受伤额外2点\n持续生效\n共鸣 · 孤影：2件 身边1格没有存活友军时直接伤害 +8；4件 对半血及以下敌人直接伤害 +12（全队遗物与本人个人遗物计数；遗物行动点最多+2，击杀回行动点最多1）",
+      "id": "dusk_10",
+      "name": "独行罗盘",
+      "type": "relic"
+    },
+    {
+      "color": "#d3c487",
+      "desc": "全队遗物\n收益：全队：对标记目标直接伤害 +8\n代价：全队：每点行动休息回蓝比例 -2%\n持续生效\n共鸣 · 战阵：2件 对标记目标直接伤害 +6；4件 每次自身行动的行动点 +1（全队遗物与本人个人遗物计数；遗物行动点最多+2，击杀回行动点最多1）",
+      "id": "command_1",
+      "name": "集结号角",
+      "type": "relic"
+    },
+    {
+      "color": "#d3c487",
+      "desc": "全队遗物\n收益：全队：普通攻击 +5\n代价：全队：治疗战技 -3\n持续生效\n共鸣 · 战阵：2件 对标记目标直接伤害 +6；4件 每次自身行动的行动点 +1（全队遗物与本人个人遗物计数；遗物行动点最多+2，击杀回行动点最多1）",
+      "id": "command_2",
+      "name": "前锋军印",
+      "type": "relic"
+    },
+    {
+      "color": "#d3c487",
+      "desc": "全队遗物\n收益：全队：自身行动开始回血2、回蓝1\n代价：全队：速度 -1\n持续生效\n共鸣 · 战阵：2件 对标记目标直接伤害 +6；4件 每次自身行动的行动点 +1（全队遗物与本人个人遗物计数；遗物行动点最多+2，击杀回行动点最多1）",
+      "id": "command_3",
+      "name": "鼓舞肩章",
+      "type": "relic"
+    },
+    {
+      "color": "#d3c487",
+      "desc": "全队遗物\n收益：全队：每次自身行动的行动点 +1\n代价：全队：直接伤害 -6；每点行动休息回蓝比例 -1%\n持续生效\n共鸣 · 战阵：2件 对标记目标直接伤害 +6；4件 每次自身行动的行动点 +1（全队遗物与本人个人遗物计数；遗物行动点最多+2，击杀回行动点最多1）",
+      "id": "command_4",
+      "name": "督战铁令",
+      "type": "relic"
+    },
+    {
+      "color": "#d3c487",
+      "desc": "全队遗物\n收益：全队：治疗 +6；护盾吸收 +4\n代价：全队：普通攻击 -3\n持续生效\n共鸣 · 战阵：2件 对标记目标直接伤害 +6；4件 每次自身行动的行动点 +1（全队遗物与本人个人遗物计数；遗物行动点最多+2，击杀回行动点最多1）",
+      "id": "command_5",
+      "name": "军医铭牌",
+      "type": "relic"
+    },
+    {
+      "color": "#d3c487",
+      "desc": "个人遗物 · 每人限1件\n收益：对标记目标直接伤害 +16\n代价：防护 -2\n持续生效\n共鸣 · 战阵：2件 对标记目标直接伤害 +6；4件 每次自身行动的行动点 +1（全队遗物与本人个人遗物计数；遗物行动点最多+2，击杀回行动点最多1）",
+      "id": "command_6",
+      "name": "决战指挥棒",
+      "type": "relic"
+    },
+    {
+      "color": "#d3c487",
+      "desc": "个人遗物 · 每人限1件\n收益：普通攻击 +10\n代价：伤害战技 -4\n持续生效\n共鸣 · 战阵：2件 对标记目标直接伤害 +6；4件 每次自身行动的行动点 +1（全队遗物与本人个人遗物计数；遗物行动点最多+2，击杀回行动点最多1）",
+      "id": "command_7",
+      "name": "先锋绶带",
+      "type": "relic"
+    },
+    {
+      "color": "#d3c487",
+      "desc": "个人遗物 · 每人限1件\n收益：首次击杀回1行动点；法力支援 +5\n代价：速度 -2\n持续生效\n共鸣 · 战阵：2件 对标记目标直接伤害 +6；4件 每次自身行动的行动点 +1（全队遗物与本人个人遗物计数；遗物行动点最多+2，击杀回行动点最多1）",
+      "id": "command_8",
+      "name": "回令徽章",
+      "type": "relic"
+    },
+    {
+      "color": "#d3c487",
+      "desc": "个人遗物 · 每人限1件\n收益：有盾时直伤 +14；标记增伤 +6\n代价：每点行动休息回血比例 -3%\n持续生效\n共鸣 · 战阵：2件 对标记目标直接伤害 +6；4件 每次自身行动的行动点 +1（全队遗物与本人个人遗物计数；遗物行动点最多+2，击杀回行动点最多1）",
+      "id": "command_9",
+      "name": "阵眼棋子",
+      "type": "relic"
+    },
+    {
+      "color": "#d3c487",
+      "desc": "个人遗物 · 每人限1件\n收益：每次自身行动点 +1；伤害战技 +5\n代价：每次受伤额外3点\n持续生效\n共鸣 · 战阵：2件 对标记目标直接伤害 +6；4件 每次自身行动的行动点 +1（全队遗物与本人个人遗物计数；遗物行动点最多+2，击杀回行动点最多1）",
+      "id": "command_10",
+      "name": "百战军册",
+      "type": "relic"
+    },
+    {
+      "color": "#b4a1d1",
+      "desc": "主手 · 基础装备 · 攻击+4 / 防护+0 / 射程1",
+      "id": "runic_sword",
+      "name": "中档遗铁刃",
+      "type": "equipment"
+    },
+    {
+      "color": "#b4a1d1",
+      "desc": "主手 · 基础装备 · 攻击+5 / 防护+0 / 射程1",
+      "id": "bastion_sword",
+      "name": "高档遗铁刃",
+      "type": "equipment"
+    },
+    {
+      "color": "#b4a1d1",
+      "desc": "主手 · 基础装备 · 攻击+2 / 防护+0 / 射程1",
+      "id": "dagger",
+      "name": "低档短刃",
+      "type": "equipment"
+    },
+    {
+      "color": "#b4a1d1",
+      "desc": "主手 · 基础装备 · 攻击+3 / 防护+0 / 射程1",
+      "id": "blood_dagger",
+      "name": "中档短刃",
+      "type": "equipment"
+    },
+    {
+      "color": "#b4a1d1",
+      "desc": "主手 · 基础装备 · 攻击+4 / 防护+0 / 射程1",
+      "id": "wind_dagger",
+      "name": "高档短刃",
+      "type": "equipment"
+    },
+    {
+      "color": "#b4a1d1",
+      "desc": "主手 · 基础装备 · 攻击+2 / 防护+0 / 射程3",
+      "id": "bow",
+      "name": "低档猎弓",
+      "type": "equipment"
+    },
+    {
+      "color": "#b4a1d1",
+      "desc": "主手 · 基础装备 · 攻击+3 / 防护+0 / 射程3",
+      "id": "longbow",
+      "name": "中档猎弓",
+      "type": "equipment"
+    },
+    {
+      "color": "#b4a1d1",
+      "desc": "主手 · 基础装备 · 攻击+4 / 防护+0 / 射程3",
+      "id": "mark_bow",
+      "name": "高档猎弓",
+      "type": "equipment"
+    },
+    {
+      "color": "#b4a1d1",
+      "desc": "主手 · 基础装备 · 攻击+1 / 防护+0 / 射程2",
+      "id": "staff",
+      "name": "低档医杖",
+      "type": "equipment"
+    },
+    {
+      "color": "#b4a1d1",
+      "desc": "主手 · 基础装备 · 攻击+2 / 防护+0 / 射程2",
+      "id": "ward_staff",
+      "name": "中档医杖",
+      "type": "equipment"
+    },
+    {
+      "color": "#b4a1d1",
+      "desc": "主手 · 基础装备 · 攻击+3 / 防护+0 / 射程2",
+      "id": "spring_staff",
+      "name": "高档医杖",
+      "type": "equipment"
+    },
+    {
+      "color": "#b4a1d1",
+      "desc": "主手 · 基础装备 · 攻击+3 / 防护+0 / 射程2",
+      "id": "crossbow",
+      "name": "低档遗械弩",
+      "type": "equipment"
+    },
+    {
+      "color": "#b4a1d1",
+      "desc": "主手 · 基础装备 · 攻击+4 / 防护+0 / 射程2",
+      "id": "snare_crossbow",
+      "name": "中档遗械弩",
+      "type": "equipment"
+    },
+    {
+      "color": "#b4a1d1",
+      "desc": "主手 · 基础装备 · 攻击+5 / 防护+0 / 射程2",
+      "id": "siege_crossbow",
+      "name": "高档遗械弩",
+      "type": "equipment"
+    },
+    {
+      "color": "#b4a1d1",
+      "desc": "副手 · 基础装备 · 攻击+0 / 防护+2",
+      "id": "shield",
+      "name": "低档木盾",
+      "type": "equipment"
+    },
+    {
+      "color": "#b4a1d1",
+      "desc": "副手 · 基础装备 · 攻击+0 / 防护+3",
+      "id": "focus_guard",
+      "name": "中档木盾",
+      "type": "equipment"
+    },
+    {
+      "color": "#b4a1d1",
+      "desc": "副手 · 基础装备 · 攻击+0 / 防护+4",
+      "id": "tower_shield",
+      "name": "高档木盾",
+      "type": "equipment"
+    },
+    {
+      "color": "#b4a1d1",
+      "desc": "护甲 · 基础装备 · 攻击+0 / 防护+1",
+      "id": "leather",
+      "name": "低档皮甲",
+      "type": "equipment"
+    },
+    {
+      "color": "#b4a1d1",
+      "desc": "护甲 · 基础装备 · 攻击+0 / 防护+2",
+      "id": "scout_leather",
+      "name": "中档皮甲",
+      "type": "equipment"
+    },
+    {
+      "color": "#b4a1d1",
+      "desc": "护甲 · 基础装备 · 攻击+0 / 防护+3",
+      "id": "ritual_leather",
+      "name": "高档皮甲",
+      "type": "equipment"
+    },
+    {
+      "color": "#b4a1d1",
+      "desc": "护甲 · 基础装备 · 攻击+0 / 防护+3",
+      "id": "plate",
+      "name": "低档板甲",
+      "type": "equipment"
+    },
+    {
+      "color": "#b4a1d1",
+      "desc": "护甲 · 基础装备 · 攻击+0 / 防护+4",
+      "id": "bulwark_plate",
+      "name": "中档板甲",
+      "type": "equipment"
+    },
+    {
+      "color": "#b4a1d1",
+      "desc": "护甲 · 基础装备 · 攻击+0 / 防护+5",
+      "id": "veteran_plate",
+      "name": "高档板甲",
+      "type": "equipment"
+    },
+    {
+      "color": "#dbbf78",
+      "desc": "获得 65 银币",
+      "id": "silver",
+      "name": "佣金袋",
+      "type": "resource"
+    },
+    {
+      "color": "#80c7b2",
+      "desc": "获得 2 份补给，可在野外恢复队伍",
+      "id": "medicine",
+      "name": "战地药箱",
+      "type": "resource"
+    },
+    {
+      "color": "#b4a1d1",
+      "desc": "主手 · 基础装备 · 攻击+3 / 防护+0 / 射程1",
+      "id": "sword",
+      "name": "低档遗铁刃",
+      "type": "equipment"
+    }
+  ],
+  "shop_goods": {
+    "arcane_1": {
+      "desc": "全队遗物\n收益：全队：自身行动开始恢复3法力\n代价：全队：普通攻击 -3\n持续生效\n共鸣 · 秘法：2件 伤害战技 +5；4件 自身行动开始恢复3法力（全队遗物与本人个人遗物计数；遗物行动点最多+2，击杀回行动点最多1）",
+      "name": "蓝焰烛台",
+      "price": 70
+    },
+    "arcane_10": {
+      "desc": "个人遗物 · 每人限1件\n收益：击杀恢复8法力\n代价：治疗战技 -8\n持续生效\n共鸣 · 秘法：2件 伤害战技 +5；4件 自身行动开始恢复3法力（全队遗物与本人个人遗物计数；遗物行动点最多+2，击杀回行动点最多1）",
+      "name": "吞星魔匣",
+      "price": 70
+    },
+    "arcane_2": {
+      "desc": "全队遗物\n收益：全队：法力至少一半时直接伤害 +8\n代价：全队：防护 -1\n持续生效\n共鸣 · 秘法：2件 伤害战技 +5；4件 自身行动开始恢复3法力（全队遗物与本人个人遗物计数；遗物行动点最多+2，击杀回行动点最多1）",
+      "name": "盈辉星盘",
+      "price": 70
+    },
+    "arcane_3": {
+      "desc": "全队遗物\n收益：全队：法力低于一半时直接伤害 +8\n代价：全队：生命恢复减少15%\n持续生效\n共鸣 · 秘法：2件 伤害战技 +5；4件 自身行动开始恢复3法力（全队遗物与本人个人遗物计数；遗物行动点最多+2，击杀回行动点最多1）",
+      "name": "空井咒页",
+      "price": 70
+    },
+    "arcane_4": {
+      "desc": "全队遗物\n收益：全队：伤害战技 +5\n代价：全队：普通攻击 -3\n持续生效\n共鸣 · 秘法：2件 伤害战技 +5；4件 自身行动开始恢复3法力（全队遗物与本人个人遗物计数；遗物行动点最多+2，击杀回行动点最多1）",
+      "name": "逆符书签",
+      "price": 70
+    },
+    "arcane_5": {
+      "desc": "全队遗物\n收益：全队：法力支援恢复量 +8\n代价：全队：每次受伤额外2点\n持续生效\n共鸣 · 秘法：2件 伤害战技 +5；4件 自身行动开始恢复3法力（全队遗物与本人个人遗物计数；遗物行动点最多+2，击杀回行动点最多1）",
+      "name": "星泉水晶",
+      "price": 70
+    },
+    "arcane_6": {
+      "desc": "个人遗物 · 每人限1件\n收益：法力至少一半时直接伤害 +12\n代价：防护 -2\n持续生效\n共鸣 · 秘法：2件 伤害战技 +5；4件 自身行动开始恢复3法力（全队遗物与本人个人遗物计数；遗物行动点最多+2，击杀回行动点最多1）",
+      "name": "湛蓝瞳环",
+      "price": 70
+    },
+    "arcane_7": {
+      "desc": "个人遗物 · 每人限1件\n收益：法力低于一半时直接伤害 +14\n代价：每点行动休息回血比例 -3%\n持续生效\n共鸣 · 秘法：2件 伤害战技 +5；4件 自身行动开始恢复3法力（全队遗物与本人个人遗物计数；遗物行动点最多+2，击杀回行动点最多1）",
+      "name": "余魔心灯",
+      "price": 70
+    },
+    "arcane_8": {
+      "desc": "个人遗物 · 每人限1件\n收益：自身行动开始恢复5法力\n代价：直接伤害 -3\n持续生效\n共鸣 · 秘法：2件 伤害战技 +5；4件 自身行动开始恢复3法力（全队遗物与本人个人遗物计数；遗物行动点最多+2，击杀回行动点最多1）",
+      "name": "观星墨瓶",
+      "price": 70
+    },
+    "arcane_9": {
+      "desc": "个人遗物 · 每人限1件\n收益：伤害战技 +14\n代价：普通攻击 -6\n持续生效\n共鸣 · 秘法：2件 伤害战技 +5；4件 自身行动开始恢复3法力（全队遗物与本人个人遗物计数；遗物行动点最多+2，击杀回行动点最多1）",
+      "name": "禁咒耳坠",
+      "price": 70
+    },
+    "banner": {
+      "desc": "全队遗物\n收益：全队攻击与直接伤害战技 +8\n代价：全队防护 -3，负防护会增加受伤\n持续生效",
+      "name": "裂甲战旗",
+      "price": 70
+    },
+    "bash": {
+      "desc": "造成攻击伤害，目标下次行动少1行动点",
+      "name": "技能书 · 盾击",
+      "price": 35
+    },
+    "bastion": {
+      "desc": "全队遗物\n收益：全队防护 +3\n代价：全队速度 -2\n持续生效",
+      "name": "沉铁壁垒",
+      "price": 70
+    },
+    "bastion_sword": {
+      "desc": "主手 · 基础装备 · 攻击+5 / 防护+0 / 射程1",
+      "name": "高档遗铁刃",
+      "price": 60
+    },
+    "blade_drain": {
+      "desc": "攻击+4；按实际伤害的30%恢复自身生命",
+      "name": "技能书 · 饮血斩",
+      "price": 35
+    },
+    "blade_feint": {
+      "desc": "攻击+6；使目标承受直接伤害+4",
+      "name": "技能书 · 破绽突刺",
+      "price": 35
+    },
+    "blade_hunt": {
+      "desc": "攻击+6；半血目标额外+10；受标记目标额外+8",
+      "name": "技能书 · 猎影处决",
+      "price": 35
+    },
+    "blade_sweep": {
+      "desc": "目标及相邻敌人受到攻击+2伤害",
+      "name": "技能书 · 回旋刃",
+      "price": 35
+    },
+    "blood_1": {
+      "desc": "全队遗物\n收益：全队：半血及以下直接伤害 +10\n代价：全队：生命恢复减少10%\n持续生效\n共鸣 · 血契：2件 吸血 +16%；4件 半血及以下直接伤害 +14（全队遗物与本人个人遗物计数；遗物行动点最多+2，击杀回行动点最多1）",
+      "name": "赤誓残卷",
+      "price": 70
+    },
+    "blood_10": {
+      "desc": "个人遗物 · 每人限1件\n收益：半血直伤 +14；击杀回血10\n代价：速度 -2\n持续生效\n共鸣 · 血契：2件 吸血 +16%；4件 半血及以下直接伤害 +14（全队遗物与本人个人遗物计数；遗物行动点最多+2，击杀回行动点最多1）",
+      "name": "殉火心脏",
+      "price": 70
+    },
+    "blood_2": {
+      "desc": "全队遗物\n收益：全队：半血及以下直接伤害 +8\n代价：全队：防护 -1\n持续生效\n共鸣 · 血契：2件 吸血 +16%；4件 半血及以下直接伤害 +14（全队遗物与本人个人遗物计数；遗物行动点最多+2，击杀回行动点最多1）",
+      "name": "沸血战鼓",
+      "price": 70
+    },
+    "blood_3": {
+      "desc": "全队遗物\n收益：全队：直接伤害按实际损血的14%吸血\n代价：全队：每点行动休息回血比例 -1%\n持续生效\n共鸣 · 血契：2件 吸血 +16%；4件 半血及以下直接伤害 +14（全队遗物与本人个人遗物计数；遗物行动点最多+2，击杀回行动点最多1）",
+      "name": "血河旗",
+      "price": 70
+    },
+    "blood_4": {
+      "desc": "全队遗物\n收益：全队：对半血及以下敌人直接伤害 +10\n代价：全队：生命恢复减少20%\n持续生效\n共鸣 · 血契：2件 吸血 +16%；4件 半血及以下直接伤害 +14（全队遗物与本人个人遗物计数；遗物行动点最多+2，击杀回行动点最多1）",
+      "name": "赤月圣痕",
+      "price": 70
+    },
+    "blood_5": {
+      "desc": "全队遗物\n收益：全队：击杀敌人恢复10生命\n代价：全队：每次受伤额外1点\n持续生效\n共鸣 · 血契：2件 吸血 +16%；4件 半血及以下直接伤害 +14（全队遗物与本人个人遗物计数；遗物行动点最多+2，击杀回行动点最多1）",
+      "name": "献祭铜盆",
+      "price": 70
+    },
+    "blood_6": {
+      "desc": "个人遗物 · 每人限1件\n收益：半血及以下直接伤害 +18\n代价：防护 -2\n持续生效\n共鸣 · 血契：2件 吸血 +16%；4件 半血及以下直接伤害 +14（全队遗物与本人个人遗物计数；遗物行动点最多+2，击杀回行动点最多1）",
+      "name": "濒死誓戒",
+      "price": 70
+    },
+    "blood_7": {
+      "desc": "个人遗物 · 每人限1件\n收益：直接伤害按实际损血的25%吸血\n代价：生命恢复减少20%\n持续生效\n共鸣 · 血契：2件 吸血 +16%；4件 半血及以下直接伤害 +14（全队遗物与本人个人遗物计数；遗物行动点最多+2，击杀回行动点最多1）",
+      "name": "饮髓骨针",
+      "price": 70
+    },
+    "blood_8": {
+      "desc": "个人遗物 · 每人限1件\n收益：对半血及以下敌人直接伤害 +16\n代价：每次受伤额外3点\n持续生效\n共鸣 · 血契：2件 吸血 +16%；4件 半血及以下直接伤害 +14（全队遗物与本人个人遗物计数；遗物行动点最多+2，击杀回行动点最多1）",
+      "name": "赤牙吊坠",
+      "price": 70
+    },
+    "blood_9": {
+      "desc": "个人遗物 · 每人限1件\n收益：自身行动开始恢复5生命\n代价：每点行动休息回蓝比例 -2%\n持续生效\n共鸣 · 血契：2件 吸血 +16%；4件 半血及以下直接伤害 +14（全队遗物与本人个人遗物计数；遗物行动点最多+2，击杀回行动点最多1）",
+      "name": "血线缝针",
+      "price": 70
+    },
+    "blood_dagger": {
+      "desc": "主手 · 基础装备 · 攻击+3 / 防护+0 / 射程1",
+      "name": "中档短刃",
+      "price": 45
+    },
+    "bomb": {
+      "desc": "目标及相邻敌人受到攻击+2伤害",
+      "name": "技能书 · 震荡弹",
+      "price": 35
+    },
+    "boots": {
+      "desc": "全队遗物\n收益：全队速度 +2\n代价：全队防护 -1\n持续生效",
+      "name": "流沙履印",
+      "price": 70
+    },
+    "bow": {
+      "desc": "主手 · 基础装备 · 攻击+2 / 防护+0 / 射程3",
+      "name": "低档猎弓",
+      "price": 30
+    },
+    "bulwark": {
+      "desc": "全队遗物\n收益：有护盾时受到伤害 -4\n代价：全队普通攻击射程 -1（最低1）\n持续生效",
+      "name": "沉城印玺",
+      "price": 70
+    },
+    "bulwark_plate": {
+      "desc": "护甲 · 基础装备 · 攻击+0 / 防护+4",
+      "name": "中档板甲",
+      "price": 45
+    },
+    "campfire": {
+      "desc": "全队遗物\n收益：每点行动休息回血比例 +3%\n代价：休息回蓝比例 -2%\n持续生效",
+      "name": "苦火余薪",
+      "price": 70
+    },
+    "candle": {
+      "desc": "个人遗物 · 每人限1件\n收益：抵挡一次致命伤害，保留1生命\n代价：触发耗尽佩戴者全部法力\n触发：受到致命伤害时 · 1次后损毁",
+      "name": "续命烛芯",
+      "price": 70
+    },
+    "chalice": {
+      "desc": "个人遗物 · 每人限1件\n收益：击杀恢复12生命\n代价：生命休息每点行动的恢复比例降低3%\n触发：佩戴者击杀敌人且生命未满时 · 8次后损毁",
+      "name": "噬血圣杯",
+      "price": 70
+    },
+    "cleanse": {
+      "desc": "解除标记、破甲、中毒、寒冷与束缚，并抵挡下一次伤害的10点，至施法者下次行动",
+      "name": "技能书 · 净护",
+      "price": 35
+    },
+    "cog": {
+      "desc": "个人遗物 · 每人限1件\n收益：机关伤害 +8\n代价：速度 -1\n持续生效",
+      "name": "缚潮齿轮",
+      "price": 70
+    },
+    "command_1": {
+      "desc": "全队遗物\n收益：全队：对标记目标直接伤害 +8\n代价：全队：每点行动休息回蓝比例 -2%\n持续生效\n共鸣 · 战阵：2件 对标记目标直接伤害 +6；4件 每次自身行动的行动点 +1（全队遗物与本人个人遗物计数；遗物行动点最多+2，击杀回行动点最多1）",
+      "name": "集结号角",
+      "price": 70
+    },
+    "command_10": {
+      "desc": "个人遗物 · 每人限1件\n收益：每次自身行动点 +1；伤害战技 +5\n代价：每次受伤额外3点\n持续生效\n共鸣 · 战阵：2件 对标记目标直接伤害 +6；4件 每次自身行动的行动点 +1（全队遗物与本人个人遗物计数；遗物行动点最多+2，击杀回行动点最多1）",
+      "name": "百战军册",
+      "price": 70
+    },
+    "command_2": {
+      "desc": "全队遗物\n收益：全队：普通攻击 +5\n代价：全队：治疗战技 -3\n持续生效\n共鸣 · 战阵：2件 对标记目标直接伤害 +6；4件 每次自身行动的行动点 +1（全队遗物与本人个人遗物计数；遗物行动点最多+2，击杀回行动点最多1）",
+      "name": "前锋军印",
+      "price": 70
+    },
+    "command_3": {
+      "desc": "全队遗物\n收益：全队：自身行动开始回血2、回蓝1\n代价：全队：速度 -1\n持续生效\n共鸣 · 战阵：2件 对标记目标直接伤害 +6；4件 每次自身行动的行动点 +1（全队遗物与本人个人遗物计数；遗物行动点最多+2，击杀回行动点最多1）",
+      "name": "鼓舞肩章",
+      "price": 70
+    },
+    "command_4": {
+      "desc": "全队遗物\n收益：全队：每次自身行动的行动点 +1\n代价：全队：直接伤害 -6；每点行动休息回蓝比例 -1%\n持续生效\n共鸣 · 战阵：2件 对标记目标直接伤害 +6；4件 每次自身行动的行动点 +1（全队遗物与本人个人遗物计数；遗物行动点最多+2，击杀回行动点最多1）",
+      "name": "督战铁令",
+      "price": 70
+    },
+    "command_5": {
+      "desc": "全队遗物\n收益：全队：治疗 +6；护盾吸收 +4\n代价：全队：普通攻击 -3\n持续生效\n共鸣 · 战阵：2件 对标记目标直接伤害 +6；4件 每次自身行动的行动点 +1（全队遗物与本人个人遗物计数；遗物行动点最多+2，击杀回行动点最多1）",
+      "name": "军医铭牌",
+      "price": 70
+    },
+    "command_6": {
+      "desc": "个人遗物 · 每人限1件\n收益：对标记目标直接伤害 +16\n代价：防护 -2\n持续生效\n共鸣 · 战阵：2件 对标记目标直接伤害 +6；4件 每次自身行动的行动点 +1（全队遗物与本人个人遗物计数；遗物行动点最多+2，击杀回行动点最多1）",
+      "name": "决战指挥棒",
+      "price": 70
+    },
+    "command_7": {
+      "desc": "个人遗物 · 每人限1件\n收益：普通攻击 +10\n代价：伤害战技 -4\n持续生效\n共鸣 · 战阵：2件 对标记目标直接伤害 +6；4件 每次自身行动的行动点 +1（全队遗物与本人个人遗物计数；遗物行动点最多+2，击杀回行动点最多1）",
+      "name": "先锋绶带",
+      "price": 70
+    },
+    "command_8": {
+      "desc": "个人遗物 · 每人限1件\n收益：首次击杀回1行动点；法力支援 +5\n代价：速度 -2\n持续生效\n共鸣 · 战阵：2件 对标记目标直接伤害 +6；4件 每次自身行动的行动点 +1（全队遗物与本人个人遗物计数；遗物行动点最多+2，击杀回行动点最多1）",
+      "name": "回令徽章",
+      "price": 70
+    },
+    "command_9": {
+      "desc": "个人遗物 · 每人限1件\n收益：有盾时直伤 +14；标记增伤 +6\n代价：每点行动休息回血比例 -3%\n持续生效\n共鸣 · 战阵：2件 对标记目标直接伤害 +6；4件 每次自身行动的行动点 +1（全队遗物与本人个人遗物计数；遗物行动点最多+2，击杀回行动点最多1）",
+      "name": "阵眼棋子",
+      "price": 70
+    },
+    "crossbow": {
+      "desc": "主手 · 基础装备 · 攻击+3 / 防护+0 / 射程2",
+      "name": "低档遗械弩",
+      "price": 30
+    },
+    "dagger": {
+      "desc": "主手 · 基础装备 · 攻击+2 / 防护+0 / 射程1",
+      "name": "低档短刃",
+      "price": 30
+    },
+    "dash": {
+      "desc": "突进至目标邻近空格，攻击+4伤害",
+      "name": "技能书 · 掠影突袭",
+      "price": 35
+    },
+    "dusk_1": {
+      "desc": "全队遗物\n收益：全队：身边1格没有存活友军时直接伤害 +10\n代价：全队：防护 -1\n持续生效\n共鸣 · 孤影：2件 身边1格没有存活友军时直接伤害 +8；4件 对半血及以下敌人直接伤害 +12（全队遗物与本人个人遗物计数；遗物行动点最多+2，击杀回行动点最多1）",
+      "name": "孤旅披扣",
+      "price": 70
+    },
+    "dusk_10": {
+      "desc": "个人遗物 · 每人限1件\n收益：孤立时直伤 +16；击杀回蓝4\n代价：每次受伤额外2点\n持续生效\n共鸣 · 孤影：2件 身边1格没有存活友军时直接伤害 +8；4件 对半血及以下敌人直接伤害 +12（全队遗物与本人个人遗物计数；遗物行动点最多+2，击杀回行动点最多1）",
+      "name": "独行罗盘",
+      "price": 70
+    },
+    "dusk_2": {
+      "desc": "全队遗物\n收益：全队：每次自身行动首次直接命中伤害 +8\n代价：全队：治疗战技 -4\n持续生效\n共鸣 · 孤影：2件 身边1格没有存活友军时直接伤害 +8；4件 对半血及以下敌人直接伤害 +12（全队遗物与本人个人遗物计数；遗物行动点最多+2，击杀回行动点最多1）",
+      "name": "暮色沙漏",
+      "price": 70
+    },
+    "dusk_3": {
+      "desc": "全队遗物\n收益：全队：距离至少3格直接伤害 +8\n代价：全队：每点行动休息回血比例 -2%\n持续生效\n共鸣 · 孤影：2件 身边1格没有存活友军时直接伤害 +8；4件 对半血及以下敌人直接伤害 +12（全队遗物与本人个人遗物计数；遗物行动点最多+2，击杀回行动点最多1）",
+      "name": "夜渡纸舟",
+      "price": 70
+    },
+    "dusk_4": {
+      "desc": "全队遗物\n收益：全队：对半血及以下敌人直接伤害 +8\n代价：全队：速度 -1\n持续生效\n共鸣 · 孤影：2件 身边1格没有存活友军时直接伤害 +8；4件 对半血及以下敌人直接伤害 +12（全队遗物与本人个人遗物计数；遗物行动点最多+2，击杀回行动点最多1）",
+      "name": "暗潮灯芯",
+      "price": 70
+    },
+    "dusk_5": {
+      "desc": "全队遗物\n收益：全队：速度 +3\n代价：全队：直接伤害 -2\n持续生效\n共鸣 · 孤影：2件 身边1格没有存活友军时直接伤害 +8；4件 对半血及以下敌人直接伤害 +12（全队遗物与本人个人遗物计数；遗物行动点最多+2，击杀回行动点最多1）",
+      "name": "静默风铃",
+      "price": 70
+    },
+    "dusk_6": {
+      "desc": "个人遗物 · 每人限1件\n收益：身边1格没有存活友军时直接伤害 +18\n代价：生命恢复减少20%\n持续生效\n共鸣 · 孤影：2件 身边1格没有存活友军时直接伤害 +8；4件 对半血及以下敌人直接伤害 +12（全队遗物与本人个人遗物计数；遗物行动点最多+2，击杀回行动点最多1）",
+      "name": "无声面纱",
+      "price": 70
+    },
+    "dusk_7": {
+      "desc": "个人遗物 · 每人限1件\n收益：每次自身行动首次直接命中伤害 +22\n代价：防护 -2\n持续生效\n共鸣 · 孤影：2件 身边1格没有存活友军时直接伤害 +8；4件 对半血及以下敌人直接伤害 +12（全队遗物与本人个人遗物计数；遗物行动点最多+2，击杀回行动点最多1）",
+      "name": "暮刃戒",
+      "price": 70
+    },
+    "dusk_8": {
+      "desc": "个人遗物 · 每人限1件\n收益：距离至少3格直接伤害 +16\n代价：治疗战技 -8\n持续生效\n共鸣 · 孤影：2件 身边1格没有存活友军时直接伤害 +8；4件 对半血及以下敌人直接伤害 +12（全队遗物与本人个人遗物计数；遗物行动点最多+2，击杀回行动点最多1）",
+      "name": "夜瞳石",
+      "price": 70
+    },
+    "dusk_9": {
+      "desc": "个人遗物 · 每人限1件\n收益：半血及以下直接伤害 +20\n代价：每点行动休息回蓝比例 -3%\n持续生效\n共鸣 · 孤影：2件 身边1格没有存活友军时直接伤害 +8；4件 对半血及以下敌人直接伤害 +12（全队遗物与本人个人遗物计数；遗物行动点最多+2，击杀回行动点最多1）",
+      "name": "绝路筹码",
+      "price": 70
+    },
+    "echo": {
+      "desc": "个人遗物 · 每人限1件\n收益：直接伤害战技追加8点伤害\n代价：触发额外消耗3法力；法力不足则不触发\n触发：有敌方目标存活且法力足够时，直接伤害战技追加8点伤害（每次施法一次） · 6次后损毁",
+      "name": "回响棱镜",
+      "price": 70
+    },
+    "ember": {
+      "desc": "全队遗物\n收益：全队攻击与直接伤害战技 +4\n代价：战斗与补给的生命恢复减少25%\n持续生效",
+      "name": "余烬徽印",
+      "price": 70
+    },
+    "engine_1": {
+      "desc": "全队遗物\n收益：全队：机关伤害 +10\n代价：全队：普通攻击 -2\n持续生效\n共鸣 · 遗械：2件 机关伤害 +10；4件 每次自身行动首次直接命中伤害 +12（全队遗物与本人个人遗物计数；遗物行动点最多+2，击杀回行动点最多1）",
+      "name": "过载线圈",
+      "price": 70
+    },
+    "engine_10": {
+      "desc": "个人遗物 · 每人限1件\n收益：机关伤害 +16；自身行动开始回蓝2\n代价：每次受伤额外2点\n持续生效\n共鸣 · 遗械：2件 机关伤害 +10；4件 每次自身行动首次直接命中伤害 +12（全队遗物与本人个人遗物计数；遗物行动点最多+2，击杀回行动点最多1）",
+      "name": "冷铸芯片",
+      "price": 70
+    },
+    "engine_2": {
+      "desc": "全队遗物\n收益：全队：伤害战技 +6\n代价：全队：防护 -1\n持续生效\n共鸣 · 遗械：2件 机关伤害 +10；4件 每次自身行动首次直接命中伤害 +12（全队遗物与本人个人遗物计数；遗物行动点最多+2，击杀回行动点最多1）",
+      "name": "破城齿盘",
+      "price": 70
+    },
+    "engine_3": {
+      "desc": "全队遗物\n收益：全队：每次自身行动首次直接命中伤害 +10\n代价：全队：每点行动休息回蓝比例 -2%\n持续生效\n共鸣 · 遗械：2件 机关伤害 +10；4件 每次自身行动首次直接命中伤害 +12（全队遗物与本人个人遗物计数；遗物行动点最多+2，击杀回行动点最多1）",
+      "name": "准星机芯",
+      "price": 70
+    },
+    "engine_4": {
+      "desc": "全队遗物\n收益：全队：自身行动开始恢复2法力\n代价：全队：治疗战技 -4\n持续生效\n共鸣 · 遗械：2件 机关伤害 +10；4件 每次自身行动首次直接命中伤害 +12（全队遗物与本人个人遗物计数；遗物行动点最多+2，击杀回行动点最多1）",
+      "name": "导流铜管",
+      "price": 70
+    },
+    "engine_5": {
+      "desc": "全队遗物\n收益：全队：普通攻击 +8\n代价：全队：伤害战技 -3\n持续生效\n共鸣 · 遗械：2件 机关伤害 +10；4件 每次自身行动首次直接命中伤害 +12（全队遗物与本人个人遗物计数；遗物行动点最多+2，击杀回行动点最多1）",
+      "name": "重锤铸模",
+      "price": 70
+    },
+    "engine_6": {
+      "desc": "个人遗物 · 每人限1件\n收益：机关伤害 +18\n代价：防护 -1\n持续生效\n共鸣 · 遗械：2件 机关伤害 +10；4件 每次自身行动首次直接命中伤害 +12（全队遗物与本人个人遗物计数；遗物行动点最多+2，击杀回行动点最多1）",
+      "name": "灾变扳机",
+      "price": 70
+    },
+    "engine_7": {
+      "desc": "个人遗物 · 每人限1件\n收益：每次自身行动首次直接命中伤害 +20\n代价：速度 -2\n持续生效\n共鸣 · 遗械：2件 机关伤害 +10；4件 每次自身行动首次直接命中伤害 +12（全队遗物与本人个人遗物计数；遗物行动点最多+2，击杀回行动点最多1）",
+      "name": "压缩火种",
+      "price": 70
+    },
+    "engine_8": {
+      "desc": "个人遗物 · 每人限1件\n收益：伤害战技 +12\n代价：每点行动休息回血比例 -3%\n持续生效\n共鸣 · 遗械：2件 机关伤害 +10；4件 每次自身行动首次直接命中伤害 +12（全队遗物与本人个人遗物计数；遗物行动点最多+2，击杀回行动点最多1）",
+      "name": "百炼轴承",
+      "price": 70
+    },
+    "engine_9": {
+      "desc": "个人遗物 · 每人限1件\n收益：首次击杀回1行动点；普攻 +5\n代价：治疗战技 -8\n持续生效\n共鸣 · 遗械：2件 机关伤害 +10；4件 每次自身行动首次直接命中伤害 +12（全队遗物与本人个人遗物计数；遗物行动点最多+2，击杀回行动点最多1）",
+      "name": "连机擒爪",
+      "price": 70
+    },
+    "engineer_breaker": {
+      "desc": "目标及相邻敌人受到攻击+2，并承受直接伤害+4",
+      "name": "技能书 · 破甲爆弹",
+      "price": 35
+    },
+    "engineer_pulse": {
+      "desc": "恢复18生命并给予抵挡10伤害的护盾",
+      "name": "技能书 · 修复脉冲",
+      "price": 35
+    },
+    "engineer_shot": {
+      "desc": "单体攻击+10伤害",
+      "name": "技能书 · 穿甲弩",
+      "price": 35
+    },
+    "engineer_snare": {
+      "desc": "强化机关伤害+8；触发后停止敌人移动",
+      "name": "技能书 · 重压机关",
+      "price": 35
+    },
+    "execute": {
+      "desc": "攻击+6伤害；目标半血及以下额外+10",
+      "name": "技能书 · 追斩",
+      "price": 35
+    },
+    "fang": {
+      "desc": "个人遗物 · 每人限1件\n收益：该次伤害 +10\n代价：每次触发自身失去2生命，可能致命\n触发：直接攻击或直接伤害战技命中时，每个目标一次 · 10次后损毁",
+      "name": "饥渴獠牙",
+      "price": 70
+    },
+    "focus": {
+      "desc": "学习后每点休息行动额外恢复 2%",
+      "name": "技能书 · 调息",
+      "price": 30
+    },
+    "focus_guard": {
+      "desc": "副手 · 基础装备 · 攻击+0 / 防护+3",
+      "name": "中档木盾",
+      "price": 45
+    },
+    "focusstone": {
+      "desc": "个人遗物 · 每人限1件\n收益：标记附加伤害 +4\n代价：普通攻击伤害 -3\n持续生效",
+      "name": "静观瞳石",
+      "price": 70
+    },
+    "fury": {
+      "desc": "学习后伤害战技 +8；治疗战技 +8",
+      "name": "技能书 · 破阵",
+      "price": 35
+    },
+    "guard": {
+      "desc": "射程2内替友军承担一半直接伤害，至下次行动",
+      "name": "技能书 · 援护",
+      "price": 35
+    },
+    "harvest": {
+      "desc": "个人遗物 · 每人限1件\n收益：击杀敌人恢复4法力\n代价：生命恢复量减少25%\n持续生效",
+      "name": "收割骨笛",
+      "price": 70
+    },
+    "heal": {
+      "desc": "恢复26生命，叠加治疗专精与遗物增益",
+      "name": "技能书 · 回春",
+      "price": 35
+    },
+    "healer_guard": {
+      "desc": "副手 · 基础装备 · 攻击+0 / 防护+3",
+      "name": "中档木盾",
+      "price": 45
+    },
+    "hero_burst": {
+      "desc": "目标及相邻敌人受到攻击+2伤害",
+      "name": "技能书 · 破阵斩",
+      "price": 35
+    },
+    "hero_heal": {
+      "desc": "恢复26生命",
+      "name": "技能书 · 振奋",
+      "price": 35
+    },
+    "hero_judgment": {
+      "desc": "攻击+6；半血目标额外+10；受标记目标额外+8",
+      "name": "技能书 · 终焉裁决",
+      "price": 35
+    },
+    "hero_rally": {
+      "desc": "为目标恢复10法力；不能超出法力上限",
+      "name": "技能书 · 军心回响",
+      "price": 35
+    },
+    "hero_sunder": {
+      "desc": "攻击+6；使目标承受直接伤害+4，至自身下次行动",
+      "name": "技能书 · 裂阵",
+      "price": 35
+    },
+    "hourglass": {
+      "desc": "全队遗物\n收益：全队每次行动的行动点 +1\n代价：全队直接伤害 -6；生命恢复减少15%\n持续生效",
+      "name": "逆流沙漏",
+      "price": 70
+    },
+    "hunt": {
+      "desc": "全队遗物\n收益：对被标记敌人直接伤害 +4\n代价：全队防护 -1\n持续生效",
+      "name": "逐猎罗盘",
+      "price": 70
+    },
+    "hunt_1": {
+      "desc": "全队遗物\n收益：全队：每次自身行动首次直接命中伤害 +12\n代价：全队：伤害战技 -2\n持续生效\n共鸣 · 追猎：2件 对标记目标直接伤害 +8；4件 每次自身行动首次击杀恢复1行动点（全队遗物与本人个人遗物计数；遗物行动点最多+2，击杀回行动点最多1）",
+      "name": "黎明猎号",
+      "price": 70
+    },
+    "hunt_10": {
+      "desc": "个人遗物 · 每人限1件\n收益：首次击杀回1行动点；每次击杀回3法力\n代价：速度 -2\n持续生效\n共鸣 · 追猎：2件 对标记目标直接伤害 +8；4件 每次自身行动首次击杀恢复1行动点（全队遗物与本人个人遗物计数；遗物行动点最多+2，击杀回行动点最多1）",
+      "name": "追命符绳",
+      "price": 70
+    },
+    "hunt_2": {
+      "desc": "全队遗物\n收益：全队：每次自身行动首次击杀恢复1行动点\n代价：全队：防护 -1\n持续生效\n共鸣 · 追猎：2件 对标记目标直接伤害 +8；4件 每次自身行动首次击杀恢复1行动点（全队遗物与本人个人遗物计数；遗物行动点最多+2，击杀回行动点最多1）",
+      "name": "续猎战旗",
+      "price": 70
+    },
+    "hunt_3": {
+      "desc": "全队遗物\n收益：全队：对标记目标直接伤害 +8\n代价：全队：普通攻击 -1\n持续生效\n共鸣 · 追猎：2件 对标记目标直接伤害 +8；4件 每次自身行动首次击杀恢复1行动点（全队遗物与本人个人遗物计数；遗物行动点最多+2，击杀回行动点最多1）",
+      "name": "群猎骨牌",
+      "price": 70
+    },
+    "hunt_4": {
+      "desc": "全队遗物\n收益：全队：距离至少3格直接伤害 +8\n代价：全队：速度 -1\n持续生效\n共鸣 · 追猎：2件 对标记目标直接伤害 +8；4件 每次自身行动首次击杀恢复1行动点（全队遗物与本人个人遗物计数；遗物行动点最多+2，击杀回行动点最多1）",
+      "name": "归巢箭羽",
+      "price": 70
+    },
+    "hunt_5": {
+      "desc": "全队遗物\n收益：全队：对半血及以下敌人直接伤害 +12\n代价：全队：每点行动休息回血比例 -2%\n持续生效\n共鸣 · 追猎：2件 对标记目标直接伤害 +8；4件 每次自身行动首次击杀恢复1行动点（全队遗物与本人个人遗物计数；遗物行动点最多+2，击杀回行动点最多1）",
+      "name": "猎王牙哨",
+      "price": 70
+    },
+    "hunt_6": {
+      "desc": "个人遗物 · 每人限1件\n收益：每次自身行动首次直接命中伤害 +18\n代价：每次受伤额外2点\n持续生效\n共鸣 · 追猎：2件 对标记目标直接伤害 +8；4件 每次自身行动首次击杀恢复1行动点（全队遗物与本人个人遗物计数；遗物行动点最多+2，击杀回行动点最多1）",
+      "name": "启猎指环",
+      "price": 70
+    },
+    "hunt_7": {
+      "desc": "个人遗物 · 每人限1件\n收益：距离至少3格直接伤害 +12\n代价：防护 -1\n持续生效\n共鸣 · 追猎：2件 对标记目标直接伤害 +8；4件 每次自身行动首次击杀恢复1行动点（全队遗物与本人个人遗物计数；遗物行动点最多+2，击杀回行动点最多1）",
+      "name": "索命箭囊",
+      "price": 70
+    },
+    "hunt_8": {
+      "desc": "个人遗物 · 每人限1件\n收益：施加标记的伤害增益 +8\n代价：治疗战技 -6\n持续生效\n共鸣 · 追猎：2件 对标记目标直接伤害 +8；4件 每次自身行动首次击杀恢复1行动点（全队遗物与本人个人遗物计数；遗物行动点最多+2，击杀回行动点最多1）",
+      "name": "猎魂眼罩",
+      "price": 70
+    },
+    "hunt_9": {
+      "desc": "个人遗物 · 每人限1件\n收益：对半血及以下敌人直接伤害 +20\n代价：伤害战技 -4\n持续生效\n共鸣 · 追猎：2件 对标记目标直接伤害 +8；4件 每次自身行动首次击杀恢复1行动点（全队遗物与本人个人遗物计数；遗物行动点最多+2，击杀回行动点最多1）",
+      "name": "收尾骨刃",
+      "price": 70
+    },
+    "ironheart": {
+      "desc": "个人遗物 · 每人限1件\n收益：防护 +3\n代价：法力支援恢复量 -4\n持续生效",
+      "name": "铁心契",
+      "price": 70
+    },
+    "leather": {
+      "desc": "护甲 · 基础装备 · 攻击+0 / 防护+1",
+      "name": "低档皮甲",
+      "price": 30
+    },
+    "leech": {
+      "desc": "个人遗物 · 每人限1件\n收益：直接伤害按实际生命损失的15%回血\n代价：每次受伤额外承受2点\n持续生效",
+      "name": "噬生苔",
+      "price": 70
+    },
+    "lens": {
+      "desc": "全队遗物\n收益：获取时获得30银币\n代价：全队速度 -1；收藏不重复发放银币\n持续生效",
+      "name": "测绘透镜",
+      "price": 70
+    },
+    "longbow": {
+      "desc": "主手 · 基础装备 · 攻击+3 / 防护+0 / 射程3",
+      "name": "中档猎弓",
+      "price": 45
+    },
+    "mark": {
+      "desc": "友军对目标的直接攻击伤害+5，至施法者下次行动",
+      "name": "技能书 · 猎物标记",
+      "price": 35
+    },
+    "mark_bow": {
+      "desc": "主手 · 基础装备 · 攻击+4 / 防护+0 / 射程3",
+      "name": "高档猎弓",
+      "price": 60
+    },
+    "medic_barrier": {
+      "desc": "恢复18生命并给予抵挡10伤害的护盾",
+      "name": "技能书 · 生息屏障",
+      "price": 35
+    },
+    "medic_channel": {
+      "desc": "为其他友军恢复10法力；需要友军协作",
+      "name": "技能书 · 灵泉引流",
+      "price": 35
+    },
+    "medic_mend": {
+      "desc": "恢复26生命，叠加职业及遗物治疗增益；更节省法力",
+      "name": "技能书 · 深度回春",
+      "price": 35
+    },
+    "medic_purge": {
+      "desc": "攻击+6；使目标承受直接伤害+4",
+      "name": "技能书 · 净罪之光",
+      "price": 35
+    },
+    "mist": {
+      "desc": "全队遗物\n收益：全队普通攻击射程 +1\n代价：生命休息每点行动的恢复比例降低2%\n持续生效",
+      "name": "远望雾灯",
+      "price": 70
+    },
+    "pilgrim_1": {
+      "desc": "全队遗物\n收益：全队：自身行动开始恢复4生命\n代价：全队：普通攻击 -1\n持续生效\n共鸣 · 生息：2件 治疗战技 +6、防护 +1；4件 自身行动开始恢复6生命、2法力（全队遗物与本人个人遗物计数；遗物行动点最多+2，击杀回行动点最多1）",
+      "name": "长旅药钵",
+      "price": 70
+    },
+    "pilgrim_10": {
+      "desc": "个人遗物 · 每人限1件\n收益：每点行动休息回血 +6%、回蓝 +2%\n代价：普通攻击 -5\n持续生效\n共鸣 · 生息：2件 治疗战技 +6、防护 +1；4件 自身行动开始恢复6生命、2法力（全队遗物与本人个人遗物计数；遗物行动点最多+2，击杀回行动点最多1）",
+      "name": "宁息香炉",
+      "price": 70
+    },
+    "pilgrim_2": {
+      "desc": "全队遗物\n收益：全队：治疗战技 +10\n代价：全队：伤害战技 -2\n持续生效\n共鸣 · 生息：2件 治疗战技 +6、防护 +1；4件 自身行动开始恢复6生命、2法力（全队遗物与本人个人遗物计数；遗物行动点最多+2，击杀回行动点最多1）",
+      "name": "行医经卷",
+      "price": 70
+    },
+    "pilgrim_3": {
+      "desc": "全队遗物\n收益：全队：每点行动休息回血比例 +4%\n代价：全队：普通攻击 -2\n持续生效\n共鸣 · 生息：2件 治疗战技 +6、防护 +1；4件 自身行动开始恢复6生命、2法力（全队遗物与本人个人遗物计数；遗物行动点最多+2，击杀回行动点最多1）",
+      "name": "药泉细沙",
+      "price": 70
+    },
+    "pilgrim_4": {
+      "desc": "全队遗物\n收益：全队：接受生命恢复量 +20%\n代价：全队：防护 -1\n持续生效\n共鸣 · 生息：2件 治疗战技 +6、防护 +1；4件 自身行动开始恢复6生命、2法力（全队遗物与本人个人遗物计数；遗物行动点最多+2，击杀回行动点最多1）",
+      "name": "青枝圣像",
+      "price": 70
+    },
+    "pilgrim_5": {
+      "desc": "全队遗物\n收益：全队：每点行动休息回蓝比例 +3%\n代价：全队：直接伤害 -1\n持续生效\n共鸣 · 生息：2件 治疗战技 +6、防护 +1；4件 自身行动开始恢复6生命、2法力（全队遗物与本人个人遗物计数；遗物行动点最多+2，击杀回行动点最多1）",
+      "name": "旅人雨碗",
+      "price": 70
+    },
+    "pilgrim_6": {
+      "desc": "个人遗物 · 每人限1件\n收益：治疗战技 +14\n代价：直接伤害 -2\n持续生效\n共鸣 · 生息：2件 治疗战技 +6、防护 +1；4件 自身行动开始恢复6生命、2法力（全队遗物与本人个人遗物计数；遗物行动点最多+2，击杀回行动点最多1）",
+      "name": "续生银针",
+      "price": 70
+    },
+    "pilgrim_7": {
+      "desc": "个人遗物 · 每人限1件\n收益：自身行动开始恢复7生命\n代价：普通攻击 -3\n持续生效\n共鸣 · 生息：2件 治疗战技 +6、防护 +1；4件 自身行动开始恢复6生命、2法力（全队遗物与本人个人遗物计数；遗物行动点最多+2，击杀回行动点最多1）",
+      "name": "苔衣种子",
+      "price": 70
+    },
+    "pilgrim_8": {
+      "desc": "个人遗物 · 每人限1件\n收益：接受生命恢复量 +40%\n代价：每次受伤额外2点\n持续生效\n共鸣 · 生息：2件 治疗战技 +6、防护 +1；4件 自身行动开始恢复6生命、2法力（全队遗物与本人个人遗物计数；遗物行动点最多+2，击杀回行动点最多1）",
+      "name": "慈心花冠",
+      "price": 70
+    },
+    "pilgrim_9": {
+      "desc": "个人遗物 · 每人限1件\n收益：治疗 +10；法力支援 +6\n代价：防护 -2\n持续生效\n共鸣 · 生息：2件 治疗战技 +6、防护 +1；4件 自身行动开始恢复6生命、2法力（全队遗物与本人个人遗物计数；遗物行动点最多+2，击杀回行动点最多1）",
+      "name": "灵叶药签",
+      "price": 70
+    },
+    "plate": {
+      "desc": "护甲 · 基础装备 · 攻击+0 / 防护+3",
+      "name": "低档板甲",
+      "price": 30
+    },
+    "prism": {
+      "desc": "个人遗物 · 每人限1件\n收益：治疗战技恢复量 +12\n代价：每次治疗战技额外消耗3法力\n触发：治疗战技有效恢复生命时 · 8次后损毁",
+      "name": "慈悲裂晶",
+      "price": 70
+    },
+    "ranger_expose": {
+      "desc": "团队直接伤害+8；配合远程集火",
+      "name": "技能书 · 追猎印记",
+      "price": 35
+    },
+    "ranger_hunt": {
+      "desc": "攻击+10；受标记目标额外+8",
+      "name": "技能书 · 逐猎贯射",
+      "price": 35
+    },
+    "ranger_pin": {
+      "desc": "攻击+2；目标下次行动少1行动点",
+      "name": "技能书 · 钉足箭",
+      "price": 35
+    },
+    "ranger_volley": {
+      "desc": "目标及相邻敌人受到攻击+2伤害",
+      "name": "技能书 · 散射",
+      "price": 35
+    },
+    "reservoir": {
+      "desc": "全队遗物\n收益：每点行动休息回蓝比例 +2%\n代价：全队直接伤害 -2\n持续生效",
+      "name": "蓄潮水囊",
+      "price": 70
+    },
+    "ritual_leather": {
+      "desc": "护甲 · 基础装备 · 攻击+0 / 防护+3",
+      "name": "高档皮甲",
+      "price": 60
+    },
+    "rune": {
+      "desc": "全队遗物\n收益：伤害战技 +4\n代价：全队普通攻击伤害 -2\n持续生效",
+      "name": "裂纹符核",
+      "price": 70
+    },
+    "runic_sword": {
+      "desc": "主手 · 基础装备 · 攻击+4 / 防护+0 / 射程1",
+      "name": "中档遗铁刃",
+      "price": 45
+    },
+    "scout_leather": {
+      "desc": "护甲 · 基础装备 · 攻击+0 / 防护+2",
+      "name": "中档皮甲",
+      "price": 45
+    },
+    "shell": {
+      "desc": "个人遗物 · 每人限1件\n收益：该次生命伤害减少10，最低0\n代价：速度 -2\n触发：受到非零生命伤害时 · 8次后损毁",
+      "name": "碎誓甲壳",
+      "price": 70
+    },
+    "shield": {
+      "desc": "副手 · 基础装备 · 攻击+0 / 防护+2",
+      "name": "低档木盾",
+      "price": 30
+    },
+    "siege_crossbow": {
+      "desc": "主手 · 基础装备 · 攻击+5 / 防护+0 / 射程2",
+      "name": "高档遗械弩",
+      "price": 60
+    },
+    "snare_crossbow": {
+      "desc": "主手 · 基础装备 · 攻击+4 / 防护+0 / 射程2",
+      "name": "中档遗械弩",
+      "price": 45
+    },
+    "sniper": {
+      "desc": "单体攻击+10伤害",
+      "name": "技能书 · 狙击",
+      "price": 35
+    },
+    "spark": {
+      "desc": "个人遗物 · 每人限1件\n收益：治疗战技 +6\n代价：速度 -2\n持续生效",
+      "name": "薪火戒",
+      "price": 70
+    },
+    "spring": {
+      "desc": "全队遗物\n收益：全队休息每点行动额外恢复2%生命与法力\n代价：每次受伤额外承受2点伤害\n持续生效",
+      "name": "旧世泉核",
+      "price": 60
+    },
+    "spring_staff": {
+      "desc": "主手 · 基础装备 · 攻击+3 / 防护+0 / 射程2",
+      "name": "高档医杖",
+      "price": 60
+    },
+    "staff": {
+      "desc": "主手 · 基础装备 · 攻击+1 / 防护+0 / 射程2",
+      "name": "低档医杖",
+      "price": 30
+    },
+    "sword": {
+      "desc": "主手 · 基础装备 · 攻击+3 / 防护+0 / 射程1",
+      "name": "低档遗铁刃",
+      "price": 30
+    },
+    "thorn": {
+      "desc": "个人遗物 · 每人限1件\n收益：攻击与直接伤害战技 +6\n代价：每次受伤额外承受3点伤害\n持续生效",
+      "name": "荆棘王冠",
+      "price": 70
+    },
+    "tide": {
+      "desc": "个人遗物 · 每人限1件\n收益：法力休息每点行动额外恢复5%\n代价：生命休息每点行动的恢复比例降低4%\n触发：休息恢复法力且实际有恢复时 · 6次后损毁",
+      "name": "枯潮瓶",
+      "price": 70
+    },
+    "tower_shield": {
+      "desc": "副手 · 基础装备 · 攻击+0 / 防护+4",
+      "name": "高档木盾",
+      "price": 60
+    },
+    "trap": {
+      "desc": "空格布设机关：敌人踏入受20伤害并停止移动，每人最多1个",
+      "name": "技能书 · 布设机关",
+      "price": 35
+    },
+    "veteran_plate": {
+      "desc": "护甲 · 基础装备 · 攻击+0 / 防护+5",
+      "name": "高档板甲",
+      "price": 60
+    },
+    "ward_1": {
+      "desc": "全队遗物\n收益：全队：自身行动开始获得吸收8伤害的护盾\n代价：全队：直接伤害 -2\n持续生效\n共鸣 · 守誓：2件 施加护盾吸收 +4；4件 自身行动开始获得吸收12伤害的护盾（全队遗物与本人个人遗物计数；遗物行动点最多+2，击杀回行动点最多1）",
+      "name": "巡夜铜灯",
+      "price": 70
+    },
+    "ward_10": {
+      "desc": "个人遗物 · 每人限1件\n收益：自身行动开始回血4；防护 +2\n代价：每点行动休息回蓝比例 -3%\n持续生效\n共鸣 · 守誓：2件 施加护盾吸收 +4；4件 自身行动开始获得吸收12伤害的护盾（全队遗物与本人个人遗物计数；遗物行动点最多+2，击杀回行动点最多1）",
+      "name": "不屈祷珠",
+      "price": 70
+    },
+    "ward_2": {
+      "desc": "全队遗物\n收益：全队：有护盾时受伤额外减少8\n代价：全队：速度 -1\n持续生效\n共鸣 · 守誓：2件 施加护盾吸收 +4；4件 自身行动开始获得吸收12伤害的护盾（全队遗物与本人个人遗物计数；遗物行动点最多+2，击杀回行动点最多1）",
+      "name": "誓约城砖",
+      "price": 70
+    },
+    "ward_3": {
+      "desc": "全队遗物\n收益：全队：自身有护盾时直接伤害 +8\n代价：全队：普通攻击 -2\n持续生效\n共鸣 · 守誓：2件 施加护盾吸收 +4；4件 自身行动开始获得吸收12伤害的护盾（全队遗物与本人个人遗物计数；遗物行动点最多+2，击杀回行动点最多1）",
+      "name": "壁垒残旗",
+      "price": 70
+    },
+    "ward_4": {
+      "desc": "全队遗物\n收益：全队：施加护盾吸收 +8\n代价：全队：每点行动休息回蓝比例 -2%\n持续生效\n共鸣 · 守誓：2件 施加护盾吸收 +4；4件 自身行动开始获得吸收12伤害的护盾（全队遗物与本人个人遗物计数；遗物行动点最多+2，击杀回行动点最多1）",
+      "name": "青铜祷钟",
+      "price": 70
+    },
+    "ward_5": {
+      "desc": "全队遗物\n收益：全队：防护 +3\n代价：全队：伤害战技 -3\n持续生效\n共鸣 · 守誓：2件 施加护盾吸收 +4；4件 自身行动开始获得吸收12伤害的护盾（全队遗物与本人个人遗物计数；遗物行动点最多+2，击杀回行动点最多1）",
+      "name": "守夜石碑",
+      "price": 70
+    },
+    "ward_6": {
+      "desc": "个人遗物 · 每人限1件\n收益：自身行动开始获得吸收16伤害的护盾\n代价：速度 -2\n持续生效\n共鸣 · 守誓：2件 施加护盾吸收 +4；4件 自身行动开始获得吸收12伤害的护盾（全队遗物与本人个人遗物计数；遗物行动点最多+2，击杀回行动点最多1）",
+      "name": "重誓护符",
+      "price": 70
+    },
+    "ward_7": {
+      "desc": "个人遗物 · 每人限1件\n收益：自身有护盾时直接伤害 +18\n代价：防护 -2\n持续生效\n共鸣 · 守誓：2件 施加护盾吸收 +4；4件 自身行动开始获得吸收12伤害的护盾（全队遗物与本人个人遗物计数；遗物行动点最多+2，击杀回行动点最多1）",
+      "name": "盾锋环",
+      "price": 70
+    },
+    "ward_8": {
+      "desc": "个人遗物 · 每人限1件\n收益：施加护盾吸收 +14\n代价：治疗战技 -6\n持续生效\n共鸣 · 守誓：2件 施加护盾吸收 +4；4件 自身行动开始获得吸收12伤害的护盾（全队遗物与本人个人遗物计数；遗物行动点最多+2，击杀回行动点最多1）",
+      "name": "坚城钥匙",
+      "price": 70
+    },
+    "ward_9": {
+      "desc": "个人遗物 · 每人限1件\n收益：有护盾时受伤额外减少14\n代价：直接伤害 -3\n持续生效\n共鸣 · 守誓：2件 施加护盾吸收 +4；4件 自身行动开始获得吸收12伤害的护盾（全队遗物与本人个人遗物计数；遗物行动点最多+2，击杀回行动点最多1）",
+      "name": "余光甲片",
+      "price": 70
+    },
+    "ward_staff": {
+      "desc": "主手 · 基础装备 · 攻击+2 / 防护+0 / 射程2",
+      "name": "中档医杖",
+      "price": 45
+    },
+    "wardbell": {
+      "desc": "全队遗物\n收益：护盾吸收 +4\n代价：治疗量减少15%\n持续生效",
+      "name": "守誓铜铃",
+      "price": 70
+    },
+    "warden_fortify": {
+      "desc": "分担附近友军一半直接伤害；自身额外减伤4",
+      "name": "技能书 · 壁垒誓言",
+      "price": 35
+    },
+    "warden_rebuke": {
+      "desc": "攻击+2与自身防护；目标下次行动少1行动点",
+      "name": "技能书 · 震慑重击",
+      "price": 35
+    },
+    "warden_rescue": {
+      "desc": "恢复18生命并给予抵挡10伤害的护盾",
+      "name": "技能书 · 守望救援",
+      "price": 35
+    },
+    "warden_ward": {
+      "desc": "解除标记、破甲、中毒、寒冷与束缚，抵挡下一次伤害的10点",
+      "name": "技能书 · 坚盾庇护",
+      "price": 35
+    },
+    "wardstone": {
+      "desc": "个人遗物 · 每人限1件\n收益：护盾吸收 +4\n代价：伤害战技 -3\n持续生效",
+      "name": "护生石",
+      "price": 70
+    },
+    "well": {
+      "desc": "个人遗物 · 每人限1件\n收益：法力支援恢复量 +4\n代价：防护 -2\n持续生效",
+      "name": "灵泉残页",
+      "price": 70
+    },
+    "wind_dagger": {
+      "desc": "主手 · 基础装备 · 攻击+4 / 防护+0 / 射程1",
+      "name": "高档短刃",
+      "price": 60
+    }
+  },
+  "skills": {
+    "bash": {
+      "ap": 2,
+      "desc": "造成攻击伤害，目标下次行动少1行动点",
+      "effect": "damage",
+      "job": "warden",
+      "mp": 6,
+      "name": "盾击",
+      "range": 1,
+      "target": "enemy"
+    },
+    "blade_drain": {
+      "ap": 2,
+      "base": "drain",
+      "desc": "攻击+4；按实际伤害的30%恢复自身生命",
+      "effect": "damage",
+      "job": "blade",
+      "mp": 7,
+      "name": "饮血斩",
+      "prerequisite": "blade_sweep",
+      "range": 1,
+      "target": "enemy"
+    },
+    "blade_feint": {
+      "ap": 2,
+      "base": "sunder",
+      "desc": "攻击+6；使目标承受直接伤害+4",
+      "effect": "damage",
+      "job": "blade",
+      "mp": 5,
+      "name": "破绽突刺",
+      "prerequisite": "execute",
+      "range": 1,
+      "target": "enemy"
+    },
+    "blade_hunt": {
+      "ap": 3,
+      "base": "execute",
+      "desc": "攻击+6；半血目标额外+10；受标记目标额外+8",
+      "effect": "damage",
+      "job": "blade",
+      "marked_bonus": 8,
+      "mp": 9,
+      "name": "猎影处决",
+      "prerequisite": "execute",
+      "range": 2,
+      "target": "enemy"
+    },
+    "blade_sweep": {
+      "ap": 3,
+      "base": "bomb",
+      "desc": "目标及相邻敌人受到攻击+2伤害",
+      "effect": "damage",
+      "job": "blade",
+      "mp": 8,
+      "name": "回旋刃",
+      "range": 1,
+      "target": "enemy"
+    },
+    "bomb": {
+      "ap": 3,
+      "desc": "目标及相邻敌人受到攻击+2伤害",
+      "effect": "damage",
+      "job": "engineer",
+      "mp": 8,
+      "name": "震荡弹",
+      "range": 3,
+      "target": "enemy"
+    },
+    "cleanse": {
+      "ap": 2,
+      "desc": "解除标记、破甲、中毒、寒冷与束缚，并抵挡下一次伤害的10点，至施法者下次行动",
+      "effect": "shield",
+      "job": "medic",
+      "mp": 6,
+      "name": "净护",
+      "range": 3,
+      "target": "ally"
+    },
+    "dash": {
+      "ap": 2,
+      "desc": "突进至目标邻近空格，攻击+4伤害",
+      "effect": "damage",
+      "job": "blade",
+      "mp": 6,
+      "name": "掠影突袭",
+      "range": 2,
+      "target": "enemy"
+    },
+    "engineer_breaker": {
+      "ap": 3,
+      "base": "bomb",
+      "desc": "目标及相邻敌人受到攻击+2，并承受直接伤害+4",
+      "effect": "damage",
+      "expose": true,
+      "job": "engineer",
+      "mp": 10,
+      "name": "破甲爆弹",
+      "prerequisite": "engineer_shot",
+      "range": 3,
+      "target": "enemy"
+    },
+    "engineer_pulse": {
+      "ap": 2,
+      "base": "barrier",
+      "desc": "恢复18生命并给予抵挡10伤害的护盾",
+      "effect": "heal",
+      "job": "engineer",
+      "mp": 7,
+      "name": "修复脉冲",
+      "prerequisite": "engineer_shot",
+      "range": 2,
+      "target": "ally"
+    },
+    "engineer_shot": {
+      "ap": 3,
+      "base": "sniper",
+      "desc": "单体攻击+10伤害",
+      "effect": "damage",
+      "job": "engineer",
+      "mp": 8,
+      "name": "穿甲弩",
+      "range": 4,
+      "target": "enemy"
+    },
+    "engineer_snare": {
+      "ap": 3,
+      "base": "trap",
+      "desc": "强化机关伤害+8；触发后停止敌人移动",
+      "effect": "trap",
+      "job": "engineer",
+      "mp": 9,
+      "name": "重压机关",
+      "prerequisite": "bomb",
+      "range": 3,
+      "target": "cell",
+      "trap_bonus": 8
+    },
+    "execute": {
+      "ap": 2,
+      "desc": "攻击+6伤害；目标半血及以下额外+10",
+      "effect": "damage",
+      "job": "blade",
+      "mp": 6,
+      "name": "追斩",
+      "range": 1,
+      "target": "enemy"
+    },
+    "guard": {
+      "ap": 2,
+      "desc": "射程2内替友军承担一半直接伤害，至下次行动",
+      "effect": "guard",
+      "job": "warden",
+      "mp": 6,
+      "name": "援护",
+      "range": 2,
+      "target": "other_ally"
+    },
+    "heal": {
+      "ap": 2,
+      "desc": "恢复26生命，叠加治疗专精与遗物增益",
+      "effect": "heal",
+      "job": "medic",
+      "mp": 6,
+      "name": "回春",
+      "range": 3,
+      "target": "ally"
+    },
+    "hero_burst": {
+      "ap": 3,
+      "base": "bomb",
+      "desc": "目标及相邻敌人受到攻击+2伤害",
+      "effect": "damage",
+      "job": "hero",
+      "mp": 10,
+      "name": "破阵斩",
+      "range": 2,
+      "target": "enemy"
+    },
+    "hero_heal": {
+      "ap": 2,
+      "base": "heal",
+      "desc": "恢复26生命",
+      "effect": "heal",
+      "job": "hero",
+      "mp": 8,
+      "name": "振奋",
+      "range": 2,
+      "target": "ally"
+    },
+    "hero_judgment": {
+      "ap": 3,
+      "base": "execute",
+      "desc": "攻击+6；半血目标额外+10；受标记目标额外+8",
+      "effect": "damage",
+      "job": "hero",
+      "marked_bonus": 8,
+      "mp": 11,
+      "name": "终焉裁决",
+      "prerequisite": "hero_burst",
+      "range": 2,
+      "target": "enemy"
+    },
+    "hero_rally": {
+      "ap": 2,
+      "base": "mana",
+      "desc": "为目标恢复10法力；不能超出法力上限",
+      "effect": "mana",
+      "job": "hero",
+      "mp": 6,
+      "name": "军心回响",
+      "prerequisite": "hero_heal",
+      "range": 3,
+      "target": "ally"
+    },
+    "hero_sunder": {
+      "ap": 2,
+      "base": "sunder",
+      "desc": "攻击+6；使目标承受直接伤害+4，至自身下次行动",
+      "effect": "damage",
+      "job": "hero",
+      "mp": 7,
+      "name": "裂阵",
+      "prerequisite": "hero_burst",
+      "range": 2,
+      "target": "enemy"
+    },
+    "mark": {
+      "ap": 1,
+      "desc": "友军对目标的直接攻击伤害+5，至施法者下次行动",
+      "effect": "mark",
+      "job": "ranger",
+      "mp": 4,
+      "name": "猎物标记",
+      "range": 4,
+      "target": "enemy"
+    },
+    "medic_barrier": {
+      "ap": 3,
+      "base": "barrier",
+      "desc": "恢复18生命并给予抵挡10伤害的护盾",
+      "effect": "heal",
+      "job": "medic",
+      "mp": 9,
+      "name": "生息屏障",
+      "prerequisite": "cleanse",
+      "range": 3,
+      "target": "ally"
+    },
+    "medic_channel": {
+      "ap": 2,
+      "base": "mana",
+      "desc": "为其他友军恢复10法力；需要友军协作",
+      "effect": "mana",
+      "job": "medic",
+      "mp": 4,
+      "name": "灵泉引流",
+      "prerequisite": "medic_mend",
+      "range": 3,
+      "target": "other_ally"
+    },
+    "medic_mend": {
+      "ap": 3,
+      "base": "heal",
+      "desc": "恢复26生命，叠加职业及遗物治疗增益；更节省法力",
+      "effect": "heal",
+      "job": "medic",
+      "mp": 4,
+      "name": "深度回春",
+      "range": 2,
+      "target": "ally"
+    },
+    "medic_purge": {
+      "ap": 2,
+      "base": "sunder",
+      "desc": "攻击+6；使目标承受直接伤害+4",
+      "effect": "damage",
+      "job": "medic",
+      "mp": 7,
+      "name": "净罪之光",
+      "prerequisite": "cleanse",
+      "range": 3,
+      "target": "enemy"
+    },
+    "ranger_expose": {
+      "ap": 1,
+      "base": "mark",
+      "desc": "团队直接伤害+8；配合远程集火",
+      "effect": "mark",
+      "job": "ranger",
+      "mark_bonus": 3,
+      "mp": 6,
+      "name": "追猎印记",
+      "prerequisite": "ranger_volley",
+      "range": 5,
+      "target": "enemy"
+    },
+    "ranger_hunt": {
+      "ap": 3,
+      "base": "sniper",
+      "desc": "攻击+10；受标记目标额外+8",
+      "effect": "damage",
+      "job": "ranger",
+      "marked_bonus": 8,
+      "mp": 10,
+      "name": "逐猎贯射",
+      "prerequisite": "sniper",
+      "range": 5,
+      "target": "enemy"
+    },
+    "ranger_pin": {
+      "ap": 2,
+      "base": "pin",
+      "desc": "攻击+2；目标下次行动少1行动点",
+      "effect": "damage",
+      "job": "ranger",
+      "mp": 6,
+      "name": "钉足箭",
+      "prerequisite": "sniper",
+      "range": 4,
+      "target": "enemy"
+    },
+    "ranger_volley": {
+      "ap": 3,
+      "base": "bomb",
+      "desc": "目标及相邻敌人受到攻击+2伤害",
+      "effect": "damage",
+      "job": "ranger",
+      "mp": 8,
+      "name": "散射",
+      "range": 4,
+      "target": "enemy"
+    },
+    "sniper": {
+      "ap": 3,
+      "desc": "单体攻击+10伤害",
+      "effect": "damage",
+      "job": "ranger",
+      "mp": 8,
+      "name": "狙击",
+      "range": 5,
+      "target": "enemy"
+    },
+    "strike": {
+      "ap": 3,
+      "desc": "单体攻击+14伤害",
+      "effect": "damage",
+      "job": "hero",
+      "mp": 8,
+      "name": "破势",
+      "range": 3,
+      "target": "enemy"
+    },
+    "trap": {
+      "ap": 2,
+      "desc": "空格布设机关：敌人踏入受20伤害并停止移动，每人最多1个",
+      "effect": "trap",
+      "job": "engineer",
+      "mp": 6,
+      "name": "布设机关",
+      "range": 3,
+      "target": "cell"
+    },
+    "warden_fortify": {
+      "ap": 2,
+      "base": "guard",
+      "desc": "分担附近友军一半直接伤害；自身额外减伤4",
+      "effect": "guard",
+      "guard_bonus": 4,
+      "job": "warden",
+      "mp": 8,
+      "name": "壁垒誓言",
+      "prerequisite": "bash",
+      "range": 2,
+      "target": "other_ally"
+    },
+    "warden_rebuke": {
+      "ap": 3,
+      "armor_damage": true,
+      "base": "pin",
+      "desc": "攻击+2与自身防护；目标下次行动少1行动点",
+      "effect": "damage",
+      "job": "warden",
+      "mp": 8,
+      "name": "震慑重击",
+      "prerequisite": "warden_ward",
+      "range": 1,
+      "target": "enemy"
+    },
+    "warden_rescue": {
+      "ap": 3,
+      "base": "barrier",
+      "desc": "恢复18生命并给予抵挡10伤害的护盾",
+      "effect": "heal",
+      "job": "warden",
+      "mp": 8,
+      "name": "守望救援",
+      "prerequisite": "warden_ward",
+      "range": 2,
+      "target": "ally"
+    },
+    "warden_ward": {
+      "ap": 2,
+      "base": "cleanse",
+      "desc": "解除标记、破甲、中毒、寒冷与束缚，抵挡下一次伤害的10点",
+      "effect": "shield",
+      "job": "warden",
+      "mp": 6,
+      "name": "坚盾庇护",
+      "range": 2,
+      "target": "ally"
+    }
+  },
+  "source_hashes": {
+    "art.gd": "1b1094cd02ccc2dfe0b67029ad5d0b0cb0b264f20ad03f92cfe7a5623598f58d",
+    "atlas.gd": "78ee63ee223bb7cb7a6405a144f42e6cc9119408bb4161fa04e0cd82425ee987",
+    "battlefield.gd": "5cb2473e1c2a806c2c279ceb0ff6afa5149c0917c67d22317f1ebeea8048712c",
+    "campaign.gd": "2f9783d2710afca15cedc013f835340ac7744268277c48a5335a4915ede877e8",
+    "character_visual.gd": "a03beebd110101b8543a0d917c8bfeea1c2a328507bd93e84287311b1d0b24ce",
+    "character_wardrobe.gd": "b4a2b452b0d802d7fb85a573ea4a75213acce64b4bfabedda3bb0717280e3e95",
+    "characters.gd": "d81200d4c39b06578482730f72981a8eda1bcf5d65b91f89e22deb425340f261",
+    "combat_presentation.gd": "aad6726c6f018efe48eb0035451f25c294a0024d538ac4ec1efb47fa7e5b359d",
+    "equipment_menu.gd": "07e897e9f3efeae25585951b25d02af89f588cbab8921c2a6cdeb0df1fe8a70a",
+    "equipment_preview.gd": "dff75fb27bc23b9d1860ff2ab3ea47a7593927a9153327e6c2582b6ecb42e229",
+    "equipment_shapes.gd": "0f00d83d207de72d7378fc03c38779a7090e15a3a63a2881928498f742e0d7e1",
+    "equipment_visual.gd": "020e67c863a79ba4ffee27196ef860fbcbc0092c12c1ba74e4aefc8d43fd43af",
+    "main.gd": "d283e44ea771bdcd2a23d98cfe1cb66dbf2e71c69d4b0e6d3ee06e7cf76474c6",
+    "party_details.gd": "63d2bec3ccd54fea065623ddfe48e568840ac15f80e7aa96dfffcb87da812dbf",
+    "portraits.gd": "2f139514305eea70c52c48d9e7a4e056cb547df314da481aa7c8d8de6fb14330",
+    "professions.gd": "93cd937b3794cd2fa7ec4544bb92b15af195a47f0d8a43b48bf1ebe8efd589ac",
+    "region_art.gd": "25a2b7e593cc5d10a8eb733a88edea4a40946c0c95a71750446c83c5e0ccf7e2",
+    "region_combat.gd": "f20206e0d807c55392d235e192e873d6b40b1d00e1c8073609d6c72638638166",
+    "regions.gd": "934a3f2b5beb169c1a06ae9917596ffe90a2526d0eddfb19a0cf9d2f08f17964",
+    "relic_expansion.gd": "7101cc44e88175104ed2408e26271738a886b35205bd801448e01f1729300850",
+    "relics.gd": "ca05691b5ec9a95a31867e4a7a34b206979184634b1f89b55f1779a6c10336ca",
+    "route.gd": "119f75b3e108722b1381f5bf0ddc559d4edb56dc2b0904ac402de228330e0842",
+    "rules.gd": "3f8921e1775c4a8ebf2dc3673f19e5fe0597a682aaa376334a1fdf36cc364388",
+    "skill_tree.gd": "d7edf9672c62713d5b4ff199fc5099d54d5f69eaa8852a71a4ad31a5966ac584",
+    "talents.gd": "dad9f4db2368a271eb6af9b3866c2cf70d934ff43b1449dcc916df2e833a4b36"
+  },
+  "timezone": "Asia/Shanghai"
+}

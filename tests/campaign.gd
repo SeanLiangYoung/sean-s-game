@@ -24,7 +24,7 @@ func _initialize():
  b.check_outcome()
  c.resolve_battle(b)
  check(c.roster[1].hp == 7, "wounds persist")
- check(c.choices.size() == 3, "three rewards")
+ check(c.choices.size() == 5, "five rewards")
  check(c.choices[0].id != c.choices[1].id, "distinct reward choices")
  check(c.choose_reward(0,"hero"), "first reward claim accepted")
  check(not c.choose_reward(0,"hero"), "repeat reward claim rejected")

@@ -290,10 +290,13 @@ func river(parent: Node3D):
  n.material_override=m
  return n
 
-func landscape(parent: Node3D,safe_radius: int=4):
+func landscape(parent: Node3D,safe_radius: int=4,biome: String="border",seed_value: int=55017):
+ if biome!="border":return preload("res://game/region_art.gd").build(self,parent,safe_radius,biome,seed_value)
  var root=Node3D.new()
  root.name="BattleLandscape"
+ root.set_meta("biome","border");root.set_meta("theme","断桥哨站")
  parent.add_child(root)
+ var landmark=Node3D.new();landmark.name="RegionLandmark";root.add_child(landmark)
  var meadow=terrain(root)
  meadow.material_override=meadow.material_override.duplicate()
  meadow.material_override.set_shader_parameter("safe_radius",float(safe_radius) if safe_radius<4 else -1.0)

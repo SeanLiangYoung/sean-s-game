@@ -4,6 +4,11 @@ const PartyDetails=preload("res://game/party_details.gd")
 const Campaign = preload("res://game/campaign.gd")
 const Rules = preload("res://game/rules.gd")
 const Art = preload("res://game/art.gd")
+const Compact=preload("res://game/compact_ui.gd")
+var detail_overlay: Control
+var move_preview_root: Node3D
+var hovered_cell=Vector2i(999,999)
+var movement_label: Label
 var art=Art.new()
 var portraits=preload("res://game/portraits.gd").new()
 var presentation=preload("res://game/combat_presentation.gd").new()
@@ -23,6 +28,7 @@ var party_menu_open = false
 var menu_tab = "角色"
 var menu_character = "hero"
 var equipment_view_states: Dictionary = {}
+var context_help: VBoxContainer
 var sidebar: VBoxContainer
 var footer: VBoxContainer
 var top_label: Label
@@ -41,6 +47,7 @@ var extraction_ids: Array = []
 var battle_mode = ""
 var selected_skill = ""
 var ai_clock = 0.0
+var auto_battle = false
 var resolved = false
 var elapsed = 0.0
 var pawn_nodes: Array = []
@@ -52,6 +59,10 @@ var camera_angle = 0.0
 var camera_zoom = 23.0
 var menu_screen = ""
 var session_started = false
+var selected_difficulty = 0
+var unlocked_difficulty = 0
+var sfx_enabled=true
+var sfx_volume=1.0
 var settings_path = "user://ashbound-settings.cfg"
 var location_positions = [Vector3(-6,0,1),Vector3(5,0,-4),Vector3(-3,0,-8),Vector3(2,0,-12),Vector3(6,0,4)]
 var location_names = ["断桥哨站","遗械坟场","灰巢营地","北岸渡口","废弃驿站"]
@@ -73,6 +84,7 @@ func _ready():
  for arg in OS.get_cmdline_user_args():
   if arg.begins_with("--capture-"):capture_mode=arg
  var environment = WorldEnvironment.new()
+ environment.name="WorldEnvironment"
  var env = Environment.new()
  env.background_mode = Environment.BG_COLOR
  env.background_color = Color("b6c7bc")
@@ -86,6 +98,7 @@ func _ready():
  environment.environment = env
  add_child(environment)
  var sun = DirectionalLight3D.new()
+ sun.name="RegionSun"
  sun.rotation_degrees = Vector3(-52,-35,0)
  sun.light_color = Color("ffe9bc")
  sun.light_energy = 0.65
@@ -192,7 +205,11 @@ func clear_scene():
  world_party = null
 
 func make_pawn(pos: Vector3,color: Color,kind: String,active: bool = false) -> Node3D:
- var root=art.character(scene_root,pos,color,kind,active,campaign.visual_profile(kind))
+ var profile=campaign.visual_profile(kind)
+ var unit={} if battle==null else battle.find_actor(kind)
+ if not unit.is_empty() and unit.has("biome"):profile=preload("res://game/regions.gd").enemy_profile(unit)
+ var root=art.character(scene_root,pos,color,kind,active,profile)
+ if not unit.is_empty() and unit.has("biome"):preload("res://game/region_art.gd").enemy(art,root,unit)
  pawn_nodes.append(root)
  return root
 
@@ -200,6 +217,7 @@ func tree_at(pos: Vector3,scale_factor: float):
  return art.tree(scene_root,pos,scale_factor)
 
 func draw_world():
+ apply_region_style("border")
  clear_scene()
  camera_zoom = 28
  camera_angle = 0
@@ -268,20 +286,25 @@ func cell_position(cell: Vector2i) -> Vector3:
  return Vector3(sqrt(3.0)*(cell.x+cell.y*0.5)*0.78,0,1.5*cell.y*0.78)
 
 func draw_battle():
+ clear_movement_preview()
  clear_scene()
- art.landscape(scene_root,battle.radius)
+ var region=preload("res://game/regions.gd").definition(battle.biome)
+ apply_region_style(battle.biome)
+ var scene_seed=0
+ if campaign.route.seed_value>=0:scene_seed=int(campaign.route.node(campaign.route.current).get("seed",0))
+ art.landscape(scene_root,battle.radius,battle.biome if battle.biome!="" else "border",scene_seed)
  art.tide(scene_root,battle.radius,battle.round_no>=2)
  var a = battle.active()
  for cell in battle.cells():
   var p = cell_position(cell)
-  var col = Color("859358") if (cell.x-cell.y)%2==0 else Color("7d8c54")
+  var col = Color(region.tile) if (cell.x-cell.y)%2==0 else Color(region.tile).darkened(0.06)
   var distance = battle.hex_distance(cell,Vector2i.ZERO)
   var warning = battle.round_no in [2,3,4,5,6,7,8,9] and distance==battle.radius
   if warning:col=Color("a59663")
   if cell in battle.obstacles:col=Color("8b8b68")
   if not a.is_empty() and a.side==0 and battle.outcome=="" and battle_mode=="move":
    var path = battle.path_to(a.cell,cell)
-   if not path.is_empty() and path.size()<=a.ap:col=Color("7b9b78")
+   if not path.is_empty() and battle.movement_cost(a,path)<=a.ap:col=Color("7b9b78")
   if not a.is_empty() and a.side==0 and battle_mode in ["attack","skill","item"]:
    var target=battle.unit_at(cell)
    if target_allowed(target):col=TEAL if target.side==0 else RED
@@ -292,8 +315,17 @@ func draw_battle():
   if warning:
    art.ring(scene_root,p+Vector3(0,-0.045,0),0.755,Color("d6a268"),0.045)
   if cell in battle.obstacles:
-   art.rock(scene_root,p+Vector3(0,0.22,0),Vector3(0.85,0.65,0.75),Color("b1ae92"))
-   art.rock(scene_root,p+Vector3(0.27,0.02,0.15),Vector3(0.35,0.28,0.4),Color("a2a58b"))
+   preload("res://game/region_art.gd").obstacle(art,scene_root,p,battle.biome)
+ for intent in battle.boss_intents:
+  var source=battle.find_actor(intent.source)
+  if source.is_empty() or source.hp<=0:continue
+  var phase=preload("res://game/regions.gd").phase_data(source.biome,int(intent.get("phase",1)))
+  for cell in intent.cells:
+   if battle.hex_distance(cell,Vector2i.ZERO)>battle.radius:continue
+   var warning=art.ring(scene_root,cell_position(cell)+Vector3(0,0.06,0),0.68,Color("f17c66"),0.07,6)
+   warning.name="BossWarning_%d_%d"%[cell.x,cell.y]
+   art.ring(scene_root,cell_position(cell)+Vector3(0,0.07,0),0.52,Color(phase.color),0.025,6 if int(intent.get("phase",1))==1 else 12)
+   label3(phase.glyph+("Ⅰ" if int(intent.get("phase",1))==1 else "Ⅱ"),cell_position(cell)+Vector3(0,0.2,0),Color(phase.color),20)
  for trap in battle.traps:
   var p=cell_position(trap.cell)
   art.ring(scene_root,p+Vector3(0,0.04,0),0.42,GOLD,0.06)
@@ -304,9 +336,11 @@ func draw_battle():
   if u.id=="hero":col=Color("c4a56b")
   if u.id=="medic":col=Color("9db68b")
   var root = make_pawn(cell_position(u.cell),col,u.id,not a.is_empty() and a.id==u.id)
-  label3(u.name,Vector3(0,1.93,0),CREAM,23,root)
+  var name_height=2.65 if u.get("boss",false) else 1.93
+  label3(u.name+(" · "+("Ⅰ" if u.get("boss_phase",1)==1 else "Ⅱ") if u.get("boss",false) else ""),Vector3(0,name_height,0),CREAM,23,root)
+  if u.get("affix","")!="":label3("★ "+preload("res://game/enemy_skills.gd").AFFIXES[u.affix].name,Vector3(0,name_height+0.35,0),GOLD,18,root)
   var state=battle.status_text(u)
-  if state!="":label3(state,Vector3(0,2.42,0),GOLD,15,root)
+  if state!="":label3("◆ 状态%d"%u.get("statuses",{}).size(),Vector3(0,name_height+0.65,0),GOLD,15,root)
   box(Vector3(0,1.66,0),Vector3(0.85,0.06,0.05),Color("283536"),root)
   var width=0.85*float(u.hp)/u.max_hp
   var fill=box(Vector3((width-0.85)/2,1.67,0.015),Vector3(0.85,0.065,0.06),RED if u.side==1 else TEAL,root)
@@ -406,6 +440,7 @@ func make_ui():
  bottom.add_child(footer)
  var small=panel(ui,Vector2(22,742),Vector2(288,138))
  var info=VBoxContainer.new()
+ context_help=info
  small.add_child(info)
  info.add_child(text_label("边境生存手册",17,GOLD))
  info.add_child(text_label("选择地点推进 · 战斗先选行动\nEsc 打开菜单 / 取消选择",14,MUTED))
@@ -427,9 +462,15 @@ func separator(parent: Control):
  parent.add_child(h)
 
 func refresh_ui():
+ record_difficulty_completion()
+ refresh_boss_hud()
+ status_label.visible=battle==null
  if battle==null and is_instance_valid(world_party):
   preload("res://game/character_visual.gd").apply_loadout(world_party,campaign.visual_profile("hero"))
  refresh_atlas()
+ empty_children(context_help)
+ context_help.add_child(text_label("灰潮预警" if battle!=null else "旅途操作",17,GOLD))
+ context_help.add_child(text_label("3 / 5 / 7 / 9回合末缩圈\n10回合未胜：出战全灭" if battle!=null else "选择地点推进\nEsc 打开菜单 / 返回",14,RED if battle!=null else MUTED))
  empty_children(sidebar)
  empty_children(footer)
  var navigation=HBoxContainer.new()
@@ -484,36 +525,28 @@ func refresh_ui():
  else:
   top_label.text="第 %d / %d 回合    ·    安全半径 %d    ·    速度顺序行动"%[battle.round_no,battle.round_limit,battle.radius]
   var a=battle.active()
-  sidebar.add_child(text_label("独立战场",24,GOLD))
-  sidebar.add_child(text_label(location_names[campaign.current_encounter] if campaign.current_encounter>=0 else "边境遭遇",16,MUTED))
   var command_slot=VBoxContainer.new()
-  command_slot.name="ActionCommands"
-  command_slot.add_theme_constant_override("separation",7)
-  sidebar.add_child(command_slot)
-  sidebar.add_child(text_label("行动顺序",16,GOLD))
-  for j in range(battle.order.size()):
-   var u=battle.actors[battle.order[j]]
-   if u.hp<=0:continue
-   var prefix="▶ " if j==battle.order_index else "    "
-   sidebar.add_child(text_label(prefix+u.name+"  ·  "+str(u.hp)+" HP",16,RED if u.side==1 else (GOLD if j==battle.order_index else CREAM)))
-  separator(sidebar)
-  sidebar.add_child(text_label("灰潮将至",18,GOLD))
-  sidebar.add_child(text_label("橙色边缘将在下次收缩时失效。\n未撤离者强制位移，损失 20% 最大生命；无处可退则死亡。",14,MUTED))
-  sidebar.add_child(text_label("第 3 / 5 / 7 / 9 回合结束收缩\n第 10 回合结束未获胜：全员死亡",14,RED))
-  separator(sidebar)
-  var logs=battle.events.slice(maxi(0,battle.events.size()-4))
-  for log in logs:sidebar.add_child(text_label(log,13,MUTED))
+  command_slot.name="ActionCommands";command_slot.add_theme_constant_override("separation",7);sidebar.add_child(command_slot)
   var is_player=not a.is_empty() and a.side==0 and battle.outcome==""
-  if not a.is_empty():
-   status_label.text="%s  /  %s    生命 %d/%d    法力 %d/%d    行动点 %d/%d"%[a.name,a.role,a.hp,a.max_hp,a.mp,a.max_mp,a.ap,a.get("max_ap",4)]
+  if not a.is_empty():status_label.text="%s  /  %s"%[a.name,a.role]
   render_action_menu(is_player)
+  var order=[]
+  for offset in range(battle.order.size()):
+   var j=(battle.order_index+offset)%battle.order.size()
+   var unit=battle.actors[battle.order[j]]
+   if unit.hp>0:order.append(unit.name)
+   if order.size()==3:break
+  var next=text_label("行动顺序  "+" → ".join(order),14,GOLD);next.name="TurnOrder";sidebar.add_child(next);sidebar.move_child(next,sidebar.get_children().find(command_slot))
+  var briefing=button("敌人技能与搭配",show_region_briefing);briefing.name="RegionBriefing";sidebar.add_child(briefing)
+  details_button(sidebar,"战场规则与记录","第3/5/7/9回合结束收缩；橙色边缘提前预警。未撤离者位移并损失20%生命，无空格则死亡。第10回合结束未获胜，全部出战队员永久死亡。\n\n"+"\n".join(battle.events.slice(maxi(0,battle.events.size()-12))))
+  if battle.boss_forecast()!="":footer.add_child(text_label("危险预告："+battle.boss_forecast(),14,RED))
   sidebar.add_child(button("放弃战斗…",show_surrender))
 
 func character_card(unit: Dictionary,action: Callable,selected: bool=false,status: String="") -> Button:
  var state="已阵亡" if unit.hp<=0 else status
  var title="%s\n%s"%[unit.name,unit.role]
  if state!="":title+="  /  "+state
- var card=button(title+"\n生命 %d/%d   法力 %d/%d"%[unit.hp,unit.max_hp,unit.mp,unit.max_mp],action,selected)
+ var card=button(title+"\n\n",action,selected)
  card.name="CharacterCard_"+unit.id
  card.icon=portraits.portrait(unit.id,campaign.visual_profile(unit.id))
  card.expand_icon=true
@@ -524,11 +557,141 @@ func character_card(unit: Dictionary,action: Callable,selected: bool=false,statu
  card.alignment=HORIZONTAL_ALIGNMENT_LEFT
  card.custom_minimum_size=Vector2(220,88)
  card.size_flags_horizontal=Control.SIZE_EXPAND_FILL
+ var resources=VBoxContainer.new()
+ resources.name="ResourceBars"
+ resources.mouse_filter=Control.MOUSE_FILTER_IGNORE
+ resources.set_anchors_and_offsets_preset(Control.PRESET_BOTTOM_WIDE)
+ resources.offset_left=84
+ resources.offset_right=-12
+ resources.offset_top=-29
+ resources.offset_bottom=-9
+ resources.add_theme_constant_override("separation",4)
+ card.add_child(resources)
+ for resource in [["HealthBar",unit.hp,unit.max_hp,TEAL],["ManaBar",unit.mp,unit.max_mp,Color("8daee6")]]:
+  var bar=ProgressBar.new()
+  bar.name=resource[0]
+  bar.custom_minimum_size.y=6
+  bar.mouse_filter=Control.MOUSE_FILTER_IGNORE
+  bar.max_value=maxi(1,resource[2])
+  bar.value=resource[1]
+  bar.show_percentage=false
+  var fill=StyleBoxFlat.new()
+  fill.bg_color=resource[3]
+  bar.add_theme_stylebox_override("fill",fill)
+  resources.add_child(bar)
  card.tooltip_text="%s · %s\n%s"%[unit.name,unit.role,"已阵亡 · 无法出战" if unit.hp<=0 else "点击查看或选择角色"]
  if unit.hp<=0:card.modulate=Color("8d9399")
  return card
 
+func close_details():
+ if is_instance_valid(detail_overlay):
+  ui.remove_child(detail_overlay)
+  detail_overlay.queue_free()
+ detail_overlay=null
+
+func show_details(title: String,content: String):
+ close_details()
+ clear_movement_preview()
+ detail_overlay=ColorRect.new()
+ detail_overlay.name="DetailOverlay"
+ detail_overlay.color=Color(0.02,0.04,0.06,0.92)
+ detail_overlay.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
+ ui.add_child(detail_overlay)
+ var page=panel(detail_overlay,Vector2.ZERO,Vector2.ZERO)
+ page.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
+ page.anchor_left=0.14;page.anchor_right=0.86;page.anchor_top=0.08;page.anchor_bottom=0.92
+ var frame=VBoxContainer.new();frame.add_theme_constant_override("separation",16);page.add_child(frame)
+ frame.add_child(text_label(title,26,GOLD))
+ var scroll=ScrollContainer.new();scroll.size_flags_vertical=Control.SIZE_EXPAND_FILL
+ scroll.horizontal_scroll_mode=ScrollContainer.SCROLL_MODE_DISABLED;frame.add_child(scroll)
+ var label=text_label(content,18);label.size_flags_horizontal=Control.SIZE_EXPAND_FILL;scroll.add_child(label)
+ var back=button("返回 · Esc",close_details,true);back.name="DetailsBack";frame.add_child(back)
+ back.grab_focus()
+
+func details_button(parent: Control,title: String,content: String):
+ var entry=button(title+"  ›",func():show_details(title,content))
+ entry.icon=Compact.icon("info");entry.add_theme_constant_override("icon_max_width",20)
+ parent.add_child(entry)
+ return entry
+
+func primary_action(entry: Button):
+ var frame=modal.get_child(0)
+ frame.add_child(entry)
+ entry.size_flags_horizontal=Control.SIZE_EXPAND_FILL
+
+func movement_preview(cell: Vector2i) -> Dictionary:
+ if battle==null or battle.outcome!="" or battle.active().is_empty():return {}
+ var actor=battle.active()
+ if actor.side!=0:return {}
+ var path=battle.path_to(actor.cell,cell)
+ if path.is_empty() or battle.movement_cost(actor,path)>actor.ap:return {}
+ var shown=path.duplicate()
+ var trapped=false
+ for i in path.size():
+  if battle.traps.any(func(trap):return trap.cell==path[i] and trap.side!=actor.side):
+   shown=path.slice(0,i+1);trapped=true;break
+ var cost=battle.movement_cost(actor,shown)
+ return {"path":shown,"cost":cost,"remaining":maxi(0,actor.ap-cost),"trapped":trapped}
+
+func clear_movement_preview():
+ hovered_cell=Vector2i(999,999)
+ if is_instance_valid(move_preview_root):
+  move_preview_root.get_parent().remove_child(move_preview_root)
+  move_preview_root.queue_free()
+ move_preview_root=null
+ if is_instance_valid(movement_label):movement_label.text="悬停可达格：预览路径、费用与剩余行动点"
+
+func board_cell(screen: Vector2) -> Vector2i:
+ var point=ground_position(screen)
+ var nearest=Vector2i(999,999)
+ var best=1.1
+ for cell in battle.cells():
+  var distance=cell_position(cell).distance_to(point)
+  if distance<best:nearest=cell;best=distance
+ return nearest
+
+func update_movement_preview(screen: Vector2):
+ var cell=board_cell(screen)
+ if cell==hovered_cell:return
+ clear_movement_preview()
+ hovered_cell=cell
+ var data=movement_preview(cell)
+ if data.is_empty():
+  if is_instance_valid(movement_label):movement_label.text="不可移动至此处"
+  return
+ move_preview_root=Node3D.new();move_preview_root.name="MovementPath";scene_root.add_child(move_preview_root)
+ var previous=cell_position(battle.active().cell)+Vector3(0,0.12,0)
+ for step in data.path:
+  var at=cell_position(step)+Vector3(0,0.12,0)
+  art.ring(move_preview_root,at,0.28,GOLD,0.055)
+  var segment=MeshInstance3D.new();var mesh=BoxMesh.new()
+  mesh.size=Vector3(0.09,0.035,previous.distance_to(at));segment.mesh=mesh
+  segment.material_override=material(GOLD,true);move_preview_root.add_child(segment)
+  segment.position=(previous+at)/2;segment.look_at(at,Vector3.UP)
+  previous=at
+ if is_instance_valid(movement_label):
+  movement_label.text="移动 %d 格  ·  消耗 %d 行动点  →  剩余 %d"%[data.path.size(),data.cost,data.remaining]
+  if data.remaining==0:movement_label.text+="  ·  将结束行动"
+  if data.trapped:movement_label.text+="  ·  途中机关截停并造成伤害"
+
+func battle_summary(parent: Control):
+ var summary=campaign.last_battle_summary
+ if summary.is_empty():return
+ var block=VBoxContainer.new();block.name="BattleSummary";block.add_theme_constant_override("separation",6);parent.add_child(block)
+ var fallen=[];var alive=[];var resources=[]
+ for unit in summary.members:
+  if unit.hp<=0:fallen.append(unit.name)
+  else:
+   alive.append(unit.name)
+   resources.append("%s  ·  生命 %d/%d  ·  法力 %d/%d  ·  击杀%d"%[unit.name,unit.hp,unit.max_hp,unit.mp,unit.max_mp,unit.kills])
+ var headline="存活 %d  ·  阵亡 %d"%[alive.size(),fallen.size()]
+ block.add_child(text_label(headline+("  ·  全员存活" if fallen.is_empty() else "  ·  永久失去："+"、".join(fallen)),21,TEAL if fallen.is_empty() else RED))
+ if not fallen.is_empty():block.add_child(text_label("阵亡队员无法继续出战；战斗胜利不会复活队员。",15,RED))
+ if not resources.is_empty():details_button(block,"幸存者状态与击杀", "\n".join(resources))
+
 func close_modal():
+ close_details()
+ clear_movement_preview()
  party_menu_open=false
  if is_instance_valid(modal):
   var shade=modal.get_parent()
@@ -619,12 +782,25 @@ func show_deploy(index: int):
  render_deploy(index)
 
 func render_deploy(index: int):
- open_modal("部署队伍  /  %s"%location_names[index],"选择 1—5 人。留守队员不会因本场战败死亡；团长可以留守。")
- modal_body.add_child(text_label(location_desc[index]+"   ·   10 回合期限   ·   灰潮收缩",16,RED))
- var deployment_grid=GridContainer.new()
- deployment_grid.columns=2
- deployment_grid.add_theme_constant_override("h_separation",12)
- deployment_grid.add_theme_constant_override("v_separation",10)
+ open_modal("部署队伍  /  %s"%campaign.encounter_title(index),"选择1—5人 · 团长可留守 · 阵亡永久失去")
+ var preview=campaign.preview_enemies(index)
+ var head=HBoxContainer.new();head.add_theme_constant_override("separation",18);modal_body.add_child(head)
+ Compact.metrics(self,head,[["attack","敌人 %d"%preview.size(),"当前遭遇敌人数"],["ap","10 回合","超时出战队员全部永久阵亡"]])
+ var detail=campaign.encounter_description(index)+"\n\n"+"敌方主动技能无耗蓝，冷却按各自行动计算，每次至多1个主动技能。"
+ if campaign.route.seed_value>=0:
+  var region=preload("res://game/regions.gd").definition(campaign.route.region)
+  detail+="\n敌人特性："+region.counter+"\n首领预告："+region.boss_tip
+ var seen=[]
+ for enemy in preview:
+  var description=preload("res://game/enemy_skills.gd").description(enemy)
+  if enemy.get("affix","")!="":
+   var affix=preload("res://game/enemy_skills.gd").AFFIXES[enemy.affix]
+   description+="\n随机强化："+affix.name+" — "+affix.desc
+  if description not in seen:detail+="\n\n"+enemy.name+"："+description;seen.append(description)
+ details_button(head,"敌情与战场规则",detail)
+ modal_body.add_child(text_label("10回合未获胜：出战队员全部阵亡 · 团长阵亡则旅途结束",15,RED))
+ var deployment_grid=GridContainer.new();deployment_grid.columns=3
+ deployment_grid.add_theme_constant_override("h_separation",12);deployment_grid.add_theme_constant_override("v_separation",10)
  modal_body.add_child(deployment_grid)
  for u in campaign.roster:
   if u.hp<=0:continue
@@ -634,13 +810,9 @@ func render_deploy(index: int):
    elif selected_ids.size()<5:selected_ids.append(id)
    render_deploy(index),id in selected_ids,"已出战" if id in selected_ids else "留守")
   deployment_grid.add_child(b)
- var hero=campaign.roster.filter(func(u):return u.id=="hero")[0]
- var preview=Jobs.aura_for(campaign.character_stats(hero.id))
- modal_body.add_child(text_label("主角光环："+preview+(" · 上阵生效" if "hero" in selected_ids else " · 主角留守，本场不生效"),16,GOLD if "hero" in selected_ids else MUTED))
  var count=selected_ids.size()
  var start=button("出战 %d / 5 人  →"%count,func():begin_battle(index),true)
- start.disabled=count==0
- modal_body.add_child(start)
+ start.name="DeployStart";start.disabled=count==0;primary_action(start)
  modal_body.add_child(button("暂不交战",close_modal))
 
 func begin_battle(index: int):
@@ -650,12 +822,27 @@ func begin_battle(index: int):
   if is_instance_valid(modal):modal_body.add_child(text_label(campaign.notice,17,RED))
   return
  battle=b
+ auto_battle=false
+ ai_clock=0
  camera_zoom=16.5
  resolved=false
  battle_mode=""
  close_modal()
  draw_battle()
  refresh_ui()
+
+func toggle_auto_battle():
+ if battle==null or battle.outcome!="" or is_instance_valid(modal):return
+ auto_battle=not auto_battle
+ battle_mode=""
+ selected_skill=""
+ ai_clock=0
+ if not presentation.busy:
+  draw_battle()
+  refresh_ui()
+ else:
+  var toggle=sidebar.find_child("AutoBattle",true,false)
+  if toggle!=null:toggle.text="停止 Auto · 手动接管" if auto_battle else "Auto · 一键交战"
 
 func player_rest(kind: String):
  if battle==null or battle.active().is_empty() or battle.active().side!=0 or is_instance_valid(modal):return
@@ -666,6 +853,7 @@ func perform_battle_action(action: String,target=null) -> bool:
  var actor=battle.active()
  if actor.is_empty() or (action!="enemy" and actor.side!=0):return false
  var before=battle.actors.duplicate(true)
+ var cue_index=battle.boss_cues.size()
  var actor_id=actor.id
  var previous=actor.duplicate(true)
  var path: Array=[]
@@ -699,16 +887,21 @@ func perform_battle_action(action: String,target=null) -> bool:
      var old=before.filter(func(u):return u.id==unit.id)[0]
      if unit.id!=actor_id and unit.hp<old.hp:action="attack";break
  if not accepted:return false
+ clear_movement_preview()
+ var cues=battle.boss_cues.slice(cue_index).duplicate(true)
+ if cues.any(func(c):return c.source==actor_id and c.type=="charge"):action="boss_charge"
+ elif cues.any(func(c):return c.source==actor_id and c.type=="enemy_skill"):action="enemy_skill"
  if action=="move":
   var actual=path.find(actor.cell)
   if actual>=0:path=path.slice(0,actual+1)
  presentation.skill_effect=Jobs.ALL_SKILLS.get(used_skill,{}).get("effect","") if action=="skill" else ""
  presentation.skill_id=used_skill if action=="skill" else ""
  presentation.skill_target=target if action=="skill" else null
- presentation.start(self,before,battle.actors.duplicate(true),actor_id,action,path,str(target) if target is String else "")
+ presentation.start(self,before,battle.actors.duplicate(true),actor_id,action,path,str(target) if target is String else "",cues)
  # Keep the old HUD values until the visible action lands; prevent every button callback.
  for node in footer.find_children("*","Button",true,false):node.disabled=true
- for node in sidebar.find_children("*","Button",true,false):node.disabled=true
+ for node in sidebar.find_children("*","Button",true,false):
+  if node.name!="AutoBattle":node.disabled=true
  return true
 
 func after_battle_action():
@@ -718,19 +911,26 @@ func after_battle_action():
  refresh_ui()
  ai_clock=0
  if battle.outcome!="" and not resolved:
+  auto_battle=false
   resolved=true
   var result=battle.outcome
+  var previous_achievements=campaign.completed_difficulties.duplicate()
   campaign.resolve_battle(battle)
-  if result=="victory":show_reward()
+  if result=="victory":
+   show_reward()
+   if campaign.overall_difficulty in campaign.completed_difficulties and campaign.overall_difficulty not in previous_achievements:
+    show_achievement_unlock(campaign.overall_difficulty)
   elif result=="gameover":show_gameover()
   else:
-   open_modal("出战队伍覆灭","仅有留守队员生还。该遭遇已失守，本次远征无法再次挑战。")
+   open_modal("出战队伍覆灭",campaign.notice)
    set_page_back(Callable())
+   battle_summary(modal_body)
    for u in battle.actors:
     if u.side==0:modal_body.add_child(text_label("† "+u.name,19,RED))
-   modal_body.add_child(button("由幸存者继续远征",return_world,true))
+   modal_body.add_child(button("返回营地" if campaign.phase=="camp" else "由幸存者继续远征",return_world,true))
 
 func return_world():
+ auto_battle=false
  close_modal()
  battle=null
  pending_location=-1
@@ -739,29 +939,42 @@ func return_world():
  refresh_ui()
 
 func show_reward():
- open_modal("战斗胜利  /  战利品三选一","选择即承担收益与代价；个人遗物需绑定角色。撤离最多带回两件，其余兑换银币。")
+ campaign.discover_reward_relics()
+ record_difficulty_completion()
+ open_modal("全部通关  /  星陨遗城" if campaign.campaign_completed() else "战斗胜利  /  选择战利品","五选一 · 查看详情不会领取奖励")
  set_page_back(Callable())
- modal_body.add_child(text_label(campaign.notice,16,GOLD))
- if battle!=null:
-  var survivors=battle.actors.filter(func(a):return a.side==0 and a.hp>0)
-  var shares=[]
-  for a in survivors:
-   shares.append("%s · 击杀%d · 击杀奖励+%d经验"%[a.name,a.get("kills",0),int(a.get("kills",0))*15])
-  modal_body.add_child(text_label("\n".join(shares),15,TEAL))
+ battle_summary(modal_body)
+ if campaign.campaign_completed():
+  var achievement=Campaign.Achievements.CATALOG[campaign.overall_difficulty]
+  modal_body.add_child(text_label("通关成就 · %s：%s"%[achievement.name,achievement.reward],16,TEAL))
+  if campaign.achievement_save_failed:modal_body.add_child(text_label("永久成就记录写入失败，请在新游戏前重试保存。",16,RED))
+ if campaign.campaign_completed() and campaign.overall_difficulty<3:
+  var unlocked=unlocked_difficulty>campaign.overall_difficulty
+  modal_body.add_child(text_label("已解锁「%s」难度，可在新游戏中选择。"%Campaign.OVERALL_DIFFICULTIES[campaign.overall_difficulty+1] if unlocked else "难度解锁记录保存失败，请检查本地存储空间。",16,TEAL if unlocked else RED))
+  if unlocked:
+   for id in Campaign.Characters.CAPTAINS:
+    if Campaign.Characters.CAPTAIN_UNLOCK_RANKS[id]==campaign.overall_difficulty+1:modal_body.add_child(text_label("已解锁主角「%s」"%Campaign.Characters.CATALOG[id].name,15,TEAL))
+ var grid=GridContainer.new();grid.name="RewardGrid";grid.columns=3
+ grid.add_theme_constant_override("h_separation",12);grid.add_theme_constant_override("v_separation",12);modal_body.add_child(grid)
  for i in range(campaign.choices.size()):
-  var index=i
-  var reward=campaign.choices[i]
-  var p=PanelContainer.new()
-  p.add_theme_stylebox_override("panel",style(Color("23363c"),Color(reward.color)))
-  modal_body.add_child(p)
-  var content=VBoxContainer.new()
-  p.add_child(content)
-  content.add_child(text_label(reward.name,22,Color(reward.color)))
-  content.add_child(text_label(reward.desc,16))
-  content.add_child(button("选择此奖励",func():
-   if reward.type=="relic" and Campaign.Relic.definition(reward.id).scope=="personal":
-    show_relic_binding(reward.id,index)
-   elif campaign.choose_reward(index):return_world(),true))
+  var index=i;var reward=campaign.choices[i]
+  var p=PanelContainer.new();p.size_flags_horizontal=Control.SIZE_EXPAND_FILL
+  var card_style=style(Color("23363c"),Color(reward.color));card_style.content_margin_top=10;card_style.content_margin_bottom=10
+  p.add_theme_stylebox_override("panel",card_style);grid.add_child(p)
+  var content=VBoxContainer.new();content.add_theme_constant_override("separation",6);p.add_child(content)
+  content.add_child(text_label(reward.name,19,Color(reward.color)))
+  var summary=reward.desc
+  if reward.type=="relic":
+   var d=Campaign.Relic.definition(reward.id)
+   summary=("全队" if d.scope=="team" else "个人 · 需绑定")+"\n收益："+d.benefit+"\n代价："+d.risk
+  var label=text_label(summary,14);label.custom_minimum_size.y=88;content.add_child(label)
+  var row=HBoxContainer.new();content.add_child(row)
+  details_button(row,"详情",reward.desc)
+  var choose=button("选择此奖励",func():
+   if reward.type=="relic" and Campaign.Relic.definition(reward.id).scope=="personal":show_relic_binding(reward.id,index)
+   elif campaign.choose_reward(index):return_world(),true)
+  choose.size_flags_horizontal=Control.SIZE_EXPAND_FILL;row.add_child(choose)
+ details_button(modal_body,"奖励与经验规则",campaign.notice+"\n\n三件遗物分别续接本局流派、探索其他主题、随机发现；另有装备和资源。个人遗物需绑定角色。撤离最多带回两件，其余兑换银币。")
 
 func show_extract():
  extraction_ids=[]
@@ -790,6 +1003,7 @@ func render_extract():
 func show_gameover():
  open_modal("行旅止于此  /  团长阵亡","没有获救，也没有死亡豁免。这段远征已经结束。")
  set_page_back(Callable())
+ battle_summary(modal_body)
  modal_body.add_child(text_label("你可以读取远征前的存档，重新规划路线与出战队伍。",20))
  modal_body.add_child(button("读取远征前存档",restore,true))
  modal_body.add_child(button("重新开始游戏",new_game))
@@ -809,7 +1023,49 @@ func restore():
   refresh_ui()
 
 func new_game():
+ selected_difficulty=0
+ load_difficulty_unlocks()
+ show_captain_selection()
+
+func captain_unlocked(id: String) -> bool:
+ return Campaign.Characters.CAPTAIN_UNLOCK_RANKS.has(id) and unlocked_difficulty>=Campaign.Characters.CAPTAIN_UNLOCK_RANKS[id]
+
+func show_captain_selection(selected: String="shen"):
+ load_difficulty_unlocks()
+ if not captain_unlocked(selected):selected="shen"
+ open_modal("选择你的团长", "通关解锁更多团长 · 专属天赋决定队伍起步方向 · 团长阵亡将结束旅途")
+ menu_screen="captain"
+ set_page_back(show_main_menu)
+ for id in Campaign.Characters.CAPTAINS:
+  var character_id=id
+  var d=Campaign.Characters.CATALOG[id]
+  var locked=not captain_unlocked(id)
+  var caption=("◆ " if id==selected else "◇ ")+d.name+" · "+d.title
+  if locked:caption+=" · "+Campaign.Characters.CAPTAIN_UNLOCK_HINTS[id]
+  var entry=button(caption,func():show_captain_selection(character_id),id==selected)
+  entry.disabled=locked
+  modal_body.add_child(entry)
+ add_difficulty_options(true,selected)
+ var chosen=Campaign.Characters.CATALOG[selected]
+ modal_body.add_child(text_label("专属天赋 · "+chosen.talent,18,TEAL))
+ details_button(modal_body,"人物背景与天赋详情",chosen.story+"\n\n"+chosen.talent+"\n"+chosen.effect+"\n\n遗物搭配："+chosen.relics)
+ var start=button("以「%s」开始旅途"%chosen.name,func():start_new_campaign(selected),true)
+ start.name="StartJourney";primary_action(start)
+ modal_body.add_child(button("返回主菜单",show_main_menu))
+
+func start_new_campaign(captain: String):
+ load_difficulty_unlocks()
+ if selected_difficulty<0 or selected_difficulty>unlocked_difficulty or not captain_unlocked(captain):return
+ var prior=saved_campaign()
+ if prior!=null and not Campaign.Achievements.save_profile(campaign.save_path+".achievements",prior.completed_difficulties):
+  show_main_menu("成就记录保存失败，已保留原存档。请检查本地存储空间后重试。")
+  return
+ if prior!=null and not prior.save_relic_discoveries():
+  show_main_menu("遗物发现记录保存失败，已保留原存档。请检查本地存储空间后重试。")
+  return
  var fresh=Campaign.new(campaign.save_path)
+ fresh.overall_difficulty=selected_difficulty
+ if not fresh.select_captain(captain):return
  if not fresh.save_game():
   show_main_menu("无法创建存档，请检查本地存储空间或目录权限。原存档已保留。")
   return
@@ -835,7 +1091,7 @@ func show_main_menu(message: String=""):
  var summary="暂无存档 · 开始一段新的旅途"
  if saved!=null:
   var phases={"camp":"南境营地","world":"灰潮边境","reward":"待领取战利品","gameover":"团长阵亡 · 可回退远征"}
-  summary="第 %d 次远征 · %s · 银币 %d"%[saved.expedition,phases.get(saved.phase,""),saved.silver]
+  summary="%s · 第 %d 次远征 · %s · 银币 %d"%[Campaign.OVERALL_DIFFICULTIES[saved.overall_difficulty],saved.expedition,phases.get(saved.phase,""),saved.silver]
   var data=JSON.parse_string(FileAccess.get_file_as_string(campaign.save_path))
   if data.get("saved_at","") is String and data.get("saved_at","")!="":summary+="\n保存于 "+data.saved_at
  elif FileAccess.file_exists(campaign.save_path):summary="存档无法读取 · 开始新游戏前会再次确认"
@@ -845,6 +1101,7 @@ func show_main_menu(message: String=""):
  var resume=button("继续游戏",continue_game,saved!=null)
  resume.disabled=saved==null
  modal_body.add_child(resume)
+ modal_body.add_child(button("成就",func():show_achievements(true)))
  modal_body.add_child(button("设置",func():show_settings(true)))
  modal_body.add_child(button("退出游戏",func():get_tree().quit()))
 
@@ -892,6 +1149,13 @@ func show_pause_menu(message: String=""):
  var save=button("保存游戏"+(" · 战斗中不可用" if battle!=null else ""),manual_save)
  save.disabled=battle!=null
  modal_body.add_child(save)
+ if not campaign.last_battle_summary.is_empty():
+  var report=campaign.last_battle_summary
+  var lines=[]
+  for unit in report.members:
+   lines.append(unit.name+" · 永久阵亡" if unit.hp<=0 else "%s · 存活 · 生命%d/%d · 法力%d/%d · 击杀%d"%[unit.name,unit.hp,unit.max_hp,unit.mp,unit.max_mp,unit.kills])
+  details_button(modal_body,"上一场战报",{"victory":"战斗胜利","defeat":"战斗失败","gameover":"团长阵亡"}.get(report.outcome,"")+"\n\n"+"\n".join(lines))
+ modal_body.add_child(button("成就",func():show_achievements(false)))
  modal_body.add_child(button("设置",func():show_settings(false)))
  modal_body.add_child(button("返回主菜单",request_main_menu))
 
@@ -908,6 +1172,7 @@ func request_main_menu():
  modal_body.add_child(button("取消 · 返回旅途菜单",show_pause_menu))
 
 func return_to_main_menu():
+ auto_battle=false
  if presentation.busy:return
  if battle==null and session_started and not campaign.save_game():
   show_pause_menu("保存失败，已保留当前游戏。请检查存储空间后重试。")
@@ -917,9 +1182,94 @@ func return_to_main_menu():
  arrived_location=-1
  show_main_menu()
 
+func load_difficulty_unlocks():
+ var config=ConfigFile.new()
+ unlocked_difficulty=0
+ if config.load(settings_path+".progression")==OK:
+  var value=config.get_value("progression","unlocked_difficulty",0)
+  if (value is int or value is float) and is_finite(float(value)):
+   unlocked_difficulty=clampi(int(value),0,3)
+
+func record_difficulty_completion():
+ if not campaign.campaign_completed():return
+ load_difficulty_unlocks()
+ var next=mini(campaign.overall_difficulty+1,3)
+ if next<=unlocked_difficulty:return
+ var config=ConfigFile.new()
+ config.set_value("progression","unlocked_difficulty",next)
+ if config.save(settings_path+".progression")==OK:unlocked_difficulty=next
+
+func add_difficulty_options(selectable: bool, captain: String="shen"):
+ load_difficulty_unlocks()
+ detail_section(modal_body,"整体难度")
+ var active=selected_difficulty if selectable else campaign.overall_difficulty
+ var grid=GridContainer.new();grid.columns=2;grid.add_theme_constant_override("h_separation",12);modal_body.add_child(grid)
+ for i in Campaign.OVERALL_DIFFICULTIES.size():
+  var level=i
+  var locked=i>unlocked_difficulty
+  var caption=("◆ " if i==active else "◇ ")+Campaign.OVERALL_DIFFICULTIES[i]
+  if locked:caption+=" · 未解锁（通关%s）"%Campaign.OVERALL_DIFFICULTIES[i-1]
+  elif i==active:caption+=" · 当前"
+  var entry=button(caption,func():
+   selected_difficulty=level
+   show_captain_selection(captain),i==active)
+  entry.disabled=locked or not selectable
+  entry.size_flags_horizontal=Control.SIZE_EXPAND_FILL
+  grid.add_child(entry)
+ details_button(modal_body,"难度规则","通关当前难度的全部六个区域，解锁下一难度。困难：敌人生命+25%、攻击+15%。噩梦：在困难基础上生命再+25%、攻击再+15%。我想找死：在噩梦基础上生命再+50%、攻击再+25%。")
+
 func show_settings(from_main: bool):
- open_modal("设置", "显示与操作偏好会保存在本机。")
+ open_modal("设置", "显示与音效偏好会保存在本机。")
  menu_screen="settings"
+ detail_section(modal_body,"音效")
+ var sound_toggle=CheckButton.new()
+ sound_toggle.name="SoundEffectsToggle"
+ sound_toggle.text="开启音效"
+ sound_toggle.button_pressed=sfx_enabled
+ modal_body.add_child(sound_toggle)
+ var sound_level=text_label("音效音量 · %d%%"%roundi(sfx_volume*100.0),18,GOLD)
+ sound_level.name="SoundEffectsVolumeLabel"
+ modal_body.add_child(sound_level)
+ var sound_slider=HSlider.new()
+ sound_slider.name="SoundEffectsVolume"
+ sound_slider.min_value=0
+ sound_slider.max_value=100
+ sound_slider.step=1
+ sound_slider.value=roundi(sfx_volume*100.0)
+ sound_slider.editable=sfx_enabled
+ sound_slider.custom_minimum_size=Vector2(280,32)
+ modal_body.add_child(sound_slider)
+ var sound_preview=AudioStreamPlayer.new()
+ sound_preview.name="SoundEffectsPreview"
+ sound_preview.stream=preload("res://game/achievement_celebration.gd").chime()
+ sound_preview.volume_db=-10.0+linear_to_db(maxf(sfx_volume,0.0001))
+ modal_body.add_child(sound_preview)
+ var preview_button=button("试听成就提示音",func():
+  if sfx_enabled and sfx_volume>0.0:sound_preview.play())
+ preview_button.name="SoundEffectsPreviewButton"
+ preview_button.disabled=not sfx_enabled or sfx_volume<=0.0
+ modal_body.add_child(preview_button)
+ sound_toggle.toggled.connect(func(enabled):
+  sfx_enabled=enabled
+  sound_slider.editable=enabled
+  preview_button.disabled=not enabled or sfx_volume<=0.0
+  if not enabled:sound_preview.stop())
+ sound_slider.value_changed.connect(func(value):
+  sfx_volume=value/100.0
+  sound_level.text="音效音量 · %d%%"%roundi(value)
+  sound_preview.volume_db=-10.0+linear_to_db(maxf(sfx_volume,0.0001))
+  preview_button.disabled=not sfx_enabled or sfx_volume<=0.0
+  if sfx_volume<=0.0:sound_preview.stop())
+ modal_body.add_child(text_label("控制成就解锁提示音；关闭音效后，解锁动画仍会播放。",16,MUTED))
+ add_difficulty_options(false)
+ var progress=campaign
+ if from_main:
+  var saved=saved_campaign()
+  if saved!=null:progress=saved
+ modal_body.add_child(text_label("六档递进难度 · 当前第 %d / 6 档"%progress.difficulty_level(),23,GOLD))
+ modal_body.add_child(text_label("每首次通关一个区域提高一档，最高第6档；重复通关不提升。",17))
+ for rank in range(1,7):
+  modal_body.add_child(text_label("第 %d 档 · 敌人生命 +%d%% · 攻击 +%d%%%s"%[rank,(rank-1)*18,(rank-1)*10," · 当前" if rank==progress.difficulty_level() else ""],16,GOLD if rank==progress.difficulty_level() else MUTED))
  var fullscreen=CheckButton.new()
  fullscreen.text="全屏显示"
  fullscreen.button_pressed=DisplayServer.window_get_mode()==DisplayServer.WINDOW_MODE_FULLSCREEN
@@ -937,14 +1287,24 @@ func show_settings(from_main: bool):
  modal_body.add_child(button("返回",navigate_back))
 
 func load_settings():
+ sfx_enabled=true
+ sfx_volume=1.0
  var config=ConfigFile.new()
  if config.load(settings_path)!=OK:return
+ var enabled=config.get_value("audio","sfx_enabled",true)
+ if enabled is bool:sfx_enabled=enabled
+ var volume=config.get_value("audio","sfx_volume",1.0)
+ if (volume is int or volume is float) and is_finite(float(volume)):
+  sfx_volume=clampf(float(volume),0.0,1.0)
  var fullscreen=config.get_value("display","fullscreen",false)
  if fullscreen is bool:
   DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN if fullscreen else DisplayServer.WINDOW_MODE_WINDOWED)
 
 func save_settings() -> bool:
  var config=ConfigFile.new()
+ config.load(settings_path)
+ config.set_value("audio","sfx_enabled",sfx_enabled)
+ config.set_value("audio","sfx_volume",sfx_volume)
  config.set_value("display","fullscreen",DisplayServer.window_get_mode()==DisplayServer.WINDOW_MODE_FULLSCREEN)
  return config.save(settings_path)==OK
 
@@ -975,6 +1335,12 @@ func ground_position(screen_pos: Vector2) -> Vector3:
  return origin+dir*(-origin.y/dir.y)
 
 func _unhandled_input(event):
+ if is_instance_valid(detail_overlay):
+  if event is InputEventKey and event.pressed and not event.echo and event.keycode==KEY_ESCAPE:
+   close_details();get_viewport().set_input_as_handled()
+  return
+ if event is InputEventMouseMotion and battle!=null and battle_mode=="move" and not auto_battle and not presentation.busy and not is_instance_valid(modal):
+  update_movement_preview(event.position)
  if event is InputEventKey and event.pressed and not event.echo and event.keycode==KEY_ESCAPE and battle!=null and battle_mode!="" and not is_instance_valid(modal):
   cancel_action()
   get_viewport().set_input_as_handled()
@@ -1004,13 +1370,13 @@ func _unhandled_input(event):
      return
    world_target=Vector3(clampf(p.x,-13,13),0,clampf(p.z,-16,11))
    pending_location=-1
-  elif battle.outcome=="" and battle.active().side==0:
+  elif battle.outcome=="" and battle.active().side==0 and not auto_battle:
    var nearest=Vector2i(999,999)
    var best=1.1
    for cell in battle.cells():
     var distance=cell_position(cell).distance_to(p)
     if distance<best:nearest=cell;best=distance
-   if battle_mode in ["attack","skill","item"] and not (battle_mode=="skill" and Jobs.ALL_SKILLS.get(selected_skill,{}).get("target","")=="cell"):
+   if battle_mode in ["","attack","skill","item"] and not (battle_mode=="skill" and Jobs.ALL_SKILLS.get(selected_skill,{}).get("target","")=="cell"):
     var model_distance=30.0
     for unit in battle.actors:
      if unit.hp<=0:continue
@@ -1022,15 +1388,26 @@ func _unhandled_input(event):
    if nearest.x==999:return
    var target=battle.unit_at(nearest)
    var accepted=false
+   if battle_mode=="" and not target.is_empty():
+    show_details(target.name+" · "+target.role,"生命 %d/%d · 法力 %d/%d\n普攻射程%d · 防护%d\n\n"%[target.hp,target.max_hp,target.mp,target.max_mp,target.range,target.get("armor",0)]+battle.status_text(target))
+    return
    if battle_mode=="move":accepted=perform_battle_action("move",nearest)
    elif battle_mode=="skill" and Jobs.ALL_SKILLS.get(selected_skill,{}).get("target","")=="cell":accepted=perform_battle_action("skill",nearest)
    elif not target.is_empty():
     if battle_mode=="attack":accepted=perform_battle_action("attack",target.id)
     elif battle_mode in ["skill","item"]:accepted=perform_battle_action(battle_mode,target.id)
-   if not accepted:status_label.text="无法执行：检查行动点、法力、射程与目标阵营。"
+   if not accepted:
+    status_label.text="无法执行：检查行动点、法力、射程与目标阵营。"
+    status_label.show()
+
+func _input(event):
+ if event is InputEventMouseMotion and is_instance_valid(move_preview_root):
+  var hovered=get_viewport().gui_get_hovered_control()
+  if hovered!=null:clear_movement_preview()
 
 func _process(delta):
  elapsed+=delta
+ if is_instance_valid(detail_overlay):return
  if presentation.busy:
   presentation.advance(delta)
   return
@@ -1057,11 +1434,16 @@ func _process(delta):
    pending_location=-1
    campaign.save_game()
    arrive(index)
- if battle!=null and battle.outcome=="" and not is_instance_valid(modal) and battle.active().side==1:
+ if battle!=null and battle.outcome=="" and not is_instance_valid(modal) and (battle.active().side==1 or auto_battle):
   ai_clock+=delta
   if ai_clock>=0.6:
    ai_clock=0
-   perform_battle_action("enemy")
+   if battle.active().side==1:perform_battle_action("enemy")
+   else:
+    var choice=battle.auto_action()
+    if not choice.is_empty():
+     selected_skill=choice.get("skill","")
+     perform_battle_action(choice.action,choice.get("target"))
  if capture_mode!="" and not capture_done:
   capture_clock+=delta
   if capture_clock>2.5:
@@ -1140,12 +1522,10 @@ func show_party_menu(tab: String="详情",character_id: String=""):
   entry.add_theme_font_size_override("font_size",16)
   roster_list.add_child(entry)
  if tab=="装备":
-  var preview=preload("res://game/equipment_preview.gd").new()
-  preview.font=game_font
-  columns.add_child(preview)
-  preview.show_character(unit.id,campaign.visual_profile(unit.id),equipment_view_states.get(unit.id,{}))
-  var preview_id=unit.id
-  preview.view_changed.connect(func(state):equipment_view_states[preview_id]=state)
+  preload("res://game/equipment_menu.gd").character_sheet(self,columns,unit)
+  separator(frame)
+  frame.add_child(button("关闭菜单 · 返回旅途",close_modal))
+  return
  var right=VBoxContainer.new()
  right.size_flags_horizontal=Control.SIZE_EXPAND_FILL
  right.add_theme_constant_override("separation",12)
@@ -1184,7 +1564,7 @@ func show_party_menu(tab: String="详情",character_id: String=""):
   detail_section(details,"队伍共享物品")
   details.add_child(text_label("银币  %d"%campaign.silver,22,GOLD))
   details.add_child(text_label("补给  × %d"%campaign.supplies,22,TEAL))
-  details.add_child(text_label("消耗1份补给，基础恢复30%最大生命与法力；生命恢复受遗物代价影响。只能在野外使用。",17))
+  details.add_child(text_label("全队存活者 · 消耗1份 · 基础恢复30%生命与法力（受遗物影响）· 仅野外",17))
   var supply=button("使用一份补给",func():
    if campaign.use_supply():
     refresh_ui()
@@ -1194,9 +1574,30 @@ func show_party_menu(tab: String="详情",character_id: String=""):
  else:
   detail_section(details,"遗物与永久收藏")
   details.add_child(text_label("远征携带 %d 件 · 永久收藏 %d 件\n全队遗物自动生效；个人遗物绑定佩戴者，每人至多1件。同类全队效果不叠加。"%[campaign.relics.size(),campaign.collection.size()],17,MUTED))
+  details.add_child(text_label("遗物图鉴 · %d 件 · 8大主题 · 同主题2/4件激活共鸣"%Campaign.Relic.CATALOG.size(),17,GOLD))
+  details.add_child(button("查看全部 %d 件遗物 · 按流派筛选"%Campaign.Relic.CATALOG.size(),func():show_relic_catalog()))
   show_relic_details(details,false)
  separator(frame)
  frame.add_child(button("关闭菜单 · 返回旅途",close_modal))
+
+func show_relic_catalog(family: String="",query: String="",_page: int=0):
+ open_modal("遗物图鉴 · 已解锁 %d / %d 件"%[campaign.discovered_relics.size(),Campaign.Relic.CATALOG.size()],"遗物决定打法；同主题2/4件激活共鸣。全队遗物与当前角色个人遗物计数，同名不重复计算。")
+ set_page_back(func():show_party_menu("遗物",menu_character))
+ var filters=HFlowContainer.new()
+ filters.add_theme_constant_override("h_separation",8)
+ modal_body.add_child(filters)
+ filters.add_child(button("全部",func():show_relic_catalog()))
+ for id in Campaign.Relic.Expansion.SETS:
+  var theme_id=id
+  var d=Campaign.Relic.Expansion.SETS[id]
+  filters.add_child(button(d.name,func():show_relic_catalog(theme_id)))
+ for id in Campaign.Relic.CATALOG:
+  if id not in campaign.discovered_relics:continue
+  var d=Campaign.Relic.definition(id)
+  if query.strip_edges()!="" and query.strip_edges().to_lower() not in (d.name+" "+d.benefit+" "+d.risk).to_lower():continue
+  if family!="" and d.get("family","")!=family:continue
+  detail_section(modal_body,d.name)
+  modal_body.add_child(text_label(Campaign.Relic.description(id),16,MUTED))
 
 func relic_instance_status(entry) -> String:
  var d=Campaign.Relic.definition(entry)
@@ -1223,6 +1624,11 @@ func show_relic_details(parent: Control,effects_only: bool):
  var found=false
  var pools=[campaign.relics,campaign.collection]
  if battle!=null:pools=[battle.relic_state,[]]
+ var applicable=[]
+ for pool in pools:
+  for entry in pool:
+   if Campaign.Relic.definition(entry).scope=="team" or (entry is Dictionary and entry.owner==menu_character):applicable.append(entry)
+ parent.add_child(text_label("当前角色共鸣 · "+menu_unit(menu_character).name+"\n"+Campaign.Relic.resonance_description(applicable),16,GOLD))
  for pool_index in pools.size():
   for entry in pools[pool_index]:
    var d=Campaign.Relic.definition(entry)
@@ -1243,6 +1649,7 @@ func show_relic_binding(id: String,reward_index: int=-1):
   if reward_index>=0:show_reward()
   else:show_route_trade())
  modal_body.add_child(text_label(Campaign.Relic.description(id),17))
+ if reward_index<0:modal_body.add_child(text_label("本次购买：%d银币"%campaign.shop_price(id),17,GOLD))
  for unit in campaign.roster:
   if unit.hp<=0:continue
   var owner_id=unit.id
@@ -1283,7 +1690,7 @@ func refresh_atlas():
  entries.add_theme_constant_override("separation",10)
  menu.add_child(entries)
  entries.add_child(text_label("佣兵团行囊",23,GOLD))
- entries.add_child(text_label("银币 %d · 补给 %d"%[campaign.silver,campaign.supplies],17))
+ Compact.metrics(self,entries,[["silver",campaign.silver,"银币"],["supply",campaign.supplies,"全队共享补给"]])
  entries.add_child(button("队伍与装备",func():show_party_menu("角色")))
  entries.add_child(button("技能与技能书",func():show_party_menu("技能")))
  entries.add_child(button("遗物与风险",func():show_party_menu("遗物")))
@@ -1296,20 +1703,29 @@ func refresh_atlas():
  if campaign.phase=="camp":
   for region in Campaign.Route.REGIONS:
    var region_id=region.id
-   var entry=button("◆ "+region.name,func():show_region(region_id),selecting_expedition)
+   var unlocked=campaign.region_unlocked(region_id)
+   var caption=("✓ " if region_id in campaign.cleared_regions else "◆ ")+region.name
+   if not unlocked:caption="🔒 "+region.name+"（%d/5）"%campaign.cleared_regions.size()
+   var entry=button(caption,func():show_region(region_id),selecting_expedition)
+   entry.disabled=not unlocked
+   entry.tooltip_text="前五个区域全部通关后解锁" if not unlocked else "已通关" if region_id in campaign.cleared_regions else "击败本区首领以通关"
    entry.position=region.pos*Vector2(1350,900)-Vector2(85,0)
    entry.custom_minimum_size=Vector2(180,55)
    atlas.add_child(entry)
-  var legend=text_label("灰潮边境       苍翠林海       赤砂荒原\n大陆上的每个地点，都通向一段独立远征。",18,CREAM)
+  var legend=text_label("整体难度：%s · 区域进度：第 %d / 6 档 · 已通关 %d / 6 区域\n前五区全部通关后解锁星陨 · 通关星陨即全部通关"%[Campaign.OVERALL_DIFFICULTIES[campaign.overall_difficulty],campaign.difficulty_level(),campaign.cleared_regions.size()],18,CREAM)
   legend.position=Vector2(66,700)
   legend.size=Vector2(900,70)
   atlas.add_child(legend)
  else:
   for n in campaign.route.visible_nodes():
    var node_id=n.id
-   var entry=button(node_title(n.kind),func():select_route_node(node_id),n.id==campaign.route.current)
-   entry.position=atlas.node_position(n)-Vector2(70,24)
-   entry.custom_minimum_size=Vector2(140,48)
+   var caption=node_title(n.kind)
+   if n.get("threat","")=="boss":caption="首领"
+   elif n.get("threat","")=="elite":caption="精英交战"
+   var entry=button(caption,func():select_route_node(node_id),n.id==campaign.route.current)
+   entry.position=atlas.node_position(n)-Vector2(51,24)
+   entry.custom_minimum_size=Vector2(102,48)
+   entry.tooltip_text="第%d段 · "%[n.depth+1]+caption
    entry.disabled=n.id not in campaign.route.available() and n.id!=campaign.route.current
    atlas.add_child(entry)
   var hint=text_label("战斗 · 事件 · 补给 · 商店 · 雇佣兵营地 · 撤离\n暗色地点尚未到达；走过的另一条分支会消失。",17,CREAM)
@@ -1328,10 +1744,14 @@ func node_title(kind: String) -> String:
  return {"battle":"交战","event":"未知事件","supply":"补给","shop":"商店","hire":"佣兵营地","extract":"安全撤离"}.get(kind,kind)
 
 func show_region(id: String):
+ if not campaign.region_unlocked(id):return
  for r in Campaign.Route.REGIONS:
   if r.id!=id:continue
-  open_modal(r.name,r.desc+"\n五段分支路线 · 渐进揭示 · 成功撤离才能带回遗物")
-  modal_body.add_child(text_label("区域采用不同节点排列；当前共用边境战场与敌人配置。",17,MUTED))
+  open_modal(r.name,r.desc+"\n区域进度第 %d / 6 档 · 击败首领后通关并提升区域难度"%campaign.difficulty_level())
+  var region=preload("res://game/regions.gd").definition(id)
+  modal_body.add_child(text_label("场景："+region.theme+" · 敌人："+region.enemies[0][0]+" / "+region.enemies[1][0],17,TEAL))
+  modal_body.add_child(text_label("搭配与应对："+region.counter,17))
+  modal_body.add_child(text_label("首领 · "+region.boss+"："+region.boss_tip,17,GOLD))
   modal_body.add_child(button("确认出发",func():
    if campaign.start_region(id):
     close_modal()
@@ -1349,38 +1769,47 @@ func select_route_node(id: String):
  elif n.kind=="extract":show_extract()
  elif n.kind in ["shop","hire"]:show_route_trade()
 
-func show_route_trade():
+func show_route_trade(_category: String=""):
  var shop=campaign.at_node("shop")
  open_modal("行路商店" if shop else "雇佣兵营地","银币 %d · 离开后不能返回；可以返回路线页继续选择路线。"%campaign.silver)
  if shop:
-  for id in Campaign.GOODS:
+  modal_body.add_child(text_label("本次远征首次购买遗物优惠15银币；后续按原价。副主题遗物可搭配两件共鸣。",15,GOLD))
+  for id in campaign.shop_inventory():
    if Jobs.ALL_SKILLS.has(id):continue
    var item_id=id
    var good=Campaign.GOODS[id]
+   if Campaign.Relic.CATALOG.has(id):campaign.discover_relic(id)
    modal_body.add_child(text_label(good.name+" · "+good.desc,18))
-   var entry=button("购买 · %d 银币"%good.price,func():
+   var quote=campaign.shop_price(id)
+   var entry=button("购买 · %d 银币"%quote,func():
     if Campaign.Relic.CATALOG.has(item_id) and Campaign.Relic.definition(item_id).scope=="personal":
      show_relic_binding(item_id)
     elif campaign.buy(item_id):
      refresh_ui()
      show_route_trade())
-   entry.disabled=campaign.silver<good.price or campaign.route.current+":"+id in campaign.purchases
+   entry.disabled=campaign.silver<quote or campaign.route.current+":"+id in campaign.purchases
    modal_body.add_child(entry)
  else:
-  for i in range(2):
+  var candidates=campaign.recruit_candidates()
+  for i in candidates.size():
    var index=i
-   modal_body.add_child(text_label("林鸦 · 荒原猎手 · 生命52 / 法力24 · 攻击17 · 射程3" if i==0 else "青禾 · 行医者 · 生命54 / 法力40 · 攻击12 · 治疗战技",17))
+   var d=Campaign.Characters.CATALOG[candidates[i]]
+   detail_section(modal_body,d.name+" · "+Jobs.JOBS[d.job].name+" · "+d.title)
+   modal_body.add_child(text_label(d.story,15,MUTED))
+   modal_body.add_child(text_label("专属天赋 · "+d.talent+"："+d.effect,16,TEAL))
+   modal_body.add_child(text_label("遗物搭配："+d.relics,15,GOLD))
    var entry=button("招募 · 55 银币",func():
     if campaign.hire(index):
      refresh_ui()
      show_route_trade())
-   entry.disabled=campaign.silver<55 or campaign.roster.size()>=10 or campaign.route.current+":"+str(i) in campaign.recruits
+   entry.disabled=not campaign.can_hire(i)
+   if campaign.roster.any(func(u):return u.get("character_id","")==candidates[i]):entry.text="已在佣兵团中"
    modal_body.add_child(entry)
   modal_body.add_child(text_label("队伍档案 %d / 10"%campaign.roster.size(),16,MUTED))
  modal_body.add_child(button("继续旅途",close_modal))
 
 func select_action(mode: String):
- if battle==null or presentation.busy or battle.outcome!="" or battle.active().is_empty() or battle.active().side!=0:return
+ if auto_battle or battle==null or presentation.busy or battle.outcome!="" or battle.active().is_empty() or battle.active().side!=0:return
  battle_mode=mode
  if mode!="skill":selected_skill=""
  elif selected_skill=="":selected_skill=battle.default_skill(battle.active())
@@ -1413,10 +1842,14 @@ func action_button(parent: Control,label_text: String,mode: String,reason: Strin
  var selected=battle_mode==mode or (mode=="skills" and battle_mode=="skill") or (mode=="items" and battle_mode=="item")
  var entry=button(("▶ " if selected else "")+label_text,func():select_action(mode),selected)
  entry.alignment=HORIZONTAL_ALIGNMENT_LEFT
+ entry.size_flags_horizontal=Control.SIZE_EXPAND_FILL
  entry.add_theme_font_size_override("font_size",16)
  entry.disabled=reason!="" or presentation.busy
  entry.tooltip_text=reason
- if reason!="":entry.text+=" · "+reason
+ if reason!="":
+  entry.mouse_entered.connect(func():status_label.text=reason;status_label.show())
+  entry.mouse_exited.connect(func():status_label.visible=battle==null)
+ entry.focus_entered.connect(func():status_label.text=reason if reason!="" else label_text)
  parent.add_child(entry)
  return entry
 
@@ -1424,70 +1857,187 @@ func render_action_menu(is_player: bool):
  var slot=sidebar.get_node("ActionCommands")
  var a=battle.active()
  if a.is_empty():return
- slot.add_child(text_label(a.name+" · "+a.role,23,GOLD))
- slot.add_child(text_label("生命 %d/%d · 法力 %d/%d\n行动点 %d / %d · 防护%d"%[a.hp,a.max_hp,a.mp,a.max_mp,a.ap,a.get("max_ap",4),a.get("armor",0)],16,CREAM))
- slot.add_child(text_label("主角光环："+battle.aura_description(),14,TEAL))
- var states=battle.status_text(a)
- if states!="":slot.add_child(text_label(states,14,GOLD))
- if battle_mode=="skill" and Jobs.ALL_SKILLS.has(selected_skill):
-  var skill=Jobs.ALL_SKILLS[selected_skill]
-  slot.add_child(text_label(skill.name+" · %d点 / %d法力 · 射程%d"%[skill.ap,skill.mp+battle.skill_relic_cost(battle.active(),selected_skill),skill.range]+"\n"+Jobs.rank_description(battle.active(),selected_skill),15,TEAL))
- var waiting="敌方行动中" if not is_player else ""
+ slot.add_child(text_label(a.name+" · "+a.role,22,GOLD))
+ Compact.metrics(self,slot,[["hp","%d/%d"%[a.hp,a.max_hp],"生命"],["mp","%d/%d"%[a.mp,a.max_mp],"法力"]],"CombatMetrics")
+ Compact.metrics(self,slot,[["ap","%d/%d"%[a.ap,a.get("max_ap",4)],"行动点"],["range",a.range,"当前普通攻击射程"],["armor",a.get("armor",0),"防护"]])
+ var auto_toggle=button("停止 Auto · 手动接管" if auto_battle else "Auto · 一键交战",toggle_auto_battle,auto_battle)
+ auto_toggle.name="AutoBattle";auto_toggle.tooltip_text="贪心输出：优先实际伤害最高的攻击或技能；可能永久阵亡。再次点击停止并手动接管。"
+ auto_toggle.disabled=battle.outcome!="";slot.add_child(auto_toggle)
+ var waiting="敌方行动中" if not is_player else ("Auto 交战中" if auto_battle else "")
  if presentation.busy:waiting="行动播放中"
  var ap2=waiting if waiting!="" else ("需2行动点" if a.ap<2 else "")
  var item_reason=ap2 if ap2!="" else ("补给不足" if campaign.supplies<=0 else "")
- if battle_mode in ["","move","attack","skill","item"]:
-  action_button(slot,"移动 · 1点/格","move",waiting if waiting!="" else ("行动点不足" if a.ap<1 else ""))
-  var attack_reason=ap2
-  if attack_reason=="" and not battle.actors.any(func(u):return u.hp>0 and u.side!=a.side and battle.hex_distance(a.cell,u.cell)<=a.range):attack_reason="无射程内敌人"
-  action_button(slot,"普通攻击 · 2点","attack",attack_reason)
-  action_button(slot,"技能 →","skills",waiting)
-  action_button(slot,"物品 →","items",waiting)
-  action_button(slot,"休息 →","rest",waiting)
-  var end=button("结束行动",func():perform_battle_action("end"))
-  end.disabled=waiting!=""
-  slot.add_child(end)
- elif battle_mode=="skills":
-  slot.add_child(text_label("选择技能 · 每次行动各限用一次",18,GOLD))
-  for skill_id in battle.available_skills(a):
-   var id=skill_id
-   var skill=Jobs.ALL_SKILLS[id]
-   var reason=waiting
-   if reason=="" and id in a.get("used_skills",[]):reason="本次已用"
-   if reason=="" and a.ap<skill.ap:reason="行动点不足"
-   if reason=="" and a.mp<skill.mp+battle.skill_relic_cost(a,id):reason="法力不足"
-   if reason=="":
-    var has_target=false
-    if skill.target=="cell":has_target=battle.cells().any(func(cell):return battle.can_cast(id,cell))
-    else:has_target=battle.actors.any(func(u):return battle.can_cast(id,u.id))
-    if not has_target:reason="无合法目标"
-   var entry=button(skill.name+" · %d点 / %d法力"%[skill.ap,skill.mp+battle.skill_relic_cost(a,id)]+(" · "+reason if reason!="" else ""),func():select_skill(id))
-   entry.disabled=reason!=""
-   slot.add_child(entry)
-   slot.add_child(text_label(Jobs.rank_description(a,id)+" · 射程%d"%skill.range,14,TEAL))
-  for id in a.get("learned",[]):
-   if id in ["fury","focus"]:slot.add_child(text_label(Campaign.GOODS[id].name+"（被动）",14,TEAL))
- elif battle_mode=="items":
-  slot.add_child(text_label("选择物品",19,GOLD))
-  if item_reason=="" and not battle.actors.any(func(u):return u.side==0 and u.hp>0 and battle.hex_distance(a.cell,u.cell)<=3 and (u.hp<u.max_hp or u.mp<u.max_mp)):item_reason="无须恢复的友军"
-  action_button(slot,"战地补给 ×%d · 2点"%campaign.supplies,"item",item_reason)
-  slot.add_child(text_label("消耗1份补给，基础恢复射程3内一名友军30%生命与法力；生命恢复受遗物影响。",15,TEAL))
- elif battle_mode=="rest":
-  slot.add_child(text_label("休息并结束行动",19,GOLD))
-  for kind in ["hp","mp"]:
-   var resource=kind
-   var gain=battle.rest_amount(kind)
-   var entry=button(("恢复生命" if kind=="hp" else "恢复法力")+" +%d"%gain,func():player_rest(resource))
-   entry.disabled=waiting!="" or gain<=0
-   if gain<=0:entry.text+=" · 已满"
-   slot.add_child(entry)
-  slot.add_child(text_label("消耗剩余全部行动点；恢复后轮到下一人。",14,MUTED))
+ var grid=GridContainer.new();grid.columns=2;grid.add_theme_constant_override("h_separation",6);grid.add_theme_constant_override("v_separation",6);slot.add_child(grid)
+ var move_reason=waiting
+ if move_reason=="" and not battle.cells().any(func(cell):return not movement_preview(cell).is_empty()):move_reason="行动点不足"
+ action_button(grid,"移动","move",move_reason).icon=Compact.icon("move")
+ var attack_reason=ap2
+ if attack_reason=="" and not battle.actors.any(func(u):return u.hp>0 and u.side!=a.side and battle.hex_distance(a.cell,u.cell)<=a.range):attack_reason="无射程内敌人"
+ action_button(grid,"普攻 · 2点","attack",attack_reason).icon=Compact.icon("attack")
+ action_button(grid,"技能","skills",waiting).icon=Compact.icon("skill")
+ action_button(grid,"物品","items",waiting).icon=Compact.icon("supply")
+ action_button(grid,"休息","rest",waiting).icon=Compact.icon("rest")
+ var end=button("结束行动",func():perform_battle_action("end"));end.icon=Compact.icon("end");end.disabled=waiting!="";grid.add_child(end)
+ for entry in grid.get_children():
+  entry.size_flags_horizontal=Control.SIZE_EXPAND_FILL;entry.add_theme_font_size_override("font_size",15)
+  entry.add_theme_constant_override("icon_max_width",20)
+  for state in ["normal","hover","pressed","disabled"]:
+   var padding=entry.get_theme_stylebox(state).duplicate();padding.content_margin_left=8;padding.content_margin_right=8;padding.content_margin_top=8;padding.content_margin_bottom=8;entry.add_theme_stylebox_override(state,padding)
  if battle_mode!="":
-  var cancel=button("取消 / 返回 · Esc",cancel_action)
-  cancel.disabled=presentation.busy
-  slot.add_child(cancel)
- separator(slot)
- var hints={"":"请选择左侧角色指令。","move":"选择青色可达格移动 · 每格1行动点","attack":"选择红色格上的敌人 · 普通攻击消耗2行动点","skills":"从左侧选择技能，再选择目标。","skill":"选择高亮目标施放技能；机关选择空格","items":"从左侧选择物品，再选择友军。","item":"选择高亮友军使用补给 · 2行动点 / 1份补给","rest":"在左侧选择恢复生命或法力。"}
- footer.add_child(text_label(hints.get(battle_mode,"") if is_player else "敌方正在行动，请等待。",21,GOLD))
- footer.add_child(text_label("当前："+a.name+" · 行动点 %d/%d · 生命 %d/%d · 法力 %d/%d"%[a.ap,a.get("max_ap",4),a.hp,a.max_hp,a.mp,a.max_mp],17))
- if battle_mode!="":footer.add_child(text_label("Esc / 鼠标右键取消选择，不消耗资源。",15,MUTED))
+  var cancel=button("取消 / 返回 · Esc",cancel_action);cancel.disabled=presentation.busy;slot.add_child(cancel)
+ if battle_mode in ["skills","items","rest"]:
+  var scroll=ScrollContainer.new();scroll.name="ActionOptions";scroll.custom_minimum_size.y=62
+  scroll.vertical_scroll_mode=ScrollContainer.SCROLL_MODE_DISABLED;footer.add_child(scroll)
+  var options=HBoxContainer.new();options.add_theme_constant_override("separation",10);scroll.add_child(options)
+  if battle_mode=="skills":
+   for skill_id in battle.available_skills(a):
+    var id=skill_id;var skill=Jobs.ALL_SKILLS[id];var reason=waiting
+    if reason=="" and id in a.get("used_skills",[]):reason="本次已用"
+    if reason=="" and a.ap<skill.ap:reason="行动点不足"
+    if reason=="" and a.mp<battle.skill_mana_cost(a,id):reason="法力不足"
+    if reason=="":
+     var has_target=battle.cells().any(func(cell):return battle.can_cast(id,cell)) if skill.target=="cell" else battle.actors.any(func(u):return battle.can_cast(id,u.id))
+     if not has_target:reason="无合法目标"
+    var entry=button(skill.name+" · %d点 / %d法力"%[skill.ap,battle.skill_mana_cost(a,id)]+(" · "+reason if reason!="" else ""),func():select_skill(id))
+    entry.add_theme_font_size_override("font_size",14);entry.disabled=reason!="";entry.tooltip_text=Jobs.rank_description(a,id)+" · 射程%d"%battle.skill_range(a,id);options.add_child(entry)
+  elif battle_mode=="items":
+   if item_reason=="" and not battle.actors.any(func(u):return u.side==0 and u.hp>0 and battle.hex_distance(a.cell,u.cell)<=3 and (u.hp<u.max_hp or u.mp<u.max_mp)):item_reason="无须恢复的友军"
+   action_button(options,"战地补给 ×%d · 2点"%campaign.supplies,"item",item_reason)
+   var scope=text_label("1份 · 射程3 · 单名友军恢复30%",14,TEAL)
+   scope.autowrap_mode=TextServer.AUTOWRAP_OFF;options.add_child(scope)
+  else:
+   for kind in ["hp","mp"]:
+    var resource=kind;var gain=battle.rest_amount(kind)
+    var entry=button(("恢复生命" if kind=="hp" else "恢复法力")+" +%d"%gain+(" · 已满" if gain<=0 else ""),func():player_rest(resource))
+    entry.disabled=waiting!="" or gain<=0;options.add_child(entry)
+   var warning=text_label("消耗剩余行动点并结束行动",14,MUTED)
+   warning.autowrap_mode=TextServer.AUTOWRAP_OFF;options.add_child(warning)
+ if not a.get("statuses",{}).is_empty():
+  var states=HFlowContainer.new();states.name="StatusIcons";slot.add_child(states)
+  var symbols={"mark":"range","shield":"armor","guard":"armor","poison":"hp","chill":"mp","snare":"move","stagger":"ap","advance":"attack","command":"attack","exposed":"armor"}
+  for key in a.statuses:
+   var unit=a.duplicate(true);unit.statuses={key:a.statuses[key]}
+   var description=battle.status_text(unit)
+   var entry=button("",func():show_details("角色状态",description))
+   entry.icon=Compact.icon(symbols.get(key,"info"));entry.tooltip_text=description
+   entry.custom_minimum_size=Vector2(30,30);entry.add_theme_constant_override("icon_max_width",20)
+   for state in ["normal","hover","pressed","disabled"]:
+    var padding=entry.get_theme_stylebox(state).duplicate();padding.set_content_margin_all(4);entry.add_theme_stylebox_override(state,padding)
+   states.add_child(entry)
+ details_button(slot,"角色状态与共鸣",battle.status_text(a)+"\n\n遗物共鸣\n"+Campaign.Relic.resonance_description(battle.applicable_relics(a)))
+ var hints={"":"选择行动","move":"悬停可达格：预览路径、费用与剩余行动点","attack":"选择红色目标 · 射程%d · 消耗2点"%a.range,"skills":"选择技能 · 悬停查看效果与射程","skill":"选择高亮目标施放","items":"选择物品","item":"单名友军 · 射程3 · 2点 / 1份补给","rest":"选择恢复类型 · 使用剩余行动点"}
+ movement_label=null
+ if battle_mode=="move":
+  movement_label=text_label(hints.move,20,GOLD);movement_label.name="MovementPreview";footer.add_child(movement_label)
+ else:
+  var hint=text_label("Auto：优先输出 · 可能永久阵亡 · 可随时接管" if auto_battle else hints.get(battle_mode,"") if is_player else "敌方行动中",19,GOLD)
+  footer.add_child(hint);footer.move_child(hint,0)
+ if battle_mode=="skill" and Jobs.ALL_SKILLS.has(selected_skill):
+  var skill=Jobs.ALL_SKILLS[selected_skill]
+  footer.add_child(text_label(skill.name+" · %d点 / %d法力 · 射程%d"%[skill.ap,battle.skill_mana_cost(a,selected_skill),battle.skill_range(a,selected_skill)],16,TEAL))
+ elif battle_mode!="" and battle_mode not in ["skills","items","rest"]:footer.add_child(text_label("Esc / 右键取消 · 不消耗资源",14,MUTED))
+
+func apply_region_style(id: String):
+ var region=preload("res://game/regions.gd").definition(id)
+ var environment=get_node_or_null("WorldEnvironment")
+ if environment!=null:
+  environment.environment.background_color=Color(region.sky)
+  environment.environment.fog_light_color=Color(region.sky)
+  environment.environment.ambient_light_color=Color(region.sky).lightened(0.12)
+ var sun=get_node_or_null("RegionSun")
+ if sun!=null:sun.light_color=Color(region.light)
+
+func show_region_briefing():
+ if battle==null:return
+ var regions=preload("res://game/regions.gd")
+ var region=regions.definition(battle.biome)
+ open_modal(region.name+" · 敌人技能与搭配",region.counter if battle.biome!="" else "敌人技能无耗蓝；冷却按自身行动计算。")
+ for unit in battle.actors:
+  if unit.side!=1 or unit.hp<=0:continue
+  modal_body.add_child(text_label(unit.name,20,GOLD))
+  modal_body.add_child(text_label("地区特性："+regions.trait_description(unit.get("trait","")),16))
+  modal_body.add_child(text_label("主动技能：\n"+preload("res://game/enemy_skills.gd").description(unit),15,TEAL))
+  if unit.get("affix","")!="":
+   var affix=preload("res://game/enemy_skills.gd").AFFIXES[unit.affix]
+   modal_body.add_child(text_label("随机强化："+affix.name+" · "+affix.desc,16,GOLD))
+  if unit.get("boss",false):
+   var phase=regions.phase_data(unit.biome,int(unit.get("boss_phase",1)))
+   modal_body.add_child(text_label("被动："+phase.passive_desc,16,GOLD))
+   modal_body.add_child(text_label("阶段变化（50%生命）："+phase.change,16,GOLD))
+  var status=battle.status_text(unit)
+  if status!="":modal_body.add_child(text_label(status,15,TEAL))
+ modal_body.add_child(text_label("首领机制："+region.boss_tip,16,GOLD))
+ if battle.boss_forecast()!="":modal_body.add_child(text_label("当前预告："+battle.boss_forecast(),17,RED))
+ modal_body.add_child(button("返回战斗",close_modal))
+
+func refresh_boss_hud():
+ if not is_instance_valid(ui):return
+ var old=ui.get_node_or_null("BossHUD")
+ if old!=null:ui.remove_child(old);old.queue_free()
+ if battle==null:return
+ var bosses=battle.actors.filter(func(u):return u.hp>0 and u.get("boss",false))
+ if bosses.is_empty():return
+ var boss=bosses[0]
+ var phase=preload("res://game/regions.gd").phase_data(boss.biome,int(boss.get("boss_phase",1)))
+ var hud=panel(ui,Vector2(340,183),Vector2(1040,43));hud.name="BossHUD"
+ var row=HBoxContainer.new();row.add_theme_constant_override("separation",12);hud.add_child(row)
+ var text=text_label(boss.name+"  "+("Ⅰ" if boss.get("boss_phase",1)==1 else "Ⅱ")+" · "+phase.title+"    %d / %d HP   |   50%%生命转阶段"%[boss.hp,boss.max_hp],17,Color(phase.color))
+ text.size_flags_horizontal=Control.SIZE_EXPAND_FILL;row.add_child(text)
+ hud.tooltip_text=phase.change+"\n"+preload("res://game/enemy_skills.gd").description(boss)
+ var bar=ProgressBar.new();bar.custom_minimum_size=Vector2(160,12);bar.max_value=boss.max_hp;bar.value=boss.hp;bar.show_percentage=false;row.add_child(bar)
+ var fill=StyleBoxFlat.new();fill.bg_color=Color(phase.color);bar.add_theme_stylebox_override("fill",fill)
+
+func show_achievements(from_main: bool=false):
+ var progress=campaign
+ if from_main:
+  var saved=saved_campaign()
+  if saved!=null:progress=saved
+ progress.sync_achievements()
+ open_modal("成就", "通关与遗物发现记录会保留到新的旅途。")
+ menu_screen="achievements"
+ set_page_back(show_main_menu if from_main else show_pause_menu)
+ var bonus=progress.achievement_bonus()
+ modal_body.add_child(text_label("通关成就 · 已解锁 %d / 4 · 累计加成：攻击 +%d · 护甲 +%d"%[progress.completed_difficulties.size(),bonus.power,bonus.armor],22,GOLD))
+ for rank in Campaign.Achievements.CATALOG.size():
+  var entry=Campaign.Achievements.CATALOG[rank]
+  var unlocked=rank in progress.completed_difficulties
+  detail_section(modal_body,("◆ 已解锁 · " if unlocked else "◇ 未解锁 · ")+entry.name)
+  modal_body.add_child(text_label("条件：在「%s」难度下全部通关六个区域"%Campaign.OVERALL_DIFFICULTIES[rank],17))
+  var count=6 if unlocked else progress.cleared_regions.size() if progress.overall_difficulty==rank else 0
+  modal_body.add_child(text_label("区域进度 %d / 6 · 奖励：%s"%[count,entry.reward],17,TEAL if unlocked else MUTED))
+ modal_body.add_child(text_label("每项只生效一次；仅解锁实际通关的难度。四项全部解锁：全队攻击 +2、护甲 +2。",16,MUTED))
+ detail_section(modal_body,"遗物收集成就 · 已解锁 %d / 4"%progress.relic_achievement_count())
+ var thresholds=[1,10,100,Campaign.Relic.CATALOG.size()]
+ var names=["初识遗物","遗物探寻者","遗物博识者","遗物全图鉴"]
+ for i in thresholds.size():
+  var target=thresholds[i]
+  var unlocked=progress.discovered_relics.size()>=target
+  detail_section(modal_body,("◆ 已解锁 · " if unlocked else "◇ 未解锁 · ")+names[i])
+  modal_body.add_child(text_label("条件：解锁%s遗物 · 进度 %d / %d"%["全部" if i==3 else " %d 个"%target,mini(progress.discovered_relics.size(),target),target],17,TEAL if unlocked else MUTED))
+ modal_body.add_child(text_label("见过即可解锁，无需购买或选取；重复遗物不重复计数。收集成就无额外属性加成。",16,MUTED))
+ modal_body.add_child(button("返回主菜单" if from_main else "返回旅途菜单",show_main_menu if from_main else show_pause_menu))
+
+func show_achievement_unlock(rank: int):
+ var achievement=Campaign.Achievements.CATALOG[rank]
+ var popup=AcceptDialog.new()
+ popup.name="AchievementUnlockPopup"
+ popup.title="成就解锁"
+ popup.dialog_text="%s\n\n%s\n\n属性加成已自动生效"%[achievement.name,achievement.reward]
+ popup.ok_button_text="继续领取战利品"
+ popup.add_theme_stylebox_override("panel",style(INK,GOLD,8))
+ popup.get_ok_button().add_theme_stylebox_override("normal",style(GOLD,GOLD,6))
+ popup.get_ok_button().add_theme_color_override("font_color",INK)
+ popup.get_ok_button().add_theme_font_size_override("font_size",17)
+ popup.exclusive=true
+ popup.transient=true
+ popup.get_label().horizontal_alignment=HORIZONTAL_ALIGNMENT_CENTER
+ popup.get_label().add_theme_font_size_override("font_size",22)
+ popup.get_label().add_theme_color_override("font_color",GOLD)
+ popup.confirmed.connect(popup.queue_free)
+ popup.canceled.connect(popup.queue_free)
+ ui.add_child(popup)
+ popup.popup_centered(Vector2i(520,240))
+ var celebration=preload("res://game/achievement_celebration.gd").new()
+ celebration.name="UnlockCelebration"
+ popup.add_child(celebration)
+ celebration.play(popup.get_label(),sfx_enabled,sfx_volume)

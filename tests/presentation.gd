@@ -89,8 +89,19 @@ func run():
   scene.battle.order=[scene.battle.actors.find(archer)]
   scene.battle.order_index=0
   archer.cell=Vector2i(0,0)
+  # This fixture checks a normal arrow; the enemy active skill has its own cue path.
+  archer.enemy_used=true
+  # A lethal opportunity fixes the action for this animation fixture.
+  var arrow_target=scene.battle.find_actor("blade")
+  var arrow_hp=arrow_target.hp
+  var arrow_cell=arrow_target.cell
+  arrow_target.cell=Vector2i(1,0)
+  arrow_target.hp=1
   scene.draw_battle()
   scene.perform_battle_action("enemy")
+  # Restore the fixture actor before later animation scenarios reuse the roster.
+  arrow_target.hp=arrow_hp
+  arrow_target.cell=arrow_cell
   var archer_pawn=scene.presentation.pawn_for("enemy2")
   var player=archer_pawn.find_child("AnimationPlayer",true,false) if archer_pawn!=null else null
   check(player!=null and player.current_animation=="Bow_Shoot","enemy archer plays ranged attack")

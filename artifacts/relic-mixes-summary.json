@@ -1,0 +1,1144 @@
+{
+  "baseline_battles": 9180,
+  "replayed_battles": 1440,
+  "replayed_affected_battles": 720,
+  "unchanged_audit_battles": 720,
+  "reused_unchanged_cases": 7740,
+  "changed_sources_in_experiment": [
+    "relic_expansion.gd",
+    "rules.gd"
+  ],
+  "before": {
+    "samples": 9180,
+    "wins": 9157,
+    "win_pct": 99.75,
+    "mean_rounds": 3.95,
+    "mean_dead": 0.259,
+    "mean_hp_in_wins": 297.5
+  },
+  "combined_after": {
+    "samples": 9180,
+    "wins": 9163,
+    "win_pct": 99.81,
+    "mean_rounds": 3.96,
+    "mean_dead": 0.255,
+    "mean_hp_in_wins": 297.5
+  },
+  "combos": {
+    "none": {
+      "before": {
+        "samples": 180,
+        "wins": 180,
+        "win_pct": 100.0,
+        "mean_rounds": 4.78,
+        "mean_dead": 0.417,
+        "mean_hp_in_wins": 270.9
+      },
+      "after": {
+        "samples": 180,
+        "wins": 180,
+        "win_pct": 100.0,
+        "mean_rounds": 4.78,
+        "mean_dead": 0.417,
+        "mean_hp_in_wins": 270.9
+      }
+    },
+    "pure_team_blood": {
+      "before": {
+        "samples": 180,
+        "wins": 177,
+        "win_pct": 98.33,
+        "mean_rounds": 4.2,
+        "mean_dead": 0.344,
+        "mean_hp_in_wins": 294.6
+      },
+      "after": {
+        "samples": 180,
+        "wins": 180,
+        "win_pct": 100.0,
+        "mean_rounds": 4.18,
+        "mean_dead": 0.194,
+        "mean_hp_in_wins": 297.7
+      }
+    },
+    "pure_personal_blood": {
+      "before": {
+        "samples": 180,
+        "wins": 177,
+        "win_pct": 98.33,
+        "mean_rounds": 4.9,
+        "mean_dead": 0.511,
+        "mean_hp_in_wins": 281.0
+      },
+      "after": {
+        "samples": 180,
+        "wins": 180,
+        "win_pct": 100.0,
+        "mean_rounds": 4.89,
+        "mean_dead": 0.478,
+        "mean_hp_in_wins": 282.1
+      }
+    },
+    "pure_team_hunt": {
+      "before": {
+        "samples": 180,
+        "wins": 180,
+        "win_pct": 100.0,
+        "mean_rounds": 3.59,
+        "mean_dead": 0.367,
+        "mean_hp_in_wins": 278.9
+      },
+      "after": {
+        "samples": 180,
+        "wins": 180,
+        "win_pct": 100.0,
+        "mean_rounds": 3.59,
+        "mean_dead": 0.367,
+        "mean_hp_in_wins": 278.9
+      }
+    },
+    "pure_personal_hunt": {
+      "before": {
+        "samples": 180,
+        "wins": 180,
+        "win_pct": 100.0,
+        "mean_rounds": 3.42,
+        "mean_dead": 0.25,
+        "mean_hp_in_wins": 288.1
+      },
+      "after": {
+        "samples": 180,
+        "wins": 180,
+        "win_pct": 100.0,
+        "mean_rounds": 3.42,
+        "mean_dead": 0.25,
+        "mean_hp_in_wins": 288.1
+      }
+    },
+    "pure_team_ward": {
+      "before": {
+        "samples": 180,
+        "wins": 180,
+        "win_pct": 100.0,
+        "mean_rounds": 3.94,
+        "mean_dead": 0.083,
+        "mean_hp_in_wins": 304.4
+      },
+      "after": {
+        "samples": 180,
+        "wins": 180,
+        "win_pct": 100.0,
+        "mean_rounds": 3.94,
+        "mean_dead": 0.083,
+        "mean_hp_in_wins": 304.4
+      }
+    },
+    "pure_personal_ward": {
+      "before": {
+        "samples": 180,
+        "wins": 180,
+        "win_pct": 100.0,
+        "mean_rounds": 3.95,
+        "mean_dead": 0,
+        "mean_hp_in_wins": 314.8
+      },
+      "after": {
+        "samples": 180,
+        "wins": 180,
+        "win_pct": 100.0,
+        "mean_rounds": 3.95,
+        "mean_dead": 0,
+        "mean_hp_in_wins": 314.8
+      }
+    },
+    "pure_team_arcane": {
+      "before": {
+        "samples": 180,
+        "wins": 180,
+        "win_pct": 100.0,
+        "mean_rounds": 3.54,
+        "mean_dead": 0.328,
+        "mean_hp_in_wins": 290.3
+      },
+      "after": {
+        "samples": 180,
+        "wins": 180,
+        "win_pct": 100.0,
+        "mean_rounds": 3.54,
+        "mean_dead": 0.328,
+        "mean_hp_in_wins": 290.3
+      }
+    },
+    "pure_personal_arcane": {
+      "before": {
+        "samples": 180,
+        "wins": 180,
+        "win_pct": 100.0,
+        "mean_rounds": 3.69,
+        "mean_dead": 0.306,
+        "mean_hp_in_wins": 293.0
+      },
+      "after": {
+        "samples": 180,
+        "wins": 180,
+        "win_pct": 100.0,
+        "mean_rounds": 3.69,
+        "mean_dead": 0.306,
+        "mean_hp_in_wins": 293.0
+      }
+    },
+    "pure_team_engine": {
+      "before": {
+        "samples": 180,
+        "wins": 180,
+        "win_pct": 100.0,
+        "mean_rounds": 3.43,
+        "mean_dead": 0.194,
+        "mean_hp_in_wins": 295.1
+      },
+      "after": {
+        "samples": 180,
+        "wins": 180,
+        "win_pct": 100.0,
+        "mean_rounds": 3.43,
+        "mean_dead": 0.194,
+        "mean_hp_in_wins": 295.1
+      }
+    },
+    "pure_personal_engine": {
+      "before": {
+        "samples": 180,
+        "wins": 180,
+        "win_pct": 100.0,
+        "mean_rounds": 3.82,
+        "mean_dead": 0.35,
+        "mean_hp_in_wins": 281.7
+      },
+      "after": {
+        "samples": 180,
+        "wins": 180,
+        "win_pct": 100.0,
+        "mean_rounds": 3.82,
+        "mean_dead": 0.35,
+        "mean_hp_in_wins": 281.7
+      }
+    },
+    "pure_team_pilgrim": {
+      "before": {
+        "samples": 180,
+        "wins": 180,
+        "win_pct": 100.0,
+        "mean_rounds": 4.64,
+        "mean_dead": 0.239,
+        "mean_hp_in_wins": 319.0
+      },
+      "after": {
+        "samples": 180,
+        "wins": 180,
+        "win_pct": 100.0,
+        "mean_rounds": 4.64,
+        "mean_dead": 0.239,
+        "mean_hp_in_wins": 319.0
+      }
+    },
+    "pure_personal_pilgrim": {
+      "before": {
+        "samples": 180,
+        "wins": 180,
+        "win_pct": 100.0,
+        "mean_rounds": 4.92,
+        "mean_dead": 0.278,
+        "mean_hp_in_wins": 308.0
+      },
+      "after": {
+        "samples": 180,
+        "wins": 180,
+        "win_pct": 100.0,
+        "mean_rounds": 4.92,
+        "mean_dead": 0.278,
+        "mean_hp_in_wins": 308.0
+      }
+    },
+    "pure_team_dusk": {
+      "before": {
+        "samples": 180,
+        "wins": 180,
+        "win_pct": 100.0,
+        "mean_rounds": 3.56,
+        "mean_dead": 0.367,
+        "mean_hp_in_wins": 284.9
+      },
+      "after": {
+        "samples": 180,
+        "wins": 180,
+        "win_pct": 100.0,
+        "mean_rounds": 3.56,
+        "mean_dead": 0.367,
+        "mean_hp_in_wins": 284.9
+      }
+    },
+    "pure_personal_dusk": {
+      "before": {
+        "samples": 180,
+        "wins": 180,
+        "win_pct": 100.0,
+        "mean_rounds": 3.66,
+        "mean_dead": 0.367,
+        "mean_hp_in_wins": 281.2
+      },
+      "after": {
+        "samples": 180,
+        "wins": 180,
+        "win_pct": 100.0,
+        "mean_rounds": 3.66,
+        "mean_dead": 0.367,
+        "mean_hp_in_wins": 281.2
+      }
+    },
+    "pure_team_command": {
+      "before": {
+        "samples": 180,
+        "wins": 180,
+        "win_pct": 100.0,
+        "mean_rounds": 2.94,
+        "mean_dead": 0.244,
+        "mean_hp_in_wins": 300.7
+      },
+      "after": {
+        "samples": 180,
+        "wins": 179,
+        "win_pct": 99.44,
+        "mean_rounds": 3.44,
+        "mean_dead": 0.317,
+        "mean_hp_in_wins": 297.8
+      }
+    },
+    "pure_personal_command": {
+      "before": {
+        "samples": 180,
+        "wins": 179,
+        "win_pct": 99.44,
+        "mean_rounds": 4.24,
+        "mean_dead": 0.478,
+        "mean_hp_in_wins": 287.3
+      },
+      "after": {
+        "samples": 180,
+        "wins": 180,
+        "win_pct": 100.0,
+        "mean_rounds": 4.28,
+        "mean_dead": 0.389,
+        "mean_hp_in_wins": 288.2
+      }
+    },
+    "mix_blood_hunt": {
+      "before": {
+        "samples": 180,
+        "wins": 180,
+        "win_pct": 100.0,
+        "mean_rounds": 4.09,
+        "mean_dead": 0.233,
+        "mean_hp_in_wins": 304.9
+      },
+      "after": {
+        "samples": 180,
+        "wins": 180,
+        "win_pct": 100.0,
+        "mean_rounds": 4.09,
+        "mean_dead": 0.233,
+        "mean_hp_in_wins": 304.9
+      }
+    },
+    "mix_blood_ward": {
+      "before": {
+        "samples": 180,
+        "wins": 180,
+        "win_pct": 100.0,
+        "mean_rounds": 3.77,
+        "mean_dead": 0,
+        "mean_hp_in_wins": 326.4
+      },
+      "after": {
+        "samples": 180,
+        "wins": 180,
+        "win_pct": 100.0,
+        "mean_rounds": 3.77,
+        "mean_dead": 0,
+        "mean_hp_in_wins": 326.4
+      }
+    },
+    "mix_blood_arcane": {
+      "before": {
+        "samples": 180,
+        "wins": 180,
+        "win_pct": 100.0,
+        "mean_rounds": 3.97,
+        "mean_dead": 0.25,
+        "mean_hp_in_wins": 310.2
+      },
+      "after": {
+        "samples": 180,
+        "wins": 180,
+        "win_pct": 100.0,
+        "mean_rounds": 3.97,
+        "mean_dead": 0.25,
+        "mean_hp_in_wins": 310.2
+      }
+    },
+    "mix_blood_engine": {
+      "before": {
+        "samples": 180,
+        "wins": 180,
+        "win_pct": 100.0,
+        "mean_rounds": 4.37,
+        "mean_dead": 0.317,
+        "mean_hp_in_wins": 298.9
+      },
+      "after": {
+        "samples": 180,
+        "wins": 180,
+        "win_pct": 100.0,
+        "mean_rounds": 4.37,
+        "mean_dead": 0.317,
+        "mean_hp_in_wins": 298.9
+      }
+    },
+    "mix_blood_pilgrim": {
+      "before": {
+        "samples": 180,
+        "wins": 180,
+        "win_pct": 100.0,
+        "mean_rounds": 4.81,
+        "mean_dead": 0.217,
+        "mean_hp_in_wins": 311.5
+      },
+      "after": {
+        "samples": 180,
+        "wins": 180,
+        "win_pct": 100.0,
+        "mean_rounds": 4.81,
+        "mean_dead": 0.217,
+        "mean_hp_in_wins": 311.5
+      }
+    },
+    "mix_blood_dusk": {
+      "before": {
+        "samples": 180,
+        "wins": 180,
+        "win_pct": 100.0,
+        "mean_rounds": 3.72,
+        "mean_dead": 0.267,
+        "mean_hp_in_wins": 300.6
+      },
+      "after": {
+        "samples": 180,
+        "wins": 180,
+        "win_pct": 100.0,
+        "mean_rounds": 3.72,
+        "mean_dead": 0.267,
+        "mean_hp_in_wins": 300.6
+      }
+    },
+    "mix_blood_command": {
+      "before": {
+        "samples": 180,
+        "wins": 180,
+        "win_pct": 100.0,
+        "mean_rounds": 4.14,
+        "mean_dead": 0.278,
+        "mean_hp_in_wins": 298.7
+      },
+      "after": {
+        "samples": 180,
+        "wins": 180,
+        "win_pct": 100.0,
+        "mean_rounds": 4.14,
+        "mean_dead": 0.278,
+        "mean_hp_in_wins": 298.7
+      }
+    },
+    "mix_hunt_ward": {
+      "before": {
+        "samples": 180,
+        "wins": 180,
+        "win_pct": 100.0,
+        "mean_rounds": 3.48,
+        "mean_dead": 0.067,
+        "mean_hp_in_wins": 312.0
+      },
+      "after": {
+        "samples": 180,
+        "wins": 180,
+        "win_pct": 100.0,
+        "mean_rounds": 3.48,
+        "mean_dead": 0.067,
+        "mean_hp_in_wins": 312.0
+      }
+    },
+    "mix_hunt_arcane": {
+      "before": {
+        "samples": 180,
+        "wins": 180,
+        "win_pct": 100.0,
+        "mean_rounds": 3.6,
+        "mean_dead": 0.167,
+        "mean_hp_in_wins": 298.8
+      },
+      "after": {
+        "samples": 180,
+        "wins": 180,
+        "win_pct": 100.0,
+        "mean_rounds": 3.6,
+        "mean_dead": 0.167,
+        "mean_hp_in_wins": 298.8
+      }
+    },
+    "mix_hunt_engine": {
+      "before": {
+        "samples": 180,
+        "wins": 180,
+        "win_pct": 100.0,
+        "mean_rounds": 4.06,
+        "mean_dead": 0.306,
+        "mean_hp_in_wins": 280.8
+      },
+      "after": {
+        "samples": 180,
+        "wins": 180,
+        "win_pct": 100.0,
+        "mean_rounds": 4.06,
+        "mean_dead": 0.306,
+        "mean_hp_in_wins": 280.8
+      }
+    },
+    "mix_hunt_pilgrim": {
+      "before": {
+        "samples": 180,
+        "wins": 180,
+        "win_pct": 100.0,
+        "mean_rounds": 4.11,
+        "mean_dead": 0.256,
+        "mean_hp_in_wins": 310.2
+      },
+      "after": {
+        "samples": 180,
+        "wins": 180,
+        "win_pct": 100.0,
+        "mean_rounds": 4.11,
+        "mean_dead": 0.256,
+        "mean_hp_in_wins": 310.2
+      }
+    },
+    "mix_hunt_dusk": {
+      "before": {
+        "samples": 180,
+        "wins": 180,
+        "win_pct": 100.0,
+        "mean_rounds": 3.51,
+        "mean_dead": 0.272,
+        "mean_hp_in_wins": 289.6
+      },
+      "after": {
+        "samples": 180,
+        "wins": 180,
+        "win_pct": 100.0,
+        "mean_rounds": 3.51,
+        "mean_dead": 0.272,
+        "mean_hp_in_wins": 289.6
+      }
+    },
+    "mix_hunt_command": {
+      "before": {
+        "samples": 180,
+        "wins": 180,
+        "win_pct": 100.0,
+        "mean_rounds": 3.97,
+        "mean_dead": 0.25,
+        "mean_hp_in_wins": 289.0
+      },
+      "after": {
+        "samples": 180,
+        "wins": 180,
+        "win_pct": 100.0,
+        "mean_rounds": 3.97,
+        "mean_dead": 0.25,
+        "mean_hp_in_wins": 289.0
+      }
+    },
+    "mix_ward_arcane": {
+      "before": {
+        "samples": 180,
+        "wins": 180,
+        "win_pct": 100.0,
+        "mean_rounds": 3.3,
+        "mean_dead": 0.083,
+        "mean_hp_in_wins": 314.8
+      },
+      "after": {
+        "samples": 180,
+        "wins": 180,
+        "win_pct": 100.0,
+        "mean_rounds": 3.3,
+        "mean_dead": 0.083,
+        "mean_hp_in_wins": 314.8
+      }
+    },
+    "mix_ward_engine": {
+      "before": {
+        "samples": 180,
+        "wins": 180,
+        "win_pct": 100.0,
+        "mean_rounds": 3.68,
+        "mean_dead": 0.117,
+        "mean_hp_in_wins": 307.0
+      },
+      "after": {
+        "samples": 180,
+        "wins": 180,
+        "win_pct": 100.0,
+        "mean_rounds": 3.68,
+        "mean_dead": 0.117,
+        "mean_hp_in_wins": 307.0
+      }
+    },
+    "mix_ward_pilgrim": {
+      "before": {
+        "samples": 180,
+        "wins": 180,
+        "win_pct": 100.0,
+        "mean_rounds": 4.03,
+        "mean_dead": 0.017,
+        "mean_hp_in_wins": 327.4
+      },
+      "after": {
+        "samples": 180,
+        "wins": 180,
+        "win_pct": 100.0,
+        "mean_rounds": 4.03,
+        "mean_dead": 0.017,
+        "mean_hp_in_wins": 327.4
+      }
+    },
+    "mix_ward_dusk": {
+      "before": {
+        "samples": 180,
+        "wins": 180,
+        "win_pct": 100.0,
+        "mean_rounds": 3.33,
+        "mean_dead": 0.033,
+        "mean_hp_in_wins": 311.6
+      },
+      "after": {
+        "samples": 180,
+        "wins": 180,
+        "win_pct": 100.0,
+        "mean_rounds": 3.33,
+        "mean_dead": 0.033,
+        "mean_hp_in_wins": 311.6
+      }
+    },
+    "mix_ward_command": {
+      "before": {
+        "samples": 180,
+        "wins": 180,
+        "win_pct": 100.0,
+        "mean_rounds": 3.52,
+        "mean_dead": 0.067,
+        "mean_hp_in_wins": 310.2
+      },
+      "after": {
+        "samples": 180,
+        "wins": 180,
+        "win_pct": 100.0,
+        "mean_rounds": 3.52,
+        "mean_dead": 0.067,
+        "mean_hp_in_wins": 310.2
+      }
+    },
+    "mix_arcane_engine": {
+      "before": {
+        "samples": 180,
+        "wins": 180,
+        "win_pct": 100.0,
+        "mean_rounds": 3.77,
+        "mean_dead": 0.356,
+        "mean_hp_in_wins": 287.4
+      },
+      "after": {
+        "samples": 180,
+        "wins": 180,
+        "win_pct": 100.0,
+        "mean_rounds": 3.77,
+        "mean_dead": 0.356,
+        "mean_hp_in_wins": 287.4
+      }
+    },
+    "mix_arcane_pilgrim": {
+      "before": {
+        "samples": 180,
+        "wins": 180,
+        "win_pct": 100.0,
+        "mean_rounds": 3.87,
+        "mean_dead": 0.206,
+        "mean_hp_in_wins": 316.6
+      },
+      "after": {
+        "samples": 180,
+        "wins": 180,
+        "win_pct": 100.0,
+        "mean_rounds": 3.87,
+        "mean_dead": 0.206,
+        "mean_hp_in_wins": 316.6
+      }
+    },
+    "mix_arcane_dusk": {
+      "before": {
+        "samples": 180,
+        "wins": 180,
+        "win_pct": 100.0,
+        "mean_rounds": 3.35,
+        "mean_dead": 0.189,
+        "mean_hp_in_wins": 294.6
+      },
+      "after": {
+        "samples": 180,
+        "wins": 180,
+        "win_pct": 100.0,
+        "mean_rounds": 3.35,
+        "mean_dead": 0.189,
+        "mean_hp_in_wins": 294.6
+      }
+    },
+    "mix_arcane_command": {
+      "before": {
+        "samples": 180,
+        "wins": 180,
+        "win_pct": 100.0,
+        "mean_rounds": 3.77,
+        "mean_dead": 0.25,
+        "mean_hp_in_wins": 292.8
+      },
+      "after": {
+        "samples": 180,
+        "wins": 180,
+        "win_pct": 100.0,
+        "mean_rounds": 3.77,
+        "mean_dead": 0.25,
+        "mean_hp_in_wins": 292.8
+      }
+    },
+    "mix_engine_pilgrim": {
+      "before": {
+        "samples": 180,
+        "wins": 180,
+        "win_pct": 100.0,
+        "mean_rounds": 4.43,
+        "mean_dead": 0.278,
+        "mean_hp_in_wins": 306.8
+      },
+      "after": {
+        "samples": 180,
+        "wins": 180,
+        "win_pct": 100.0,
+        "mean_rounds": 4.43,
+        "mean_dead": 0.278,
+        "mean_hp_in_wins": 306.8
+      }
+    },
+    "mix_engine_dusk": {
+      "before": {
+        "samples": 180,
+        "wins": 180,
+        "win_pct": 100.0,
+        "mean_rounds": 3.52,
+        "mean_dead": 0.222,
+        "mean_hp_in_wins": 288.8
+      },
+      "after": {
+        "samples": 180,
+        "wins": 180,
+        "win_pct": 100.0,
+        "mean_rounds": 3.52,
+        "mean_dead": 0.222,
+        "mean_hp_in_wins": 288.8
+      }
+    },
+    "mix_engine_command": {
+      "before": {
+        "samples": 180,
+        "wins": 180,
+        "win_pct": 100.0,
+        "mean_rounds": 4.11,
+        "mean_dead": 0.372,
+        "mean_hp_in_wins": 279.6
+      },
+      "after": {
+        "samples": 180,
+        "wins": 180,
+        "win_pct": 100.0,
+        "mean_rounds": 4.11,
+        "mean_dead": 0.372,
+        "mean_hp_in_wins": 279.6
+      }
+    },
+    "mix_pilgrim_dusk": {
+      "before": {
+        "samples": 180,
+        "wins": 180,
+        "win_pct": 100.0,
+        "mean_rounds": 3.96,
+        "mean_dead": 0.283,
+        "mean_hp_in_wins": 306.7
+      },
+      "after": {
+        "samples": 180,
+        "wins": 180,
+        "win_pct": 100.0,
+        "mean_rounds": 3.96,
+        "mean_dead": 0.283,
+        "mean_hp_in_wins": 306.7
+      }
+    },
+    "mix_pilgrim_command": {
+      "before": {
+        "samples": 180,
+        "wins": 180,
+        "win_pct": 100.0,
+        "mean_rounds": 4.21,
+        "mean_dead": 0.233,
+        "mean_hp_in_wins": 311.1
+      },
+      "after": {
+        "samples": 180,
+        "wins": 180,
+        "win_pct": 100.0,
+        "mean_rounds": 4.21,
+        "mean_dead": 0.233,
+        "mean_hp_in_wins": 311.1
+      }
+    },
+    "mix_dusk_command": {
+      "before": {
+        "samples": 180,
+        "wins": 180,
+        "win_pct": 100.0,
+        "mean_rounds": 3.7,
+        "mean_dead": 0.356,
+        "mean_hp_in_wins": 278.0
+      },
+      "after": {
+        "samples": 180,
+        "wins": 180,
+        "win_pct": 100.0,
+        "mean_rounds": 3.7,
+        "mean_dead": 0.356,
+        "mean_hp_in_wins": 278.0
+      }
+    },
+    "stress_action_stack": {
+      "before": {
+        "samples": 180,
+        "wins": 171,
+        "win_pct": 95.0,
+        "mean_rounds": 4.23,
+        "mean_dead": 0.706,
+        "mean_hp_in_wins": 269.6
+      },
+      "after": {
+        "samples": 180,
+        "wins": 171,
+        "win_pct": 95.0,
+        "mean_rounds": 4.23,
+        "mean_dead": 0.706,
+        "mean_hp_in_wins": 269.6
+      }
+    },
+    "stress_lifesteal": {
+      "before": {
+        "samples": 180,
+        "wins": 174,
+        "win_pct": 96.67,
+        "mean_rounds": 4.93,
+        "mean_dead": 0.678,
+        "mean_hp_in_wins": 263.2
+      },
+      "after": {
+        "samples": 180,
+        "wins": 174,
+        "win_pct": 96.67,
+        "mean_rounds": 4.93,
+        "mean_dead": 0.678,
+        "mean_hp_in_wins": 263.2
+      }
+    },
+    "stress_burst": {
+      "before": {
+        "samples": 180,
+        "wins": 179,
+        "win_pct": 99.44,
+        "mean_rounds": 3.82,
+        "mean_dead": 0.389,
+        "mean_hp_in_wins": 281.1
+      },
+      "after": {
+        "samples": 180,
+        "wins": 179,
+        "win_pct": 99.44,
+        "mean_rounds": 3.82,
+        "mean_dead": 0.389,
+        "mean_hp_in_wins": 281.1
+      }
+    },
+    "stress_shield": {
+      "before": {
+        "samples": 180,
+        "wins": 180,
+        "win_pct": 100.0,
+        "mean_rounds": 3.83,
+        "mean_dead": 0,
+        "mean_hp_in_wins": 313.2
+      },
+      "after": {
+        "samples": 180,
+        "wins": 180,
+        "win_pct": 100.0,
+        "mean_rounds": 3.83,
+        "mean_dead": 0,
+        "mean_hp_in_wins": 313.2
+      }
+    },
+    "stress_healer": {
+      "before": {
+        "samples": 180,
+        "wins": 180,
+        "win_pct": 100.0,
+        "mean_rounds": 4.96,
+        "mean_dead": 0.111,
+        "mean_hp_in_wins": 321.4
+      },
+      "after": {
+        "samples": 180,
+        "wins": 180,
+        "win_pct": 100.0,
+        "mean_rounds": 4.96,
+        "mean_dead": 0.111,
+        "mean_hp_in_wins": 321.4
+      }
+    },
+    "stress_mark": {
+      "before": {
+        "samples": 180,
+        "wins": 180,
+        "win_pct": 100.0,
+        "mean_rounds": 4.27,
+        "mean_dead": 0.283,
+        "mean_hp_in_wins": 280.8
+      },
+      "after": {
+        "samples": 180,
+        "wins": 180,
+        "win_pct": 100.0,
+        "mean_rounds": 4.27,
+        "mean_dead": 0.283,
+        "mean_hp_in_wins": 280.8
+      }
+    }
+  },
+  "parties_after": {
+    "shen/balanced": {
+      "samples": 612,
+      "wins": 612,
+      "win_pct": 100.0,
+      "mean_rounds": 3.3,
+      "mean_dead": 0.355,
+      "mean_hp_in_wins": 263.8,
+      "winnable_loadouts": 50,
+      "winnable_pairs": 28
+    },
+    "shen/hunt_guard": {
+      "samples": 612,
+      "wins": 611,
+      "win_pct": 99.84,
+      "mean_rounds": 3.66,
+      "mean_dead": 0.35,
+      "mean_hp_in_wins": 291.0,
+      "winnable_loadouts": 50,
+      "winnable_pairs": 28
+    },
+    "shen/sustain_guard": {
+      "samples": 612,
+      "wins": 612,
+      "win_pct": 100.0,
+      "mean_rounds": 5.03,
+      "mean_dead": 0.495,
+      "mean_hp_in_wins": 297.1,
+      "winnable_loadouts": 50,
+      "winnable_pairs": 28
+    },
+    "shen/control_support": {
+      "samples": 612,
+      "wins": 608,
+      "win_pct": 99.35,
+      "mean_rounds": 3.95,
+      "mean_dead": 0.039,
+      "mean_hp_in_wins": 313.3,
+      "winnable_loadouts": 50,
+      "winnable_pairs": 28
+    },
+    "shen/no_medic": {
+      "samples": 306,
+      "wins": 306,
+      "win_pct": 100.0,
+      "mean_rounds": 3.02,
+      "mean_dead": 0.069,
+      "mean_hp_in_wins": 313.9,
+      "winnable_loadouts": 50,
+      "winnable_pairs": 28
+    },
+    "shen/double_medic": {
+      "samples": 306,
+      "wins": 306,
+      "win_pct": 100.0,
+      "mean_rounds": 4.71,
+      "mean_dead": 0.039,
+      "mean_hp_in_wins": 330.7,
+      "winnable_loadouts": 50,
+      "winnable_pairs": 28
+    },
+    "wen/balanced": {
+      "samples": 612,
+      "wins": 612,
+      "win_pct": 100.0,
+      "mean_rounds": 3.29,
+      "mean_dead": 0.345,
+      "mean_hp_in_wins": 263.7,
+      "winnable_loadouts": 50,
+      "winnable_pairs": 28
+    },
+    "wen/hunt_guard": {
+      "samples": 612,
+      "wins": 610,
+      "win_pct": 99.67,
+      "mean_rounds": 3.66,
+      "mean_dead": 0.348,
+      "mean_hp_in_wins": 291.2,
+      "winnable_loadouts": 50,
+      "winnable_pairs": 28
+    },
+    "wen/sustain_guard": {
+      "samples": 612,
+      "wins": 611,
+      "win_pct": 99.84,
+      "mean_rounds": 5.03,
+      "mean_dead": 0.48,
+      "mean_hp_in_wins": 297.5,
+      "winnable_loadouts": 50,
+      "winnable_pairs": 28
+    },
+    "wen/control_support": {
+      "samples": 612,
+      "wins": 607,
+      "win_pct": 99.18,
+      "mean_rounds": 3.93,
+      "mean_dead": 0.039,
+      "mean_hp_in_wins": 313.6,
+      "winnable_loadouts": 50,
+      "winnable_pairs": 28
+    },
+    "wen/no_medic": {
+      "samples": 306,
+      "wins": 306,
+      "win_pct": 100.0,
+      "mean_rounds": 3.02,
+      "mean_dead": 0.039,
+      "mean_hp_in_wins": 315.1,
+      "winnable_loadouts": 50,
+      "winnable_pairs": 28
+    },
+    "wen/double_medic": {
+      "samples": 306,
+      "wins": 306,
+      "win_pct": 100.0,
+      "mean_rounds": 4.69,
+      "mean_dead": 0.026,
+      "mean_hp_in_wins": 329.8,
+      "winnable_loadouts": 50,
+      "winnable_pairs": 28
+    },
+    "lu/balanced": {
+      "samples": 612,
+      "wins": 611,
+      "win_pct": 99.84,
+      "mean_rounds": 3.28,
+      "mean_dead": 0.353,
+      "mean_hp_in_wins": 263.9,
+      "winnable_loadouts": 50,
+      "winnable_pairs": 28
+    },
+    "lu/hunt_guard": {
+      "samples": 612,
+      "wins": 612,
+      "win_pct": 100.0,
+      "mean_rounds": 3.67,
+      "mean_dead": 0.348,
+      "mean_hp_in_wins": 291.1,
+      "winnable_loadouts": 50,
+      "winnable_pairs": 28
+    },
+    "lu/sustain_guard": {
+      "samples": 612,
+      "wins": 612,
+      "win_pct": 100.0,
+      "mean_rounds": 5.05,
+      "mean_dead": 0.498,
+      "mean_hp_in_wins": 297.1,
+      "winnable_loadouts": 50,
+      "winnable_pairs": 28
+    },
+    "lu/control_support": {
+      "samples": 612,
+      "wins": 609,
+      "win_pct": 99.51,
+      "mean_rounds": 3.95,
+      "mean_dead": 0.038,
+      "mean_hp_in_wins": 313.0,
+      "winnable_loadouts": 50,
+      "winnable_pairs": 28
+    },
+    "lu/no_medic": {
+      "samples": 306,
+      "wins": 306,
+      "win_pct": 100.0,
+      "mean_rounds": 3.02,
+      "mean_dead": 0.072,
+      "mean_hp_in_wins": 313.8,
+      "winnable_loadouts": 50,
+      "winnable_pairs": 28
+    },
+    "lu/double_medic": {
+      "samples": 306,
+      "wins": 306,
+      "win_pct": 100.0,
+      "mean_rounds": 4.75,
+      "mean_dead": 0.042,
+      "mean_hp_in_wins": 329.7,
+      "winnable_loadouts": 50,
+      "winnable_pairs": 28
+    }
+  },
+  "routes": {
+    "samples": 36,
+    "clears": 36,
+    "battles": 142,
+    "by_combo": {
+      "mix_hunt_arcane": {
+        "samples": 18,
+        "clears": 18
+      },
+      "mix_blood_pilgrim": {
+        "samples": 18,
+        "clears": 18
+      }
+    }
+  }
+}

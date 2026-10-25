@@ -1,0 +1,2066 @@
+[
+  {
+    "captain": "shen",
+    "profile": "balanced",
+    "strategy": "adaptive",
+    "region": "border",
+    "seed": 2026102601,
+    "denied": [
+      "dusk_2"
+    ]
+  },
+  {
+    "captain": "shen",
+    "profile": "balanced",
+    "strategy": "adaptive",
+    "region": "wood",
+    "seed": 2026102611,
+    "denied": [
+      "dusk_2"
+    ]
+  },
+  {
+    "captain": "shen",
+    "profile": "balanced",
+    "strategy": "adaptive",
+    "region": "frost",
+    "seed": 2026102630,
+    "denied": [
+      "dusk_2"
+    ]
+  },
+  {
+    "captain": "shen",
+    "profile": "guard",
+    "strategy": "adaptive",
+    "region": "waste",
+    "seed": 2026102720,
+    "denied": [
+      "dusk_2"
+    ]
+  },
+  {
+    "captain": "shen",
+    "profile": "guard",
+    "strategy": "adaptive",
+    "region": "frost",
+    "seed": 2026102731,
+    "denied": [
+      "dusk_2"
+    ]
+  },
+  {
+    "captain": "shen",
+    "profile": "support",
+    "strategy": "adaptive",
+    "region": "border",
+    "seed": 2026102800,
+    "denied": [
+      "dusk_2"
+    ]
+  },
+  {
+    "captain": "shen",
+    "profile": "support",
+    "strategy": "adaptive",
+    "region": "marsh",
+    "seed": 2026102840,
+    "denied": [
+      "dusk_2"
+    ]
+  },
+  {
+    "captain": "shen",
+    "profile": "assault",
+    "strategy": "adaptive",
+    "region": "border",
+    "seed": 2026102900,
+    "denied": [
+      "dusk_2"
+    ]
+  },
+  {
+    "captain": "wen",
+    "profile": "balanced",
+    "strategy": "adaptive",
+    "region": "border",
+    "seed": 2026102601,
+    "denied": [
+      "dusk_2"
+    ]
+  },
+  {
+    "captain": "wen",
+    "profile": "balanced",
+    "strategy": "adaptive",
+    "region": "wood",
+    "seed": 2026102611,
+    "denied": [
+      "dusk_2"
+    ]
+  },
+  {
+    "captain": "wen",
+    "profile": "balanced",
+    "strategy": "adaptive",
+    "region": "frost",
+    "seed": 2026102630,
+    "denied": [
+      "dusk_2"
+    ]
+  },
+  {
+    "captain": "wen",
+    "profile": "guard",
+    "strategy": "adaptive",
+    "region": "waste",
+    "seed": 2026102720,
+    "denied": [
+      "dusk_2"
+    ]
+  },
+  {
+    "captain": "wen",
+    "profile": "guard",
+    "strategy": "adaptive",
+    "region": "frost",
+    "seed": 2026102731,
+    "denied": [
+      "dusk_2"
+    ]
+  },
+  {
+    "captain": "wen",
+    "profile": "support",
+    "strategy": "adaptive",
+    "region": "border",
+    "seed": 2026102800,
+    "denied": [
+      "dusk_2"
+    ]
+  },
+  {
+    "captain": "wen",
+    "profile": "support",
+    "strategy": "adaptive",
+    "region": "marsh",
+    "seed": 2026102840,
+    "denied": [
+      "dusk_2"
+    ]
+  },
+  {
+    "captain": "wen",
+    "profile": "assault",
+    "strategy": "adaptive",
+    "region": "border",
+    "seed": 2026102900,
+    "denied": [
+      "dusk_2"
+    ]
+  },
+  {
+    "captain": "lu",
+    "profile": "balanced",
+    "strategy": "adaptive",
+    "region": "border",
+    "seed": 2026102601,
+    "denied": [
+      "dusk_2"
+    ]
+  },
+  {
+    "captain": "lu",
+    "profile": "balanced",
+    "strategy": "adaptive",
+    "region": "wood",
+    "seed": 2026102611,
+    "denied": [
+      "dusk_2"
+    ]
+  },
+  {
+    "captain": "lu",
+    "profile": "balanced",
+    "strategy": "adaptive",
+    "region": "frost",
+    "seed": 2026102630,
+    "denied": [
+      "dusk_2"
+    ]
+  },
+  {
+    "captain": "lu",
+    "profile": "guard",
+    "strategy": "adaptive",
+    "region": "waste",
+    "seed": 2026102720,
+    "denied": [
+      "dusk_2"
+    ]
+  },
+  {
+    "captain": "lu",
+    "profile": "guard",
+    "strategy": "adaptive",
+    "region": "frost",
+    "seed": 2026102731,
+    "denied": [
+      "dusk_2"
+    ]
+  },
+  {
+    "captain": "lu",
+    "profile": "support",
+    "strategy": "adaptive",
+    "region": "border",
+    "seed": 2026102800,
+    "denied": [
+      "dusk_2"
+    ]
+  },
+  {
+    "captain": "lu",
+    "profile": "support",
+    "strategy": "adaptive",
+    "region": "marsh",
+    "seed": 2026102840,
+    "denied": [
+      "dusk_2"
+    ]
+  },
+  {
+    "captain": "lu",
+    "profile": "assault",
+    "strategy": "adaptive",
+    "region": "border",
+    "seed": 2026102900,
+    "denied": [
+      "dusk_2"
+    ]
+  },
+  {
+    "captain": "shen",
+    "profile": "balanced",
+    "strategy": "adaptive",
+    "region": "waste",
+    "seed": 2026102620,
+    "denied": [
+      "hunt_3"
+    ]
+  },
+  {
+    "captain": "shen",
+    "profile": "guard",
+    "strategy": "adaptive",
+    "region": "border",
+    "seed": 2026102700,
+    "denied": [
+      "hunt_3"
+    ]
+  },
+  {
+    "captain": "shen",
+    "profile": "guard",
+    "strategy": "adaptive",
+    "region": "waste",
+    "seed": 2026102721,
+    "denied": [
+      "hunt_3"
+    ]
+  },
+  {
+    "captain": "shen",
+    "profile": "guard",
+    "strategy": "adaptive",
+    "region": "frost",
+    "seed": 2026102730,
+    "denied": [
+      "hunt_3"
+    ]
+  },
+  {
+    "captain": "shen",
+    "profile": "support",
+    "strategy": "adaptive",
+    "region": "waste",
+    "seed": 2026102821,
+    "denied": [
+      "hunt_3"
+    ]
+  },
+  {
+    "captain": "shen",
+    "profile": "support",
+    "strategy": "adaptive",
+    "region": "frost",
+    "seed": 2026102830,
+    "denied": [
+      "hunt_3"
+    ]
+  },
+  {
+    "captain": "shen",
+    "profile": "assault",
+    "strategy": "adaptive",
+    "region": "border",
+    "seed": 2026102901,
+    "denied": [
+      "hunt_3"
+    ]
+  },
+  {
+    "captain": "shen",
+    "profile": "assault",
+    "strategy": "adaptive",
+    "region": "wood",
+    "seed": 2026102911,
+    "denied": [
+      "hunt_3"
+    ]
+  },
+  {
+    "captain": "wen",
+    "profile": "balanced",
+    "strategy": "adaptive",
+    "region": "waste",
+    "seed": 2026102620,
+    "denied": [
+      "hunt_3"
+    ]
+  },
+  {
+    "captain": "wen",
+    "profile": "guard",
+    "strategy": "adaptive",
+    "region": "border",
+    "seed": 2026102700,
+    "denied": [
+      "hunt_3"
+    ]
+  },
+  {
+    "captain": "wen",
+    "profile": "guard",
+    "strategy": "adaptive",
+    "region": "waste",
+    "seed": 2026102721,
+    "denied": [
+      "hunt_3"
+    ]
+  },
+  {
+    "captain": "wen",
+    "profile": "guard",
+    "strategy": "adaptive",
+    "region": "frost",
+    "seed": 2026102730,
+    "denied": [
+      "hunt_3"
+    ]
+  },
+  {
+    "captain": "wen",
+    "profile": "support",
+    "strategy": "adaptive",
+    "region": "waste",
+    "seed": 2026102821,
+    "denied": [
+      "hunt_3"
+    ]
+  },
+  {
+    "captain": "wen",
+    "profile": "support",
+    "strategy": "adaptive",
+    "region": "frost",
+    "seed": 2026102830,
+    "denied": [
+      "hunt_3"
+    ]
+  },
+  {
+    "captain": "wen",
+    "profile": "assault",
+    "strategy": "adaptive",
+    "region": "border",
+    "seed": 2026102901,
+    "denied": [
+      "hunt_3"
+    ]
+  },
+  {
+    "captain": "wen",
+    "profile": "assault",
+    "strategy": "adaptive",
+    "region": "wood",
+    "seed": 2026102911,
+    "denied": [
+      "hunt_3"
+    ]
+  },
+  {
+    "captain": "lu",
+    "profile": "balanced",
+    "strategy": "adaptive",
+    "region": "waste",
+    "seed": 2026102620,
+    "denied": [
+      "hunt_3"
+    ]
+  },
+  {
+    "captain": "lu",
+    "profile": "guard",
+    "strategy": "adaptive",
+    "region": "border",
+    "seed": 2026102700,
+    "denied": [
+      "hunt_3"
+    ]
+  },
+  {
+    "captain": "lu",
+    "profile": "guard",
+    "strategy": "adaptive",
+    "region": "waste",
+    "seed": 2026102721,
+    "denied": [
+      "hunt_3"
+    ]
+  },
+  {
+    "captain": "lu",
+    "profile": "guard",
+    "strategy": "adaptive",
+    "region": "frost",
+    "seed": 2026102730,
+    "denied": [
+      "hunt_3"
+    ]
+  },
+  {
+    "captain": "lu",
+    "profile": "support",
+    "strategy": "adaptive",
+    "region": "waste",
+    "seed": 2026102821,
+    "denied": [
+      "hunt_3"
+    ]
+  },
+  {
+    "captain": "lu",
+    "profile": "support",
+    "strategy": "adaptive",
+    "region": "frost",
+    "seed": 2026102830,
+    "denied": [
+      "hunt_3"
+    ]
+  },
+  {
+    "captain": "lu",
+    "profile": "assault",
+    "strategy": "adaptive",
+    "region": "border",
+    "seed": 2026102901,
+    "denied": [
+      "hunt_3"
+    ]
+  },
+  {
+    "captain": "lu",
+    "profile": "assault",
+    "strategy": "adaptive",
+    "region": "wood",
+    "seed": 2026102911,
+    "denied": [
+      "hunt_3"
+    ]
+  },
+  {
+    "captain": "shen",
+    "profile": "guard",
+    "strategy": "adaptive",
+    "region": "wood",
+    "seed": 2026102710,
+    "denied": [
+      "hunt_4"
+    ]
+  },
+  {
+    "captain": "shen",
+    "profile": "guard",
+    "strategy": "relic_focus",
+    "region": "wood",
+    "seed": 2026102711,
+    "denied": [
+      "hunt_4"
+    ]
+  },
+  {
+    "captain": "shen",
+    "profile": "guard",
+    "strategy": "adaptive",
+    "region": "waste",
+    "seed": 2026102721,
+    "denied": [
+      "hunt_4"
+    ]
+  },
+  {
+    "captain": "shen",
+    "profile": "support",
+    "strategy": "adaptive",
+    "region": "wood",
+    "seed": 2026102810,
+    "denied": [
+      "hunt_4"
+    ]
+  },
+  {
+    "captain": "shen",
+    "profile": "assault",
+    "strategy": "adaptive",
+    "region": "border",
+    "seed": 2026102901,
+    "denied": [
+      "hunt_4"
+    ]
+  },
+  {
+    "captain": "shen",
+    "profile": "assault",
+    "strategy": "adaptive",
+    "region": "waste",
+    "seed": 2026102920,
+    "denied": [
+      "hunt_4"
+    ]
+  },
+  {
+    "captain": "shen",
+    "profile": "assault",
+    "strategy": "adaptive",
+    "region": "waste",
+    "seed": 2026102921,
+    "denied": [
+      "hunt_4"
+    ]
+  },
+  {
+    "captain": "shen",
+    "profile": "guard",
+    "strategy": "relic_focus",
+    "region": "wood",
+    "seed": 2026102710,
+    "denied": [
+      "hunt_4"
+    ]
+  },
+  {
+    "captain": "wen",
+    "profile": "guard",
+    "strategy": "adaptive",
+    "region": "wood",
+    "seed": 2026102710,
+    "denied": [
+      "hunt_4"
+    ]
+  },
+  {
+    "captain": "wen",
+    "profile": "guard",
+    "strategy": "relic_focus",
+    "region": "wood",
+    "seed": 2026102711,
+    "denied": [
+      "hunt_4"
+    ]
+  },
+  {
+    "captain": "wen",
+    "profile": "guard",
+    "strategy": "adaptive",
+    "region": "waste",
+    "seed": 2026102721,
+    "denied": [
+      "hunt_4"
+    ]
+  },
+  {
+    "captain": "wen",
+    "profile": "support",
+    "strategy": "adaptive",
+    "region": "wood",
+    "seed": 2026102810,
+    "denied": [
+      "hunt_4"
+    ]
+  },
+  {
+    "captain": "wen",
+    "profile": "assault",
+    "strategy": "adaptive",
+    "region": "border",
+    "seed": 2026102901,
+    "denied": [
+      "hunt_4"
+    ]
+  },
+  {
+    "captain": "wen",
+    "profile": "assault",
+    "strategy": "adaptive",
+    "region": "waste",
+    "seed": 2026102920,
+    "denied": [
+      "hunt_4"
+    ]
+  },
+  {
+    "captain": "wen",
+    "profile": "assault",
+    "strategy": "adaptive",
+    "region": "waste",
+    "seed": 2026102921,
+    "denied": [
+      "hunt_4"
+    ]
+  },
+  {
+    "captain": "wen",
+    "profile": "guard",
+    "strategy": "relic_focus",
+    "region": "wood",
+    "seed": 2026102710,
+    "denied": [
+      "hunt_4"
+    ]
+  },
+  {
+    "captain": "lu",
+    "profile": "guard",
+    "strategy": "adaptive",
+    "region": "wood",
+    "seed": 2026102710,
+    "denied": [
+      "hunt_4"
+    ]
+  },
+  {
+    "captain": "lu",
+    "profile": "guard",
+    "strategy": "relic_focus",
+    "region": "wood",
+    "seed": 2026102711,
+    "denied": [
+      "hunt_4"
+    ]
+  },
+  {
+    "captain": "lu",
+    "profile": "guard",
+    "strategy": "adaptive",
+    "region": "waste",
+    "seed": 2026102721,
+    "denied": [
+      "hunt_4"
+    ]
+  },
+  {
+    "captain": "lu",
+    "profile": "support",
+    "strategy": "adaptive",
+    "region": "wood",
+    "seed": 2026102810,
+    "denied": [
+      "hunt_4"
+    ]
+  },
+  {
+    "captain": "lu",
+    "profile": "assault",
+    "strategy": "adaptive",
+    "region": "border",
+    "seed": 2026102901,
+    "denied": [
+      "hunt_4"
+    ]
+  },
+  {
+    "captain": "lu",
+    "profile": "assault",
+    "strategy": "adaptive",
+    "region": "waste",
+    "seed": 2026102920,
+    "denied": [
+      "hunt_4"
+    ]
+  },
+  {
+    "captain": "lu",
+    "profile": "assault",
+    "strategy": "adaptive",
+    "region": "waste",
+    "seed": 2026102921,
+    "denied": [
+      "hunt_4"
+    ]
+  },
+  {
+    "captain": "lu",
+    "profile": "guard",
+    "strategy": "relic_focus",
+    "region": "wood",
+    "seed": 2026102710,
+    "denied": [
+      "hunt_4"
+    ]
+  },
+  {
+    "captain": "shen",
+    "profile": "balanced",
+    "strategy": "adaptive",
+    "region": "wood",
+    "seed": 2026102610,
+    "denied": [
+      "arcane_3"
+    ]
+  },
+  {
+    "captain": "shen",
+    "profile": "balanced",
+    "strategy": "adaptive",
+    "region": "waste",
+    "seed": 2026102621,
+    "denied": [
+      "arcane_3"
+    ]
+  },
+  {
+    "captain": "shen",
+    "profile": "balanced",
+    "strategy": "adaptive",
+    "region": "frost",
+    "seed": 2026102631,
+    "denied": [
+      "arcane_3"
+    ]
+  },
+  {
+    "captain": "shen",
+    "profile": "balanced",
+    "strategy": "adaptive",
+    "region": "marsh",
+    "seed": 2026102641,
+    "denied": [
+      "arcane_3"
+    ]
+  },
+  {
+    "captain": "shen",
+    "profile": "support",
+    "strategy": "adaptive",
+    "region": "marsh",
+    "seed": 2026102841,
+    "denied": [
+      "arcane_3"
+    ]
+  },
+  {
+    "captain": "shen",
+    "profile": "assault",
+    "strategy": "relic_focus",
+    "region": "border",
+    "seed": 2026102901,
+    "denied": [
+      "arcane_3"
+    ]
+  },
+  {
+    "captain": "shen",
+    "profile": "assault",
+    "strategy": "adaptive",
+    "region": "marsh",
+    "seed": 2026102941,
+    "denied": [
+      "arcane_3"
+    ]
+  },
+  {
+    "captain": "shen",
+    "profile": "balanced",
+    "strategy": "relic_focus",
+    "region": "waste",
+    "seed": 2026102621,
+    "denied": [
+      "arcane_3"
+    ]
+  },
+  {
+    "captain": "wen",
+    "profile": "balanced",
+    "strategy": "adaptive",
+    "region": "wood",
+    "seed": 2026102610,
+    "denied": [
+      "arcane_3"
+    ]
+  },
+  {
+    "captain": "wen",
+    "profile": "balanced",
+    "strategy": "adaptive",
+    "region": "waste",
+    "seed": 2026102621,
+    "denied": [
+      "arcane_3"
+    ]
+  },
+  {
+    "captain": "wen",
+    "profile": "balanced",
+    "strategy": "adaptive",
+    "region": "frost",
+    "seed": 2026102631,
+    "denied": [
+      "arcane_3"
+    ]
+  },
+  {
+    "captain": "wen",
+    "profile": "balanced",
+    "strategy": "adaptive",
+    "region": "marsh",
+    "seed": 2026102641,
+    "denied": [
+      "arcane_3"
+    ]
+  },
+  {
+    "captain": "wen",
+    "profile": "support",
+    "strategy": "adaptive",
+    "region": "marsh",
+    "seed": 2026102841,
+    "denied": [
+      "arcane_3"
+    ]
+  },
+  {
+    "captain": "wen",
+    "profile": "assault",
+    "strategy": "relic_focus",
+    "region": "border",
+    "seed": 2026102901,
+    "denied": [
+      "arcane_3"
+    ]
+  },
+  {
+    "captain": "wen",
+    "profile": "assault",
+    "strategy": "adaptive",
+    "region": "marsh",
+    "seed": 2026102941,
+    "denied": [
+      "arcane_3"
+    ]
+  },
+  {
+    "captain": "wen",
+    "profile": "balanced",
+    "strategy": "relic_focus",
+    "region": "waste",
+    "seed": 2026102621,
+    "denied": [
+      "arcane_3"
+    ]
+  },
+  {
+    "captain": "lu",
+    "profile": "balanced",
+    "strategy": "adaptive",
+    "region": "wood",
+    "seed": 2026102610,
+    "denied": [
+      "arcane_3"
+    ]
+  },
+  {
+    "captain": "lu",
+    "profile": "balanced",
+    "strategy": "adaptive",
+    "region": "waste",
+    "seed": 2026102621,
+    "denied": [
+      "arcane_3"
+    ]
+  },
+  {
+    "captain": "lu",
+    "profile": "balanced",
+    "strategy": "adaptive",
+    "region": "frost",
+    "seed": 2026102631,
+    "denied": [
+      "arcane_3"
+    ]
+  },
+  {
+    "captain": "lu",
+    "profile": "balanced",
+    "strategy": "adaptive",
+    "region": "marsh",
+    "seed": 2026102641,
+    "denied": [
+      "arcane_3"
+    ]
+  },
+  {
+    "captain": "lu",
+    "profile": "support",
+    "strategy": "adaptive",
+    "region": "marsh",
+    "seed": 2026102841,
+    "denied": [
+      "arcane_3"
+    ]
+  },
+  {
+    "captain": "lu",
+    "profile": "assault",
+    "strategy": "relic_focus",
+    "region": "border",
+    "seed": 2026102901,
+    "denied": [
+      "arcane_3"
+    ]
+  },
+  {
+    "captain": "lu",
+    "profile": "assault",
+    "strategy": "adaptive",
+    "region": "marsh",
+    "seed": 2026102941,
+    "denied": [
+      "arcane_3"
+    ]
+  },
+  {
+    "captain": "lu",
+    "profile": "balanced",
+    "strategy": "relic_focus",
+    "region": "waste",
+    "seed": 2026102621,
+    "denied": [
+      "arcane_3"
+    ]
+  },
+  {
+    "captain": "shen",
+    "profile": "balanced",
+    "strategy": "adaptive",
+    "region": "wood",
+    "seed": 2026102611,
+    "denied": [
+      "dusk_4"
+    ]
+  },
+  {
+    "captain": "shen",
+    "profile": "balanced",
+    "strategy": "adaptive",
+    "region": "frost",
+    "seed": 2026102630,
+    "denied": [
+      "dusk_4"
+    ]
+  },
+  {
+    "captain": "shen",
+    "profile": "guard",
+    "strategy": "adaptive",
+    "region": "waste",
+    "seed": 2026102720,
+    "denied": [
+      "dusk_4"
+    ]
+  },
+  {
+    "captain": "shen",
+    "profile": "guard",
+    "strategy": "adaptive",
+    "region": "frost",
+    "seed": 2026102731,
+    "denied": [
+      "dusk_4"
+    ]
+  },
+  {
+    "captain": "shen",
+    "profile": "support",
+    "strategy": "adaptive",
+    "region": "waste",
+    "seed": 2026102821,
+    "denied": [
+      "dusk_4"
+    ]
+  },
+  {
+    "captain": "shen",
+    "profile": "assault",
+    "strategy": "adaptive",
+    "region": "wood",
+    "seed": 2026102910,
+    "denied": [
+      "dusk_4"
+    ]
+  },
+  {
+    "captain": "shen",
+    "profile": "assault",
+    "strategy": "adaptive",
+    "region": "wood",
+    "seed": 2026102911,
+    "denied": [
+      "dusk_4"
+    ]
+  },
+  {
+    "captain": "shen",
+    "profile": "balanced",
+    "strategy": "relic_focus",
+    "region": "wood",
+    "seed": 2026102611,
+    "denied": [
+      "dusk_4"
+    ]
+  },
+  {
+    "captain": "wen",
+    "profile": "balanced",
+    "strategy": "adaptive",
+    "region": "wood",
+    "seed": 2026102611,
+    "denied": [
+      "dusk_4"
+    ]
+  },
+  {
+    "captain": "wen",
+    "profile": "balanced",
+    "strategy": "adaptive",
+    "region": "frost",
+    "seed": 2026102630,
+    "denied": [
+      "dusk_4"
+    ]
+  },
+  {
+    "captain": "wen",
+    "profile": "guard",
+    "strategy": "adaptive",
+    "region": "waste",
+    "seed": 2026102720,
+    "denied": [
+      "dusk_4"
+    ]
+  },
+  {
+    "captain": "wen",
+    "profile": "guard",
+    "strategy": "adaptive",
+    "region": "frost",
+    "seed": 2026102731,
+    "denied": [
+      "dusk_4"
+    ]
+  },
+  {
+    "captain": "wen",
+    "profile": "support",
+    "strategy": "adaptive",
+    "region": "waste",
+    "seed": 2026102821,
+    "denied": [
+      "dusk_4"
+    ]
+  },
+  {
+    "captain": "wen",
+    "profile": "assault",
+    "strategy": "adaptive",
+    "region": "wood",
+    "seed": 2026102910,
+    "denied": [
+      "dusk_4"
+    ]
+  },
+  {
+    "captain": "wen",
+    "profile": "assault",
+    "strategy": "adaptive",
+    "region": "wood",
+    "seed": 2026102911,
+    "denied": [
+      "dusk_4"
+    ]
+  },
+  {
+    "captain": "wen",
+    "profile": "balanced",
+    "strategy": "relic_focus",
+    "region": "wood",
+    "seed": 2026102611,
+    "denied": [
+      "dusk_4"
+    ]
+  },
+  {
+    "captain": "lu",
+    "profile": "balanced",
+    "strategy": "adaptive",
+    "region": "wood",
+    "seed": 2026102611,
+    "denied": [
+      "dusk_4"
+    ]
+  },
+  {
+    "captain": "lu",
+    "profile": "balanced",
+    "strategy": "adaptive",
+    "region": "frost",
+    "seed": 2026102630,
+    "denied": [
+      "dusk_4"
+    ]
+  },
+  {
+    "captain": "lu",
+    "profile": "guard",
+    "strategy": "adaptive",
+    "region": "waste",
+    "seed": 2026102720,
+    "denied": [
+      "dusk_4"
+    ]
+  },
+  {
+    "captain": "lu",
+    "profile": "guard",
+    "strategy": "adaptive",
+    "region": "frost",
+    "seed": 2026102731,
+    "denied": [
+      "dusk_4"
+    ]
+  },
+  {
+    "captain": "lu",
+    "profile": "support",
+    "strategy": "adaptive",
+    "region": "waste",
+    "seed": 2026102821,
+    "denied": [
+      "dusk_4"
+    ]
+  },
+  {
+    "captain": "lu",
+    "profile": "assault",
+    "strategy": "adaptive",
+    "region": "wood",
+    "seed": 2026102910,
+    "denied": [
+      "dusk_4"
+    ]
+  },
+  {
+    "captain": "lu",
+    "profile": "assault",
+    "strategy": "adaptive",
+    "region": "wood",
+    "seed": 2026102911,
+    "denied": [
+      "dusk_4"
+    ]
+  },
+  {
+    "captain": "lu",
+    "profile": "balanced",
+    "strategy": "relic_focus",
+    "region": "wood",
+    "seed": 2026102611,
+    "denied": [
+      "dusk_4"
+    ]
+  },
+  {
+    "captain": "shen",
+    "profile": "balanced",
+    "strategy": "adaptive",
+    "region": "border",
+    "seed": 2026102601,
+    "denied": [
+      "dusk_2",
+      "hunt_3",
+      "hunt_4"
+    ]
+  },
+  {
+    "captain": "shen",
+    "profile": "balanced",
+    "strategy": "adaptive",
+    "region": "wood",
+    "seed": 2026102611,
+    "denied": [
+      "dusk_2",
+      "hunt_3",
+      "hunt_4"
+    ]
+  },
+  {
+    "captain": "shen",
+    "profile": "balanced",
+    "strategy": "adaptive",
+    "region": "waste",
+    "seed": 2026102620,
+    "denied": [
+      "dusk_2",
+      "hunt_3",
+      "hunt_4"
+    ]
+  },
+  {
+    "captain": "shen",
+    "profile": "balanced",
+    "strategy": "adaptive",
+    "region": "frost",
+    "seed": 2026102630,
+    "denied": [
+      "dusk_2",
+      "hunt_3",
+      "hunt_4"
+    ]
+  },
+  {
+    "captain": "shen",
+    "profile": "guard",
+    "strategy": "adaptive",
+    "region": "border",
+    "seed": 2026102700,
+    "denied": [
+      "dusk_2",
+      "hunt_3",
+      "hunt_4"
+    ]
+  },
+  {
+    "captain": "shen",
+    "profile": "guard",
+    "strategy": "adaptive",
+    "region": "wood",
+    "seed": 2026102710,
+    "denied": [
+      "dusk_2",
+      "hunt_3",
+      "hunt_4"
+    ]
+  },
+  {
+    "captain": "shen",
+    "profile": "guard",
+    "strategy": "relic_focus",
+    "region": "wood",
+    "seed": 2026102711,
+    "denied": [
+      "dusk_2",
+      "hunt_3",
+      "hunt_4"
+    ]
+  },
+  {
+    "captain": "shen",
+    "profile": "guard",
+    "strategy": "adaptive",
+    "region": "waste",
+    "seed": 2026102720,
+    "denied": [
+      "dusk_2",
+      "hunt_3",
+      "hunt_4"
+    ]
+  },
+  {
+    "captain": "shen",
+    "profile": "guard",
+    "strategy": "adaptive",
+    "region": "waste",
+    "seed": 2026102721,
+    "denied": [
+      "dusk_2",
+      "hunt_3",
+      "hunt_4"
+    ]
+  },
+  {
+    "captain": "shen",
+    "profile": "guard",
+    "strategy": "adaptive",
+    "region": "frost",
+    "seed": 2026102730,
+    "denied": [
+      "dusk_2",
+      "hunt_3",
+      "hunt_4"
+    ]
+  },
+  {
+    "captain": "shen",
+    "profile": "guard",
+    "strategy": "adaptive",
+    "region": "frost",
+    "seed": 2026102731,
+    "denied": [
+      "dusk_2",
+      "hunt_3",
+      "hunt_4"
+    ]
+  },
+  {
+    "captain": "shen",
+    "profile": "support",
+    "strategy": "adaptive",
+    "region": "border",
+    "seed": 2026102800,
+    "denied": [
+      "dusk_2",
+      "hunt_3",
+      "hunt_4"
+    ]
+  },
+  {
+    "captain": "shen",
+    "profile": "support",
+    "strategy": "adaptive",
+    "region": "wood",
+    "seed": 2026102810,
+    "denied": [
+      "dusk_2",
+      "hunt_3",
+      "hunt_4"
+    ]
+  },
+  {
+    "captain": "shen",
+    "profile": "support",
+    "strategy": "adaptive",
+    "region": "waste",
+    "seed": 2026102821,
+    "denied": [
+      "dusk_2",
+      "hunt_3",
+      "hunt_4"
+    ]
+  },
+  {
+    "captain": "shen",
+    "profile": "support",
+    "strategy": "adaptive",
+    "region": "frost",
+    "seed": 2026102830,
+    "denied": [
+      "dusk_2",
+      "hunt_3",
+      "hunt_4"
+    ]
+  },
+  {
+    "captain": "shen",
+    "profile": "support",
+    "strategy": "adaptive",
+    "region": "marsh",
+    "seed": 2026102840,
+    "denied": [
+      "dusk_2",
+      "hunt_3",
+      "hunt_4"
+    ]
+  },
+  {
+    "captain": "shen",
+    "profile": "assault",
+    "strategy": "adaptive",
+    "region": "border",
+    "seed": 2026102900,
+    "denied": [
+      "dusk_2",
+      "hunt_3",
+      "hunt_4"
+    ]
+  },
+  {
+    "captain": "shen",
+    "profile": "assault",
+    "strategy": "adaptive",
+    "region": "border",
+    "seed": 2026102901,
+    "denied": [
+      "dusk_2",
+      "hunt_3",
+      "hunt_4"
+    ]
+  },
+  {
+    "captain": "shen",
+    "profile": "assault",
+    "strategy": "adaptive",
+    "region": "wood",
+    "seed": 2026102910,
+    "denied": [
+      "dusk_2",
+      "hunt_3",
+      "hunt_4"
+    ]
+  },
+  {
+    "captain": "shen",
+    "profile": "assault",
+    "strategy": "adaptive",
+    "region": "wood",
+    "seed": 2026102911,
+    "denied": [
+      "dusk_2",
+      "hunt_3",
+      "hunt_4"
+    ]
+  },
+  {
+    "captain": "shen",
+    "profile": "assault",
+    "strategy": "adaptive",
+    "region": "waste",
+    "seed": 2026102920,
+    "denied": [
+      "dusk_2",
+      "hunt_3",
+      "hunt_4"
+    ]
+  },
+  {
+    "captain": "shen",
+    "profile": "assault",
+    "strategy": "adaptive",
+    "region": "waste",
+    "seed": 2026102921,
+    "denied": [
+      "dusk_2",
+      "hunt_3",
+      "hunt_4"
+    ]
+  },
+  {
+    "captain": "shen",
+    "profile": "assault",
+    "strategy": "adaptive",
+    "region": "frost",
+    "seed": 2026102930,
+    "denied": [
+      "dusk_2",
+      "hunt_3",
+      "hunt_4"
+    ]
+  },
+  {
+    "captain": "shen",
+    "profile": "assault",
+    "strategy": "adaptive",
+    "region": "frost",
+    "seed": 2026102931,
+    "denied": [
+      "dusk_2",
+      "hunt_3",
+      "hunt_4"
+    ]
+  },
+  {
+    "captain": "wen",
+    "profile": "balanced",
+    "strategy": "adaptive",
+    "region": "border",
+    "seed": 2026102601,
+    "denied": [
+      "dusk_2",
+      "hunt_3",
+      "hunt_4"
+    ]
+  },
+  {
+    "captain": "wen",
+    "profile": "balanced",
+    "strategy": "adaptive",
+    "region": "wood",
+    "seed": 2026102611,
+    "denied": [
+      "dusk_2",
+      "hunt_3",
+      "hunt_4"
+    ]
+  },
+  {
+    "captain": "wen",
+    "profile": "balanced",
+    "strategy": "adaptive",
+    "region": "waste",
+    "seed": 2026102620,
+    "denied": [
+      "dusk_2",
+      "hunt_3",
+      "hunt_4"
+    ]
+  },
+  {
+    "captain": "wen",
+    "profile": "balanced",
+    "strategy": "adaptive",
+    "region": "frost",
+    "seed": 2026102630,
+    "denied": [
+      "dusk_2",
+      "hunt_3",
+      "hunt_4"
+    ]
+  },
+  {
+    "captain": "wen",
+    "profile": "guard",
+    "strategy": "adaptive",
+    "region": "border",
+    "seed": 2026102700,
+    "denied": [
+      "dusk_2",
+      "hunt_3",
+      "hunt_4"
+    ]
+  },
+  {
+    "captain": "wen",
+    "profile": "guard",
+    "strategy": "adaptive",
+    "region": "wood",
+    "seed": 2026102710,
+    "denied": [
+      "dusk_2",
+      "hunt_3",
+      "hunt_4"
+    ]
+  },
+  {
+    "captain": "wen",
+    "profile": "guard",
+    "strategy": "relic_focus",
+    "region": "wood",
+    "seed": 2026102711,
+    "denied": [
+      "dusk_2",
+      "hunt_3",
+      "hunt_4"
+    ]
+  },
+  {
+    "captain": "wen",
+    "profile": "guard",
+    "strategy": "adaptive",
+    "region": "waste",
+    "seed": 2026102720,
+    "denied": [
+      "dusk_2",
+      "hunt_3",
+      "hunt_4"
+    ]
+  },
+  {
+    "captain": "wen",
+    "profile": "guard",
+    "strategy": "adaptive",
+    "region": "waste",
+    "seed": 2026102721,
+    "denied": [
+      "dusk_2",
+      "hunt_3",
+      "hunt_4"
+    ]
+  },
+  {
+    "captain": "wen",
+    "profile": "guard",
+    "strategy": "adaptive",
+    "region": "frost",
+    "seed": 2026102730,
+    "denied": [
+      "dusk_2",
+      "hunt_3",
+      "hunt_4"
+    ]
+  },
+  {
+    "captain": "wen",
+    "profile": "guard",
+    "strategy": "adaptive",
+    "region": "frost",
+    "seed": 2026102731,
+    "denied": [
+      "dusk_2",
+      "hunt_3",
+      "hunt_4"
+    ]
+  },
+  {
+    "captain": "wen",
+    "profile": "support",
+    "strategy": "adaptive",
+    "region": "border",
+    "seed": 2026102800,
+    "denied": [
+      "dusk_2",
+      "hunt_3",
+      "hunt_4"
+    ]
+  },
+  {
+    "captain": "wen",
+    "profile": "support",
+    "strategy": "adaptive",
+    "region": "wood",
+    "seed": 2026102810,
+    "denied": [
+      "dusk_2",
+      "hunt_3",
+      "hunt_4"
+    ]
+  },
+  {
+    "captain": "wen",
+    "profile": "support",
+    "strategy": "adaptive",
+    "region": "waste",
+    "seed": 2026102821,
+    "denied": [
+      "dusk_2",
+      "hunt_3",
+      "hunt_4"
+    ]
+  },
+  {
+    "captain": "wen",
+    "profile": "support",
+    "strategy": "adaptive",
+    "region": "frost",
+    "seed": 2026102830,
+    "denied": [
+      "dusk_2",
+      "hunt_3",
+      "hunt_4"
+    ]
+  },
+  {
+    "captain": "wen",
+    "profile": "support",
+    "strategy": "adaptive",
+    "region": "marsh",
+    "seed": 2026102840,
+    "denied": [
+      "dusk_2",
+      "hunt_3",
+      "hunt_4"
+    ]
+  },
+  {
+    "captain": "wen",
+    "profile": "assault",
+    "strategy": "adaptive",
+    "region": "border",
+    "seed": 2026102900,
+    "denied": [
+      "dusk_2",
+      "hunt_3",
+      "hunt_4"
+    ]
+  },
+  {
+    "captain": "wen",
+    "profile": "assault",
+    "strategy": "adaptive",
+    "region": "border",
+    "seed": 2026102901,
+    "denied": [
+      "dusk_2",
+      "hunt_3",
+      "hunt_4"
+    ]
+  },
+  {
+    "captain": "wen",
+    "profile": "assault",
+    "strategy": "adaptive",
+    "region": "wood",
+    "seed": 2026102910,
+    "denied": [
+      "dusk_2",
+      "hunt_3",
+      "hunt_4"
+    ]
+  },
+  {
+    "captain": "wen",
+    "profile": "assault",
+    "strategy": "adaptive",
+    "region": "wood",
+    "seed": 2026102911,
+    "denied": [
+      "dusk_2",
+      "hunt_3",
+      "hunt_4"
+    ]
+  },
+  {
+    "captain": "wen",
+    "profile": "assault",
+    "strategy": "adaptive",
+    "region": "waste",
+    "seed": 2026102920,
+    "denied": [
+      "dusk_2",
+      "hunt_3",
+      "hunt_4"
+    ]
+  },
+  {
+    "captain": "wen",
+    "profile": "assault",
+    "strategy": "adaptive",
+    "region": "waste",
+    "seed": 2026102921,
+    "denied": [
+      "dusk_2",
+      "hunt_3",
+      "hunt_4"
+    ]
+  },
+  {
+    "captain": "wen",
+    "profile": "assault",
+    "strategy": "adaptive",
+    "region": "frost",
+    "seed": 2026102930,
+    "denied": [
+      "dusk_2",
+      "hunt_3",
+      "hunt_4"
+    ]
+  },
+  {
+    "captain": "wen",
+    "profile": "assault",
+    "strategy": "adaptive",
+    "region": "frost",
+    "seed": 2026102931,
+    "denied": [
+      "dusk_2",
+      "hunt_3",
+      "hunt_4"
+    ]
+  },
+  {
+    "captain": "lu",
+    "profile": "balanced",
+    "strategy": "adaptive",
+    "region": "border",
+    "seed": 2026102601,
+    "denied": [
+      "dusk_2",
+      "hunt_3",
+      "hunt_4"
+    ]
+  },
+  {
+    "captain": "lu",
+    "profile": "balanced",
+    "strategy": "adaptive",
+    "region": "wood",
+    "seed": 2026102611,
+    "denied": [
+      "dusk_2",
+      "hunt_3",
+      "hunt_4"
+    ]
+  },
+  {
+    "captain": "lu",
+    "profile": "balanced",
+    "strategy": "adaptive",
+    "region": "waste",
+    "seed": 2026102620,
+    "denied": [
+      "dusk_2",
+      "hunt_3",
+      "hunt_4"
+    ]
+  },
+  {
+    "captain": "lu",
+    "profile": "balanced",
+    "strategy": "adaptive",
+    "region": "frost",
+    "seed": 2026102630,
+    "denied": [
+      "dusk_2",
+      "hunt_3",
+      "hunt_4"
+    ]
+  },
+  {
+    "captain": "lu",
+    "profile": "guard",
+    "strategy": "adaptive",
+    "region": "border",
+    "seed": 2026102700,
+    "denied": [
+      "dusk_2",
+      "hunt_3",
+      "hunt_4"
+    ]
+  },
+  {
+    "captain": "lu",
+    "profile": "guard",
+    "strategy": "adaptive",
+    "region": "wood",
+    "seed": 2026102710,
+    "denied": [
+      "dusk_2",
+      "hunt_3",
+      "hunt_4"
+    ]
+  },
+  {
+    "captain": "lu",
+    "profile": "guard",
+    "strategy": "relic_focus",
+    "region": "wood",
+    "seed": 2026102711,
+    "denied": [
+      "dusk_2",
+      "hunt_3",
+      "hunt_4"
+    ]
+  },
+  {
+    "captain": "lu",
+    "profile": "guard",
+    "strategy": "adaptive",
+    "region": "waste",
+    "seed": 2026102720,
+    "denied": [
+      "dusk_2",
+      "hunt_3",
+      "hunt_4"
+    ]
+  },
+  {
+    "captain": "lu",
+    "profile": "guard",
+    "strategy": "adaptive",
+    "region": "waste",
+    "seed": 2026102721,
+    "denied": [
+      "dusk_2",
+      "hunt_3",
+      "hunt_4"
+    ]
+  },
+  {
+    "captain": "lu",
+    "profile": "guard",
+    "strategy": "adaptive",
+    "region": "frost",
+    "seed": 2026102730,
+    "denied": [
+      "dusk_2",
+      "hunt_3",
+      "hunt_4"
+    ]
+  },
+  {
+    "captain": "lu",
+    "profile": "guard",
+    "strategy": "adaptive",
+    "region": "frost",
+    "seed": 2026102731,
+    "denied": [
+      "dusk_2",
+      "hunt_3",
+      "hunt_4"
+    ]
+  },
+  {
+    "captain": "lu",
+    "profile": "support",
+    "strategy": "adaptive",
+    "region": "border",
+    "seed": 2026102800,
+    "denied": [
+      "dusk_2",
+      "hunt_3",
+      "hunt_4"
+    ]
+  },
+  {
+    "captain": "lu",
+    "profile": "support",
+    "strategy": "adaptive",
+    "region": "wood",
+    "seed": 2026102810,
+    "denied": [
+      "dusk_2",
+      "hunt_3",
+      "hunt_4"
+    ]
+  },
+  {
+    "captain": "lu",
+    "profile": "support",
+    "strategy": "adaptive",
+    "region": "waste",
+    "seed": 2026102821,
+    "denied": [
+      "dusk_2",
+      "hunt_3",
+      "hunt_4"
+    ]
+  },
+  {
+    "captain": "lu",
+    "profile": "support",
+    "strategy": "adaptive",
+    "region": "frost",
+    "seed": 2026102830,
+    "denied": [
+      "dusk_2",
+      "hunt_3",
+      "hunt_4"
+    ]
+  },
+  {
+    "captain": "lu",
+    "profile": "support",
+    "strategy": "adaptive",
+    "region": "marsh",
+    "seed": 2026102840,
+    "denied": [
+      "dusk_2",
+      "hunt_3",
+      "hunt_4"
+    ]
+  },
+  {
+    "captain": "lu",
+    "profile": "assault",
+    "strategy": "adaptive",
+    "region": "border",
+    "seed": 2026102900,
+    "denied": [
+      "dusk_2",
+      "hunt_3",
+      "hunt_4"
+    ]
+  },
+  {
+    "captain": "lu",
+    "profile": "assault",
+    "strategy": "adaptive",
+    "region": "border",
+    "seed": 2026102901,
+    "denied": [
+      "dusk_2",
+      "hunt_3",
+      "hunt_4"
+    ]
+  },
+  {
+    "captain": "lu",
+    "profile": "assault",
+    "strategy": "adaptive",
+    "region": "wood",
+    "seed": 2026102910,
+    "denied": [
+      "dusk_2",
+      "hunt_3",
+      "hunt_4"
+    ]
+  },
+  {
+    "captain": "lu",
+    "profile": "assault",
+    "strategy": "adaptive",
+    "region": "wood",
+    "seed": 2026102911,
+    "denied": [
+      "dusk_2",
+      "hunt_3",
+      "hunt_4"
+    ]
+  },
+  {
+    "captain": "lu",
+    "profile": "assault",
+    "strategy": "adaptive",
+    "region": "waste",
+    "seed": 2026102920,
+    "denied": [
+      "dusk_2",
+      "hunt_3",
+      "hunt_4"
+    ]
+  },
+  {
+    "captain": "lu",
+    "profile": "assault",
+    "strategy": "adaptive",
+    "region": "waste",
+    "seed": 2026102921,
+    "denied": [
+      "dusk_2",
+      "hunt_3",
+      "hunt_4"
+    ]
+  },
+  {
+    "captain": "lu",
+    "profile": "assault",
+    "strategy": "adaptive",
+    "region": "frost",
+    "seed": 2026102930,
+    "denied": [
+      "dusk_2",
+      "hunt_3",
+      "hunt_4"
+    ]
+  },
+  {
+    "captain": "lu",
+    "profile": "assault",
+    "strategy": "adaptive",
+    "region": "frost",
+    "seed": 2026102931,
+    "denied": [
+      "dusk_2",
+      "hunt_3",
+      "hunt_4"
+    ]
+  }
+]

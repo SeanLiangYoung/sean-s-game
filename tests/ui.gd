@@ -22,13 +22,19 @@ func run():
   scene.show_party_menu("技能","medic")
   check(has_text(scene.modal,"恢复 32"),"medic skill details reflect rules")
   scene.show_party_menu("装备","hero")
-  var equip=find_button(scene.modal,"装备此武器")
+  var equip=scene.modal.find_child("EquipmentSlot_mainhand",true,false)
   check(equip!=null,"inventory equip action reachable")
-  if equip!=null:equip.pressed.emit()
+  if equip!=null:
+   equip.pressed.emit();await process_frame
+   scene.modal.find_child("EquipmentChoice_0",true,false).pressed.emit();await process_frame
+   scene.find_child("EquipmentConfirmation",true,false).confirmed.emit();await process_frame
   check(scene.campaign.equipped_index("hero")==0,"UI equips selected character")
-  var remove=find_button(scene.modal,"卸下当前")
+  scene.modal.find_child("EquipmentSlot_mainhand",true,false).pressed.emit();await process_frame
+  var remove=scene.modal.find_child("EquipmentRemove_mainhand",true,false)
   check(remove!=null,"unequip action reachable")
-  if remove!=null:remove.pressed.emit()
+  if remove!=null:
+   remove.pressed.emit();await process_frame
+   scene.find_child("EquipmentConfirmation",true,false).confirmed.emit();await process_frame
   check(scene.campaign.equipped_index("hero")==-1,"UI unequips selected character")
   scene.campaign.relics=["ember","spring","lens"]
   scene.show_party_menu("角色","hero")

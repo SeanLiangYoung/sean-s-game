@@ -94,16 +94,16 @@ func _initialize():
   var party=Rules.new().default_party().slice(0,2)
   party[0].mainhand=kind;party[1].hp=20
   r=Rules.new();r.start_battle(party,0)
-  check(r.aura==kind,"aura follows main hand "+kind)
+  check(r.aura=="","weapons provide no team aura "+kind)
   if kind=="sword":
    r.obstacles=[];r.actors[2].cell=r.active().cell+Vector2i(1,0)
    var before=r.actors[2].hp
    r.attack(r.actors[2].id)
-   check(r.actors[2].hp==before-24,"sword aura benefits ally")
-  if kind=="dagger":check(r.actors[1].speed==17,"dagger speed before sorting")
-  if kind=="bow":check(r.actors[1].range==2,"bow aura adds range")
-  if kind=="staff":check(r.actors[1].hp==23,"staff aura heals active unit")
-  if kind=="crossbow":check(r.actors[1].armor==2,"crossbow aura armor")
+   check(r.actors[2].hp==before-22,"weapon does not add team damage")
+  if kind=="dagger":check(r.actors[1].speed==15,"dagger does not change ally speed")
+  if kind=="bow":check(r.actors[1].range==1,"bow does not change ally range")
+  if kind=="staff":check(r.actors[1].hp==20,"staff does not heal allies automatically")
+  if kind=="crossbow":check(r.actors[1].armor==0,"crossbow does not grant team armor")
   r.actors[0].hp=0;r.check_outcome()
   check(r.aura=="","hero death disables aura "+kind)
   if kind=="bow":check(r.actors[1].range==1,"death removes bow aura range")
