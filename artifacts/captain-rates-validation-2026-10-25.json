@@ -1,0 +1,34 @@
+{
+  "disk_comparisons": [
+    {
+      "captain": "shen",
+      "matched_runs": 5
+    },
+    {
+      "captain": "wen",
+      "matched_runs": 5
+    },
+    {
+      "captain": "lu",
+      "matched_runs": 5
+    }
+  ],
+  "historical_shen_comparisons": [
+    {
+      "difficulty": 0,
+      "matched_runs": 5
+    },
+    {
+      "difficulty": 1,
+      "matched_runs": 5
+    },
+    {
+      "difficulty": 2,
+      "matched_runs": 5
+    },
+    {
+      "difficulty": 3,
+      "matched_runs": 5
+    }
+  ]
+}
