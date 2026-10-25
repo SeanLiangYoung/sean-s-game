@@ -792,6 +792,55 @@ func auto_best_hit() -> Dictionary:
    best_mp=mp
  return best
 
+func auto_support_cell_safe(cell: Vector2i) -> bool:
+ return not (round_no in [3,5,7,9] and hex_distance(cell,Vector2i.ZERO)>=radius)
+
+func auto_incoming_pressure(unit: Dictionary,cell: Vector2i) -> int:
+ # Conservative visible-position estimate, not a rollout of future enemy choices.
+ var pressure=0
+ for enemy in actors:
+  if enemy.side==unit.side or enemy.hp<=0:continue
+  var distance=hex_distance(cell,enemy.cell)
+  if distance>enemy.range+2:continue
+  var hits=2 if distance<=enemy.range else 1
+  pressure+=maxi(1,enemy.power+int(combat_modifier(enemy,"damage"))-unit.get("armor",0))*hits
+ return pressure
+
+func auto_support_move_safe(unit: Dictionary,cell: Vector2i) -> bool:
+ if unit.profession!="medic" and unit.id!="hero":return true
+ if not auto_support_cell_safe(cell):return false
+ var risk=auto_incoming_pressure(unit,cell)
+ var limit=0.6 if unit.profession=="medic" else 0.75
+ return risk<unit.hp*limit or risk<auto_incoming_pressure(unit,unit.cell)
+
+func auto_support_action() -> Dictionary:
+ if not can_act() or active().side!=0:return {}
+ var a=active()
+ var allies=actors.filter(func(u):return u.side==a.side and u.hp>0)
+ allies.sort_custom(func(x,y):return x.hp*y.max_hp<y.hp*x.max_hp if x.hp*y.max_hp!=y.hp*x.max_hp else x.id<y.id)
+ for ally in allies:
+  var pressure=auto_incoming_pressure(ally,ally.cell)
+  var endangered=pressure>=ally.hp and ally.hp<ally.max_hp
+  var missing=ally.max_hp-ally.hp
+  if missing<20 and not endangered:continue
+  for id in ["medic_mend","heal","medic_barrier","hero_heal","engineer_pulse","warden_rescue"]:
+   if can_cast(id,ally.id):return {"action":"skill","target":ally.id,"skill":id}
+ # A healer with no funded cast should not advance into melee simply to attack.
+ if a.profession!="medic":return {}
+ var current=auto_incoming_pressure(a,a.cell)
+ if current<a.hp*0.6:return {}
+ var best={};var safest=current;var cost=999
+ var warnings=boss_warnings()
+ for cell in cells():
+  if cell in warnings or not auto_support_cell_safe(cell):continue
+  var route=path_to(a.cell,cell)
+  var move_cost=movement_cost(a,route)
+  if route.is_empty() or move_cost>a.ap:continue
+  var risk=auto_incoming_pressure(a,cell)
+  if risk<safest or (risk==safest and risk<current and move_cost<cost):
+   best={"action":"move","target":cell};safest=risk;cost=move_cost
+ return best
+
 func auto_action() -> Dictionary:
  if not can_act() or active().side!=0:return {}
  var warned=boss_warnings()
@@ -807,6 +856,8 @@ func auto_action() -> Dictionary:
    if x.cell.x!=y.cell.x:return x.cell.x<y.cell.x
    return x.cell.y<y.cell.y)
   if not escapes.is_empty():return {"action":"move","target":escapes[0].cell}
+ var support=auto_support_action()
+ if not support.is_empty():return support
  var hit=auto_best_hit()
  if not hit.is_empty():return hit
  var a=active()
@@ -820,6 +871,7 @@ func auto_action() -> Dictionary:
  for enemy in enemies:current_distance=mini(current_distance,hex_distance(a.cell,enemy.cell))
  for cell in cells():
   if cell in warned:continue
+  if not auto_support_move_safe(a,cell):continue
   var path=path_to(a.cell,cell)
   if path.is_empty() or movement_cost(a,path)>a.ap:continue
   var copy=auto_snapshot()

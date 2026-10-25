@@ -1,0 +1,1098 @@
+{
+  "diagnostic": {
+    "runs": 20,
+    "clears": 0,
+    "initial_seed_blocks": 10,
+    "failures_with_supplies": 19,
+    "failure_regions": {
+      "border": 3,
+      "wood": 4,
+      "waste": 3,
+      "frost": 5,
+      "ruins": 4,
+      "marsh": 1
+    },
+    "battles": 221,
+    "captain": {
+      "lu": {
+        "runs": 10,
+        "clears": 0
+      },
+      "shen": {
+        "runs": 5,
+        "clears": 0
+      },
+      "wen": {
+        "runs": 5,
+        "clears": 0
+      }
+    },
+    "profile": {
+      "assault": {
+        "runs": 1,
+        "clears": 0
+      },
+      "balanced": {
+        "runs": 6,
+        "clears": 0
+      },
+      "guard": {
+        "runs": 5,
+        "clears": 0
+      },
+      "support": {
+        "runs": 8,
+        "clears": 0
+      }
+    },
+    "strategy": {
+      "adaptive": {
+        "runs": 15,
+        "clears": 0
+      },
+      "relic_focus": {
+        "runs": 5,
+        "clears": 0
+      }
+    },
+    "captain_profile": {
+      "shen/balanced": {
+        "runs": 2,
+        "clears": 0
+      },
+      "shen/guard": {
+        "runs": 1,
+        "clears": 0
+      },
+      "shen/support": {
+        "runs": 2,
+        "clears": 0
+      },
+      "wen/balanced": {
+        "runs": 3,
+        "clears": 0
+      },
+      "wen/guard": {
+        "runs": 2,
+        "clears": 0
+      },
+      "lu/balanced": {
+        "runs": 1,
+        "clears": 0
+      },
+      "lu/guard": {
+        "runs": 2,
+        "clears": 0
+      },
+      "lu/support": {
+        "runs": 6,
+        "clears": 0
+      },
+      "lu/assault": {
+        "runs": 1,
+        "clears": 0
+      }
+    },
+    "boss_entries": 64,
+    "boss_two_piece": 62,
+    "boss_mixed_two_two": 36,
+    "boss_theme_counts": {
+      "pilgrim": 6,
+      "blood": 6,
+      "dusk": 24,
+      "hunt": 12,
+      "command": 5,
+      "engine": 4,
+      "arcane": 4,
+      "ward": 3
+    },
+    "runs_with_casualty": 20,
+    "first_casualty_with_supplies": 20,
+    "first_casualty_actors": 25,
+    "first_casualty_high_mana_actors": 9,
+    "successful_preboss_relic_intersection": []
+  },
+  "support": {
+    "runs": 20,
+    "clears": 8,
+    "initial_seed_blocks": 10,
+    "failures_with_supplies": 12,
+    "failure_regions": {
+      "border": 4,
+      "wood": 2,
+      "frost": 2,
+      "marsh": 2,
+      "ruins": 2
+    },
+    "battles": 281,
+    "captain": {
+      "lu": {
+        "runs": 10,
+        "clears": 3
+      },
+      "shen": {
+        "runs": 5,
+        "clears": 4
+      },
+      "wen": {
+        "runs": 5,
+        "clears": 1
+      }
+    },
+    "profile": {
+      "assault": {
+        "runs": 1,
+        "clears": 0
+      },
+      "balanced": {
+        "runs": 6,
+        "clears": 3
+      },
+      "guard": {
+        "runs": 5,
+        "clears": 2
+      },
+      "support": {
+        "runs": 8,
+        "clears": 3
+      }
+    },
+    "strategy": {
+      "adaptive": {
+        "runs": 15,
+        "clears": 6
+      },
+      "relic_focus": {
+        "runs": 5,
+        "clears": 2
+      }
+    },
+    "captain_profile": {
+      "shen/balanced": {
+        "runs": 2,
+        "clears": 2
+      },
+      "shen/guard": {
+        "runs": 1,
+        "clears": 1
+      },
+      "shen/support": {
+        "runs": 2,
+        "clears": 1
+      },
+      "wen/balanced": {
+        "runs": 3,
+        "clears": 1
+      },
+      "wen/guard": {
+        "runs": 2,
+        "clears": 0
+      },
+      "lu/balanced": {
+        "runs": 1,
+        "clears": 0
+      },
+      "lu/guard": {
+        "runs": 2,
+        "clears": 1
+      },
+      "lu/support": {
+        "runs": 6,
+        "clears": 2
+      },
+      "lu/assault": {
+        "runs": 1,
+        "clears": 0
+      }
+    },
+    "boss_entries": 85,
+    "boss_two_piece": 83,
+    "boss_mixed_two_two": 57,
+    "boss_theme_counts": {
+      "dusk": 33,
+      "command": 5,
+      "engine": 10,
+      "pilgrim": 6,
+      "hunt": 18,
+      "blood": 4,
+      "ward": 3,
+      "arcane": 6
+    },
+    "runs_with_casualty": 19,
+    "first_casualty_with_supplies": 19,
+    "first_casualty_actors": 28,
+    "first_casualty_high_mana_actors": 2,
+    "successful_preboss_relic_intersection": [],
+    "paired": {
+      "gains": 8,
+      "losses": 0
+    }
+  },
+  "supply": {
+    "runs": 20,
+    "clears": 13,
+    "initial_seed_blocks": 10,
+    "failures_with_supplies": 6,
+    "failure_regions": {
+      "border": 4,
+      "ruins": 1,
+      "waste": 1,
+      "marsh": 1
+    },
+    "battles": 292,
+    "captain": {
+      "lu": {
+        "runs": 10,
+        "clears": 4
+      },
+      "shen": {
+        "runs": 5,
+        "clears": 5
+      },
+      "wen": {
+        "runs": 5,
+        "clears": 4
+      }
+    },
+    "profile": {
+      "assault": {
+        "runs": 1,
+        "clears": 1
+      },
+      "balanced": {
+        "runs": 6,
+        "clears": 5
+      },
+      "guard": {
+        "runs": 5,
+        "clears": 4
+      },
+      "support": {
+        "runs": 8,
+        "clears": 3
+      }
+    },
+    "strategy": {
+      "adaptive": {
+        "runs": 15,
+        "clears": 11
+      },
+      "relic_focus": {
+        "runs": 5,
+        "clears": 2
+      }
+    },
+    "captain_profile": {
+      "shen/balanced": {
+        "runs": 2,
+        "clears": 2
+      },
+      "shen/guard": {
+        "runs": 1,
+        "clears": 1
+      },
+      "shen/support": {
+        "runs": 2,
+        "clears": 2
+      },
+      "wen/balanced": {
+        "runs": 3,
+        "clears": 2
+      },
+      "wen/guard": {
+        "runs": 2,
+        "clears": 2
+      },
+      "lu/balanced": {
+        "runs": 1,
+        "clears": 1
+      },
+      "lu/guard": {
+        "runs": 2,
+        "clears": 1
+      },
+      "lu/support": {
+        "runs": 6,
+        "clears": 1
+      },
+      "lu/assault": {
+        "runs": 1,
+        "clears": 1
+      }
+    },
+    "boss_entries": 96,
+    "boss_two_piece": 88,
+    "boss_mixed_two_two": 67,
+    "boss_theme_counts": {
+      "dusk": 17,
+      "engine": 8,
+      "pilgrim": 10,
+      "hunt": 29,
+      "arcane": 4,
+      "command": 20,
+      "ward": 4,
+      "blood": 4
+    },
+    "runs_with_casualty": 20,
+    "first_casualty_with_supplies": 12,
+    "first_casualty_actors": 21,
+    "first_casualty_high_mana_actors": 7,
+    "successful_preboss_relic_intersection": [],
+    "paired": {
+      "gains": 8,
+      "losses": 3
+    }
+  },
+  "training": {
+    "runs": 20,
+    "clears": 14,
+    "initial_seed_blocks": 10,
+    "failures_with_supplies": 4,
+    "failure_regions": {
+      "border": 3,
+      "ruins": 1,
+      "marsh": 2
+    },
+    "battles": 312,
+    "captain": {
+      "lu": {
+        "runs": 10,
+        "clears": 6
+      },
+      "shen": {
+        "runs": 5,
+        "clears": 4
+      },
+      "wen": {
+        "runs": 5,
+        "clears": 4
+      }
+    },
+    "profile": {
+      "assault": {
+        "runs": 1,
+        "clears": 0
+      },
+      "balanced": {
+        "runs": 6,
+        "clears": 4
+      },
+      "guard": {
+        "runs": 5,
+        "clears": 5
+      },
+      "support": {
+        "runs": 8,
+        "clears": 5
+      }
+    },
+    "strategy": {
+      "adaptive": {
+        "runs": 15,
+        "clears": 12
+      },
+      "relic_focus": {
+        "runs": 5,
+        "clears": 2
+      }
+    },
+    "captain_profile": {
+      "shen/balanced": {
+        "runs": 2,
+        "clears": 1
+      },
+      "shen/guard": {
+        "runs": 1,
+        "clears": 1
+      },
+      "shen/support": {
+        "runs": 2,
+        "clears": 2
+      },
+      "wen/balanced": {
+        "runs": 3,
+        "clears": 2
+      },
+      "wen/guard": {
+        "runs": 2,
+        "clears": 2
+      },
+      "lu/balanced": {
+        "runs": 1,
+        "clears": 1
+      },
+      "lu/guard": {
+        "runs": 2,
+        "clears": 2
+      },
+      "lu/support": {
+        "runs": 6,
+        "clears": 3
+      },
+      "lu/assault": {
+        "runs": 1,
+        "clears": 0
+      }
+    },
+    "boss_entries": 102,
+    "boss_two_piece": 96,
+    "boss_mixed_two_two": 72,
+    "boss_theme_counts": {
+      "dusk": 23,
+      "arcane": 7,
+      "hunt": 21,
+      "engine": 6,
+      "pilgrim": 10,
+      "ward": 5,
+      "blood": 5,
+      "command": 25
+    },
+    "runs_with_casualty": 18,
+    "first_casualty_with_supplies": 8,
+    "first_casualty_actors": 20,
+    "first_casualty_high_mana_actors": 7,
+    "successful_preboss_relic_intersection": [],
+    "paired": {
+      "gains": 4,
+      "losses": 3
+    }
+  },
+  "new-baseline": {
+    "runs": 72,
+    "clears": 28,
+    "initial_seed_blocks": 12,
+    "failures_with_supplies": 40,
+    "failure_regions": {
+      "border": 6,
+      "waste": 5,
+      "marsh": 9,
+      "frost": 7,
+      "ruins": 10,
+      "wood": 7
+    },
+    "battles": 1147,
+    "captain": {
+      "lu": {
+        "runs": 24,
+        "clears": 7
+      },
+      "shen": {
+        "runs": 24,
+        "clears": 11
+      },
+      "wen": {
+        "runs": 24,
+        "clears": 10
+      }
+    },
+    "profile": {
+      "assault": {
+        "runs": 18,
+        "clears": 5
+      },
+      "balanced": {
+        "runs": 18,
+        "clears": 10
+      },
+      "guard": {
+        "runs": 18,
+        "clears": 7
+      },
+      "support": {
+        "runs": 18,
+        "clears": 6
+      }
+    },
+    "strategy": {
+      "adaptive": {
+        "runs": 36,
+        "clears": 17
+      },
+      "relic_focus": {
+        "runs": 36,
+        "clears": 11
+      }
+    },
+    "captain_profile": {
+      "shen/balanced": {
+        "runs": 6,
+        "clears": 4
+      },
+      "shen/guard": {
+        "runs": 6,
+        "clears": 3
+      },
+      "shen/support": {
+        "runs": 6,
+        "clears": 2
+      },
+      "shen/assault": {
+        "runs": 6,
+        "clears": 2
+      },
+      "wen/balanced": {
+        "runs": 6,
+        "clears": 4
+      },
+      "wen/guard": {
+        "runs": 6,
+        "clears": 2
+      },
+      "wen/support": {
+        "runs": 6,
+        "clears": 3
+      },
+      "wen/assault": {
+        "runs": 6,
+        "clears": 1
+      },
+      "lu/balanced": {
+        "runs": 6,
+        "clears": 2
+      },
+      "lu/guard": {
+        "runs": 6,
+        "clears": 2
+      },
+      "lu/support": {
+        "runs": 6,
+        "clears": 1
+      },
+      "lu/assault": {
+        "runs": 6,
+        "clears": 2
+      }
+    },
+    "boss_entries": 330,
+    "boss_two_piece": 324,
+    "boss_mixed_two_two": 233,
+    "boss_theme_counts": {
+      "blood": 73,
+      "engine": 45,
+      "arcane": 13,
+      "ward": 24,
+      "command": 43,
+      "pilgrim": 15,
+      "hunt": 80,
+      "dusk": 37
+    },
+    "runs_with_casualty": 70,
+    "first_casualty_with_supplies": 70,
+    "first_casualty_actors": 76,
+    "first_casualty_high_mana_actors": 27,
+    "successful_preboss_relic_intersection": []
+  },
+  "new-final": {
+    "runs": 72,
+    "clears": 49,
+    "initial_seed_blocks": 12,
+    "failures_with_supplies": 14,
+    "failure_regions": {
+      "marsh": 6,
+      "frost": 3,
+      "ruins": 4,
+      "border": 2,
+      "wood": 3,
+      "waste": 5
+    },
+    "battles": 1234,
+    "captain": {
+      "lu": {
+        "runs": 24,
+        "clears": 16
+      },
+      "shen": {
+        "runs": 24,
+        "clears": 16
+      },
+      "wen": {
+        "runs": 24,
+        "clears": 17
+      }
+    },
+    "profile": {
+      "assault": {
+        "runs": 18,
+        "clears": 9
+      },
+      "balanced": {
+        "runs": 18,
+        "clears": 16
+      },
+      "guard": {
+        "runs": 18,
+        "clears": 13
+      },
+      "support": {
+        "runs": 18,
+        "clears": 11
+      }
+    },
+    "strategy": {
+      "adaptive": {
+        "runs": 36,
+        "clears": 22
+      },
+      "relic_focus": {
+        "runs": 36,
+        "clears": 27
+      }
+    },
+    "captain_profile": {
+      "shen/balanced": {
+        "runs": 6,
+        "clears": 5
+      },
+      "shen/guard": {
+        "runs": 6,
+        "clears": 4
+      },
+      "shen/support": {
+        "runs": 6,
+        "clears": 4
+      },
+      "shen/assault": {
+        "runs": 6,
+        "clears": 3
+      },
+      "wen/balanced": {
+        "runs": 6,
+        "clears": 5
+      },
+      "wen/guard": {
+        "runs": 6,
+        "clears": 5
+      },
+      "wen/support": {
+        "runs": 6,
+        "clears": 3
+      },
+      "wen/assault": {
+        "runs": 6,
+        "clears": 4
+      },
+      "lu/balanced": {
+        "runs": 6,
+        "clears": 6
+      },
+      "lu/guard": {
+        "runs": 6,
+        "clears": 4
+      },
+      "lu/support": {
+        "runs": 6,
+        "clears": 4
+      },
+      "lu/assault": {
+        "runs": 6,
+        "clears": 2
+      }
+    },
+    "boss_entries": 380,
+    "boss_two_piece": 365,
+    "boss_mixed_two_two": 263,
+    "boss_theme_counts": {
+      "blood": 119,
+      "dusk": 33,
+      "ward": 35,
+      "command": 49,
+      "engine": 19,
+      "hunt": 80,
+      "pilgrim": 23,
+      "arcane": 22
+    },
+    "runs_with_casualty": 62,
+    "first_casualty_with_supplies": 33,
+    "first_casualty_actors": 70,
+    "first_casualty_high_mana_actors": 37,
+    "successful_preboss_relic_intersection": [],
+    "paired": {
+      "gains": 27,
+      "losses": 6
+    }
+  },
+  "holdout-final": {
+    "runs": 72,
+    "clears": 58,
+    "initial_seed_blocks": 12,
+    "failures_with_supplies": 7,
+    "failure_regions": {
+      "ruins": 4,
+      "marsh": 5,
+      "frost": 2,
+      "border": 1,
+      "waste": 2
+    },
+    "battles": 1318,
+    "captain": {
+      "lu": {
+        "runs": 24,
+        "clears": 19
+      },
+      "shen": {
+        "runs": 24,
+        "clears": 19
+      },
+      "wen": {
+        "runs": 24,
+        "clears": 20
+      }
+    },
+    "profile": {
+      "assault": {
+        "runs": 18,
+        "clears": 15
+      },
+      "balanced": {
+        "runs": 18,
+        "clears": 15
+      },
+      "guard": {
+        "runs": 18,
+        "clears": 14
+      },
+      "support": {
+        "runs": 18,
+        "clears": 14
+      }
+    },
+    "strategy": {
+      "adaptive": {
+        "runs": 36,
+        "clears": 26
+      },
+      "relic_focus": {
+        "runs": 36,
+        "clears": 32
+      }
+    },
+    "captain_profile": {
+      "shen/balanced": {
+        "runs": 6,
+        "clears": 5
+      },
+      "shen/guard": {
+        "runs": 6,
+        "clears": 4
+      },
+      "shen/support": {
+        "runs": 6,
+        "clears": 5
+      },
+      "shen/assault": {
+        "runs": 6,
+        "clears": 5
+      },
+      "wen/balanced": {
+        "runs": 6,
+        "clears": 5
+      },
+      "wen/guard": {
+        "runs": 6,
+        "clears": 5
+      },
+      "wen/support": {
+        "runs": 6,
+        "clears": 5
+      },
+      "wen/assault": {
+        "runs": 6,
+        "clears": 5
+      },
+      "lu/balanced": {
+        "runs": 6,
+        "clears": 5
+      },
+      "lu/guard": {
+        "runs": 6,
+        "clears": 5
+      },
+      "lu/support": {
+        "runs": 6,
+        "clears": 4
+      },
+      "lu/assault": {
+        "runs": 6,
+        "clears": 5
+      }
+    },
+    "boss_entries": 410,
+    "boss_two_piece": 388,
+    "boss_mixed_two_two": 273,
+    "boss_theme_counts": {
+      "ward": 5,
+      "hunt": 146,
+      "blood": 52,
+      "command": 69,
+      "engine": 16,
+      "dusk": 62,
+      "arcane": 47,
+      "pilgrim": 13
+    },
+    "runs_with_casualty": 63,
+    "first_casualty_with_supplies": 45,
+    "first_casualty_actors": 64,
+    "first_casualty_high_mana_actors": 21,
+    "successful_preboss_relic_intersection": []
+  },
+  "refusal": {
+    "runs": 24,
+    "clears": 16,
+    "initial_seed_blocks": 4,
+    "failures_with_supplies": 5,
+    "failure_regions": {
+      "border": 6,
+      "ruins": 1,
+      "wood": 1
+    },
+    "battles": 356,
+    "captain": {
+      "lu": {
+        "runs": 8,
+        "clears": 5
+      },
+      "shen": {
+        "runs": 8,
+        "clears": 6
+      },
+      "wen": {
+        "runs": 8,
+        "clears": 5
+      }
+    },
+    "profile": {
+      "assault": {
+        "runs": 6,
+        "clears": 4
+      },
+      "balanced": {
+        "runs": 6,
+        "clears": 6
+      },
+      "guard": {
+        "runs": 6,
+        "clears": 6
+      },
+      "support": {
+        "runs": 6,
+        "clears": 0
+      }
+    },
+    "strategy": {
+      "adaptive": {
+        "runs": 12,
+        "clears": 8
+      },
+      "relic_focus": {
+        "runs": 12,
+        "clears": 8
+      }
+    },
+    "captain_profile": {
+      "shen/balanced": {
+        "runs": 2,
+        "clears": 2
+      },
+      "shen/guard": {
+        "runs": 2,
+        "clears": 2
+      },
+      "shen/support": {
+        "runs": 2,
+        "clears": 0
+      },
+      "shen/assault": {
+        "runs": 2,
+        "clears": 2
+      },
+      "wen/balanced": {
+        "runs": 2,
+        "clears": 2
+      },
+      "wen/guard": {
+        "runs": 2,
+        "clears": 2
+      },
+      "wen/support": {
+        "runs": 2,
+        "clears": 0
+      },
+      "wen/assault": {
+        "runs": 2,
+        "clears": 1
+      },
+      "lu/balanced": {
+        "runs": 2,
+        "clears": 2
+      },
+      "lu/guard": {
+        "runs": 2,
+        "clears": 2
+      },
+      "lu/support": {
+        "runs": 2,
+        "clears": 0
+      },
+      "lu/assault": {
+        "runs": 2,
+        "clears": 1
+      }
+    },
+    "boss_entries": 109,
+    "boss_two_piece": 103,
+    "boss_mixed_two_two": 79,
+    "boss_theme_counts": {
+      "blood": 51,
+      "dusk": 11,
+      "ward": 13,
+      "pilgrim": 9,
+      "hunt": 13,
+      "command": 11,
+      "arcane": 1
+    },
+    "runs_with_casualty": 23,
+    "first_casualty_with_supplies": 12,
+    "first_casualty_actors": 23,
+    "first_casualty_high_mana_actors": 14,
+    "successful_preboss_relic_intersection": [],
+    "paired": {
+      "gains": 0,
+      "losses": 8
+    },
+    "paired_original_clears": 24,
+    "original_real_acquisition_cases": 20,
+    "original_acquisition_subset": {
+      "runs": 20,
+      "clears": 12,
+      "initial_seed_blocks": 4,
+      "failures_with_supplies": 5,
+      "failure_regions": {
+        "border": 6,
+        "ruins": 1,
+        "wood": 1
+      },
+      "battles": 289,
+      "captain": {
+        "lu": {
+          "runs": 7,
+          "clears": 4
+        },
+        "shen": {
+          "runs": 7,
+          "clears": 5
+        },
+        "wen": {
+          "runs": 6,
+          "clears": 3
+        }
+      },
+      "profile": {
+        "assault": {
+          "runs": 6,
+          "clears": 4
+        },
+        "balanced": {
+          "runs": 4,
+          "clears": 4
+        },
+        "guard": {
+          "runs": 4,
+          "clears": 4
+        },
+        "support": {
+          "runs": 6,
+          "clears": 0
+        }
+      },
+      "strategy": {
+        "adaptive": {
+          "runs": 8,
+          "clears": 4
+        },
+        "relic_focus": {
+          "runs": 12,
+          "clears": 8
+        }
+      },
+      "captain_profile": {
+        "shen/balanced": {
+          "runs": 1,
+          "clears": 1
+        },
+        "shen/guard": {
+          "runs": 2,
+          "clears": 2
+        },
+        "shen/support": {
+          "runs": 2,
+          "clears": 0
+        },
+        "shen/assault": {
+          "runs": 2,
+          "clears": 2
+        },
+        "wen/balanced": {
+          "runs": 1,
+          "clears": 1
+        },
+        "wen/guard": {
+          "runs": 1,
+          "clears": 1
+        },
+        "wen/support": {
+          "runs": 2,
+          "clears": 0
+        },
+        "wen/assault": {
+          "runs": 2,
+          "clears": 1
+        },
+        "lu/balanced": {
+          "runs": 2,
+          "clears": 2
+        },
+        "lu/guard": {
+          "runs": 1,
+          "clears": 1
+        },
+        "lu/support": {
+          "runs": 2,
+          "clears": 0
+        },
+        "lu/assault": {
+          "runs": 2,
+          "clears": 1
+        }
+      },
+      "boss_entries": 85,
+      "boss_two_piece": 79,
+      "boss_mixed_two_two": 61,
+      "boss_theme_counts": {
+        "blood": 32,
+        "ward": 12,
+        "pilgrim": 7,
+        "hunt": 13,
+        "dusk": 9,
+        "command": 11,
+        "arcane": 1
+      },
+      "runs_with_casualty": 19,
+      "first_casualty_with_supplies": 8,
+      "first_casualty_actors": 19,
+      "first_casualty_high_mana_actors": 12,
+      "successful_preboss_relic_intersection": [],
+      "paired_original_clears": 20
+    }
+  },
+  "audit": {
+    "changed_sources": [
+      "game/rules.gd",
+      "tools/relic_mix_simulation.gd"
+    ],
+    "new_seed_blocks": 12,
+    "holdout_disjoint": true,
+    "initial_states_costs_earned_XP_denied_items_checked": true,
+    "frozen_case_hashes_checked": true,
+    "note": "production support AI plus legal policy corrections; not a stat-only balance experiment"
+  }
+}

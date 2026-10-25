@@ -15,6 +15,7 @@ const PROFILES={
 const CORE={"blood":[1,3],"hunt":[3,4],"ward":[1,3],"arcane":[1,4],"engine":[1,2],"pilgrim":[1,2],"dusk":[1,2],"command":[1,2]}
 const OWNER_JOB={"blood":"blade","hunt":"ranger","ward":"hero","arcane":"hero","engine":"engineer","pilgrim":"medic","dusk":"ranger","command":"blade"}
 var invalid_actions=0
+var support_ai=false
 func loadouts() -> Dictionary:
  var result={"none":[]}
  var families=CORE.keys()
@@ -99,6 +100,9 @@ func step(b) -> bool:
   if not b.boss_intents.any(func(intent):return intent.source==enemy.id and intent.kind=="overload"):continue
   for skill in ["bash","warden_rebuke","ranger_pin"]:
    if b.can_cast(skill,enemy.id):return b.cast(enemy.id,skill)
+ if support_ai:
+  var support=b.auto_support_action()
+  if not support.is_empty():return b.move_to(support.target) if support.action=="move" else b.cast(support.target,support.skill)
  for ally in allies:
   if ally.statuses.has("poison") or ally.statuses.has("chill"):
    for skill in ["cleanse","warden_ward"]:
@@ -122,7 +126,11 @@ func step(b) -> bool:
   for target in enemies:
    if not target.get("statuses",{}).has("mark") and target.hp>=30:
     for skill in ["mark","ranger_expose"]:
-     if b.can_cast(skill,target.id):return b.cast(target.id,skill)
+     if b.can_cast(skill,target.id):
+      if support_ai:
+       var preview=b.auto_snapshot();preview.cast(target.id,skill)
+       if not preview.can_act() or preview.active().id!=a.id or preview.auto_best_hit().is_empty():continue
+      return b.cast(target.id,skill)
  if a.profession=="engineer" and not b.traps.any(func(t):return t.source==a.id) and a.ap>=2:
   for target in enemies:
    if b.hex_distance(target.cell,a.cell)>3:continue
@@ -143,6 +151,7 @@ func step(b) -> bool:
   var dx=b.hex_distance(x,enemies[0].cell);var dy=b.hex_distance(y,enemies[0].cell)
   return dx<dy if dx!=dy else (x.x<y.x if x.x!=y.x else x.y<y.y))
  for cell in candidates:
+  if support_ai and not b.auto_support_move_safe(a,cell):continue
   if b.hex_distance(cell,enemies[0].cell)>=b.hex_distance(a.cell,enemies[0].cell):continue
   var path=b.path_to(a.cell,cell)
   if not path.is_empty() and b.movement_cost(a,path)<=maxi(1,a.ap-2):return b.move_to(cell)
