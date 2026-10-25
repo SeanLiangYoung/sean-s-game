@@ -1,6 +1,7 @@
 extends RefCounted
 const Compact=preload("res://game/compact_ui.gd")
 const Equipment=preload("res://game/equipment_menu.gd")
+const Strategy=preload("res://game/relic_strategy.gd")
 const PAGE_SIZE=6
 
 static func details(host,parent: Control,title: String,content: String) -> Button:
@@ -117,6 +118,7 @@ static func hire(host):
  var exit=Compact.symbolize(host.button("继续旅途",host.close_modal),"next");host.primary_action(exit);exit.size_flags_horizontal=Control.SIZE_SHRINK_END
 
 static func owned_relics(host,parent: Control,effects_only: bool):
+ var build=host.button("查看整队构筑与下一步打法",host.show_relic_strategy);build.name="BuildOverview";parent.add_child(build)
  var pools=[host.campaign.relics,host.campaign.collection] if host.battle==null else [host.battle.relic_state,[]]
  var applicable=[]
  for pool in pools:
@@ -134,7 +136,7 @@ static func owned_relics(host,parent: Control,effects_only: bool):
    var source="永久收藏" if pool_index==1 else "本次远征" if host.battle==null else "本场持有"
    card.add_child(host.text_label(source+(" · 佩戴者："+host.menu_unit(entry.owner).name if d.scope=="personal" and entry is Dictionary else ""),14,host.MUTED))
    relic_content(host,card,entry)
-   details(host,card,d.name+" · 效果与触发详情",host.Campaign.Relic.description(entry)+"\n\n"+host.relic_instance_status(entry))
+   details(host,card,d.name+" · 效果与触发详情",host.Campaign.Relic.description(entry)+"\n\n"+host.relic_instance_status(entry)+"\n\n"+Strategy.lore(host.Campaign.Relic.id_of(entry)))
  if grid.get_child_count()==0:parent.add_child(host.text_label("暂无生效遗物。探索并安全撤离可积累收藏。",16,host.MUTED))
  if effects_only and host.menu_unit(host.menu_character).hp<=0:parent.add_child(host.text_label("角色已阵亡，无法享受战斗效果。",15,host.RED))
 
@@ -146,7 +148,7 @@ static func binding(host,id: String,reward_index: int):
   else:host.show_route_trade())
  var header=Compact.pin_header(host)
  relic_content(host,header,id)
- details(host,header,"完整触发与共鸣",host.Campaign.Relic.description(id))
+ details(host,header,"完整触发与共鸣",host.Campaign.Relic.description(id)+"\n\n"+Strategy.lore(id))
  var cost=host.campaign.shop_price(id) if reward_index<0 else 0
  if reward_index<0:Compact.metrics(host,header,[["silver","本次 %d / 持有 %d"%[cost,host.campaign.silver],"确认绑定时扣款"]])
  var grid=Compact.grid(host.modal_body,2)
@@ -155,6 +157,8 @@ static func binding(host,id: String,reward_index: int):
   var owner_id=unit.id;var old=host.campaign.personal_relic(owner_id)
   var card=Compact.card(host,grid,unit.name+" · "+unit.role,host.GOLD,host.portraits.portrait(unit.id,host.campaign.visual_profile(unit.id)))
   card.add_child(host.text_label("空遗物栏" if old.is_empty() else "替换并失去："+host.Campaign.Relic.definition(old).name,15,host.TEAL if old.is_empty() else host.RED))
+  var delta=Strategy.compare(host.campaign.relics+host.campaign.collection,id,owner_id)
+  var hint=host.text_label(delta.text,15,host.TEAL);hint.name="BindingBuildPreview";card.add_child(hint)
   var reason="银币不足" if reward_index<0 and host.campaign.silver<cost else ""
   var bind=host.button("绑定给 "+unit.name+" · 接受收益与代价"+(" · "+reason if reason!="" else ""),func():
    if reward_index>=0:

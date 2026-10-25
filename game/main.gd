@@ -81,6 +81,9 @@ func _ready():
   chinese.data=FileAccess.get_file_as_bytes(local_font)
   chinese.fallbacks=[fallback]
   game_font=chinese
+ if "--review-village" in OS.get_cmdline_user_args():
+  campaign=Campaign.new("user://ashbound-village-review.json")
+  settings_path="user://ashbound-village-review-settings.cfg"
  for arg in OS.get_cmdline_user_args():
   if arg.begins_with("--capture-"):capture_mode=arg
  var environment = WorldEnvironment.new()
@@ -114,7 +117,7 @@ func _ready():
  load_settings()
  if capture_mode != "":
   campaign.save_path="user://ashbound-capture.json"
-  if capture_mode!="--capture-menu":campaign.depart()
+  if capture_mode not in ["--capture-menu","--capture-village"]:campaign.depart()
   if capture_mode in ["--capture-battle","--capture-actions"]:
    battle = campaign.make_battle(["hero","blade","ranger","medic","engineer"],0)
    battle.actors[1].hp = 36
@@ -131,6 +134,7 @@ func _ready():
  else:draw_world()
  refresh_ui()
  if capture_mode=="--capture-atlas":
+  selecting_expedition=true
   campaign.phase="camp"
   refresh_ui()
  if capture_mode=="--capture-route":
@@ -217,6 +221,9 @@ func tree_at(pos: Vector3,scale_factor: float):
  return art.tree(scene_root,pos,scale_factor)
 
 func draw_world():
+ if campaign.phase=="camp":
+  preload("res://game/village_art.gd").build(self)
+  return
  apply_region_style("border")
  clear_scene()
  camera_zoom = 28
@@ -956,6 +963,10 @@ func show_reward():
   if unlocked:
    for id in Campaign.Characters.CAPTAINS:
     if Campaign.Characters.CAPTAIN_UNLOCK_RANKS[id]==campaign.overall_difficulty+1:modal_body.add_child(text_label("已解锁主角「%s」"%Campaign.Characters.CATALOG[id].name,15,TEAL))
+ var fragment=Campaign.VillageStory.route_fragment(campaign.route.region,int(campaign.route.node(campaign.route.current).get("depth",0)),campaign.route.node(campaign.route.current).get("threat","")=="boss")
+ if fragment in campaign.story_state.seen:
+  var entry=Campaign.VillageStory.fragment(fragment)
+  var clue=button("沿途见闻 · "+entry.title+"  ›",func():show_details(entry.title,entry.text+"\n—— "+entry.source));clue.name="RewardStory";modal_body.add_child(clue)
  var grid=GridContainer.new();grid.name="RewardGrid";grid.columns=3
  grid.add_theme_constant_override("h_separation",12);grid.add_theme_constant_override("v_separation",12);modal_body.add_child(grid)
  for i in range(campaign.choices.size()):
@@ -970,8 +981,10 @@ func show_reward():
    var d=Campaign.Relic.definition(reward.id)
    summary=("全队" if d.scope=="team" else "个人 · 需绑定")+"\n收益："+d.benefit+"\n代价："+d.risk
   var label=text_label(summary,14);label.custom_minimum_size.y=88;content.add_child(label)
+  if reward.type=="relic":
+   var hint=text_label(preload("res://game/relic_strategy.gd").reward_hint(self,reward.id),14,TEAL);hint.name="BuildPreview";content.add_child(hint)
   var row=HBoxContainer.new();content.add_child(row)
-  details_button(row,"详情",reward.desc)
+  details_button(row,"详情",reward.desc+("\n\n"+preload("res://game/relic_strategy.gd").lore(reward.id) if reward.type=="relic" else ""))
   var choose=button("选择此奖励",func():
    if reward.type=="relic" and Campaign.Relic.definition(reward.id).scope=="personal":show_relic_binding(reward.id,index)
    elif campaign.choose_reward(index):return_world(),true)
@@ -1068,6 +1081,7 @@ func start_new_campaign(captain: String):
  var fresh=Campaign.new(campaign.save_path)
  fresh.overall_difficulty=selected_difficulty
  if not fresh.select_captain(captain):return
+ fresh.discover_story("arrival")
  if not fresh.save_game():
   show_main_menu("无法创建存档，请检查本地存储空间或目录权限。原存档已保留。")
   return
@@ -1118,6 +1132,7 @@ func request_new_game():
  modal_body.add_child(button("取消 · 返回主菜单",show_main_menu))
 
 func enter_campaign():
+ selecting_expedition=false
  close_modal()
  session_started=true
  set_game_hud_visible(true)
@@ -1358,7 +1373,7 @@ func _unhandled_input(event):
   get_viewport().set_input_as_handled()
   return
  if is_instance_valid(modal) or presentation.busy:return
- if event is InputEventKey and event.pressed:
+ if event is InputEventKey and event.pressed and not (battle==null and campaign.phase=="camp"):
   if event.keycode==KEY_Q:camera_angle-=0.15;update_camera()
   if event.keycode==KEY_E:camera_angle+=0.15;update_camera()
  if event is InputEventMouseButton and event.pressed:
@@ -1458,6 +1473,7 @@ func capture_image():
  DirAccess.make_dir_recursive_absolute(ProjectSettings.globalize_path("res://artifacts"))
  var filename="battle" if battle!=null else "world"
  if capture_mode=="--capture-menu":filename="menu"
+ if capture_mode=="--capture-village":filename="village-overview"
  if capture_mode=="--capture-atlas":filename="atlas"
  if capture_mode=="--capture-route":filename="route"
  if capture_mode=="--capture-actions":filename="actions"
@@ -1621,6 +1637,12 @@ func show_relic_binding(id: String,reward_index: int=-1):
  preload("res://game/management_ui.gd").binding(self,id,reward_index)
 
 func refresh_atlas():
+ var village_view=battle==null and campaign.phase=="camp" and not selecting_expedition
+ for child in ui.get_children():
+  if child is PanelContainer:child.visible=not village_view
+ status_label.visible=battle==null and not village_view
+ if village_view and not scene_root.has_node("Village"):preload("res://game/village_art.gd").build(self)
+ elif battle==null and campaign.phase!="camp" and campaign.route.region=="" and scene_root.has_node("Village"):draw_world()
  if is_instance_valid(atlas):
   ui.remove_child(atlas)
   atlas.queue_free()
@@ -1630,7 +1652,12 @@ func refresh_atlas():
  atlas.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
  atlas.route=campaign.route
  atlas.route_mode=campaign.phase!="camp"
+ atlas.village_mode=campaign.phase=="camp" and not selecting_expedition
  ui.add_child(atlas)
+ if atlas.village_mode:
+  preload("res://game/village_ui.gd").render(self,atlas)
+  if is_instance_valid(modal):ui.move_child(modal.get_parent(),-1)
+  return
  var heading=text_label("灰烬行旅  /  世界地图" if campaign.phase=="camp" else "远征路线  /  "+region_name(),30,GOLD)
  heading.position=Vector2(65,55)
  heading.size=Vector2(850,50)
@@ -1649,7 +1676,9 @@ func refresh_atlas():
  entries.add_child(button("技能与技能书",func():show_party_menu("技能")))
  entries.add_child(button("遗物与风险",func():show_party_menu("遗物")))
  entries.add_child(button("保存与菜单",show_pause_menu))
- if campaign.phase=="camp":entries.add_child(button("选择远征",depart,true))
+ if campaign.phase=="camp":
+  entries.add_child(button("返回村庄",func():selecting_expedition=false;refresh_ui()))
+  entries.add_child(button("旅途见闻",show_village_journal))
  var note=text_label(campaign.notice,18,CREAM)
  note.position=Vector2(66,790)
  note.size=Vector2(1000,60)
@@ -1722,6 +1751,14 @@ func select_route_node(id: String):
  if n.kind=="battle" and not campaign.route.completed:show_deploy(int(n.encounter))
  elif n.kind=="extract":show_extract()
  elif n.kind in ["shop","hire"]:show_route_trade()
+ if not is_instance_valid(modal) and n.kind in ["event","supply"]:
+  var fragment=Campaign.VillageStory.route_fragment(campaign.route.region,int(n.get("depth",0)),false)
+  var entry=Campaign.VillageStory.fragment(fragment)
+  if not entry.is_empty():
+   open_modal(entry.title,campaign.notice)
+   modal_body.add_child(text_label(entry.text,21))
+   modal_body.add_child(text_label("—— "+entry.source,15,MUTED))
+   modal_body.add_child(button("记下见闻 · 继续赶路",close_modal,true))
 
 func show_route_trade(category: String=""):
  preload("res://game/management_ui.gd").trade(self,category)
@@ -1961,3 +1998,12 @@ func show_achievement_unlock(rank: int):
  celebration.name="UnlockCelebration"
  popup.add_child(celebration)
  celebration.play(popup.get_label(),sfx_enabled,sfx_volume)
+
+func show_village_home(id: String):
+ preload("res://game/village_ui.gd").home(self,id)
+
+func show_village_journal():
+ preload("res://game/village_ui.gd").journal(self)
+
+func show_relic_strategy():
+ preload("res://game/relic_strategy.gd").show(self)

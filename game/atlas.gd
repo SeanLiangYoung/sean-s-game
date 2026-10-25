@@ -1,7 +1,9 @@
 extends Control
 var route
 var route_mode=false
+var village_mode=false
 func _draw():
+ if village_mode:return
  var scale_to=size/Vector2(1440,900)
  draw_set_transform(Vector2.ZERO,0,scale_to)
  draw_rect(Rect2(0,0,1440,900),Color("172d35"))

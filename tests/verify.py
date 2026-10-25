@@ -13,7 +13,7 @@ if not engine.exists():
 if not engine:
     sys.exit('Godot 4.7.2 is required.')
 checks = 0
-suites = ('relic_discovery', 'relic_discovery_ui', 'management_ui', 'compact_ui', 'longline_support', 'captain_training_study', 'fresh_progression_balance', 'fresh_progression', 'audio_settings', 'achievement_popup', 'achievements', 'achievements_ui', 'finale', 'region_personal_balance', 'region_variant_balance', 'region_retune', 'region_retune_balance', 'enemy_coordination', 'enemy_coordination_balance', 'enemy_tactics', 'enemy_ai_balance', 'relic_mix_balance', 'boss_balance', 'boss_phases', 'enemy_skills', 'boss_visual', 'boss_presentation', 'character_catalog', 'character_talents', 'character_identity_ui', 'relic_balance', 'region_combat', 'region_scenes', 'region_balance', 'battlefield_generation', 'relic_builds', 'equipment_tiers', 'auto_difficulty', 'hard_difficulty', 'expansion_regressions', 'expedition_balance', 'build_combinations', 'content_expansion', 'expedition_generation', 'expansion_ui', 'auto_combat', 'reward_settlement', 'equipment_preview', 'relics', 'relic_combat', 'relic_ui', 'fullscreen_pages', 'run', 'edges', 'campaign', 'integration', 'persistence', 'ui', 'menu', 'art', 'presentation', 'characters', 'equipment', 'routes', 'atlas', 'actions', 'professions', 'profession_combat', 'profession_ui', 'equipment_visual', 'equipment_appearance_ui', 'equipment_shapes', 'character_pages', 'progression', 'progression_ui')
+suites = ('village_story', 'village_ui', 'village_journey', 'relic_strategy', 'relic_discovery', 'relic_discovery_ui', 'management_ui', 'compact_ui', 'longline_support', 'captain_training_study', 'fresh_progression_balance', 'fresh_progression', 'audio_settings', 'achievement_popup', 'achievements', 'achievements_ui', 'finale', 'region_personal_balance', 'region_variant_balance', 'region_retune', 'region_retune_balance', 'enemy_coordination', 'enemy_coordination_balance', 'enemy_tactics', 'enemy_ai_balance', 'relic_mix_balance', 'boss_balance', 'boss_phases', 'enemy_skills', 'boss_visual', 'boss_presentation', 'character_catalog', 'character_talents', 'character_identity_ui', 'relic_balance', 'region_combat', 'region_scenes', 'region_balance', 'battlefield_generation', 'relic_builds', 'equipment_tiers', 'auto_difficulty', 'hard_difficulty', 'expansion_regressions', 'expedition_balance', 'build_combinations', 'content_expansion', 'expedition_generation', 'expansion_ui', 'auto_combat', 'reward_settlement', 'equipment_preview', 'relics', 'relic_combat', 'relic_ui', 'fullscreen_pages', 'run', 'edges', 'campaign', 'integration', 'persistence', 'ui', 'menu', 'art', 'presentation', 'characters', 'equipment', 'routes', 'atlas', 'actions', 'professions', 'profession_combat', 'profession_ui', 'equipment_visual', 'equipment_appearance_ui', 'equipment_shapes', 'character_pages', 'progression', 'progression_ui')
 for suite in suites:
     result = subprocess.run([str(engine), '--headless', '--path', str(root),
                              '--script', f'res://tests/{suite}.gd'],
@@ -43,4 +43,11 @@ match = re.search(r'CHECKS: (\d+) FAILURES: 0', preview_render.stdout)
 if preview_render.returncode or not match or 'ERROR:' in preview_render.stdout:
     sys.exit(1)
 checks += int(match.group(1))
-print(f'PASS: {checks} checks across {len(suites)+2} suites; scene smoke and native appearance rendering passed.')
+village_render = subprocess.run([str(engine), '--path', str(root), '--script', 'res://tests/village_render.gd'],
+                                text=True, stdout=subprocess.PIPE, stderr=subprocess.STDOUT, timeout=40)
+print('[village_render]\n' + village_render.stdout, end='')
+match = re.search(r'CHECKS: (\d+) FAILURES: 0', village_render.stdout)
+if village_render.returncode or not match or 'ERROR:' in village_render.stdout:
+    sys.exit(1)
+checks += int(match.group(1))
+print(f'PASS: {checks} checks across {len(suites)+3} suites; scene smoke and native appearance/village rendering passed.')

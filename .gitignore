@@ -1,5 +1,5 @@
 .godot/
-.tools/
+.tools
 build/
 *.log
 .DS_Store

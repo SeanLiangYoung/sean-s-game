@@ -17,7 +17,7 @@ func run():
  scene.show_settings(false)
  check("六档递进难度" in texts(scene.modal) and "第 1 / 6 档" in texts(scene.modal),"settings explain progression difficulty")
  scene.close_modal()
- scene.refresh_atlas()
+ scene.depart() # The camp now opens the village; map checks follow its expedition action.
  check("第 1 / 6 档" in texts(scene.atlas),"map shows initial difficulty")
  check("星陨遗城（0/5）" in texts(scene.atlas),"map shows final region lock progress")
  scene.show_region("ruins")

@@ -1,4 +1,6 @@
 extends RefCounted
+const VillageStory=preload("res://game/village_story.gd")
+var story_state=VillageStory.initial_state()
 const Professions=preload("res://game/professions.gd")
 const Characters=preload("res://game/characters.gd")
 const Rules = preload("res://game/rules.gd")
@@ -137,6 +139,7 @@ func resolve_battle(b) -> bool:
   if route.node(route.current).get("threat","")=="boss" and route.region not in cleared_regions:
    cleared_regions.append(route.region)
   phase = "reward"
+  record_route_story(route.region!="" and route.node(route.current).get("threat","")=="boss")
   choices = []
   var equipment_pool=REWARDS.filter(func(reward):return reward.type=="equipment")
   choices.append(equipment_pool[rng.randi_range(0,equipment_pool.size()-1)].duplicate(true))
@@ -240,6 +243,7 @@ func to_data(include_snapshot: bool = true) -> Dictionary:
  var units = roster.duplicate(true)
  for u in units:u.erase("cell")
  var data = {"version":9,"discovered_relics":discovered_relics.duplicate(),"completed_difficulties":completed_difficulties.duplicate(),"overall_difficulty":overall_difficulty,"cleared_regions":cleared_regions.duplicate(),"trial_equipment_claimed":trial_equipment_claimed,"equipment":equipment.duplicate(true),"roster":units,"phase":phase,"encounters":encounters.duplicate(),"relics":relics.duplicate(true),"collection":collection.duplicate(true),"silver":silver,"supplies":supplies,"expedition":expedition,"world_position":world_position.duplicate(),"event_used":event_used,"choices":choices.duplicate(true),"notice":notice,"rng_state":str(rng.state),"route":route.data() if route.region!="" else {},"books":books.duplicate(),"purchases":purchases.duplicate(),"recruits":recruits.duplicate()}
+ data["story_state"]=story_state.duplicate(true)
  data["last_battle_summary"]=last_battle_summary.duplicate(true)
  if include_snapshot:data["snapshot"] = snapshot.duplicate(true)
  return data
@@ -263,6 +267,7 @@ func valid_battle_summary(value) -> bool:
  return true
 
 func load_data(data: Dictionary,persist_discoveries: bool=true) -> bool:
+ if not VillageStory.valid_state(data.get("story_state",VillageStory.initial_state())):return false
  if not valid_discoveries(data.get("discovered_relics",[])):return false
  if not valid_battle_summary(data.get("last_battle_summary",{})):return false
  if not Achievements.valid(data.get("completed_difficulties",[])):return false
@@ -399,6 +404,8 @@ func load_data(data: Dictionary,persist_discoveries: bool=true) -> bool:
   if data.version<7 or not u.has("character_id"):
    Characters.migrate(u)
    u.legacy_identity=true
+ story_state=data.get("story_state",VillageStory.initial_state()).duplicate(true)
+ story_state.repair_expedition=int(story_state.repair_expedition)
  trial_equipment_claimed=bool(data.get("trial_equipment_claimed",not migrated))
  overall_difficulty=int(saved_difficulty)
  cleared_regions=saved_clears.duplicate()
@@ -616,6 +623,7 @@ func start_region(id: String) -> bool:
  if id not in Route.REGIONS.map(func(r):return r.id) or phase!="camp":return false
  if not depart():return false
  route.setup(id,int(rng.randi()))
+ record_route_story(false)
  encounters=[]
  for n in route.nodes:
   if n.kind=="battle":encounters.append("open")
@@ -627,6 +635,7 @@ func start_region(id: String) -> bool:
 func enter_route(id: String) -> bool:
  if phase!="world" or not route.enter(id):return false
  var n=route.node(id)
+ record_route_story(false)
  if n.kind=="event":
   if route.seed_value<0:
    silver+=25;supplies+=1;notice="旅人留下 25 银币与一份补给。"
@@ -832,3 +841,30 @@ func relic_achievement_count() -> int:
  for threshold in [1,10,100,Relic.CATALOG.size()]:
   if discovered_relics.size()>=threshold:count+=1
  return count
+
+func discover_story(id: String) -> bool:
+ if id=="" or id in story_state.seen or VillageStory.fragment(id).is_empty():return false
+ story_state.seen.append(id)
+ return true
+
+func read_home(id: String) -> String:
+ if phase!="camp":return ""
+ if not VillageStory.HOMES.has(id):return ""
+ var resident=VillageStory.HOMES[id].resident
+ var absent=roster.any(func(u):return u.id==resident and u.hp<=0)
+ var next="absence_"+id if absent else VillageStory.available_home_fragment(story_state,id,expedition)
+ if discover_story(next):save_game();return next
+ return ""
+
+func repair_home(id: String) -> bool:
+ if phase!="camp" or not VillageStory.HOMES.has(id) or id in story_state.repaired or expedition<=int(story_state.repair_expedition):return false
+ story_state.repaired.append(id)
+ story_state.repair_expedition=expedition
+ notice="你用邻居留下的木料修好了%s的一处破损。剩下的活，留到下次归来。"%VillageStory.HOMES[id].title
+ save_game()
+ return true
+
+func record_route_story(boss: bool):
+ if route.region=="":return
+ var n=route.node(route.current)
+ discover_story(VillageStory.route_fragment(route.region,int(n.get("depth",0)),boss))
