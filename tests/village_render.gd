@@ -7,6 +7,7 @@ func check(ok: bool,label: String):
  if not ok:failures+=1;printerr("FAIL: "+label)
 func _initialize():call_deferred("run")
 func frames():
+ if scene.village_camera.tween!=null and scene.village_camera.tween.is_valid() and scene.village_camera.tween.is_running():await scene.village_camera.tween.finished
  for i in range(5):await process_frame
 func capture(name: String):
  await frames();await RenderingServer.frame_post_draw

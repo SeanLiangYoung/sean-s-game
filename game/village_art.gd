@@ -149,11 +149,12 @@ static func build(host):
  for id in ["engineer","medic","ranger"]:
   var d=Story.HOMES[id];var u=host.campaign.roster.filter(func(unit):return unit.id==d.resident and unit.hp>0)
   if u.is_empty():continue
-  var pawn=a.character(village,d.pos+Vector3(-2,0,2),Color(d.color),id,false,host.campaign.visual_profile(id))
+  var standing=Vector3(2.25,0,2) if id=="engineer" else Vector3(-2,0,2)
+  var pawn=a.character(village,d.pos+standing,Color(d.color),id,false,host.campaign.visual_profile(id))
   pawn.scale=Vector3.ONE*0.8
  var env=host.get_node("WorldEnvironment").environment
  env.background_color=Color("aab8b6");env.ambient_light_color=Color("a9bbc6");env.ambient_light_energy=0.48
  env.fog_light_color=Color("aab8b6");env.fog_density=0.0025
  var sun=host.get_node("RegionSun");sun.light_color=Color("ffe0bc");sun.light_energy=0.65;sun.rotation_degrees=Vector3(-31,-32,0)
  host.camera_angle=0;host.camera_zoom=32
- host.camera.position=Vector3(21,18,36);host.camera.size=28;host.camera.look_at(Vector3(1,2,-3))
+ host.village_camera.restore(host)

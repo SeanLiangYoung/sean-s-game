@@ -374,3 +374,7 @@
 “遗物构筑”展示全队共同主题与每名队员的实际共鸣。奖励预览分别标明全队底座、实际新激活2/4件的队员及效果；个人遗物在绑定时展示替换损失。没有改变遗物数值、奖励随机序列或难度基线。
 
 双击 `launch-review.command` 可用独立存档与设置试玩本轮版本（`ashbound-village-review.json`、`ashbound-village-review-settings.cfg`）；正常 `launch.command` 继续使用原存档。完整实施与证据见 `docs/playtest/2026-10-26-village-story-relics-delivery.md`。
+
+## 村庄预设镜头（2026-10-26）
+
+默认村庄镜头已拉近，右侧村务菜单收到底栏。指向门前的小型“访”标记可显示屋名，点击后平滑切到该屋近景；对话位于右侧，返回后恢复日常镜头。底部“村庄全景”可查看远处悬石与荒野，再点“回到村中”切回近景。镜头过渡可中断，离开村庄后不会干扰战斗相机。实施与实拍见 `docs/playtest/2026-10-26-village-camera.md`。

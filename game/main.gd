@@ -10,6 +10,8 @@ var move_preview_root: Node3D
 var hovered_cell=Vector2i(999,999)
 var movement_label: Label
 var art=Art.new()
+var village_camera=preload("res://game/village_camera.gd").new()
+var village_camera_suspended=false
 var portraits=preload("res://game/portraits.gd").new()
 var presentation=preload("res://game/combat_presentation.gd").new()
 const INK = Color("111c24")
@@ -114,6 +116,7 @@ func _ready():
  scene_root = Node3D.new()
  add_child(scene_root)
  make_ui()
+ get_viewport().size_changed.connect(refresh_village_projection)
  load_settings()
  if capture_mode != "":
   campaign.save_path="user://ashbound-capture.json"
@@ -202,6 +205,7 @@ func label3(text: String,pos: Vector3,color: Color,size: int = 26,parent: Node3D
  return l
 
 func clear_scene():
+ village_camera.cancel()
  for child in scene_root.get_children():
   scene_root.remove_child(child)
   child.queue_free()
@@ -698,6 +702,12 @@ func battle_summary(parent: Control):
  if not resources.is_empty():details_button(block,"幸存者状态与击杀", "\n".join(resources))
 
 func close_modal():
+ if village_camera.is_home():
+  if campaign.phase=="camp" and battle==null and is_instance_valid(scene_root) and scene_root.has_node("Village"):
+   village_camera.set_view(self,"daily")
+   if is_instance_valid(atlas):atlas.show()
+  else:
+   village_camera.cancel();village_camera.view="daily"
  close_details()
  clear_movement_preview()
  party_menu_open=false
@@ -1132,6 +1142,7 @@ func request_new_game():
  modal_body.add_child(button("取消 · 返回主菜单",show_main_menu))
 
 func enter_campaign():
+ village_camera.cancel();village_camera.view="daily"
  selecting_expedition=false
  close_modal()
  session_started=true
@@ -1641,6 +1652,11 @@ func refresh_atlas():
  for child in ui.get_children():
   if child is PanelContainer:child.visible=not village_view
  status_label.visible=battle==null and not village_view
+ if not village_view:
+  village_camera.cancel();village_camera.view="daily";village_camera_suspended=true
+ elif village_camera_suspended:
+  village_camera_suspended=false
+  village_camera.set_view(self,"daily",0)
  if village_view and not scene_root.has_node("Village"):preload("res://game/village_art.gd").build(self)
  elif battle==null and campaign.phase!="camp" and campaign.route.region=="" and scene_root.has_node("Village"):draw_world()
  if is_instance_valid(atlas):
@@ -2007,3 +2023,12 @@ func show_village_journal():
 
 func show_relic_strategy():
  preload("res://game/relic_strategy.gd").show(self)
+
+func show_village_overview():
+ if campaign.phase!="camp" or battle!=null or selecting_expedition or is_instance_valid(modal):return
+ village_camera.set_view(self,"daily" if village_camera.view=="overview" else "overview")
+ preload("res://game/village_ui.gd").update_overview(self)
+
+func refresh_village_projection():
+ if is_instance_valid(atlas) and atlas.village_mode:
+  preload("res://game/village_ui.gd").update_doors(self,atlas)
